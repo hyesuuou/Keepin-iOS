@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15C1221F268E2FBF00838E55 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15C12219268E2FBF00838E55 /* NotoSansCJKkr-Bold.otf */; };
+		15C12220268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15C1221A268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf */; };
+		15C12221268E2FBF00838E55 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15C1221B268E2FBF00838E55 /* NotoSansCJKkr-Regular.otf */; };
+		15C12222268E2FBF00838E55 /* GmarketSansTTFMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15C1221C268E2FBF00838E55 /* GmarketSansTTFMedium.ttf */; };
+		15C12223268E2FBF00838E55 /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15C1221D268E2FBF00838E55 /* GmarketSansTTFBold.ttf */; };
+		15C12224268E2FBF00838E55 /* GmarketSansTTFLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15C1221E268E2FBF00838E55 /* GmarketSansTTFLight.ttf */; };
 		71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F8BF268DFDE30031BC50 /* UIFont.swift */; };
 		77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */; };
 		77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E4268AF98F00FBFDD7 /* SceneDelegate.swift */; };
@@ -40,6 +46,12 @@
 
 /* Begin PBXFileReference section */
 		01D2ADA99388E4A9A27B4E30 /* Pods-Keepin_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keepin_iOS.debug.xcconfig"; path = "Target Support Files/Pods-Keepin_iOS/Pods-Keepin_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		15C12219268E2FBF00838E55 /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		15C1221A268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
+		15C1221B268E2FBF00838E55 /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		15C1221C268E2FBF00838E55 /* GmarketSansTTFMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFMedium.ttf; sourceTree = "<group>"; };
+		15C1221D268E2FBF00838E55 /* GmarketSansTTFBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFBold.ttf; sourceTree = "<group>"; };
+		15C1221E268E2FBF00838E55 /* GmarketSansTTFLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFLight.ttf; sourceTree = "<group>"; };
 		274CF503951F717D4B7E43DE /* Pods_Keepin_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Keepin_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F8F8BF268DFDE30031BC50 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		77F047DF268AF98F00FBFDD7 /* Keepin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keepin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +98,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15C121FA268E281800838E55 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				15C1221D268E2FBF00838E55 /* GmarketSansTTFBold.ttf */,
+				15C1221E268E2FBF00838E55 /* GmarketSansTTFLight.ttf */,
+				15C1221C268E2FBF00838E55 /* GmarketSansTTFMedium.ttf */,
+				15C12219268E2FBF00838E55 /* NotoSansCJKkr-Bold.otf */,
+				15C1221A268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf */,
+				15C1221B268E2FBF00838E55 /* NotoSansCJKkr-Regular.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		77F047D6268AF98F00FBFDD7 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				77F04805268B0CB000FBFDD7 /* Constants.swift */,
+				15C121FA268E281800838E55 /* Font */,
 				77F04801268B0C1200FBFDD7 /* Secret */,
 				77F04802268B0C2300FBFDD7 /* Extension */,
 				77F04803268B0C4300FBFDD7 /* Base */,
@@ -361,16 +387,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				77F04847268C4DA000FBFDD7 /* KeepinPlusVC.xib in Resources */,
+				15C12223268E2FBF00838E55 /* GmarketSansTTFBold.ttf in Resources */,
+				15C12221268E2FBF00838E55 /* NotoSansCJKkr-Regular.otf in Resources */,
 				77F0482B268C49D100FBFDD7 /* PresentMoaVC.xib in Resources */,
 				77F0483A268C4D0D00FBFDD7 /* MyPageVC.xib in Resources */,
 				77F04832268C4C3A00FBFDD7 /* PresentDetailVC.xib in Resources */,
 				77F047EF268AF99900FBFDD7 /* LaunchScreen.storyboard in Resources */,
+				15C1221F268E2FBF00838E55 /* NotoSansCJKkr-Bold.otf in Resources */,
 				77F04820268C49AE00FBFDD7 /* SplashVC.xib in Resources */,
+				15C12224268E2FBF00838E55 /* GmarketSansTTFLight.ttf in Resources */,
 				77F04826268C49BF00FBFDD7 /* HomeVC.xib in Resources */,
 				77F0484D268C4DB400FBFDD7 /* SelectFriendVC.xib in Resources */,
 				77F04857268C53E800FBFDD7 /* SettingVC.xib in Resources */,
+				15C12220268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf in Resources */,
 				77F047EC268AF99900FBFDD7 /* Assets.xcassets in Resources */,
 				77F04840268C4D2400FBFDD7 /* MyPageDetailVC.xib in Resources */,
+				15C12222268E2FBF00838E55 /* GmarketSansTTFMedium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
