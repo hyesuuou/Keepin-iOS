@@ -6,9 +6,34 @@
 //
 
 import Foundation
+import UIKit
 
 extension UIFont {
     
+    /* 폰트 사용 메서드 */
+    public enum GmarketSansType: String {
+        case bold = "Bold"
+        case light = "Light"
+        case medium = "Medium"
+    }
+    
+    public enum NotoSansType: String {
+        case bold = "Bold"
+        case medium = "Medium"
+        case regular = "Regular"
+    }
+    
+    static func GmarketSansTTF(_ type: GmarketSansType, size: CGFloat) -> UIFont {
+        return UIFont(name: "GmarketSansTTF\(type.rawValue)", size: size)!
+    }
+    
+    static func NotoSans(_ type: NotoSansType, size: CGFloat) -> UIFont {
+        return UIFont(name: "NotoSansCJKkr-\(type.rawValue)", size: size)!
+    }
+    
+    
+    
+    /* 아래는 제플린에서 복사해온 텍스트 스타일*/
     class var textStyle2: UIFont {
         return UIFont(name: "GmarketSansTTF-Medium", size: 22.0)!
       }
