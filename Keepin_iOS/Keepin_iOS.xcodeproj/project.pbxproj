@@ -39,8 +39,8 @@
 		77F0484C268C4DB400FBFDD7 /* SelectFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0484A268C4DB400FBFDD7 /* SelectFriendVC.swift */; };
 		77F0484D268C4DB400FBFDD7 /* SelectFriendVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F0484B268C4DB400FBFDD7 /* SelectFriendVC.xib */; };
 		77F04851268C4E2500FBFDD7 /* BaseTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F04850268C4E2500FBFDD7 /* BaseTBC.swift */; };
-		77F04856268C53E800FBFDD7 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F04854268C53E800FBFDD7 /* SettingVC.swift */; };
-		77F04857268C53E800FBFDD7 /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F04855268C53E800FBFDD7 /* SettingVC.xib */; };
+		77F549D4268ECF6C0013A76C /* ReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F549D2268ECF6C0013A76C /* ReminderVC.swift */; };
+		77F549D5268ECF6C0013A76C /* ReminderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F549D3268ECF6C0013A76C /* ReminderVC.xib */; };
 		B311813C2AEE57B8F22BC9DE /* Pods_Keepin_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274CF503951F717D4B7E43DE /* Pods_Keepin_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,8 +81,8 @@
 		77F0484A268C4DB400FBFDD7 /* SelectFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendVC.swift; sourceTree = "<group>"; };
 		77F0484B268C4DB400FBFDD7 /* SelectFriendVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFriendVC.xib; sourceTree = "<group>"; };
 		77F04850268C4E2500FBFDD7 /* BaseTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTBC.swift; sourceTree = "<group>"; };
-		77F04854268C53E800FBFDD7 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
-		77F04855268C53E800FBFDD7 /* SettingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
+		77F549D2268ECF6C0013A76C /* ReminderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderVC.swift; sourceTree = "<group>"; };
+		77F549D3268ECF6C0013A76C /* ReminderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderVC.xib; sourceTree = "<group>"; };
 		8BA10D144125EA8248AB93D9 /* Pods-Keepin_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keepin_iOS.release.xcconfig"; path = "Target Support Files/Pods-Keepin_iOS/Pods-Keepin_iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,8 +150,8 @@
 				77F04819268C483C00FBFDD7 /* Home */,
 				77F0481B268C490000FBFDD7 /* PresentMoa */,
 				77F0481C268C496900FBFDD7 /* KeepinPlus */,
+				77F549D1268ECF570013A76C /* Reminder */,
 				77F0481A268C485A00FBFDD7 /* MyPage */,
-				77F04853268C53D400FBFDD7 /* Setting */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -301,13 +301,21 @@
 			path = SelectFriend;
 			sourceTree = "<group>";
 		};
-		77F04853268C53D400FBFDD7 /* Setting */ = {
+		77F549D1268ECF570013A76C /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
-				77F04854268C53E800FBFDD7 /* SettingVC.swift */,
-				77F04855268C53E800FBFDD7 /* SettingVC.xib */,
+				77F549D6268ECF770013A76C /* ReminderHome */,
 			);
-			path = Setting;
+			path = Reminder;
+			sourceTree = "<group>";
+		};
+		77F549D6268ECF770013A76C /* ReminderHome */ = {
+			isa = PBXGroup;
+			children = (
+				77F549D2268ECF6C0013A76C /* ReminderVC.swift */,
+				77F549D3268ECF6C0013A76C /* ReminderVC.xib */,
+			);
+			path = ReminderHome;
 			sourceTree = "<group>";
 		};
 		9661911476B7DC078D5689FD /* Pods */ = {
@@ -390,6 +398,7 @@
 				15C12223268E2FBF00838E55 /* GmarketSansTTFBold.ttf in Resources */,
 				15C12221268E2FBF00838E55 /* NotoSansCJKkr-Regular.otf in Resources */,
 				77F0482B268C49D100FBFDD7 /* PresentMoaVC.xib in Resources */,
+				77F549D5268ECF6C0013A76C /* ReminderVC.xib in Resources */,
 				77F0483A268C4D0D00FBFDD7 /* MyPageVC.xib in Resources */,
 				77F04832268C4C3A00FBFDD7 /* PresentDetailVC.xib in Resources */,
 				77F047EF268AF99900FBFDD7 /* LaunchScreen.storyboard in Resources */,
@@ -398,7 +407,6 @@
 				15C12224268E2FBF00838E55 /* GmarketSansTTFLight.ttf in Resources */,
 				77F04826268C49BF00FBFDD7 /* HomeVC.xib in Resources */,
 				77F0484D268C4DB400FBFDD7 /* SelectFriendVC.xib in Resources */,
-				77F04857268C53E800FBFDD7 /* SettingVC.xib in Resources */,
 				15C12220268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf in Resources */,
 				77F047EC268AF99900FBFDD7 /* Assets.xcassets in Resources */,
 				77F04840268C4D2400FBFDD7 /* MyPageDetailVC.xib in Resources */,
@@ -457,10 +465,10 @@
 			files = (
 				77F04817268C45BB00FBFDD7 /* UIViewController.swift in Sources */,
 				71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */,
-				77F04856268C53E800FBFDD7 /* SettingVC.swift in Sources */,
 				77F04839268C4D0D00FBFDD7 /* MyPageVC.swift in Sources */,
 				77F0484C268C4DB400FBFDD7 /* SelectFriendVC.swift in Sources */,
 				77F04831268C4C3A00FBFDD7 /* PresentDetailVC.swift in Sources */,
+				77F549D4268ECF6C0013A76C /* ReminderVC.swift in Sources */,
 				77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */,
 				77F04825268C49BF00FBFDD7 /* HomeVC.swift in Sources */,
 				77F04851268C4E2500FBFDD7 /* BaseTBC.swift in Sources */,
