@@ -13,17 +13,23 @@ class PresentMoaVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let searchButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
+        searchButton.setImage(UIImage(named: "icSearch"), for: UIControl.State.normal)
+        searchButton.addTarget(self, action: #selector(toSearch), for: UIControl.Event.touchUpInside)
+        searchButton.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        
+        let searchbarButton = UIBarButtonItem(customView: searchButton)
+        self.navigationItem.rightBarButtonItem = searchbarButton
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @objc func toSearch(){
+        let nextVC = SearchVC()
+        let navBarOnModal: UINavigationController = UINavigationController(rootViewController: nextVC)
+        navBarOnModal.modalPresentationStyle = .overFullScreen
+        self.present(navBarOnModal, animated: true, completion: nil)
     }
-    */
+    
+    
 
 }
+ 

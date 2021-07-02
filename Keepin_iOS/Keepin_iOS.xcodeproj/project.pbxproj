@@ -41,6 +41,8 @@
 		77F04851268C4E2500FBFDD7 /* BaseTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F04850268C4E2500FBFDD7 /* BaseTBC.swift */; };
 		77F549D4268ECF6C0013A76C /* ReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F549D2268ECF6C0013A76C /* ReminderVC.swift */; };
 		77F549D5268ECF6C0013A76C /* ReminderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F549D3268ECF6C0013A76C /* ReminderVC.xib */; };
+		77F549DE268EE92C0013A76C /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F549DC268EE92C0013A76C /* SearchVC.swift */; };
+		77F549DF268EE92C0013A76C /* SearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F549DD268EE92C0013A76C /* SearchVC.xib */; };
 		B311813C2AEE57B8F22BC9DE /* Pods_Keepin_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274CF503951F717D4B7E43DE /* Pods_Keepin_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,8 @@
 		77F04850268C4E2500FBFDD7 /* BaseTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTBC.swift; sourceTree = "<group>"; };
 		77F549D2268ECF6C0013A76C /* ReminderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderVC.swift; sourceTree = "<group>"; };
 		77F549D3268ECF6C0013A76C /* ReminderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderVC.xib; sourceTree = "<group>"; };
+		77F549DC268EE92C0013A76C /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		77F549DD268EE92C0013A76C /* SearchVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchVC.xib; sourceTree = "<group>"; };
 		8BA10D144125EA8248AB93D9 /* Pods-Keepin_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keepin_iOS.release.xcconfig"; path = "Target Support Files/Pods-Keepin_iOS/Pods-Keepin_iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -234,6 +238,7 @@
 			children = (
 				77F0482D268C4BCA00FBFDD7 /* PresentMoaHome */,
 				77F0482E268C4BFF00FBFDD7 /* PresentDetail */,
+				77F549D7268EE8DE0013A76C /* Search */,
 			);
 			path = PresentMoa;
 			sourceTree = "<group>";
@@ -316,6 +321,15 @@
 				77F549D3268ECF6C0013A76C /* ReminderVC.xib */,
 			);
 			path = ReminderHome;
+			sourceTree = "<group>";
+		};
+		77F549D7268EE8DE0013A76C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				77F549DC268EE92C0013A76C /* SearchVC.swift */,
+				77F549DD268EE92C0013A76C /* SearchVC.xib */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		9661911476B7DC078D5689FD /* Pods */ = {
@@ -402,6 +416,7 @@
 				77F0483A268C4D0D00FBFDD7 /* MyPageVC.xib in Resources */,
 				77F04832268C4C3A00FBFDD7 /* PresentDetailVC.xib in Resources */,
 				77F047EF268AF99900FBFDD7 /* LaunchScreen.storyboard in Resources */,
+				77F549DF268EE92C0013A76C /* SearchVC.xib in Resources */,
 				15C1221F268E2FBF00838E55 /* NotoSansCJKkr-Bold.otf in Resources */,
 				77F04820268C49AE00FBFDD7 /* SplashVC.xib in Resources */,
 				15C12224268E2FBF00838E55 /* GmarketSansTTFLight.ttf in Resources */,
@@ -475,6 +490,7 @@
 				77F04846268C4DA000FBFDD7 /* KeepinPlusVC.swift in Sources */,
 				77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */,
 				77F04806268B0CB000FBFDD7 /* Constants.swift in Sources */,
+				77F549DE268EE92C0013A76C /* SearchVC.swift in Sources */,
 				77F0483F268C4D2400FBFDD7 /* MyPageDetailVC.swift in Sources */,
 				77F0481F268C49AE00FBFDD7 /* SplashVC.swift in Sources */,
 				77F04811268C44BA00FBFDD7 /* UIColor.swift in Sources */,
