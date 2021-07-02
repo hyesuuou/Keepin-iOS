@@ -1,13 +1,13 @@
 //
-//  SettingVC.swift
+//  ReminderVC.swift
 //  Keepin_iOS
 //
-//  Created by Yi Joon Choi on 2021/06/30.
+//  Created by Yi Joon Choi on 2021/07/02.
 //
 
 import UIKit
 
-class SettingVC: UIViewController {
+class ReminderVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
