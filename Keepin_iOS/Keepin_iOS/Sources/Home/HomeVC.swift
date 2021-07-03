@@ -9,6 +9,7 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    
 
     @IBOutlet weak var homeTableview: UITableView!
     override func viewDidLoad() {
@@ -29,6 +30,8 @@ class HomeVC: UIViewController {
         let eventNib = UINib(nibName: HomeEventTVC.identifier, bundle: nil)
         homeTableview.register(eventNib, forCellReuseIdentifier: HomeEventTVC.identifier)
     }
+    
+    
 
 
 }
@@ -67,9 +70,9 @@ extension HomeVC  : UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 436
+            return UIScreen.main.bounds.height * (436/812)
         case 1:
-            return 202
+            return UIScreen.main.bounds.height * (202/812)
         default:
             return 100
         }
