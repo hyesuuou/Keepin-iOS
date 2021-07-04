@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,30 +10,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="homeTableview" destination="5lv-JF-Hyo" id="Yd1-9n-GQT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOj-3u-VD5">
-                    <rect key="frame" x="199.5" y="437.5" width="15" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5lv-JF-Hyo">
+                    <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="eOj-3u-VD5" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="E8Q-gQ-LqN"/>
-                <constraint firstItem="eOj-3u-VD5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Mf8-lc-KKG"/>
+                <constraint firstItem="5lv-JF-Hyo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2hq-JD-n2R"/>
+                <constraint firstItem="5lv-JF-Hyo" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="FhB-bn-SlV"/>
+                <constraint firstItem="5lv-JF-Hyo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FqY-wL-bN6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5lv-JF-Hyo" secondAttribute="bottom" id="yfT-Hc-adp"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-            <point key="canvasLocation" x="79.710144927536234" y="91.741071428571431"/>
+            <point key="canvasLocation" x="220" y="82.758620689655174"/>
         </view>
     </objects>
     <resources>
