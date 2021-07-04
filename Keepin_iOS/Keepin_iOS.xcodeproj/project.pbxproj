@@ -17,6 +17,8 @@
 		15C12229268ED4D900838E55 /* HomeEventTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C12227268ED4D900838E55 /* HomeEventTVC.xib */; };
 		15C1222C268F063C00838E55 /* HomeTopTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C1222A268F063C00838E55 /* HomeTopTVC.swift */; };
 		15C1222D268F063C00838E55 /* HomeTopTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C1222B268F063C00838E55 /* HomeTopTVC.xib */; };
+		71D7B66326903D6F0002C046 /* MyPageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7B66126903D6F0002C046 /* MyPageTVC.swift */; };
+		71D7B66426903D6F0002C046 /* MyPageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D7B66226903D6F0002C046 /* MyPageTVC.xib */; };
 		71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F8BF268DFDE30031BC50 /* UIFont.swift */; };
 		77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */; };
 		77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E4268AF98F00FBFDD7 /* SceneDelegate.swift */; };
@@ -61,6 +63,8 @@
 		15C1222A268F063C00838E55 /* HomeTopTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopTVC.swift; sourceTree = "<group>"; };
 		15C1222B268F063C00838E55 /* HomeTopTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTopTVC.xib; sourceTree = "<group>"; };
 		274CF503951F717D4B7E43DE /* Pods_Keepin_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Keepin_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71D7B66126903D6F0002C046 /* MyPageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTVC.swift; sourceTree = "<group>"; };
+		71D7B66226903D6F0002C046 /* MyPageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageTVC.xib; sourceTree = "<group>"; };
 		71F8F8BF268DFDE30031BC50 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		77F047DF268AF98F00FBFDD7 /* Keepin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keepin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -290,6 +294,8 @@
 			children = (
 				77F04837268C4D0D00FBFDD7 /* MyPageVC.swift */,
 				77F04838268C4D0D00FBFDD7 /* MyPageVC.xib */,
+				71D7B66126903D6F0002C046 /* MyPageTVC.swift */,
+				71D7B66226903D6F0002C046 /* MyPageTVC.xib */,
 			);
 			path = MyPageHome;
 			sourceTree = "<group>";
@@ -430,6 +436,7 @@
 				77F04826268C49BF00FBFDD7 /* HomeVC.xib in Resources */,
 				77F0484D268C4DB400FBFDD7 /* SelectFriendVC.xib in Resources */,
 				15C12220268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf in Resources */,
+				71D7B66426903D6F0002C046 /* MyPageTVC.xib in Resources */,
 				77F047EC268AF99900FBFDD7 /* Assets.xcassets in Resources */,
 				77F04840268C4D2400FBFDD7 /* MyPageDetailVC.xib in Resources */,
 				15C12222268E2FBF00838E55 /* GmarketSansTTFMedium.ttf in Resources */,
@@ -494,6 +501,7 @@
 				77F549D4268ECF6C0013A76C /* ReminderVC.swift in Sources */,
 				77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */,
 				77F04825268C49BF00FBFDD7 /* HomeVC.swift in Sources */,
+				71D7B66326903D6F0002C046 /* MyPageTVC.swift in Sources */,
 				77F04851268C4E2500FBFDD7 /* BaseTBC.swift in Sources */,
 				77F04846268C4DA000FBFDD7 /* KeepinPlusVC.swift in Sources */,
 				77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */,
