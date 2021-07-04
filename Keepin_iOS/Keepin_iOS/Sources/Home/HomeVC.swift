@@ -17,9 +17,12 @@ class HomeVC: UIViewController {
         registerXib()
         homeTableview.delegate = self
         homeTableview.dataSource = self
+        homeTableview.backgroundColor = .none
+        homeTableview.allowsSelection = false
         
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = false
+        
         
     }
     
@@ -70,7 +73,7 @@ extension HomeVC  : UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return UIScreen.main.bounds.height * (436/812)
+            return UIScreen.main.bounds.height * (436/812) - 3
         case 1:
             return UIScreen.main.bounds.height * (202/812)
         default:
