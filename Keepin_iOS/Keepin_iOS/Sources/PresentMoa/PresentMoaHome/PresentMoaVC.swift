@@ -9,17 +9,34 @@ import UIKit
 
 class PresentMoaVC: UIViewController {
 
+    @IBOutlet weak var presentCV: UICollectionView!
+    @IBOutlet weak var gave: UIButton!
+    @IBOutlet weak var got: UIButton!
+    
+    @IBAction func newButtonDidTap(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        let searchButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
-        searchButton.setImage(UIImage(named: "icSearch"), for: UIControl.State.normal)
-        searchButton.addTarget(self, action: #selector(toSearch), for: UIControl.Event.touchUpInside)
-        searchButton.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        setNavigationBar()
         
-        let searchbarButton = UIBarButtonItem(customView: searchButton)
-        self.navigationItem.rightBarButtonItem = searchbarButton
+//        let layout = UICollectionViewFlowLayout()
+//        layout.itemSize = CGSize(width: 168, height: 228)
+//        presentCV.collectionViewLayout = layout
+        presentCV.frame.size.height = presentCV.contentSize.height
+        
+        presentCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
+        presentCV.delegate = self
+        presentCV.dataSource = self
+        
+        gave.setTitleColor(.keepinGray4, for: .selected)
+        gave.setTitleColor(.keepinGreen, for: .normal)
+        
+        got.setTitleColor(.keepinGray4, for: .selected)
+        got.setTitleColor(.keepinGreen, for: .normal)
+        
     }
     
     @objc func toSearch(){
@@ -29,7 +46,45 @@ class PresentMoaVC: UIViewController {
         self.present(navBarOnModal, animated: true, completion: nil)
     }
     
-    
+    func setNavigationBar(){
+        let searchButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
+        searchButton.setImage(UIImage(named: "icSearch"), for: UIControl.State.normal)
+        searchButton.addTarget(self, action: #selector(toSearch), for: UIControl.Event.touchUpInside)
+        searchButton.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        
+        let searchbarButton = UIBarButtonItem(customView: searchButton)
+        self.navigationItem.rightBarButtonItem = searchbarButton
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
 
 }
  
+extension PresentMoaVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("select!")
+    }
+    
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = presentCV.dequeueReusableCell(withReuseIdentifier: "PresentMoaCVC", for: indexPath) as! PresentMoaCVC
+//        let food = foods[indexPath.row]
+//        cell.configure(with: food.imgUrl, title: food.productName, price: food.price)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let padding: CGFloat = 10
+        let collectionViewSize = collectionView.frame.size.width - padding
+                
+        return CGSize(width: collectionViewSize/2, height: 228)
+    }
+    
+    
+}

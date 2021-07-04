@@ -1,9 +1,9 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "swapVert.png"
+      "filename" : "swapVert.png",
+      "idiom" : "universal"
     },
     {
       "scale" : "2x",
@@ -12,8 +12,8 @@
     },
     {
       "filename" : "swapVert@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "idiom" : "universal"
     }
   ],
   "info" : {
