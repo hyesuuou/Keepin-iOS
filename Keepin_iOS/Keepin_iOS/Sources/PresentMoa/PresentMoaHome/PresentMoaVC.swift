@@ -12,6 +12,8 @@ class PresentMoaVC: UIViewController {
     @IBOutlet weak var presentCV: UICollectionView!
     @IBOutlet weak var gave: UIButton!
     @IBOutlet weak var got: UIButton!
+    @IBOutlet weak var indicatorBar: UIView!
+    @IBOutlet weak var buttonStack: UIStackView!
     
     @IBAction func newButtonDidTap(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -23,10 +25,18 @@ class PresentMoaVC: UIViewController {
         {
             gave.isSelected = true
             got.isSelected = false
+            UIView.animate(withDuration: 0.2){
+                self.indicatorBar.frame.origin.x = self.buttonStack.frame.width - 12
+                print(self.indicatorBar.frame.origin.x)
+            }
         }
         else if sender == got{
             gave.isSelected = false
             got.isSelected = true
+            UIView.animate(withDuration: 0.2){
+                self.indicatorBar.frame.origin.x = self.buttonStack.frame.width / 2 - 13
+                print(self.indicatorBar.frame.origin.x)
+            }
         }
     }
     
@@ -41,8 +51,8 @@ class PresentMoaVC: UIViewController {
         gave.presentButton()
         got.presentButton()
         
-        gave.isSelected = true
-        got.isSelected = false
+        got.isSelected = true
+        gave.isSelected = false
         
         presentCV.frame.size.height = presentCV.contentSize.height
         
