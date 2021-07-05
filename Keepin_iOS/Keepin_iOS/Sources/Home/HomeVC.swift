@@ -9,12 +9,14 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    let refreshControl = UIRefreshControl()
     
 
     @IBOutlet weak var homeTableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         registerXib()
+        initRefresh()
         homeTableview.delegate = self
         homeTableview.dataSource = self
         homeTableview.backgroundColor = .none
@@ -33,6 +35,20 @@ class HomeVC: UIViewController {
         let eventNib = UINib(nibName: HomeEventTVC.identifier, bundle: nil)
         homeTableview.register(eventNib, forCellReuseIdentifier: HomeEventTVC.identifier)
     }
+    
+    func initRefresh(){
+            refreshControl.addTarget(self, action: #selector(refreshTable(refresh:)), for: .valueChanged)
+            homeTableview.refreshControl = refreshControl
+    }
+    
+    @objc func refreshTable(refresh: UIRefreshControl){
+            print("새로고침 시작")
+                    // 현재로부터 새로고침을 중단함
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){ // 1초
+                self.homeTableview.reloadData()
+                refresh.endRefreshing()
+            }
+        }
     
     
 
