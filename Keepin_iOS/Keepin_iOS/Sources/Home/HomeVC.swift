@@ -57,7 +57,7 @@ class HomeVC: UIViewController {
 
 extension HomeVC : UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(homeTableview.contentOffset)
+        
         if (homeTableview.contentOffset.y > 0){
             homeTableview.contentOffset = CGPoint(x: 0, y: 0)
         }
