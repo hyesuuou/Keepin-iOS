@@ -17,6 +17,12 @@
 		15C12229268ED4D900838E55 /* HomeEventTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C12227268ED4D900838E55 /* HomeEventTVC.xib */; };
 		15C1222C268F063C00838E55 /* HomeTopTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C1222A268F063C00838E55 /* HomeTopTVC.swift */; };
 		15C1222D268F063C00838E55 /* HomeTopTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C1222B268F063C00838E55 /* HomeTopTVC.xib */; };
+		71AC81872692D77B00758994 /* MyPageDetailTopCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC81852692D77B00758994 /* MyPageDetailTopCVC.swift */; };
+		71AC81882692D77B00758994 /* MyPageDetailTopCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71AC81862692D77B00758994 /* MyPageDetailTopCVC.xib */; };
+		71AC818F2692F00D00758994 /* MyPageDetailPresentCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC818D2692F00D00758994 /* MyPageDetailPresentCVC.swift */; };
+		71AC81902692F00D00758994 /* MyPageDetailPresentCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71AC818E2692F00D00758994 /* MyPageDetailPresentCVC.xib */; };
+		71AC81932692F1A700758994 /* MyPageDetailMemoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC81912692F1A700758994 /* MyPageDetailMemoCVC.swift */; };
+		71AC81942692F1A700758994 /* MyPageDetailMemoCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71AC81922692F1A700758994 /* MyPageDetailMemoCVC.xib */; };
 		71D7B66326903D6F0002C046 /* MyPageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7B66126903D6F0002C046 /* MyPageTVC.swift */; };
 		71D7B66426903D6F0002C046 /* MyPageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D7B66226903D6F0002C046 /* MyPageTVC.xib */; };
 		71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F8BF268DFDE30031BC50 /* UIFont.swift */; };
@@ -67,6 +73,12 @@
 		15C1222A268F063C00838E55 /* HomeTopTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopTVC.swift; sourceTree = "<group>"; };
 		15C1222B268F063C00838E55 /* HomeTopTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTopTVC.xib; sourceTree = "<group>"; };
 		274CF503951F717D4B7E43DE /* Pods_Keepin_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Keepin_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71AC81852692D77B00758994 /* MyPageDetailTopCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailTopCVC.swift; sourceTree = "<group>"; };
+		71AC81862692D77B00758994 /* MyPageDetailTopCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageDetailTopCVC.xib; sourceTree = "<group>"; };
+		71AC818D2692F00D00758994 /* MyPageDetailPresentCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailPresentCVC.swift; sourceTree = "<group>"; };
+		71AC818E2692F00D00758994 /* MyPageDetailPresentCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageDetailPresentCVC.xib; sourceTree = "<group>"; };
+		71AC81912692F1A700758994 /* MyPageDetailMemoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailMemoCVC.swift; sourceTree = "<group>"; };
+		71AC81922692F1A700758994 /* MyPageDetailMemoCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageDetailMemoCVC.xib; sourceTree = "<group>"; };
 		71D7B66126903D6F0002C046 /* MyPageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTVC.swift; sourceTree = "<group>"; };
 		71D7B66226903D6F0002C046 /* MyPageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageTVC.xib; sourceTree = "<group>"; };
 		71F8F8BF268DFDE30031BC50 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
@@ -138,6 +150,28 @@
 				15C1222B268F063C00838E55 /* HomeTopTVC.xib */,
 				15C12226268ED4D900838E55 /* HomeEventTVC.swift */,
 				15C12227268ED4D900838E55 /* HomeEventTVC.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		71AC81832692CF5C00758994 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				71D7B66226903D6F0002C046 /* MyPageTVC.xib */,
+				71D7B66126903D6F0002C046 /* MyPageTVC.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		71AC81842692CFFE00758994 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				71AC81862692D77B00758994 /* MyPageDetailTopCVC.xib */,
+				71AC81852692D77B00758994 /* MyPageDetailTopCVC.swift */,
+				71AC818D2692F00D00758994 /* MyPageDetailPresentCVC.swift */,
+				71AC818E2692F00D00758994 /* MyPageDetailPresentCVC.xib */,
+				71AC81912692F1A700758994 /* MyPageDetailMemoCVC.swift */,
+				71AC81922692F1A700758994 /* MyPageDetailMemoCVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -297,8 +331,7 @@
 			children = (
 				77F04837268C4D0D00FBFDD7 /* MyPageVC.swift */,
 				77F04838268C4D0D00FBFDD7 /* MyPageVC.xib */,
-				71D7B66126903D6F0002C046 /* MyPageTVC.swift */,
-				71D7B66226903D6F0002C046 /* MyPageTVC.xib */,
+				71AC81832692CF5C00758994 /* Cell */,
 			);
 			path = MyPageHome;
 			sourceTree = "<group>";
@@ -308,6 +341,7 @@
 			children = (
 				77F0483D268C4D2400FBFDD7 /* MyPageDetailVC.swift */,
 				77F0483E268C4D2400FBFDD7 /* MyPageDetailVC.xib */,
+				71AC81842692CFFE00758994 /* Cell */,
 			);
 			path = MyPageDetail;
 			sourceTree = "<group>";
@@ -456,13 +490,16 @@
 				77F0483A268C4D0D00FBFDD7 /* MyPageVC.xib in Resources */,
 				15C12229268ED4D900838E55 /* HomeEventTVC.xib in Resources */,
 				77F04832268C4C3A00FBFDD7 /* PresentDetailVC.xib in Resources */,
+				71AC81902692F00D00758994 /* MyPageDetailPresentCVC.xib in Resources */,
 				77F047EF268AF99900FBFDD7 /* LaunchScreen.storyboard in Resources */,
 				77F549DF268EE92C0013A76C /* SearchVC.xib in Resources */,
 				77F549ED268F58970013A76C /* PresentMoaCVC.xib in Resources */,
+				71AC81882692D77B00758994 /* MyPageDetailTopCVC.xib in Resources */,
 				15C1221F268E2FBF00838E55 /* NotoSansCJKkr-Bold.otf in Resources */,
 				77F04820268C49AE00FBFDD7 /* SplashVC.xib in Resources */,
 				15C12224268E2FBF00838E55 /* GmarketSansTTFLight.ttf in Resources */,
 				15C1222D268F063C00838E55 /* HomeTopTVC.xib in Resources */,
+				71AC81942692F1A700758994 /* MyPageDetailMemoCVC.xib in Resources */,
 				77F04826268C49BF00FBFDD7 /* HomeVC.xib in Resources */,
 				77F0484D268C4DB400FBFDD7 /* SelectFriendVC.xib in Resources */,
 				15C12220268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf in Resources */,
@@ -525,6 +562,7 @@
 				77F04817268C45BB00FBFDD7 /* UIViewController.swift in Sources */,
 				77F549EC268F58970013A76C /* PresentMoaCVC.swift in Sources */,
 				71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */,
+				71AC81872692D77B00758994 /* MyPageDetailTopCVC.swift in Sources */,
 				77F04839268C4D0D00FBFDD7 /* MyPageVC.swift in Sources */,
 				15C1222C268F063C00838E55 /* HomeTopTVC.swift in Sources */,
 				77F0484C268C4DB400FBFDD7 /* SelectFriendVC.swift in Sources */,
@@ -533,9 +571,11 @@
 				77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */,
 				77F04825268C49BF00FBFDD7 /* HomeVC.swift in Sources */,
 				71D7B66326903D6F0002C046 /* MyPageTVC.swift in Sources */,
+				71AC81932692F1A700758994 /* MyPageDetailMemoCVC.swift in Sources */,
 				77F04851268C4E2500FBFDD7 /* BaseTBC.swift in Sources */,
 				77F04846268C4DA000FBFDD7 /* KeepinPlusVC.swift in Sources */,
 				77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */,
+				71AC818F2692F00D00758994 /* MyPageDetailPresentCVC.swift in Sources */,
 				77F04806268B0CB000FBFDD7 /* Constants.swift in Sources */,
 				77F549DE268EE92C0013A76C /* SearchVC.swift in Sources */,
 				77F0483F268C4D2400FBFDD7 /* MyPageDetailVC.swift in Sources */,
