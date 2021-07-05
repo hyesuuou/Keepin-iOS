@@ -17,6 +17,19 @@ class PresentMoaVC: UIViewController {
         sender.isSelected = !sender.isSelected
     }
     
+
+    @IBAction func btnClicked(sender:UIButton){
+        if sender == gave
+        {
+            gave.isSelected = true
+            got.isSelected = false
+        }
+        else if sender == got{
+            gave.isSelected = false
+            got.isSelected = true
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,17 +38,17 @@ class PresentMoaVC: UIViewController {
 //        let layout = UICollectionViewFlowLayout()
 //        layout.itemSize = CGSize(width: 168, height: 228)
 //        presentCV.collectionViewLayout = layout
+        gave.presentButton()
+        got.presentButton()
+        
+        gave.isSelected = true
+        got.isSelected = false
+        
         presentCV.frame.size.height = presentCV.contentSize.height
         
         presentCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
         presentCV.delegate = self
         presentCV.dataSource = self
-        
-        gave.setTitleColor(.keepinGray4, for: .selected)
-        gave.setTitleColor(.keepinGreen, for: .normal)
-        
-        got.setTitleColor(.keepinGray4, for: .selected)
-        got.setTitleColor(.keepinGreen, for: .normal)
         
     }
     

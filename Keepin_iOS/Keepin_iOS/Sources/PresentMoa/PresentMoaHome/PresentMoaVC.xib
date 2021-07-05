@@ -66,11 +66,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="41" height="29"/>
                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                             <state key="normal" title="받은"/>
+                                            <connections>
+                                                <action selector="btnClickedWithSender:" destination="-1" eventType="touchUpInside" id="fSJ-Yj-HMN"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="las-3g-Wes">
                                             <rect key="frame" x="41" y="0.0" width="41" height="29"/>
                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                             <state key="normal" title="준"/>
+                                            <connections>
+                                                <action selector="btnClickedWithSender:" destination="-1" eventType="touchUpInside" id="01y-L6-bYc"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -95,7 +101,6 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="8nR-u6-WQQ" firstAttribute="width" secondItem="DME-Sx-geR" secondAttribute="width" id="1r7-GW-ZUB"/>
                         <constraint firstAttribute="bottom" secondItem="8nR-u6-WQQ" secondAttribute="bottom" id="5Yd-xv-nVU"/>
