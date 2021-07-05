@@ -17,6 +17,8 @@
 		15C12229268ED4D900838E55 /* HomeEventTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C12227268ED4D900838E55 /* HomeEventTVC.xib */; };
 		15C1222C268F063C00838E55 /* HomeTopTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C1222A268F063C00838E55 /* HomeTopTVC.swift */; };
 		15C1222D268F063C00838E55 /* HomeTopTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C1222B268F063C00838E55 /* HomeTopTVC.xib */; };
+		15C122352692DA7300838E55 /* LoginFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C122332692DA7300838E55 /* LoginFirstVC.swift */; };
+		15C122362692DA7300838E55 /* LoginFirstVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C122342692DA7300838E55 /* LoginFirstVC.xib */; };
 		71D7B66326903D6F0002C046 /* MyPageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7B66126903D6F0002C046 /* MyPageTVC.swift */; };
 		71D7B66426903D6F0002C046 /* MyPageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D7B66226903D6F0002C046 /* MyPageTVC.xib */; };
 		71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F8BF268DFDE30031BC50 /* UIFont.swift */; };
@@ -66,6 +68,8 @@
 		15C12227268ED4D900838E55 /* HomeEventTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeEventTVC.xib; sourceTree = "<group>"; };
 		15C1222A268F063C00838E55 /* HomeTopTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopTVC.swift; sourceTree = "<group>"; };
 		15C1222B268F063C00838E55 /* HomeTopTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTopTVC.xib; sourceTree = "<group>"; };
+		15C122332692DA7300838E55 /* LoginFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFirstVC.swift; sourceTree = "<group>"; };
+		15C122342692DA7300838E55 /* LoginFirstVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginFirstVC.xib; sourceTree = "<group>"; };
 		274CF503951F717D4B7E43DE /* Pods_Keepin_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Keepin_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D7B66126903D6F0002C046 /* MyPageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTVC.swift; sourceTree = "<group>"; };
 		71D7B66226903D6F0002C046 /* MyPageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageTVC.xib; sourceTree = "<group>"; };
@@ -142,6 +146,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		15C122322692DA2D00838E55 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				15C122332692DA7300838E55 /* LoginFirstVC.swift */,
+				15C122342692DA7300838E55 /* LoginFirstVC.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		77F047D6268AF98F00FBFDD7 = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +190,7 @@
 		77F047FF268B0BCB00FBFDD7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				15C122322692DA2D00838E55 /* Login */,
 				77F0480A268C441E00FBFDD7 /* Splash */,
 				77F04819268C483C00FBFDD7 /* Home */,
 				77F0481B268C490000FBFDD7 /* PresentMoa */,
@@ -465,6 +479,7 @@
 				15C1222D268F063C00838E55 /* HomeTopTVC.xib in Resources */,
 				77F04826268C49BF00FBFDD7 /* HomeVC.xib in Resources */,
 				77F0484D268C4DB400FBFDD7 /* SelectFriendVC.xib in Resources */,
+				15C122362692DA7300838E55 /* LoginFirstVC.xib in Resources */,
 				15C12220268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf in Resources */,
 				71D7B66426903D6F0002C046 /* MyPageTVC.xib in Resources */,
 				77F047EC268AF99900FBFDD7 /* Assets.xcassets in Resources */,
@@ -538,6 +553,7 @@
 				77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */,
 				77F04806268B0CB000FBFDD7 /* Constants.swift in Sources */,
 				77F549DE268EE92C0013A76C /* SearchVC.swift in Sources */,
+				15C122352692DA7300838E55 /* LoginFirstVC.swift in Sources */,
 				77F0483F268C4D2400FBFDD7 /* MyPageDetailVC.swift in Sources */,
 				77F0481F268C49AE00FBFDD7 /* SplashVC.swift in Sources */,
 				77F04811268C44BA00FBFDD7 /* UIColor.swift in Sources */,
