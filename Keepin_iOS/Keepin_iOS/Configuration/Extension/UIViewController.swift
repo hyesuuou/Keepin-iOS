@@ -21,4 +21,18 @@ extension UIViewController {
         self.view.endEditing(true)
     }
     
+    func presentAlert(message: String? = nil,
+                      isCancelActionIncluded: Bool = false,
+                      preferredStyle style: UIAlertController.Style = .alert,
+                      with actions: UIAlertAction ...) {
+        //self.dismissIndicator()
+        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+        actions.forEach { alert.addAction($0) }
+        if isCancelActionIncluded {
+            let actionCancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+            alert.addAction(actionCancel)
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
