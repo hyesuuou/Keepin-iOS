@@ -33,7 +33,7 @@ class LoginFirstVC: UIViewController {
     func loginButtonUI(button: UIButton){
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.keepinBlack.cgColor
-        button.layer.cornerRadius = 20
+        button.layer.cornerRadius = 24
         button.titleLabel?.font = UIFont.NotoSans(.regular, size: 14)
         button.titleLabel?.textAlignment = .center
         
