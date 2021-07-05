@@ -9,17 +9,22 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    let refreshControl = UIRefreshControl()
     
 
     @IBOutlet weak var homeTableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         registerXib()
+        initRefresh()
         homeTableview.delegate = self
         homeTableview.dataSource = self
+        homeTableview.backgroundColor = .none
+        homeTableview.allowsSelection = false
         
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = false
+        
         
     }
     
@@ -31,12 +36,35 @@ class HomeVC: UIViewController {
         homeTableview.register(eventNib, forCellReuseIdentifier: HomeEventTVC.identifier)
     }
     
+    func initRefresh(){
+            refreshControl.addTarget(self, action: #selector(refreshTable(refresh:)), for: .valueChanged)
+            homeTableview.refreshControl = refreshControl
+    }
+    
+    @objc func refreshTable(refresh: UIRefreshControl){
+            print("새로고침 시작")
+                    // 현재로부터 새로고침을 중단함
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){ // 1초
+                self.homeTableview.reloadData()
+                refresh.endRefreshing()
+            }
+        }
+    
     
 
 
 }
 
 extension HomeVC : UITableViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if (homeTableview.contentOffset.y > 0){
+            homeTableview.contentOffset = CGPoint(x: 0, y: 0)
+        }
+        
+        
+        
+    }
     
 }
 
@@ -70,7 +98,7 @@ extension HomeVC  : UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return UIScreen.main.bounds.height * (436/812)
+            return UIScreen.main.bounds.height * (436/812) - 3
         case 1:
             return UIScreen.main.bounds.height * (202/812)
         default:
