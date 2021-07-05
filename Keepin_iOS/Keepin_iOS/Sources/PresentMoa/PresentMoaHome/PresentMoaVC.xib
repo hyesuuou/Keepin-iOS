@@ -18,8 +18,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PresentMoaVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
-                <outlet property="gave" destination="3em-jd-cQ0" id="c3a-ky-iRU"/>
-                <outlet property="got" destination="las-3g-Wes" id="zb8-mF-2zI"/>
+                <outlet property="buttonStack" destination="ReN-9V-Tpx" id="gYI-RZ-wLX"/>
+                <outlet property="gave" destination="las-3g-Wes" id="H8j-mL-Rda"/>
+                <outlet property="got" destination="3em-jd-cQ0" id="uMf-qO-X5M"/>
+                <outlet property="indicatorBar" destination="dcK-Hy-MDd" id="2qZ-v2-OJx"/>
                 <outlet property="presentCV" destination="8cd-3U-Oaa" id="P3b-Ia-crv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -66,11 +68,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="41" height="29"/>
                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                             <state key="normal" title="받은"/>
+                                            <connections>
+                                                <action selector="btnClickedWithSender:" destination="-1" eventType="touchUpInside" id="fSJ-Yj-HMN"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="las-3g-Wes">
                                             <rect key="frame" x="41" y="0.0" width="41" height="29"/>
                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                             <state key="normal" title="준"/>
+                                            <connections>
+                                                <action selector="btnClickedWithSender:" destination="-1" eventType="touchUpInside" id="01y-L6-bYc"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -78,10 +86,19 @@
                                         <constraint firstAttribute="width" constant="82" id="lej-WV-hcP"/>
                                     </constraints>
                                 </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcK-Hy-MDd">
+                                    <rect key="frame" x="29" y="75" width="30" height="2"/>
+                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="3Sh-Ob-Ifn"/>
+                                        <constraint firstAttribute="height" constant="2" id="mXi-pJ-BJr"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="bs4-E5-XY0" firstAttribute="top" secondItem="8nR-u6-WQQ" secondAttribute="top" id="17w-8v-qio"/>
+                                <constraint firstItem="dcK-Hy-MDd" firstAttribute="leading" secondItem="8nR-u6-WQQ" secondAttribute="leading" constant="29" id="DHG-Vg-N66"/>
                                 <constraint firstAttribute="trailing" secondItem="4dP-KJ-Lyh" secondAttribute="trailing" constant="24" id="FTH-bq-EC2"/>
                                 <constraint firstItem="bs4-E5-XY0" firstAttribute="leading" secondItem="8nR-u6-WQQ" secondAttribute="leading" constant="24" id="GhP-jg-Vzn"/>
                                 <constraint firstItem="ReN-9V-Tpx" firstAttribute="top" secondItem="bs4-E5-XY0" secondAttribute="bottom" constant="26" id="IsI-Rd-f90"/>
@@ -89,13 +106,13 @@
                                 <constraint firstItem="8cd-3U-Oaa" firstAttribute="top" secondItem="4dP-KJ-Lyh" secondAttribute="bottom" constant="23" id="XGZ-8v-qA8"/>
                                 <constraint firstItem="8cd-3U-Oaa" firstAttribute="leading" secondItem="8nR-u6-WQQ" secondAttribute="leading" constant="16" id="YjU-kF-PRr"/>
                                 <constraint firstItem="4dP-KJ-Lyh" firstAttribute="top" secondItem="8nR-u6-WQQ" secondAttribute="top" constant="30" id="ogW-qu-EK7"/>
+                                <constraint firstItem="dcK-Hy-MDd" firstAttribute="top" secondItem="ReN-9V-Tpx" secondAttribute="bottom" id="q6l-3r-f9H"/>
                                 <constraint firstItem="ReN-9V-Tpx" firstAttribute="leading" secondItem="8nR-u6-WQQ" secondAttribute="leading" constant="23" id="qDo-3q-1rK"/>
                                 <constraint firstAttribute="bottom" secondItem="8cd-3U-Oaa" secondAttribute="bottom" id="uO2-gq-Vxu"/>
                                 <constraint firstAttribute="height" constant="1000" id="xnG-m3-5s9"/>
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="8nR-u6-WQQ" firstAttribute="width" secondItem="DME-Sx-geR" secondAttribute="width" id="1r7-GW-ZUB"/>
                         <constraint firstAttribute="bottom" secondItem="8nR-u6-WQQ" secondAttribute="bottom" id="5Yd-xv-nVU"/>
@@ -123,6 +140,9 @@
         <image name="icOld" width="72" height="27"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -27,4 +27,11 @@ extension UIButton {
             }
         }
     }
+    
+    func presentButton() {
+        self.tintColor = .clear
+        self.setTitleColor(.keepinGray4, for: .normal)
+        self.setTitleColor(.keepinGreen, for: .selected)
+    }
+    
 }

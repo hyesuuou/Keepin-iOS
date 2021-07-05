@@ -12,9 +12,32 @@ class PresentMoaVC: UIViewController {
     @IBOutlet weak var presentCV: UICollectionView!
     @IBOutlet weak var gave: UIButton!
     @IBOutlet weak var got: UIButton!
+    @IBOutlet weak var indicatorBar: UIView!
+    @IBOutlet weak var buttonStack: UIStackView!
     
     @IBAction func newButtonDidTap(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
+    }
+    
+
+    @IBAction func btnClicked(sender:UIButton){
+        if sender == gave
+        {
+            gave.isSelected = true
+            got.isSelected = false
+            UIView.animate(withDuration: 0.2){
+                self.indicatorBar.frame.origin.x = self.buttonStack.frame.width - 12
+                print(self.indicatorBar.frame.origin.x)
+            }
+        }
+        else if sender == got{
+            gave.isSelected = false
+            got.isSelected = true
+            UIView.animate(withDuration: 0.2){
+                self.indicatorBar.frame.origin.x = self.buttonStack.frame.width / 2 - 13
+                print(self.indicatorBar.frame.origin.x)
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -25,17 +48,17 @@ class PresentMoaVC: UIViewController {
 //        let layout = UICollectionViewFlowLayout()
 //        layout.itemSize = CGSize(width: 168, height: 228)
 //        presentCV.collectionViewLayout = layout
+        gave.presentButton()
+        got.presentButton()
+        
+        got.isSelected = true
+        gave.isSelected = false
+        
         presentCV.frame.size.height = presentCV.contentSize.height
         
         presentCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
         presentCV.delegate = self
         presentCV.dataSource = self
-        
-        gave.setTitleColor(.keepinGray4, for: .selected)
-        gave.setTitleColor(.keepinGreen, for: .normal)
-        
-        got.setTitleColor(.keepinGray4, for: .selected)
-        got.setTitleColor(.keepinGreen, for: .normal)
         
     }
     
