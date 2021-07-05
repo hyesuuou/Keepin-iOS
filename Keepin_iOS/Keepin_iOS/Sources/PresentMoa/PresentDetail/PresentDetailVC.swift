@@ -11,19 +11,55 @@ class PresentDetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
+        
+        setNavigationBar()
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setNavigationBar(){
+        let searchButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
+        searchButton.setImage(UIImage(named: "icMore"), for: UIControl.State.normal)
+        searchButton.addTarget(self, action: #selector(toDetail), for: UIControl.Event.touchUpInside)
+        searchButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        
+        let backButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
+        backButton.setImage(UIImage(named: "icBack"), for: UIControl.State.normal)
+        backButton.addTarget(self, action: #selector(toBack), for: UIControl.Event.touchUpInside)
+        backButton.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
+        
+        let backbarButton = UIBarButtonItem(customView: backButton)
+        self.navigationItem.leftBarButtonItem = backbarButton
+        
+        let searchbarButton = UIBarButtonItem(customView: searchButton)
+        self.navigationItem.rightBarButtonItem = searchbarButton
+        
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
     }
-    */
-
+    
+    @objc func toBack(){
+        self.navigationController?.popViewController(animated: true)
+        print("pop")
+    }
+    
+    @objc func toDetail(){
+        print("Detail")
+        let actionDelete = UIAlertAction(title: "삭제하기", style: .default) { action in
+            self.view.backgroundColor = .red
+        }
+        let actionEdit = UIAlertAction(title: "수정하기", style: .default) { action in
+            self.view.backgroundColor = .green
+        }
+        self.presentAlert(
+            preferredStyle: .actionSheet,
+            with: actionDelete, actionEdit
+        )
+//        let nextVC = SearchVC()
+//        let navBarOnModal: UINavigationController = UINavigationController(rootViewController: nextVC)
+//        navBarOnModal.modalPresentationStyle = .overFullScreen
+//        self.present(navBarOnModal, animated: true, completion: nil)
+        
+    }
 }

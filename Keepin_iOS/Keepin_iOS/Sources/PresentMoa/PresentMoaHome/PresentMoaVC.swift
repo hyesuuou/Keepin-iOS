@@ -87,6 +87,7 @@ extension PresentMoaVC : UICollectionViewDelegate, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("select!")
+        self.navigationController?.pushViewController(PresentDetailVC(), animated: true)
     }
     
 
