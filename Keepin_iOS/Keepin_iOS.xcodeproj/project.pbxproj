@@ -17,6 +17,8 @@
 		15C12229268ED4D900838E55 /* HomeEventTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C12227268ED4D900838E55 /* HomeEventTVC.xib */; };
 		15C1222C268F063C00838E55 /* HomeTopTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C1222A268F063C00838E55 /* HomeTopTVC.swift */; };
 		15C1222D268F063C00838E55 /* HomeTopTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C1222B268F063C00838E55 /* HomeTopTVC.xib */; };
+		71D7B66326903D6F0002C046 /* MyPageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7B66126903D6F0002C046 /* MyPageTVC.swift */; };
+		71D7B66426903D6F0002C046 /* MyPageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D7B66226903D6F0002C046 /* MyPageTVC.xib */; };
 		71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F8BF268DFDE30031BC50 /* UIFont.swift */; };
 		77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */; };
 		77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E4268AF98F00FBFDD7 /* SceneDelegate.swift */; };
@@ -45,6 +47,10 @@
 		77F04851268C4E2500FBFDD7 /* BaseTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F04850268C4E2500FBFDD7 /* BaseTBC.swift */; };
 		77F549D4268ECF6C0013A76C /* ReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F549D2268ECF6C0013A76C /* ReminderVC.swift */; };
 		77F549D5268ECF6C0013A76C /* ReminderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F549D3268ECF6C0013A76C /* ReminderVC.xib */; };
+		77F549DE268EE92C0013A76C /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F549DC268EE92C0013A76C /* SearchVC.swift */; };
+		77F549DF268EE92C0013A76C /* SearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F549DD268EE92C0013A76C /* SearchVC.xib */; };
+		77F549EC268F58970013A76C /* PresentMoaCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F549EA268F58970013A76C /* PresentMoaCVC.swift */; };
+		77F549ED268F58970013A76C /* PresentMoaCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F549EB268F58970013A76C /* PresentMoaCVC.xib */; };
 		B311813C2AEE57B8F22BC9DE /* Pods_Keepin_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274CF503951F717D4B7E43DE /* Pods_Keepin_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +67,8 @@
 		15C1222A268F063C00838E55 /* HomeTopTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopTVC.swift; sourceTree = "<group>"; };
 		15C1222B268F063C00838E55 /* HomeTopTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTopTVC.xib; sourceTree = "<group>"; };
 		274CF503951F717D4B7E43DE /* Pods_Keepin_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Keepin_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71D7B66126903D6F0002C046 /* MyPageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTVC.swift; sourceTree = "<group>"; };
+		71D7B66226903D6F0002C046 /* MyPageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageTVC.xib; sourceTree = "<group>"; };
 		71F8F8BF268DFDE30031BC50 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		77F047DF268AF98F00FBFDD7 /* Keepin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keepin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +99,10 @@
 		77F04850268C4E2500FBFDD7 /* BaseTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTBC.swift; sourceTree = "<group>"; };
 		77F549D2268ECF6C0013A76C /* ReminderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderVC.swift; sourceTree = "<group>"; };
 		77F549D3268ECF6C0013A76C /* ReminderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderVC.xib; sourceTree = "<group>"; };
+		77F549DC268EE92C0013A76C /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		77F549DD268EE92C0013A76C /* SearchVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchVC.xib; sourceTree = "<group>"; };
+		77F549EA268F58970013A76C /* PresentMoaCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMoaCVC.swift; sourceTree = "<group>"; };
+		77F549EB268F58970013A76C /* PresentMoaCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresentMoaCVC.xib; sourceTree = "<group>"; };
 		8BA10D144125EA8248AB93D9 /* Pods-Keepin_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keepin_iOS.release.xcconfig"; path = "Target Support Files/Pods-Keepin_iOS/Pods-Keepin_iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,7 +195,7 @@
 				77F04801268B0C1200FBFDD7 /* Secret */,
 				77F04802268B0C2300FBFDD7 /* Extension */,
 				77F04803268B0C4300FBFDD7 /* Base */,
-				77F04804268B0C4D00FBFDD7 /* CommonClass */,
+				77F549E0268F4AF50013A76C /* CommonClass */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -212,13 +224,6 @@
 				77F04850268C4E2500FBFDD7 /* BaseTBC.swift */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		77F04804268B0C4D00FBFDD7 /* CommonClass */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CommonClass;
 			sourceTree = "<group>";
 		};
 		77F0480A268C441E00FBFDD7 /* Splash */ = {
@@ -254,6 +259,7 @@
 			children = (
 				77F0482D268C4BCA00FBFDD7 /* PresentMoaHome */,
 				77F0482E268C4BFF00FBFDD7 /* PresentDetail */,
+				77F549D7268EE8DE0013A76C /* Search */,
 			);
 			path = PresentMoa;
 			sourceTree = "<group>";
@@ -270,6 +276,7 @@
 		77F0482D268C4BCA00FBFDD7 /* PresentMoaHome */ = {
 			isa = PBXGroup;
 			children = (
+				77F549E9268F54F10013A76C /* Cell */,
 				77F04828268C49D100FBFDD7 /* PresentMoaVC.swift */,
 				77F04829268C49D100FBFDD7 /* PresentMoaVC.xib */,
 			);
@@ -290,6 +297,8 @@
 			children = (
 				77F04837268C4D0D00FBFDD7 /* MyPageVC.swift */,
 				77F04838268C4D0D00FBFDD7 /* MyPageVC.xib */,
+				71D7B66126903D6F0002C046 /* MyPageTVC.swift */,
+				71D7B66226903D6F0002C046 /* MyPageTVC.xib */,
 			);
 			path = MyPageHome;
 			sourceTree = "<group>";
@@ -336,6 +345,31 @@
 				77F549D3268ECF6C0013A76C /* ReminderVC.xib */,
 			);
 			path = ReminderHome;
+			sourceTree = "<group>";
+		};
+		77F549D7268EE8DE0013A76C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				77F549DC268EE92C0013A76C /* SearchVC.swift */,
+				77F549DD268EE92C0013A76C /* SearchVC.xib */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		77F549E0268F4AF50013A76C /* CommonClass */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CommonClass;
+			sourceTree = "<group>";
+		};
+		77F549E9268F54F10013A76C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				77F549EA268F58970013A76C /* PresentMoaCVC.swift */,
+				77F549EB268F58970013A76C /* PresentMoaCVC.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		9661911476B7DC078D5689FD /* Pods */ = {
@@ -423,6 +457,8 @@
 				15C12229268ED4D900838E55 /* HomeEventTVC.xib in Resources */,
 				77F04832268C4C3A00FBFDD7 /* PresentDetailVC.xib in Resources */,
 				77F047EF268AF99900FBFDD7 /* LaunchScreen.storyboard in Resources */,
+				77F549DF268EE92C0013A76C /* SearchVC.xib in Resources */,
+				77F549ED268F58970013A76C /* PresentMoaCVC.xib in Resources */,
 				15C1221F268E2FBF00838E55 /* NotoSansCJKkr-Bold.otf in Resources */,
 				77F04820268C49AE00FBFDD7 /* SplashVC.xib in Resources */,
 				15C12224268E2FBF00838E55 /* GmarketSansTTFLight.ttf in Resources */,
@@ -430,6 +466,7 @@
 				77F04826268C49BF00FBFDD7 /* HomeVC.xib in Resources */,
 				77F0484D268C4DB400FBFDD7 /* SelectFriendVC.xib in Resources */,
 				15C12220268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf in Resources */,
+				71D7B66426903D6F0002C046 /* MyPageTVC.xib in Resources */,
 				77F047EC268AF99900FBFDD7 /* Assets.xcassets in Resources */,
 				77F04840268C4D2400FBFDD7 /* MyPageDetailVC.xib in Resources */,
 				15C12222268E2FBF00838E55 /* GmarketSansTTFMedium.ttf in Resources */,
@@ -486,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77F04817268C45BB00FBFDD7 /* UIViewController.swift in Sources */,
+				77F549EC268F58970013A76C /* PresentMoaCVC.swift in Sources */,
 				71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */,
 				77F04839268C4D0D00FBFDD7 /* MyPageVC.swift in Sources */,
 				15C1222C268F063C00838E55 /* HomeTopTVC.swift in Sources */,
@@ -494,10 +532,12 @@
 				77F549D4268ECF6C0013A76C /* ReminderVC.swift in Sources */,
 				77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */,
 				77F04825268C49BF00FBFDD7 /* HomeVC.swift in Sources */,
+				71D7B66326903D6F0002C046 /* MyPageTVC.swift in Sources */,
 				77F04851268C4E2500FBFDD7 /* BaseTBC.swift in Sources */,
 				77F04846268C4DA000FBFDD7 /* KeepinPlusVC.swift in Sources */,
 				77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */,
 				77F04806268B0CB000FBFDD7 /* Constants.swift in Sources */,
+				77F549DE268EE92C0013A76C /* SearchVC.swift in Sources */,
 				77F0483F268C4D2400FBFDD7 /* MyPageDetailVC.swift in Sources */,
 				77F0481F268C49AE00FBFDD7 /* SplashVC.swift in Sources */,
 				77F04811268C44BA00FBFDD7 /* UIColor.swift in Sources */,
