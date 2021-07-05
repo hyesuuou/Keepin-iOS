@@ -17,6 +17,10 @@
 		15C12229268ED4D900838E55 /* HomeEventTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C12227268ED4D900838E55 /* HomeEventTVC.xib */; };
 		15C1222C268F063C00838E55 /* HomeTopTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C1222A268F063C00838E55 /* HomeTopTVC.swift */; };
 		15C1222D268F063C00838E55 /* HomeTopTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C1222B268F063C00838E55 /* HomeTopTVC.xib */; };
+		15C122352692DA7300838E55 /* LoginFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C122332692DA7300838E55 /* LoginFirstVC.swift */; };
+		15C122362692DA7300838E55 /* LoginFirstVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C122342692DA7300838E55 /* LoginFirstVC.xib */; };
+		15C1223A2693077E00838E55 /* EmailLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C122382693077E00838E55 /* EmailLoginVC.swift */; };
+		15C1223B2693077E00838E55 /* EmailLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C122392693077E00838E55 /* EmailLoginVC.xib */; };
 		71AC81872692D77B00758994 /* MyPageDetailTopCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC81852692D77B00758994 /* MyPageDetailTopCVC.swift */; };
 		71AC81882692D77B00758994 /* MyPageDetailTopCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71AC81862692D77B00758994 /* MyPageDetailTopCVC.xib */; };
 		71AC818F2692F00D00758994 /* MyPageDetailPresentCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC818D2692F00D00758994 /* MyPageDetailPresentCVC.swift */; };
@@ -72,6 +76,10 @@
 		15C12227268ED4D900838E55 /* HomeEventTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeEventTVC.xib; sourceTree = "<group>"; };
 		15C1222A268F063C00838E55 /* HomeTopTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopTVC.swift; sourceTree = "<group>"; };
 		15C1222B268F063C00838E55 /* HomeTopTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTopTVC.xib; sourceTree = "<group>"; };
+		15C122332692DA7300838E55 /* LoginFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFirstVC.swift; sourceTree = "<group>"; };
+		15C122342692DA7300838E55 /* LoginFirstVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginFirstVC.xib; sourceTree = "<group>"; };
+		15C122382693077E00838E55 /* EmailLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginVC.swift; sourceTree = "<group>"; };
+		15C122392693077E00838E55 /* EmailLoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailLoginVC.xib; sourceTree = "<group>"; };
 		274CF503951F717D4B7E43DE /* Pods_Keepin_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Keepin_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71AC81852692D77B00758994 /* MyPageDetailTopCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailTopCVC.swift; sourceTree = "<group>"; };
 		71AC81862692D77B00758994 /* MyPageDetailTopCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageDetailTopCVC.xib; sourceTree = "<group>"; };
@@ -154,6 +162,24 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		15C122322692DA2D00838E55 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				15C122332692DA7300838E55 /* LoginFirstVC.swift */,
+				15C122342692DA7300838E55 /* LoginFirstVC.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		15C122372693075400838E55 /* EmailLogin */ = {
+			isa = PBXGroup;
+			children = (
+				15C122382693077E00838E55 /* EmailLoginVC.swift */,
+				15C122392693077E00838E55 /* EmailLoginVC.xib */,
+			);
+			path = EmailLogin;
+			sourceTree = "<group>";
+		};
 		71AC81832692CF5C00758994 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +237,8 @@
 		77F047FF268B0BCB00FBFDD7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				15C122322692DA2D00838E55 /* Login */,
+				15C122372693075400838E55 /* EmailLogin */,
 				77F0480A268C441E00FBFDD7 /* Splash */,
 				77F04819268C483C00FBFDD7 /* Home */,
 				77F0481B268C490000FBFDD7 /* PresentMoa */,
@@ -494,6 +522,7 @@
 				77F047EF268AF99900FBFDD7 /* LaunchScreen.storyboard in Resources */,
 				77F549DF268EE92C0013A76C /* SearchVC.xib in Resources */,
 				77F549ED268F58970013A76C /* PresentMoaCVC.xib in Resources */,
+				15C1223B2693077E00838E55 /* EmailLoginVC.xib in Resources */,
 				71AC81882692D77B00758994 /* MyPageDetailTopCVC.xib in Resources */,
 				15C1221F268E2FBF00838E55 /* NotoSansCJKkr-Bold.otf in Resources */,
 				77F04820268C49AE00FBFDD7 /* SplashVC.xib in Resources */,
@@ -502,6 +531,7 @@
 				71AC81942692F1A700758994 /* MyPageDetailMemoCVC.xib in Resources */,
 				77F04826268C49BF00FBFDD7 /* HomeVC.xib in Resources */,
 				77F0484D268C4DB400FBFDD7 /* SelectFriendVC.xib in Resources */,
+				15C122362692DA7300838E55 /* LoginFirstVC.xib in Resources */,
 				15C12220268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf in Resources */,
 				71D7B66426903D6F0002C046 /* MyPageTVC.xib in Resources */,
 				77F047EC268AF99900FBFDD7 /* Assets.xcassets in Resources */,
@@ -577,7 +607,9 @@
 				77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */,
 				71AC818F2692F00D00758994 /* MyPageDetailPresentCVC.swift in Sources */,
 				77F04806268B0CB000FBFDD7 /* Constants.swift in Sources */,
+				15C1223A2693077E00838E55 /* EmailLoginVC.swift in Sources */,
 				77F549DE268EE92C0013A76C /* SearchVC.swift in Sources */,
+				15C122352692DA7300838E55 /* LoginFirstVC.swift in Sources */,
 				77F0483F268C4D2400FBFDD7 /* MyPageDetailVC.swift in Sources */,
 				77F0481F268C49AE00FBFDD7 /* SplashVC.swift in Sources */,
 				77F04811268C44BA00FBFDD7 /* UIColor.swift in Sources */,
