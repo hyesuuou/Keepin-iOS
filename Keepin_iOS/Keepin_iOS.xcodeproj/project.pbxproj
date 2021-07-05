@@ -19,6 +19,8 @@
 		15C1222D268F063C00838E55 /* HomeTopTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C1222B268F063C00838E55 /* HomeTopTVC.xib */; };
 		15C122352692DA7300838E55 /* LoginFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C122332692DA7300838E55 /* LoginFirstVC.swift */; };
 		15C122362692DA7300838E55 /* LoginFirstVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C122342692DA7300838E55 /* LoginFirstVC.xib */; };
+		15C1223A2693077E00838E55 /* EmailLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C122382693077E00838E55 /* EmailLoginVC.swift */; };
+		15C1223B2693077E00838E55 /* EmailLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C122392693077E00838E55 /* EmailLoginVC.xib */; };
 		71D7B66326903D6F0002C046 /* MyPageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7B66126903D6F0002C046 /* MyPageTVC.swift */; };
 		71D7B66426903D6F0002C046 /* MyPageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D7B66226903D6F0002C046 /* MyPageTVC.xib */; };
 		71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F8BF268DFDE30031BC50 /* UIFont.swift */; };
@@ -70,6 +72,8 @@
 		15C1222B268F063C00838E55 /* HomeTopTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTopTVC.xib; sourceTree = "<group>"; };
 		15C122332692DA7300838E55 /* LoginFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFirstVC.swift; sourceTree = "<group>"; };
 		15C122342692DA7300838E55 /* LoginFirstVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginFirstVC.xib; sourceTree = "<group>"; };
+		15C122382693077E00838E55 /* EmailLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginVC.swift; sourceTree = "<group>"; };
+		15C122392693077E00838E55 /* EmailLoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailLoginVC.xib; sourceTree = "<group>"; };
 		274CF503951F717D4B7E43DE /* Pods_Keepin_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Keepin_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D7B66126903D6F0002C046 /* MyPageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTVC.swift; sourceTree = "<group>"; };
 		71D7B66226903D6F0002C046 /* MyPageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageTVC.xib; sourceTree = "<group>"; };
@@ -155,6 +159,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		15C122372693075400838E55 /* EmailLogin */ = {
+			isa = PBXGroup;
+			children = (
+				15C122382693077E00838E55 /* EmailLoginVC.swift */,
+				15C122392693077E00838E55 /* EmailLoginVC.xib */,
+			);
+			path = EmailLogin;
+			sourceTree = "<group>";
+		};
 		77F047D6268AF98F00FBFDD7 = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				15C122322692DA2D00838E55 /* Login */,
+				15C122372693075400838E55 /* EmailLogin */,
 				77F0480A268C441E00FBFDD7 /* Splash */,
 				77F04819268C483C00FBFDD7 /* Home */,
 				77F0481B268C490000FBFDD7 /* PresentMoa */,
@@ -473,6 +487,7 @@
 				77F047EF268AF99900FBFDD7 /* LaunchScreen.storyboard in Resources */,
 				77F549DF268EE92C0013A76C /* SearchVC.xib in Resources */,
 				77F549ED268F58970013A76C /* PresentMoaCVC.xib in Resources */,
+				15C1223B2693077E00838E55 /* EmailLoginVC.xib in Resources */,
 				15C1221F268E2FBF00838E55 /* NotoSansCJKkr-Bold.otf in Resources */,
 				77F04820268C49AE00FBFDD7 /* SplashVC.xib in Resources */,
 				15C12224268E2FBF00838E55 /* GmarketSansTTFLight.ttf in Resources */,
@@ -552,6 +567,7 @@
 				77F04846268C4DA000FBFDD7 /* KeepinPlusVC.swift in Sources */,
 				77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */,
 				77F04806268B0CB000FBFDD7 /* Constants.swift in Sources */,
+				15C1223A2693077E00838E55 /* EmailLoginVC.swift in Sources */,
 				77F549DE268EE92C0013A76C /* SearchVC.swift in Sources */,
 				15C122352692DA7300838E55 /* LoginFirstVC.swift in Sources */,
 				77F0483F268C4D2400FBFDD7 /* MyPageDetailVC.swift in Sources */,
