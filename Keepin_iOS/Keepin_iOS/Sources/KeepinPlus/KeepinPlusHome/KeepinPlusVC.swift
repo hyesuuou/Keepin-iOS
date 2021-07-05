@@ -12,18 +12,26 @@ class KeepinPlusVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setNavigationBar()
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setNavigationBar(){
+        let dismissButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
+        dismissButton.setImage(UIImage(named: "icX"), for: UIControl.State.normal)
+        dismissButton.addTarget(self, action: #selector(toDismiss), for: UIControl.Event.touchUpInside)
+        dismissButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        
+        let dismissbarButton = UIBarButtonItem(customView: dismissButton)
+        self.navigationItem.leftBarButtonItem = dismissbarButton
+        
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
     }
-    */
+    
+    @objc func toDismiss(){
+        self.dismiss(animated: true, completion: nil)
+        print("dismiss")
+    }
 
 }
