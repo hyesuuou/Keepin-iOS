@@ -16,6 +16,7 @@ class EmailLoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loginButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 14)
         loginButton.backgroundColor = .keepinGray1
         loginButton.tintColor = .keepinGray3
         loginButton.layer.cornerRadius = 26
@@ -23,7 +24,8 @@ class EmailLoginVC: UIViewController {
         setTextFieldUI(tf: idTextField)
         setTextFieldUI(tf: pwTextField)
         
-        
+        idTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        pwTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
 
     func setTextFieldUI(tf : UITextField){
@@ -31,6 +33,19 @@ class EmailLoginVC: UIViewController {
         tf.layer.borderColor = UIColor.keepinGray3.cgColor
         tf.layer.cornerRadius = 12
         tf.addLeftPadding()
+    }
+    
+    @objc func textFieldDidChange(_ sender: Any?) {
+        // TextField 값 변경 감지
+        if idTextField.text != "" && pwTextField.text != "" {
+            loginButton.backgroundColor = .keepinGreen
+            loginButton.tintColor = .white
+        }
+        else {
+            loginButton.backgroundColor = .keepinGray1
+            loginButton.tintColor = .keepinGray3
+        }
+        
     }
 
     
