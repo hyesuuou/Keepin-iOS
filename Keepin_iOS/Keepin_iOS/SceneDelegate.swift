@@ -19,13 +19,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         self.window = UIWindow(windowScene: scene as! UIWindowScene)
-        window?.rootViewController = MyPageDetailVC()
+        window?.rootViewController = SplashVC()
         window?.makeKeyAndVisible()
-        /*
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
             self.window?.rootViewController = BaseTBC() 
             self.window?.makeKeyAndVisible()
-        }*/
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
