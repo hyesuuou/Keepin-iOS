@@ -7,6 +7,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GmarketSansTTFMedium.ttf">
+            <string>GmarketSansTTFMedium</string>
+        </array>
+        <array key="NotoSansCJKkr-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PresentDetailVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
@@ -17,16 +25,115 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1q-Yh-MPi">
+                    <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uda-FF-bp4">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <subviews>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8bT-fG-QyO">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="375"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="375" id="tbK-FL-mFG"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a0u-7D-iqm">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PM이 탕수육 사조따~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLZ-WW-QeF">
+                                    <rect key="frame" x="24" y="407" width="172.5" height="18"/>
+                                    <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="박윤정님 외 3명에게 받은선물" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sN0-EY-G4k">
+                                    <rect key="frame" x="24" y="435" width="149" height="18"/>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I0r-af-hXs">
+                                    <rect key="frame" x="15" y="476" width="384" height="1"/>
+                                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="Yez-82-5hv"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="느낌/마음 기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ie4-74-wXj">
+                                    <rect key="frame" x="24" y="505" width="105.5" height="16"/>
+                                    <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAH-sd-2QP">
+                                    <rect key="frame" x="16" y="539" width="382" height="293"/>
+                                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021.06.21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jt-dd-z9s">
+                                    <rect key="frame" x="330" y="853" width="60" height="18"/>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="4Jt-dd-z9s" firstAttribute="top" secondItem="mAH-sd-2QP" secondAttribute="bottom" constant="21" id="1bq-YV-xEb"/>
+                                <constraint firstItem="I0r-af-hXs" firstAttribute="top" secondItem="sN0-EY-G4k" secondAttribute="bottom" constant="23" id="2XE-ZJ-G1O"/>
+                                <constraint firstItem="wLZ-WW-QeF" firstAttribute="leading" secondItem="uda-FF-bp4" secondAttribute="leading" constant="24" id="Gks-ur-8R7"/>
+                                <constraint firstItem="mAH-sd-2QP" firstAttribute="centerX" secondItem="uda-FF-bp4" secondAttribute="centerX" id="H7G-A1-N2B"/>
+                                <constraint firstItem="ie4-74-wXj" firstAttribute="leading" secondItem="uda-FF-bp4" secondAttribute="leading" constant="24" id="LAk-QG-esF"/>
+                                <constraint firstItem="mAH-sd-2QP" firstAttribute="leading" secondItem="uda-FF-bp4" secondAttribute="leading" constant="16" id="TWI-dX-TrE"/>
+                                <constraint firstItem="I0r-af-hXs" firstAttribute="leading" secondItem="uda-FF-bp4" secondAttribute="leading" constant="15" id="U93-Tv-VhI"/>
+                                <constraint firstItem="8bT-fG-QyO" firstAttribute="top" secondItem="uda-FF-bp4" secondAttribute="top" id="Vt3-fG-QTq"/>
+                                <constraint firstItem="mAH-sd-2QP" firstAttribute="top" secondItem="ie4-74-wXj" secondAttribute="bottom" constant="18" id="XBf-Tx-vxc"/>
+                                <constraint firstItem="wLZ-WW-QeF" firstAttribute="top" secondItem="8bT-fG-QyO" secondAttribute="bottom" constant="32" id="cQW-cp-VCm"/>
+                                <constraint firstAttribute="trailing" secondItem="4Jt-dd-z9s" secondAttribute="trailing" constant="24" id="cnb-vy-U5v"/>
+                                <constraint firstItem="sN0-EY-G4k" firstAttribute="leading" secondItem="uda-FF-bp4" secondAttribute="leading" constant="24" id="gI2-aY-nXz"/>
+                                <constraint firstAttribute="bottom" secondItem="4Jt-dd-z9s" secondAttribute="bottom" constant="25" id="mjI-9W-aAk"/>
+                                <constraint firstItem="8bT-fG-QyO" firstAttribute="leading" secondItem="uda-FF-bp4" secondAttribute="leading" id="pH5-y7-uXk"/>
+                                <constraint firstItem="I0r-af-hXs" firstAttribute="centerX" secondItem="uda-FF-bp4" secondAttribute="centerX" id="q1Z-mv-Els"/>
+                                <constraint firstItem="ie4-74-wXj" firstAttribute="top" secondItem="I0r-af-hXs" secondAttribute="bottom" constant="28" id="t2I-8V-gIx"/>
+                                <constraint firstAttribute="trailing" secondItem="8bT-fG-QyO" secondAttribute="trailing" id="uL8-EJ-x10"/>
+                                <constraint firstItem="sN0-EY-G4k" firstAttribute="top" secondItem="wLZ-WW-QeF" secondAttribute="bottom" constant="10" id="wPX-qG-cFp"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="uda-FF-bp4" secondAttribute="trailing" id="WeU-lc-THE"/>
+                        <constraint firstItem="uda-FF-bp4" firstAttribute="leading" secondItem="p1q-Yh-MPi" secondAttribute="leading" id="qJg-fW-EVr"/>
+                        <constraint firstItem="uda-FF-bp4" firstAttribute="top" secondItem="p1q-Yh-MPi" secondAttribute="top" id="tIE-ax-Qd8"/>
+                        <constraint firstAttribute="bottom" secondItem="uda-FF-bp4" secondAttribute="bottom" id="y9X-Vi-29N"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="p1q-Yh-MPi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0vR-bS-WtT"/>
+                <constraint firstItem="p1q-Yh-MPi" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="NPT-f6-Lwb"/>
+                <constraint firstItem="uda-FF-bp4" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="cZl-WD-uQo"/>
+                <constraint firstItem="p1q-Yh-MPi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gkO-wl-Ldy"/>
+                <constraint firstItem="p1q-Yh-MPi" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ilY-b2-2xZ"/>
+                <constraint firstItem="uda-FF-bp4" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="v5i-QS-ldQ"/>
+            </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-            <point key="canvasLocation" x="83" y="76"/>
+            <point key="canvasLocation" x="73.913043478260875" y="75.669642857142847"/>
         </view>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -87,7 +87,9 @@ extension PresentMoaVC : UICollectionViewDelegate, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("select!")
+        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(PresentDetailVC(), animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
     
 

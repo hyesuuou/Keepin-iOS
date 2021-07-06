@@ -15,6 +15,8 @@ class PresentDetailVC: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         
         setNavigationBar()
+        
+        
     }
 
 
@@ -52,14 +54,12 @@ class PresentDetailVC: UIViewController {
         let actionEdit = UIAlertAction(title: "수정하기", style: .default) { action in
             self.view.backgroundColor = .green
         }
+        let actionCancel = UIAlertAction(title: "취소", style: .cancel) { action in
+            self.view.backgroundColor = .white
+        }
         self.presentAlert(
             preferredStyle: .actionSheet,
-            with: actionDelete, actionEdit
+            with: actionDelete, actionEdit, actionCancel
         )
-//        let nextVC = SearchVC()
-//        let navBarOnModal: UINavigationController = UINavigationController(rootViewController: nextVC)
-//        navBarOnModal.modalPresentationStyle = .overFullScreen
-//        self.present(navBarOnModal, animated: true, completion: nil)
-        
     }
 }
