@@ -46,26 +46,95 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="keepin@keepin.co.kr" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VTo-QA-2yO">
+                    <rect key="frame" x="26" y="186" width="362" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="SYJ-bc-7pC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 (영문+숫자 8자 이상)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6cv-rZ-Pbw">
+                    <rect key="frame" x="26" y="303" width="362" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="gFY-xr-I4R"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tai-7T-rmh">
+                    <rect key="frame" x="16" y="449" width="382" height="1"/>
+                    <color key="backgroundColor" systemColor="systemGray3Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="La9-5F-VPc"/>
+                        <constraint firstAttribute="height" constant="1" id="dtX-ml-m4Q"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idI-QR-u6h">
+                    <rect key="frame" x="16" y="215" width="382" height="1"/>
+                    <color key="backgroundColor" systemColor="systemGray3Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="XhY-fv-2hf"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호를 다시 한 번 입력해주세요" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OFk-og-xJh">
+                    <rect key="frame" x="26" y="420" width="362" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="GVd-KN-xWc"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="kMv-ML-xPj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDN-y8-D6g">
+                    <rect key="frame" x="16" y="332" width="382" height="1"/>
+                    <color key="backgroundColor" systemColor="systemGray3Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="Cup-P4-8F1"/>
+                        <constraint firstAttribute="height" constant="1" id="Xir-fg-0fS"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="Tai-7T-rmh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="0FG-Tg-X4l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OFk-og-xJh" secondAttribute="trailing" constant="26" id="1yv-RJ-pVw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6cv-rZ-Pbw" secondAttribute="trailing" constant="26" id="83U-mz-MTJ"/>
+                <constraint firstItem="Tai-7T-rmh" firstAttribute="top" secondItem="OFk-og-xJh" secondAttribute="bottom" constant="5" id="CDF-E0-kec"/>
+                <constraint firstItem="idI-QR-u6h" firstAttribute="top" secondItem="VTo-QA-2yO" secondAttribute="bottom" constant="5" id="FXc-Jd-iXJ"/>
+                <constraint firstItem="dDN-y8-D6g" firstAttribute="top" secondItem="6cv-rZ-Pbw" secondAttribute="bottom" constant="5" id="Fyv-gR-QSj"/>
                 <constraint firstItem="a4K-gu-9iO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="M1e-YF-IlJ"/>
+                <constraint firstItem="6cv-rZ-Pbw" firstAttribute="top" secondItem="1er-g4-upa" secondAttribute="bottom" constant="24" id="NY4-Qz-EL6"/>
                 <constraint firstItem="a4K-gu-9iO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="PAJ-R1-xqC"/>
                 <constraint firstItem="g8v-fc-jhx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Py1-py-SEK"/>
                 <constraint firstItem="1er-g4-upa" firstAttribute="top" secondItem="g8v-fc-jhx" secondAttribute="bottom" constant="96" id="RIV-Qm-ciO"/>
+                <constraint firstItem="dDN-y8-D6g" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="amd-tW-XlS"/>
+                <constraint firstAttribute="trailing" secondItem="dDN-y8-D6g" secondAttribute="trailing" constant="16" id="anY-A4-FS3"/>
+                <constraint firstItem="idI-QR-u6h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="cmi-mg-gsY"/>
                 <constraint firstItem="F27-yZ-k6x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="d3Y-Z5-sfR"/>
                 <constraint firstItem="F27-yZ-k6x" firstAttribute="top" secondItem="1er-g4-upa" secondAttribute="bottom" constant="96" id="fOb-G6-xDe"/>
                 <constraint firstItem="g8v-fc-jhx" firstAttribute="top" secondItem="a4K-gu-9iO" secondAttribute="bottom" constant="32" id="h8z-x1-rqW"/>
+                <constraint firstAttribute="trailing" secondItem="Tai-7T-rmh" secondAttribute="trailing" constant="16" id="hfq-LZ-heG"/>
                 <constraint firstItem="1er-g4-upa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="iLo-oo-7kC"/>
+                <constraint firstItem="OFk-og-xJh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="jvX-Rx-1V7"/>
+                <constraint firstItem="6cv-rZ-Pbw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="mok-tJ-phC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="idI-QR-u6h" secondAttribute="trailing" constant="16" id="n1Y-OD-ACt"/>
+                <constraint firstItem="VTo-QA-2yO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="oBe-jD-b3c"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VTo-QA-2yO" secondAttribute="trailing" constant="26" id="raK-6L-QKq"/>
+                <constraint firstItem="VTo-QA-2yO" firstAttribute="top" secondItem="g8v-fc-jhx" secondAttribute="bottom" constant="24" id="xXJ-ma-mtR"/>
+                <constraint firstItem="OFk-og-xJh" firstAttribute="top" secondItem="F27-yZ-k6x" secondAttribute="bottom" constant="24" id="y1f-pN-aRC"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <point key="canvasLocation" x="-13" y="117"/>
+            <point key="canvasLocation" x="-13.043478260869566" y="116.51785714285714"/>
         </view>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
