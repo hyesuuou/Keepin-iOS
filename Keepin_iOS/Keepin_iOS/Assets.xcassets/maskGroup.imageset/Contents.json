@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "icX.png"
-    },
-    {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "icX@2x.png"
+      "filename" : "maskGroup.png"
     },
     {
+      "filename" : "maskGroup@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "maskGroup@3x.png",
       "scale" : "3x",
-      "idiom" : "universal",
-      "filename" : "icX@3x.png"
+      "idiom" : "universal"
     }
   ],
   "info" : {

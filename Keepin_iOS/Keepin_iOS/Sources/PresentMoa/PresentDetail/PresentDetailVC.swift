@@ -9,12 +9,31 @@ import UIKit
 
 class PresentDetailVC: UIViewController {
 
+    @IBOutlet weak var presentTitle: UILabel!
+    
+    @IBOutlet weak var divider: UIView!
+    @IBOutlet weak var memoView: UIView!
+    @IBOutlet weak var presentFrom: UILabel!
+    
+    @IBOutlet weak var thoughts: UITextView!
+    
+    let fromWho : String = "박윤정님 외 3명"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = false
         
         setNavigationBar()
+        presentFrom.text = "\(fromWho)에게 받은 선물"
+        divider.backgroundColor = .keepinGray2
+        memoView.backgroundColor = .keepinGray2
+        presentFrom.textColor = .keepinGray4
+        
+        let attributedString = NSMutableAttributedString(string: presentFrom.text!)
+        attributedString.addAttribute(.foregroundColor, value: UIColor.keepinGreen, range: (presentFrom.text! as NSString).range(of:"받은 선물"))
+        
+        presentFrom.attributedText = attributedString
+        
+        //thoughts.isScrollEnabled = false
     }
 
 
@@ -52,14 +71,12 @@ class PresentDetailVC: UIViewController {
         let actionEdit = UIAlertAction(title: "수정하기", style: .default) { action in
             self.view.backgroundColor = .green
         }
+        let actionCancel = UIAlertAction(title: "취소", style: .cancel) { action in
+            self.view.backgroundColor = .white
+        }
         self.presentAlert(
             preferredStyle: .actionSheet,
-            with: actionDelete, actionEdit
+            with: actionDelete, actionEdit, actionCancel
         )
-//        let nextVC = SearchVC()
-//        let navBarOnModal: UINavigationController = UINavigationController(rootViewController: nextVC)
-//        navBarOnModal.modalPresentationStyle = .overFullScreen
-//        self.present(navBarOnModal, animated: true, completion: nil)
-        
     }
 }
