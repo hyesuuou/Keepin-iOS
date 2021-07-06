@@ -11,7 +11,6 @@ class HomeVC: UIViewController {
     
     let refreshControl = UIRefreshControl()
     
-
     @IBOutlet weak var homeTableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()

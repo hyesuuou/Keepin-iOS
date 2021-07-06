@@ -9,11 +9,19 @@ import UIKit
 
 class MyPageDetailMemoCVC: UICollectionViewCell {
     
-    private static let identifier = "MyPageDetailMemoCVC"
+    @IBOutlet weak var presentMoaCV: UICollectionView!
+    
+    
+    @IBOutlet weak var got: UIButton!
+    @IBOutlet weak var gave: UIButton!
+    
+    
+    public static let identifier = "MyPageDetailMemoCVC"
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        presentMoaCV.backgroundColor = .keepinGray
     }
 
 }

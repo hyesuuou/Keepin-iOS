@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPageDetailVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="myPageDetailCV" destination="wTN-VS-A9V" id="UQn-vg-8qT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

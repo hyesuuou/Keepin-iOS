@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MyPageDetailTopCVC" customModule="Keepin_iOS" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyPageDetailTopCVC" id="gTV-IL-0wX" customClass="MyPageDetailTopCVC" customModule="Keepin_iOS" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="350" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -181,11 +181,17 @@
             <connections>
                 <outlet property="allPresent" destination="KAG-s9-ViX" id="e5y-PQ-7TX"/>
                 <outlet property="givePresent" destination="u0y-LL-k2f" id="gKC-HX-YsI"/>
+                <outlet property="mainView" destination="C25-ZF-TKO" id="tE0-8t-rdY"/>
                 <outlet property="number1" destination="2Ma-Om-J6k" id="lSI-Q9-862"/>
                 <outlet property="number2" destination="AdC-2V-9Qe" id="kkx-QE-0Be"/>
                 <outlet property="number3" destination="Wqp-q6-Xkk" id="Hbm-VW-2ag"/>
                 <outlet property="receivePresent" destination="4Y2-D4-vnG" id="hsp-3h-QxE"/>
                 <outlet property="userLabel" destination="nuZ-LD-1LD" id="fDx-e9-gj2"/>
+                <outlet property="view1" destination="vG0-RQ-PaX" id="pLM-i7-c2m"/>
+                <outlet property="view2" destination="LnW-Hp-WOI" id="ozK-oj-Nad"/>
+                <outlet property="view3" destination="FLx-QI-6LM" id="MIo-1U-5Id"/>
+                <outlet property="view4" destination="DwP-vI-kaj" id="w7g-dD-b7H"/>
+                <outlet property="view5" destination="8BE-lm-F8s" id="Ci0-Jf-CB6"/>
             </connections>
             <point key="canvasLocation" x="95.652173913043484" y="84.375"/>
         </collectionViewCell>
