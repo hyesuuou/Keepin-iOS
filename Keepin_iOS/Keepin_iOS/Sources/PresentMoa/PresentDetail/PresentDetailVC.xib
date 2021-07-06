@@ -18,6 +18,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PresentDetailVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="divider" destination="I0r-af-hXs" id="huc-Rx-qor"/>
+                <outlet property="memoView" destination="mAH-sd-2QP" id="Qvp-64-G3z"/>
+                <outlet property="presentFrom" destination="sN0-EY-G4k" id="bt9-6h-XvD"/>
+                <outlet property="presentTitle" destination="wLZ-WW-QeF" id="VVX-Z8-Fik"/>
+                <outlet property="thoughts" destination="aqw-Ss-vn8" id="eNt-zQ-7p2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,7 +35,7 @@
                     <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uda-FF-bp4">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="999"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8bT-fG-QyO">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="375"/>
@@ -71,11 +76,27 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAH-sd-2QP">
-                                    <rect key="frame" x="16" y="539" width="382" height="293"/>
+                                    <rect key="frame" x="16" y="539" width="382" height="396"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aqw-Ss-vn8">
+                                            <rect key="frame" x="16" y="12" width="350" height="367"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                            <color key="textColor" systemColor="labelColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
                                     <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                    <constraints>
+                                        <constraint firstItem="aqw-Ss-vn8" firstAttribute="leading" secondItem="mAH-sd-2QP" secondAttribute="leading" constant="16" id="SUU-3d-sse"/>
+                                        <constraint firstAttribute="bottom" secondItem="aqw-Ss-vn8" secondAttribute="bottom" constant="17" id="bQp-De-vwN"/>
+                                        <constraint firstItem="aqw-Ss-vn8" firstAttribute="top" secondItem="mAH-sd-2QP" secondAttribute="top" constant="12" id="vkk-47-KFq"/>
+                                        <constraint firstAttribute="trailing" secondItem="aqw-Ss-vn8" secondAttribute="trailing" constant="16" id="wEN-B4-0eM"/>
+                                    </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021.06.21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jt-dd-z9s">
-                                    <rect key="frame" x="330" y="853" width="60" height="18"/>
+                                    <rect key="frame" x="330" y="956" width="60" height="18"/>
                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -104,7 +125,6 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="uda-FF-bp4" secondAttribute="trailing" id="WeU-lc-THE"/>
                         <constraint firstItem="uda-FF-bp4" firstAttribute="leading" secondItem="p1q-Yh-MPi" secondAttribute="leading" id="qJg-fW-EVr"/>
@@ -118,7 +138,6 @@
             <constraints>
                 <constraint firstItem="p1q-Yh-MPi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0vR-bS-WtT"/>
                 <constraint firstItem="p1q-Yh-MPi" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="NPT-f6-Lwb"/>
-                <constraint firstItem="uda-FF-bp4" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="cZl-WD-uQo"/>
                 <constraint firstItem="p1q-Yh-MPi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gkO-wl-Ldy"/>
                 <constraint firstItem="p1q-Yh-MPi" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ilY-b2-2xZ"/>
                 <constraint firstItem="uda-FF-bp4" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="v5i-QS-ldQ"/>
@@ -129,6 +148,9 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
