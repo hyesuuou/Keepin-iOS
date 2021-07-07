@@ -11,6 +11,7 @@ class JoinFirstVC: UIViewController {
 
     
     @IBOutlet var titleLabel: [UILabel]!
+    @IBOutlet var warnLabel: [UILabel]!
     
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
@@ -24,7 +25,6 @@ class JoinFirstVC: UIViewController {
         super.viewDidLoad()
         setUI()
         setNavigationBar()
-        
         
         idTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         pwTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
@@ -47,6 +47,17 @@ class JoinFirstVC: UIViewController {
         
         nextButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
         nextButton.tintColor = .keepinGray3
+        
+        warnLabelUI(label: warnLabel[0])
+        warnLabelUI(label: warnLabel[1])
+        warnLabelUI(label: warnLabel[2])
+        
+    }
+    
+    func warnLabelUI(label : UILabel){
+        label.isHidden = true
+        label.font = UIFont.NotoSans(.regular, size: 14)
+        label.textColor = UIColor.salmon
     }
     
     func setNavigationBar(){
@@ -80,11 +91,60 @@ class JoinFirstVC: UIViewController {
         
         if idTextField.text != "" && pwTextField.text != "" && pwOKTextField.text != "" {
             nextButton.tintColor = .keepinGreen
+            
         }
+        
+        
+        if idTextField.text!.contains("@") && idTextField.text!.contains(".") {
+            warnLabel[0].isHidden = true
+        }
+        else if idTextField.text == "" {
+            warnLabel[0].isHidden = true
+        }
+        else {
+            warnLabel[0].isHidden = false
+        }
+        
+        if pwTextField.text!.validatePassword() == true || pwTextField.text == "" {
+            warnLabel[1].isHidden = true
+        }
+        else {
+            warnLabel[1].isHidden = false
+        }
+        
+        
+        if (pwTextField.text != "" && pwOKTextField.text != "") {
+            if pwTextField.text != pwOKTextField.text {
+                warnLabel[2].isHidden = false
+            }
+            else {
+                warnLabel[2].isHidden = true
+            }
+        
+        }
+        
     }
     
     
     @IBAction func nextButtonClicked(_ sender: Any) {
         // 다음 버튼 눌렀을 때
     }
+}
+
+extension String {
+    // E-mail address validation
+        public func validateEmail() -> Bool {
+            let emailRegEx = "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$"
+            
+            let predicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+            return predicate.evaluate(with: self)
+        }
+        
+        // Password validation
+        public func validatePassword() -> Bool {
+            let passwordRegEx = "^(?=.*[0-9])(?=.*[a-z]).{8,16}$"
+            
+            let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
+            return predicate.evaluate(with: self)
+        }
 }
