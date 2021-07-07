@@ -10,6 +10,8 @@ import UIKit
 class PresentMoaVC: UIViewController {
 
     @IBOutlet weak var presentCV: UICollectionView!
+    @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var presentCVHeight: NSLayoutConstraint!
     @IBOutlet weak var gave: UIButton!
     @IBOutlet weak var got: UIButton!
     @IBOutlet weak var indicatorBar: UIView!
@@ -18,7 +20,6 @@ class PresentMoaVC: UIViewController {
     @IBAction func newButtonDidTap(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
     }
-    
 
     @IBAction func btnClicked(sender:UIButton){
         if sender == gave
@@ -27,7 +28,6 @@ class PresentMoaVC: UIViewController {
             got.isSelected = false
             UIView.animate(withDuration: 0.2){
                 self.indicatorBar.frame.origin.x = self.buttonStack.frame.width - 12
-                print(self.indicatorBar.frame.origin.x)
             }
         }
         else if sender == got{
@@ -35,31 +35,34 @@ class PresentMoaVC: UIViewController {
             got.isSelected = true
             UIView.animate(withDuration: 0.2){
                 self.indicatorBar.frame.origin.x = self.buttonStack.frame.width / 2 - 13
-                print(self.indicatorBar.frame.origin.x)
             }
         }
     }
+    
+    var itemNum : Int = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setNavigationBar()
+        setUI()
         
-//        let layout = UICollectionViewFlowLayout()
-//        layout.itemSize = CGSize(width: 168, height: 228)
-//        presentCV.collectionViewLayout = layout
+        presentCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
+        presentCV.delegate = self
+        presentCV.dataSource = self
+        
+    }
+    
+    func setUI(){
         gave.presentButton()
         got.presentButton()
         
         got.isSelected = true
         gave.isSelected = false
         
-        presentCV.frame.size.height = presentCV.contentSize.height
-        
-        presentCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
-        presentCV.delegate = self
-        presentCV.dataSource = self
-        
+        //scrollView dynamic Height
+        presentCVHeight.constant = CGFloat(240 * itemNum / 2)
+        contentViewHeight.constant = presentCVHeight.constant + 100
     }
     
     @objc func toSearch(){
@@ -94,7 +97,7 @@ extension PresentMoaVC : UICollectionViewDelegate, UICollectionViewDataSource, U
     
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return itemNum
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
