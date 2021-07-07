@@ -55,7 +55,6 @@
                             <constraint firstItem="k4Q-Fm-4KP" firstAttribute="top" secondItem="Wyv-Hf-8Gb" secondAttribute="top" id="cig-Ab-udT"/>
                             <constraint firstItem="Pr9-1H-flU" firstAttribute="leading" secondItem="Wyv-Hf-8Gb" secondAttribute="leading" id="dh2-ww-RPh"/>
                             <constraint firstItem="k4Q-Fm-4KP" firstAttribute="leading" secondItem="Wyv-Hf-8Gb" secondAttribute="leading" id="lag-bk-GSV"/>
-                            <constraint firstAttribute="width" constant="168" id="r5F-Jm-QRc"/>
                             <constraint firstAttribute="trailing" secondItem="k4Q-Fm-4KP" secondAttribute="trailing" id="xhi-Pu-hhg"/>
                         </constraints>
                     </view>
