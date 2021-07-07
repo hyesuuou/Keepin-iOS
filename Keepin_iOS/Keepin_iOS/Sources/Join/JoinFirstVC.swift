@@ -9,21 +9,142 @@ import UIKit
 
 class JoinFirstVC: UIViewController {
 
+    
+    @IBOutlet var titleLabel: [UILabel]!
+    @IBOutlet var warnLabel: [UILabel]!
+    
+    @IBOutlet weak var idTextField: UITextField!
+    @IBOutlet weak var pwTextField: UITextField!
+    @IBOutlet weak var pwOKTextField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
+    
+    @IBOutlet var underlineView: [UIView]!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUI()
+        setNavigationBar()
+        
+        idTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        pwTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        pwOKTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func setUI(){
+        titleLabel[0].font = UIFont.GmarketSansTTF(.medium, size: 20)
+        titleLabel[1].font = UIFont.GmarketSansTTF(.medium, size: 16)
+        titleLabel[2].font = UIFont.GmarketSansTTF(.medium, size: 16)
+        titleLabel[3].font = UIFont.GmarketSansTTF(.medium, size: 16)
+        
+        idTextField.font = UIFont.NotoSans(.regular, size: 16)
+        pwTextField.font = UIFont.NotoSans(.regular, size: 16)
+        pwOKTextField.font = UIFont.NotoSans(.regular, size: 16)
+        
+        underlineView[0].backgroundColor = .keepinGray3
+        underlineView[1].backgroundColor = .keepinGray3
+        underlineView[2].backgroundColor = .keepinGray3
+        
+        nextButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
+        nextButton.tintColor = .keepinGray3
+        
+        warnLabelUI(label: warnLabel[0])
+        warnLabelUI(label: warnLabel[1])
+        warnLabelUI(label: warnLabel[2])
+        
     }
-    */
+    
+    func warnLabelUI(label : UILabel){
+        label.isHidden = true
+        label.font = UIFont.NotoSans(.regular, size: 14)
+        label.textColor = UIColor.salmon
+    }
+    
+    func setNavigationBar(){
+        
+        self.navigationController?.navigationBar.isHidden = true
+        
+    }
+    
+    @objc func textFieldDidChange(_ sender: Any?) {
 
+        if idTextField.text != "" {
+            underlineView[0].backgroundColor = .keepinBlack
+        }
+        else if idTextField.text == "" {
+            underlineView[0].backgroundColor = .keepinGray3
+        }
+        
+        if pwTextField.text != "" {
+            underlineView[1].backgroundColor = .keepinBlack
+        }
+        else if idTextField.text == "" {
+            underlineView[1].backgroundColor = .keepinGray3
+        }
+        
+        if pwOKTextField.text != "" {
+            underlineView[2].backgroundColor = .keepinBlack
+        }
+        else if pwOKTextField.text == "" {
+            underlineView[2].backgroundColor = .keepinGray3
+        }
+        
+        if idTextField.text != "" && pwTextField.text != "" && pwOKTextField.text != "" {
+            nextButton.tintColor = .keepinGreen
+            
+        }
+        
+        
+        if idTextField.text!.contains("@") && idTextField.text!.contains(".") {
+            warnLabel[0].isHidden = true
+        }
+        else if idTextField.text == "" {
+            warnLabel[0].isHidden = true
+        }
+        else {
+            warnLabel[0].isHidden = false
+        }
+        
+        if pwTextField.text!.validatePassword() == true || pwTextField.text == "" {
+            warnLabel[1].isHidden = true
+        }
+        else {
+            warnLabel[1].isHidden = false
+        }
+        
+        
+        if (pwTextField.text != "" && pwOKTextField.text != "") {
+            if pwTextField.text != pwOKTextField.text {
+                warnLabel[2].isHidden = false
+            }
+            else {
+                warnLabel[2].isHidden = true
+            }
+        
+        }
+        
+    }
+    
+    
+    @IBAction func nextButtonClicked(_ sender: Any) {
+        // 다음 버튼 눌렀을 때
+    }
+}
+
+extension String {
+    // E-mail address validation
+        public func validateEmail() -> Bool {
+            let emailRegEx = "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$"
+            
+            let predicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+            return predicate.evaluate(with: self)
+        }
+        
+        // Password validation
+        public func validatePassword() -> Bool {
+            let passwordRegEx = "^(?=.*[0-9])(?=.*[a-z]).{8,16}$"
+            
+            let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
+            return predicate.evaluate(with: self)
+        }
 }
