@@ -15,6 +15,7 @@ class JoinFirstVC: UIViewController {
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var pwOKTextField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
     
     @IBOutlet var underlineView: [UIView]!
     
@@ -22,6 +23,8 @@ class JoinFirstVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        setNavigationBar()
+        
         
         idTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         pwTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
@@ -41,10 +44,18 @@ class JoinFirstVC: UIViewController {
         underlineView[0].backgroundColor = .keepinGray3
         underlineView[1].backgroundColor = .keepinGray3
         underlineView[2].backgroundColor = .keepinGray3
+        
+        nextButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
+        nextButton.tintColor = .keepinGray3
+    }
+    
+    func setNavigationBar(){
+        
+        self.navigationController?.navigationBar.isHidden = true
+        
     }
     
     @objc func textFieldDidChange(_ sender: Any?) {
-        
 
         if idTextField.text != "" {
             underlineView[0].backgroundColor = .keepinBlack
@@ -66,9 +77,14 @@ class JoinFirstVC: UIViewController {
         else if pwOKTextField.text == "" {
             underlineView[2].backgroundColor = .keepinGray3
         }
+        
+        if idTextField.text != "" && pwTextField.text != "" && pwOKTextField.text != "" {
+            nextButton.tintColor = .keepinGreen
+        }
     }
-
-
     
-
+    
+    @IBAction func nextButtonClicked(_ sender: Any) {
+        // 다음 버튼 눌렀을 때
+    }
 }
