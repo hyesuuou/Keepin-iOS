@@ -19,10 +19,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PresentMoaVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
                 <outlet property="buttonStack" destination="ReN-9V-Tpx" id="gYI-RZ-wLX"/>
+                <outlet property="contentViewHeight" destination="xnG-m3-5s9" id="efR-dr-IKn"/>
                 <outlet property="gave" destination="las-3g-Wes" id="H8j-mL-Rda"/>
                 <outlet property="got" destination="3em-jd-cQ0" id="uMf-qO-X5M"/>
                 <outlet property="indicatorBar" destination="dcK-Hy-MDd" id="2qZ-v2-OJx"/>
                 <outlet property="presentCV" destination="8cd-3U-Oaa" id="P3b-Ia-crv"/>
+                <outlet property="presentCVHeight" destination="VwT-WV-Duw" id="PU9-0A-hSw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,7 +46,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dP-KJ-Lyh">
-                                    <rect key="frame" x="292" y="30" width="59" height="27"/>
+                                    <rect key="frame" x="292" y="50" width="59" height="27"/>
                                     <state key="normal" image="icNew"/>
                                     <state key="selected" image="icOld"/>
                                     <connections>
@@ -52,8 +54,11 @@
                                     </connections>
                                 </button>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8cd-3U-Oaa">
-                                    <rect key="frame" x="16" y="80" width="343" height="920"/>
+                                    <rect key="frame" x="16" y="100" width="343" height="920"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="920" id="VwT-WV-Duw"/>
+                                    </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MH3-FZ-264">
                                         <size key="itemSize" width="168" height="228"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -105,10 +110,9 @@
                                 <constraint firstAttribute="trailing" secondItem="8cd-3U-Oaa" secondAttribute="trailing" constant="16" id="Nsi-Az-wOC"/>
                                 <constraint firstItem="8cd-3U-Oaa" firstAttribute="top" secondItem="4dP-KJ-Lyh" secondAttribute="bottom" constant="23" id="XGZ-8v-qA8"/>
                                 <constraint firstItem="8cd-3U-Oaa" firstAttribute="leading" secondItem="8nR-u6-WQQ" secondAttribute="leading" constant="16" id="YjU-kF-PRr"/>
-                                <constraint firstItem="4dP-KJ-Lyh" firstAttribute="top" secondItem="8nR-u6-WQQ" secondAttribute="top" constant="30" id="ogW-qu-EK7"/>
+                                <constraint firstItem="4dP-KJ-Lyh" firstAttribute="top" secondItem="bs4-E5-XY0" secondAttribute="bottom" constant="30" id="ogW-qu-EK7"/>
                                 <constraint firstItem="dcK-Hy-MDd" firstAttribute="top" secondItem="ReN-9V-Tpx" secondAttribute="bottom" id="q6l-3r-f9H"/>
                                 <constraint firstItem="ReN-9V-Tpx" firstAttribute="leading" secondItem="8nR-u6-WQQ" secondAttribute="leading" constant="23" id="qDo-3q-1rK"/>
-                                <constraint firstAttribute="bottom" secondItem="8cd-3U-Oaa" secondAttribute="bottom" id="uO2-gq-Vxu"/>
                                 <constraint firstAttribute="height" constant="1000" id="xnG-m3-5s9"/>
                             </constraints>
                         </view>
