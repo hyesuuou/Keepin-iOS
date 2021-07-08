@@ -50,7 +50,7 @@ class SearchVC: UIViewController {
     
     var itemNum : Int = 0
     var presentList : [String] = []
-    var filteredData:[String]!
+    var filteredData: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,8 +58,6 @@ class SearchVC: UIViewController {
         setNavigationBar()
         setSearchBar()
         testDatabase()
-        
-        filteredData = presentList
         
         searchResultCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
         searchResultCV.delegate = self
@@ -165,7 +163,6 @@ extension SearchVC : UISearchBarDelegate{
         
         filteredData = []
         if searchBar.text == ""{
-            filteredData = presentList
             glassIcon.tintColor = .keepinGray3
             categoryView.isHidden = false
             searchBarDivider.image = UIImage(named: "lineSearchDefault")
