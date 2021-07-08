@@ -12,13 +12,67 @@ class SearchVC: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchBarDivider: UIImageView!
     @IBOutlet weak var categoryView: UIView!
-    @IBOutlet weak var searchCV: UICollectionView!
-
+    @IBOutlet var categoryButton: [UIButton]!
+    @IBOutlet weak var searchResultCV: UICollectionView!
+    
+    @IBAction func categoryButtonClicked(_ sender: UIButton) {
+        let index = categoryButton.firstIndex(of: sender)!
+        let nextVC = AfterCatVC()
+        switch index {
+        case 0:
+            nextVC.category = "생일"
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case 1:
+            nextVC.category = "기념일"
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case 2:
+            nextVC.category = "축하"
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case 3:
+            nextVC.category = "칭찬"
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case 4:
+            nextVC.category = "응원"
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case 5:
+            nextVC.category = "감사"
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case 6:
+            nextVC.category = "깜짝"
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case 7:
+            nextVC.category = "기타"
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        default:
+           break
+        }
+    }
+    
+    var itemNum : Int = 0
+    var presentList : [String] = []
+    var filteredData: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
         setNavigationBar()
         setSearchBar()
+        testDatabase()
+        
+        searchResultCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
+        searchResultCV.delegate = self
+        searchResultCV.dataSource = self
+    }
+    
+    func testDatabase(){
+        presentList.append("탕수육")
+        presentList.append("짜장면")
+        presentList.append("짬뽕")
+        presentList.append("쭈꾸미")
+        presentList.append("슈슈버거")
+        presentList.append("맥너겟")
+        presentList.append("코코넛크림커피")
+        presentList.append("코코호도")
     }
     
     func setNavigationBar(){
@@ -62,21 +116,70 @@ class SearchVC: UIViewController {
 
 }
 
+extension SearchVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(PresentDetailVC(), animated: true)
+        self.hidesBottomBarWhenPushed = false
+    }
+    
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return filteredData.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = searchResultCV.dequeueReusableCell(withReuseIdentifier: "PresentMoaCVC", for: indexPath) as? PresentMoaCVC else {
+            
+            return UICollectionViewCell()
+            
+        }
+        
+        let presentData : String = filteredData[indexPath.row]
+        
+        cell.presentTitle.text = presentData
+
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let padding: CGFloat = 10
+        let collectionViewSize = collectionView.frame.size.width - padding
+                
+        return CGSize(width: collectionViewSize/2, height: 228)
+    }
+    
+    
+}
+
 extension SearchVC : UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
         let glassIcon = textFieldInsideSearchBar?.leftView as! UIImageView
         glassIcon.image = glassIcon.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         
+        filteredData = []
         if searchBar.text == ""{
             glassIcon.tintColor = .keepinGray3
             categoryView.isHidden = false
             searchBarDivider.image = UIImage(named: "lineSearchDefault")
         }
         else{
+            for present in presentList
+            {
+                if (present.contains(searchText))
+                {
+                    filteredData.append(present)
+                }
+            }
             glassIcon.tintColor = .keepinBlack
             categoryView.isHidden = true
             searchBarDivider.image = UIImage(named: "lineSearchActive")
         }
+        
+        self.searchResultCV.reloadData()
     }
 }
