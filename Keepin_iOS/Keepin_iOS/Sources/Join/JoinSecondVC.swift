@@ -10,6 +10,7 @@ import UIKit
 class JoinSecondVC: UIViewController {
     
     var agreeButtonState : Bool = false
+    var textFieldState : Bool = false
 
     @IBOutlet var titleLabel: [UILabel]!
     @IBOutlet weak var backButton: UIButton!
@@ -82,15 +83,32 @@ class JoinSecondVC: UIViewController {
             underlineView[2].backgroundColor = .keepinGray3
         }
         
+        if nameTextField.text != "" && birthTextField.text != "" && phoneTextField.text != "" {
+            textFieldState = true
+            if agreeButtonState {
+            doneButton.tintColor = .keepinGreen
+            }
+            
+        }
+        else {
+            doneButton.tintColor = .keepinGray3
+            textFieldState = false
+        }
+        
     }
 
     @IBAction func agreeButtonClicked(_ sender: Any) {
         agreeButtonState = !agreeButtonState
         if agreeButtonState == true {
             agreeButton.setImage(UIImage(named: "icSelectActive"), for: .normal)
+            
+            if textFieldState {
+                doneButton.tintColor = .keepinGreen
+            }
         }
         else {
             agreeButton.setImage(UIImage(named: "icSelect"), for: .normal)
+            doneButton.tintColor = .keepinGray3
         }
         
     }
