@@ -10,6 +10,9 @@ import UIKit
 class JoinSecondVC: UIViewController {
 
     @IBOutlet var titleLabel: [UILabel]!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -27,6 +30,9 @@ class JoinSecondVC: UIViewController {
     
     func setNavigationBarUI(){
         self.navigationController?.navigationBar.isHidden = true
+        
+        doneButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
+        doneButton.tintColor = .keepinGray3
     }
 
 

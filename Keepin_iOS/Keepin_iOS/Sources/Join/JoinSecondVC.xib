@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JoinSecondVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="Xtf-bb-DOb" id="msU-4b-RJT"/>
+                <outlet property="doneButton" destination="7yu-j4-4jl" id="WDF-4S-42N"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="titleLabel" destination="C2U-43-eT7" collectionClass="NSMutableArray" id="K9l-82-7Ll"/>
                 <outletCollection property="titleLabel" destination="YrX-2p-3rW" collectionClass="NSMutableArray" id="cLZ-4x-Ovq"/>
@@ -48,8 +50,24 @@
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ibs-Xr-ZXs">
                     <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xtf-bb-DOb">
+                            <rect key="frame" x="5" y="9" width="32" height="32"/>
+                            <state key="normal" image="icBack"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yu-j4-4jl">
+                            <rect key="frame" x="368" y="13" width="30" height="24"/>
+                            <state key="normal" title="완료"/>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Xtf-bb-DOb" secondAttribute="bottom" constant="9" id="Bbm-vf-YC7"/>
+                        <constraint firstItem="Xtf-bb-DOb" firstAttribute="leading" secondItem="Ibs-Xr-ZXs" secondAttribute="leading" constant="5" id="Hmo-JR-6fm"/>
+                        <constraint firstAttribute="bottom" secondItem="7yu-j4-4jl" secondAttribute="bottom" constant="13" id="Paa-FJ-qJX"/>
+                        <constraint firstItem="7yu-j4-4jl" firstAttribute="top" secondItem="Ibs-Xr-ZXs" secondAttribute="top" constant="13" id="QXI-jy-kzU"/>
+                        <constraint firstItem="Xtf-bb-DOb" firstAttribute="top" secondItem="Ibs-Xr-ZXs" secondAttribute="top" constant="9" id="T6o-DH-Ox2"/>
+                        <constraint firstAttribute="trailing" secondItem="7yu-j4-4jl" secondAttribute="trailing" constant="16" id="VGl-3W-Jjr"/>
                         <constraint firstAttribute="height" constant="50" id="eCZ-MT-9tc"/>
                     </constraints>
                 </view>
@@ -78,6 +96,7 @@
         </view>
     </objects>
     <resources>
+        <image name="icBack" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
