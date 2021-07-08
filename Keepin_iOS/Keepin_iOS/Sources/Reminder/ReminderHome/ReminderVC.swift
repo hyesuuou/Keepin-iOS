@@ -9,21 +9,44 @@ import UIKit
 
 class ReminderVC: UIViewController {
 
+    var navigationLeftLabel : String = "편집"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setNavigationBar()
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setNavigationBar(){
+        let editButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
+        editButton.setTitle(navigationLeftLabel, for: .normal)
+        editButton.titleLabel?.font = UIFont.NotoSans(.regular, size: 16)
+        editButton.setTitleColor(.keepinGray4, for: .normal)
+        editButton.addTarget(self, action: #selector(toEdit), for: UIControl.Event.touchUpInside)
+        editButton.frame = CGRect(x: 0, y: 0, width: 30, height: 22)
+        
+        let addButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
+        addButton.setImage(UIImage(named: "icAdd"), for: UIControl.State.normal)
+        addButton.addTarget(self, action: #selector(toAdd), for: UIControl.Event.touchUpInside)
+        addButton.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        
+        let editbarButton = UIBarButtonItem(customView: editButton)
+        self.navigationItem.leftBarButtonItem = editbarButton
+        
+        let addbarButton = UIBarButtonItem(customView: addButton)
+        self.navigationItem.rightBarButtonItem = addbarButton
+        
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
     }
-    */
+    
+    @objc func toEdit(){
+        //편집 가능하게 체크박스
+    }
+    
+    @objc func toAdd(){
+        //self.navigationController?.popViewController(animated: true)
+        //리마인더 등록으로
+    }
 
 }
