@@ -12,6 +12,42 @@ class SearchVC: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchBarDivider: UIImageView!
     @IBOutlet weak var categoryView: UIView!
+    
+    @IBOutlet var categoryButton: [UIButton]!
+    
+    @IBAction func categoryButtonClicked(_ sender: UIButton) {
+        let index = categoryButton.firstIndex(of: sender)!
+        let nextVC = AfterCatVC()
+        switch index {
+        case 0:
+            nextVC.category = "생일"
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case 1:
+            nextVC.category = "기념일"
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case 2:
+            nextVC.category = "축하"
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case 3:
+            nextVC.category = "칭찬"
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case 4:
+            nextVC.category = "응원"
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case 5:
+            nextVC.category = "감사"
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case 6:
+            nextVC.category = "깜짝"
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case 7:
+            nextVC.category = "기타"
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        default:
+           break
+        }
+    }
+
     @IBOutlet weak var searchCV: UICollectionView!
 
     override func viewDidLoad() {
