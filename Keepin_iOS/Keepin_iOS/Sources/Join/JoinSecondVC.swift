@@ -8,6 +8,8 @@
 import UIKit
 
 class JoinSecondVC: UIViewController {
+    
+    var agreeButtonState : Bool = false
 
     @IBOutlet var titleLabel: [UILabel]!
     @IBOutlet weak var backButton: UIButton!
@@ -15,6 +17,8 @@ class JoinSecondVC: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var birthTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var agreeLabel: UILabel!
+    @IBOutlet weak var agreeButton: UIButton!
     
     @IBOutlet var underlineView: [UIView]!
     
@@ -39,6 +43,9 @@ class JoinSecondVC: UIViewController {
         birthTextField.font = UIFont.NotoSans(.regular, size: 16)
         phoneTextField.font = UIFont.NotoSans(.regular, size: 16)
         
+        agreeLabel.font = UIFont.NotoSans(.regular, size: 14)
+        agreeLabel.textColor = .keepinGray5
+        
     }
     
     func setNavigationBarUI(){
@@ -48,5 +55,15 @@ class JoinSecondVC: UIViewController {
         doneButton.tintColor = .keepinGray3
     }
 
-
+    @IBAction func agreeButtonClicked(_ sender: Any) {
+        agreeButtonState = !agreeButtonState
+        if agreeButtonState == true {
+            agreeButton.setImage(UIImage(named: "icSelectActive"), for: .normal)
+        }
+        else {
+            agreeButton.setImage(UIImage(named: "icSelect"), for: .normal)
+        }
+        
+    }
+    
 }

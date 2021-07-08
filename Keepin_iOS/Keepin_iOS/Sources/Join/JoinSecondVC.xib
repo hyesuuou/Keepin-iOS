@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JoinSecondVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="agreeButton" destination="Sfe-be-YQn" id="pA2-LW-c8d"/>
+                <outlet property="agreeLabel" destination="stw-89-mgZ" id="wxL-xh-uRd"/>
                 <outlet property="backButton" destination="Xtf-bb-DOb" id="msU-4b-RJT"/>
                 <outlet property="birthTextField" destination="uc3-ud-1TA" id="GMB-Q7-aj2"/>
                 <outlet property="doneButton" destination="7yu-j4-4jl" id="WDF-4S-42N"/>
@@ -124,6 +126,23 @@
                         <constraint firstAttribute="height" constant="1" id="Iz0-oQ-4uL"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfe-be-YQn">
+                    <rect key="frame" x="25" y="511" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="NCR-Tb-hug"/>
+                        <constraint firstAttribute="width" constant="20" id="glz-sI-Dht"/>
+                    </constraints>
+                    <state key="normal" image="icSelect"/>
+                    <connections>
+                        <action selector="agreeButtonClicked:" destination="-1" eventType="touchUpInside" id="2bD-fs-CBD"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[필수] 이용약관 및 개인정보처리방침" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stw-89-mgZ">
+                    <rect key="frame" x="57" y="510.66666666666674" width="246" height="21"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -133,6 +152,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PGC-SY-4RI" secondAttribute="trailing" constant="16" id="7IV-Rr-Vfn"/>
                 <constraint firstItem="2hH-sC-3Qf" firstAttribute="top" secondItem="SFK-4T-cZT" secondAttribute="bottom" constant="24" id="85l-ii-bUk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AFL-5J-hMJ" secondAttribute="trailing" constant="26" id="AJU-gD-GTF"/>
+                <constraint firstItem="stw-89-mgZ" firstAttribute="leading" secondItem="Sfe-be-YQn" secondAttribute="trailing" constant="12" id="Gfp-yg-eWW"/>
                 <constraint firstItem="AFL-5J-hMJ" firstAttribute="top" secondItem="YrX-2p-3rW" secondAttribute="bottom" constant="24" id="HPc-mv-aQM"/>
                 <constraint firstItem="SFK-4T-cZT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Jgr-4D-LXl"/>
                 <constraint firstItem="AFL-5J-hMJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="JpD-dY-82o"/>
@@ -151,6 +171,7 @@
                 <constraint firstAttribute="trailing" secondItem="ddL-cW-Lka" secondAttribute="trailing" constant="16" id="cBI-97-MzH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YrX-2p-3rW" secondAttribute="trailing" constant="24" id="eYa-bv-zRJ"/>
                 <constraint firstItem="qSS-Lk-5u1" firstAttribute="top" secondItem="2hH-sC-3Qf" secondAttribute="bottom" constant="5" id="esd-AP-2Ul"/>
+                <constraint firstItem="stw-89-mgZ" firstAttribute="centerY" secondItem="Sfe-be-YQn" secondAttribute="centerY" id="fcp-9s-FDe"/>
                 <constraint firstItem="Ibs-Xr-ZXs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ghv-CV-vCd"/>
                 <constraint firstItem="C2U-43-eT7" firstAttribute="top" secondItem="Ibs-Xr-ZXs" secondAttribute="bottom" id="gku-MW-PBG"/>
                 <constraint firstItem="uc3-ud-1TA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="j9Y-3A-wgh"/>
@@ -159,6 +180,8 @@
                 <constraint firstItem="ddL-cW-Lka" firstAttribute="top" secondItem="uc3-ud-1TA" secondAttribute="bottom" constant="5" id="pGl-RL-NNb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zqi-ej-FGk" secondAttribute="trailing" constant="24" id="ueX-yM-7ST"/>
                 <constraint firstItem="zqi-ej-FGk" firstAttribute="top" secondItem="YrX-2p-3rW" secondAttribute="bottom" constant="96" id="v1u-pd-P7d"/>
+                <constraint firstItem="Sfe-be-YQn" firstAttribute="top" secondItem="qSS-Lk-5u1" secondAttribute="bottom" constant="55" id="xSc-K5-mO4"/>
+                <constraint firstItem="Sfe-be-YQn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="xYM-jC-f0e"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2hH-sC-3Qf" secondAttribute="trailing" constant="26" id="xqV-P6-OEE"/>
                 <constraint firstAttribute="trailing" secondItem="qSS-Lk-5u1" secondAttribute="trailing" constant="16" id="zAU-gu-QdU"/>
             </constraints>
@@ -168,6 +191,7 @@
     </objects>
     <resources>
         <image name="icBack" width="32" height="32"/>
+        <image name="icSelect" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
