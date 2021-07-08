@@ -18,7 +18,6 @@ class MyPageDetailVC: UIViewController ,UITextViewDelegate{
 
         myPageDetailCV.delegate = self
         myPageDetailCV.dataSource = self
-        
         dismissKeyboardWhenTappedAround()
     }
     
@@ -40,7 +39,7 @@ class MyPageDetailVC: UIViewController ,UITextViewDelegate{
     func setNavigationBar(){
         let searchButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
         searchButton.setImage(UIImage(named: "icMore"), for: UIControl.State.normal)
-        /*searchButton.addTarget(self, action: #selector(toSearch), for: UIControl.Event.touchUpInside)*/
+        searchButton.addTarget(self, action: #selector(toMore), for: UIControl.Event.touchUpInside)
         searchButton.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
         
         let backButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
@@ -61,13 +60,21 @@ class MyPageDetailVC: UIViewController ,UITextViewDelegate{
     @objc func toBack(){
         self.navigationController?.popViewController(animated: true)
     }
-
+    
+    @objc func toMore(){
+        let actionDelete = UIAlertAction(title: "친구 삭제", style: .default)
+        
+        let actionEdit = UIAlertAction(title: "이름 수정", style: .default)
+        
+        let actionCancel = UIAlertAction(title: "취소", style: .cancel)
+        
+        self.presentAlert(
+            preferredStyle: .actionSheet, with: actionDelete,actionEdit,actionCancel)
+    }
+    
 }
 
 extension MyPageDetailVC: UICollectionViewDelegate{
-    
-    
-    
     
 }
 
@@ -132,7 +139,6 @@ extension MyPageDetailVC: UICollectionViewDelegateFlowLayout
             
             return CGSize(width: width, height: cellHeight)
         }
-        //let width = UIScreen.main.bounds.width
         
         
     }
