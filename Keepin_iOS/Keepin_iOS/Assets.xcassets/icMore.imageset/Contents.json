@@ -1,9 +1,9 @@
 {
   "images" : [
     {
+      "idiom" : "universal",
       "filename" : "icMore.png",
-      "scale" : "1x",
-      "idiom" : "universal"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
@@ -12,8 +12,8 @@
     },
     {
       "filename" : "icMore@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "idiom" : "universal"
     }
   ],
   "info" : {
