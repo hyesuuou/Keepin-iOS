@@ -36,6 +36,8 @@
 		71DA81E02694424D0062A3FA /* MyPageDetailPresentMoaCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DA81DE2694424D0062A3FA /* MyPageDetailPresentMoaCVC.swift */; };
 		71DA81E12694424D0062A3FA /* MyPageDetailPresentMoaCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DA81DF2694424D0062A3FA /* MyPageDetailPresentMoaCVC.xib */; };
 		71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F8BF268DFDE30031BC50 /* UIFont.swift */; };
+		7719B57C269724A900CBBB11 /* AfterCatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B57A269724A800CBBB11 /* AfterCatVC.swift */; };
+		7719B57D269724A900CBBB11 /* AfterCatVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7719B57B269724A800CBBB11 /* AfterCatVC.xib */; };
 		773D414E26942E8000A4E366 /* PresentDetailCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773D414C26942E8000A4E366 /* PresentDetailCVC.swift */; };
 		773D414F26942E8000A4E366 /* PresentDetailCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 773D414D26942E8000A4E366 /* PresentDetailCVC.xib */; };
 		77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */; };
@@ -104,6 +106,8 @@
 		71DA81DE2694424D0062A3FA /* MyPageDetailPresentMoaCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailPresentMoaCVC.swift; sourceTree = "<group>"; };
 		71DA81DF2694424D0062A3FA /* MyPageDetailPresentMoaCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageDetailPresentMoaCVC.xib; sourceTree = "<group>"; };
 		71F8F8BF268DFDE30031BC50 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		7719B57A269724A800CBBB11 /* AfterCatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterCatVC.swift; sourceTree = "<group>"; };
+		7719B57B269724A800CBBB11 /* AfterCatVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AfterCatVC.xib; sourceTree = "<group>"; };
 		773D414C26942E8000A4E366 /* PresentDetailCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PresentDetailCVC.swift; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.swift; sourceTree = SOURCE_ROOT; };
 		773D414D26942E8000A4E366 /* PresentDetailCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PresentDetailCVC.xib; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.xib; sourceTree = SOURCE_ROOT; };
 		77F047DF268AF98F00FBFDD7 /* Keepin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keepin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +233,15 @@
 				71DA81DF2694424D0062A3FA /* MyPageDetailPresentMoaCVC.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		7719B5792697082D00CBBB11 /* AfterCate */ = {
+			isa = PBXGroup;
+			children = (
+				7719B57A269724A800CBBB11 /* AfterCatVC.swift */,
+				7719B57B269724A800CBBB11 /* AfterCatVC.xib */,
+			);
+			path = AfterCate;
 			sourceTree = "<group>";
 		};
 		773D414B26942E6B00A4E366 /* Cell */ = {
@@ -452,6 +465,7 @@
 		77F549D7268EE8DE0013A76C /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				7719B5792697082D00CBBB11 /* AfterCate */,
 				77F549DC268EE92C0013A76C /* SearchVC.swift */,
 				77F549DD268EE92C0013A76C /* SearchVC.xib */,
 			);
@@ -552,6 +566,7 @@
 			files = (
 				77F04847268C4DA000FBFDD7 /* KeepinPlusVC.xib in Resources */,
 				15C12223268E2FBF00838E55 /* GmarketSansTTFBold.ttf in Resources */,
+				7719B57D269724A900CBBB11 /* AfterCatVC.xib in Resources */,
 				15C12221268E2FBF00838E55 /* NotoSansCJKkr-Regular.otf in Resources */,
 				77F0482B268C49D100FBFDD7 /* PresentMoaVC.xib in Resources */,
 				77F549D5268ECF6C0013A76C /* ReminderVC.xib in Resources */,
@@ -647,6 +662,7 @@
 				77F04825268C49BF00FBFDD7 /* HomeVC.swift in Sources */,
 				71D7B66326903D6F0002C046 /* MyPageTVC.swift in Sources */,
 				71AC81932692F1A700758994 /* MyPageDetailMemoCVC.swift in Sources */,
+				7719B57C269724A900CBBB11 /* AfterCatVC.swift in Sources */,
 				77F04851268C4E2500FBFDD7 /* BaseTBC.swift in Sources */,
 				77F04846268C4DA000FBFDD7 /* KeepinPlusVC.swift in Sources */,
 				77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */,
