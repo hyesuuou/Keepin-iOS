@@ -41,12 +41,14 @@ class ReminderVC: UIViewController {
     }
     
     @objc func toEdit(){
-        //편집 가능하게 체크박스
+        //편집 체크박스
     }
     
     @objc func toAdd(){
-        //self.navigationController?.popViewController(animated: true)
-        //리마인더 등록으로
+        //let nextVC = ReminderAddVC()
+        let ReminderAddNVC = UINavigationController(rootViewController: ReminderAddVC())
+        ReminderAddNVC.modalPresentationStyle = .fullScreen
+        self.present(ReminderAddNVC, animated: true, completion: nil)
     }
 
 }
