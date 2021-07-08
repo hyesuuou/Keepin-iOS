@@ -15,26 +15,27 @@ class PresentMoaVC: UIViewController {
     @IBOutlet weak var gave: UIButton!
     @IBOutlet weak var got: UIButton!
     @IBOutlet weak var indicatorBar: UIView!
+    @IBOutlet weak var indicatorStart: NSLayoutConstraint!
     @IBOutlet weak var buttonStack: UIStackView!
     
-    @IBAction func newButtonDidTap(_ sender: UIButton) {
+    @IBAction func newButtonClicked(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
     }
-
+    
     @IBAction func btnClicked(sender:UIButton){
         if sender == gave
         {
             gave.isSelected = true
             got.isSelected = false
             UIView.animate(withDuration: 0.2){
-                self.indicatorBar.frame.origin.x = self.buttonStack.frame.width - 12
+                self.indicatorStart.constant = self.buttonStack.frame.width - 13.5
             }
         }
-        else if sender == got{
+        else{
             gave.isSelected = false
             got.isSelected = true
-            UIView.animate(withDuration: 0.2){
-                self.indicatorBar.frame.origin.x = self.buttonStack.frame.width / 2 - 13
+            UIView.animate(withDuration: 0.1){
+                self.indicatorStart.constant = self.buttonStack.frame.width / 2 - 13
             }
         }
     }
@@ -59,7 +60,7 @@ class PresentMoaVC: UIViewController {
         
         got.isSelected = true
         gave.isSelected = false
-        
+
         //scrollView dynamic Height
         presentCVHeight.constant = CGFloat(240 * itemNum / 2)
         contentViewHeight.constant = presentCVHeight.constant + 100
@@ -89,7 +90,6 @@ class PresentMoaVC: UIViewController {
 extension PresentMoaVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("select!")
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(PresentDetailVC(), animated: true)
         self.hidesBottomBarWhenPushed = false
