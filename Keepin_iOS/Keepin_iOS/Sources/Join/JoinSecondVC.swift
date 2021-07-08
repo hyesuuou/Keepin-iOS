@@ -7,7 +7,7 @@
 
 import UIKit
 
-class JoinSecondVC: UIViewController {
+class JoinSecondVC: UIViewController, UITextFieldDelegate {
     
     var agreeButtonState : Bool = false
     var textFieldState : Bool = false
@@ -32,6 +32,8 @@ class JoinSecondVC: UIViewController {
         nameTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         birthTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         phoneTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        
+        nameTextField.delegate = self
     }
     
     func setUI(){
@@ -59,6 +61,8 @@ class JoinSecondVC: UIViewController {
         doneButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
         doneButton.tintColor = .keepinGray3
     }
+    
+    
     
     @objc func textFieldDidChange(_ sender: Any?) {
         
@@ -96,6 +100,17 @@ class JoinSecondVC: UIViewController {
         }
         
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+     
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+     
+        return updatedText.count <= 5
+    }
+
+
 
     @IBAction func agreeButtonClicked(_ sender: Any) {
         agreeButtonState = !agreeButtonState
