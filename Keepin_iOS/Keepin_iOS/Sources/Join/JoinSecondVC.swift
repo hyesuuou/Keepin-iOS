@@ -12,6 +12,11 @@ class JoinSecondVC: UIViewController {
     @IBOutlet var titleLabel: [UILabel]!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var birthTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    
+    @IBOutlet var underlineView: [UIView]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +30,14 @@ class JoinSecondVC: UIViewController {
         titleLabel[1].font = UIFont.GmarketSansTTF(.medium, size: 16)
         titleLabel[2].font = UIFont.GmarketSansTTF(.medium, size: 16)
         titleLabel[3].font = UIFont.GmarketSansTTF(.medium, size: 16)
+        
+        underlineView[0].backgroundColor = .keepinGray3
+        underlineView[1].backgroundColor = .keepinGray3
+        underlineView[2].backgroundColor = .keepinGray3
+        
+        nameTextField.font = UIFont.NotoSans(.regular, size: 16)
+        birthTextField.font = UIFont.NotoSans(.regular, size: 16)
+        phoneTextField.font = UIFont.NotoSans(.regular, size: 16)
         
     }
     
