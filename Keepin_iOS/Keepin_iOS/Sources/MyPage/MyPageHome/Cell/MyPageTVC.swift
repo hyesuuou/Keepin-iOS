@@ -20,10 +20,8 @@ class MyPageTVC: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-    
         layer.cornerRadius = 12
         layer.masksToBounds = false
-    
     }
     
     static func nib() -> UINib{
@@ -40,7 +38,7 @@ class MyPageTVC: UITableViewCell {
         friendName.text = title
     }
     
-   
+    
     override open var frame: CGRect {
         get {
             return super.frame

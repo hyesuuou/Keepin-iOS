@@ -91,6 +91,10 @@ extension MyPageVC : UITableViewDelegate
         return 80
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(MyPageDetailVC(), animated: true)
+    }
+    
 }
 
 extension MyPageVC : UITableViewDataSource
@@ -110,9 +114,8 @@ extension MyPageVC : UITableViewDataSource
         cell.backgroundColor = .white
         cell.friendName.text = friendName[indexPath.row]
         
+        cell.selectionStyle = .none
+        
         return cell
     }
-    
-
-    
 }
