@@ -20,7 +20,6 @@ class PresentMoaVC: UIViewController {
     
     @IBAction func newButtonClicked(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
-        print(self.indicatorBar.frame.origin.x)
     }
     
     @IBAction func btnClicked(sender:UIButton){
@@ -91,7 +90,6 @@ class PresentMoaVC: UIViewController {
 extension PresentMoaVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("select!")
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(PresentDetailVC(), animated: true)
         self.hidesBottomBarWhenPushed = false
