@@ -27,6 +27,10 @@ class JoinSecondVC: UIViewController {
         setUI()
         setNavigationBarUI()
         // Do any additional setup after loading the view.
+        
+        nameTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        birthTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        phoneTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     func setUI(){
@@ -53,6 +57,31 @@ class JoinSecondVC: UIViewController {
         
         doneButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
         doneButton.tintColor = .keepinGray3
+    }
+    
+    @objc func textFieldDidChange(_ sender: Any?) {
+        
+        if nameTextField.text != "" {
+            underlineView[0].backgroundColor = .keepinBlack
+        }
+        else {
+            underlineView[0].backgroundColor = .keepinGray3
+        }
+        
+        if birthTextField.text != "" {
+            underlineView[1].backgroundColor = .keepinBlack
+        }
+        else {
+            underlineView[1].backgroundColor = .keepinGray3
+        }
+        
+        if phoneTextField.text != "" {
+            underlineView[2].backgroundColor = .keepinBlack
+        }
+        else {
+            underlineView[2].backgroundColor = .keepinGray3
+        }
+        
     }
 
     @IBAction func agreeButtonClicked(_ sender: Any) {
