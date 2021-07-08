@@ -23,6 +23,7 @@
                 <outlet property="gave" destination="las-3g-Wes" id="H8j-mL-Rda"/>
                 <outlet property="got" destination="3em-jd-cQ0" id="uMf-qO-X5M"/>
                 <outlet property="indicatorBar" destination="dcK-Hy-MDd" id="2qZ-v2-OJx"/>
+                <outlet property="indicatorStart" destination="DHG-Vg-N66" id="zvQ-Q0-9V6"/>
                 <outlet property="presentCV" destination="8cd-3U-Oaa" id="P3b-Ia-crv"/>
                 <outlet property="presentCVHeight" destination="VwT-WV-Duw" id="PU9-0A-hSw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -50,7 +51,7 @@
                                     <state key="normal" image="icNew"/>
                                     <state key="selected" image="icOld"/>
                                     <connections>
-                                        <action selector="newButtonDidTap:" destination="-1" eventType="touchUpInside" id="CeC-Iq-Mbs"/>
+                                        <action selector="newButtonClicked:" destination="-1" eventType="touchUpInside" id="QM9-gY-EIA"/>
                                     </connections>
                                 </button>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8cd-3U-Oaa">
