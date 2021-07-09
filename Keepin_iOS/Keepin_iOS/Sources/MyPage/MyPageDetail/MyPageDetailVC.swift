@@ -23,7 +23,6 @@ class MyPageDetailVC: UIViewController ,UITextViewDelegate{
     
     
     func registerXib(){
-        
         let topNib = UINib(nibName: MyPageDetailTopCVC.identifier, bundle: nil)
         myPageDetailCV.register(topNib, forCellWithReuseIdentifier: MyPageDetailTopCVC.identifier)
         
@@ -32,7 +31,6 @@ class MyPageDetailVC: UIViewController ,UITextViewDelegate{
         
         let presentNib = UINib(nibName:MyPageDetailPresentCVC.identifier , bundle: nil)
         myPageDetailCV.register(presentNib, forCellWithReuseIdentifier:MyPageDetailPresentCVC.identifier )
-        
     }
     
     
@@ -64,14 +62,17 @@ class MyPageDetailVC: UIViewController ,UITextViewDelegate{
     @objc func toMore(){
         let actionDelete = UIAlertAction(title: "친구 삭제", style: .default)
         
-        let actionEdit = UIAlertAction(title: "이름 수정", style: .default)
-        
+        let actionEdit = UIAlertAction(title: "이름 수정", style: .default){
+            (_) in self.navigationController?.pushViewController(MyPageFriendFixVC(), animated: true)
+            
+        }
         let actionCancel = UIAlertAction(title: "취소", style: .cancel)
         
         self.presentAlert(
             preferredStyle: .actionSheet, with: actionDelete,actionEdit,actionCancel)
+        
     }
-    
+
 }
 
 extension MyPageDetailVC: UICollectionViewDelegate{
@@ -139,8 +140,5 @@ extension MyPageDetailVC: UICollectionViewDelegateFlowLayout
             
             return CGSize(width: width, height: cellHeight)
         }
-        
-        
     }
-
 }
