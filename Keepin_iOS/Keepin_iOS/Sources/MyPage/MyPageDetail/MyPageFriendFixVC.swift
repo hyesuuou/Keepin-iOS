@@ -8,22 +8,48 @@
 import UIKit
 
 class MyPageFriendFixVC: UIViewController {
-
+    
+    @IBOutlet weak var friendLabel: UILabel!
+    @IBOutlet weak var textView: UIView!
+    @IBOutlet weak var textField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        friendLabel.text = "친구의 이름을 입력해 주세요."
+        friendLabel.textColor = .keepinBlack
+        friendLabel.font  = UIFont.GmarketSansTTF(.medium, size: 16)
 
-        // Do any additional setup after loading the view.
+        textView.backgroundColor = .keepinBlack
+        
+        setNavigationBar()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func setNavigationBar(){
+        let backButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
+        backButton.setImage(UIImage(named: "icBack"),for: UIControl.State.normal)
+        backButton.addTarget(self, action: #selector(toBack), for: UIControl.Event.touchUpInside)
+        backButton.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
+        
+        
+        let registerButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
+        registerButton.setTitle("등록하기", for: UIControl.State.normal)
+        registerButton.setTitleColor(.keepinGreen, for: UIControl.State.normal)
+        registerButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
+        registerButton.frame = CGRect(x: 0, y: 0, width: 24, height: 49)
+        
+        let backbarButton = UIBarButtonItem(customView: backButton)
+        self.navigationItem.leftBarButtonItem = backbarButton
+        
+        let registerbarButton = UIBarButtonItem(customView: registerButton)
+        self.navigationItem.rightBarButtonItem = registerbarButton
+        
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
     }
-    */
+    
+    @objc func toBack(){
+        self.navigationController?.popViewController(animated: true)
+    }
 
 }
