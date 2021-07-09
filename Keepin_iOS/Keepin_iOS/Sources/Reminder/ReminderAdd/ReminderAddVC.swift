@@ -104,9 +104,18 @@ class ReminderAddVC: UIViewController {
     }
     
     @objc func dateTap() {
-        print("date")
+        let tempInput = UITextField( frame:CGRect.zero )
+        
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.locale = Locale(identifier: "ko-KR")
+        
+        tempInput.inputView = datePicker
+        self.view.addSubview( tempInput )
+        tempInput.becomeFirstResponder()
     }
-    
+
     @objc func remindTap() {
         print("remind")
     }
