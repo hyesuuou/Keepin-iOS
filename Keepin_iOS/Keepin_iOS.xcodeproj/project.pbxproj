@@ -51,6 +51,8 @@
 		71E1324626987F3200DB2D9F /* MyPageHomeHeaderCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E1324426987F3200DB2D9F /* MyPageHomeHeaderCVC.xib */; };
 		71E1324926987F5200DB2D9F /* MyPageHomeFriendCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1324726987F5200DB2D9F /* MyPageHomeFriendCVC.swift */; };
 		71E1324A26987F5200DB2D9F /* MyPageHomeFriendCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E1324826987F5200DB2D9F /* MyPageHomeFriendCVC.xib */; };
+		71E1324D2698A8BF00DB2D9F /* FriendListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1324B2698A8BF00DB2D9F /* FriendListCVC.swift */; };
+		71E1324E2698A8BF00DB2D9F /* FriendListCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E1324C2698A8BF00DB2D9F /* FriendListCVC.xib */; };
 		71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F8BF268DFDE30031BC50 /* UIFont.swift */; };
 		7719B57C269724A900CBBB11 /* AfterCatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B57A269724A800CBBB11 /* AfterCatVC.swift */; };
 		7719B57D269724A900CBBB11 /* AfterCatVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7719B57B269724A800CBBB11 /* AfterCatVC.xib */; };
@@ -137,6 +139,8 @@
 		71E1324426987F3200DB2D9F /* MyPageHomeHeaderCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageHomeHeaderCVC.xib; sourceTree = "<group>"; };
 		71E1324726987F5200DB2D9F /* MyPageHomeFriendCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHomeFriendCVC.swift; sourceTree = "<group>"; };
 		71E1324826987F5200DB2D9F /* MyPageHomeFriendCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageHomeFriendCVC.xib; sourceTree = "<group>"; };
+		71E1324B2698A8BF00DB2D9F /* FriendListCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCVC.swift; sourceTree = "<group>"; };
+		71E1324C2698A8BF00DB2D9F /* FriendListCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendListCVC.xib; sourceTree = "<group>"; };
 		71F8F8BF268DFDE30031BC50 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		7719B57A269724A800CBBB11 /* AfterCatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterCatVC.swift; sourceTree = "<group>"; };
 		7719B57B269724A800CBBB11 /* AfterCatVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AfterCatVC.xib; sourceTree = "<group>"; };
@@ -297,6 +301,8 @@
 				71E1324426987F3200DB2D9F /* MyPageHomeHeaderCVC.xib */,
 				71E1324726987F5200DB2D9F /* MyPageHomeFriendCVC.swift */,
 				71E1324826987F5200DB2D9F /* MyPageHomeFriendCVC.xib */,
+				71E1324B2698A8BF00DB2D9F /* FriendListCVC.swift */,
+				71E1324C2698A8BF00DB2D9F /* FriendListCVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -660,6 +666,7 @@
 				71E1324626987F3200DB2D9F /* MyPageHomeHeaderCVC.xib in Resources */,
 				71C197AE26975103004C0490 /* MyPageProfileVC.xib in Resources */,
 				1529FF7F26979F57000AD789 /* KeepinPlusTitleTVC.xib in Resources */,
+				71E1324E2698A8BF00DB2D9F /* FriendListCVC.xib in Resources */,
 				77F047EF268AF99900FBFDD7 /* LaunchScreen.storyboard in Resources */,
 				153462D22694468B00060E44 /* JoinFirstVC.xib in Resources */,
 				77F549DF268EE92C0013A76C /* SearchVC.xib in Resources */,
@@ -757,6 +764,7 @@
 				77F04851268C4E2500FBFDD7 /* BaseTBC.swift in Sources */,
 				77F04846268C4DA000FBFDD7 /* KeepinPlusVC.swift in Sources */,
 				77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */,
+				71E1324D2698A8BF00DB2D9F /* FriendListCVC.swift in Sources */,
 				153462D52694469900060E44 /* JoinSecondVC.swift in Sources */,
 				71AC818F2692F00D00758994 /* MyPageDetailPresentCVC.swift in Sources */,
 				1529FF7E26979F57000AD789 /* KeepinPlusTitleTVC.swift in Sources */,
