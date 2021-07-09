@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyPageHomeHeaderCVC" id="gTV-IL-0wX" customClass="MyPageHomeHeaderCVC" customModule="Keepin_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구 모아보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onK-fw-cWe">
+                        <rect key="frame" x="24" y="32" width="109" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="109" id="3um-4D-rUZ"/>
+                            <constraint firstAttribute="height" constant="21" id="SrW-Ka-b3f"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgL-Ii-nar">
+                        <rect key="frame" x="327" y="31" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="FXj-is-iC4"/>
+                            <constraint firstAttribute="height" constant="24" id="SNJ-uX-0ds"/>
+                        </constraints>
+                        <state key="normal" image="icAdd"/>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="onK-fw-cWe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="32" id="p3Z-qi-USy"/>
+                <constraint firstItem="dgL-Ii-nar" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="31" id="rAq-PF-cOL"/>
+                <constraint firstAttribute="trailing" secondItem="dgL-Ii-nar" secondAttribute="trailing" constant="24" id="vmk-iz-DS7"/>
+                <constraint firstItem="onK-fw-cWe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="24" id="zXC-Kh-93N"/>
+            </constraints>
+            <point key="canvasLocation" x="59" y="95"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icAdd" width="24" height="24"/>
+    </resources>
+</document>
