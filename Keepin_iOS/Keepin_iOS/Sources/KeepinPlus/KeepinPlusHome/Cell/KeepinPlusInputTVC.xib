@@ -4,20 +4,55 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="KeepinPlusInputTVC" customModule="Keepin_iOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="KeepinPlusInputTVC" rowHeight="119" id="KGk-i7-Jjw" customClass="KeepinPlusInputTVC" customModule="Keepin_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="318" height="119"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="318" height="119"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="키핀이가 준 선물" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="77Y-dr-S5o">
+                        <rect key="frame" x="26" y="0.0" width="266" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="pKA-bg-6ho"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3E-bo-Ti8">
+                        <rect key="frame" x="16" y="29" width="286" height="1"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="ub3-4k-9j1"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="77Y-dr-S5o" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7kr-BM-pEL"/>
+                    <constraint firstAttribute="trailing" secondItem="77Y-dr-S5o" secondAttribute="trailing" constant="26" id="E1y-qt-uZw"/>
+                    <constraint firstItem="O3E-bo-Ti8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="GWK-Kq-h7Y"/>
+                    <constraint firstItem="77Y-dr-S5o" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="26" id="Gz9-7V-cuz"/>
+                    <constraint firstItem="O3E-bo-Ti8" firstAttribute="top" secondItem="77Y-dr-S5o" secondAttribute="bottom" constant="5" id="NOx-La-T3t"/>
+                    <constraint firstAttribute="trailing" secondItem="O3E-bo-Ti8" secondAttribute="trailing" constant="16" id="k7z-44-UAK"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="30" y="111"/>
+            <connections>
+                <outlet property="textfield" destination="77Y-dr-S5o" id="dp4-yQ-qL7"/>
+                <outlet property="underlineView" destination="O3E-bo-Ti8" id="JwQ-mC-2oh"/>
+            </connections>
+            <point key="canvasLocation" x="27.536231884057973" y="135.60267857142856"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

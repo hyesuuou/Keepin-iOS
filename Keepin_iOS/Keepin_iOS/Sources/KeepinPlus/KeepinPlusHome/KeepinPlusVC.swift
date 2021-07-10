@@ -25,8 +25,12 @@ class KeepinPlusVC: UIViewController {
     }
     
     func registerXib(){
-        let nib = UINib(nibName: KeepinPlusTitleTVC.identifier, bundle: nil)
-        tableview.register(nib, forCellReuseIdentifier: KeepinPlusTitleTVC.identifier)
+        let titleNib = UINib(nibName: KeepinPlusTitleTVC.identifier, bundle: nil)
+        tableview.register(titleNib, forCellReuseIdentifier: KeepinPlusTitleTVC.identifier)
+        
+        let inputNib = UINib(nibName: KeepinPlusInputTVC.identifier, bundle: nil)
+        tableview.register(inputNib, forCellReuseIdentifier: KeepinPlusInputTVC.identifier)
+        
     }
 
     func setNavigationBar(){
@@ -66,6 +70,13 @@ extension KeepinPlusVC : UITableViewDataSource {
             }
             cell.setData(title: "선물에 이름을 붙여주세요.", subtitle: "", image: true)
             
+            return cell
+        
+        case 1:
+            guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusInputTVC.identifier, for: indexPath) as? KeepinPlusInputTVC else {
+                return UITableViewCell()
+            }
+            cell.setData(placeholder: "키핀이가 준 선물")
             return cell
             
         case 2:
@@ -122,7 +133,13 @@ extension KeepinPlusVC : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 43
+        
+        switch indexPath.row {
+        case 1:
+            return 72
+        default:
+            return 43
+        }
     }
     
     
