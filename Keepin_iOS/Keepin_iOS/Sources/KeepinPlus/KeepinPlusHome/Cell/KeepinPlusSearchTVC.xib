@@ -4,20 +4,65 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="KeepinPlusSearchTVC" customModule="Keepin_iOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="KeepinPlusSearchTVC" rowHeight="136" id="KGk-i7-Jjw" customClass="KeepinPlusSearchTVC" customModule="Keepin_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="344" height="136"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="344" height="136"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSearch" translatesAutoresizingMaskIntoConstraints="NO" id="fnq-Sj-QzC">
+                        <rect key="frame" x="21" y="2" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="mNf-gN-yEr"/>
+                            <constraint firstAttribute="width" constant="24" id="n3t-ss-ndl"/>
+                        </constraints>
+                    </imageView>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="친구의 이름을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDi-Wk-pYP">
+                        <rect key="frame" x="46" y="0.0" width="277" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="RlV-jz-hnP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIf-rv-Bd2">
+                        <rect key="frame" x="16" y="29" width="312" height="1"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="hol-yw-kcd"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="LIf-rv-Bd2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="0Wm-l1-oUv"/>
+                    <constraint firstItem="fnq-Sj-QzC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="5D2-n4-Vk8"/>
+                    <constraint firstItem="LIf-rv-Bd2" firstAttribute="top" secondItem="fnq-Sj-QzC" secondAttribute="bottom" constant="3" id="Gm6-eB-rIt"/>
+                    <constraint firstItem="fnq-Sj-QzC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="21" id="Olh-cI-eE1"/>
+                    <constraint firstAttribute="trailing" secondItem="LIf-rv-Bd2" secondAttribute="trailing" constant="16" id="amV-mP-N8M"/>
+                    <constraint firstItem="RDi-Wk-pYP" firstAttribute="leading" secondItem="fnq-Sj-QzC" secondAttribute="trailing" constant="1" id="emD-6N-hNQ"/>
+                    <constraint firstAttribute="trailing" secondItem="RDi-Wk-pYP" secondAttribute="trailing" constant="21" id="fQS-5J-ylm"/>
+                    <constraint firstItem="RDi-Wk-pYP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="h61-V3-9cy"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="471" y="104"/>
+            <connections>
+                <outlet property="textfield" destination="RDi-Wk-pYP" id="PbI-dQ-dIG"/>
+                <outlet property="underlineView" destination="LIf-rv-Bd2" id="87O-ld-win"/>
+            </connections>
+            <point key="canvasLocation" x="242.0289855072464" y="-21.428571428571427"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icSearch" width="24" height="24"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

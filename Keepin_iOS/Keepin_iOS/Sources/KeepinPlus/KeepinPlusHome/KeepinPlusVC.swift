@@ -31,6 +31,12 @@ class KeepinPlusVC: UIViewController {
         let inputNib = UINib(nibName: KeepinPlusInputTVC.identifier, bundle: nil)
         tableview.register(inputNib, forCellReuseIdentifier: KeepinPlusInputTVC.identifier)
         
+        let nameNib = UINib(nibName: KeepinPlusSearchTVC.identifier, bundle: nil)
+        tableview.register(nameNib, forCellReuseIdentifier: KeepinPlusSearchTVC.identifier)
+        
+        let selectNib = UINib(nibName: KeppinPlusSelectTVC.identifier, bundle: nil)
+        tableview.register(selectNib, forCellReuseIdentifier: KeppinPlusSelectTVC.identifier)
+        
     }
 
     func setNavigationBar(){
@@ -95,11 +101,26 @@ extension KeepinPlusVC : UITableViewDataSource {
             
             return cell
             
+        case 5:
+            guard let cell = tableview.dequeueReusableCell(withIdentifier: KeppinPlusSelectTVC.identifier, for: indexPath) as? KeppinPlusSelectTVC else {
+                return UITableViewCell()
+            }
+            cell.setData(select: 0)
+            return cell
+            
         case 6:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusTitleTVC.identifier, for: indexPath) as? KeepinPlusTitleTVC else {
                 return UITableViewCell()
             }
             cell.setData(title: "누구에게 받은 선물인가요?", subtitle: "", image: true)
+            
+            
+            return cell
+            
+        case 7:
+            guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusSearchTVC.identifier, for: indexPath) as? KeepinPlusSearchTVC else {
+                return UITableViewCell()
+            }
             
             return cell
         
@@ -137,6 +158,14 @@ extension KeepinPlusVC : UITableViewDataSource {
         switch indexPath.row {
         case 1:
             return 72
+            
+        case 5:
+            return 85
+            
+        case 7:
+            return 75
+            
+            
         default:
             return 43
         }
