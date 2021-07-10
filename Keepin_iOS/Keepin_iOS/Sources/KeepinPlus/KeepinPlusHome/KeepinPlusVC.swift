@@ -9,6 +9,8 @@ import UIKit
 
 class KeepinPlusVC: UIViewController {
 
+    var select : Int = 0
+    
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,7 +107,9 @@ extension KeepinPlusVC : UITableViewDataSource {
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeppinPlusSelectTVC.identifier, for: indexPath) as? KeppinPlusSelectTVC else {
                 return UITableViewCell()
             }
-            cell.setData(select: 0)
+            cell.setButtonUI(select: select)
+            cell.button[0].addTarget(self, action: #selector(selectGetButtonClicked(_:)), for: .touchUpInside)
+            cell.button[1].addTarget(self, action: #selector(selectGiveButtonClicked(_:)), for: .touchUpInside)
             return cell
             
         case 6:
@@ -172,4 +176,23 @@ extension KeepinPlusVC : UITableViewDataSource {
     }
     
     
+}
+
+extension KeepinPlusVC {
+    
+    // 어떤 선물인가요? - '받은' 버튼 눌렀을 때
+    @objc
+    func selectGetButtonClicked(_ sender : UIButton){
+        print("바뀐다")
+        select = 0
+        tableview.reloadData()
+        
+    }
+    
+    // 어떤 선물인가요? - '준' 버튼 눌렀을 때
+    @objc
+    func selectGiveButtonClicked(_ sender : UIButton){
+        select = 1
+        tableview.reloadData()
+    }
 }

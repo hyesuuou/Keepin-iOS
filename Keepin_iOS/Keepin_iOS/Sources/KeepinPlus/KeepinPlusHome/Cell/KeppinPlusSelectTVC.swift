@@ -10,25 +10,19 @@ import UIKit
 class KeppinPlusSelectTVC: UITableViewCell {
     
     public static let identifier = "KeppinPlusSelectTVC"
-    public var select : Int = 1
     
     // button[0]: 받은 선물, button[1]: 준 선물
     @IBOutlet var button: [UIButton]!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setButtonUI(select: select) // 일단 초기값 : 0
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    func setData(select : Int){
-        self.select = select
     }
     
     func setButtonUI(select : Int){
