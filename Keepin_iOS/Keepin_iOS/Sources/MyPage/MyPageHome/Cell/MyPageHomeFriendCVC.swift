@@ -8,6 +8,8 @@
 import UIKit
 
 class MyPageHomeFriendCVC: UICollectionViewCell {
+    
+    static let identifier : String = "MyPageHomeFriendCVC"
 
     override func awakeFromNib() {
         super.awakeFromNib()

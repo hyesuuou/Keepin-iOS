@@ -14,7 +14,7 @@ class BaseTBC: UITabBarController, UITabBarControllerDelegate {
     let presentMoaVC = PresentMoaVC()
     let keepinPlusVC  = KeepinPlusVC()
     let reminderVC  = ReminderVC()
-    let myPageVC = MyPageVC()
+    let myPageVC = MyPageHomeVC()
     
     let homeTabBarItem  = UITabBarItem(title: "", image: UIImage(named: "home"), tag: 0)
     let presentMoaTabBarItem = UITabBarItem(title: "", image: UIImage(named: "icArchive"), tag: 1)
