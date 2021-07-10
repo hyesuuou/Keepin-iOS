@@ -19,8 +19,16 @@ class ReminderAddVC: UIViewController {
         sender.isSelected = !sender.isSelected
     }
     
+    var list = ["당일 (오전 9:00)",
+                "1일 전 (오전 9:00)",
+                "2일 전 (오전 9:00)",
+                "3일 전 (오전 9:00)",
+                "1주일 전 (오전 9:00)"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.dismissKeyboardWhenTappedAround()
         
         setUI()
         setNavigationBar()
@@ -85,10 +93,13 @@ class ReminderAddVC: UIViewController {
         dateLabel.isUserInteractionEnabled = true
         remindLabel.isUserInteractionEnabled = true
         
-        let dateTapGesture = UITapGestureRecognizer(target:self,action:#selector(self.dateTap))
+        dateLabel.text = Date().toString()
+        remindLabel.text = "당일"
+        
+        let dateTapGesture = UITapGestureRecognizer(target:self,action:#selector(dateTap))
         dateLabel.addGestureRecognizer(dateTapGesture)
         
-        let remindTapGesture = UITapGestureRecognizer(target:self,action:#selector(self.remindTap))
+        let remindTapGesture = UITapGestureRecognizer(target:self,action:#selector(remindTap))
         remindLabel.addGestureRecognizer(remindTapGesture)
         
         remindSwitch.isOn = true
@@ -103,21 +114,27 @@ class ReminderAddVC: UIViewController {
         }
     }
     
+    //데이트피커 실시간 반영 selector
+    @objc func onDatePickerValueChanged(datePicker: UIDatePicker) {
+        dateLabel.text = datePicker.date.toString()
+    }
+    
+    //오늘날짜를 터치하면
     @objc func dateTap() {
-        let tempInput = UITextField( frame:CGRect.zero )
-        
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = UIDatePicker.Mode.date
-        datePicker.preferredDatePickerStyle = .wheels
-        datePicker.locale = Locale(identifier: "ko-KR")
-        
-        tempInput.inputView = datePicker
-        self.view.addSubview( tempInput )
-        tempInput.becomeFirstResponder()
+        self.setDatePicker(selector: #selector(onDatePickerValueChanged))
     }
 
+    //리마인드 터치하면
     @objc func remindTap() {
-        print("remind")
+        let tempInput = UITextField( frame:CGRect.zero )
+        
+        let myPicker = UIPickerView()
+        tempInput.inputView = myPicker
+        self.view.addSubview( tempInput )
+        tempInput.becomeFirstResponder()
+                
+        myPicker.delegate = self
+        myPicker.dataSource = self
     }
 
 }
@@ -129,3 +146,26 @@ extension ReminderAddVC : UITextFieldDelegate{
         return newLength <= 10
     }
 }
+
+extension ReminderAddVC : UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 50
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return list.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return list[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        remindLabel.text = String(list[row].prefix(list[row].count - 9))
+    }
+}
+

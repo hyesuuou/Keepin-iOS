@@ -93,4 +93,36 @@ extension UIViewController {
     @objc func dismissAlertController(){
         self.dismiss(animated: true, completion: nil)
     }
+    
+    // MARK: 밑에서 datePicker 팝업
+    func setDatePicker(selector: Selector){
+        let tempInput = UITextField( frame:CGRect.zero )
+        
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.locale = Locale(identifier: "ko-KR")
+        datePicker.addTarget(self, action: selector , for: UIControl.Event.valueChanged)
+        
+        tempInput.inputView = datePicker
+        self.view.addSubview( tempInput )
+
+        tempInput.becomeFirstResponder()
+    }
+    /*
+      // MARK:밑에서 datePicker 팝업 사용법
+        parameter에 들어가는 selector은 이 datePicker의 값을 가지고 바꿔야 하는 부분에 사용한다!
+     
+     ex:     //데이트피커 실시간 반영 selector
+     @objc func onDatePickerValueChanged(datePicker: UIDatePicker) {
+         dateLabel.text = datePicker.date.toString()
+     }
+     
+     (이건 이름은 그대로 놔두고 안에 내용만 바꾸면서 사용하면 될듯)
+     
+     이렇게 하면 이 setDatePicker을 사용하고 싶을때
+     self.setDatePicker(selector: #selector(onDatePickerValueChanged))
+     이렇게 해주면 되겠지요?!
+     
+     */
 }
