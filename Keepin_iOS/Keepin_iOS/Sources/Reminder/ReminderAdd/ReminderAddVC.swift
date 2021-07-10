@@ -105,29 +105,14 @@ class ReminderAddVC: UIViewController {
         }
     }
     
-    // MARK: 라벨 터치하면 밑에서 datePicker 팝업
-    func setDatePicker(){
-        let tempInput = UITextField( frame:CGRect.zero )
-        
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = UIDatePicker.Mode.date
-        datePicker.preferredDatePickerStyle = .wheels
-        datePicker.locale = Locale(identifier: "ko-KR")
-        datePicker.addTarget(self, action: #selector(onDatePickerValueChanged) , for: UIControl.Event.valueChanged)
-        
-        tempInput.inputView = datePicker
-        self.view.addSubview( tempInput )
-
-        tempInput.becomeFirstResponder()
-    }
-    
+    //데이트피커 실시간 반영 selector
     @objc func onDatePickerValueChanged(datePicker: UIDatePicker) {
         dateLabel.text = datePicker.date.toString()
     }
     
     //오늘날짜를 터치하면
     @objc func dateTap() {
-        setDatePicker()
+        self.setDatePicker(selector: #selector(onDatePickerValueChanged))
     }
 
     //리마인드 터치하면
