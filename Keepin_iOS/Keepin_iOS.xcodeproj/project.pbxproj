@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		1529FF7E26979F57000AD789 /* KeepinPlusTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1529FF7C26979F57000AD789 /* KeepinPlusTitleTVC.swift */; };
 		1529FF7F26979F57000AD789 /* KeepinPlusTitleTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1529FF7D26979F57000AD789 /* KeepinPlusTitleTVC.xib */; };
+		1529FF8626998496000AD789 /* KeepinPlusInputTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1529FF8426998496000AD789 /* KeepinPlusInputTVC.swift */; };
+		1529FF8726998496000AD789 /* KeepinPlusInputTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1529FF8526998496000AD789 /* KeepinPlusInputTVC.xib */; };
+		1529FF8E269984D2000AD789 /* KeepinPlusSearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1529FF8C269984D2000AD789 /* KeepinPlusSearchTVC.swift */; };
+		1529FF8F269984D2000AD789 /* KeepinPlusSearchTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1529FF8D269984D2000AD789 /* KeepinPlusSearchTVC.xib */; };
+		1529FF9226998585000AD789 /* KeepinPlusImageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1529FF9026998585000AD789 /* KeepinPlusImageTVC.swift */; };
+		1529FF9326998585000AD789 /* KeepinPlusImageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1529FF9126998585000AD789 /* KeepinPlusImageTVC.xib */; };
+		1529FF96269985A8000AD789 /* KeepinPlusCategoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1529FF94269985A8000AD789 /* KeepinPlusCategoryTVC.swift */; };
+		1529FF97269985A8000AD789 /* KeepinPlusCategoryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1529FF95269985A8000AD789 /* KeepinPlusCategoryTVC.xib */; };
+		1529FF9A269985B9000AD789 /* KeppinPlusSelectTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1529FF98269985B8000AD789 /* KeppinPlusSelectTVC.swift */; };
+		1529FF9B269985B9000AD789 /* KeppinPlusSelectTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1529FF99269985B8000AD789 /* KeppinPlusSelectTVC.xib */; };
+		1529FF9E269985CB000AD789 /* KeepinPlusWriteTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1529FF9C269985CB000AD789 /* KeepinPlusWriteTVC.swift */; };
+		1529FF9F269985CB000AD789 /* KeepinPlusWriteTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1529FF9D269985CB000AD789 /* KeepinPlusWriteTVC.xib */; };
 		153462D12694468B00060E44 /* JoinFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153462CF2694468B00060E44 /* JoinFirstVC.swift */; };
 		153462D22694468B00060E44 /* JoinFirstVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 153462D02694468B00060E44 /* JoinFirstVC.xib */; };
 		153462D52694469900060E44 /* JoinSecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153462D32694469900060E44 /* JoinSecondVC.swift */; };
@@ -96,6 +108,18 @@
 		01D2ADA99388E4A9A27B4E30 /* Pods-Keepin_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keepin_iOS.debug.xcconfig"; path = "Target Support Files/Pods-Keepin_iOS/Pods-Keepin_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		1529FF7C26979F57000AD789 /* KeepinPlusTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusTitleTVC.swift; sourceTree = "<group>"; };
 		1529FF7D26979F57000AD789 /* KeepinPlusTitleTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepinPlusTitleTVC.xib; sourceTree = "<group>"; };
+		1529FF8426998496000AD789 /* KeepinPlusInputTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusInputTVC.swift; sourceTree = "<group>"; };
+		1529FF8526998496000AD789 /* KeepinPlusInputTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepinPlusInputTVC.xib; sourceTree = "<group>"; };
+		1529FF8C269984D2000AD789 /* KeepinPlusSearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusSearchTVC.swift; sourceTree = "<group>"; };
+		1529FF8D269984D2000AD789 /* KeepinPlusSearchTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepinPlusSearchTVC.xib; sourceTree = "<group>"; };
+		1529FF9026998585000AD789 /* KeepinPlusImageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusImageTVC.swift; sourceTree = "<group>"; };
+		1529FF9126998585000AD789 /* KeepinPlusImageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepinPlusImageTVC.xib; sourceTree = "<group>"; };
+		1529FF94269985A8000AD789 /* KeepinPlusCategoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusCategoryTVC.swift; sourceTree = "<group>"; };
+		1529FF95269985A8000AD789 /* KeepinPlusCategoryTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepinPlusCategoryTVC.xib; sourceTree = "<group>"; };
+		1529FF98269985B8000AD789 /* KeppinPlusSelectTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeppinPlusSelectTVC.swift; sourceTree = "<group>"; };
+		1529FF99269985B8000AD789 /* KeppinPlusSelectTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeppinPlusSelectTVC.xib; sourceTree = "<group>"; };
+		1529FF9C269985CB000AD789 /* KeepinPlusWriteTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusWriteTVC.swift; sourceTree = "<group>"; };
+		1529FF9D269985CB000AD789 /* KeepinPlusWriteTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepinPlusWriteTVC.xib; sourceTree = "<group>"; };
 		153462CF2694468B00060E44 /* JoinFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinFirstVC.swift; sourceTree = "<group>"; };
 		153462D02694468B00060E44 /* JoinFirstVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinFirstVC.xib; sourceTree = "<group>"; };
 		153462D32694469900060E44 /* JoinSecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSecondVC.swift; sourceTree = "<group>"; };
@@ -199,6 +223,18 @@
 			children = (
 				1529FF7C26979F57000AD789 /* KeepinPlusTitleTVC.swift */,
 				1529FF7D26979F57000AD789 /* KeepinPlusTitleTVC.xib */,
+				1529FF8426998496000AD789 /* KeepinPlusInputTVC.swift */,
+				1529FF8526998496000AD789 /* KeepinPlusInputTVC.xib */,
+				1529FF8C269984D2000AD789 /* KeepinPlusSearchTVC.swift */,
+				1529FF8D269984D2000AD789 /* KeepinPlusSearchTVC.xib */,
+				1529FF9026998585000AD789 /* KeepinPlusImageTVC.swift */,
+				1529FF9126998585000AD789 /* KeepinPlusImageTVC.xib */,
+				1529FF94269985A8000AD789 /* KeepinPlusCategoryTVC.swift */,
+				1529FF95269985A8000AD789 /* KeepinPlusCategoryTVC.xib */,
+				1529FF98269985B8000AD789 /* KeppinPlusSelectTVC.swift */,
+				1529FF99269985B8000AD789 /* KeppinPlusSelectTVC.xib */,
+				1529FF9C269985CB000AD789 /* KeepinPlusWriteTVC.swift */,
+				1529FF9D269985CB000AD789 /* KeepinPlusWriteTVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -654,6 +690,7 @@
 				77F04847268C4DA000FBFDD7 /* KeepinPlusVC.xib in Resources */,
 				15C12223268E2FBF00838E55 /* GmarketSansTTFBold.ttf in Resources */,
 				7719B57D269724A900CBBB11 /* AfterCatVC.xib in Resources */,
+				1529FF9F269985CB000AD789 /* KeepinPlusWriteTVC.xib in Resources */,
 				15C12221268E2FBF00838E55 /* NotoSansCJKkr-Regular.otf in Resources */,
 				77F0482B268C49D100FBFDD7 /* PresentMoaVC.xib in Resources */,
 				77F549D5268ECF6C0013A76C /* ReminderVC.xib in Resources */,
@@ -662,6 +699,7 @@
 				77F04832268C4C3A00FBFDD7 /* PresentDetailVC.xib in Resources */,
 				71AC81902692F00D00758994 /* MyPageDetailPresentCVC.xib in Resources */,
 				71C197B726975298004C0490 /* MyPageProfileInfoTVC.xib in Resources */,
+				1529FF9B269985B9000AD789 /* KeppinPlusSelectTVC.xib in Resources */,
 				773D414F26942E8000A4E366 /* PresentDetailCVC.xib in Resources */,
 				71E1324626987F3200DB2D9F /* MyPageHomeHeaderCVC.xib in Resources */,
 				71C197AE26975103004C0490 /* MyPageProfileVC.xib in Resources */,
@@ -681,16 +719,20 @@
 				71AC81942692F1A700758994 /* MyPageDetailMemoCVC.xib in Resources */,
 				77F04826268C49BF00FBFDD7 /* HomeVC.xib in Resources */,
 				77F0484D268C4DB400FBFDD7 /* SelectFriendVC.xib in Resources */,
+				1529FF8F269984D2000AD789 /* KeepinPlusSearchTVC.xib in Resources */,
 				15C122362692DA7300838E55 /* LoginFirstVC.xib in Resources */,
 				71C197BB26977BBC004C0490 /* MyPageFriendFixVC.xib in Resources */,
 				71E13231269876FC00DB2D9F /* MyPageHomeVC.xib in Resources */,
 				15C12220268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf in Resources */,
 				7719B58326979D0900CBBB11 /* ReminderAddVC.xib in Resources */,
+				1529FF8726998496000AD789 /* KeepinPlusInputTVC.xib in Resources */,
 				77F047EC268AF99900FBFDD7 /* Assets.xcassets in Resources */,
 				77F04840268C4D2400FBFDD7 /* MyPageDetailVC.xib in Resources */,
 				15C12222268E2FBF00838E55 /* GmarketSansTTFMedium.ttf in Resources */,
 				71E1324226987EFD00DB2D9F /* MyPageHomeTopCVC.xib in Resources */,
 				71DA81E12694424D0062A3FA /* MyPageDetailPresentMoaCVC.xib in Resources */,
+				1529FF97269985A8000AD789 /* KeepinPlusCategoryTVC.xib in Resources */,
+				1529FF9326998585000AD789 /* KeepinPlusImageTVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,10 +785,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1529FF9A269985B9000AD789 /* KeppinPlusSelectTVC.swift in Sources */,
 				7719B58226979D0900CBBB11 /* ReminderAddVC.swift in Sources */,
 				77F04817268C45BB00FBFDD7 /* UIViewController.swift in Sources */,
+				1529FF9E269985CB000AD789 /* KeepinPlusWriteTVC.swift in Sources */,
 				77F549EC268F58970013A76C /* PresentMoaCVC.swift in Sources */,
 				71C197B22697526D004C0490 /* MyPageProfileEditTVC.swift in Sources */,
+				1529FF8626998496000AD789 /* KeepinPlusInputTVC.swift in Sources */,
 				71C197B626975298004C0490 /* MyPageProfileInfoTVC.swift in Sources */,
 				71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */,
 				71C197AD26975103004C0490 /* MyPageProfileVC.swift in Sources */,
@@ -765,9 +810,12 @@
 				77F04846268C4DA000FBFDD7 /* KeepinPlusVC.swift in Sources */,
 				77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */,
 				71E1324D2698A8BF00DB2D9F /* FriendListCVC.swift in Sources */,
+				1529FF8E269984D2000AD789 /* KeepinPlusSearchTVC.swift in Sources */,
 				153462D52694469900060E44 /* JoinSecondVC.swift in Sources */,
 				71AC818F2692F00D00758994 /* MyPageDetailPresentCVC.swift in Sources */,
+				1529FF96269985A8000AD789 /* KeepinPlusCategoryTVC.swift in Sources */,
 				1529FF7E26979F57000AD789 /* KeepinPlusTitleTVC.swift in Sources */,
+				1529FF9226998585000AD789 /* KeepinPlusImageTVC.swift in Sources */,
 				77F04806268B0CB000FBFDD7 /* Constants.swift in Sources */,
 				153462D12694468B00060E44 /* JoinFirstVC.swift in Sources */,
 				71C197BA26977BBC004C0490 /* MyPageFriendFixVC.swift in Sources */,
