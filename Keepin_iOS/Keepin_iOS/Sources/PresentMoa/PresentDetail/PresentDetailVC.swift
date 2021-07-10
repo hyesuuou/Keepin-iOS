@@ -96,13 +96,17 @@ class PresentDetailVC: UIViewController {
     
     @objc func toDetail(){
         let actionDelete = UIAlertAction(title: "삭제하기", style: .default) { action in
-            self.view.backgroundColor = .red
+            self.presentAlert(title: "", message: "삭제하시겠습니까?", isCancelActionIncluded: true) { action in
+                //삭제되야함
+                print("삭제")
+                self.navigationController?.popViewController(animated: true)
+            }
         }
         let actionEdit = UIAlertAction(title: "수정하기", style: .default) { action in
-            self.view.backgroundColor = .green
+            //수정하기로 가야됨
         }
         let actionCancel = UIAlertAction(title: "취소", style: .cancel) { action in
-            self.view.backgroundColor = .white
+            //다이얼로그 내리기
         }
         self.presentAlert(
             preferredStyle: .actionSheet,
@@ -137,8 +141,7 @@ extension PresentDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = presentDetailCV.dequeueReusableCell(withReuseIdentifier: "PresentDetailCVC", for: indexPath) as! PresentDetailCVC
-//        let food = foods[indexPath.row]
-//        cell.configure(with: food.imgUrl, title: food.productName, price: food.price)
+
         return cell
     }
     
