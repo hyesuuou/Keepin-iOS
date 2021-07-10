@@ -152,10 +152,6 @@ extension ReminderAddVC : UIPickerViewDelegate, UIPickerViewDataSource{
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 50
-    }
-    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return list.count
     }
