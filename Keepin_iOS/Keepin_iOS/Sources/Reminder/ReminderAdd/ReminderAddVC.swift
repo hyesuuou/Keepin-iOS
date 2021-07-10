@@ -19,6 +19,12 @@ class ReminderAddVC: UIViewController {
         sender.isSelected = !sender.isSelected
     }
     
+    var list = ["당일 (오전 9:00)",
+                "1일 전 (오전 9:00)",
+                "2일 전 (오전 9:00)",
+                "3일 전 (오전 9:00)",
+                "1주일 전 (오전 9:00)"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -87,6 +93,9 @@ class ReminderAddVC: UIViewController {
         dateLabel.isUserInteractionEnabled = true
         remindLabel.isUserInteractionEnabled = true
         
+        dateLabel.text = Date().toString()
+        remindLabel.text = "당일"
+        
         let dateTapGesture = UITapGestureRecognizer(target:self,action:#selector(dateTap))
         dateLabel.addGestureRecognizer(dateTapGesture)
         
@@ -117,7 +126,15 @@ class ReminderAddVC: UIViewController {
 
     //리마인드 터치하면
     @objc func remindTap() {
-        print("remind")
+        let tempInput = UITextField( frame:CGRect.zero )
+        
+        let myPicker = UIPickerView()
+        tempInput.inputView = myPicker
+        self.view.addSubview( tempInput )
+        tempInput.becomeFirstResponder()
+                
+        myPicker.delegate = self
+        myPicker.dataSource = self
     }
 
 }
@@ -127,6 +144,28 @@ extension ReminderAddVC : UITextFieldDelegate{
        guard let text = textField.text else { return true }
        let newLength = text.count + string.count - range.length
         return newLength <= 10
+    }
+}
+
+extension ReminderAddVC : UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 50
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return list.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return list[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        remindLabel.text = String(list[row].prefix(list[row].count - 9))
     }
 }
 
