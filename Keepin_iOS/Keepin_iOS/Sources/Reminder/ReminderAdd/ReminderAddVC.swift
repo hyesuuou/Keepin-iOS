@@ -22,6 +22,8 @@ class ReminderAddVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.dismissKeyboardWhenTappedAround()
+        
         setUI()
         setNavigationBar()
         eventTextField.delegate = self
@@ -85,10 +87,10 @@ class ReminderAddVC: UIViewController {
         dateLabel.isUserInteractionEnabled = true
         remindLabel.isUserInteractionEnabled = true
         
-        let dateTapGesture = UITapGestureRecognizer(target:self,action:#selector(self.dateTap))
+        let dateTapGesture = UITapGestureRecognizer(target:self,action:#selector(dateTap))
         dateLabel.addGestureRecognizer(dateTapGesture)
         
-        let remindTapGesture = UITapGestureRecognizer(target:self,action:#selector(self.remindTap))
+        let remindTapGesture = UITapGestureRecognizer(target:self,action:#selector(remindTap))
         remindLabel.addGestureRecognizer(remindTapGesture)
         
         remindSwitch.isOn = true
@@ -103,19 +105,32 @@ class ReminderAddVC: UIViewController {
         }
     }
     
-    @objc func dateTap() {
+    // MARK: 라벨 터치하면 밑에서 datePicker 팝업
+    func setDatePicker(){
         let tempInput = UITextField( frame:CGRect.zero )
         
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = UIDatePicker.Mode.date
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.locale = Locale(identifier: "ko-KR")
+        datePicker.addTarget(self, action: #selector(onDatePickerValueChanged) , for: UIControl.Event.valueChanged)
         
         tempInput.inputView = datePicker
         self.view.addSubview( tempInput )
+
         tempInput.becomeFirstResponder()
     }
+    
+    @objc func onDatePickerValueChanged(datePicker: UIDatePicker) {
+        dateLabel.text = datePicker.date.toString()
+    }
+    
+    //오늘날짜를 터치하면
+    @objc func dateTap() {
+        setDatePicker()
+    }
 
+    //리마인드 터치하면
     @objc func remindTap() {
         print("remind")
     }
@@ -129,3 +144,4 @@ extension ReminderAddVC : UITextFieldDelegate{
         return newLength <= 10
     }
 }
+
