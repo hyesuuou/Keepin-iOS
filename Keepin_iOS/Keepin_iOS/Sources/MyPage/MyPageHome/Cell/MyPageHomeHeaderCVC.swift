@@ -10,10 +10,21 @@ import UIKit
 class MyPageHomeHeaderCVC: UICollectionViewCell {
     
     static let identifier : String = "MyPageHomeHeaderCVC"
+    
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var mainText: UILabel!
+    @IBOutlet weak var plusButton: UIButton!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        mainText.text = "친구 모아보기"
+        mainText.font = UIFont.GmarketSansTTF(.medium, size: 18)
+        mainText.textColor = .keepinBlack
+        
+        mainView.backgroundColor = .keepinGray
+    
     }
 
 }

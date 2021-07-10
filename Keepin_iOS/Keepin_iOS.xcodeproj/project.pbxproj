@@ -65,6 +65,8 @@
 		71E1324A26987F5200DB2D9F /* MyPageHomeFriendCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E1324826987F5200DB2D9F /* MyPageHomeFriendCVC.xib */; };
 		71E1324D2698A8BF00DB2D9F /* FriendListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1324B2698A8BF00DB2D9F /* FriendListCVC.swift */; };
 		71E1324E2698A8BF00DB2D9F /* FriendListCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E1324C2698A8BF00DB2D9F /* FriendListCVC.xib */; };
+		71E265C52699D80900BD6840 /* KeepinPlusFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E265C32699D80900BD6840 /* KeepinPlusFriendVC.swift */; };
+		71E265C62699D80900BD6840 /* KeepinPlusFriendVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E265C42699D80900BD6840 /* KeepinPlusFriendVC.xib */; };
 		71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F8BF268DFDE30031BC50 /* UIFont.swift */; };
 		7719B57C269724A900CBBB11 /* AfterCatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B57A269724A800CBBB11 /* AfterCatVC.swift */; };
 		7719B57D269724A900CBBB11 /* AfterCatVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7719B57B269724A800CBBB11 /* AfterCatVC.xib */; };
@@ -166,6 +168,8 @@
 		71E1324826987F5200DB2D9F /* MyPageHomeFriendCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageHomeFriendCVC.xib; sourceTree = "<group>"; };
 		71E1324B2698A8BF00DB2D9F /* FriendListCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCVC.swift; sourceTree = "<group>"; };
 		71E1324C2698A8BF00DB2D9F /* FriendListCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendListCVC.xib; sourceTree = "<group>"; };
+		71E265C32699D80900BD6840 /* KeepinPlusFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusFriendVC.swift; sourceTree = "<group>"; };
+		71E265C42699D80900BD6840 /* KeepinPlusFriendVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepinPlusFriendVC.xib; sourceTree = "<group>"; };
 		71F8F8BF268DFDE30031BC50 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		7719B57A269724A800CBBB11 /* AfterCatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterCatVC.swift; sourceTree = "<group>"; };
 		7719B57B269724A800CBBB11 /* AfterCatVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AfterCatVC.xib; sourceTree = "<group>"; };
@@ -345,6 +349,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		71E265C22699D7AE00BD6840 /* KeepinPlusFriend */ = {
+			isa = PBXGroup;
+			children = (
+				71E265C32699D80900BD6840 /* KeepinPlusFriendVC.swift */,
+				71E265C42699D80900BD6840 /* KeepinPlusFriendVC.xib */,
+			);
+			path = KeepinPlusFriend;
+			sourceTree = "<group>";
+		};
 		7719B5792697082D00CBBB11 /* AfterCate */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,6 +515,7 @@
 		77F0481C268C496900FBFDD7 /* KeepinPlus */ = {
 			isa = PBXGroup;
 			children = (
+				71E265C22699D7AE00BD6840 /* KeepinPlusFriend */,
 				77F04842268C4D7600FBFDD7 /* KeepinPlusHome */,
 				77F04843268C4D7F00FBFDD7 /* SelectFriend */,
 			);
@@ -729,6 +743,7 @@
 				15C12220268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf in Resources */,
 				7719B58326979D0900CBBB11 /* ReminderAddVC.xib in Resources */,
 				1529FF8726998496000AD789 /* KeepinPlusInputTVC.xib in Resources */,
+				71E265C62699D80900BD6840 /* KeepinPlusFriendVC.xib in Resources */,
 				77F047EC268AF99900FBFDD7 /* Assets.xcassets in Resources */,
 				77F04840268C4D2400FBFDD7 /* MyPageDetailVC.xib in Resources */,
 				15C12222268E2FBF00838E55 /* GmarketSansTTFMedium.ttf in Resources */,
@@ -796,6 +811,7 @@
 				71C197B22697526D004C0490 /* MyPageProfileEditTVC.swift in Sources */,
 				1529FF8626998496000AD789 /* KeepinPlusInputTVC.swift in Sources */,
 				71C197B626975298004C0490 /* MyPageProfileInfoTVC.swift in Sources */,
+				71E265C52699D80900BD6840 /* KeepinPlusFriendVC.swift in Sources */,
 				71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */,
 				71C197AD26975103004C0490 /* MyPageProfileVC.swift in Sources */,
 				71AC81872692D77B00758994 /* MyPageDetailTopCVC.swift in Sources */,
