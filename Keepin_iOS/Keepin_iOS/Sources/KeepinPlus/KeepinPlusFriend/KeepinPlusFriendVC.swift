@@ -8,22 +8,23 @@
 import UIKit
 
 class KeepinPlusFriendVC: UIViewController {
-
+    
+    @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var textField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mainLabel.textColor = UIColor.keepinBlack
+        mainLabel.font = UIFont.GmarketSansTTF(.medium, size: 16)
+        
+        lineView.backgroundColor = .keepinGray3
+        
+        textField.attributedPlaceholder = NSAttributedString(string: "등록할 이름을 입력해 주세요.(최대 5자)", attributes: [NSAttributedString.Key.foregroundColor: UIColor.keepinGray3])
+        
 
-        // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
