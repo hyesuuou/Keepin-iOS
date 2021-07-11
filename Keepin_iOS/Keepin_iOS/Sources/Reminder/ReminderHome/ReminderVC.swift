@@ -41,7 +41,9 @@ class ReminderVC: UIViewController {
         layout.itemSize = CGSize(width: 51, height: 36)
         layout.scrollDirection = .horizontal
         monthCV.collectionViewLayout = layout
-        monthCV.isPagingEnabled = true
+        monthCV.decelerationRate = .fast
+        monthCV.isPagingEnabled = false
+//        monthCV.isPagingEnabled = true
         monthCV.register(ReminderCVC.nib(), forCellWithReuseIdentifier: "ReminderCVC")
         monthCV.delegate = self
         monthCV.dataSource = self
@@ -88,30 +90,24 @@ class ReminderVC: UIViewController {
 }
 extension ReminderVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
-//    private func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<Any>) {
-//        // item의 사이즈와 item 간의 간격 사이즈를 구해서 하나의 item 크기로 설정.
-//        let layout = self.monthCV.collectionViewLayout as! UICollectionViewFlowLayout
-//        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
-//            // targetContentOff을 이용하여 x좌표가 얼마나 이동했는지 확인
-//        // 이동한 x좌표 값과 item의 크기를 비교하여 몇 페이징이 될 것인지 값 설정
-//        var offset = targetContentOffset.pointee
-//        let index = ((offset as AnyObject).x + scrollView.contentInset.left) / cellWidthIncludingSpacing
-//        var roundedIndex = round(index)
-//        // scrollView, targetContentOffset의 좌표 값으로 스크롤 방향을 알 수 있다.
-//        // index를 반올림하여 사용하면 item의 절반 사이즈만큼 스크롤을 해야 페이징이 된다.
-//        // 스크로로 방향을 체크하여 올림,내림을 사용하면 좀 더 자연스러운 페이징 효과를 낼 수 있다.
-//        if scrollView.contentOffset.x > (targetContentOffset.pointee as AnyObject).x { roundedIndex = floor(index) }
-//        else { roundedIndex = ceil(index) }
-//        // 위 코드를 통해 페이징 될 좌표값을 targetContentOffset에 대입하면 된다.
-//        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
-//
-//        targetContentOffset.pointee = offset
-//    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        guard let layout = self.monthCV.collectionViewLayout as? UICollectionViewFlowLayout else { return }
         
+        let cellWidthIncludingSpacing = layout.itemSize.width 
+        
+        let estimatedIndex = scrollView.contentOffset.x / cellWidthIncludingSpacing
+        let index: Int
+        if velocity.x > 0 {
+            index = Int(ceil(estimatedIndex))
+        } else if velocity.x < 0 {
+            index = Int(floor(estimatedIndex))
+        } else {
+            index = Int(round(estimatedIndex))
+        }
+        
+        targetContentOffset.pointee = CGPoint(x: CGFloat(index) * cellWidthIncludingSpacing, y: 0)
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 12
     }
@@ -124,10 +120,13 @@ extension ReminderVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let cellWidth = UIScreen.main.bounds.size.width / 8
+        let cellWidth = UIScreen.main.bounds.size.width / 5
         return CGSize(width: cellWidth, height: 36)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
