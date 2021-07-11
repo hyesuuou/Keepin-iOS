@@ -28,8 +28,9 @@ class ReminderVC: UIViewController {
     @IBOutlet weak var monthCV: UICollectionView!
     @IBOutlet weak var reminderTV: UITableView!
     
+    var itemNum = 3
     var navigationLeftLabel : String = "편집"
-    var months = ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"]
+    var months = ["","","1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월","",""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,6 @@ class ReminderVC: UIViewController {
         monthCV.collectionViewLayout = layout
         monthCV.decelerationRate = .fast
         monthCV.isPagingEnabled = false
-//        monthCV.isPagingEnabled = true
         monthCV.register(ReminderCVC.nib(), forCellWithReuseIdentifier: "ReminderCVC")
         monthCV.delegate = self
         monthCV.dataSource = self
@@ -98,25 +98,16 @@ class ReminderVC: UIViewController {
 extension ReminderVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        guard let layout = self.monthCV.collectionViewLayout as? UICollectionViewFlowLayout else { return }
         
-        let cellWidthIncludingSpacing = layout.itemSize.width 
-        
-        let estimatedIndex = scrollView.contentOffset.x / cellWidthIncludingSpacing
-        let index: Int
-        if velocity.x > 0 {
-            index = Int(ceil(estimatedIndex))
-        } else if velocity.x < 0 {
-            index = Int(floor(estimatedIndex))
-        } else {
-            index = Int(round(estimatedIndex))
-        }
-        
-        targetContentOffset.pointee = CGPoint(x: CGFloat(index) * cellWidthIncludingSpacing, y: 0)
-    }
+        var offset = targetContentOffset.pointee
+        let index = (offset.x + scrollView.contentInset.left) / 51
+        let roundedIndex: CGFloat = round(index)
+        offset = CGPoint(x: roundedIndex * 51 - scrollView.contentInset.left, y: scrollView.contentInset.top)
+        targetContentOffset.pointee = offset }
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return 16
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -146,17 +137,37 @@ extension ReminderVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
 }
 
 extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return itemNum
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.section)
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = reminderTV.dequeueReusableCell(withIdentifier: "ReminderTVC", for: indexPath) as! ReminderTVC
+        cell.backgroundColor = .keepinGray
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIScreen.main.bounds.height * (64 / 812)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 12
+    }
+        
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .keepinGray
+        return headerView
     }
     
 }
