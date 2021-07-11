@@ -30,5 +30,5 @@ class ReminderTVC: UITableViewCell {
     static func nib() -> UINib{
         return UINib(nibName: "ReminderTVC", bundle: nil)
     }
-
+    
 }
