@@ -79,6 +79,7 @@
 		7719B590269A1DBD00CBBB11 /* ReminderCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7719B58E269A1DBD00CBBB11 /* ReminderCVC.xib */; };
 		7719B593269AC9BC00CBBB11 /* ReminderTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B591269AC9BB00CBBB11 /* ReminderTVC.swift */; };
 		7719B594269AC9BC00CBBB11 /* ReminderTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7719B592269AC9BB00CBBB11 /* ReminderTVC.xib */; };
+		7719B596269ADE2900CBBB11 /* UISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B595269ADE2900CBBB11 /* UISwitch.swift */; };
 		773D414E26942E8000A4E366 /* PresentDetailCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773D414C26942E8000A4E366 /* PresentDetailCVC.swift */; };
 		773D414F26942E8000A4E366 /* PresentDetailCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 773D414D26942E8000A4E366 /* PresentDetailCVC.xib */; };
 		77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */; };
@@ -188,6 +189,7 @@
 		7719B58E269A1DBD00CBBB11 /* ReminderCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderCVC.xib; sourceTree = "<group>"; };
 		7719B591269AC9BB00CBBB11 /* ReminderTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTVC.swift; sourceTree = "<group>"; };
 		7719B592269AC9BB00CBBB11 /* ReminderTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderTVC.xib; sourceTree = "<group>"; };
+		7719B595269ADE2900CBBB11 /* UISwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwitch.swift; sourceTree = "<group>"; };
 		773D414C26942E8000A4E366 /* PresentDetailCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PresentDetailCVC.swift; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.swift; sourceTree = SOURCE_ROOT; };
 		773D414D26942E8000A4E366 /* PresentDetailCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PresentDetailCVC.xib; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.xib; sourceTree = SOURCE_ROOT; };
 		77F047DF268AF98F00FBFDD7 /* Keepin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keepin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -486,6 +488,7 @@
 				77F04816268C45BB00FBFDD7 /* UIViewController.swift */,
 				71F8F8BF268DFDE30031BC50 /* UIFont.swift */,
 				7719B5862699CCA200CBBB11 /* Date.swift */,
+				7719B595269ADE2900CBBB11 /* UISwitch.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -839,6 +842,7 @@
 				1529FF9E269985CB000AD789 /* KeepinPlusWriteTVC.swift in Sources */,
 				77F549EC268F58970013A76C /* PresentMoaCVC.swift in Sources */,
 				717A0258269ACFF800241171 /* MyPageEditPhoneVC.swift in Sources */,
+				7719B596269ADE2900CBBB11 /* UISwitch.swift in Sources */,
 				1529FF8626998496000AD789 /* KeepinPlusInputTVC.swift in Sources */,
 				71E265C52699D80900BD6840 /* KeepinPlusFriendVC.swift in Sources */,
 				71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */,

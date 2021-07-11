@@ -8,10 +8,17 @@
 import UIKit
 
 class ReminderTVC: UITableViewCell {
-
+    @IBOutlet weak var backgronudImg: UIImageView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var alarmOn: UISwitch!
+    @IBOutlet weak var reminderTitle: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        reminderTitle.font = UIFont.GmarketSansTTF(.medium, size: 16)
+        reminderTitle.textColor = .keepinGray5
+        alarmOn.set(width: 44, height: 24)
+        backgronudImg.image = UIImage(named: "listReminderNotimportant")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -20,4 +27,8 @@ class ReminderTVC: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    static func nib() -> UINib{
+        return UINib(nibName: "ReminderTVC", bundle: nil)
+    }
+
 }

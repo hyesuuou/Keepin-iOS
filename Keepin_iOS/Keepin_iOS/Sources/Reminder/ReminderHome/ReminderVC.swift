@@ -47,10 +47,16 @@ class ReminderVC: UIViewController {
         monthCV.register(ReminderCVC.nib(), forCellWithReuseIdentifier: "ReminderCVC")
         monthCV.delegate = self
         monthCV.dataSource = self
+        
+        reminderTV.register(ReminderTVC.nib(), forCellReuseIdentifier: "ReminderTVC")
+        reminderTV.delegate = self
+        reminderTV.dataSource = self
     }
     
     func setUI(){
         yearLabel.text = Date().yearOnly()
+        reminderTV.backgroundColor = .keepinGray
+        reminderTV.contentInset.bottom = 50
     }
 
     func setNavigationBar(){
@@ -88,6 +94,7 @@ class ReminderVC: UIViewController {
     }
 
 }
+
 extension ReminderVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
@@ -135,5 +142,21 @@ extension ReminderVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         return 0
     }
     
+    
+}
+
+extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = reminderTV.dequeueReusableCell(withIdentifier: "ReminderTVC", for: indexPath) as! ReminderTVC
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UIScreen.main.bounds.height * (64 / 812)
+    }
     
 }
