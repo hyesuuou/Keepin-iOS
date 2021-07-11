@@ -9,15 +9,30 @@ import UIKit
 
 class MyPageEditPhoneVC: UIViewController {
 
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var textField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        phoneLabel.font = UIFont.NotoSans(.regular, size: 16)
 
-        // Do any additional setup after loading the view.
+        doneButton.tintColor = .keepinGray3
+        doneButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
+        
+        textField.addTarget(self, action: #selector(textFieldDidChange(_sender:)), for: .editingChanged)
     }
 
     @IBAction func toBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    @objc func textFieldDidChange(_sender: Any?){
+        if textField.text != ""{
+            doneButton.tintColor = .keepinGreen
+        }
+    }
     
 }

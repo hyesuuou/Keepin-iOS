@@ -12,6 +12,8 @@ class MyPageEditNameVC: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var doneButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +21,13 @@ class MyPageEditNameVC: UIViewController {
         nameLabel.font = UIFont.NotoSans(.regular, size: 16)
         nameLabel.textColor = .keepinBlack
         
+        doneButton.tintColor = .keepinGray3
+        doneButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
+        
         lineView.backgroundColor = .keepinGray4
         
         nameText.attributedPlaceholder = NSAttributedString(string: "최대 5개까지 입력 가능합니다.", attributes: [NSAttributedString.Key.foregroundColor : UIColor.keepinGray4])
+        nameText.addTarget(self, action: #selector(textFieldDidChange(_sender:)), for: .editingChanged)
     }
     
     
@@ -29,6 +35,12 @@ class MyPageEditNameVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    @objc func textFieldDidChange(_sender: Any?){
+        if nameText.text != ""{
+            doneButton.tintColor = .keepinGreen
+        }
+    }
     
 
 }

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPageEditNameVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="doneButton" destination="JeO-Lv-E8w" id="IEm-xL-iww"/>
                 <outlet property="lineView" destination="zFl-d3-oNA" id="q2o-Rs-oGa"/>
                 <outlet property="nameLabel" destination="Hg0-fX-SN0" id="rH5-rg-Pmv"/>
                 <outlet property="nameText" destination="NOf-KK-TB2" id="aH6-dw-HaD"/>
@@ -63,7 +64,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="최대 5자까지 입력 가능합니다." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NOf-KK-TB2">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="최대 5자까지 입력 가능합니다." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NOf-KK-TB2">
                     <rect key="frame" x="24" y="165" width="340" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="ChZ-eD-lem"/>
