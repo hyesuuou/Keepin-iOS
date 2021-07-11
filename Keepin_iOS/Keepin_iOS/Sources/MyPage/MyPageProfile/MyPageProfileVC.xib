@@ -345,6 +345,9 @@
                                     <state key="normal" title="로그아웃">
                                         <color key="titleColor" systemColor="systemGray4Color"/>
                                     </state>
+                                    <connections>
+                                        <action selector="logout:" destination="-1" eventType="touchUpInside" id="BhX-cn-bJC"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSM-uP-IuC">
                                     <rect key="frame" x="16" y="643" width="71" height="29"/>
@@ -356,6 +359,9 @@
                                     <state key="normal" title="계정 삭제">
                                         <color key="titleColor" systemColor="systemGray4Color"/>
                                     </state>
+                                    <connections>
+                                        <action selector="deleteButton:" destination="-1" eventType="touchUpInside" id="mW3-IC-SaV"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
