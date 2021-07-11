@@ -87,5 +87,22 @@ class MyPageProfileVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-
+    @IBAction func logout(_ sender: Any) {
+        let alert = UIAlertController(title: "다시 키핀하려면 로그인 해야 합니다. 로그아웃하시겠습니까?", message: nil, preferredStyle: UIAlertController.Style.alert)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .default, handler: nil)
+        
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+        
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func deleteButton(_ sender: Any) {
+        
+        
+    }
+    
 }
