@@ -63,11 +63,11 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="최대 5자까지 입력 가능합니다." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NOf-KK-TB2">
-                    <rect key="frame" x="24" y="165" width="201" height="24"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="최대 5자까지 입력 가능합니다." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NOf-KK-TB2">
+                    <rect key="frame" x="24" y="165" width="340" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="ChZ-eD-lem"/>
-                        <constraint firstAttribute="width" constant="201" id="zZE-yA-oKn"/>
+                        <constraint firstAttribute="width" constant="340" id="zZE-yA-oKn"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
