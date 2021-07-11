@@ -42,6 +42,9 @@ class KeepinPlusVC: UIViewController {
         let writeNib = UINib(nibName: KeepinPlusWriteTVC.identifier, bundle: nil)
         tableview.register(writeNib, forCellReuseIdentifier: KeepinPlusWriteTVC.identifier)
         
+        let categoryNib = UINib(nibName: KeepinPlusCategoryTVC.identifier, bundle: nil)
+        tableview.register(categoryNib, forCellReuseIdentifier: KeepinPlusCategoryTVC.identifier)
+        
     }
 
     func setNavigationBar(){
@@ -147,6 +150,12 @@ extension KeepinPlusVC : UITableViewDataSource {
             
             return cell
             
+        case 11:
+            guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusCategoryTVC.identifier, for: indexPath) as? KeepinPlusCategoryTVC else {
+                return UITableViewCell()
+            }
+            return cell
+            
         case 12:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusTitleTVC.identifier, for: indexPath) as? KeepinPlusTitleTVC else {
                 return UITableViewCell()
@@ -178,6 +187,9 @@ extension KeepinPlusVC : UITableViewDataSource {
             
         case 7:
             return 75
+            
+        case 11:
+            return 76 + 40
             
         case 13:
             return 234
