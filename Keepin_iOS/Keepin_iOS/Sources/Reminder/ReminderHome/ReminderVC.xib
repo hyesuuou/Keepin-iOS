@@ -11,11 +11,19 @@
         <array key="GmarketSansTTFMedium.ttf">
             <string>GmarketSansTTFMedium</string>
         </array>
+        <array key="NotoSansCJKkr-Bold.otf">
+            <string>NotoSansCJKkr-Bold</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReminderVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="monthCV" destination="GAL-C7-W89" id="8bZ-lQ-CHP"/>
+                <outlet property="reminderTV" destination="trA-LJ-vHK" id="lh4-jb-oSF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="yearLabel" destination="cc4-tW-N97" id="q3E-H2-ttA"/>
+                <outletCollection property="yearArrow" destination="C3l-2b-Awm" collectionClass="NSMutableArray" id="xV7-zn-As5"/>
+                <outletCollection property="yearArrow" destination="6ef-pQ-KI7" collectionClass="NSMutableArray" id="k1h-uW-DGk"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -29,19 +37,77 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cc4-tW-N97">
+                    <rect key="frame" x="52" y="140" width="33" height="21"/>
+                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ef-pQ-KI7">
+                    <rect key="frame" x="97" y="139" width="24" height="24"/>
+                    <state key="normal" image="icArrowRight"/>
+                    <connections>
+                        <action selector="yearArrowClicked:" destination="-1" eventType="touchUpInside" id="tVf-k8-Mx8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3l-2b-Awm">
+                    <rect key="frame" x="16" y="139" width="24" height="24"/>
+                    <state key="normal" image="icArrowLeft"/>
+                    <connections>
+                        <action selector="yearArrowClicked:" destination="-1" eventType="touchUpInside" id="4Qn-x2-TRt"/>
+                    </connections>
+                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="GAL-C7-W89">
+                    <rect key="frame" x="0.0" y="187" width="414" height="36"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="1mS-Fc-n9w"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p4l-Bq-Ut2">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="trA-LJ-vHK">
+                    <rect key="frame" x="0.0" y="247" width="414" height="566"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icMonthSelected" translatesAutoresizingMaskIntoConstraints="NO" id="gff-3c-jac">
+                    <rect key="frame" x="181.5" y="187" width="51" height="36"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="OBA-OC-BFd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="5ze-Kh-daT"/>
+                <constraint firstItem="C3l-2b-Awm" firstAttribute="top" secondItem="OBA-OC-BFd" secondAttribute="bottom" constant="31" id="7hf-iV-XUV"/>
+                <constraint firstItem="trA-LJ-vHK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FKD-vB-QZj"/>
+                <constraint firstItem="trA-LJ-vHK" firstAttribute="top" secondItem="GAL-C7-W89" secondAttribute="bottom" constant="24" id="GfU-Eg-hbi"/>
                 <constraint firstItem="OBA-OC-BFd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="HCQ-vu-Sq9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="trA-LJ-vHK" secondAttribute="bottom" id="HfQ-lj-4b3"/>
+                <constraint firstItem="6ef-pQ-KI7" firstAttribute="top" secondItem="OBA-OC-BFd" secondAttribute="bottom" constant="31" id="MCE-b4-NmZ"/>
+                <constraint firstItem="cc4-tW-N97" firstAttribute="leading" secondItem="C3l-2b-Awm" secondAttribute="trailing" constant="12" id="SDQ-v4-dxj"/>
+                <constraint firstItem="GAL-C7-W89" firstAttribute="top" secondItem="cc4-tW-N97" secondAttribute="bottom" constant="26" id="XRe-Fs-mpT"/>
+                <constraint firstItem="C3l-2b-Awm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="adW-pX-ez6"/>
+                <constraint firstItem="gff-3c-jac" firstAttribute="top" secondItem="GAL-C7-W89" secondAttribute="top" id="eRr-kh-opN"/>
+                <constraint firstItem="gff-3c-jac" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="i32-7Y-UpR"/>
+                <constraint firstItem="GAL-C7-W89" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jK4-Qq-SVt"/>
+                <constraint firstItem="GAL-C7-W89" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="q8a-Qu-g35"/>
+                <constraint firstItem="6ef-pQ-KI7" firstAttribute="leading" secondItem="cc4-tW-N97" secondAttribute="trailing" constant="12" id="qpa-ms-VUl"/>
+                <constraint firstItem="trA-LJ-vHK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="rjI-we-OdW"/>
+                <constraint firstItem="cc4-tW-N97" firstAttribute="top" secondItem="OBA-OC-BFd" secondAttribute="bottom" constant="32" id="sIl-B9-jyH"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
-            <point key="canvasLocation" x="106" y="95"/>
+            <point key="canvasLocation" x="105.79710144927537" y="94.419642857142847"/>
         </view>
     </objects>
     <resources>
+        <image name="icArrowLeft" width="24" height="24"/>
+        <image name="icArrowRight" width="24" height="24"/>
+        <image name="icMonthSelected" width="51" height="36"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

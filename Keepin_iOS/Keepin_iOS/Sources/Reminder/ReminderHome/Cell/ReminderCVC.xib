@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansCJKkr-Bold.otf">
+            <string>NotoSansCJKkr-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReminderCVC" id="gTV-IL-0wX" customClass="ReminderCVC" customModule="Keepin_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="51" height="35"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="51" height="35"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lM6-Md-uFX">
+                        <rect key="frame" x="0.0" y="0.0" width="51" height="35"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXv-Q1-NKN">
+                                <rect key="frame" x="13" y="5.5" width="25" height="24"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
+                                <color key="textColor" red="0.94916957619999998" green="0.94862657790000005" blue="0.96863085029999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="VXv-Q1-NKN" firstAttribute="centerX" secondItem="lM6-Md-uFX" secondAttribute="centerX" id="OQ8-uu-Bsv"/>
+                            <constraint firstItem="VXv-Q1-NKN" firstAttribute="centerY" secondItem="lM6-Md-uFX" secondAttribute="centerY" id="UOU-nh-eJd"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="lM6-Md-uFX" secondAttribute="trailing" id="80Y-8a-ZsA"/>
+                <constraint firstItem="lM6-Md-uFX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WLt-7D-H8f"/>
+                <constraint firstAttribute="bottom" secondItem="lM6-Md-uFX" secondAttribute="bottom" id="aSX-Wk-HCZ"/>
+                <constraint firstItem="lM6-Md-uFX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dip-v0-sP2"/>
+            </constraints>
+            <size key="customSize" width="51" height="35"/>
+            <connections>
+                <outlet property="monthLabel" destination="VXv-Q1-NKN" id="qJ4-q5-nEB"/>
+            </connections>
+            <point key="canvasLocation" x="67.391304347826093" y="94.754464285714278"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
