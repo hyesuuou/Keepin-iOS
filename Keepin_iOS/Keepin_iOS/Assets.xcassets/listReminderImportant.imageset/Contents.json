@@ -2,18 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "keyboardArrowRight.png",
+      "filename" : "listReminderImportant.png",
       "scale" : "1x"
     },
     {
-      "filename" : "keyboardArrowRight@2x.png",
+      "scale" : "2x",
       "idiom" : "universal",
-      "scale" : "2x"
+      "filename" : "listReminderImportant@2x.png"
     },
     {
       "scale" : "3x",
-      "filename" : "keyboardArrowRight@3x.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "listReminderImportant@3x.png"
     }
   ],
   "info" : {
