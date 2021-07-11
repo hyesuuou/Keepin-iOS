@@ -48,7 +48,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3y-lR-AAG">
                                                         <rect key="frame" x="81" y="0.0" width="73" height="33"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4K-jH-bjO">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4K-jH-bjO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="73" height="33"/>
                                                                 <state key="normal" title="기념일"/>
                                                             </button>
@@ -64,7 +64,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3M-2b-Mh7">
                                                         <rect key="frame" x="162" y="0.0" width="73" height="33"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dkv-g1-Gxh">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dkv-g1-Gxh">
                                                                 <rect key="frame" x="0.0" y="0.0" width="73" height="33"/>
                                                                 <state key="normal" title="축하"/>
                                                             </button>
@@ -80,7 +80,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIL-Db-d3r">
                                                         <rect key="frame" x="243" y="0.0" width="73" height="33"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SG2-Tr-vJH">
+                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SG2-Tr-vJH">
                                                                 <rect key="frame" x="0.0" y="0.0" width="73" height="33"/>
                                                                 <state key="normal" title="칭찬"/>
                                                             </button>
@@ -113,7 +113,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ll5-6K-BmC">
                                                         <rect key="frame" x="0.0" y="0.0" width="73" height="33"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsn-i2-9JF">
+                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsn-i2-9JF">
                                                                 <rect key="frame" x="0.0" y="0.0" width="73" height="33"/>
                                                                 <state key="normal" title="응원"/>
                                                             </button>
@@ -129,7 +129,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="08O-Jw-CCA">
                                                         <rect key="frame" x="81" y="0.0" width="73" height="33"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKo-4D-ohe">
+                                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKo-4D-ohe">
                                                                 <rect key="frame" x="0.0" y="0.0" width="73" height="33"/>
                                                                 <state key="normal" title="감사"/>
                                                             </button>
@@ -145,7 +145,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9nW-zj-8mJ">
                                                         <rect key="frame" x="162" y="0.0" width="73" height="33"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uc0-Gs-Ezy">
+                                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uc0-Gs-Ezy">
                                                                 <rect key="frame" x="0.0" y="0.0" width="73" height="33"/>
                                                                 <state key="normal" title="깜짝"/>
                                                             </button>
@@ -161,7 +161,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4K-ne-Qpa">
                                                         <rect key="frame" x="243" y="0.0" width="73" height="33"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ER-Ro-3Ad">
+                                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ER-Ro-3Ad">
                                                                 <rect key="frame" x="0.0" y="0.0" width="73" height="33"/>
                                                                 <state key="normal" title="기타"/>
                                                             </button>

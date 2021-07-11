@@ -10,14 +10,14 @@ import UIKit
 class KeepinPlusCategoryTVC: UITableViewCell {
     
     // 선택된 경우 -> 1, 선택x -> 0
-    var numberList : [Int] = [0, 0, 0, 0, 0, 0, 0, 0]
+    public static var numberList : [Int] = [0, 0, 0, 0, 0, 0, 0, 0]
     
     public static let identifier = "KeepinPlusCategoryTVC"
     
     @IBOutlet var button: [UIButton]!
     override func awakeFromNib() {
         super.awakeFromNib()
-        setButtonUI(select: numberList)
+        //setButtonUI(select: KeepinPlusCategoryTVC.numberList)
         
     }
 
@@ -34,6 +34,7 @@ class KeepinPlusCategoryTVC: UITableViewCell {
             if select[i] == 1 {
                 button[i].tintColor = .white
                 button[i].backgroundColor = .keepinGreen
+                button[i].layer.borderWidth = 0
             }
             else {
                 button[i].tintColor = .keepinGray3

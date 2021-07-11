@@ -10,6 +10,7 @@ import UIKit
 class KeepinPlusVC: UIViewController {
 
     var select : Int = 0
+    var count : Int = 0
     
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
@@ -148,12 +149,21 @@ extension KeepinPlusVC : UITableViewDataSource {
             }
             cell.setData(title: "선물 카테고리를 선택해주세요", subtitle: "(최대 2개)", image: false)
             
+            
             return cell
             
         case 11:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusCategoryTVC.identifier, for: indexPath) as? KeepinPlusCategoryTVC else {
                 return UITableViewCell()
             }
+            
+            cell.setButtonUI(select: KeepinPlusCategoryTVC.numberList)
+            for i in 0 ... 7 {
+                cell.button[i].addTarget(self, action: #selector(selectCategoryClicked(_:)), for: .touchUpInside)
+            }
+            
+            
+            
             return cell
             
         case 12:
@@ -220,4 +230,32 @@ extension KeepinPlusVC {
         select = 1
         tableview.reloadData()
     }
+    
+    // 선물 카테고리 버튼 눌렀을 때
+    @objc
+    func selectCategoryClicked(_ sender : UIButton){
+       
+        count = 0
+        for i in 0 ... KeepinPlusCategoryTVC.numberList.count - 1 {
+            if KeepinPlusCategoryTVC.numberList[i] == 1 {
+                count = count + 1
+            }
+        }
+        
+        if count == 2 {
+            if KeepinPlusCategoryTVC.numberList[sender.tag] == 1 {
+                KeepinPlusCategoryTVC.numberList[sender.tag] = 0
+            }
+        }
+        
+        
+        if count < 2 {
+            KeepinPlusCategoryTVC.numberList[sender.tag] = abs(KeepinPlusCategoryTVC.numberList[sender.tag]-1)
+        }
+        
+        tableview.reloadData()
+    }
+    
+    
+    
 }
