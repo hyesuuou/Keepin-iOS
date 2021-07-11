@@ -64,7 +64,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="05C-Cd-wv9">
                         <rect key="frame" x="136" y="0.0" width="102" height="102"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRv-gN-mPn">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRv-gN-mPn">
                                 <rect key="frame" x="0.0" y="0.0" width="102" height="102"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
@@ -108,7 +108,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGT-iC-1KW">
                         <rect key="frame" x="248" y="0.0" width="102" height="102"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fv-rQ-uKu">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fv-rQ-uKu">
                                 <rect key="frame" x="0.0" y="0.0" width="102" height="102"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
@@ -168,6 +168,8 @@
                 <outletCollection property="realImageView" destination="Wki-oY-ibd" collectionClass="NSMutableArray" id="o0t-Gu-NLo"/>
                 <outletCollection property="realImageView" destination="8az-gc-vaq" collectionClass="NSMutableArray" id="15J-mH-wRR"/>
                 <outletCollection property="realImageView" destination="oRK-r7-8xO" collectionClass="NSMutableArray" id="mzb-hW-kRQ"/>
+                <outletCollection property="imagePlusButton" destination="wRv-gN-mPn" collectionClass="NSMutableArray" id="FAX-FX-tMk"/>
+                <outletCollection property="imagePlusButton" destination="7Fv-rQ-uKu" collectionClass="NSMutableArray" id="gaO-Bl-Vd3"/>
             </connections>
             <point key="canvasLocation" x="-233.33333333333334" y="41.517857142857139"/>
         </tableViewCell>

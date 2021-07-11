@@ -13,6 +13,7 @@ class KeepinPlusVC: UIViewController {
     var count : Int = 0
     var cnt : Int = 0
     var img : UIImage? = nil
+    var tag : Int = 99
     
     let imagePicker = UIImagePickerController()
     
@@ -118,9 +119,11 @@ extension KeepinPlusVC : UITableViewDataSource {
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusImageTVC.identifier, for: indexPath) as? KeepinPlusImageTVC else {
                 return UITableViewCell()
             }
-            cell.imagePlusButton[0].addTarget(self, action: #selector(actionSheetAlert), for: .touchUpInside)
+            cell.imagePlusButton[0].addTarget(self, action: #selector(actionSheetAlert(_:)), for: .touchUpInside)
+            cell.imagePlusButton[1].addTarget(self, action: #selector(actionSheetAlert(_:)), for: .touchUpInside)
+            cell.imagePlusButton[2].addTarget(self, action: #selector(actionSheetAlert(_:)), for: .touchUpInside)
             if let image = img {
-                cell.setImage(image: image)
+                cell.setImage(image: image, tag: tag)
                 //cell.imagePlusButton[0].setImage(image, for: .normal)
             }
             
@@ -261,6 +264,7 @@ extension KeepinPlusVC {
     // 선물 카테고리 버튼 눌렀을 때
     @objc
     func selectCategoryClicked(_ sender : UIButton){
+        print(sender.tag)
        
         count = 0
         for i in 0 ... KeepinPlusCategoryTVC.numberList.count - 1 {
@@ -290,8 +294,9 @@ extension KeepinPlusVC {
 extension KeepinPlusVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @objc
-    func actionSheetAlert(){
-        
+    func actionSheetAlert(_ sender: UIButton){
+        print(sender.tag)
+        tag = sender.tag
         let alert = UIAlertController(title: "선택", message: "선택", preferredStyle: .actionSheet)
         
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)

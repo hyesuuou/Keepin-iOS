@@ -32,9 +32,9 @@ class KeepinPlusImageTVC: UITableViewCell, UIImagePickerControllerDelegate, UINa
         // Configure the view for the selected state
     }
     
-    func setImage(image: UIImage){
-        imageContainerView[0].isHidden = false
-        realImageView[0].image = image
+    func setImage(image: UIImage, tag: Int){
+        imageContainerView[tag].isHidden = false
+        realImageView[tag].image = image
     }
 }
 
