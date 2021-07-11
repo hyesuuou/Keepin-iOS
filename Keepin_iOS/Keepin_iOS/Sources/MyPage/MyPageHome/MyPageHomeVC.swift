@@ -22,9 +22,6 @@ class MyPageHomeVC: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = false
         
-        
-        
-        
     }
     
     func registerXib(){
@@ -38,8 +35,6 @@ class MyPageHomeVC: UIViewController {
         let homeFriendNib = UINib(nibName: MyPageHomeFriendCVC.identifier, bundle: nil)
         myPageHomeCV.register(homeFriendNib, forCellWithReuseIdentifier:MyPageHomeFriendCVC.identifier)
     }
-
-    
     @objc func toProfile(){
         self.navigationController?.pushViewController(MyPageDetailVC(), animated: true)
     }
@@ -64,6 +59,8 @@ extension MyPageHomeVC : UICollectionViewDataSource {
         case 0:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageHomeTopCVC.identifier, for: indexPath)as? MyPageHomeTopCVC else {return UICollectionViewCell()}
             
+            cell.settingButton.addTarget(self, action: #selector(toSetting), for: UIControl.Event.touchUpInside)
+            
             return cell
         
         case 1:
@@ -79,6 +76,10 @@ extension MyPageHomeVC : UICollectionViewDataSource {
         default:
             return UICollectionViewCell()
         }
+    }
+    
+    @objc func toSetting(){
+        self.navigationController?.pushViewController(MyPageProfileVC(), animated: true)
     }
 }
 
@@ -114,12 +115,4 @@ extension MyPageHomeVC : UICollectionViewDelegateFlowLayout{
             return CGSize(width: width, height: cellHeight)
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }
