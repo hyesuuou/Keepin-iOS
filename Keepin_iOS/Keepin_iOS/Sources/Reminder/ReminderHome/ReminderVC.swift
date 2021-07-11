@@ -161,7 +161,12 @@ extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 12
+        if section == 0{
+            return 32
+        }
+        else{
+            return 12
+        }
     }
         
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
