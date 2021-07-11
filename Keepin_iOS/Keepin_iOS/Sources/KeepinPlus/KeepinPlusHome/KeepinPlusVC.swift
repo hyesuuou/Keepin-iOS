@@ -170,6 +170,14 @@ extension KeepinPlusVC : UITableViewDataSource {
             
             return cell
             
+        case 9:
+            guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusInputTVC.identifier, for: indexPath) as? KeepinPlusInputTVC else {
+                return UITableViewCell()
+            }
+            cell.setData(placeholder: "YYYY.MM.DD")
+            cell.textfield.setDatePicker(target: (Any).self, selector: #selector(textfieldSave))
+            return cell
+            
         case 10:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusTitleTVC.identifier, for: indexPath) as? KeepinPlusTitleTVC else {
                 return UITableViewCell()
@@ -228,6 +236,9 @@ extension KeepinPlusVC : UITableViewDataSource {
         case 7:
             return 75
             
+        case 9:
+            return 76
+            
         case 11:
             return 76 + 40
             
@@ -238,6 +249,11 @@ extension KeepinPlusVC : UITableViewDataSource {
         default:
             return 43
         }
+    }
+    
+    @objc
+    func textfieldSave(){
+        print("텍스트필드에 저장")
     }
     
     
@@ -286,7 +302,6 @@ extension KeepinPlusVC {
         
         tableview.reloadData()
     }
-    
     
     
 }
@@ -366,4 +381,36 @@ extension KeepinPlusVC : UIImagePickerControllerDelegate, UINavigationController
         
     }
     
+    
+    
+}
+
+extension UITextField {
+    func setDatePicker(target: Any, selector: Selector) {
+        let SCwidth = self.bounds.width
+        let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: SCwidth, height: 216))
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.locale = Locale(identifier: "ko-KR")
+        self.inputView = datePicker
+        
+        let toolBar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: SCwidth, height: 44.0))
+        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancel = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(tapCancel))
+        let barButton = UIBarButtonItem(title: "Done", style: .plain, target: target, action: #selector(doneButtonClicked
+                                            ))
+        toolBar.setItems([cancel, flexible, barButton], animated: false)
+        self.inputAccessoryView = toolBar
+        
+    }
+    @objc func tapCancel() {
+        self.resignFirstResponder()
+    }
+    
+    @objc
+    func doneButtonClicked(){
+        print("textfieldSave")
+        self.text = "여기에 날짜가와야함."
+        self.resignFirstResponder()
+    }
 }
