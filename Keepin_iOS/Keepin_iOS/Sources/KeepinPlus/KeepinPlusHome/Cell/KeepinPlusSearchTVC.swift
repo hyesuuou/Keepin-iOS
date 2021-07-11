@@ -8,7 +8,11 @@
 import UIKit
 
 class KeepinPlusSearchTVC: UITableViewCell {
+    
+    public static let identifier = "KeepinPlusSearchTVC"
 
+    @IBOutlet weak var textfield: UITextField!
+    @IBOutlet weak var underlineView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +22,12 @@ class KeepinPlusSearchTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setUI(){
+        textfield.font = UIFont.NotoSans(.regular, size: 13)
+        underlineView.backgroundColor = .keepinGray3
+        
     }
     
 }
