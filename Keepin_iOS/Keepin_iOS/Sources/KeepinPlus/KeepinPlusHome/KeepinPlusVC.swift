@@ -39,6 +39,9 @@ class KeepinPlusVC: UIViewController {
         let selectNib = UINib(nibName: KeppinPlusSelectTVC.identifier, bundle: nil)
         tableview.register(selectNib, forCellReuseIdentifier: KeppinPlusSelectTVC.identifier)
         
+        let writeNib = UINib(nibName: KeepinPlusWriteTVC.identifier, bundle: nil)
+        tableview.register(writeNib, forCellReuseIdentifier: KeepinPlusWriteTVC.identifier)
+        
     }
 
     func setNavigationBar(){
@@ -67,7 +70,7 @@ extension KeepinPlusVC : UITableViewDelegate {
 
 extension KeepinPlusVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 13
+        return 14
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -151,6 +154,13 @@ extension KeepinPlusVC : UITableViewDataSource {
             cell.setData(title: "더 잘 키핀해볼까요?", subtitle: "", image: false)
             
             return cell
+            
+        case 13:
+            guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusWriteTVC.identifier, for: indexPath) as? KeepinPlusWriteTVC else {
+                return UITableViewCell()
+            }
+            
+            return cell
         
         default:
             return UITableViewCell()
@@ -168,6 +178,9 @@ extension KeepinPlusVC : UITableViewDataSource {
             
         case 7:
             return 75
+            
+        case 13:
+            return 234
             
             
         default:
