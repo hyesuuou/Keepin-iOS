@@ -7,17 +7,34 @@
 
 import UIKit
 
-class KeepinPlusImageTVC: UITableViewCell {
+class KeepinPlusImageTVC: UITableViewCell, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    public static let identifier = "KeepinPlusImageTVC"
 
+    @IBOutlet var realImageView: [UIImageView]!
+    
+    
+    @IBOutlet var imageContainerView: [UIView]!
+    
+    @IBOutlet var imagePlusButton: [UIButton]!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        imageContainerView[0].isHidden = true
+        imageContainerView[1].isHidden = true
+        imageContainerView[2].isHidden = true
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
+    func setImage(image: UIImage){
+        imageContainerView[0].isHidden = false
+        realImageView[0].image = image
+    }
 }
+
