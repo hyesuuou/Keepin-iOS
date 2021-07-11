@@ -65,12 +65,16 @@
 		71E1324A26987F5200DB2D9F /* MyPageHomeFriendCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E1324826987F5200DB2D9F /* MyPageHomeFriendCVC.xib */; };
 		71E1324D2698A8BF00DB2D9F /* FriendListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1324B2698A8BF00DB2D9F /* FriendListCVC.swift */; };
 		71E1324E2698A8BF00DB2D9F /* FriendListCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E1324C2698A8BF00DB2D9F /* FriendListCVC.xib */; };
+		71E265C52699D80900BD6840 /* KeepinPlusFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E265C32699D80900BD6840 /* KeepinPlusFriendVC.swift */; };
+		71E265C62699D80900BD6840 /* KeepinPlusFriendVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E265C42699D80900BD6840 /* KeepinPlusFriendVC.xib */; };
 		71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F8BF268DFDE30031BC50 /* UIFont.swift */; };
 		7719B57C269724A900CBBB11 /* AfterCatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B57A269724A800CBBB11 /* AfterCatVC.swift */; };
 		7719B57D269724A900CBBB11 /* AfterCatVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7719B57B269724A800CBBB11 /* AfterCatVC.xib */; };
 		7719B58226979D0900CBBB11 /* ReminderAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B58026979D0800CBBB11 /* ReminderAddVC.swift */; };
 		7719B58326979D0900CBBB11 /* ReminderAddVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7719B58126979D0800CBBB11 /* ReminderAddVC.xib */; };
 		7719B5872699CCA300CBBB11 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5862699CCA200CBBB11 /* Date.swift */; };
+		7719B58F269A1DBD00CBBB11 /* ReminderCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B58D269A1DBD00CBBB11 /* ReminderCVC.swift */; };
+		7719B590269A1DBD00CBBB11 /* ReminderCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7719B58E269A1DBD00CBBB11 /* ReminderCVC.xib */; };
 		773D414E26942E8000A4E366 /* PresentDetailCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773D414C26942E8000A4E366 /* PresentDetailCVC.swift */; };
 		773D414F26942E8000A4E366 /* PresentDetailCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 773D414D26942E8000A4E366 /* PresentDetailCVC.xib */; };
 		77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */; };
@@ -166,12 +170,16 @@
 		71E1324826987F5200DB2D9F /* MyPageHomeFriendCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageHomeFriendCVC.xib; sourceTree = "<group>"; };
 		71E1324B2698A8BF00DB2D9F /* FriendListCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCVC.swift; sourceTree = "<group>"; };
 		71E1324C2698A8BF00DB2D9F /* FriendListCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendListCVC.xib; sourceTree = "<group>"; };
+		71E265C32699D80900BD6840 /* KeepinPlusFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusFriendVC.swift; sourceTree = "<group>"; };
+		71E265C42699D80900BD6840 /* KeepinPlusFriendVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepinPlusFriendVC.xib; sourceTree = "<group>"; };
 		71F8F8BF268DFDE30031BC50 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		7719B57A269724A800CBBB11 /* AfterCatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterCatVC.swift; sourceTree = "<group>"; };
 		7719B57B269724A800CBBB11 /* AfterCatVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AfterCatVC.xib; sourceTree = "<group>"; };
 		7719B58026979D0800CBBB11 /* ReminderAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderAddVC.swift; sourceTree = "<group>"; };
 		7719B58126979D0800CBBB11 /* ReminderAddVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderAddVC.xib; sourceTree = "<group>"; };
 		7719B5862699CCA200CBBB11 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		7719B58D269A1DBD00CBBB11 /* ReminderCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCVC.swift; sourceTree = "<group>"; };
+		7719B58E269A1DBD00CBBB11 /* ReminderCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderCVC.xib; sourceTree = "<group>"; };
 		773D414C26942E8000A4E366 /* PresentDetailCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PresentDetailCVC.swift; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.swift; sourceTree = SOURCE_ROOT; };
 		773D414D26942E8000A4E366 /* PresentDetailCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PresentDetailCVC.xib; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.xib; sourceTree = SOURCE_ROOT; };
 		77F047DF268AF98F00FBFDD7 /* Keepin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keepin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -345,6 +353,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		71E265C22699D7AE00BD6840 /* KeepinPlusFriend */ = {
+			isa = PBXGroup;
+			children = (
+				71E265C32699D80900BD6840 /* KeepinPlusFriendVC.swift */,
+				71E265C42699D80900BD6840 /* KeepinPlusFriendVC.xib */,
+			);
+			path = KeepinPlusFriend;
+			sourceTree = "<group>";
+		};
 		7719B5792697082D00CBBB11 /* AfterCate */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +378,15 @@
 				7719B58126979D0800CBBB11 /* ReminderAddVC.xib */,
 			);
 			path = ReminderAdd;
+			sourceTree = "<group>";
+		};
+		7719B588269A1D5000CBBB11 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7719B58D269A1DBD00CBBB11 /* ReminderCVC.swift */,
+				7719B58E269A1DBD00CBBB11 /* ReminderCVC.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		773D414B26942E6B00A4E366 /* Cell */ = {
@@ -502,6 +528,7 @@
 		77F0481C268C496900FBFDD7 /* KeepinPlus */ = {
 			isa = PBXGroup;
 			children = (
+				71E265C22699D7AE00BD6840 /* KeepinPlusFriend */,
 				77F04842268C4D7600FBFDD7 /* KeepinPlusHome */,
 				77F04843268C4D7F00FBFDD7 /* SelectFriend */,
 			);
@@ -581,6 +608,7 @@
 		77F549D6268ECF770013A76C /* ReminderHome */ = {
 			isa = PBXGroup;
 			children = (
+				7719B588269A1D5000CBBB11 /* Cell */,
 				77F549D2268ECF6C0013A76C /* ReminderVC.swift */,
 				77F549D3268ECF6C0013A76C /* ReminderVC.xib */,
 			);
@@ -694,6 +722,7 @@
 				15C12223268E2FBF00838E55 /* GmarketSansTTFBold.ttf in Resources */,
 				7719B57D269724A900CBBB11 /* AfterCatVC.xib in Resources */,
 				1529FF9F269985CB000AD789 /* KeepinPlusWriteTVC.xib in Resources */,
+				7719B590269A1DBD00CBBB11 /* ReminderCVC.xib in Resources */,
 				15C12221268E2FBF00838E55 /* NotoSansCJKkr-Regular.otf in Resources */,
 				77F0482B268C49D100FBFDD7 /* PresentMoaVC.xib in Resources */,
 				77F549D5268ECF6C0013A76C /* ReminderVC.xib in Resources */,
@@ -729,6 +758,7 @@
 				15C12220268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf in Resources */,
 				7719B58326979D0900CBBB11 /* ReminderAddVC.xib in Resources */,
 				1529FF8726998496000AD789 /* KeepinPlusInputTVC.xib in Resources */,
+				71E265C62699D80900BD6840 /* KeepinPlusFriendVC.xib in Resources */,
 				77F047EC268AF99900FBFDD7 /* Assets.xcassets in Resources */,
 				77F04840268C4D2400FBFDD7 /* MyPageDetailVC.xib in Resources */,
 				15C12222268E2FBF00838E55 /* GmarketSansTTFMedium.ttf in Resources */,
@@ -790,12 +820,14 @@
 			files = (
 				1529FF9A269985B9000AD789 /* KeppinPlusSelectTVC.swift in Sources */,
 				7719B58226979D0900CBBB11 /* ReminderAddVC.swift in Sources */,
+				7719B58F269A1DBD00CBBB11 /* ReminderCVC.swift in Sources */,
 				77F04817268C45BB00FBFDD7 /* UIViewController.swift in Sources */,
 				1529FF9E269985CB000AD789 /* KeepinPlusWriteTVC.swift in Sources */,
 				77F549EC268F58970013A76C /* PresentMoaCVC.swift in Sources */,
 				71C197B22697526D004C0490 /* MyPageProfileEditTVC.swift in Sources */,
 				1529FF8626998496000AD789 /* KeepinPlusInputTVC.swift in Sources */,
 				71C197B626975298004C0490 /* MyPageProfileInfoTVC.swift in Sources */,
+				71E265C52699D80900BD6840 /* KeepinPlusFriendVC.swift in Sources */,
 				71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */,
 				71C197AD26975103004C0490 /* MyPageProfileVC.swift in Sources */,
 				71AC81872692D77B00758994 /* MyPageDetailTopCVC.swift in Sources */,

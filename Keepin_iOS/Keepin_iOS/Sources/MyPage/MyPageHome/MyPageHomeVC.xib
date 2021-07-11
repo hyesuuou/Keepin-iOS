@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPageHomeVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="myPageHomeCV" destination="dZ9-Kk-6ge" id="o3N-eB-SJu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="dZ9-Kk-6ge">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yf6-cd-8ud">
                         <size key="itemSize" width="128" height="128"/>
@@ -37,6 +38,8 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dZ9-Kk-6ge" secondAttribute="bottom" id="bNV-Xd-LtR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dZ9-Kk-6ge" secondAttribute="trailing" id="pLw-jK-Jcn"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
             <point key="canvasLocation" x="139" y="122"/>
         </view>
     </objects>
