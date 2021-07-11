@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPageEditPhoneVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="doneButton" destination="iyK-vy-ZNf" id="U8e-Qj-Zae"/>
+                <outlet property="phoneLabel" destination="p5p-cd-2gz" id="9e1-C1-vbL"/>
+                <outlet property="textField" destination="q2J-xm-Prs" id="CNA-Fw-v7n"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
