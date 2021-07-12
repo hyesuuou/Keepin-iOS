@@ -17,10 +17,18 @@ class KeepinPlusVC: UIViewController {
     
     let imagePicker = UIImagePickerController()
     
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var keepinButton: UIButton!
     @IBOutlet weak var tableview: UITableView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        print("viewwilappear")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("viewdidload")
         setNavigationBar()
         setTableview()
         registerXib()
@@ -57,16 +65,13 @@ class KeepinPlusVC: UIViewController {
     }
 
     func setNavigationBar(){
-        let dismissButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
-        dismissButton.setImage(UIImage(named: "icX"), for: UIControl.State.normal)
-        dismissButton.addTarget(self, action: #selector(toDismiss), for: UIControl.Event.touchUpInside)
-        dismissButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        //self.navigationController?.navigationBar.isHidden = true
         
-        let dismissbarButton = UIBarButtonItem(customView: dismissButton)
-        self.navigationItem.leftBarButtonItem = dismissbarButton
+        backButton.addTarget(self, action: #selector(toDismiss), for: UIControl.Event.touchUpInside)
         
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = false
+        keepinButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
+        keepinButton.tintColor = .keepinGray3
+
     }
     
     @objc func toDismiss(){
