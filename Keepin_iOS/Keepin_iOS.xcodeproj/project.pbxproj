@@ -87,6 +87,9 @@
 		7719B5C6269C2E0300CBBB11 /* PresentMoaHomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5C5269C2E0300CBBB11 /* PresentMoaHomeRequest.swift */; };
 		7719B5C8269C2E1B00CBBB11 /* PresentMoaHomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5C7269C2E1B00CBBB11 /* PresentMoaHomeDataManager.swift */; };
 		7719B5CA269C2E2700CBBB11 /* PresentMoaHomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5C9269C2E2700CBBB11 /* PresentMoaHomeResponse.swift */; };
+		7719B5CE269C459700CBBB11 /* SearchDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5CD269C459700CBBB11 /* SearchDataManager.swift */; };
+		7719B5D0269C45A900CBBB11 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5CF269C45A900CBBB11 /* SearchResponse.swift */; };
+		7719B5D2269C45B800CBBB11 /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5D1269C45B800CBBB11 /* SearchRequest.swift */; };
 		773D414E26942E8000A4E366 /* PresentDetailCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773D414C26942E8000A4E366 /* PresentDetailCVC.swift */; };
 		773D414F26942E8000A4E366 /* PresentDetailCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 773D414D26942E8000A4E366 /* PresentDetailCVC.xib */; };
 		77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */; };
@@ -204,6 +207,9 @@
 		7719B5C5269C2E0300CBBB11 /* PresentMoaHomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMoaHomeRequest.swift; sourceTree = "<group>"; };
 		7719B5C7269C2E1B00CBBB11 /* PresentMoaHomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMoaHomeDataManager.swift; sourceTree = "<group>"; };
 		7719B5C9269C2E2700CBBB11 /* PresentMoaHomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMoaHomeResponse.swift; sourceTree = "<group>"; };
+		7719B5CD269C459700CBBB11 /* SearchDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataManager.swift; sourceTree = "<group>"; };
+		7719B5CF269C45A900CBBB11 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		7719B5D1269C45B800CBBB11 /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
 		773D414C26942E8000A4E366 /* PresentDetailCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PresentDetailCVC.swift; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.swift; sourceTree = SOURCE_ROOT; };
 		773D414D26942E8000A4E366 /* PresentDetailCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PresentDetailCVC.xib; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.xib; sourceTree = SOURCE_ROOT; };
 		77F047DF268AF98F00FBFDD7 /* Keepin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keepin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -444,6 +450,23 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		7719B5CB269C448500CBBB11 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				7719B5CD269C459700CBBB11 /* SearchDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		7719B5CC269C449500CBBB11 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				7719B5CF269C45A900CBBB11 /* SearchResponse.swift */,
+				7719B5D1269C45B800CBBB11 /* SearchRequest.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		773D414B26942E6B00A4E366 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -669,6 +692,8 @@
 		77F549D7268EE8DE0013A76C /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				7719B5CB269C448500CBBB11 /* DataManager */,
+				7719B5CC269C449500CBBB11 /* DataModel */,
 				7719B5792697082D00CBBB11 /* AfterCate */,
 				77F549DC268EE92C0013A76C /* SearchVC.swift */,
 				77F549DD268EE92C0013A76C /* SearchVC.xib */,
@@ -867,6 +892,7 @@
 			files = (
 				1529FF9A269985B9000AD789 /* KeppinPlusSelectTVC.swift in Sources */,
 				7719B58226979D0900CBBB11 /* ReminderAddVC.swift in Sources */,
+				7719B5D0269C45A900CBBB11 /* SearchResponse.swift in Sources */,
 				7719B58F269A1DBD00CBBB11 /* ReminderCVC.swift in Sources */,
 				77F04817268C45BB00FBFDD7 /* UIViewController.swift in Sources */,
 				1529FF9E269985CB000AD789 /* KeepinPlusWriteTVC.swift in Sources */,
@@ -882,6 +908,7 @@
 				71AC81872692D77B00758994 /* MyPageDetailTopCVC.swift in Sources */,
 				773D414E26942E8000A4E366 /* PresentDetailCVC.swift in Sources */,
 				15C1222C268F063C00838E55 /* HomeTopTVC.swift in Sources */,
+				7719B5CE269C459700CBBB11 /* SearchDataManager.swift in Sources */,
 				71E1324526987F3200DB2D9F /* MyPageHomeHeaderCVC.swift in Sources */,
 				77F0484C268C4DB400FBFDD7 /* SelectFriendVC.swift in Sources */,
 				77F04831268C4C3A00FBFDD7 /* PresentDetailVC.swift in Sources */,
@@ -910,6 +937,7 @@
 				71C197BA26977BBC004C0490 /* MyPageFriendFixVC.swift in Sources */,
 				71E1324126987EFD00DB2D9F /* MyPageHomeTopCVC.swift in Sources */,
 				71E1324926987F5200DB2D9F /* MyPageHomeFriendCVC.swift in Sources */,
+				7719B5D2269C45B800CBBB11 /* SearchRequest.swift in Sources */,
 				7719B593269AC9BC00CBBB11 /* ReminderTVC.swift in Sources */,
 				15C1223A2693077E00838E55 /* EmailLoginVC.swift in Sources */,
 				77F549DE268EE92C0013A76C /* SearchVC.swift in Sources */,
