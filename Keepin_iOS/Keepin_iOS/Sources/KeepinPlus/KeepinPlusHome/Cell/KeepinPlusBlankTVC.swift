@@ -8,6 +8,8 @@
 import UIKit
 
 class KeepinPlusBlankTVC: UITableViewCell {
+    
+    public static let identifier = "KeepinPlusBlankTVC"
 
     override func awakeFromNib() {
         super.awakeFromNib()
