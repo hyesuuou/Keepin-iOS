@@ -29,7 +29,7 @@
                             <constraint firstAttribute="width" constant="32" id="SrK-ca-sni"/>
                             <constraint firstAttribute="height" constant="32" id="neb-KV-Q1j"/>
                         </constraints>
-                        <state key="normal" image="icBack"/>
+                        <state key="normal" image="icNext"/>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LfA-1G-pkf">
                         <rect key="frame" x="24" y="61" width="327" height="147"/>
@@ -159,7 +159,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icBack" width="32" height="32"/>
+        <image name="icNext" width="32" height="32"/>
         <image name="listReminderHome" width="327" height="54"/>
         <image name="listReminderHomeImp" width="327" height="54"/>
         <systemColor name="systemGrayColor">
