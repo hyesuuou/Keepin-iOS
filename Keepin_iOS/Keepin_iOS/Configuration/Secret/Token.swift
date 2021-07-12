@@ -6,3 +6,8 @@
 //
 
 import Foundation
+struct Token{
+    static var jwt : String = ""
+    static var refreshToken : String = ""
+    static var name : String = ""
+}
