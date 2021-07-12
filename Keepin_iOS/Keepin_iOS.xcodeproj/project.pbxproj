@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15243994269C1012009E5E8E /* KeepinPlusBlankTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15243992269C1012009E5E8E /* KeepinPlusBlankTVC.swift */; };
+		15243995269C1012009E5E8E /* KeepinPlusBlankTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15243993269C1012009E5E8E /* KeepinPlusBlankTVC.xib */; };
 		1529FF7E26979F57000AD789 /* KeepinPlusTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1529FF7C26979F57000AD789 /* KeepinPlusTitleTVC.swift */; };
 		1529FF7F26979F57000AD789 /* KeepinPlusTitleTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1529FF7D26979F57000AD789 /* KeepinPlusTitleTVC.xib */; };
 		1529FF8626998496000AD789 /* KeepinPlusInputTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1529FF8426998496000AD789 /* KeepinPlusInputTVC.swift */; };
@@ -118,6 +120,8 @@
 
 /* Begin PBXFileReference section */
 		01D2ADA99388E4A9A27B4E30 /* Pods-Keepin_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keepin_iOS.debug.xcconfig"; path = "Target Support Files/Pods-Keepin_iOS/Pods-Keepin_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		15243992269C1012009E5E8E /* KeepinPlusBlankTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusBlankTVC.swift; sourceTree = "<group>"; };
+		15243993269C1012009E5E8E /* KeepinPlusBlankTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepinPlusBlankTVC.xib; sourceTree = "<group>"; };
 		1529FF7C26979F57000AD789 /* KeepinPlusTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusTitleTVC.swift; sourceTree = "<group>"; };
 		1529FF7D26979F57000AD789 /* KeepinPlusTitleTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepinPlusTitleTVC.xib; sourceTree = "<group>"; };
 		1529FF8426998496000AD789 /* KeepinPlusInputTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusInputTVC.swift; sourceTree = "<group>"; };
@@ -259,6 +263,8 @@
 				1529FF99269985B8000AD789 /* KeppinPlusSelectTVC.xib */,
 				1529FF9C269985CB000AD789 /* KeepinPlusWriteTVC.swift */,
 				1529FF9D269985CB000AD789 /* KeepinPlusWriteTVC.xib */,
+				15243992269C1012009E5E8E /* KeepinPlusBlankTVC.swift */,
+				15243993269C1012009E5E8E /* KeepinPlusBlankTVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -738,6 +744,7 @@
 				7719B590269A1DBD00CBBB11 /* ReminderCVC.xib in Resources */,
 				15C12221268E2FBF00838E55 /* NotoSansCJKkr-Regular.otf in Resources */,
 				77F0482B268C49D100FBFDD7 /* PresentMoaVC.xib in Resources */,
+				15243995269C1012009E5E8E /* KeepinPlusBlankTVC.xib in Resources */,
 				77F549D5268ECF6C0013A76C /* ReminderVC.xib in Resources */,
 				15C12229268ED4D900838E55 /* HomeEventTVC.xib in Resources */,
 				77F04832268C4C3A00FBFDD7 /* PresentDetailVC.xib in Resources */,
@@ -865,6 +872,7 @@
 				1529FF8E269984D2000AD789 /* KeepinPlusSearchTVC.swift in Sources */,
 				153462D52694469900060E44 /* JoinSecondVC.swift in Sources */,
 				71AC818F2692F00D00758994 /* MyPageDetailPresentCVC.swift in Sources */,
+				15243994269C1012009E5E8E /* KeepinPlusBlankTVC.swift in Sources */,
 				71E1FBE0269BF530006A42C3 /* CustomCollectionViewFlowLayout.swift in Sources */,
 				1529FF96269985A8000AD789 /* KeepinPlusCategoryTVC.swift in Sources */,
 				1529FF7E26979F57000AD789 /* KeepinPlusTitleTVC.swift in Sources */,
