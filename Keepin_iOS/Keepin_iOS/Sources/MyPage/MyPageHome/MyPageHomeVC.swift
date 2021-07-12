@@ -11,6 +11,9 @@ class MyPageHomeVC: UIViewController {
     
     @IBOutlet weak var myPageHomeCV: UICollectionView!
     
+    let stickyIndexPath = IndexPath(row: 1, section: 0)
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +25,7 @@ class MyPageHomeVC: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = false
         
+        setFlowLayout()
     }
     
     func registerXib(){
@@ -35,15 +39,14 @@ class MyPageHomeVC: UIViewController {
         let homeFriendNib = UINib(nibName: MyPageHomeFriendCVC.identifier, bundle: nil)
         myPageHomeCV.register(homeFriendNib, forCellWithReuseIdentifier:MyPageHomeFriendCVC.identifier)
     }
-    @objc func toProfile(){
-        self.navigationController?.pushViewController(MyPageDetailVC(), animated: true)
+    
+    func setFlowLayout(){
+        let columnLayout = CustomCollectionViewFlowLayout(stickyIndexPath: stickyIndexPath)
+        self.myPageHomeCV.collectionViewLayout = columnLayout
     }
 }
 
-
 extension MyPageHomeVC : UICollectionViewDelegate{
-    
-
     
 }
 
@@ -66,6 +69,8 @@ extension MyPageHomeVC : UICollectionViewDataSource {
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageHomeHeaderCVC.identifier, for: indexPath)as? MyPageHomeHeaderCVC else {return UICollectionViewCell()}
             
+            cell.plusButton.addTarget(self, action: #selector(toPlus), for: UIControl.Event.touchUpInside)
+            
             return cell
             
         case 2:
@@ -81,6 +86,10 @@ extension MyPageHomeVC : UICollectionViewDataSource {
     @objc func toSetting(){
         self.navigationController?.pushViewController(MyPageProfileVC(), animated: true)
     }
+    
+    @objc func toPlus(){
+        self.navigationController?.pushViewController(KeepinPlusFriendVC(), animated: true)
+    }
 }
 
 extension MyPageHomeVC : UICollectionViewDelegateFlowLayout{
@@ -89,30 +98,28 @@ extension MyPageHomeVC : UICollectionViewDelegateFlowLayout{
         
         case 0:
             let width = UIScreen.main.bounds.width
-            
             let cellHeight = width * (175/375)
-            
             return CGSize(width: width, height: cellHeight)
             
         case 1:
             let width = UIScreen.main.bounds.width
-            
-            let cellHeight = width * (70/375)
-            
+            let cellHeight = width * (77/375)
             return CGSize(width: width, height: cellHeight)
         case 2:
             let width = UIScreen.main.bounds.width
-            
             let cellHeight = width * (385/375)
-            
             return CGSize(width: width, height: cellHeight)
         
         default:
             let width = UIScreen.main.bounds.width
-            
             let cellHeight = width * (600/375)
-            
             return CGSize(width: width, height: cellHeight)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 }
+
+

@@ -88,10 +88,9 @@ class MyPageProfileVC: UIViewController {
     }
     
     @IBAction func logout(_ sender: Any) {
-        let alert = UIAlertController(title: "다시 키핀하려면 로그인 해야 합니다. 로그아웃하시겠습니까?", message: nil, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "다시 키핀하려면 로그인 해야 합니다.\n 로그아웃하시겠습니까?", message: nil, preferredStyle: UIAlertController.Style.alert)
         
         let cancelAction = UIAlertAction(title: "취소", style: .default, handler: nil)
-        
         let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
         
         alert.addAction(cancelAction)
@@ -101,7 +100,15 @@ class MyPageProfileVC: UIViewController {
     }
     
     @IBAction func deleteButton(_ sender: Any) {
+        let alert = UIAlertController(title: "계정 삭제 시 키핀한 기록이 모두 삭제됩니다.\n정말 삭제하시겠습니까?", message: nil, preferredStyle: UIAlertController.Style.alert)
         
+        let cancelAction = UIAlertAction(title: "취소", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "확인", style: .default, handler:nil)
+        
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        
+        present(alert, animated: true, completion: nil)
         
     }
     
