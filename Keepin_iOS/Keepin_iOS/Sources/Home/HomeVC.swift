@@ -10,19 +10,23 @@ import UIKit
 class HomeVC: UIViewController {
     
     let refreshControl = UIRefreshControl()
+    var message : String = ""
     
     @IBOutlet weak var homeTableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         registerXib()
         initRefresh()
-        homeTableview.delegate = self
-        homeTableview.dataSource = self
+        
         homeTableview.backgroundColor = .none
         homeTableview.allowsSelection = false
         
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = false
+        
+        
+        HomeDataManager().getRandom(self)
+    
         
         
     }
@@ -42,8 +46,10 @@ class HomeVC: UIViewController {
     
     @objc func refreshTable(refresh: UIRefreshControl){
             print("새로고침 시작")
+        
                     // 현재로부터 새로고침을 중단함
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){ // 1초
+                HomeDataManager().getRandom(self)
                 self.homeTableview.reloadData()
                 refresh.endRefreshing()
             }
@@ -79,7 +85,7 @@ extension HomeVC  : UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTopTVC.identifier, for: indexPath) as? HomeTopTVC else {
                 return UITableViewCell()
             }
-            
+            cell.messageLabel.text = message
             return cell
             
         case 1:
@@ -107,4 +113,17 @@ extension HomeVC  : UITableViewDataSource {
     }
     
     
+}
+
+extension HomeVC {
+    func didSuccessGetRandom(message: String) {
+        print("서버통신 성공")
+        homeTableview.delegate = self
+        homeTableview.dataSource = self
+        homeTableview.reloadData()
+    }
+    
+    func failedToRequest(message: String) {
+        print(message)
+    }
 }
