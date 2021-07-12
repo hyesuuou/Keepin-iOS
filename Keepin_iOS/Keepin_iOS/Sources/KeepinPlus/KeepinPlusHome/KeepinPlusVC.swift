@@ -175,7 +175,7 @@ extension KeepinPlusVC : UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.setData(placeholder: "YYYY.MM.DD")
-            cell.textfield.setDatePicker(target: (Any).self, selector: #selector(textfieldSave))
+            cell.textfield.setDatePicker(target: (Any).self)
             return cell
             
         case 10:
@@ -250,13 +250,6 @@ extension KeepinPlusVC : UITableViewDataSource {
             return 43
         }
     }
-    
-    @objc
-    func textfieldSave(){
-        print("텍스트필드에 저장")
-    }
-    
-    
 }
 
 extension KeepinPlusVC {
@@ -386,19 +379,19 @@ extension KeepinPlusVC : UIImagePickerControllerDelegate, UINavigationController
 }
 
 extension UITextField {
-    func setDatePicker(target: Any, selector: Selector) {
+    func setDatePicker(target: Any) {
         let SCwidth = self.bounds.width
         let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: SCwidth, height: 216))
         datePicker.datePickerMode = UIDatePicker.Mode.date
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.locale = Locale(identifier: "ko-KR")
+        datePicker.addTarget(self, action: #selector(onDatePickerValueChanged), for: .valueChanged)
         self.inputView = datePicker
         
         let toolBar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: SCwidth, height: 44.0))
         let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancel = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(tapCancel))
-        let barButton = UIBarButtonItem(title: "Done", style: .plain, target: target, action: #selector(doneButtonClicked
-                                            ))
+        let barButton = UIBarButtonItem(title: "Done", style: .plain, target: target, action: #selector(doneButtonClicked))
         toolBar.setItems([cancel, flexible, barButton], animated: false)
         self.inputAccessoryView = toolBar
         
@@ -409,8 +402,11 @@ extension UITextField {
     
     @objc
     func doneButtonClicked(){
-        print("textfieldSave")
-        self.text = "여기에 날짜가와야함."
         self.resignFirstResponder()
+    }
+    
+    @objc
+    func onDatePickerValueChanged(datePicker: UIDatePicker){
+        self.text = datePicker.date.toString()
     }
 }
