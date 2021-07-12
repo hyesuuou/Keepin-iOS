@@ -62,6 +62,9 @@ class KeepinPlusVC: UIViewController {
         let imageNib = UINib(nibName: KeepinPlusImageTVC.identifier, bundle: nil)
         tableview.register(imageNib, forCellReuseIdentifier: KeepinPlusImageTVC.identifier)
         
+        let blankXib = UINib(nibName: KeepinPlusBlankTVC.identifier , bundle: nil)
+        tableview.register(blankXib, forCellReuseIdentifier: KeepinPlusBlankTVC.identifier)
+        
     }
 
     func setNavigationBar(){
@@ -92,12 +95,16 @@ extension KeepinPlusVC : UITableViewDelegate {
 
 extension KeepinPlusVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 14
+        return 15
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
+            guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusBlankTVC.identifier, for: indexPath) as? KeepinPlusBlankTVC else { return UITableViewCell() }
+            return cell
+        
+        case 1:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusTitleTVC.identifier, for: indexPath) as? KeepinPlusTitleTVC else {
                 return UITableViewCell()
             }
@@ -105,14 +112,14 @@ extension KeepinPlusVC : UITableViewDataSource {
             
             return cell
         
-        case 1:
+        case 2:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusInputTVC.identifier, for: indexPath) as? KeepinPlusInputTVC else {
                 return UITableViewCell()
             }
             cell.setData(placeholder: "키핀이가 준 선물")
             return cell
             
-        case 2:
+        case 3:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusTitleTVC.identifier, for: indexPath) as? KeepinPlusTitleTVC else {
                 return UITableViewCell()
             }
@@ -120,7 +127,7 @@ extension KeepinPlusVC : UITableViewDataSource {
             
             return cell
             
-        case 3:
+        case 4:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusImageTVC.identifier, for: indexPath) as? KeepinPlusImageTVC else {
                 return UITableViewCell()
             }
@@ -134,7 +141,7 @@ extension KeepinPlusVC : UITableViewDataSource {
             
             return cell
             
-        case 4:
+        case 5:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusTitleTVC.identifier, for: indexPath) as? KeepinPlusTitleTVC else {
                 return UITableViewCell()
             }
@@ -142,7 +149,7 @@ extension KeepinPlusVC : UITableViewDataSource {
             
             return cell
             
-        case 5:
+        case 6:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeppinPlusSelectTVC.identifier, for: indexPath) as? KeppinPlusSelectTVC else {
                 return UITableViewCell()
             }
@@ -151,7 +158,7 @@ extension KeepinPlusVC : UITableViewDataSource {
             cell.button[1].addTarget(self, action: #selector(selectGiveButtonClicked(_:)), for: .touchUpInside)
             return cell
             
-        case 6:
+        case 7:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusTitleTVC.identifier, for: indexPath) as? KeepinPlusTitleTVC else {
                 return UITableViewCell()
             }
@@ -160,14 +167,14 @@ extension KeepinPlusVC : UITableViewDataSource {
             
             return cell
             
-        case 7:
+        case 8:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusSearchTVC.identifier, for: indexPath) as? KeepinPlusSearchTVC else {
                 return UITableViewCell()
             }
             
             return cell
         
-        case 8:
+        case 9:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusTitleTVC.identifier, for: indexPath) as? KeepinPlusTitleTVC else {
                 return UITableViewCell()
             }
@@ -175,7 +182,7 @@ extension KeepinPlusVC : UITableViewDataSource {
             
             return cell
             
-        case 9:
+        case 10:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusInputTVC.identifier, for: indexPath) as? KeepinPlusInputTVC else {
                 return UITableViewCell()
             }
@@ -183,7 +190,7 @@ extension KeepinPlusVC : UITableViewDataSource {
             cell.textfield.setDatePicker(target: (Any).self)
             return cell
             
-        case 10:
+        case 11:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusTitleTVC.identifier, for: indexPath) as? KeepinPlusTitleTVC else {
                 return UITableViewCell()
             }
@@ -192,7 +199,7 @@ extension KeepinPlusVC : UITableViewDataSource {
             
             return cell
             
-        case 11:
+        case 12:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusCategoryTVC.identifier, for: indexPath) as? KeepinPlusCategoryTVC else {
                 return UITableViewCell()
             }
@@ -206,7 +213,7 @@ extension KeepinPlusVC : UITableViewDataSource {
             
             return cell
             
-        case 12:
+        case 13:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusTitleTVC.identifier, for: indexPath) as? KeepinPlusTitleTVC else {
                 return UITableViewCell()
             }
@@ -214,7 +221,7 @@ extension KeepinPlusVC : UITableViewDataSource {
             
             return cell
             
-        case 13:
+        case 14:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusWriteTVC.identifier, for: indexPath) as? KeepinPlusWriteTVC else {
                 return UITableViewCell()
             }
@@ -229,25 +236,28 @@ extension KeepinPlusVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         switch indexPath.row {
-        case 1:
+        case 0:
+            return 19
+        
+        case 2:
             return 72
             
-        case 3:
+        case 4:
             return 41 + 102
             
-        case 5:
+        case 6:
             return 85
             
-        case 7:
+        case 8:
             return 75
             
-        case 9:
+        case 10:
             return 76
             
-        case 11:
+        case 12:
             return 76 + 40
             
-        case 13:
+        case 14:
             return 234
             
             
