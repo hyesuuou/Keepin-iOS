@@ -14,8 +14,7 @@ class MyPageHomeFriendCVC: UICollectionViewCell {
     
     static let identifier : String = "MyPageHomeFriendCVC"
     
-    let friendName = ["삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터",
-                      "삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터"]
+    let friendName = ["삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터"]
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,7 +35,6 @@ class MyPageHomeFriendCVC: UICollectionViewCell {
 }
 
 extension MyPageHomeFriendCVC : UICollectionViewDelegate{
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
     }
