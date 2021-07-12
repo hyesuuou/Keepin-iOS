@@ -80,6 +80,7 @@
 		7719B593269AC9BC00CBBB11 /* ReminderTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B591269AC9BB00CBBB11 /* ReminderTVC.swift */; };
 		7719B594269AC9BC00CBBB11 /* ReminderTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7719B592269AC9BB00CBBB11 /* ReminderTVC.xib */; };
 		7719B596269ADE2900CBBB11 /* UISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B595269ADE2900CBBB11 /* UISwitch.swift */; };
+		7719B5B1269C049400CBBB11 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5B0269C049300CBBB11 /* Token.swift */; };
 		773D414E26942E8000A4E366 /* PresentDetailCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773D414C26942E8000A4E366 /* PresentDetailCVC.swift */; };
 		773D414F26942E8000A4E366 /* PresentDetailCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 773D414D26942E8000A4E366 /* PresentDetailCVC.xib */; };
 		77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */; };
@@ -190,6 +191,7 @@
 		7719B591269AC9BB00CBBB11 /* ReminderTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTVC.swift; sourceTree = "<group>"; };
 		7719B592269AC9BB00CBBB11 /* ReminderTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderTVC.xib; sourceTree = "<group>"; };
 		7719B595269ADE2900CBBB11 /* UISwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwitch.swift; sourceTree = "<group>"; };
+		7719B5B0269C049300CBBB11 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		773D414C26942E8000A4E366 /* PresentDetailCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PresentDetailCVC.swift; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.swift; sourceTree = SOURCE_ROOT; };
 		773D414D26942E8000A4E366 /* PresentDetailCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PresentDetailCVC.xib; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.xib; sourceTree = SOURCE_ROOT; };
 		77F047DF268AF98F00FBFDD7 /* Keepin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keepin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -403,6 +405,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		7719B5AF269C048200CBBB11 /* Secret */ = {
+			isa = PBXGroup;
+			children = (
+				7719B5B0269C049300CBBB11 /* Token.swift */,
+			);
+			path = Secret;
+			sourceTree = "<group>";
+		};
 		773D414B26942E6B00A4E366 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,19 +475,11 @@
 			children = (
 				77F04805268B0CB000FBFDD7 /* Constants.swift */,
 				15C121FA268E281800838E55 /* Font */,
-				77F04801268B0C1200FBFDD7 /* Secret */,
+				7719B5AF269C048200CBBB11 /* Secret */,
 				77F04802268B0C2300FBFDD7 /* Extension */,
 				77F04803268B0C4300FBFDD7 /* Base */,
-				77F549E0268F4AF50013A76C /* CommonClass */,
 			);
 			path = Configuration;
-			sourceTree = "<group>";
-		};
-		77F04801268B0C1200FBFDD7 /* Secret */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Secret;
 			sourceTree = "<group>";
 		};
 		77F04802268B0C2300FBFDD7 /* Extension */ = {
@@ -638,13 +640,6 @@
 				77F549DD268EE92C0013A76C /* SearchVC.xib */,
 			);
 			path = Search;
-			sourceTree = "<group>";
-		};
-		77F549E0268F4AF50013A76C /* CommonClass */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CommonClass;
 			sourceTree = "<group>";
 		};
 		77F549E9268F54F10013A76C /* Cell */ = {
@@ -844,6 +839,7 @@
 				717A0258269ACFF800241171 /* MyPageEditPhoneVC.swift in Sources */,
 				7719B596269ADE2900CBBB11 /* UISwitch.swift in Sources */,
 				1529FF8626998496000AD789 /* KeepinPlusInputTVC.swift in Sources */,
+				7719B5B1269C049400CBBB11 /* Token.swift in Sources */,
 				71E265C52699D80900BD6840 /* KeepinPlusFriendVC.swift in Sources */,
 				71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */,
 				71C197AD26975103004C0490 /* MyPageProfileVC.swift in Sources */,
