@@ -84,6 +84,9 @@
 		7719B594269AC9BC00CBBB11 /* ReminderTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7719B592269AC9BB00CBBB11 /* ReminderTVC.xib */; };
 		7719B596269ADE2900CBBB11 /* UISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B595269ADE2900CBBB11 /* UISwitch.swift */; };
 		7719B5B1269C049400CBBB11 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5B0269C049300CBBB11 /* Token.swift */; };
+		7719B5C6269C2E0300CBBB11 /* PresentMoaHomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5C5269C2E0300CBBB11 /* PresentMoaHomeRequest.swift */; };
+		7719B5C8269C2E1B00CBBB11 /* PresentMoaHomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5C7269C2E1B00CBBB11 /* PresentMoaHomeDataManager.swift */; };
+		7719B5CA269C2E2700CBBB11 /* PresentMoaHomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5C9269C2E2700CBBB11 /* PresentMoaHomeResponse.swift */; };
 		773D414E26942E8000A4E366 /* PresentDetailCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773D414C26942E8000A4E366 /* PresentDetailCVC.swift */; };
 		773D414F26942E8000A4E366 /* PresentDetailCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 773D414D26942E8000A4E366 /* PresentDetailCVC.xib */; };
 		77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */; };
@@ -198,6 +201,9 @@
 		7719B592269AC9BB00CBBB11 /* ReminderTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderTVC.xib; sourceTree = "<group>"; };
 		7719B595269ADE2900CBBB11 /* UISwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwitch.swift; sourceTree = "<group>"; };
 		7719B5B0269C049300CBBB11 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		7719B5C5269C2E0300CBBB11 /* PresentMoaHomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMoaHomeRequest.swift; sourceTree = "<group>"; };
+		7719B5C7269C2E1B00CBBB11 /* PresentMoaHomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMoaHomeDataManager.swift; sourceTree = "<group>"; };
+		7719B5C9269C2E2700CBBB11 /* PresentMoaHomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMoaHomeResponse.swift; sourceTree = "<group>"; };
 		773D414C26942E8000A4E366 /* PresentDetailCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PresentDetailCVC.swift; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.swift; sourceTree = SOURCE_ROOT; };
 		773D414D26942E8000A4E366 /* PresentDetailCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PresentDetailCVC.xib; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.xib; sourceTree = SOURCE_ROOT; };
 		77F047DF268AF98F00FBFDD7 /* Keepin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keepin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -421,6 +427,23 @@
 			path = Secret;
 			sourceTree = "<group>";
 		};
+		7719B5C3269C2D9900CBBB11 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				7719B5C5269C2E0300CBBB11 /* PresentMoaHomeRequest.swift */,
+				7719B5C9269C2E2700CBBB11 /* PresentMoaHomeResponse.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		7719B5C4269C2DC400CBBB11 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				7719B5C7269C2E1B00CBBB11 /* PresentMoaHomeDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		773D414B26942E6B00A4E366 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,6 +586,8 @@
 		77F0482D268C4BCA00FBFDD7 /* PresentMoaHome */ = {
 			isa = PBXGroup;
 			children = (
+				7719B5C4269C2DC400CBBB11 /* DataManager */,
+				7719B5C3269C2D9900CBBB11 /* DataModel */,
 				77F549E9268F54F10013A76C /* Cell */,
 				77F04828268C49D100FBFDD7 /* PresentMoaVC.swift */,
 				77F04829268C49D100FBFDD7 /* PresentMoaVC.xib */,
@@ -848,6 +873,7 @@
 				77F549EC268F58970013A76C /* PresentMoaCVC.swift in Sources */,
 				717A0258269ACFF800241171 /* MyPageEditPhoneVC.swift in Sources */,
 				7719B596269ADE2900CBBB11 /* UISwitch.swift in Sources */,
+				7719B5C6269C2E0300CBBB11 /* PresentMoaHomeRequest.swift in Sources */,
 				1529FF8626998496000AD789 /* KeepinPlusInputTVC.swift in Sources */,
 				7719B5B1269C049400CBBB11 /* Token.swift in Sources */,
 				71E265C52699D80900BD6840 /* KeepinPlusFriendVC.swift in Sources */,
@@ -875,9 +901,11 @@
 				15243994269C1012009E5E8E /* KeepinPlusBlankTVC.swift in Sources */,
 				71E1FBE0269BF530006A42C3 /* CustomCollectionViewFlowLayout.swift in Sources */,
 				1529FF96269985A8000AD789 /* KeepinPlusCategoryTVC.swift in Sources */,
+				7719B5C8269C2E1B00CBBB11 /* PresentMoaHomeDataManager.swift in Sources */,
 				1529FF7E26979F57000AD789 /* KeepinPlusTitleTVC.swift in Sources */,
 				1529FF9226998585000AD789 /* KeepinPlusImageTVC.swift in Sources */,
 				77F04806268B0CB000FBFDD7 /* Constants.swift in Sources */,
+				7719B5CA269C2E2700CBBB11 /* PresentMoaHomeResponse.swift in Sources */,
 				153462D12694468B00060E44 /* JoinFirstVC.swift in Sources */,
 				71C197BA26977BBC004C0490 /* MyPageFriendFixVC.swift in Sources */,
 				71E1324126987EFD00DB2D9F /* MyPageHomeTopCVC.swift in Sources */,

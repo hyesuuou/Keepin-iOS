@@ -27,6 +27,7 @@ class PresentMoaVC: UIViewController {
         {
             gave.isSelected = true
             got.isSelected = false
+            PresentMoaHomeDataManager().gave(self)
             UIView.animate(withDuration: 0.2){
                 self.indicatorStart.constant = self.buttonStack.frame.width - 13.5
             }
@@ -34,13 +35,14 @@ class PresentMoaVC: UIViewController {
         else{
             gave.isSelected = false
             got.isSelected = true
+            PresentMoaHomeDataManager().got(self)
             UIView.animate(withDuration: 0.1){
                 self.indicatorStart.constant = self.buttonStack.frame.width / 2 - 13
             }
         }
     }
     
-    var itemNum : Int = 10
+    var serverData : Keepins?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +50,7 @@ class PresentMoaVC: UIViewController {
         setNavigationBar()
         setUI()
         
-        presentCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
-        presentCV.delegate = self
-        presentCV.dataSource = self
-        
+        PresentMoaHomeDataManager().got(self) 
     }
     
     func setUI(){
@@ -60,10 +59,6 @@ class PresentMoaVC: UIViewController {
         
         got.isSelected = true
         gave.isSelected = false
-
-        //scrollView dynamic Height
-        presentCVHeight.constant = CGFloat(240 * itemNum / 2)
-        contentViewHeight.constant = presentCVHeight.constant + 100
     }
     
     @objc func toSearch(){
@@ -97,13 +92,14 @@ extension PresentMoaVC : UICollectionViewDelegate, UICollectionViewDataSource, U
     
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itemNum
+        return (serverData?.keepins.count)!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = presentCV.dequeueReusableCell(withReuseIdentifier: "PresentMoaCVC", for: indexPath) as! PresentMoaCVC
-//        let food = foods[indexPath.row]
-//        cell.configure(with: food.imgUrl, title: food.productName, price: food.price)
+//        cell.presentImage = serverData?.keepins[indexPath.row].d
+        cell.presentTitle.text = serverData?.keepins[indexPath.row]?.title
+        cell.presentDate.text = serverData?.keepins[indexPath.row]?.date
         return cell
     }
     
@@ -116,4 +112,42 @@ extension PresentMoaVC : UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     
+}
+
+extension PresentMoaVC {
+    func didSuccessGot(message: String) {
+        presentCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
+        presentCV.delegate = self
+        presentCV.dataSource = self
+        
+        var frame: CGRect = self.presentCV.frame
+        frame.size.height = self.presentCV.contentSize.height
+        self.presentCV.frame = frame
+
+        var itemNum : Int = (self.serverData?.keepins.count)!
+        //scrollView dynamic Height
+        presentCVHeight.constant = CGFloat(240 * itemNum / 2)
+        contentViewHeight.constant = presentCVHeight.constant + 100
+        presentCV.reloadData()
+    }
+    
+    func didSuccessGave(message: String) {
+        presentCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
+        presentCV.delegate = self
+        presentCV.dataSource = self
+        
+        var frame: CGRect = self.presentCV.frame
+        frame.size.height = self.presentCV.contentSize.height
+        self.presentCV.frame = frame
+
+        var itemNum : Int = (self.serverData?.keepins.count)!
+        //scrollView dynamic Height
+        presentCVHeight.constant = CGFloat(240 * itemNum / 2)
+        contentViewHeight.constant = presentCVHeight.constant + 100
+        presentCV.reloadData()
+    }
+    
+    func failedToRequest(message: String) {
+        print(message)
+    }
 }
