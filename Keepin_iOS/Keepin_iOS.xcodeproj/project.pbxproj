@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		15243994269C1012009E5E8E /* KeepinPlusBlankTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15243992269C1012009E5E8E /* KeepinPlusBlankTVC.swift */; };
 		15243995269C1012009E5E8E /* KeepinPlusBlankTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15243993269C1012009E5E8E /* KeepinPlusBlankTVC.xib */; };
+		152439D3269C49F8009E5E8E /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152439D2269C49F8009E5E8E /* HomeResponse.swift */; };
+		152439D5269C4A05009E5E8E /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152439D4269C4A05009E5E8E /* HomeDataManager.swift */; };
 		1529FF7E26979F57000AD789 /* KeepinPlusTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1529FF7C26979F57000AD789 /* KeepinPlusTitleTVC.swift */; };
 		1529FF7F26979F57000AD789 /* KeepinPlusTitleTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1529FF7D26979F57000AD789 /* KeepinPlusTitleTVC.xib */; };
 		1529FF8626998496000AD789 /* KeepinPlusInputTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1529FF8426998496000AD789 /* KeepinPlusInputTVC.swift */; };
@@ -128,6 +130,8 @@
 		01D2ADA99388E4A9A27B4E30 /* Pods-Keepin_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keepin_iOS.debug.xcconfig"; path = "Target Support Files/Pods-Keepin_iOS/Pods-Keepin_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		15243992269C1012009E5E8E /* KeepinPlusBlankTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusBlankTVC.swift; sourceTree = "<group>"; };
 		15243993269C1012009E5E8E /* KeepinPlusBlankTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepinPlusBlankTVC.xib; sourceTree = "<group>"; };
+		152439D2269C49F8009E5E8E /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
+		152439D4269C4A05009E5E8E /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		1529FF7C26979F57000AD789 /* KeepinPlusTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusTitleTVC.swift; sourceTree = "<group>"; };
 		1529FF7D26979F57000AD789 /* KeepinPlusTitleTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepinPlusTitleTVC.xib; sourceTree = "<group>"; };
 		1529FF8426998496000AD789 /* KeepinPlusInputTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusInputTVC.swift; sourceTree = "<group>"; };
@@ -258,6 +262,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		152439D0269C49CE009E5E8E /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				152439D4269C4A05009E5E8E /* HomeDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		152439D1269C49DA009E5E8E /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				152439D2269C49F8009E5E8E /* HomeResponse.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		1529FF7B26979F2A000AD789 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,6 +589,8 @@
 		77F04819268C483C00FBFDD7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				152439D0269C49CE009E5E8E /* DataManager */,
+				152439D1269C49DA009E5E8E /* DataModel */,
 				77F04823268C49BF00FBFDD7 /* HomeVC.swift */,
 				77F04824268C49BF00FBFDD7 /* HomeVC.xib */,
 				15C12225268ED48800838E55 /* Cell */,
@@ -909,6 +931,7 @@
 				773D414E26942E8000A4E366 /* PresentDetailCVC.swift in Sources */,
 				15C1222C268F063C00838E55 /* HomeTopTVC.swift in Sources */,
 				7719B5CE269C459700CBBB11 /* SearchDataManager.swift in Sources */,
+				152439D3269C49F8009E5E8E /* HomeResponse.swift in Sources */,
 				71E1324526987F3200DB2D9F /* MyPageHomeHeaderCVC.swift in Sources */,
 				77F0484C268C4DB400FBFDD7 /* SelectFriendVC.swift in Sources */,
 				77F04831268C4C3A00FBFDD7 /* PresentDetailVC.swift in Sources */,
@@ -935,6 +958,7 @@
 				7719B5CA269C2E2700CBBB11 /* PresentMoaHomeResponse.swift in Sources */,
 				153462D12694468B00060E44 /* JoinFirstVC.swift in Sources */,
 				71C197BA26977BBC004C0490 /* MyPageFriendFixVC.swift in Sources */,
+				152439D5269C4A05009E5E8E /* HomeDataManager.swift in Sources */,
 				71E1324126987EFD00DB2D9F /* MyPageHomeTopCVC.swift in Sources */,
 				71E1324926987F5200DB2D9F /* MyPageHomeFriendCVC.swift in Sources */,
 				7719B5D2269C45B800CBBB11 /* SearchRequest.swift in Sources */,
