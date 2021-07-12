@@ -26,6 +26,7 @@ class MyPageHomeFriendCVC: UICollectionViewCell {
         myPageHomeCV.backgroundColor = .keepinGray
         
         registerXib()
+        
     }
     
     func registerXib(){
@@ -37,8 +38,7 @@ class MyPageHomeFriendCVC: UICollectionViewCell {
 extension MyPageHomeFriendCVC : UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
-    
+
     }
 }
 
@@ -56,7 +56,6 @@ extension MyPageHomeFriendCVC : UICollectionViewDataSource{
         cell.backgroundColor = .white
         cell.friendName.text = friendName[indexPath.row]
         
-        
         return cell
     }
     
@@ -66,7 +65,6 @@ extension MyPageHomeFriendCVC : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     
         let width = 343
-    
         let cellHeight = 64
     
         return CGSize(width: width, height: cellHeight)
