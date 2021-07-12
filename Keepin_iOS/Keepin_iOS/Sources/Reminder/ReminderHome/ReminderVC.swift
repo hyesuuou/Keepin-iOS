@@ -26,11 +26,14 @@ class ReminderVC: UIViewController {
     }
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var monthCV: UICollectionView!
+    @IBOutlet weak var selectedMonth: UIImageView!
     @IBOutlet weak var reminderTV: UITableView!
     
     var itemNum = 3
+    var page : Int = 0
     var navigationLeftLabel : String = "편집"
     var months = ["","","1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월","",""]
+    private var indexOfCellBeforeDragging = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +45,6 @@ class ReminderVC: UIViewController {
         layout.itemSize = CGSize(width: 51, height: 36)
         layout.scrollDirection = .horizontal
         monthCV.collectionViewLayout = layout
-        monthCV.decelerationRate = .fast
         monthCV.isPagingEnabled = false
         monthCV.register(ReminderCVC.nib(), forCellWithReuseIdentifier: "ReminderCVC")
         monthCV.delegate = self
@@ -95,16 +97,56 @@ class ReminderVC: UIViewController {
 
 }
 
-extension ReminderVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        let pageWidth : CGFloat = 71
+        // The width your page should have (plus a possible margin)
+        let proportionalOffset = monthCV.contentOffset.x / pageWidth
+        indexOfCellBeforeDragging = Int(round(proportionalOffset))
+    }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        
-        var offset = targetContentOffset.pointee
-        let index = (offset.x + scrollView.contentInset.left) / 51
-        let roundedIndex: CGFloat = round(index)
-        offset = CGPoint(x: roundedIndex * 51 - scrollView.contentInset.left, y: scrollView.contentInset.top)
-        targetContentOffset.pointee = offset }
+        // Stop scrolling
+        targetContentOffset.pointee = scrollView.contentOffset
 
+        // Calculate conditions
+        let pageWidth : CGFloat = 72
+        let collectionViewItemCount = 16
+        let proportionalOffset = monthCV.contentOffset.x / pageWidth
+        let indexOfMajorCell = Int(round(proportionalOffset))
+        let swipeVelocityThreshold: CGFloat = 0.1
+        let hasEnoughVelocityToSlideToTheNextCell = indexOfCellBeforeDragging + 1 < collectionViewItemCount && velocity.x > swipeVelocityThreshold
+        let hasEnoughVelocityToSlideToThePreviousCell = indexOfCellBeforeDragging - 1 >= 0 && velocity.x < -swipeVelocityThreshold
+        let majorCellIsTheCellBeforeDragging = indexOfMajorCell == indexOfCellBeforeDragging
+        let didUseSwipeToSkipCell = majorCellIsTheCellBeforeDragging && (hasEnoughVelocityToSlideToTheNextCell || hasEnoughVelocityToSlideToThePreviousCell)
+
+        if didUseSwipeToSkipCell {
+            // Animate so that swipe is just continued
+            let snapToIndex = indexOfCellBeforeDragging + (hasEnoughVelocityToSlideToTheNextCell ? 1 : -1)
+            let toValue = pageWidth * CGFloat(snapToIndex)
+            UIView.animate(
+                withDuration: 1.0,
+                delay: 0,
+                usingSpringWithDamping: 0,
+                initialSpringVelocity: velocity.x,
+                options: .allowUserInteraction,
+                animations: {
+                    scrollView.contentOffset = CGPoint(x: toValue, y: 0)
+                    scrollView.layoutIfNeeded()
+                },
+                completion: nil
+            )
+        } else {
+            // Pop back (against velocity)
+            let indexPath = IndexPath(row: indexOfMajorCell, section: 0)
+            monthCV.scrollToItem(at: indexPath, at: .left, animated: true)
+            if indexPath.row < 0 || indexPath.row > 11{
+                monthCV.scrollToItem(at: [0,0], at: .left, animated: true)
+            }
+            print(indexPath.row)
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 16
@@ -123,8 +165,9 @@ extension ReminderVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }

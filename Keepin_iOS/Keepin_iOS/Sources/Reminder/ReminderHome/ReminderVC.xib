@@ -20,6 +20,7 @@
             <connections>
                 <outlet property="monthCV" destination="GAL-C7-W89" id="8bZ-lQ-CHP"/>
                 <outlet property="reminderTV" destination="trA-LJ-vHK" id="lh4-jb-oSF"/>
+                <outlet property="selectedMonth" destination="gff-3c-jac" id="XTi-Rc-0OD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="yearLabel" destination="cc4-tW-N97" id="q3E-H2-ttA"/>
                 <outletCollection property="yearArrow" destination="C3l-2b-Awm" collectionClass="NSMutableArray" id="xV7-zn-As5"/>
