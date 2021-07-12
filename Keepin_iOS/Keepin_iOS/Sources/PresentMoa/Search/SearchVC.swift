@@ -51,13 +51,15 @@ class SearchVC: UIViewController {
     var itemNum : Int = 0
     var presentList : [String] = []
     var filteredData: [String] = []
+    var serverData : Keepins?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
         setNavigationBar()
         setSearchBar()
-        testDatabase()
+        SearchDataManager().got(self) 
+//        testDatabase()
         
         searchResultCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
         searchResultCV.delegate = self
@@ -181,5 +183,26 @@ extension SearchVC : UISearchBarDelegate{
         }
         
         self.searchResultCV.reloadData()
+    }
+}
+
+extension SearchVC {
+    func didSuccessSearch(message: String) {
+        searchResultCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
+        searchResultCV.delegate = self
+        searchResultCV.dataSource = self
+        
+        var frame: CGRect = self.searchResultCV.frame
+        frame.size.height = self.searchResultCV.contentSize.height
+        self.searchResultCV.frame = frame
+
+        var itemNum : Int = (self.serverData?.keepins.count)!
+        for i in 0...itemNum-1{
+            presentList.append((serverData?.keepins[i]?.title)!)
+        }
+    }
+    
+    func failedToRequest(message: String) {
+        print(message)
     }
 }
