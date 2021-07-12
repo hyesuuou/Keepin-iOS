@@ -4,7 +4,7 @@
 //
 //  Created by 김혜수 on 2021/07/06.
 //
-
+import Foundation
 import UIKit
 
 class JoinSecondVC: UIViewController, UITextFieldDelegate {
@@ -31,6 +31,7 @@ class JoinSecondVC: UIViewController, UITextFieldDelegate {
         
         nameTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         birthTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        birthTextField.setDatePicker(target: (Any).self)
         phoneTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         
         nameTextField.delegate = self
