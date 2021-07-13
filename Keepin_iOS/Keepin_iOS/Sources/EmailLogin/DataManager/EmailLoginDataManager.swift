@@ -22,6 +22,7 @@ class EmailLoginDataManager {
                 switch response.result {
                 case .success(let response):
                     print("로그인 통신 성공~!")
+                    Token.name = response.data?.name ?? "기본값"
                     print(response.data?.name)
                     viewController.didSuccessLogin(message: response.message, code: response.status)
                 case .failure(let error):
