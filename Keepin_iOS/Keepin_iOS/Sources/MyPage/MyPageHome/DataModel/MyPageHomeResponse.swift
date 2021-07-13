@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+struct MyPageHomeResponse: Decodable{
+    let status: Int
+    let message: String
+    let data: HomeDataClass
+}
+
+struct HomeDataClass: Decodable{
+    let name: String
+    let total,taken,given: Int
+}
+ 
+
