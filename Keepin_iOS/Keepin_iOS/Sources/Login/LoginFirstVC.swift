@@ -53,5 +53,7 @@ class LoginFirstVC: UIViewController {
     
     @IBAction func joinButtonClicked(_ sender: Any) {
         // 회원가입 화면으로 전환
+        print("회원가입 화면으로 전환")
+        self.navigationController?.pushViewController(JoinFirstVC(), animated: true)
     }
 }

@@ -125,6 +125,11 @@ class JoinFirstVC: UIViewController {
         
     }
     
+    @IBAction func backButtonClicked(_ sender: Any) {
+        // 이전화면 버튼 눌렀을 때
+        print("이전화면으로 돌아가는 버튼")
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func nextButtonClicked(_ sender: Any) {
         // 다음 버튼 눌렀을 때
