@@ -27,7 +27,8 @@ class PresentDetailVC: UIViewController {
     
     @IBOutlet weak var date: UILabel!
     
-    let fromWho : String = "박윤정님 외 3명"
+    var fromWho : String = ""
+    var friendCount : Int = 0
     let viewSizeWidth : CGFloat = UIScreen.main.bounds.width
     var nowPage : Int = 0
     var itemNum : Int = 3
@@ -50,15 +51,10 @@ class PresentDetailVC: UIViewController {
     }
 
     func setUI(){
-        presentFrom.text = "\(fromWho)에게 받은 선물"
+        
         divider.backgroundColor = .keepinGray2
         memoView.backgroundColor = .keepinGray1
         presentFrom.textColor = .keepinGray4
-        
-        let attributedString = NSMutableAttributedString(string: presentFrom.text!)
-        attributedString.addAttribute(.foregroundColor, value: UIColor.keepinGreen, range: (presentFrom.text! as NSString).range(of:"받은 선물"))
-        
-        presentFrom.attributedText = attributedString
         thoughts.backgroundColor = .clear
     }
 
@@ -167,6 +163,14 @@ extension PresentDetailVC {
         
         presentDetailCV.reloadData()
         
+        friendCount = (serverData?.friends.count)!
+        fromWho = (serverData?.friends[0]?.name)! + "님 외 " + String(friendCount) + "명"
+        presentFrom.text = "\(fromWho)에게 받은 선물"
+        let attributedString = NSMutableAttributedString(string: presentFrom.text!)
+        attributedString.addAttribute(.foregroundColor, value: UIColor.keepinGreen, range: (presentFrom.text! as NSString).range(of:"받은 선물"))
+        
+        presentFrom.attributedText = attributedString
+        presentTitle.text = serverData?.title
         thoughts.text = serverData?.record
         date.text = serverData?.date
         

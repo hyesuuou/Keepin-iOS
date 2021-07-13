@@ -20,6 +20,13 @@ class PresentMoaVC: UIViewController {
     
     @IBAction func newButtonClicked(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
+        if sender.isSelected{
+            print("NEW")
+        }
+        else{
+            print("NO")
+        }
+        
     }
     
     @IBAction func btnClicked(sender:UIButton){
@@ -126,8 +133,11 @@ extension PresentMoaVC {
         frame.size.height = self.presentCV.contentSize.height
         self.presentCV.frame = frame
 
-        let itemNum : Int = (self.serverData?.keepins.count)!
+        var itemNum : Int = (self.serverData?.keepins.count)!
         //scrollView dynamic Height
+        if itemNum%2 == 1{
+            itemNum += 1
+        }
         presentCVHeight.constant = CGFloat(240 * itemNum / 2)
         contentViewHeight.constant = presentCVHeight.constant + 100
         presentCV.reloadData()
@@ -142,7 +152,10 @@ extension PresentMoaVC {
         frame.size.height = self.presentCV.contentSize.height
         self.presentCV.frame = frame
 
-        let itemNum : Int = (self.serverData?.keepins.count)!
+        var itemNum : Int = (self.serverData?.keepins.count)!
+        if itemNum%2 == 1{
+            itemNum += 1
+        }
         //scrollView dynamic Height
         presentCVHeight.constant = CGFloat(240 * itemNum / 2)
         contentViewHeight.constant = presentCVHeight.constant + 100
