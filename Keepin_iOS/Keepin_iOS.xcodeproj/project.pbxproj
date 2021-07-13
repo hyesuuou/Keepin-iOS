@@ -48,6 +48,7 @@
 		15C1223B2693077E00838E55 /* EmailLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C122392693077E00838E55 /* EmailLoginVC.xib */; };
 		71210D50269C931C00568982 /* MyPageHomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71210D4F269C931C00568982 /* MyPageHomeDataManager.swift */; };
 		71210D52269C934C00568982 /* MyPageHomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71210D51269C934C00568982 /* MyPageHomeResponse.swift */; };
+		713D383C269D64C500BABA1E /* MyPageFriendResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713D383B269D64C500BABA1E /* MyPageFriendResponse.swift */; };
 		717A024F269ACF9E00241171 /* MyPageEditNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717A024D269ACF9E00241171 /* MyPageEditNameVC.swift */; };
 		717A0250269ACF9E00241171 /* MyPageEditNameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717A024E269ACF9E00241171 /* MyPageEditNameVC.xib */; };
 		717A0253269ACFC800241171 /* MyPageEditPwVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717A0251269ACFC800241171 /* MyPageEditPwVC.swift */; };
@@ -175,6 +176,7 @@
 		274CF503951F717D4B7E43DE /* Pods_Keepin_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Keepin_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71210D4F269C931C00568982 /* MyPageHomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHomeDataManager.swift; sourceTree = "<group>"; };
 		71210D51269C934C00568982 /* MyPageHomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHomeResponse.swift; sourceTree = "<group>"; };
+		713D383B269D64C500BABA1E /* MyPageFriendResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageFriendResponse.swift; sourceTree = "<group>"; };
 		717A024D269ACF9E00241171 /* MyPageEditNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageEditNameVC.swift; sourceTree = "<group>"; };
 		717A024E269ACF9E00241171 /* MyPageEditNameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageEditNameVC.xib; sourceTree = "<group>"; };
 		717A0251269ACFC800241171 /* MyPageEditPwVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageEditPwVC.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				71210D51269C934C00568982 /* MyPageHomeResponse.swift */,
+				713D383B269D64C500BABA1E /* MyPageFriendResponse.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -982,6 +985,7 @@
 				152439EA269D4AAA009E5E8E /* EmailLoginDataManager.swift in Sources */,
 				152439D3269C49F8009E5E8E /* HomeResponse.swift in Sources */,
 				71E1324526987F3200DB2D9F /* MyPageHomeHeaderCVC.swift in Sources */,
+				713D383C269D64C500BABA1E /* MyPageFriendResponse.swift in Sources */,
 				77F0484C268C4DB400FBFDD7 /* SelectFriendVC.swift in Sources */,
 				77F04831268C4C3A00FBFDD7 /* PresentDetailVC.swift in Sources */,
 				77F549D4268ECF6C0013A76C /* ReminderVC.swift in Sources */,
