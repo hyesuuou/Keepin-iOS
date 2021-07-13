@@ -10,17 +10,16 @@ import UIKit
 class AfterCatVC: UIViewController {
 
     var category : String = ""
-    var itemNum : Int = 10
+    var serverData : Keepins?
     
     @IBOutlet weak var categoryCV: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationBar()
         
-        categoryCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
-        categoryCV.delegate = self
-        categoryCV.dataSource = self
+        SearchDataManager().getCategory(category, viewController: self)
+        
+        setNavigationBar()
     }
 
     func setNavigationBar(){
@@ -58,13 +57,14 @@ extension AfterCatVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itemNum
+        return (serverData?.keepins.count)!
+//        return 5
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell = categoryCV.dequeueReusableCell(withReuseIdentifier: "PresentMoaCVC", for: indexPath) as! PresentMoaCVC
-//        let food = foods[indexPath.row]
-//        cell.configure(with: food.imgUrl, title: food.productName, price: food.price)
+        cell.presentTitle.text = serverData?.keepins[indexPath.row]?.title
+        cell.presentDate.text = serverData?.keepins[indexPath.row]?.date
         return cell
     }
     
@@ -75,6 +75,22 @@ extension AfterCatVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
                 
         return CGSize(width: collectionViewSize/2, height: 228)
     }
+}
+
+extension AfterCatVC {
+    func getCategory(message: String) {
+        categoryCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
+        categoryCV.delegate = self
+        categoryCV.dataSource = self
+        
+        var frame: CGRect = self.categoryCV.frame
+        frame.size.height = self.categoryCV.contentSize.height
+        self.categoryCV.frame = frame
+
+        categoryCV.reloadData()
+    }
     
-    
+    func failedToRequest(message: String) {
+        print(message)
+    }
 }

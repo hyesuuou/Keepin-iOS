@@ -124,7 +124,7 @@ extension PresentMoaVC {
         frame.size.height = self.presentCV.contentSize.height
         self.presentCV.frame = frame
 
-        var itemNum : Int = (self.serverData?.keepins.count)!
+        let itemNum : Int = (self.serverData?.keepins.count)!
         //scrollView dynamic Height
         presentCVHeight.constant = CGFloat(240 * itemNum / 2)
         contentViewHeight.constant = presentCVHeight.constant + 100
@@ -140,7 +140,7 @@ extension PresentMoaVC {
         frame.size.height = self.presentCV.contentSize.height
         self.presentCV.frame = frame
 
-        var itemNum : Int = (self.serverData?.keepins.count)!
+        let itemNum : Int = (self.serverData?.keepins.count)!
         //scrollView dynamic Height
         presentCVHeight.constant = CGFloat(240 * itemNum / 2)
         contentViewHeight.constant = presentCVHeight.constant + 100
