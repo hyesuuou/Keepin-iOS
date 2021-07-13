@@ -58,25 +58,13 @@ class SearchVC: UIViewController {
         searchBar.delegate = self
         setNavigationBar()
         setSearchBar()
-        SearchDataManager().got(self) 
-//        testDatabase()
+        SearchDataManager().getPresents(self)  
         
         searchResultCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
         searchResultCV.delegate = self
         searchResultCV.dataSource = self
     }
-    
-    func testDatabase(){
-        presentList.append("탕수육")
-        presentList.append("짜장면")
-        presentList.append("짬뽕")
-        presentList.append("쭈꾸미")
-        presentList.append("슈슈버거")
-        presentList.append("맥너겟")
-        presentList.append("코코넛크림커피")
-        presentList.append("코코호도")
-    }
-    
+
     func setNavigationBar(){
         let exitButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
         exitButton.setImage(UIImage(named: "icX"), for: UIControl.State.normal)
