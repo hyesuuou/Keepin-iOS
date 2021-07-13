@@ -85,8 +85,10 @@ class PresentMoaVC: UIViewController {
 extension PresentMoaVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let nextVC = PresentDetailVC()
+        nextVC.keepinIdx = (serverData?.keepins[indexPath.row]?._id)!
         self.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(PresentDetailVC(), animated: true)
+        self.navigationController?.pushViewController(nextVC, animated: true)
         self.hidesBottomBarWhenPushed = false
     }
     

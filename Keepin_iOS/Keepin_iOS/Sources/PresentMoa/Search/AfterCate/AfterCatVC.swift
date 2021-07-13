@@ -50,15 +50,16 @@ class AfterCatVC: UIViewController {
 extension AfterCatVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let nextVC = PresentDetailVC()
+        nextVC.keepinIdx = (serverData?.keepins[indexPath.row]?._id)!
         self.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(PresentDetailVC(), animated: true)
+        self.navigationController?.pushViewController(nextVC, animated: true)
         self.hidesBottomBarWhenPushed = false
     }
     
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (serverData?.keepins.count)!
-//        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{

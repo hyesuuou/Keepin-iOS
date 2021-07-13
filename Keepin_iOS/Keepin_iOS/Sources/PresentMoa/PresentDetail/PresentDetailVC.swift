@@ -31,21 +31,22 @@ class PresentDetailVC: UIViewController {
     let viewSizeWidth : CGFloat = UIScreen.main.bounds.width
     var nowPage : Int = 0
     var itemNum : Int = 3
+    var keepinIdx : String = ""
+    var serverData : Details?
     
-    override func viewDidLoad() {
+    override func viewDidLoad() { 
         super.viewDidLoad()
         
-        setNavigationBar()
         setUI()
+        setNavigationBar()
+        
+        PresentDetailDataManager().details(keepinIdx, viewController: self)
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 375, height: 375)
         layout.scrollDirection = .horizontal
         presentDetailCV.collectionViewLayout = layout
         presentDetailCV.isPagingEnabled = true
-        presentDetailCV.register(PresentDetailCVC.nib(), forCellWithReuseIdentifier: "PresentDetailCVC")
-        presentDetailCV.delegate = self
-        presentDetailCV.dataSource = self
     }
 
     func setUI(){
@@ -59,13 +60,6 @@ class PresentDetailVC: UIViewController {
         
         presentFrom.attributedText = attributedString
         thoughts.backgroundColor = .clear
-        
-        indicatorBarWidth.constant = viewSizeWidth / CGFloat(itemNum)
-
-        if itemNum == 1{
-            indicator.isHidden = true
-            indicatorBackground.isHidden = true
-        }
     }
 
     func setNavigationBar(){
@@ -119,7 +113,7 @@ extension PresentDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        for i in 0...itemNum{
+        for i in 0...(serverData?.photo.count)!{
             if scrollView.contentOffset == CGPoint(x: viewSizeWidth*CGFloat(i), y: 0.0) {
                 nowPage = i
                 let plus = self.viewSizeWidth / CGFloat(itemNum)
@@ -136,12 +130,12 @@ extension PresentDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
         }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itemNum
+        return (serverData?.photo.count)!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = presentDetailCV.dequeueReusableCell(withReuseIdentifier: "PresentDetailCVC", for: indexPath) as! PresentDetailCVC
-
+        
         return cell
     }
     
@@ -160,3 +154,31 @@ extension PresentDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
     
     
 }
+
+extension PresentDetailVC {
+    func didSuccessDetail(message: String) {
+        presentDetailCV.register(PresentDetailCVC.nib(), forCellWithReuseIdentifier: "PresentDetailCVC")
+        presentDetailCV.delegate = self
+        presentDetailCV.dataSource = self
+        
+        var frame: CGRect = self.presentDetailCV.frame
+        frame.size.height = self.presentDetailCV.contentSize.height
+        self.presentDetailCV.frame = frame
+        
+        presentDetailCV.reloadData()
+        
+        thoughts.text = serverData?.record
+        date.text = serverData?.date
+        
+        indicatorBarWidth.constant = viewSizeWidth / CGFloat((serverData?.photo.count)!)
+        if (serverData?.photo.count)! == 1{
+            indicator.isHidden = true
+            indicatorBackground.isHidden = true
+        }
+    }
+    
+    func failedToRequest(message: String) {
+        print(message)
+    }
+}
+

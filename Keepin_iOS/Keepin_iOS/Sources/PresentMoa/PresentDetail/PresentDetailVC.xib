@@ -192,7 +192,7 @@
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-            <point key="canvasLocation" x="72.799999999999997" y="75.369458128078819"/>
+            <point key="canvasLocation" x="89" y="73"/>
         </view>
     </objects>
     <resources>
