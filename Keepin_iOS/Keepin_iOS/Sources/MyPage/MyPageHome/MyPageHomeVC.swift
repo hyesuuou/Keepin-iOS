@@ -12,13 +12,13 @@ class MyPageHomeVC: UIViewController {
     @IBOutlet weak var myPageHomeCV: UICollectionView!
     
     let stickyIndexPath = IndexPath(row: 1, section: 0)
-    
+    var message : String = ""
+    var num1 : Int = 0
+    var num2 : Int = 0
+    var num3 : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        myPageHomeCV.delegate = self
-        myPageHomeCV.dataSource = self
         
         registerXib()
         
@@ -26,6 +26,8 @@ class MyPageHomeVC: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         
         setFlowLayout()
+        
+        MyPageHomeDataManager().getNumberKeepin(self)
     }
     
     func registerXib(){
@@ -63,6 +65,10 @@ extension MyPageHomeVC : UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageHomeTopCVC.identifier, for: indexPath)as? MyPageHomeTopCVC else {return UICollectionViewCell()}
             
             cell.settingButton.addTarget(self, action: #selector(toSetting), for: UIControl.Event.touchUpInside)
+            cell.nameLabel.text = message
+            cell.num1.text = String(num1)
+            cell.num2.text = String(num2)
+            cell.num3.text = String(num3)
             
             return cell
         
@@ -123,3 +129,15 @@ extension MyPageHomeVC : UICollectionViewDelegateFlowLayout{
 }
 
 
+extension MyPageHomeVC{
+    func didSuccessGetUser(message: String){
+        print("서버통신 성공!")
+        myPageHomeCV.delegate = self
+        myPageHomeCV.dataSource = self
+        myPageHomeCV.reloadData()
+    }
+    
+    func failedToRequest(message: String){
+        print(message)
+    }
+}
