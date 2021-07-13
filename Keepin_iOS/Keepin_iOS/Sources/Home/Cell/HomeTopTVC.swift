@@ -11,7 +11,7 @@ class HomeTopTVC: UITableViewCell {
     
     public static let identifier = "HomeTopTVC"
     
-    let username : String = "윤정"
+    let username : String = "\(Token.name)"
     
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
