@@ -23,6 +23,7 @@ class EmailLoginDataManager {
                 case .success(let response):
                     print("로그인 통신 성공~!")
                     print(response.data?.name)
+                    viewController.didSuccessLogin(message: response.message, code: response.status)
                 case .failure(let error):
                     print("로그인 통신 실패 ㅠ_ㅠ")
                     print(error.errorDescription)

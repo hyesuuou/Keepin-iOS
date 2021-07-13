@@ -47,6 +47,8 @@ class LoginFirstVC: UIViewController {
 
     @IBAction func emailLoginButtonClicked(_ sender: Any) {
         // 이메일 로그인 화면으로 전환
+        print("이메일 로그인으로 화면전환")
+        self.navigationController?.pushViewController(EmailLoginVC(), animated: true)
     }
     
     @IBAction func joinButtonClicked(_ sender: Any) {
