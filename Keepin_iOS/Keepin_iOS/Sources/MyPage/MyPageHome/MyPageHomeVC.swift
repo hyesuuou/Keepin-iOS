@@ -12,7 +12,7 @@ class MyPageHomeVC: UIViewController {
     @IBOutlet weak var myPageHomeCV: UICollectionView!
     
     let stickyIndexPath = IndexPath(row: 1, section: 0)
-   // var friendServerData : FriendDataClass?
+    
     var member : String = ""
     var count1 : Int = 0
     var count2 : Int = 0

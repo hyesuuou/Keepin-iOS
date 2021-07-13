@@ -12,9 +12,12 @@ class MyPageHomeFriendCVC: UICollectionViewCell {
     @IBOutlet weak var myPageHomeCV: UICollectionView!
     @IBOutlet weak var mainView2: UIView!
     
+    //var friendServerData : FriendDataClass?
+    
     static let identifier : String = "MyPageHomeFriendCVC"
     
-    let friendName = ["삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터"]
+    static var friendName : [String] = []
+//    var friendName1 : [String] = ["삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터"]
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +35,10 @@ class MyPageHomeFriendCVC: UICollectionViewCell {
         let friendListNib = UINib(nibName: FriendListCVC.identifier, bundle: nil)
         myPageHomeCV.register(friendListNib, forCellWithReuseIdentifier: FriendListCVC.identifier)
     }
+    /*
+    func setData(){
+        friendName.append()
+    }*/
 }
 
 extension MyPageHomeFriendCVC : UICollectionViewDelegate{
@@ -42,7 +49,8 @@ extension MyPageHomeFriendCVC : UICollectionViewDelegate{
 
 extension MyPageHomeFriendCVC : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return friendName.count
+        //return friendName.count
+        return MyPageHomeFriendCVC.friendName.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
@@ -52,7 +60,7 @@ extension MyPageHomeFriendCVC : UICollectionViewDataSource{
         cell.friendName?.font = UIFont.GmarketSansTTF(.medium, size: 16)
         cell.layer.cornerRadius = 12
         cell.backgroundColor = .white
-        cell.friendName.text = friendName[indexPath.row]
+        cell.setData(title: MyPageHomeFriendCVC.friendName[indexPath.row])
         
         return cell
     }
@@ -66,6 +74,11 @@ extension MyPageHomeFriendCVC : UICollectionViewDelegateFlowLayout{
         let cellHeight = 64
     
         return CGSize(width: width, height: cellHeight)
-    
     }
+
 }
+
+
+
+
+
