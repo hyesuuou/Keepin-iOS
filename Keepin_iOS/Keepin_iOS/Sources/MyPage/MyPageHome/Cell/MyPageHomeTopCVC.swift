@@ -10,7 +10,10 @@ import UIKit
 class MyPageHomeTopCVC: UICollectionViewCell {
     
     static let identifier : String = "MyPageHomeTopCVC"
-    let name : String = "박윤정"
+    var name : String = "박윤정"
+    var c1 : Int = 0
+    var c2 : Int = 0
+    var c3 : Int = 0
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var settingButton: UIButton!
@@ -29,15 +32,6 @@ class MyPageHomeTopCVC: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        nameLabel.text = "\(name) 님"
-        nameLabel.font = UIFont.GmarketSansTTF(.medium, size: 20)
-        nameLabel.textColor = UIColor.keepinBlack
-        
-        let attributedStr = NSMutableAttributedString(string: nameLabel.text!)
-        attributedStr.addAttribute(.foregroundColor, value: UIColor.keepinGreen, range:(nameLabel.text! as NSString).range(of: "\(name)"))
-        nameLabel.attributedText = attributedStr
-        
         presentView.backgroundColor = .keepinGray
         presentView.layer.cornerRadius = 12
         
@@ -47,23 +41,14 @@ class MyPageHomeTopCVC: UICollectionViewCell {
         present1.text = "총 선물"
         present1.font = UIFont.NotoSans(.regular, size: 14)
         present1.textColor = UIColor.keepinGray5
-        num1.text = "2개"
-        num1.font = UIFont.NotoSans(.bold, size: 16)
-        num1.textColor = UIColor.keepinGreen
         
         present2.text = "받은 선물"
         present2.font = UIFont.NotoSans(.regular, size: 14)
         present2.textColor = UIColor.keepinGray5
-        num2.text = "1개"
-        num2.font = UIFont.NotoSans(.bold, size: 16)
-        num2.textColor = UIColor.keepinGreen
         
         present3.text = "준 선물"
         present3.font = UIFont.NotoSans(.regular, size: 14)
-        present3.textColor = UIColor.keepinGray5
-        num3.text = "1개"
-        num3.font = UIFont.NotoSans(.bold, size: 16)
-        num3.textColor = UIColor.keepinGreen
+        present3.textColor = UIColor.keepinGray
         
     }
     

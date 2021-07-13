@@ -9,24 +9,42 @@ import Alamofire
 import Foundation
 
 class MyPageHomeDataManager{
+    
+    var friendList : [Friend] = []
+    
     func getNumberKeepin(_ viewController: MyPageHomeVC){
         AF.request("\(Constant.BASE_URL)/my", method: .get , parameters: nil, headers: Constant.HEADER)
             .validate()
             .responseDecodable(of: MyPageHomeResponse.self){ response in
                 switch response.result {
                 case .success(let response):
-                    let name = response.data.name
-                    let total = response.data.total
-                    let taken = response.data.taken
-                    let given = response.data.given
-                    
-                    viewController.message = name
-                    viewController.num1 = total
-                    viewController.num2 = taken
-                    viewController.num3 = given
+                    viewController.member = response.data.name
+                    viewController.count1 = response.data.total
+                    viewController.count2 = response.data.taken
+                    viewController.count3 = response.data.given
                     viewController.didSuccessGetUser(message: response.message)
                 case .failure(let error):
                     print(error.localizedDescription)
+                }
+            }
+    }
+    
+    func getNumberFriend(_ viewController: MyPageHomeVC){
+        AF.request("\(Constant.BASE_URL)/friend",method: .get, parameters: nil,
+                   headers: Constant.HEADER)
+            .validate()
+            .responseDecodable(of: MyPageFriendResponse.self){ response in
+                switch response.result {
+                case .success(let response):
+                    //viewController.friendServerData = response.data
+                    
+                    self.friendList = response.data.friends
+                    viewController.didSuccessGetFriend(friendList: self.friendList)
+                    print(self.friendList)
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    print("나오지마라")
                 }
             }
     }
