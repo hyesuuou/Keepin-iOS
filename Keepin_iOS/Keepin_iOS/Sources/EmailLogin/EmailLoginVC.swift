@@ -15,7 +15,8 @@ class EmailLoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         loginButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 14)
         loginButton.backgroundColor = .keepinGray1
         loginButton.tintColor = .keepinGray3
@@ -26,6 +27,14 @@ class EmailLoginVC: UIViewController {
         
         idTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         pwTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        
+        
+    }
+    
+    func serverConnect(email: String, password: String){
+        
+        let emailLoginRequest = EmailLoginRequest(email: email, password: password)
+        EmailLoginDataManager().postSignIn(emailLoginRequest, viewController: self)
     }
 
     func setTextFieldUI(tf : UITextField){
@@ -48,6 +57,9 @@ class EmailLoginVC: UIViewController {
         
     }
 
+    @IBAction func loginButtonClicked(_ sender: Any) {
+        serverConnect(email: idTextField.text!, password: pwTextField.text!)
+    }
     
 
 }

@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+// MARK: - EmailLoginRequest
+struct EmailLoginRequest: Codable {
+    let email, password: String
+}
+
