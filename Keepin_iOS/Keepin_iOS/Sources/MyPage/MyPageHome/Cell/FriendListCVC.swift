@@ -11,6 +11,7 @@ class FriendListCVC: UICollectionViewCell {
 
     @IBOutlet weak var friendName: UILabel!
     @IBOutlet weak var moveButton: UIButton!
+    @IBOutlet weak var touchButton: UIButton!
     
     static let identifier : String = "FriendListCVC"
     
@@ -21,10 +22,16 @@ class FriendListCVC: UICollectionViewCell {
         
         friendName.font = UIFont.GmarketSansTTF(.medium, size: 16)
         friendName.textColor = .keepinBlack
+    
     }
+    
     
     func setData(title: String){
         friendName.text = title
     }
-
+    
+    @IBAction func tofriend(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "push"), object: nil)
+    }
+    
 }

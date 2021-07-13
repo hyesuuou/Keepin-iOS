@@ -27,10 +27,16 @@ class MyPageHomeVC: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         
         setFlowLayout()
-        
         MyPageHomeDataManager().getNumberKeepin(self)
         MyPageHomeDataManager().getNumberFriend(self)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(toPush(_:)), name: NSNotification.Name(rawValue: "push"), object: nil)
     }
+
+    @objc func toPush(_ notification: NSNotification){
+        self.navigationController?.pushViewController(MyPageDetailVC(), animated: true)
+    }
+    
     
     func registerXib(){
         
@@ -48,6 +54,8 @@ class MyPageHomeVC: UIViewController {
         let columnLayout = CustomCollectionViewFlowLayout(stickyIndexPath: stickyIndexPath)
         self.myPageHomeCV.collectionViewLayout = columnLayout
     }
+    
+   
 }
 
 extension MyPageHomeVC : UICollectionViewDelegate{
