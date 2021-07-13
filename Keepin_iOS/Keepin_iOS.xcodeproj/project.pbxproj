@@ -11,6 +11,9 @@
 		15243995269C1012009E5E8E /* KeepinPlusBlankTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15243993269C1012009E5E8E /* KeepinPlusBlankTVC.xib */; };
 		152439D3269C49F8009E5E8E /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152439D2269C49F8009E5E8E /* HomeResponse.swift */; };
 		152439D5269C4A05009E5E8E /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152439D4269C4A05009E5E8E /* HomeDataManager.swift */; };
+		152439E6269D4A89009E5E8E /* EmailLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152439E5269D4A89009E5E8E /* EmailLoginRequest.swift */; };
+		152439E8269D4A91009E5E8E /* EmailLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152439E7269D4A91009E5E8E /* EmailLoginResponse.swift */; };
+		152439EA269D4AAA009E5E8E /* EmailLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152439E9269D4AAA009E5E8E /* EmailLoginDataManager.swift */; };
 		1529FF7E26979F57000AD789 /* KeepinPlusTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1529FF7C26979F57000AD789 /* KeepinPlusTitleTVC.swift */; };
 		1529FF7F26979F57000AD789 /* KeepinPlusTitleTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1529FF7D26979F57000AD789 /* KeepinPlusTitleTVC.xib */; };
 		1529FF8626998496000AD789 /* KeepinPlusInputTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1529FF8426998496000AD789 /* KeepinPlusInputTVC.swift */; };
@@ -134,6 +137,9 @@
 		15243993269C1012009E5E8E /* KeepinPlusBlankTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepinPlusBlankTVC.xib; sourceTree = "<group>"; };
 		152439D2269C49F8009E5E8E /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
 		152439D4269C4A05009E5E8E /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
+		152439E5269D4A89009E5E8E /* EmailLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginRequest.swift; sourceTree = "<group>"; };
+		152439E7269D4A91009E5E8E /* EmailLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginResponse.swift; sourceTree = "<group>"; };
+		152439E9269D4AAA009E5E8E /* EmailLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginDataManager.swift; sourceTree = "<group>"; };
 		1529FF7C26979F57000AD789 /* KeepinPlusTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusTitleTVC.swift; sourceTree = "<group>"; };
 		1529FF7D26979F57000AD789 /* KeepinPlusTitleTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepinPlusTitleTVC.xib; sourceTree = "<group>"; };
 		1529FF8426998496000AD789 /* KeepinPlusInputTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusInputTVC.swift; sourceTree = "<group>"; };
@@ -282,6 +288,23 @@
 			path = DataModel;
 			sourceTree = "<group>";
 		};
+		152439E3269D4A64009E5E8E /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				152439E9269D4AAA009E5E8E /* EmailLoginDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		152439E4269D4A75009E5E8E /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				152439E5269D4A89009E5E8E /* EmailLoginRequest.swift */,
+				152439E7269D4A91009E5E8E /* EmailLoginResponse.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		1529FF7B26979F2A000AD789 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +375,8 @@
 		15C122372693075400838E55 /* EmailLogin */ = {
 			isa = PBXGroup;
 			children = (
+				152439E4269D4A75009E5E8E /* DataModel */,
+				152439E3269D4A64009E5E8E /* DataManager */,
 				15C122382693077E00838E55 /* EmailLoginVC.swift */,
 				15C122392693077E00838E55 /* EmailLoginVC.xib */,
 			);
@@ -954,6 +979,7 @@
 				15C1222C268F063C00838E55 /* HomeTopTVC.swift in Sources */,
 				71210D50269C931C00568982 /* MyPageHomeDataManager.swift in Sources */,
 				7719B5CE269C459700CBBB11 /* SearchDataManager.swift in Sources */,
+				152439EA269D4AAA009E5E8E /* EmailLoginDataManager.swift in Sources */,
 				152439D3269C49F8009E5E8E /* HomeResponse.swift in Sources */,
 				71E1324526987F3200DB2D9F /* MyPageHomeHeaderCVC.swift in Sources */,
 				77F0484C268C4DB400FBFDD7 /* SelectFriendVC.swift in Sources */,
@@ -965,6 +991,7 @@
 				71210D52269C934C00568982 /* MyPageHomeResponse.swift in Sources */,
 				71AC81932692F1A700758994 /* MyPageDetailMemoCVC.swift in Sources */,
 				7719B57C269724A900CBBB11 /* AfterCatVC.swift in Sources */,
+				152439E8269D4A91009E5E8E /* EmailLoginResponse.swift in Sources */,
 				77F04851268C4E2500FBFDD7 /* BaseTBC.swift in Sources */,
 				77F04846268C4DA000FBFDD7 /* KeepinPlusVC.swift in Sources */,
 				77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */,
@@ -982,6 +1009,7 @@
 				7719B5CA269C2E2700CBBB11 /* PresentMoaHomeResponse.swift in Sources */,
 				153462D12694468B00060E44 /* JoinFirstVC.swift in Sources */,
 				71C197BA26977BBC004C0490 /* MyPageFriendFixVC.swift in Sources */,
+				152439E6269D4A89009E5E8E /* EmailLoginRequest.swift in Sources */,
 				152439D5269C4A05009E5E8E /* HomeDataManager.swift in Sources */,
 				71E1324126987EFD00DB2D9F /* MyPageHomeTopCVC.swift in Sources */,
 				71E1324926987F5200DB2D9F /* MyPageHomeFriendCVC.swift in Sources */,
