@@ -12,10 +12,11 @@ class MyPageHomeVC: UIViewController {
     @IBOutlet weak var myPageHomeCV: UICollectionView!
     
     let stickyIndexPath = IndexPath(row: 1, section: 0)
-    var message : String = ""
-    var num1 : Int = 0
-    var num2 : Int = 0
-    var num3 : Int = 0
+   // var friendServerData : FriendDataClass?
+    var member : String = ""
+    var count1 : Int = 0
+    var count2 : Int = 0
+    var count3 : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class MyPageHomeVC: UIViewController {
         setFlowLayout()
         
         MyPageHomeDataManager().getNumberKeepin(self)
+        MyPageHomeDataManager().getNumberFriend(self)
     }
     
     func registerXib(){
@@ -65,10 +67,30 @@ extension MyPageHomeVC : UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageHomeTopCVC.identifier, for: indexPath)as? MyPageHomeTopCVC else {return UICollectionViewCell()}
             
             cell.settingButton.addTarget(self, action: #selector(toSetting), for: UIControl.Event.touchUpInside)
-            cell.nameLabel.text = message
-            cell.num1.text = String(num1)
-            cell.num2.text = String(num2)
-            cell.num3.text = String(num3)
+            cell.name = member
+            
+            cell.nameLabel.text = "\(cell.name) 님"
+            cell.nameLabel.font = UIFont.GmarketSansTTF(.medium, size: 20)
+            cell.nameLabel.textColor = UIColor.keepinBlack
+            
+            let attributedStr = NSMutableAttributedString(string: cell.nameLabel.text!)
+            attributedStr.addAttribute(.foregroundColor, value: UIColor.keepinGreen, range:(cell.nameLabel.text! as NSString).range(of: "\(cell.name)"))
+            cell.nameLabel.attributedText = attributedStr
+            
+            cell.c1 = count1
+            cell.num1.text = "\(count1)개"
+            cell.num1.font = UIFont.NotoSans(.bold, size: 15)
+            cell.num1.textColor = UIColor.keepinGreen
+            
+            cell.c2 = count2
+            cell.num2.text = "\(count2)개"
+            cell.num2.font = UIFont.NotoSans(.bold, size: 15)
+            cell.num2.textColor = UIColor.keepinGreen
+            
+            count3 = cell.c3
+            cell.num3.text = "\(count3)개"
+            cell.num3.font = UIFont.NotoSans(.bold, size: 15)
+            cell.num3.textColor = UIColor.keepinGreen
             
             return cell
         
@@ -81,6 +103,8 @@ extension MyPageHomeVC : UICollectionViewDataSource {
             
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageHomeFriendCVC.identifier, for: indexPath)as? MyPageHomeFriendCVC else {return UICollectionViewCell()}
+            
+            //cell.friendName = self.friendServerData?.friends[indexPath.row]
             
             return cell
             
@@ -132,6 +156,19 @@ extension MyPageHomeVC : UICollectionViewDelegateFlowLayout{
 extension MyPageHomeVC{
     func didSuccessGetUser(message: String){
         print("서버통신 성공!")
+        myPageHomeCV.delegate = self
+        myPageHomeCV.dataSource = self
+        myPageHomeCV.reloadData()
+    }
+    
+    func didSuccessGetFriend(friendList: [Friend]){
+        print("친구 모아보기 서버 통신 성공!!")
+        
+        for i in friendList{
+            MyPageHomeFriendCVC.friendName.append(i.name)
+        }
+        print("1")
+        
         myPageHomeCV.delegate = self
         myPageHomeCV.dataSource = self
         myPageHomeCV.reloadData()
