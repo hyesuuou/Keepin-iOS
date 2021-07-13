@@ -48,7 +48,7 @@ class MyPageHomeTopCVC: UICollectionViewCell {
         
         present3.text = "준 선물"
         present3.font = UIFont.NotoSans(.regular, size: 14)
-        present3.textColor = UIColor.keepinGray
+        present3.textColor = UIColor.keepinGray5
         
     }
     
