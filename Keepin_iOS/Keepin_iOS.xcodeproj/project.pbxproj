@@ -101,6 +101,9 @@
 		7719B5CE269C459700CBBB11 /* SearchDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5CD269C459700CBBB11 /* SearchDataManager.swift */; };
 		7719B5D0269C45A900CBBB11 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5CF269C45A900CBBB11 /* SearchResponse.swift */; };
 		7719B5D2269C45B800CBBB11 /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5D1269C45B800CBBB11 /* SearchRequest.swift */; };
+		7719B5D8269D71D900CBBB11 /* PresentDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5D7269D71D800CBBB11 /* PresentDetailResponse.swift */; };
+		7719B5DA269D71E400CBBB11 /* PresentDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5D9269D71E400CBBB11 /* PresentDetailRequest.swift */; };
+		7719B5DC269D71F300CBBB11 /* PresentDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5DB269D71F300CBBB11 /* PresentDetailDataManager.swift */; };
 		773D414E26942E8000A4E366 /* PresentDetailCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773D414C26942E8000A4E366 /* PresentDetailCVC.swift */; };
 		773D414F26942E8000A4E366 /* PresentDetailCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 773D414D26942E8000A4E366 /* PresentDetailCVC.xib */; };
 		77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */; };
@@ -232,6 +235,9 @@
 		7719B5CD269C459700CBBB11 /* SearchDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataManager.swift; sourceTree = "<group>"; };
 		7719B5CF269C45A900CBBB11 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		7719B5D1269C45B800CBBB11 /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
+		7719B5D7269D71D800CBBB11 /* PresentDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDetailResponse.swift; sourceTree = "<group>"; };
+		7719B5D9269D71E400CBBB11 /* PresentDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDetailRequest.swift; sourceTree = "<group>"; };
+		7719B5DB269D71F300CBBB11 /* PresentDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDetailDataManager.swift; sourceTree = "<group>"; };
 		773D414C26942E8000A4E366 /* PresentDetailCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PresentDetailCVC.swift; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.swift; sourceTree = SOURCE_ROOT; };
 		773D414D26942E8000A4E366 /* PresentDetailCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PresentDetailCVC.xib; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.xib; sourceTree = SOURCE_ROOT; };
 		77F047DF268AF98F00FBFDD7 /* Keepin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keepin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -560,6 +566,23 @@
 			path = DataModel;
 			sourceTree = "<group>";
 		};
+		7719B5D5269D71B900CBBB11 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				7719B5D7269D71D800CBBB11 /* PresentDetailResponse.swift */,
+				7719B5D9269D71E400CBBB11 /* PresentDetailRequest.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		7719B5D6269D71C000CBBB11 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				7719B5DB269D71F300CBBB11 /* PresentDetailDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		773D414B26942E6B00A4E366 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -716,6 +739,8 @@
 		77F0482E268C4BFF00FBFDD7 /* PresentDetail */ = {
 			isa = PBXGroup;
 			children = (
+				7719B5D6269D71C000CBBB11 /* DataManager */,
+				7719B5D5269D71B900CBBB11 /* DataModel */,
 				773D414B26942E6B00A4E366 /* Cell */,
 				77F0482F268C4C3A00FBFDD7 /* PresentDetailVC.swift */,
 				77F04830268C4C3A00FBFDD7 /* PresentDetailVC.xib */,
@@ -997,6 +1022,7 @@
 				717A0258269ACFF800241171 /* MyPageEditPhoneVC.swift in Sources */,
 				7719B596269ADE2900CBBB11 /* UISwitch.swift in Sources */,
 				7719B5C6269C2E0300CBBB11 /* PresentMoaHomeRequest.swift in Sources */,
+				7719B5DA269D71E400CBBB11 /* PresentDetailRequest.swift in Sources */,
 				1529FF8626998496000AD789 /* KeepinPlusInputTVC.swift in Sources */,
 				7719B5B1269C049400CBBB11 /* Token.swift in Sources */,
 				71E265C52699D80900BD6840 /* KeepinPlusFriendVC.swift in Sources */,
@@ -1004,6 +1030,7 @@
 				71C197AD26975103004C0490 /* MyPageProfileVC.swift in Sources */,
 				71AC81872692D77B00758994 /* MyPageDetailTopCVC.swift in Sources */,
 				773D414E26942E8000A4E366 /* PresentDetailCVC.swift in Sources */,
+				7719B5D8269D71D900CBBB11 /* PresentDetailResponse.swift in Sources */,
 				15C1222C268F063C00838E55 /* HomeTopTVC.swift in Sources */,
 				71210D50269C931C00568982 /* MyPageHomeDataManager.swift in Sources */,
 				7719B5CE269C459700CBBB11 /* SearchDataManager.swift in Sources */,
@@ -1025,6 +1052,7 @@
 				77F04851268C4E2500FBFDD7 /* BaseTBC.swift in Sources */,
 				77F04846268C4DA000FBFDD7 /* KeepinPlusVC.swift in Sources */,
 				77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */,
+				7719B5DC269D71F300CBBB11 /* PresentDetailDataManager.swift in Sources */,
 				71E1324D2698A8BF00DB2D9F /* FriendListCVC.swift in Sources */,
 				1529FF8E269984D2000AD789 /* KeepinPlusSearchTVC.swift in Sources */,
 				153462D52694469900060E44 /* JoinSecondVC.swift in Sources */,
