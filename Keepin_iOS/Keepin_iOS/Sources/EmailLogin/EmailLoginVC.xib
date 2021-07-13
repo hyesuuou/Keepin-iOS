@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="z5V-UB-Joc">
-                    <rect key="frame" x="16" y="78" width="343" height="44"/>
+                    <rect key="frame" x="16" y="128" width="343" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="dmB-a9-TBk"/>
                     </constraints>
@@ -30,7 +30,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="agc-C0-cQj">
-                    <rect key="frame" x="16" y="134" width="343" height="44"/>
+                    <rect key="frame" x="16" y="184" width="343" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="Ce9-6J-9ED"/>
                     </constraints>
@@ -38,7 +38,7 @@
                     <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsf-V7-Upw">
-                    <rect key="frame" x="16" y="196" width="343" height="49"/>
+                    <rect key="frame" x="16" y="246" width="343" height="49"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="49" id="ssL-QE-Pig"/>
                     </constraints>
@@ -48,14 +48,14 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLB-DI-pHc">
-                    <rect key="frame" x="55.666666666666657" y="263" width="116" height="32"/>
+                    <rect key="frame" x="55.666666666666657" y="313" width="116" height="32"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="116" id="eZ6-gM-5cY"/>
                     </constraints>
                     <state key="normal" image="findId"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JT7-ep-uPg">
-                    <rect key="frame" x="187" y="271" width="1" height="16"/>
+                    <rect key="frame" x="187" y="321" width="1" height="16"/>
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="i1Q-5u-AWY"/>
@@ -63,7 +63,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJz-qh-ClN">
-                    <rect key="frame" x="203.66666666666663" y="263" width="116" height="32"/>
+                    <rect key="frame" x="203.66666666666663" y="313" width="116" height="32"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="116" id="KTG-hf-oCV"/>
                     </constraints>
@@ -83,7 +83,7 @@
                 <constraint firstItem="fJz-qh-ClN" firstAttribute="centerY" secondItem="JT7-ep-uPg" secondAttribute="centerY" id="gpu-Pr-akP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="agc-C0-cQj" secondAttribute="trailing" constant="16" id="mNT-Lt-ZPF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bsf-V7-Upw" secondAttribute="trailing" constant="16" id="n3X-GJ-uNl"/>
-                <constraint firstItem="z5V-UB-Joc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="34" id="o0h-Gv-ono"/>
+                <constraint firstItem="z5V-UB-Joc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="84" id="o0h-Gv-ono"/>
                 <constraint firstItem="Bsf-V7-Upw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="qGC-xN-G8k"/>
                 <constraint firstItem="fJz-qh-ClN" firstAttribute="leading" secondItem="JT7-ep-uPg" secondAttribute="trailing" constant="15.5" id="qxE-PB-erd"/>
                 <constraint firstItem="JT7-ep-uPg" firstAttribute="leading" secondItem="HLB-DI-pHc" secondAttribute="trailing" constant="15.5" id="v8O-pS-UjT"/>
