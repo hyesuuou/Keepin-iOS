@@ -43,6 +43,9 @@
                         <constraint firstAttribute="height" constant="49" id="ssL-QE-Pig"/>
                     </constraints>
                     <state key="normal" title="로그인하기"/>
+                    <connections>
+                        <action selector="loginButtonClicked:" destination="-1" eventType="touchUpInside" id="0IZ-WD-PiC"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLB-DI-pHc">
                     <rect key="frame" x="55.666666666666657" y="263" width="116" height="32"/>
