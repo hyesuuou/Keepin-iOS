@@ -21,6 +21,58 @@ extension UIViewController {
         self.view.endEditing(true)
     }
     
+    // MARK: 세미나에서 긁어온 extension
+    func makeRequestAlert(title : String,
+                       message : String,
+                       okAction : ((UIAlertAction) -> Void)?,
+                       cancelAction : ((UIAlertAction) -> Void)? = nil,
+                       completion : (() -> Void)? = nil)
+        {
+            
+            let generator = UIImpactFeedbackGenerator(style: .medium)
+            generator.impactOccurred()
+            
+            let alertViewController = UIAlertController(title: title, message: message,
+                                                        preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "확인", style: .default, handler: okAction)
+            alertViewController.addAction(okAction)
+            
+            
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: cancelAction)
+            alertViewController.addAction(cancelAction)
+            
+
+            self.present(alertViewController, animated: true, completion: completion)
+        }
+    
+    func makeAlert(title : String,
+                       message : String,
+                       okAction : ((UIAlertAction) -> Void)? = nil,
+                       completion : (() -> Void)? = nil)
+        {
+            let generator = UIImpactFeedbackGenerator(style: .medium)
+            generator.impactOccurred()
+            
+            let alertViewController = UIAlertController(title: title, message: message,
+                                                        preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "확인", style: .default, handler: okAction)
+            alertViewController.addAction(okAction)
+            
+            
+            self.present(alertViewController, animated: true, completion: completion)
+        }
+    
+    // MARK: Message와 확인버튼만 있는 UIAlertController
+    func makeAlertOnlyMessage(message : String, okAction : ((UIAlertAction) -> Void)?, completion : (() -> Void)? = nil){
+        let alertViewController = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: okAction)
+        alertViewController.addAction(okAction)
+        
+        self.present(alertViewController, animated: true, completion: completion)
+    }
+    
     // MARK: 취소와 확인이 뜨는 UIAlertController
     func presentAlert(title: String, message: String? = nil,
                       isCancelActionIncluded: Bool = false,
