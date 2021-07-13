@@ -23,7 +23,7 @@ class HomeVC: UIViewController {
         
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = false
-        
+       // self.navigationController?.navigationBar.isHidden = true
         
         HomeDataManager().getRandom(self)
     
