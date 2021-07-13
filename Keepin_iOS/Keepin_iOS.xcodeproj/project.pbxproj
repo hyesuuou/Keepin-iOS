@@ -32,6 +32,9 @@
 		153462D22694468B00060E44 /* JoinFirstVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 153462D02694468B00060E44 /* JoinFirstVC.xib */; };
 		153462D52694469900060E44 /* JoinSecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153462D32694469900060E44 /* JoinSecondVC.swift */; };
 		153462D62694469900060E44 /* JoinSecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 153462D42694469900060E44 /* JoinSecondVC.xib */; };
+		15B71A51269D7CC500ED68E0 /* JoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A50269D7CC500ED68E0 /* JoinRequest.swift */; };
+		15B71A53269D7CCE00ED68E0 /* JoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A52269D7CCE00ED68E0 /* JoinResponse.swift */; };
+		15B71A55269D7CD600ED68E0 /* JoinDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A54269D7CD600ED68E0 /* JoinDataManager.swift */; };
 		15C1221F268E2FBF00838E55 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15C12219268E2FBF00838E55 /* NotoSansCJKkr-Bold.otf */; };
 		15C12220268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15C1221A268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf */; };
 		15C12221268E2FBF00838E55 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15C1221B268E2FBF00838E55 /* NotoSansCJKkr-Regular.otf */; };
@@ -159,6 +162,9 @@
 		153462D02694468B00060E44 /* JoinFirstVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinFirstVC.xib; sourceTree = "<group>"; };
 		153462D32694469900060E44 /* JoinSecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSecondVC.swift; sourceTree = "<group>"; };
 		153462D42694469900060E44 /* JoinSecondVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinSecondVC.xib; sourceTree = "<group>"; };
+		15B71A50269D7CC500ED68E0 /* JoinRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRequest.swift; sourceTree = "<group>"; };
+		15B71A52269D7CCE00ED68E0 /* JoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinResponse.swift; sourceTree = "<group>"; };
+		15B71A54269D7CD600ED68E0 /* JoinDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinDataManager.swift; sourceTree = "<group>"; };
 		15C12219268E2FBF00838E55 /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
 		15C1221A268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		15C1221B268E2FBF00838E55 /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
@@ -333,12 +339,31 @@
 		153462CE2694466500060E44 /* Join */ = {
 			isa = PBXGroup;
 			children = (
+				15B71A4E269D7CA700ED68E0 /* DataModel */,
+				15B71A4F269D7CAF00ED68E0 /* DataManager */,
 				153462CF2694468B00060E44 /* JoinFirstVC.swift */,
 				153462D02694468B00060E44 /* JoinFirstVC.xib */,
 				153462D32694469900060E44 /* JoinSecondVC.swift */,
 				153462D42694469900060E44 /* JoinSecondVC.xib */,
 			);
 			path = Join;
+			sourceTree = "<group>";
+		};
+		15B71A4E269D7CA700ED68E0 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				15B71A50269D7CC500ED68E0 /* JoinRequest.swift */,
+				15B71A52269D7CCE00ED68E0 /* JoinResponse.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		15B71A4F269D7CAF00ED68E0 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				15B71A54269D7CD600ED68E0 /* JoinDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		15C121FA268E281800838E55 /* Font */ = {
@@ -991,6 +1016,7 @@
 				77F549D4268ECF6C0013A76C /* ReminderVC.swift in Sources */,
 				77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */,
 				77F04825268C49BF00FBFDD7 /* HomeVC.swift in Sources */,
+				15B71A55269D7CD600ED68E0 /* JoinDataManager.swift in Sources */,
 				7719B5872699CCA300CBBB11 /* Date.swift in Sources */,
 				71210D52269C934C00568982 /* MyPageHomeResponse.swift in Sources */,
 				71AC81932692F1A700758994 /* MyPageDetailMemoCVC.swift in Sources */,
@@ -1004,7 +1030,9 @@
 				153462D52694469900060E44 /* JoinSecondVC.swift in Sources */,
 				71AC818F2692F00D00758994 /* MyPageDetailPresentCVC.swift in Sources */,
 				15243994269C1012009E5E8E /* KeepinPlusBlankTVC.swift in Sources */,
+				15B71A51269D7CC500ED68E0 /* JoinRequest.swift in Sources */,
 				71E1FBE0269BF530006A42C3 /* CustomCollectionViewFlowLayout.swift in Sources */,
+				15B71A53269D7CCE00ED68E0 /* JoinResponse.swift in Sources */,
 				1529FF96269985A8000AD789 /* KeepinPlusCategoryTVC.swift in Sources */,
 				7719B5C8269C2E1B00CBBB11 /* PresentMoaHomeDataManager.swift in Sources */,
 				1529FF7E26979F57000AD789 /* KeepinPlusTitleTVC.swift in Sources */,
