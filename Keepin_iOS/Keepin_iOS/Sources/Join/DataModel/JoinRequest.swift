@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+// MARK: - JoinRequest
+struct JoinRequest: Codable {
+    let email, password, name, birth: String
+    let phoneToken, phone: String
+}

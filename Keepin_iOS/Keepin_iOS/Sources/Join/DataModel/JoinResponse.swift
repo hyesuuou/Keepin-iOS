@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+// MARK: - JoinResponse
+struct JoinResponse: Codable {
+    let status: Int
+    let message: String
+}
