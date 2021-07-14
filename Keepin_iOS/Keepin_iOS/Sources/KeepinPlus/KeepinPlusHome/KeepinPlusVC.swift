@@ -109,7 +109,7 @@ extension KeepinPlusVC : UITableViewDataSource {
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusTitleTVC.identifier, for: indexPath) as? KeepinPlusTitleTVC else {
                 return UITableViewCell()
             }
-            cell.setData(title: "선물에 이름을 붙여주세요.", subtitle: "", image: true)
+            cell.setData(title: "선물에 이름을 붙여 주세요.", subtitle: "", image: true)
             
             return cell
         
@@ -124,7 +124,7 @@ extension KeepinPlusVC : UITableViewDataSource {
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusTitleTVC.identifier, for: indexPath) as? KeepinPlusTitleTVC else {
                 return UITableViewCell()
             }
-            cell.setData(title: "사진을 등록해주세요", subtitle: "(최대 3장)", image: true)
+            cell.setData(title: "사진을 등록해 주세요", subtitle: "(최대 3장)", image: true)
             
             return cell
             
@@ -195,7 +195,7 @@ extension KeepinPlusVC : UITableViewDataSource {
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusTitleTVC.identifier, for: indexPath) as? KeepinPlusTitleTVC else {
                 return UITableViewCell()
             }
-            cell.setData(title: "선물 카테고리를 선택해주세요", subtitle: "(최대 2개)", image: false)
+            cell.setData(title: "선물 카테고리를 선택해 주세요", subtitle: "(최대 2개)", image: false)
             
             
             return cell
