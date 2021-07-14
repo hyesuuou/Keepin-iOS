@@ -10,7 +10,7 @@ import UIKit
 class KeepinPlusWriteTVC: UITableViewCell, UITextViewDelegate {
     
     public static let identifier = "KeepinPlusWriteTVC"
-    let dummyText : String = "ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ어랴;덜;ㅣ어랴더ㅣ러아러ㅑ더리더리댜ㅓ랻ㄹㄷㄹㄷㄹㄷㄹㄷㄹㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ어랴;덜;ㅣ어랴더ㅣ러아러ㅑ더리더리댜ㅓ랻ㄹㄷㄹㄷㄹㄷㄹㄷㄹㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ어랴;덜;ㅣ어랴더ㅣ러아러ㅑ더리더리댜ㅓ랻ㄹㄷㄹㄷㄹㄷㄹㄷㄹㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ어랴;덜;ㅣ어랴더ㅣ러아러ㅑ더리더리댜ㅓ랻ㄹㄷㄹㄷㄹㄷㄹㄷㄹㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ어랴;덜;ㅣ어랴더ㅣ러아러ㅑ더리더리댜ㅓ랻ㄹㄷㄹㄷㄹㄷㄹㄷㄹㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ어랴;덜;ㅣ어랴더ㅣ러아러ㅑ더리더리댜ㅓ랻ㄹㄷㄹㄷㄹㄷㄹㄷㄹㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ어랴;덜;ㅣ어랴더ㅣ러아러ㅑ더리더리댜ㅓ랻ㄹㄷㄹㄷㄹㄷㄹㄷㄹㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ어랴;덜;ㅣ어랴더ㅣ러아러ㅑ더리더리댜ㅓ랻ㄹㄷㄹㄷㄹㄷㄹㄷㄹㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ어랴;덜;ㅣ어랴더ㅣ러아러ㅑ더리더리댜ㅓ랻ㄹㄷㄹㄷㄹㄷㄹㄷㄹㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ어랴;덜;ㅣ어랴더ㅣ러아러ㅑ더리더리댜ㅓ랻ㄹㄷㄹㄷㄹㄷㄹㄷㄹㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ어랴;덜;ㅣ어랴더ㅣ러아러ㅑ더리더리댜ㅓ랻ㄹㄷㄹㄷㄹㄷㄹㄷㄹㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ어랴;덜;ㅣ어랴더ㅣ러아러ㅑ더리더리댜ㅓ랻ㄹㄷㄹㄷㄹㄷㄹㄷㄹㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ어랴;덜;ㅣ어랴더ㅣ러아러ㅑ더리더리댜ㅓ랻ㄹㄷㄹㄷㄹㄷㄹㄷㄹㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ어랴;덜;ㅣ어랴더ㅣ러아러ㅑ더리더리댜ㅓ랻ㄹㄷㄹㄷㄹㄷㄹㄷㄹ"
+    let dummyText : String = ""
     
     @IBOutlet weak var textfieldView: UITextView!
     @IBOutlet weak var textfieldContainer: UIView!
@@ -23,9 +23,18 @@ class KeepinPlusWriteTVC: UITableViewCell, UITextViewDelegate {
         textfieldContainer.layer.borderColor = UIColor.keepinGray3.cgColor
         //textfield.addLeftPadding()
         textfieldView.font = UIFont.NotoSans(.regular, size: 14)
-        textfieldView.text = dummyText
-        //placeholderSetting()
         
+//        textfieldView.translatesAutoresizingMaskIntoConstraints = true
+//        textfieldView.sizeToFit()
+        
+        // 텍스트가 있으면
+        if dummyText == "" {
+            placeholderSetting()
+        }
+        else {
+        // 텍스트가 없으면
+            textfieldView.text = dummyText
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -57,5 +66,14 @@ class KeepinPlusWriteTVC: UITableViewCell, UITextViewDelegate {
                 textView.textColor = UIColor.lightGray
             }
         }
+    
+    
+    // 글자수제한
+        func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+            guard let str = textView.text else { return true }
+           let newLength = str.count + text.count - range.length
+           return newLength <= 200
+       
+    }
 
 }
