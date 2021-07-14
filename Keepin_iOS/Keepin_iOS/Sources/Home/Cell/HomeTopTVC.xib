@@ -31,7 +31,7 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgHomeRandom" translatesAutoresizingMaskIntoConstraints="NO" id="5nN-FD-dwO">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5nN-FD-dwO">
                         <rect key="frame" x="0.0" y="89" width="402" height="280"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="280" id="HO9-oS-3Vi"/>
@@ -65,7 +65,4 @@
             <point key="canvasLocation" x="213.04347826086959" y="246.76339285714283"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="imgHomeRandom" width="375" height="280"/>
-    </resources>
 </document>
