@@ -59,4 +59,11 @@ class MyPageDetailPresentCVC: UICollectionViewCell,UITextViewDelegate {
             textView.textColor = .keepinGray5
         }
     }
+    
+    /*
+    func countLines(textView: UITextView) -> Int {
+        let myText = textView.text! as NSString
+        
+        let rect = CGSize(width: textView.bounds.width, height: CGFloat.greatestFiniteMagnitude)
+    }*/
 }
