@@ -27,6 +27,12 @@ class KeepinPlusWriteTVC: UITableViewCell, UITextViewDelegate {
 //        textfieldView.translatesAutoresizingMaskIntoConstraints = true
 //        textfieldView.sizeToFit()
         
+        textfieldView.delegate = self
+
+
+
+
+        
         // 텍스트가 있으면
         if dummyText == "" {
             placeholderSetting()
@@ -42,6 +48,8 @@ class KeepinPlusWriteTVC: UITableViewCell, UITextViewDelegate {
 
         // Configure the view for the selected state
     }
+    
+    
     
     func placeholderSetting() {
         textfieldView.delegate = self // txtvReview가 유저가 선언한 outlet
