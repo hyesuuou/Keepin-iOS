@@ -11,7 +11,6 @@ class MyPageDetailVC: UIViewController ,UITextViewDelegate{
     
     @IBOutlet weak var myPageDetailCV: UICollectionView!
     
-    
     var friendIdx : String = ""
     var friendName : String = ""
     var allNum : Int = 0

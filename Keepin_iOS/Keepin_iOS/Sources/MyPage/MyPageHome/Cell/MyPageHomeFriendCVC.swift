@@ -23,13 +23,11 @@ class MyPageHomeFriendCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
         myPageHomeCV.delegate = self
         myPageHomeCV.dataSource = self
         myPageHomeCV.backgroundColor = .keepinGray
         
         registerXib()
-        
     }
     
     func registerXib(){
@@ -38,16 +36,17 @@ class MyPageHomeFriendCVC: UICollectionViewCell {
     }
     
     @objc func notification(){
-    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "push"), object: index)
+//    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "push"), object: index)
     }
    
 }
 
 extension MyPageHomeFriendCVC : UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let friendID = MyPageHomeDataManager.friendList[indexPath.row].id
         let nextVC = MyPageDetailVC()
-        nextVC.friendIdx = MyPageHomeDataManager.friendList[indexPath.row].id
-        print("하이하이")
+        nextVC.friendIdx = friendID
+        NotificationCenter.default.post(name: NSNotification.Name("push"), object: friendID)
     }
 }
 
@@ -58,6 +57,7 @@ extension MyPageHomeFriendCVC : UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FriendListCVC.identifier, for: indexPath)as? FriendListCVC else {return UICollectionViewCell()}
         

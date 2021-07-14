@@ -38,15 +38,20 @@ class MyPageHomeVC: UIViewController {
 
     @objc func toPush(_ notification: NSNotification){
         let nextVC = MyPageDetailVC()
-        nextVC.friendIdx = MyPageHomeDataManager.friendList[MyPageHomeVC.index].id
+        //nextVC.friendIdx = MyPageHomeDataManager.friendList[MyPageHomeVC.index].id
+        if let data = notification.object as? String{
+            print(data)
+        }
+        //nextVC.friendIdx = notification.object as? String
+        //print(nextVC.friendIdx)
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(MyPageDetailVC(), animated: true)
         self.hidesBottomBarWhenPushed = false
+    
     }
     
     
     func registerXib(){
-        
         let homeTopNib = UINib(nibName: MyPageHomeTopCVC.identifier, bundle: nil)
         myPageHomeCV.register(homeTopNib, forCellWithReuseIdentifier:MyPageHomeTopCVC.identifier )
         
