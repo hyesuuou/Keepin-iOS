@@ -49,8 +49,9 @@ class SearchVC: UIViewController {
     }
     
     var itemNum : Int = 0
-    var presentList : [String] = []
-    var filteredData: [String] = []
+    var presentList : [Keepin?] = []
+    var filteredData: [Keepin?] = []
+
     var serverData : Keepins?
     
     override func viewDidLoad() {
@@ -130,9 +131,9 @@ extension SearchVC : UICollectionViewDelegate, UICollectionViewDataSource, UICol
             
         }
         
-        let presentData : String = filteredData[indexPath.row]
-        
-        cell.presentTitle.text = presentData
+        cell.presentImage.setImage(with: (filteredData[indexPath.row]?.photo)!)
+        cell.presentTitle.text = filteredData[indexPath.row]?.title
+        cell.presentDate.text = filteredData[indexPath.row]?.date
 
         return cell
     }
@@ -163,7 +164,7 @@ extension SearchVC : UISearchBarDelegate{
         else{
             for present in presentList
             {
-                if (present.contains(searchText))
+                if ((present?.title?.contains(searchText)) == true)
                 {
                     filteredData.append(present)
                 }
@@ -187,9 +188,10 @@ extension SearchVC {
         frame.size.height = self.searchResultCV.contentSize.height
         self.searchResultCV.frame = frame
 
-        var itemNum : Int = (self.serverData?.keepins.count)!
+        let itemNum : Int = (self.serverData?.keepins.count)!
+        
         for i in 0...itemNum-1{
-            presentList.append((serverData?.keepins[i]?.title)!)
+            presentList.append(serverData?.keepins[i])
         }
     }
     
