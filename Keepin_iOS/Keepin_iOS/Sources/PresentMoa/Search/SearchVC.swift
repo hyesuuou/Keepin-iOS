@@ -112,7 +112,7 @@ extension SearchVC : UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let nextVC = PresentDetailVC()
-        nextVC.keepinIdx = (serverData?.keepins[indexPath.row]?._id)!
+        nextVC.keepinIdx = (filteredData[indexPath.row]?._id)!
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(nextVC, animated: true)
         self.hidesBottomBarWhenPushed = false
