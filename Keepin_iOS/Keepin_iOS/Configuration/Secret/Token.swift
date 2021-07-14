@@ -7,7 +7,7 @@
 
 import Foundation
 struct Token{
-    static var jwt : String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZTM0OTg5MzQ2MGVjMzk4ZWExZGM0NSIsImVtYWlsIjoiZmJkdWRkbjk3QG5hdmVyLmNvbSIsImlhdCI6MTYyNjA1OTA3OSwiZXhwIjoxNjI2NjYzODc5fQ.9Ieyu_3jj7T2zGwrOwcL5bqs7CmxO02sWyQO9ItrIiw"
+    static var jwt : String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWRjNDJjNzRjNjkyNDk5OGFmMGNlOSIsImVtYWlsIjoiaU9TQG5hdmVyLmNvbSIsImlhdCI6MTYyNjE5OTc5MSwiZXhwIjoxNjI2ODA0NTkxfQ.yUq9xM3hA6jomifblNspncgk6-JDz4SefvqzKF8XTZc"
     static var refreshToken : String = ""
     static var name : String = ""
 }
