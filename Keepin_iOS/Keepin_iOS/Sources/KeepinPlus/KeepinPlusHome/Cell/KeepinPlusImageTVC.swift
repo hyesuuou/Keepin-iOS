@@ -24,6 +24,7 @@ class KeepinPlusImageTVC: UITableViewCell, UIImagePickerControllerDelegate, UINa
         imageContainerView[1].isHidden = true
         imageContainerView[2].isHidden = true
         // Initialization code
+        setButtonUI()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -35,6 +36,16 @@ class KeepinPlusImageTVC: UITableViewCell, UIImagePickerControllerDelegate, UINa
     func setImage(image: UIImage, tag: Int){
         imageContainerView[tag].isHidden = false
         realImageView[tag].image = image
+    }
+    
+    func setButtonUI(){
+        imagePlusButton[0].backgroundColor = .keepinGray1
+        imagePlusButton[1].backgroundColor = .keepinGray1
+        imagePlusButton[2].backgroundColor = .keepinGray1
+        
+        imagePlusButton[0].tintColor = UIColor.black
+        imagePlusButton[1].tintColor = UIColor.black
+        imagePlusButton[2].tintColor = .keepinGray3
     }
 }
 
