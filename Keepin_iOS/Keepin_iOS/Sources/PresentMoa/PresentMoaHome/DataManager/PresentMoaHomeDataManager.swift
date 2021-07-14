@@ -8,8 +8,11 @@
 import Alamofire
 
 class PresentMoaHomeDataManager {
-    func got(_ viewController: PresentMoaVC) {
-        AF.request("\(Constant.BASE_URL)/keepin?taken=true&recent=true", method: .get, parameters: nil, headers: Constant.HEADER)
+    func got(_ parameter: String, viewController: PresentMoaVC) {
+        var url = "\(Constant.BASE_URL)/keepin?taken=true&recent="
+        url.append(parameter)
+        
+        AF.request(url, method: .get, parameters: nil, headers: Constant.HEADER)
             .validate(statusCode: 200..<500)
             .validate(contentType: ["application/json"])
             .responseDecodable(of: PresentMoaHomeResponse.self) { response in
@@ -23,8 +26,11 @@ class PresentMoaHomeDataManager {
             }
     }
     
-    func gave(_ viewController: PresentMoaVC) {
-        AF.request("\(Constant.BASE_URL)/keepin?taken=false&recent=true", method: .get, parameters: nil, headers: Constant.HEADER)
+    func gave(_ parameter: String, viewController: PresentMoaVC) {
+        var url = "\(Constant.BASE_URL)/keepin?taken=false&recent="
+        url.append(parameter)
+        
+        AF.request(url, method: .get, parameters: nil, headers: Constant.HEADER)
             .validate(statusCode: 200..<500)
             .validate(contentType: ["application/json"])
             .responseDecodable(of: PresentMoaHomeResponse.self) { response in

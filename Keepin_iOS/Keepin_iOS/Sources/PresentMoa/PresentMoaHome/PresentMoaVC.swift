@@ -18,14 +18,26 @@ class PresentMoaVC: UIViewController {
     @IBOutlet weak var indicatorBar: UIView!
     @IBOutlet weak var indicatorStart: NSLayoutConstraint!
     @IBOutlet weak var buttonStack: UIStackView!
+    @IBOutlet weak var newButton: UIButton!
     
     @IBAction func newButtonClicked(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         if sender.isSelected{
-            print("NEW")
+            if gave.isSelected == true{
+                PresentMoaHomeDataManager().gave("false", viewController: self)
+            }
+            else{
+                PresentMoaHomeDataManager().got("false", viewController: self)
+            }
         }
         else{
-            print("NO")
+            if gave.isSelected == true{
+                PresentMoaHomeDataManager().gave("true", viewController: self)
+            }
+            else{
+                PresentMoaHomeDataManager().got("true", viewController: self)
+            }
+            
         }
         
     }
@@ -35,7 +47,13 @@ class PresentMoaVC: UIViewController {
         {
             gave.isSelected = true
             got.isSelected = false
-            PresentMoaHomeDataManager().gave(self)
+            if newButton.isSelected{
+                PresentMoaHomeDataManager().gave("false", viewController: self)
+            }
+            else{
+                PresentMoaHomeDataManager().gave("true", viewController: self)
+            }
+            
             UIView.animate(withDuration: 0.2){
                 self.indicatorStart.constant = self.buttonStack.frame.width - 13.5
             }
@@ -43,7 +61,13 @@ class PresentMoaVC: UIViewController {
         else{
             gave.isSelected = false
             got.isSelected = true
-            PresentMoaHomeDataManager().got(self)
+            if newButton.isSelected{
+                PresentMoaHomeDataManager().got("false", viewController: self)
+            }
+            else{
+                PresentMoaHomeDataManager().got("true", viewController: self)
+            }
+       
             UIView.animate(withDuration: 0.1){
                 self.indicatorStart.constant = self.buttonStack.frame.width / 2 - 13
             }
@@ -59,7 +83,7 @@ class PresentMoaVC: UIViewController {
         setUI()
         self.dismissKeyboardWhenTappedAround()
         
-        PresentMoaHomeDataManager().got(self) 
+        PresentMoaHomeDataManager().got("true", viewController: self)
     }
     
     func setUI(){

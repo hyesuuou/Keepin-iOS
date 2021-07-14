@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PresentDetailVC: UIViewController {
 
@@ -56,6 +57,9 @@ class PresentDetailVC: UIViewController {
         memoView.backgroundColor = .keepinGray1
         presentFrom.textColor = .keepinGray4
         thoughts.backgroundColor = .clear
+        
+        indicator.isHidden = true
+        indicatorBackground.isHidden = true
     }
 
     func setNavigationBar(){
@@ -109,10 +113,10 @@ extension PresentDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        for i in 0...(serverData?.photo.count)!{
+        for i in 0...(serverData?.photo.count)! - 1{
             if scrollView.contentOffset == CGPoint(x: viewSizeWidth*CGFloat(i), y: 0.0) {
                 nowPage = i
-                let plus = self.viewSizeWidth / CGFloat(itemNum)
+                let plus = self.viewSizeWidth / CGFloat((serverData?.photo.count)!)
                 if(nowPage == 0){
                     self.indicatorStart.constant = 0
                 }
@@ -121,7 +125,6 @@ extension PresentDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
                         self.indicatorStart.constant = plus*CGFloat(i)
                     }
                 }
-                
             }
         }
     }
@@ -132,6 +135,7 @@ extension PresentDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = presentDetailCV.dequeueReusableCell(withReuseIdentifier: "PresentDetailCVC", for: indexPath) as! PresentDetailCVC
         
+        cell.presentImage.setImage(with: (serverData?.photo[indexPath.row])!)
         return cell
     }
     
@@ -175,9 +179,10 @@ extension PresentDetailVC {
         date.text = serverData?.date
         
         indicatorBarWidth.constant = viewSizeWidth / CGFloat((serverData?.photo.count)!)
-        if (serverData?.photo.count)! == 1{
-            indicator.isHidden = true
-            indicatorBackground.isHidden = true
+        
+        if (serverData?.photo.count)! != 1{
+            indicator.isHidden = false
+            indicatorBackground.isHidden = false
         }
     }
     

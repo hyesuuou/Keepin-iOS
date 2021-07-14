@@ -14,6 +14,7 @@ class PresentDetailCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        presentImage.backgroundColor = .keepinGray
     }
 
     static func nib() -> UINib{

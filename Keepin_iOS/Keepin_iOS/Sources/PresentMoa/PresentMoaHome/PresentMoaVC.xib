@@ -24,6 +24,7 @@
                 <outlet property="got" destination="3em-jd-cQ0" id="uMf-qO-X5M"/>
                 <outlet property="indicatorBar" destination="dcK-Hy-MDd" id="2qZ-v2-OJx"/>
                 <outlet property="indicatorStart" destination="DHG-Vg-N66" id="zvQ-Q0-9V6"/>
+                <outlet property="newButton" destination="4dP-KJ-Lyh" id="UsB-uy-CnL"/>
                 <outlet property="presentCV" destination="8cd-3U-Oaa" id="P3b-Ia-crv"/>
                 <outlet property="presentCVHeight" destination="VwT-WV-Duw" id="PU9-0A-hSw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
