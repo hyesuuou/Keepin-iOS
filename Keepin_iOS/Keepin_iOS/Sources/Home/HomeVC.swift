@@ -86,7 +86,6 @@ extension HomeVC  : UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTopTVC.identifier, for: indexPath) as? HomeTopTVC else {
                 return UITableViewCell()
             }
-            print(image,"이거나오냐고")
             cell.messageLabel.text = message
             cell.randomImageView.setImage(with: image)
             return cell

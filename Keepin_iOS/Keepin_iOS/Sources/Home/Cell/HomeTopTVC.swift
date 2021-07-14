@@ -30,7 +30,7 @@ class HomeTopTVC: UITableViewCell {
     
         
         
-        messageLabel.text = "PM이 탕수육 사줬다~~"
+        messageLabel.text = ""
         messageLabel.font = UIFont.GmarketSansTTF(.medium, size: 14)
         messageLabel.textColor = .keepinGray5
         
