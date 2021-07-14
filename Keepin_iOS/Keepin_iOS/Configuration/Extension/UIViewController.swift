@@ -21,6 +21,17 @@ extension UIViewController {
         self.view.endEditing(true)
     }
     
+    // MARK: UIWindow의 rootViewController를 변경하여 화면전환
+    func changeRootViewController(_ viewControllerToPresent: UIViewController) {
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = viewControllerToPresent
+            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
+        } else {
+            viewControllerToPresent.modalPresentationStyle = .overFullScreen
+            self.present(viewControllerToPresent, animated: true, completion: nil)
+        }
+    }
+    
     // MARK: 세미나에서 긁어온 extension
     func makeRequestAlert(title : String,
                        message : String,
