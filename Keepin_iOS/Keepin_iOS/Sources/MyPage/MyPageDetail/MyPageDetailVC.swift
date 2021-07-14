@@ -64,14 +64,14 @@ class MyPageDetailVC: UIViewController ,UITextViewDelegate{
         
         let actionEdit = UIAlertAction(title: "이름 수정", style: .default){
             (_) in self.navigationController?.pushViewController(MyPageFriendFixVC(), animated: true)
-            
         }
         let actionCancel = UIAlertAction(title: "취소", style: .cancel)
         
         self.presentAlert(
             preferredStyle: .actionSheet, with: actionDelete,actionEdit,actionCancel)
-        
     }
+    
+   
 
 }
 

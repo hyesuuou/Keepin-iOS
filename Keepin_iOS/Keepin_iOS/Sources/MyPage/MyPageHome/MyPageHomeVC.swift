@@ -12,19 +12,24 @@ class MyPageHomeVC: UIViewController {
     @IBOutlet weak var myPageHomeCV: UICollectionView!
     
     let stickyIndexPath = IndexPath(row: 1, section: 0)
-    
+    var countList : Int = 0
     var member : String = ""
     var count1 : Int = 0
     var count2 : Int = 0
     var count3 : Int = 0
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         registerXib()
         
+        /*
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.isTranslucent = true*/
         
         setFlowLayout()
         MyPageHomeDataManager().getNumberKeepin(self)
@@ -111,7 +116,7 @@ extension MyPageHomeVC : UICollectionViewDataSource {
             
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageHomeFriendCVC.identifier, for: indexPath)as? MyPageHomeFriendCVC else {return UICollectionViewCell()}
-            
+            //countList = cell.
             //cell.friendName = self.friendServerData?.friends[indexPath.row]
             
             return cell
@@ -145,8 +150,13 @@ extension MyPageHomeVC : UICollectionViewDelegateFlowLayout{
             return CGSize(width: width, height: cellHeight)
         case 2:
             let width = UIScreen.main.bounds.width
-            let cellHeight = width * (385/375)
-            return CGSize(width: width, height: cellHeight)
+            //let cellHeight = width * (385/375)
+//            let cellHeight : Int =  64 * MyPageHomeFriendCVC.friendName.count
+            
+            let height = 64 * MyPageHomeFriendCVC.friendName.count
+            //return CGSize(width: width, height: height)
+            return CGSize(width: 375, height: height + 100)
+            
         
         default:
             let width = UIScreen.main.bounds.width
