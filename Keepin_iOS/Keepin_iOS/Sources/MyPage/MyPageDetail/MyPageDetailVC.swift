@@ -107,8 +107,8 @@ extension MyPageDetailVC: UICollectionViewDelegateFlowLayout
             
             return CGSize(width: width, height: cellHeight)
         case 2:
-            let width = UIScreen.main.bounds.width
-            let cellHeight = width * (650/375 )
+            let width = Int(UIScreen.main.bounds.width)
+            let cellHeight = (228 + 24) * 5
             
             return CGSize(width: width, height: cellHeight)
         

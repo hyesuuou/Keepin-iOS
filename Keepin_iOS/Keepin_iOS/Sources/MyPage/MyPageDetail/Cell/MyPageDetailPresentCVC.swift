@@ -47,7 +47,7 @@ class MyPageDetailPresentCVC: UICollectionViewCell,UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
+        if textView.textColor == .keepinGray5 {
             textView.text = nil
             textView.textColor = UIColor.black
         }
