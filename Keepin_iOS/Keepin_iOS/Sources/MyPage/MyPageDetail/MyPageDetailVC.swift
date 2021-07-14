@@ -14,8 +14,8 @@ class MyPageDetailVC: UIViewController ,UITextViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         registerXib()
-        setNavigationBar()
 
+        self.navigationController?.isNavigationBarHidden = true
         myPageDetailCV.delegate = self
         myPageDetailCV.dataSource = self
         dismissKeyboardWhenTappedAround()
@@ -34,32 +34,11 @@ class MyPageDetailVC: UIViewController ,UITextViewDelegate{
     }
     
     
-    func setNavigationBar(){
-        let searchButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
-        searchButton.setImage(UIImage(named: "icMore"), for: UIControl.State.normal)
-        searchButton.addTarget(self, action: #selector(toMore), for: UIControl.Event.touchUpInside)
-        searchButton.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
-        
-        let backButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
-        backButton.setImage(UIImage(named: "icBack"), for: UIControl.State.normal)
-        backButton.addTarget(self, action: #selector(toBack), for: UIControl.Event.touchUpInside)
-        backButton.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
-        
-        let searchbarButton = UIBarButtonItem(customView: searchButton)
-        self.navigationItem.rightBarButtonItem = searchbarButton
-        
-        let backbarButton = UIBarButtonItem(customView: backButton)
-        self.navigationItem.leftBarButtonItem = backbarButton
-        
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = false
-    }
-    
-    @objc func toBack(){
+    @IBAction func toBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @objc func toMore(){
+    @IBAction func toMore(_ sender: Any) {
         let actionDelete = UIAlertAction(title: "친구 삭제", style: .default)
         
         let actionEdit = UIAlertAction(title: "이름 수정", style: .default){
@@ -69,9 +48,8 @@ class MyPageDetailVC: UIViewController ,UITextViewDelegate{
         
         self.presentAlert(
             preferredStyle: .actionSheet, with: actionDelete,actionEdit,actionCancel)
+        
     }
-    
-   
 
 }
 
