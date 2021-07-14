@@ -153,6 +153,7 @@
                 <outlet property="contentsSecontLabel" destination="j4i-ci-ftl" id="qgb-NE-03G"/>
                 <outlet property="dateLabel" destination="1AV-im-sDA" id="c00-zI-PWW"/>
                 <outlet property="dateSecondLabel" destination="yxJ-V7-g4U" id="v98-WU-qKY"/>
+                <outlet property="reminderNextButton" destination="jv2-3k-dMI" id="v3a-mJ-p8n"/>
                 <outlet property="separateView" destination="JDO-tn-ts3" id="fjf-VF-I1E"/>
                 <outlet property="titleLabel" destination="hbT-Yo-tTu" id="lLl-pR-Akh"/>
             </connections>

@@ -56,6 +56,11 @@ class HomeVC: UIViewController {
             }
         }
     
+    @objc func pushReminderVC(){
+        // 아니면 탭바를 이동해줄 수 있나?
+        self.navigationController?.pushViewController(ReminderVC(), animated: true)
+    }
+    
     
 
 
@@ -97,6 +102,7 @@ extension HomeVC  : UITableViewDataSource {
             
             cell.setData(date: reminderList[0].date, contents: reminderList[0].title,
                          secondDate: reminderList[1].date, secondContents: reminderList[1].title)
+            cell.reminderNextButton.addTarget(self, action: #selector(pushReminderVC), for: .touchUpInside)
             
             return cell
             
