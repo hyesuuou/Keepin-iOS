@@ -131,7 +131,9 @@ extension MyPageHomeVC : UICollectionViewDataSource {
     }
     
     @objc func toPlus(){
+        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(KeepinPlusFriendVC(), animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
 }
 
