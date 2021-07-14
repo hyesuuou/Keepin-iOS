@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wTN-VS-A9V">
-                    <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                    <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O0B-Qp-ixr">
                         <size key="itemSize" width="128" height="128"/>
@@ -36,10 +36,10 @@
                 <constraint firstItem="wTN-VS-A9V" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0sW-3Y-mqe"/>
                 <constraint firstItem="wTN-VS-A9V" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1N5-VG-a3R"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wTN-VS-A9V" secondAttribute="trailing" id="C9i-KV-Lhb"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wTN-VS-A9V" secondAttribute="bottom" id="KPn-Fn-hs4"/>
+                <constraint firstAttribute="bottom" secondItem="wTN-VS-A9V" secondAttribute="bottom" id="FTe-2Z-FnS"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
             <point key="canvasLocation" x="97" y="85"/>
         </view>
     </objects>
