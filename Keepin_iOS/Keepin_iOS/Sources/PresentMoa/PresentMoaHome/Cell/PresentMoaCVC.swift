@@ -16,6 +16,7 @@ class PresentMoaCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        presentImage.backgroundColor = .keepinGray
         presentTitle.textColor = .keepinGray5
         presentDate.textColor = .keepinGray4
     }
