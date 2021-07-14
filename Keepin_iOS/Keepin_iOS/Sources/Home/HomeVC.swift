@@ -11,6 +11,7 @@ class HomeVC: UIViewController {
     
     let refreshControl = UIRefreshControl()
     var message : String = ""
+    var image : String = ""
     
     @IBOutlet weak var homeTableview: UITableView!
     override func viewDidLoad() {
@@ -85,7 +86,9 @@ extension HomeVC  : UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTopTVC.identifier, for: indexPath) as? HomeTopTVC else {
                 return UITableViewCell()
             }
+            print(image,"이거나오냐고")
             cell.messageLabel.text = message
+            cell.randomImageView.setImage(with: image)
             return cell
             
         case 1:
@@ -116,8 +119,9 @@ extension HomeVC  : UITableViewDataSource {
 }
 
 extension HomeVC {
-    func didSuccessGetRandom(message: String) {
+    func didSuccessGetRandom(message: String, imgURL: String) {
         print("서버통신 성공")
+        image = imgURL
         homeTableview.delegate = self
         homeTableview.dataSource = self
         homeTableview.reloadData()
