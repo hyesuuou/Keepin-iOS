@@ -11,7 +11,7 @@ class MyPageHomeVC: UIViewController {
     
     @IBOutlet weak var myPageHomeCV: UICollectionView!
     
-    let stickyIndexPath = IndexPath(row: 1, section: 0)
+    let stickyIndexPath = IndexPath(row: 2, section: 0)
     var countList : Int = 0
     var member : String = ""
     var count1 : Int = 0
@@ -31,6 +31,7 @@ class MyPageHomeVC: UIViewController {
         MyPageHomeDataManager().getNumberKeepin(self)
         MyPageHomeDataManager().getNumberFriend(self)
         
+        self.navigationController?.navigationBar.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(toPush(_:)), name: NSNotification.Name(rawValue: "push"), object: nil)
     }
 
@@ -51,6 +52,9 @@ class MyPageHomeVC: UIViewController {
         
         let homeFriendNib = UINib(nibName: MyPageHomeFriendCVC.identifier, bundle: nil)
         myPageHomeCV.register(homeFriendNib, forCellWithReuseIdentifier:MyPageHomeFriendCVC.identifier)
+        
+        let navigationBarNib = UINib(nibName: NavigationBarCVC.identifier, bundle: nil)
+        myPageHomeCV.register(navigationBarNib, forCellWithReuseIdentifier: NavigationBarCVC.identifier)
     }
     
     func setFlowLayout(){
@@ -68,13 +72,18 @@ extension MyPageHomeVC : UICollectionViewDelegate{
 
 extension MyPageHomeVC : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         switch indexPath.row {
         case 0:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NavigationBarCVC.identifier, for: indexPath)as? NavigationBarCVC else {
+                return UICollectionViewCell()}
+            
+            return cell
+        case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageHomeTopCVC.identifier, for: indexPath)as? MyPageHomeTopCVC else {return UICollectionViewCell()}
             
             cell.settingButton.addTarget(self, action: #selector(toSetting), for: UIControl.Event.touchUpInside)
@@ -104,18 +113,16 @@ extension MyPageHomeVC : UICollectionViewDataSource {
             cell.num3.textColor = UIColor.keepinGreen
             
             return cell
-        
-        case 1:
+            
+        case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageHomeHeaderCVC.identifier, for: indexPath)as? MyPageHomeHeaderCVC else {return UICollectionViewCell()}
             
             cell.plusButton.addTarget(self, action: #selector(toPlus), for: UIControl.Event.touchUpInside)
             
             return cell
             
-        case 2:
+        case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageHomeFriendCVC.identifier, for: indexPath)as? MyPageHomeFriendCVC else {return UICollectionViewCell()}
-            //countList = cell.
-            //cell.friendName = self.friendServerData?.friends[indexPath.row]
             
             return cell
             
@@ -143,22 +150,23 @@ extension MyPageHomeVC : UICollectionViewDelegateFlowLayout{
         
         case 0:
             let width = UIScreen.main.bounds.width
-            let cellHeight = width * (175/375)
+            let cellHeight = width * (50/375)
             return CGSize(width: width, height: cellHeight)
             
         case 1:
             let width = UIScreen.main.bounds.width
-            let cellHeight = width * (77/375)
+            let cellHeight = width * (175/375)
             return CGSize(width: width, height: cellHeight)
+            
         case 2:
             let width = UIScreen.main.bounds.width
-            //let cellHeight = width * (385/375)
-//            let cellHeight : Int =  64 * MyPageHomeFriendCVC.friendName.count
+            let cellHeight = width * (77/375)
+            return CGSize(width: width, height: cellHeight)
             
-            let height = 64 * MyPageHomeFriendCVC.friendName.count
-            //return CGSize(width: width, height: height)
-            return CGSize(width: 375, height: height + 100)
-            
+        case 3:
+            let width = UIScreen.main.bounds.width
+            let height = (64 + 12) * MyPageHomeFriendCVC.friendName.count
+            return CGSize(width: 375, height: height)
         
         default:
             let width = UIScreen.main.bounds.width

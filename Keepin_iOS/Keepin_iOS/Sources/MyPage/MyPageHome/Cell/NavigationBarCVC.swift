@@ -8,6 +8,8 @@
 import UIKit
 
 class NavigationBarCVC: UICollectionViewCell {
+    
+    static let identifier : String = "NavigationBarCVC"
 
     override func awakeFromNib() {
         super.awakeFromNib()
