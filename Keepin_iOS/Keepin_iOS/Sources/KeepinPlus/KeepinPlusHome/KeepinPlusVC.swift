@@ -96,12 +96,12 @@ extension KeepinPlusVC : UITableViewDelegate {
 
 extension KeepinPlusVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return 16
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
-        case 0:
+        case 0, 15:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusBlankTVC.identifier, for: indexPath) as? KeepinPlusBlankTVC else { return UITableViewCell() }
             return cell
         
@@ -259,7 +259,10 @@ extension KeepinPlusVC : UITableViewDataSource {
             return 76 + 40
             
         case 14:
-            return 234
+            return 180
+            
+        case 15:
+            return 54
             
             
         default:
