@@ -43,7 +43,7 @@
                     <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uda-FF-bp4">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="793.33333333333337"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="615"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8bT-fG-QyO">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
@@ -58,38 +58,37 @@
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </collectionViewFlowLayout>
                                 </collectionView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PM이 탕수육 사조따~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLZ-WW-QeF">
-                                    <rect key="frame" x="24" y="407" width="172.33333333333334" height="18"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLZ-WW-QeF">
+                                    <rect key="frame" x="24" y="407" width="0.0" height="0.0"/>
                                     <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="박윤정님 외 3명에게 받은선물" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sN0-EY-G4k">
-                                    <rect key="frame" x="24" y="435" width="148.66666666666666" height="18"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sN0-EY-G4k">
+                                    <rect key="frame" x="24" y="417" width="0.0" height="0.0"/>
                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I0r-af-hXs">
-                                    <rect key="frame" x="15" y="476" width="345" height="1"/>
+                                    <rect key="frame" x="15" y="440" width="345" height="1"/>
                                     <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="Yez-82-5hv"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="느낌/마음 기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ie4-74-wXj">
-                                    <rect key="frame" x="24.000000000000007" y="505" width="105.66666666666669" height="16"/>
+                                    <rect key="frame" x="24.000000000000007" y="469" width="105.66666666666669" height="16"/>
                                     <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAH-sd-2QP">
-                                    <rect key="frame" x="16" y="539" width="343" height="190.33333333333337"/>
+                                    <rect key="frame" x="16" y="503" width="343" height="66"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aqw-Ss-vn8">
-                                            <rect key="frame" x="16" y="12" width="311" height="161.33333333333334"/>
+                                            <rect key="frame" x="16" y="12" width="311" height="37"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <string key="text">고생하는 피엠 윤정이를 위해 이번 달 지출을 아껴 건물 한채를 선물로 샀다. 키핀 숙소로 쓰면 딱이겠군. 곧 보민이 줄 건물도 알아봐야겠다. 고생하는 피엠 윤정이를 위해 이번 달 지출을 아껴 건물 한채를 선물로 샀다. 키핀 숙소로 쓰면 딱이겠군. 곧 보민이 줄 건물도 알아봐야겠다. 고생하는 피엠 윤정이를 위해 이번 달 지출을 아껴 건물 한채를 선물로 샀다.</string>
                                             <color key="textColor" systemColor="labelColor"/>
                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -103,8 +102,8 @@
                                         <constraint firstAttribute="trailing" secondItem="aqw-Ss-vn8" secondAttribute="trailing" constant="16" id="wEN-B4-0eM"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021.06.21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jt-dd-z9s">
-                                    <rect key="frame" x="291" y="750.33333333333337" width="60" height="18"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jt-dd-z9s">
+                                    <rect key="frame" x="351" y="590" width="0.0" height="0.0"/>
                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -121,7 +120,7 @@
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="niw-Mb-ZZr">
-                                    <rect key="frame" x="24" y="747.33333333333337" width="106" height="24"/>
+                                    <rect key="frame" x="24" y="587" width="106" height="24"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPK-1a-iXK">
                                             <rect key="frame" x="0.0" y="0.0" width="51" height="24"/>
