@@ -218,7 +218,7 @@ extension KeepinPlusVC : UITableViewDataSource {
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusTitleTVC.identifier, for: indexPath) as? KeepinPlusTitleTVC else {
                 return UITableViewCell()
             }
-            cell.setData(title: "더 잘 키핀해볼까요?", subtitle: "", image: false)
+            cell.setData(title: "더 잘 키핀해볼까요?", subtitle: "(최대 200자)", image: false)
             
             return cell
             
