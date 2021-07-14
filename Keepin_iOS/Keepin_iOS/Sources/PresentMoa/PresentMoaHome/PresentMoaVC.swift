@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PresentMoaVC: UIViewController {
 
@@ -56,6 +57,7 @@ class PresentMoaVC: UIViewController {
 
         setNavigationBar()
         setUI()
+        self.dismissKeyboardWhenTappedAround()
         
         PresentMoaHomeDataManager().got(self) 
     }
@@ -106,7 +108,7 @@ extension PresentMoaVC : UICollectionViewDelegate, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = presentCV.dequeueReusableCell(withReuseIdentifier: "PresentMoaCVC", for: indexPath) as! PresentMoaCVC
-//        cell.presentImage = serverData?.keepins[indexPath.row].d
+        cell.presentImage.setImage(with:(serverData?.keepins[indexPath.row]?.photo)!)
         cell.presentTitle.text = serverData?.keepins[indexPath.row]?.title
         cell.presentDate.text = serverData?.keepins[indexPath.row]?.date
         return cell
