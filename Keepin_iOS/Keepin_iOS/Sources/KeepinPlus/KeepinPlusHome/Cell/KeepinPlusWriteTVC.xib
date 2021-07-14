@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,26 +17,47 @@
                 <rect key="frame" x="0.0" y="0.0" width="425" height="216"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="선물을 주고받은 상황, 느낌 등을 기록해 보세요!" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IdP-pX-hen">
-                        <rect key="frame" x="16" y="0.0" width="393" height="180"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlX-CI-mWQ">
+                        <rect key="frame" x="16" y="0.0" width="393" height="216"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H80-3c-cDE">
+                                <rect key="frame" x="18" y="16" width="357" height="184"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="180" id="j9q-GL-jt5"/>
+                            <constraint firstItem="H80-3c-cDE" firstAttribute="leading" secondItem="mlX-CI-mWQ" secondAttribute="leading" constant="18" id="4Id-XQ-TCd"/>
+                            <constraint firstItem="H80-3c-cDE" firstAttribute="top" secondItem="mlX-CI-mWQ" secondAttribute="top" constant="16" id="OMq-Vq-FrX"/>
+                            <constraint firstAttribute="bottom" secondItem="H80-3c-cDE" secondAttribute="bottom" constant="16" id="Rog-Pp-4Jz"/>
+                            <constraint firstAttribute="trailing" secondItem="H80-3c-cDE" secondAttribute="trailing" constant="18" id="UxY-B2-ObY"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="IdP-pX-hen" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="DfM-F1-kUE"/>
-                    <constraint firstItem="IdP-pX-hen" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="La9-e3-bTi"/>
-                    <constraint firstAttribute="trailing" secondItem="IdP-pX-hen" secondAttribute="trailing" constant="16" id="dAb-Vg-lq6"/>
+                    <constraint firstItem="mlX-CI-mWQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0wU-J5-fdQ"/>
+                    <constraint firstItem="mlX-CI-mWQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="gOQ-UG-VlO"/>
+                    <constraint firstAttribute="trailing" secondItem="mlX-CI-mWQ" secondAttribute="trailing" constant="16" id="lL1-R1-aHL"/>
+                    <constraint firstAttribute="bottom" secondItem="mlX-CI-mWQ" secondAttribute="bottom" id="zOu-Ry-qPd"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="textfield" destination="IdP-pX-hen" id="YC1-Ha-pat"/>
+                <outlet property="textfieldContainer" destination="mlX-CI-mWQ" id="Nha-JW-4jv"/>
+                <outlet property="textfieldView" destination="H80-3c-cDE" id="Zsz-1T-Ckz"/>
             </connections>
             <point key="canvasLocation" x="207.97101449275365" y="176.11607142857142"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

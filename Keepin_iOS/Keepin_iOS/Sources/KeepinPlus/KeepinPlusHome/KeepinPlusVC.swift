@@ -14,12 +14,16 @@ class KeepinPlusVC: UIViewController {
     var cnt : Int = 0
     var img : UIImage? = nil
     var tag : Int = 99
+    var blankHeight : Int = 0
     
     let imagePicker = UIImagePickerController()
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var keepinButton: UIButton!
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var keyboardBlankView: UIView!
+    
+    @IBOutlet weak var keyboardBlankViewHeight: NSLayoutConstraint!
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
@@ -33,6 +37,48 @@ class KeepinPlusVC: UIViewController {
         setTableview()
         registerXib()
         self.dismissKeyboardWhenTappedAround()
+        keyboardBlankView.backgroundColor = .clear
+     
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
+    
+    @objc
+
+    func keyboardWillShow(_ sender: Notification) {
+         //self.view.frame.origin.y = -150 // Move view 150 points upward
+        // 16번째 셀 높이 == 키보드 높이 되도록
+        //blankHeight = 300
+        print("나오냐~")
+        if let keyboardFrame: NSValue = sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            print("keyboardHeight = \(keyboardHeight)")
+            
+            keyboardBlankViewHeight.constant = keyboardHeight
+            //tableview.reloadData()
+            
+        }
+
+        
+        
+        
+        
+    }
+    
+    @objc
+    func keyboardWillHide(_ sender: Notification) {
+        print(keyboardBlankView.bounds.height)
+    //self.view.frame.origin.y = 0 // Move view to original position
+        // 16번째 셀 높이 == 0
+        //blankHeight = 0
+        //keyboardBlankViewHeight.constant = 0
+        //tableview.reloadData()
+        keyboardBlankViewHeight.constant = 0
+        //위치..?.......
+        
     }
     
     func setTableview(){
@@ -96,12 +142,12 @@ extension KeepinPlusVC : UITableViewDelegate {
 
 extension KeepinPlusVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return 17
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
-        case 0:
+        case 0, 15, 16:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusBlankTVC.identifier, for: indexPath) as? KeepinPlusBlankTVC else { return UITableViewCell() }
             return cell
         
@@ -218,7 +264,7 @@ extension KeepinPlusVC : UITableViewDataSource {
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusTitleTVC.identifier, for: indexPath) as? KeepinPlusTitleTVC else {
                 return UITableViewCell()
             }
-            cell.setData(title: "더 잘 키핀해볼까요?", subtitle: "", image: false)
+            cell.setData(title: "더 잘 키핀해볼까요?", subtitle: "(최대 200자)", image: false)
             
             return cell
             
@@ -259,7 +305,16 @@ extension KeepinPlusVC : UITableViewDataSource {
             return 76 + 40
             
         case 14:
-            return 234
+            return 180
+            
+        case 15:
+            return 54
+            
+        case 16:
+            return 0
+        // 키보드가 떠있는지 안떠있는지 체크한후에 떠있으면 그만큼 리턴해주고
+        // 안떠있으면 0을 리턴한다.
+        
             
             
         default:

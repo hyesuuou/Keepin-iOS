@@ -12,6 +12,8 @@
             <connections>
                 <outlet property="backButton" destination="OjR-ts-jjM" id="p7a-DE-4MB"/>
                 <outlet property="keepinButton" destination="jIH-Q4-t1P" id="7iw-X9-7uo"/>
+                <outlet property="keyboardBlankView" destination="e8u-ye-u0q" id="LQV-u3-SON"/>
+                <outlet property="keyboardBlankViewHeight" destination="XUU-VZ-nnp" id="aDX-RS-sUp"/>
                 <outlet property="tableview" destination="Ubt-4J-GAq" id="Xo4-oU-ngs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ubt-4J-GAq">
-                    <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                    <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWM-H8-Tgw">
@@ -52,17 +54,26 @@
                         <constraint firstAttribute="height" constant="50" id="ssE-6o-hmc"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8u-ye-u0q">
+                    <rect key="frame" x="0.0" y="896" width="414" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="XUU-VZ-nnp"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Ubt-4J-GAq" firstAttribute="top" secondItem="UWM-H8-Tgw" secondAttribute="bottom" id="JR0-67-uVa"/>
                 <constraint firstAttribute="trailing" secondItem="Ubt-4J-GAq" secondAttribute="trailing" id="Ovx-vb-tuM"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ubt-4J-GAq" secondAttribute="bottom" id="W2E-4U-tNp"/>
+                <constraint firstAttribute="bottom" secondItem="e8u-ye-u0q" secondAttribute="bottom" id="Viw-Co-coL"/>
                 <constraint firstItem="Ubt-4J-GAq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bkO-0b-S8h"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="e8u-ye-u0q" secondAttribute="trailing" id="deN-N6-kNv"/>
                 <constraint firstItem="UWM-H8-Tgw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lNr-iM-V3T"/>
                 <constraint firstItem="UWM-H8-Tgw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="lcH-ZU-COC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UWM-H8-Tgw" secondAttribute="trailing" id="s6S-kK-oMZ"/>
+                <constraint firstItem="e8u-ye-u0q" firstAttribute="top" secondItem="Ubt-4J-GAq" secondAttribute="bottom" id="tXk-ou-JHa"/>
+                <constraint firstItem="e8u-ye-u0q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yHg-w2-n8L"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <point key="canvasLocation" x="79.710144927536234" y="99.776785714285708"/>
