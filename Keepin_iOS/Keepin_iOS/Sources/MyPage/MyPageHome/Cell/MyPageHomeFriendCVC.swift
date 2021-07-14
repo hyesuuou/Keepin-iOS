@@ -17,6 +17,8 @@ class MyPageHomeFriendCVC: UICollectionViewCell {
     static let identifier : String = "MyPageHomeFriendCVC"
     
     static var friendName : [String] = []
+    static var friendId : [String] = []
+    var index : Int = 0
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,15 +36,18 @@ class MyPageHomeFriendCVC: UICollectionViewCell {
         let friendListNib = UINib(nibName: FriendListCVC.identifier, bundle: nil)
         myPageHomeCV.register(friendListNib, forCellWithReuseIdentifier: FriendListCVC.identifier)
     }
-    /*
-    func setData(){
-        friendName.append()
-    }*/
+    
+    @objc func notification(){
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "push"), object: index)
+    }
+   
 }
 
 extension MyPageHomeFriendCVC : UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        let nextVC = MyPageDetailVC()
+        nextVC.friendIdx = MyPageHomeDataManager.friendList[indexPath.row].id
+        print("하이하이")
     }
 }
 
@@ -56,10 +61,10 @@ extension MyPageHomeFriendCVC : UICollectionViewDataSource{
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FriendListCVC.identifier, for: indexPath)as? FriendListCVC else {return UICollectionViewCell()}
         
+        cell.moveButton.addTarget(self, action: #selector(notification), for: .touchUpInside)
         cell.friendName?.font = UIFont.GmarketSansTTF(.medium, size: 16)
         cell.layer.cornerRadius = 12
-        //cell.backgroundColor = .white
-        cell.setData(title: MyPageHomeFriendCVC.friendName[indexPath.row])
+        cell.setData(title: MyPageHomeDataManager.friendList[indexPath.row].name)
         
         return cell
     }
@@ -80,8 +85,3 @@ extension MyPageHomeFriendCVC : UICollectionViewDelegateFlowLayout{
     }
 
 }
-
-
-
-
-

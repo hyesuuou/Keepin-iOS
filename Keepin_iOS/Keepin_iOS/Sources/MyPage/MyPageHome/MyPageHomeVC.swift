@@ -17,6 +17,7 @@ class MyPageHomeVC: UIViewController {
     var count1 : Int = 0
     var count2 : Int = 0
     var count3 : Int = 0
+    static var index : Int = 0
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -36,6 +37,8 @@ class MyPageHomeVC: UIViewController {
     }
 
     @objc func toPush(_ notification: NSNotification){
+        let nextVC = MyPageDetailVC()
+        nextVC.friendIdx = MyPageHomeDataManager.friendList[MyPageHomeVC.index].id
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(MyPageDetailVC(), animated: true)
         self.hidesBottomBarWhenPushed = false
@@ -199,7 +202,10 @@ extension MyPageHomeVC{
         for i in friendList{
             MyPageHomeFriendCVC.friendName.append(i.name)
         }
-        print("1")
+        
+        for j in friendList{
+            MyPageHomeFriendCVC.friendId.append(j.id)
+        }
         
         myPageHomeCV.delegate = self
         myPageHomeCV.dataSource = self

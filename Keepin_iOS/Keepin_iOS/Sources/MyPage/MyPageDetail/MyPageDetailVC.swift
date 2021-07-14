@@ -11,13 +11,20 @@ class MyPageDetailVC: UIViewController ,UITextViewDelegate{
     
     @IBOutlet weak var myPageDetailCV: UICollectionView!
     
+    
+    var friendIdx : String = ""
+    var friendName : String = ""
+    var allNum : Int = 0
+    var giveNum : Int = 0
+    var gotNum : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerXib()
 
         self.navigationController?.isNavigationBarHidden = true
-        myPageDetailCV.delegate = self
-        myPageDetailCV.dataSource = self
+        //myPageDetailCV.delegate = self
+        //myPageDetailCV.dataSource = self
         dismissKeyboardWhenTappedAround()
     }
     
@@ -70,6 +77,14 @@ extension MyPageDetailVC: UICollectionViewDataSource{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageDetailTopCVC.identifier, for: indexPath)as? MyPageDetailTopCVC else{
                 return UICollectionViewCell()
             }
+            
+            cell.detail1 = allNum
+            cell.detail2 = giveNum
+            cell.detail3 = gotNum
+            
+            cell.allPresent.text = "\(allNum)개"
+            cell.receivePresent.text = "\(giveNum)개"
+            cell.givePresent.text = "\(gotNum)개"
             return cell
             
         case 1:
@@ -118,5 +133,15 @@ extension MyPageDetailVC: UICollectionViewDelegateFlowLayout
             
             return CGSize(width: width, height: cellHeight)
         }
+    }
+}
+
+
+extension MyPageDetailVC{
+    func didSuccessGetFriendInfo(messsage: String){
+        print("친구 상세보기 서버 통신 성공!!")
+        myPageDetailCV.delegate = self
+        myPageDetailCV.dataSource = self
+        myPageDetailCV.reloadData()
     }
 }

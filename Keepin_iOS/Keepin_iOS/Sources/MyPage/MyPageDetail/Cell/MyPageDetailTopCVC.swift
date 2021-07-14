@@ -9,6 +9,10 @@ import UIKit
 
 class MyPageDetailTopCVC: UICollectionViewCell {
 
+    
+    var detail1 : Int = 0
+    var detail2 : Int = 0
+    var detail3 : Int = 0
     public static let identifier = "MyPageDetailTopCVC"
     let userName : String = "이채연"
     @IBOutlet weak var userLabel: UILabel!

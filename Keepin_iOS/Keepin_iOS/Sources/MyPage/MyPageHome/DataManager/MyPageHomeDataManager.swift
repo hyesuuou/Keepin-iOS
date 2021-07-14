@@ -10,7 +10,7 @@ import Foundation
 
 class MyPageHomeDataManager{
     
-    var friendList : [Friend] = []
+    static var friendList : [Friend] = []
     
     func getNumberKeepin(_ viewController: MyPageHomeVC){
         AF.request("\(Constant.BASE_URL)/my", method: .get , parameters: nil, headers: Constant.HEADER)
@@ -38,9 +38,9 @@ class MyPageHomeDataManager{
                 case .success(let response):
                     //viewController.friendServerData = response.data
                     
-                    self.friendList = response.data.friends
-                    viewController.didSuccessGetFriend(friendList: self.friendList)
-                    print(self.friendList)
+                    MyPageHomeDataManager.friendList = response.data.friends
+                    viewController.didSuccessGetFriend(friendList: MyPageHomeDataManager.friendList)
+                    print(MyPageHomeDataManager.friendList)
                     
                 case .failure(let error):
                     print(error.localizedDescription)
