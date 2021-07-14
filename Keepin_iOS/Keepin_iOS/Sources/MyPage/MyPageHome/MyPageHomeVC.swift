@@ -27,10 +27,6 @@ class MyPageHomeVC: UIViewController {
         
         registerXib()
         
-        /*
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true*/
-        
         setFlowLayout()
         MyPageHomeDataManager().getNumberKeepin(self)
         MyPageHomeDataManager().getNumberFriend(self)
@@ -39,7 +35,9 @@ class MyPageHomeVC: UIViewController {
     }
 
     @objc func toPush(_ notification: NSNotification){
+        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(MyPageDetailVC(), animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
     
     
