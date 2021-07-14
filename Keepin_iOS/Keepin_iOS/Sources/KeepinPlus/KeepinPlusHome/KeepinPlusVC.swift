@@ -32,6 +32,7 @@ class KeepinPlusVC: UIViewController {
         setNavigationBar()
         setTableview()
         registerXib()
+        self.dismissKeyboardWhenTappedAround()
     }
     
     func setTableview(){
