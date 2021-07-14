@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="425" height="216"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="선물을 주고받은 상황, 느낌 등을 기록해보세요!" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IdP-pX-hen">
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="선물을 주고받은 상황, 느낌 등을 기록해 보세요!" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IdP-pX-hen">
                         <rect key="frame" x="16" y="0.0" width="393" height="180"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="180" id="j9q-GL-jt5"/>

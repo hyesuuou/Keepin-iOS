@@ -17,12 +17,11 @@ class MyPageHomeFriendCVC: UICollectionViewCell {
     static let identifier : String = "MyPageHomeFriendCVC"
     
     static var friendName : [String] = []
-//    var friendName1 : [String] = ["삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터","삼준","실버","씨워터"]
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        mainView2.backgroundColor = .keepinGray
+        
         myPageHomeCV.delegate = self
         myPageHomeCV.dataSource = self
         myPageHomeCV.backgroundColor = .keepinGray
@@ -59,7 +58,7 @@ extension MyPageHomeFriendCVC : UICollectionViewDataSource{
         
         cell.friendName?.font = UIFont.GmarketSansTTF(.medium, size: 16)
         cell.layer.cornerRadius = 12
-        cell.backgroundColor = .white
+        //cell.backgroundColor = .white
         cell.setData(title: MyPageHomeFriendCVC.friendName[indexPath.row])
         
         return cell
@@ -74,6 +73,10 @@ extension MyPageHomeFriendCVC : UICollectionViewDelegateFlowLayout{
         let cellHeight = 64
     
         return CGSize(width: width, height: cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 12
     }
 
 }

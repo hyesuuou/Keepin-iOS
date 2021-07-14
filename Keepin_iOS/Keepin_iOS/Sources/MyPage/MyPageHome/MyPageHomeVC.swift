@@ -164,9 +164,9 @@ extension MyPageHomeVC : UICollectionViewDelegateFlowLayout{
             return CGSize(width: width, height: cellHeight)
             
         case 3:
-            let width = UIScreen.main.bounds.width
+            let width = Int(UIScreen.main.bounds.width)
             let height = (64 + 12) * MyPageHomeFriendCVC.friendName.count
-            return CGSize(width: 375, height: height)
+            return CGSize(width: width, height: height)
         
         default:
             let width = UIScreen.main.bounds.width
@@ -177,6 +177,10 @@ extension MyPageHomeVC : UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 }
 
