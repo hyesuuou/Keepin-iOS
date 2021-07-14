@@ -40,7 +40,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1q-Yh-MPi">
-                    <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                    <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uda-FF-bp4">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="793.33333333333337"/>
@@ -185,13 +185,13 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="p1q-Yh-MPi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0vR-bS-WtT"/>
-                <constraint firstItem="p1q-Yh-MPi" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="NPT-f6-Lwb"/>
                 <constraint firstItem="p1q-Yh-MPi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gkO-wl-Ldy"/>
                 <constraint firstItem="p1q-Yh-MPi" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ilY-b2-2xZ"/>
+                <constraint firstAttribute="bottom" secondItem="p1q-Yh-MPi" secondAttribute="bottom" id="jM9-hl-p6P"/>
                 <constraint firstItem="uda-FF-bp4" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="v5i-QS-ldQ"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
             <point key="canvasLocation" x="89" y="73"/>
         </view>
     </objects>
