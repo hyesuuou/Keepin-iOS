@@ -23,8 +23,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-            self.window?.rootViewController = BaseTBC() 
-            self.window?.makeKeyAndVisible()
+                    self.window?.rootViewController = BaseTBC()
+                    let loginPageNVC = UINavigationController(rootViewController: LoginFirstVC())
+                    self.window?.rootViewController = loginPageNVC
+                    self.window?.makeKeyAndVisible()
         }
     }
 
