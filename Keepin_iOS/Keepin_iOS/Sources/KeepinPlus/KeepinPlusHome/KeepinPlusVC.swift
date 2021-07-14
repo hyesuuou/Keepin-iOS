@@ -321,7 +321,7 @@ extension KeepinPlusVC : UIImagePickerControllerDelegate, UINavigationController
     func actionSheetAlert(_ sender: UIButton){
         print(sender.tag)
         tag = sender.tag
-        let alert = UIAlertController(title: "선택", message: "선택", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         let camera = UIAlertAction(title: "카메라", style: .default) { [weak self] (_) in
@@ -406,8 +406,8 @@ extension UITextField {
         
         let toolBar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: SCwidth, height: 44.0))
         let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cancel = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(tapCancel))
-        let barButton = UIBarButtonItem(title: "Done", style: .plain, target: target, action: #selector(doneButtonClicked))
+        let cancel = UIBarButtonItem(title: "취소", style: .plain, target: nil, action: #selector(tapCancel))
+        let barButton = UIBarButtonItem(title: "완료", style: .plain, target: target, action: #selector(doneButtonClicked))
         toolBar.setItems([cancel, flexible, barButton], animated: false)
         self.inputAccessoryView = toolBar
         
