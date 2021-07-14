@@ -34,6 +34,7 @@ class KeppinPlusSelectTVC: UITableViewCell {
         // 선택된
         button[select].tintColor = .white
         button[select].backgroundColor = .keepinGreen
+        button[select].layer.borderWidth = 0
         
         button[notSelect].tintColor = .keepinGray3
         button[notSelect].backgroundColor = .white
