@@ -77,15 +77,11 @@ extension UITextField {
 
 extension EmailLoginVC {
     func didSuccessLogin(message: String, code: Int) {
-        print("서버통신-로그인 성공")
         if code == 200 {
-            print("아이디, 비번 맞음->홈화면으로 화면전환 필요")
-            self.navigationController?.pushViewController(BaseTBC(), animated: true)
+            self.navigationController?.changeRootViewController(BaseTBC())
         }
         else if code == 400 {
-            print("여기")
             self.makeAlertOnlyMessage(message: "이메일/비밀번호를 다시 확인해주세요.", okAction: nil)
-            
         }
         
     }
