@@ -95,7 +95,8 @@ extension HomeVC  : UITableViewDataSource {
                 return UITableViewCell()
             }
             
-            cell.setData(date: reminderList[indexPath.row].date, contents: reminderList[indexPath.row].title)
+            cell.setData(date: reminderList[0].date, contents: reminderList[0].title,
+                         secondDate: reminderList[1].date, secondContents: reminderList[1].title)
             
             return cell
             

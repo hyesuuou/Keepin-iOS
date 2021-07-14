@@ -52,9 +52,11 @@ class HomeEventTVC: UITableViewCell {
         
     }
     
-    func setData(date: String, contents: String){
+    func setData(date: String, contents: String, secondDate: String, secondContents: String){
         dateLabel.text = date
         contentsLabel.text = contents
+        dateSecondLabel.text = secondDate
+        contentsSecontLabel.text = secondContents
     }
     
     func setDummy(){
