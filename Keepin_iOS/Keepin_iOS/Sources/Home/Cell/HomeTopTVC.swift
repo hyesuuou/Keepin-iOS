@@ -15,8 +15,8 @@ class HomeTopTVC: UITableViewCell {
     
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var randomImageView: UIImageView!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         welcomeLabel.text = "\(username)님\n키핀은 아름다워요"
@@ -41,7 +41,4 @@ class HomeTopTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    
-    
 }

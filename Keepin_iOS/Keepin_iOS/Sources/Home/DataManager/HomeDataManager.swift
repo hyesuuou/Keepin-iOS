@@ -16,8 +16,10 @@ class HomeDataManager {
                 switch response.result {
                 case .success(let response):
                     let title = response.data.title
+                    let imgURL = response.data.photo
                     viewController.message = title
-                    viewController.didSuccessGetRandom(message: response.message)
+                    //viewController.image = imgURL
+                    viewController.didSuccessGetRandom(message: response.message, imgURL: imgURL)
                     
                 case .failure(let error):
                     print(error.localizedDescription)
