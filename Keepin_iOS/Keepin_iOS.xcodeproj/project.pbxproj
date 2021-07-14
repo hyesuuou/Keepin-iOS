@@ -69,6 +69,8 @@
 		71C197AE26975103004C0490 /* MyPageProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C197AC26975103004C0490 /* MyPageProfileVC.xib */; };
 		71C197BA26977BBC004C0490 /* MyPageFriendFixVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C197B826977BBC004C0490 /* MyPageFriendFixVC.swift */; };
 		71C197BB26977BBC004C0490 /* MyPageFriendFixVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C197B926977BBC004C0490 /* MyPageFriendFixVC.xib */; };
+		71D5D478269E86DD004D9CC7 /* MyPageDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5D477269E86DD004D9CC7 /* MyPageDetailResponse.swift */; };
+		71D5D47A269E8704004D9CC7 /* MyPageDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5D479269E8704004D9CC7 /* MyPageDetailDataManager.swift */; };
 		71DA81E02694424D0062A3FA /* MyPageDetailPresentMoaCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DA81DE2694424D0062A3FA /* MyPageDetailPresentMoaCVC.swift */; };
 		71DA81E12694424D0062A3FA /* MyPageDetailPresentMoaCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DA81DF2694424D0062A3FA /* MyPageDetailPresentMoaCVC.xib */; };
 		71E13230269876FC00DB2D9F /* MyPageHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1322E269876FC00DB2D9F /* MyPageHomeVC.swift */; };
@@ -204,6 +206,8 @@
 		71C197AC26975103004C0490 /* MyPageProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageProfileVC.xib; sourceTree = "<group>"; };
 		71C197B826977BBC004C0490 /* MyPageFriendFixVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageFriendFixVC.swift; sourceTree = "<group>"; };
 		71C197B926977BBC004C0490 /* MyPageFriendFixVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageFriendFixVC.xib; sourceTree = "<group>"; };
+		71D5D477269E86DD004D9CC7 /* MyPageDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailResponse.swift; sourceTree = "<group>"; };
+		71D5D479269E8704004D9CC7 /* MyPageDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailDataManager.swift; sourceTree = "<group>"; };
 		71DA81DE2694424D0062A3FA /* MyPageDetailPresentMoaCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailPresentMoaCVC.swift; sourceTree = "<group>"; };
 		71DA81DF2694424D0062A3FA /* MyPageDetailPresentMoaCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageDetailPresentMoaCVC.xib; sourceTree = "<group>"; };
 		71E1322E269876FC00DB2D9F /* MyPageHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHomeVC.swift; sourceTree = "<group>"; };
@@ -471,6 +475,22 @@
 				717A024C269ACF2300241171 /* EditProfile */,
 			);
 			path = MyPageProfile;
+			sourceTree = "<group>";
+		};
+		71D5D475269E867D004D9CC7 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				71D5D479269E8704004D9CC7 /* MyPageDetailDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		71D5D476269E868A004D9CC7 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				71D5D477269E86DD004D9CC7 /* MyPageDetailResponse.swift */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 		71E132322698770C00DB2D9F /* Cell */ = {
@@ -767,6 +787,8 @@
 		77F04836268C4CF600FBFDD7 /* MyPageDetail */ = {
 			isa = PBXGroup;
 			children = (
+				71D5D476269E868A004D9CC7 /* DataModel */,
+				71D5D475269E867D004D9CC7 /* DataManager */,
 				77F0483D268C4D2400FBFDD7 /* MyPageDetailVC.swift */,
 				77F0483E268C4D2400FBFDD7 /* MyPageDetailVC.xib */,
 				71C197B826977BBC004C0490 /* MyPageFriendFixVC.swift */,
@@ -1017,6 +1039,7 @@
 			files = (
 				1529FF9A269985B9000AD789 /* KeppinPlusSelectTVC.swift in Sources */,
 				7719B58226979D0900CBBB11 /* ReminderAddVC.swift in Sources */,
+				71D5D478269E86DD004D9CC7 /* MyPageDetailResponse.swift in Sources */,
 				7719B5D0269C45A900CBBB11 /* SearchResponse.swift in Sources */,
 				7719B58F269A1DBD00CBBB11 /* ReminderCVC.swift in Sources */,
 				77F04817268C45BB00FBFDD7 /* UIViewController.swift in Sources */,
@@ -1059,6 +1082,7 @@
 				71E1324D2698A8BF00DB2D9F /* FriendListCVC.swift in Sources */,
 				1529FF8E269984D2000AD789 /* KeepinPlusSearchTVC.swift in Sources */,
 				153462D52694469900060E44 /* JoinSecondVC.swift in Sources */,
+				71D5D47A269E8704004D9CC7 /* MyPageDetailDataManager.swift in Sources */,
 				71AC818F2692F00D00758994 /* MyPageDetailPresentCVC.swift in Sources */,
 				15243994269C1012009E5E8E /* KeepinPlusBlankTVC.swift in Sources */,
 				15B71A51269D7CC500ED68E0 /* JoinRequest.swift in Sources */,
