@@ -71,6 +71,8 @@
 		71C197BB26977BBC004C0490 /* MyPageFriendFixVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C197B926977BBC004C0490 /* MyPageFriendFixVC.xib */; };
 		71D5D478269E86DD004D9CC7 /* MyPageDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5D477269E86DD004D9CC7 /* MyPageDetailResponse.swift */; };
 		71D5D47A269E8704004D9CC7 /* MyPageDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5D479269E8704004D9CC7 /* MyPageDetailDataManager.swift */; };
+		71D5D47D269EB7C6004D9CC7 /* NavigationBarCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5D47B269EB7C6004D9CC7 /* NavigationBarCVC.swift */; };
+		71D5D47E269EB7C6004D9CC7 /* NavigationBarCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D5D47C269EB7C6004D9CC7 /* NavigationBarCVC.xib */; };
 		71DA81E02694424D0062A3FA /* MyPageDetailPresentMoaCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DA81DE2694424D0062A3FA /* MyPageDetailPresentMoaCVC.swift */; };
 		71DA81E12694424D0062A3FA /* MyPageDetailPresentMoaCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DA81DF2694424D0062A3FA /* MyPageDetailPresentMoaCVC.xib */; };
 		71E13230269876FC00DB2D9F /* MyPageHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1322E269876FC00DB2D9F /* MyPageHomeVC.swift */; };
@@ -208,6 +210,8 @@
 		71C197B926977BBC004C0490 /* MyPageFriendFixVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageFriendFixVC.xib; sourceTree = "<group>"; };
 		71D5D477269E86DD004D9CC7 /* MyPageDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailResponse.swift; sourceTree = "<group>"; };
 		71D5D479269E8704004D9CC7 /* MyPageDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailDataManager.swift; sourceTree = "<group>"; };
+		71D5D47B269EB7C6004D9CC7 /* NavigationBarCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarCVC.swift; sourceTree = "<group>"; };
+		71D5D47C269EB7C6004D9CC7 /* NavigationBarCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarCVC.xib; sourceTree = "<group>"; };
 		71DA81DE2694424D0062A3FA /* MyPageDetailPresentMoaCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailPresentMoaCVC.swift; sourceTree = "<group>"; };
 		71DA81DF2694424D0062A3FA /* MyPageDetailPresentMoaCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageDetailPresentMoaCVC.xib; sourceTree = "<group>"; };
 		71E1322E269876FC00DB2D9F /* MyPageHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHomeVC.swift; sourceTree = "<group>"; };
@@ -504,6 +508,8 @@
 				71E1324826987F5200DB2D9F /* MyPageHomeFriendCVC.xib */,
 				71E1324B2698A8BF00DB2D9F /* FriendListCVC.swift */,
 				71E1324C2698A8BF00DB2D9F /* FriendListCVC.xib */,
+				71D5D47B269EB7C6004D9CC7 /* NavigationBarCVC.swift */,
+				71D5D47C269EB7C6004D9CC7 /* NavigationBarCVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -976,6 +982,7 @@
 				717A0254269ACFC800241171 /* MyPageEditPwVC.xib in Resources */,
 				7719B58326979D0900CBBB11 /* ReminderAddVC.xib in Resources */,
 				1529FF8726998496000AD789 /* KeepinPlusInputTVC.xib in Resources */,
+				71D5D47E269EB7C6004D9CC7 /* NavigationBarCVC.xib in Resources */,
 				71E265C62699D80900BD6840 /* KeepinPlusFriendVC.xib in Resources */,
 				77F047EC268AF99900FBFDD7 /* Assets.xcassets in Resources */,
 				77F04840268C4D2400FBFDD7 /* MyPageDetailVC.xib in Resources */,
@@ -1055,6 +1062,7 @@
 				71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */,
 				71C197AD26975103004C0490 /* MyPageProfileVC.swift in Sources */,
 				71AC81872692D77B00758994 /* MyPageDetailTopCVC.swift in Sources */,
+				71D5D47D269EB7C6004D9CC7 /* NavigationBarCVC.swift in Sources */,
 				773D414E26942E8000A4E366 /* PresentDetailCVC.swift in Sources */,
 				7719B5D8269D71D900CBBB11 /* PresentDetailResponse.swift in Sources */,
 				15C1222C268F063C00838E55 /* HomeTopTVC.swift in Sources */,
