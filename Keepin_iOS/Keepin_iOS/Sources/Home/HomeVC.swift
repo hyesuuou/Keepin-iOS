@@ -12,6 +12,7 @@ class HomeVC: UIViewController {
     let refreshControl = UIRefreshControl()
     var message : String = ""
     var image : String = ""
+    var reminderList : [Reminder] = []
     
     @IBOutlet weak var homeTableview: UITableView!
     override func viewDidLoad() {
@@ -27,8 +28,7 @@ class HomeVC: UIViewController {
        // self.navigationController?.navigationBar.isHidden = true
         
         HomeDataManager().getRandom(self)
-    
-        
+        HomeDataManager().getReminderHome(self)
         
     }
     
@@ -94,6 +94,9 @@ extension HomeVC  : UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeEventTVC.identifier, for: indexPath) as? HomeEventTVC else {
                 return UITableViewCell()
             }
+            
+            cell.setData(date: reminderList[indexPath.row].date, contents: reminderList[indexPath.row].title)
+            
             return cell
             
         default:
@@ -129,4 +132,11 @@ extension HomeVC {
     func failedToRequest(message: String) {
         print(message)
     }
+    
+    func didSuccessGetHomeReminder(list: [Reminder]){
+        print(list)
+        
+    }
+    
 }
+

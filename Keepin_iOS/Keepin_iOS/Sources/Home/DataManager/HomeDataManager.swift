@@ -27,4 +27,25 @@ class HomeDataManager {
             }
     }
     
+    func getReminderHome(_ viewController: HomeVC){
+        AF.request("\(Constant.BASE_URL)/reminder/oncoming",
+                   method: .get,
+                   parameters: nil,
+                   headers: Constant.HEADER)
+            .validate()
+            .responseDecodable(of: HomeReminderResponse.self){ response in
+                switch response.result {
+                case .success(let response):
+                    let reminderList = response.data.reminders
+                    viewController.reminderList = reminderList
+                    viewController.didSuccessGetHomeReminder(list: reminderList)
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+                
+            }
+        
+    }
+    
 }

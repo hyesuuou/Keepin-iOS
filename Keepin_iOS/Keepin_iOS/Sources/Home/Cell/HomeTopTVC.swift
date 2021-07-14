@@ -29,7 +29,7 @@ class HomeTopTVC: UITableViewCell {
         welcomeLabel.attributedText = attributedStr
     
         
-        
+        randomImageView.image = UIImage(named: "imgEmptyEyes")
         messageLabel.text = ""
         messageLabel.font = UIFont.GmarketSansTTF(.medium, size: 14)
         messageLabel.textColor = .keepinGray5
