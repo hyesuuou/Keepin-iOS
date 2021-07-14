@@ -58,6 +58,7 @@ class SearchVC: UIViewController {
         searchBar.delegate = self
         setNavigationBar()
         setSearchBar()
+        self.dismissKeyboardWhenTappedAround()
         SearchDataManager().getPresents(self)  
         
         searchResultCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
