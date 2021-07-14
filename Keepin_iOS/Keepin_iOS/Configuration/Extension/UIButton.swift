@@ -34,4 +34,31 @@ extension UIButton {
         self.setTitleColor(.keepinGreen, for: .selected)
     }
     
+    func cateImage(category : String){
+        if category == "생일"{
+            self.setImage(UIImage(named: "icCateBirthday"), for: .normal)
+        }
+        else if category == "기념일"{
+            self.setImage(UIImage(named: "icCateAnniversary"), for: .normal)
+        }
+        else if category == "축하"{
+            self.setImage(UIImage(named: "icCateCelebrate"), for: .normal)
+        }
+        else if category == "칭찬"{
+            self.setImage(UIImage(named: "icCateCompliment"), for: .normal)
+        }
+        else if category == "응원"{
+            self.setImage(UIImage(named: "icCateCheer"), for: .normal)
+        }
+        else if category == "감사"{
+            self.setImage(UIImage(named: "icCateThanks"), for: .normal)
+        }
+        else if category == "깜짝"{
+            self.setImage(UIImage(named: "icCateSurprise"), for: .normal)
+        }
+        else{
+            self.setImage(UIImage(named: "icCateEtc"), for: .normal)
+        }
+    }
+    
 }

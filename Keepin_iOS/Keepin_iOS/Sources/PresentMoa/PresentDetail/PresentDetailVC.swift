@@ -23,8 +23,7 @@ class PresentDetailVC: UIViewController {
     
     @IBOutlet weak var thoughts: UITextView!
     
-    @IBOutlet weak var cateButton1: UIButton!
-    @IBOutlet weak var cateButton2: UIButton!
+    @IBOutlet var cateButtons: [UIButton]!
     
     @IBOutlet weak var date: UILabel!
     
@@ -32,7 +31,6 @@ class PresentDetailVC: UIViewController {
     var friendCount : Int = 0
     let viewSizeWidth : CGFloat = UIScreen.main.bounds.width
     var nowPage : Int = 0
-    var itemNum : Int = 3
     var keepinIdx : String = ""
     var serverData : Details?
     
@@ -52,10 +50,11 @@ class PresentDetailVC: UIViewController {
     }
 
     func setUI(){
-        
         divider.backgroundColor = .keepinGray2
         memoView.backgroundColor = .keepinGray1
         presentFrom.textColor = .keepinGray4
+        date.textColor = .keepinGray4
+        
         thoughts.backgroundColor = .clear
         
         indicator.isHidden = true
@@ -169,11 +168,20 @@ extension PresentDetailVC {
         
         friendCount = (serverData?.friends.count)!
         fromWho = (serverData?.friends[0]?.name)! + "님 외 " + String(friendCount) + "명"
-        presentFrom.text = "\(fromWho)에게 받은 선물"
-        let attributedString = NSMutableAttributedString(string: presentFrom.text!)
-        attributedString.addAttribute(.foregroundColor, value: UIColor.keepinGreen, range: (presentFrom.text! as NSString).range(of:"받은 선물"))
         
-        presentFrom.attributedText = attributedString
+        if ((serverData?.taken) == true){
+            presentFrom.text = "\(fromWho)에게 받은 선물"
+            let attributedString = NSMutableAttributedString(string: presentFrom.text!)
+            attributedString.addAttribute(.foregroundColor, value: UIColor.keepinGreen, range: (presentFrom.text! as NSString).range(of:"받은 선물"))
+            presentFrom.attributedText = attributedString
+        }
+        else{
+            presentFrom.text = "\(fromWho)에게 준 선물"
+            let attributedString = NSMutableAttributedString(string: presentFrom.text!)
+            attributedString.addAttribute(.foregroundColor, value: UIColor.keepinGreen, range: (presentFrom.text! as NSString).range(of:"준 선물"))
+            presentFrom.attributedText = attributedString
+        }
+        
         presentTitle.text = serverData?.title
         thoughts.text = serverData?.record
         date.text = serverData?.date
@@ -184,6 +192,11 @@ extension PresentDetailVC {
             indicator.isHidden = false
             indicatorBackground.isHidden = false
         }
+        
+        for i in 0...(serverData?.category.count)!-1{
+            cateButtons[i].cateImage(category: (serverData?.category[i])!)
+        }
+
     }
     
     func failedToRequest(message: String) {

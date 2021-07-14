@@ -18,8 +18,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PresentDetailVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
-                <outlet property="cateButton1" destination="EPK-1a-iXK" id="yKf-FB-y0s"/>
-                <outlet property="cateButton2" destination="I74-m6-UVX" id="ca4-pO-3cc"/>
                 <outlet property="date" destination="4Jt-dd-z9s" id="xH6-IF-wIF"/>
                 <outlet property="divider" destination="I0r-af-hXs" id="huc-Rx-qor"/>
                 <outlet property="indicator" destination="Lsk-JW-JcR" id="ufG-kp-Aag"/>
@@ -32,6 +30,8 @@
                 <outlet property="presentTitle" destination="wLZ-WW-QeF" id="VVX-Z8-Fik"/>
                 <outlet property="thoughts" destination="aqw-Ss-vn8" id="eNt-zQ-7p2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="cateButtons" destination="EPK-1a-iXK" collectionClass="NSMutableArray" id="4G4-xV-Os1"/>
+                <outletCollection property="cateButtons" destination="I74-m6-UVX" collectionClass="NSMutableArray" id="YRG-Qx-oPO"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -128,7 +128,6 @@
                                                 <constraint firstAttribute="height" constant="24" id="A3H-SM-uQ3"/>
                                                 <constraint firstAttribute="width" constant="51" id="Mpc-Bq-1qt"/>
                                             </constraints>
-                                            <state key="normal" image="icCateAnniversary"/>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I74-m6-UVX">
                                             <rect key="frame" x="55" y="0.0" width="51" height="24"/>
@@ -136,7 +135,6 @@
                                                 <constraint firstAttribute="height" constant="24" id="Z2a-ov-QR4"/>
                                                 <constraint firstAttribute="width" constant="51" id="fqU-GW-vky"/>
                                             </constraints>
-                                            <state key="normal" image="icCateCelebrate"/>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -195,8 +193,6 @@
         </view>
     </objects>
     <resources>
-        <image name="icCateAnniversary" width="77" height="37"/>
-        <image name="icCateCelebrate" width="77" height="37"/>
         <image name="imgPhotoDetailLine" width="375" height="3"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
