@@ -8,17 +8,49 @@
 import UIKit
 
 class LoginFirstVC: UIViewController {
+    
+    let screenHeight = UIScreen.main.bounds.height
+    let screenWidth = UIScreen.main.bounds.width
 
     @IBOutlet weak var emailLoginButton: UIButton!
     @IBOutlet weak var kakaoLoginButton: UIButton!
     @IBOutlet weak var appleLoginButton: UIButton!
     @IBOutlet weak var joinButton: UIButton!
     @IBOutlet weak var joinLabel: UILabel!
+    
+    @IBOutlet weak var imageTopConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var imageBottomConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var buttonBottomConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var joinLeftConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setButtonUI()
         setLabelUI()
+        setNavigationBarUI()
+        setLayout()
     }
+    
+    
+    func setLayout(){
+        
+        
+        imageTopConstraint.constant = screenHeight * (158/812)
+        
+        if screenHeight == 667.0 {
+            imageBottomConstraint.constant = screenHeight * (150/812)
+        }
+        else {
+            imageBottomConstraint.constant = screenHeight * (180/812)
+        }
+        //buttonBottomConstraint.constant = screenHeight * (40/812)
+        
+        //joinLeftConstraint.constant = screenWidth * (99/375)
+    }
+    
     
     func setButtonUI(){
         loginButtonUI(button: emailLoginButton)
@@ -44,6 +76,11 @@ class LoginFirstVC: UIViewController {
         joinLabel.font = UIFont.NotoSans(.regular, size: 12)
         joinLabel.textColor = .keepinGray4
     }
+    
+    func setNavigationBarUI(){
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
 
     @IBAction func emailLoginButtonClicked(_ sender: Any) {
         // 이메일 로그인 화면으로 전환
