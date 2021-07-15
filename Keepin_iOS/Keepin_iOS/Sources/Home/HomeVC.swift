@@ -124,7 +124,7 @@ extension HomeVC  : UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTopSingleTVC.identifier, for: indexPath) as? HomeTopSingleTVC else {
                     return UITableViewCell()
                 }
-                cell.setData(date: reminderList[0].date, content: reminderList[0].title)
+                cell.setData(date: reminderList[0].date, content: reminderList[0].title, important: reminderList[0].isImportant)
                 return cell
                 
             } else {

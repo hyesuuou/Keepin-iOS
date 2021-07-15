@@ -13,6 +13,7 @@ class HomeTopSingleTVC: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var backView: UIView!
     
+    @IBOutlet weak var reminderButton: UIButton!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentsLabel: UILabel!
     
@@ -33,9 +34,15 @@ class HomeTopSingleTVC: UITableViewCell {
         dateLabel.font = UIFont.NotoSans(.regular, size: 12)
         contentsLabel.font = UIFont.GmarketSansTTF(.medium, size: 14)
     }
-    func setData(date: String, content: String){
+    func setData(date: String, content: String, important: Bool){
         dateLabel.text = date
         contentsLabel.text = content
+        if important  == false {
+            reminderButton.setImage(UIImage(named: "listReminderHome"), for: .normal)
+        }
+        else {
+            reminderButton.setImage(UIImage(named: "listReminderHomeImp"), for: .normal)
+        }
     }
 
 }
