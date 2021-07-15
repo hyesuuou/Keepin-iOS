@@ -19,25 +19,33 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         registerXib()
         initRefresh()
+        setNavigationBarUI()
         
         homeTableview.backgroundColor = .none
         homeTableview.allowsSelection = false
-        
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = false
-       // self.navigationController?.navigationBar.isHidden = true
         
         HomeDataManager().getRandom(self)
         HomeDataManager().getReminderHome(self)
         
     }
     
+    func setNavigationBarUI(){
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    
     func registerXib(){
+        let blankNib = UINib(nibName: KeepinPlusBlankTVC.identifier, bundle: nil)
+        homeTableview.register(blankNib, forCellReuseIdentifier: KeepinPlusBlankTVC.identifier)
+        
         let topNib = UINib(nibName: HomeTopTVC.identifier, bundle: nil)
         homeTableview.register(topNib, forCellReuseIdentifier: HomeTopTVC.identifier)
         
         let eventNib = UINib(nibName: HomeEventTVC.identifier, bundle: nil)
         homeTableview.register(eventNib, forCellReuseIdentifier: HomeEventTVC.identifier)
+        
+        let eventSignleNib = UINib(nibName: HomeTopSingleTVC.identifier, bundle: nil)
+        homeTableview.register(eventSignleNib, forCellReuseIdentifier: HomeTopSingleTVC.identifier)
     }
     
     func initRefresh(){
@@ -81,13 +89,21 @@ extension HomeVC : UITableViewDelegate {
 
 extension HomeVC  : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.row {
         case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: KeepinPlusBlankTVC.identifier, for: indexPath) as? KeepinPlusBlankTVC else {
+                return UITableViewCell()
+            }
+            return cell
+        case 1:
+            
+            
+            
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTopTVC.identifier, for: indexPath) as? HomeTopTVC else {
                 return UITableViewCell()
             }
@@ -95,17 +111,31 @@ extension HomeVC  : UITableViewDataSource {
             cell.randomImageView.setImage(with: image)
             return cell
             
-        case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeEventTVC.identifier, for: indexPath) as? HomeEventTVC else {
-                return UITableViewCell()
+            
+            
+            
+        case 2:
+            
+            if UIScreen.main.bounds.height == 667.0 {
+                print("se2")
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTopSingleTVC.identifier, for: indexPath) as? HomeTopSingleTVC else {
+                    return UITableViewCell()
+                }
+                cell.setData(date: reminderList[0].date, content: reminderList[0].title)
+                return cell
+                
+            } else {
+                
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeEventTVC.identifier, for: indexPath) as? HomeEventTVC else {
+                    return UITableViewCell()
+                }
+                
+                cell.setData(date: reminderList[0].date, contents: reminderList[0].title,
+                             secondDate: reminderList[1].date, secondContents: reminderList[1].title)
+                cell.reminderNextButton.addTarget(self, action: #selector(pushReminderVC), for: .touchUpInside)
+                
+                return cell
             }
-            
-            cell.setData(date: reminderList[0].date, contents: reminderList[0].title,
-                         secondDate: reminderList[1].date, secondContents: reminderList[1].title)
-            cell.reminderNextButton.addTarget(self, action: #selector(pushReminderVC), for: .touchUpInside)
-            
-            return cell
-            
         default:
             return UITableViewCell()
         }
@@ -115,13 +145,32 @@ extension HomeVC  : UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return UIScreen.main.bounds.height * (436/812) - 3
+            if UIScreen.main.bounds.height == 667.0 {
+                return 50
+            }
+            else {
+            return UIScreen.main.bounds.height * (50/812)
+            }
         case 1:
-            return UIScreen.main.bounds.height * (202/812)
+            if UIScreen.main.bounds.height == 667.0 {
+                return 417
+            }
+            else {
+                return UIScreen.main.bounds.height * (436/812)
+            }
+            
+        case 2:
+            if UIScreen.main.bounds.height == 667.0 {
+                return 133
+            }
+            else {
+                return UIScreen.main.bounds.height * (202/812)
+            }
+            
         default:
             return 100
         }
-       
+        
     }
     
     
