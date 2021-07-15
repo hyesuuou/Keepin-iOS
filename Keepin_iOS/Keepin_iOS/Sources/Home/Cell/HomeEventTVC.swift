@@ -19,7 +19,10 @@ class HomeEventTVC: UITableViewCell {
     @IBOutlet weak var dateSecondLabel: UILabel!
     @IBOutlet weak var contentsSecontLabel: UILabel!
     
+    @IBOutlet weak var reminderFirstButton: UIButton!
+    @IBOutlet weak var reminderSecondButton: UIButton!
     @IBOutlet weak var reminderNextButton: UIButton!
+    
     @IBOutlet weak var separateView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -53,11 +56,25 @@ class HomeEventTVC: UITableViewCell {
         
     }
     
-    func setData(date: String, contents: String, secondDate: String, secondContents: String){
+    func setData(date: String, contents: String, important: Bool, secondDate: String, secondContents: String, secondImportant: Bool){
         dateLabel.text = date
         contentsLabel.text = contents
+        if important  == false {
+            reminderFirstButton.setImage(UIImage(named: "listReminderHome"), for: .normal)
+        }
+        else {
+            reminderFirstButton.setImage(UIImage(named: "listReminderHomeImp"), for: .normal)
+        }
+        
         dateSecondLabel.text = secondDate
         contentsSecontLabel.text = secondContents
+        if secondImportant == true {
+            
+        }
+        else {
+            
+        }
+    
     }
     
     

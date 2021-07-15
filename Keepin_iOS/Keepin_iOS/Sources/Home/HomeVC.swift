@@ -130,8 +130,8 @@ extension HomeVC  : UITableViewDataSource {
                     return UITableViewCell()
                 }
                 
-                cell.setData(date: reminderList[0].date, contents: reminderList[0].title,
-                             secondDate: reminderList[1].date, secondContents: reminderList[1].title)
+                cell.setData(date: reminderList[0].date, contents: reminderList[0].title, important: reminderList[0].isImportant,
+                             secondDate: reminderList[1].date, secondContents: reminderList[1].title, secondImportant: reminderList[1].isImportant)
                 cell.reminderNextButton.addTarget(self, action: #selector(pushReminderVC), for: .touchUpInside)
                 
                 return cell
