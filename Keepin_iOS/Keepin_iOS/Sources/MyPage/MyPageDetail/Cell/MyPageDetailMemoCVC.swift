@@ -11,12 +11,39 @@ class MyPageDetailMemoCVC: UICollectionViewCell {
     
     @IBOutlet weak var presentMoaCV: UICollectionView!
     
+    @IBOutlet weak var stackWidth: NSLayoutConstraint!
+    @IBOutlet weak var indicatorStart: NSLayoutConstraint!
     @IBOutlet weak var got: UIButton!
     @IBOutlet weak var gave: UIButton!
     @IBOutlet weak var indicatorBar: UIView!
     @IBOutlet weak var buttonStack: UIStackView!
     
     public static let identifier = "MyPageDetailMemoCVC"
+    
+    
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        print(indicatorBar.frame.origin.x)
+        indicatorBar.backgroundColor = .keepinGreen
+        presentMoaCV.delegate = self
+        presentMoaCV.dataSource = self
+    
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 165, height: 228)
+        presentMoaCV.collectionViewLayout = layout
+        
+        presentMoaCV.frame.size.height = presentMoaCV.contentSize.height
+        print(presentMoaCV.contentSize.height)
+        registerXib()
+        setUI()
+        
+        stackWidth.constant = UIScreen.main.bounds.width * (88/375)
+
+        indicatorStart.constant = UIScreen.main.bounds.width * (72.5/375)
+    }
     
     @IBAction func newButtonDidTap(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -27,14 +54,18 @@ class MyPageDetailMemoCVC: UICollectionViewCell {
         {
             gave.isSelected = true
             got.isSelected = false
+            
             UIView.animate(withDuration: 0.2){
-                self.indicatorBar.frame.origin.x = 324
+                
+                self.indicatorBar.frame.origin.x = UIScreen.main.bounds.width * (330/375)
             }
         }else if sender == got{
             got.isSelected = true
             gave.isSelected = false
             UIView.animate(withDuration: 0.2){
-                self.indicatorBar.frame.origin.x = 280
+                
+                self.indicatorBar.frame.origin.x = UIScreen.main.bounds.width * (280/375)
+                
             }
         }
     }
@@ -49,28 +80,12 @@ class MyPageDetailMemoCVC: UICollectionViewCell {
     }
     
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        indicatorBar.backgroundColor = .keepinGreen
-        presentMoaCV.delegate = self
-        presentMoaCV.dataSource = self
-    
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 165, height: 228)
-        presentMoaCV.collectionViewLayout = layout
-        
-        presentMoaCV.frame.size.height = presentMoaCV.contentSize.height
-        print(presentMoaCV.contentSize.height)
-        registerXib()
-        setUI()
-    }
-    
     func registerXib(){
         let moaNib = UINib(nibName: MyPageDetailPresentMoaCVC.identifier , bundle: nil)
         presentMoaCV.register(moaNib, forCellWithReuseIdentifier: MyPageDetailPresentMoaCVC.identifier)
     }
+    
+    
 
 }
 
@@ -97,16 +112,12 @@ extension MyPageDetailPresentCVC:UICollectionViewDelegateFlowLayout{
         
         let padding: CGFloat = 10
         let collectionViewSize = collectionView.frame.size.width - padding
-//        let width = UIScreen.main.bounds.width
-//
-//        let cellWidth = width * (168/375)
-//        let cellHeight = cellWidth * (252/168)
-        //return CGSize(width: collectionViewSize/2, height: 228)
+
         return CGSize(width: 168, height: 228)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 7
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -114,7 +125,7 @@ extension MyPageDetailPresentCVC:UICollectionViewDelegateFlowLayout{
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 24
     }
 
     
