@@ -11,6 +11,7 @@ import Kingfisher
 class PresentDetailVC: UIViewController {
 
     @IBOutlet weak var presentDetailCV: UICollectionView!
+    @IBOutlet weak var presentDetailCVHeight: NSLayoutConstraint!
     @IBOutlet weak var indicatorBackground: UIImageView!
     @IBOutlet weak var indicator: UIView!
     @IBOutlet weak var indicatorBarWidth: NSLayoutConstraint!
@@ -43,13 +44,14 @@ class PresentDetailVC: UIViewController {
         PresentDetailDataManager().details(keepinIdx, viewController: self)
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
+        layout.itemSize = CGSize(width: viewSizeWidth, height: viewSizeWidth)
         layout.scrollDirection = .horizontal
         presentDetailCV.collectionViewLayout = layout
         presentDetailCV.isPagingEnabled = true
     }
 
     func setUI(){
+        presentDetailCVHeight.constant = viewSizeWidth
         divider.backgroundColor = .keepinGray2
         memoView.backgroundColor = .keepinGray1
         presentFrom.textColor = .keepinGray4
