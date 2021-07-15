@@ -115,6 +115,9 @@
 		7719B5DC269D71F300CBBB11 /* PresentDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5DB269D71F300CBBB11 /* PresentDetailDataManager.swift */; };
 		773D414E26942E8000A4E366 /* PresentDetailCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773D414C26942E8000A4E366 /* PresentDetailCVC.swift */; };
 		773D414F26942E8000A4E366 /* PresentDetailCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 773D414D26942E8000A4E366 /* PresentDetailCVC.xib */; };
+		77BEA4A226A0A9B1007E2236 /* ReminderHomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4A126A0A9B1007E2236 /* ReminderHomeDataManager.swift */; };
+		77BEA4A426A0A9CC007E2236 /* ReminderHomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4A326A0A9CC007E2236 /* ReminderHomeResponse.swift */; };
+		77BEA4A626A0A9E7007E2236 /* ReminderHomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4A526A0A9E7007E2236 /* ReminderHomeRequest.swift */; };
 		77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */; };
 		77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E4268AF98F00FBFDD7 /* SceneDelegate.swift */; };
 		77F047EC268AF99900FBFDD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77F047EB268AF99900FBFDD7 /* Assets.xcassets */; };
@@ -258,6 +261,9 @@
 		7719B5DB269D71F300CBBB11 /* PresentDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDetailDataManager.swift; sourceTree = "<group>"; };
 		773D414C26942E8000A4E366 /* PresentDetailCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PresentDetailCVC.swift; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.swift; sourceTree = SOURCE_ROOT; };
 		773D414D26942E8000A4E366 /* PresentDetailCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PresentDetailCVC.xib; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.xib; sourceTree = SOURCE_ROOT; };
+		77BEA4A126A0A9B1007E2236 /* ReminderHomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHomeDataManager.swift; sourceTree = "<group>"; };
+		77BEA4A326A0A9CC007E2236 /* ReminderHomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHomeResponse.swift; sourceTree = "<group>"; };
+		77BEA4A526A0A9E7007E2236 /* ReminderHomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHomeRequest.swift; sourceTree = "<group>"; };
 		77F047DF268AF98F00FBFDD7 /* Keepin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keepin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F047E4268AF98F00FBFDD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -632,6 +638,23 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		77BEA49D26A0A95F007E2236 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				77BEA4A126A0A9B1007E2236 /* ReminderHomeDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		77BEA49E26A0A97B007E2236 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				77BEA4A326A0A9CC007E2236 /* ReminderHomeResponse.swift */,
+				77BEA4A526A0A9E7007E2236 /* ReminderHomeRequest.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		77F047D6268AF98F00FBFDD7 = {
 			isa = PBXGroup;
 			children = (
@@ -847,6 +870,8 @@
 		77F549D6268ECF770013A76C /* ReminderHome */ = {
 			isa = PBXGroup;
 			children = (
+				77BEA49D26A0A95F007E2236 /* DataManager */,
+				77BEA49E26A0A97B007E2236 /* DataModel */,
 				7719B588269A1D5000CBBB11 /* Cell */,
 				77F549D2268ECF6C0013A76C /* ReminderVC.swift */,
 				77F549D3268ECF6C0013A76C /* ReminderVC.xib */,
@@ -1072,6 +1097,7 @@
 				1529FF8626998496000AD789 /* KeepinPlusInputTVC.swift in Sources */,
 				7719B5B1269C049400CBBB11 /* Token.swift in Sources */,
 				71E265C52699D80900BD6840 /* KeepinPlusFriendVC.swift in Sources */,
+				77BEA4A426A0A9CC007E2236 /* ReminderHomeResponse.swift in Sources */,
 				71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */,
 				71677CDF26A07DFA004BC692 /* MyPagePresentMoaDataManager.swift in Sources */,
 				71C197AD26975103004C0490 /* MyPageProfileVC.swift in Sources */,
@@ -1117,6 +1143,7 @@
 				77F04806268B0CB000FBFDD7 /* Constants.swift in Sources */,
 				7719B5CA269C2E2700CBBB11 /* PresentMoaHomeResponse.swift in Sources */,
 				153462D12694468B00060E44 /* JoinFirstVC.swift in Sources */,
+				77BEA4A226A0A9B1007E2236 /* ReminderHomeDataManager.swift in Sources */,
 				71C197BA26977BBC004C0490 /* MyPageFriendFixVC.swift in Sources */,
 				152439E6269D4A89009E5E8E /* EmailLoginRequest.swift in Sources */,
 				152439D5269C4A05009E5E8E /* HomeDataManager.swift in Sources */,
@@ -1133,6 +1160,7 @@
 				77F0483F268C4D2400FBFDD7 /* MyPageDetailVC.swift in Sources */,
 				71DA81E02694424D0062A3FA /* MyPageDetailPresentMoaCVC.swift in Sources */,
 				77F0481F268C49AE00FBFDD7 /* SplashVC.swift in Sources */,
+				77BEA4A626A0A9E7007E2236 /* ReminderHomeRequest.swift in Sources */,
 				717A0253269ACFC800241171 /* MyPageEditPwVC.swift in Sources */,
 				77F04811268C44BA00FBFDD7 /* UIColor.swift in Sources */,
 				156E2947269E7CF7000CBEEA /* UIImageView.swift in Sources */,
