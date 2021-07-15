@@ -13,13 +13,18 @@ class ReminderVC: UIViewController {
     @IBAction func yearArrowClicked(_ sender: UIButton) {
         let index = yearArrow.firstIndex(of: sender)!
         var year = Int(yearLabel.text!)!
+        monthTest()
         switch index {
         case 0:
             year -= 1
             yearLabel.text = String(year)
+            let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
+            ReminderHomeDataManager().reminders(request, viewController: self)
         case 1:
             year += 1
             yearLabel.text = String(year)
+            let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
+            ReminderHomeDataManager().reminders(request, viewController: self)
         default:
            break
         }
@@ -33,6 +38,16 @@ class ReminderVC: UIViewController {
     var navigationLeftLabel : String = "편집"
     var months = ["","","1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월","",""]
     var sample : Int = 0
+    var serverData : MonthReminders?
+    var forServer : String = ""
+    func monthTest(){
+        if sample < 9{
+            forServer = "0" + String(sample+1)
+        }
+        else{
+            forServer = String(sample+1)
+        }
+    }
     var sampleData : [String] = ["박윤정 생일","혜수 돌잔치","박윤정 생일2"]
     
     override func viewDidLoad() {
@@ -42,6 +57,9 @@ class ReminderVC: UIViewController {
         
         setNavigationBar()
         setUI()
+        
+        let request = ReminderHomeRequest(year: Date().yearOnly(), month: "01")
+        ReminderHomeDataManager().reminders(request, viewController: self)
         
         let layout = UICollectionViewFlowLayout()
         let cellWidth = UIScreen.main.bounds.width / 5
@@ -57,11 +75,6 @@ class ReminderVC: UIViewController {
         monthCV.register(ReminderCVC.nib(), forCellWithReuseIdentifier: "ReminderCVC")
         monthCV.delegate = self
         monthCV.dataSource = self
-        
-        
-        reminderTV.register(ReminderTVC.nib(), forCellReuseIdentifier: "ReminderTVC")
-        reminderTV.delegate = self
-        reminderTV.dataSource = self
     }
     
     func setUI(){
@@ -128,6 +141,10 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
             targetContentOffset.pointee = offset
             
             monthCV.reloadData()
+            
+            monthTest()
+            let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
+            ReminderHomeDataManager().reminders(request, viewController: self)
         }
     }
     
@@ -164,7 +181,7 @@ extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sampleData.count
+        return (serverData?.reminders.count)!
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -178,8 +195,20 @@ extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = reminderTV.dequeueReusableCell(withIdentifier: "ReminderTVC", for: indexPath) as! ReminderTVC
         cell.backgroundColor = .keepinGray
-        cell.reminderTitle.text = sampleData[indexPath.section]
-
+        cell.dateLabel.text = serverData?.reminders[indexPath.section]?.date
+        cell.reminderTitle.text = serverData?.reminders[indexPath.section]?.title
+        let alarmStatus = (serverData?.reminders[indexPath.section]?.isAlarm)!
+        if alarmStatus{
+            cell.alarmOn.isOn = true
+        }
+        else{
+            cell.alarmOn.isOn = false
+        }
+        let importantStatus = (serverData?.reminders[indexPath.section]?.isImportant)!
+        if importantStatus{
+            cell.backgronudImg.image = UIImage(named: "listReminderImportant")
+        }
+        
         let backgroundView = UIView()
         backgroundView.backgroundColor = .clear
         cell.selectedBackgroundView = backgroundView
@@ -210,15 +239,30 @@ extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-            if editingStyle == .delete {
-                reminderTV.beginUpdates()
-                sampleData.remove(at: indexPath.section)
-                let indexSet = NSMutableIndexSet()
-                indexSet.add(indexPath.section)
-                tableView.deleteSections(indexSet as IndexSet, with: .fade)
-                reminderTV.endUpdates()
-            }
-        }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//            if editingStyle == .delete {
+//                reminderTV.beginUpdates()
+//                sampleData.remove(at: indexPath.section)
+//                let indexSet = NSMutableIndexSet()
+//                indexSet.add(indexPath.section)
+//                tableView.deleteSections(indexSet as IndexSet, with: .fade)
+//                reminderTV.endUpdates()
+//            }
+//        }
     
 }
+
+extension ReminderVC {
+    func didSuccessReminders(message: String) {
+        reminderTV.register(ReminderTVC.nib(), forCellReuseIdentifier: "ReminderTVC")
+        reminderTV.delegate = self
+        reminderTV.dataSource = self
+        
+        reminderTV.reloadData()
+    }
+    
+    func failedToRequest(message: String) {
+        print(message)
+    }
+}
+

@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct ReminderHomeRequest{
+    var year : String
+    var month: String
+}
