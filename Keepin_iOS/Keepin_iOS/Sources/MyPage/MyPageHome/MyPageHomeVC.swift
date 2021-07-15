@@ -41,13 +41,14 @@ class MyPageHomeVC: UIViewController {
         let nextVC = MyPageDetailVC()
         //nextVC.friendIdx = MyPageHomeDataManager.friendList[MyPageHomeVC.index].id
         if let data = notification.object as? String{
-            print(data)
+            //print(data)
+            print("값설정")
             nextVC.friendIdx = data
         }
         //nextVC.friendIdx = notification.object as? String
         //print(nextVC.friendIdx)
         self.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(MyPageDetailVC(), animated: true)
+        self.navigationController?.pushViewController(nextVC, animated: true)
         self.hidesBottomBarWhenPushed = false
         
     }
