@@ -35,6 +35,8 @@
 		153462D52694469900060E44 /* JoinSecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153462D32694469900060E44 /* JoinSecondVC.swift */; };
 		153462D62694469900060E44 /* JoinSecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 153462D42694469900060E44 /* JoinSecondVC.xib */; };
 		156E2947269E7CF7000CBEEA /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E2946269E7CF7000CBEEA /* UIImageView.swift */; };
+		1589EDD426A0C0C4005EFCC2 /* SelectFriendListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589EDD226A0C0C4005EFCC2 /* SelectFriendListTVC.swift */; };
+		1589EDD526A0C0C4005EFCC2 /* SelectFriendListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1589EDD326A0C0C4005EFCC2 /* SelectFriendListTVC.xib */; };
 		15B71A51269D7CC500ED68E0 /* JoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A50269D7CC500ED68E0 /* JoinRequest.swift */; };
 		15B71A53269D7CCE00ED68E0 /* JoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A52269D7CCE00ED68E0 /* JoinResponse.swift */; };
 		15B71A55269D7CD600ED68E0 /* JoinDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A54269D7CD600ED68E0 /* JoinDataManager.swift */; };
@@ -180,6 +182,8 @@
 		153462D32694469900060E44 /* JoinSecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSecondVC.swift; sourceTree = "<group>"; };
 		153462D42694469900060E44 /* JoinSecondVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinSecondVC.xib; sourceTree = "<group>"; };
 		156E2946269E7CF7000CBEEA /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		1589EDD226A0C0C4005EFCC2 /* SelectFriendListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendListTVC.swift; sourceTree = "<group>"; };
+		1589EDD326A0C0C4005EFCC2 /* SelectFriendListTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFriendListTVC.xib; sourceTree = "<group>"; };
 		15B71A50269D7CC500ED68E0 /* JoinRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRequest.swift; sourceTree = "<group>"; };
 		15B71A52269D7CCE00ED68E0 /* JoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinResponse.swift; sourceTree = "<group>"; };
 		15B71A54269D7CD600ED68E0 /* JoinDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinDataManager.swift; sourceTree = "<group>"; };
@@ -377,6 +381,15 @@
 				153462D42694469900060E44 /* JoinSecondVC.xib */,
 			);
 			path = Join;
+			sourceTree = "<group>";
+		};
+		1589EDD126A0C09E005EFCC2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1589EDD226A0C0C4005EFCC2 /* SelectFriendListTVC.swift */,
+				1589EDD326A0C0C4005EFCC2 /* SelectFriendListTVC.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		15B71A4E269D7CA700ED68E0 /* DataModel */ = {
@@ -854,6 +867,7 @@
 			children = (
 				77F0484A268C4DB400FBFDD7 /* SelectFriendVC.swift */,
 				77F0484B268C4DB400FBFDD7 /* SelectFriendVC.xib */,
+				1589EDD126A0C09E005EFCC2 /* Cell */,
 			);
 			path = SelectFriend;
 			sourceTree = "<group>";
@@ -994,6 +1008,7 @@
 				773D414F26942E8000A4E366 /* PresentDetailCVC.xib in Resources */,
 				71E1324626987F3200DB2D9F /* MyPageHomeHeaderCVC.xib in Resources */,
 				71C197AE26975103004C0490 /* MyPageProfileVC.xib in Resources */,
+				1589EDD526A0C0C4005EFCC2 /* SelectFriendListTVC.xib in Resources */,
 				1529FF7F26979F57000AD789 /* KeepinPlusTitleTVC.xib in Resources */,
 				71E1324E2698A8BF00DB2D9F /* FriendListCVC.xib in Resources */,
 				77F047EF268AF99900FBFDD7 /* LaunchScreen.storyboard in Resources */,
@@ -1135,6 +1150,7 @@
 				15243994269C1012009E5E8E /* KeepinPlusBlankTVC.swift in Sources */,
 				15B71A51269D7CC500ED68E0 /* JoinRequest.swift in Sources */,
 				71E1FBE0269BF530006A42C3 /* CustomCollectionViewFlowLayout.swift in Sources */,
+				1589EDD426A0C0C4005EFCC2 /* SelectFriendListTVC.swift in Sources */,
 				15B71A53269D7CCE00ED68E0 /* JoinResponse.swift in Sources */,
 				1529FF96269985A8000AD789 /* KeepinPlusCategoryTVC.swift in Sources */,
 				7719B5C8269C2E1B00CBBB11 /* PresentMoaHomeDataManager.swift in Sources */,
