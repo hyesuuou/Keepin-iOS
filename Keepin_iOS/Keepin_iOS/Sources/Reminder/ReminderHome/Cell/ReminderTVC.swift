@@ -32,4 +32,8 @@ class ReminderTVC: UITableViewCell {
         return UINib(nibName: "ReminderTVC", bundle: nil)
     }
     
+    override func prepareForReuse() {
+        backgronudImg.image = UIImage(named: "listReminderNotimportant")
+    }
+    
 }
