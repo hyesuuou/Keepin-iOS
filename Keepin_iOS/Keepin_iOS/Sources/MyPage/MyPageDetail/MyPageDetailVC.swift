@@ -22,8 +22,8 @@ class MyPageDetailVC: UIViewController ,UITextViewDelegate{
         super.viewDidLoad()
         registerXib()
 
-        
-        friendIdx = "60edc8527e1fc361f81b8a23"
+        print("뷰컨")
+        //friendIdx = "60edc8527e1fc361f81b8a23"
         self.navigationController?.isNavigationBarHidden = true
         //myPageDetailCV.delegate = self
         //myPageDetailCV.dataSource = self
