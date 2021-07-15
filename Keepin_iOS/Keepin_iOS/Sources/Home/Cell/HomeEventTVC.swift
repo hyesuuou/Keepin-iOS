@@ -19,11 +19,12 @@ class HomeEventTVC: UITableViewCell {
     @IBOutlet weak var dateSecondLabel: UILabel!
     @IBOutlet weak var contentsSecontLabel: UILabel!
     
+    @IBOutlet weak var reminderNextButton: UIButton!
     @IBOutlet weak var separateView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         setUI()
-        setDummy()
+        //setDummy()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -52,17 +53,13 @@ class HomeEventTVC: UITableViewCell {
         
     }
     
-    func setData(date: String, contents: String){
+    func setData(date: String, contents: String, secondDate: String, secondContents: String){
         dateLabel.text = date
         contentsLabel.text = contents
+        dateSecondLabel.text = secondDate
+        contentsSecontLabel.text = secondContents
     }
     
-    func setDummy(){
-        dateLabel.text = "06.10"
-        contentsLabel.text = "박윤정 집들이"
-        
-        dateSecondLabel.text = "06.23"
-        contentsSecontLabel.text = "아부지 생신"
-    }
+    
    
 }

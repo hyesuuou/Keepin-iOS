@@ -26,3 +26,28 @@ struct DataClass: Codable {
         case title, photo
     }
 }
+
+// MARK:- 홈 리마인더 2개 Get Datamodel
+struct HomeReminderResponse: Codable {
+    let status: Int
+    let message: String
+    let data: HomeReminderData
+}
+
+// MARK: - HomeReminderData
+struct HomeReminderData: Codable {
+    let reminders: [Reminder]
+}
+
+// MARK: - Reminder
+struct Reminder: Codable {
+    let isImportant: Bool
+    let id, title, date: String
+
+    enum CodingKeys: String, CodingKey {
+        case isImportant
+        case id = "_id"
+        case title, date
+    }
+}
+
