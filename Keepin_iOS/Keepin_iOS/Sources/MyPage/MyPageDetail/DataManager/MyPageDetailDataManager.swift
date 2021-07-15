@@ -12,8 +12,6 @@ class MyPageDetailDataManager{
     func getFriendInfo(_ parameter: String, viewController: MyPageDetailVC){
         var url = "\(Constant.BASE_URL)/friend/"
         url.append(parameter)
-        print(parameter)
-        print(url)
         
         AF.request(url ,method: .get, parameters: nil, headers: Constant.HEADER )
             .validate()

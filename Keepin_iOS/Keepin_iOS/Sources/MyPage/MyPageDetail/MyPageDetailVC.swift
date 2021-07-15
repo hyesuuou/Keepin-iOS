@@ -22,27 +22,12 @@ class MyPageDetailVC: UIViewController ,UITextViewDelegate{
         super.viewDidLoad()
         registerXib()
 
-        print("뷰컨")
-        //friendIdx = "60edc8527e1fc361f81b8a23"
         self.navigationController?.isNavigationBarHidden = true
-        //myPageDetailCV.delegate = self
-        //myPageDetailCV.dataSource = self
         dismissKeyboardWhenTappedAround()
         
         MyPageDetailDataManager().getFriendInfo(friendIdx, viewController: self)
-        /*
-        NotificationCenter.default.addObserver(self, selector: #selector(loadData), name: NSNotification.Name(rawValue: "push"), object: nil)*/
-        //print("\(friendIdx),\(friendIdx)")
     
-        
     }
-    
-    @objc func loadData(_ notification: NSNotification){
-        if let data2 = notification.object as? String{
-            print("\(data2),\(data2)")
-        }
-    }
-    
     
     func registerXib(){
         let topNib = UINib(nibName: MyPageDetailTopCVC.identifier, bundle: nil)
@@ -117,7 +102,7 @@ extension MyPageDetailVC: UICollectionViewDataSource{
                 return UICollectionViewCell()
             }
             
-            //cell.memoView = memoInfo
+            cell.textView.text = memoInfo
             
             return cell
             
