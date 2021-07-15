@@ -19,31 +19,28 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WeW-VG-N30">
                         <rect key="frame" x="16" y="0.0" width="168" height="44"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="44" id="8KX-p9-Qip"/>
-                            <constraint firstAttribute="width" constant="168" id="hhc-6X-sUe"/>
+                            <constraint firstAttribute="height" constant="44" id="U7B-mB-f9B"/>
+                            <constraint firstAttribute="width" constant="168" id="zb7-ml-yKE"/>
                         </constraints>
                         <state key="normal" title="받은 선물"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfT-RU-uBa">
                         <rect key="frame" x="205" y="0.0" width="168" height="44"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="168" id="2fp-2a-UPX"/>
-                            <constraint firstAttribute="width" constant="168" id="Lsr-0I-AGt"/>
-                            <constraint firstAttribute="height" constant="44" id="msq-dZ-k7F"/>
-                            <constraint firstAttribute="height" constant="44" id="y0m-N8-DNX"/>
-                        </constraints>
                         <state key="normal" title="준 선물"/>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="WeW-VG-N30" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="6jY-js-0nI"/>
-                    <constraint firstItem="WeW-VG-N30" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bIf-I9-GiX"/>
-                    <constraint firstAttribute="trailing" secondItem="VfT-RU-uBa" secondAttribute="trailing" constant="16" id="c1E-vh-Tep"/>
-                    <constraint firstItem="VfT-RU-uBa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="kOh-AG-fEJ"/>
+                    <constraint firstItem="VfT-RU-uBa" firstAttribute="width" secondItem="WeW-VG-N30" secondAttribute="width" id="329-ZQ-wfs"/>
+                    <constraint firstItem="WeW-VG-N30" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="VWt-xv-eP6"/>
+                    <constraint firstItem="VfT-RU-uBa" firstAttribute="height" secondItem="WeW-VG-N30" secondAttribute="height" id="m5R-oj-OSn"/>
+                    <constraint firstAttribute="trailing" secondItem="VfT-RU-uBa" secondAttribute="trailing" constant="16" id="oIb-5q-Xlc"/>
+                    <constraint firstItem="VfT-RU-uBa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vid-8c-i2L"/>
+                    <constraint firstItem="WeW-VG-N30" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wuF-2l-Z3R"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="buttonWidthConstraint" destination="zb7-ml-yKE" id="znL-PG-4aV"/>
                 <outletCollection property="button" destination="WeW-VG-N30" collectionClass="NSMutableArray" id="CEV-JE-2sf"/>
                 <outletCollection property="button" destination="VfT-RU-uBa" collectionClass="NSMutableArray" id="Dm5-Z8-sRS"/>
             </connections>

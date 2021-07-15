@@ -14,6 +14,8 @@ class KeppinPlusSelectTVC: UITableViewCell {
     // button[0]: 받은 선물, button[1]: 준 선물
     @IBOutlet var button: [UIButton]!
     
+    @IBOutlet weak var buttonWidthConstraint: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -24,6 +26,7 @@ class KeppinPlusSelectTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     
     func setButtonUI(select : Int){
         
@@ -47,6 +50,8 @@ class KeppinPlusSelectTVC: UITableViewCell {
         
         button[select].layer.cornerRadius = 21.5
         button[notSelect].layer.cornerRadius = 21.5
+        
+        buttonWidthConstraint.constant = UIScreen.main.bounds.width * (168/375)
         
     }
     
