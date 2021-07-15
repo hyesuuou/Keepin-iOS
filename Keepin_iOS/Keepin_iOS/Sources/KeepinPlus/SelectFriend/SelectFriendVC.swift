@@ -9,21 +9,20 @@ import UIKit
 
 class SelectFriendVC: UIViewController {
 
+    @IBOutlet var titleLabel: [UILabel]!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
 
         // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func setUI(){
+        titleLabel[0].font = UIFont.GmarketSansTTF(.medium, size: 16)
+        titleLabel[1].font = UIFont.GmarketSansTTF(.light, size: 16)
+        titleLabel[1].textColor = .keepinGray4
     }
-    */
+
+
 
 }
