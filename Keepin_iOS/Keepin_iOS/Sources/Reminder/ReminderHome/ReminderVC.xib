@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -51,6 +52,9 @@
                         <action selector="yearArrowClicked:" destination="-1" eventType="touchUpInside" id="tVf-k8-Mx8"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icMonthSelected" translatesAutoresizingMaskIntoConstraints="NO" id="gff-3c-jac">
+                    <rect key="frame" x="181.5" y="187" width="51" height="36"/>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3l-2b-Awm">
                     <rect key="frame" x="16" y="139" width="24" height="24"/>
                     <state key="normal" image="icArrowLeft"/>
@@ -75,9 +79,6 @@
                     <rect key="frame" x="0.0" y="247" width="414" height="566"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icMonthSelected" translatesAutoresizingMaskIntoConstraints="NO" id="gff-3c-jac">
-                    <rect key="frame" x="181.5" y="187" width="51" height="36"/>
-                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -88,12 +89,12 @@
                 <constraint firstItem="trA-LJ-vHK" firstAttribute="top" secondItem="GAL-C7-W89" secondAttribute="bottom" constant="24" id="GfU-Eg-hbi"/>
                 <constraint firstItem="OBA-OC-BFd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="HCQ-vu-Sq9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="trA-LJ-vHK" secondAttribute="bottom" id="HfQ-lj-4b3"/>
+                <constraint firstItem="gff-3c-jac" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HiX-WT-Xay"/>
                 <constraint firstItem="6ef-pQ-KI7" firstAttribute="top" secondItem="OBA-OC-BFd" secondAttribute="bottom" constant="31" id="MCE-b4-NmZ"/>
                 <constraint firstItem="cc4-tW-N97" firstAttribute="leading" secondItem="C3l-2b-Awm" secondAttribute="trailing" constant="12" id="SDQ-v4-dxj"/>
                 <constraint firstItem="GAL-C7-W89" firstAttribute="top" secondItem="cc4-tW-N97" secondAttribute="bottom" constant="26" id="XRe-Fs-mpT"/>
                 <constraint firstItem="C3l-2b-Awm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="adW-pX-ez6"/>
                 <constraint firstItem="gff-3c-jac" firstAttribute="top" secondItem="GAL-C7-W89" secondAttribute="top" id="eRr-kh-opN"/>
-                <constraint firstItem="gff-3c-jac" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="i32-7Y-UpR"/>
                 <constraint firstItem="GAL-C7-W89" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jK4-Qq-SVt"/>
                 <constraint firstItem="GAL-C7-W89" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="q8a-Qu-g35"/>
                 <constraint firstItem="6ef-pQ-KI7" firstAttribute="leading" secondItem="cc4-tW-N97" secondAttribute="trailing" constant="12" id="qpa-ms-VUl"/>
