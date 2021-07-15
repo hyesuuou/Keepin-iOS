@@ -26,6 +26,7 @@
                 <outlet property="indicatorStart" destination="qyu-mI-TfR" id="ngH-Fs-4yn"/>
                 <outlet property="memoView" destination="mAH-sd-2QP" id="Qvp-64-G3z"/>
                 <outlet property="presentDetailCV" destination="8bT-fG-QyO" id="x7b-kS-3AN"/>
+                <outlet property="presentDetailCVHeight" destination="tbK-FL-mFG" id="eRI-Am-piG"/>
                 <outlet property="presentFrom" destination="sN0-EY-G4k" id="bt9-6h-XvD"/>
                 <outlet property="presentTitle" destination="wLZ-WW-QeF" id="VVX-Z8-Fik"/>
                 <outlet property="thoughts" destination="aqw-Ss-vn8" id="eNt-zQ-7p2"/>
