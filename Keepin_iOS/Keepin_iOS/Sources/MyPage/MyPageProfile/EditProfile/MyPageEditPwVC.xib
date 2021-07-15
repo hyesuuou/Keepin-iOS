@@ -64,24 +64,20 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ru-6M-IdA">
-                    <rect key="frame" x="24" y="123" width="59" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="59" id="OAB-Cn-Ggo"/>
-                        <constraint firstAttribute="height" constant="24" id="t8V-3T-47P"/>
-                    </constraints>
+                    <rect key="frame" x="24" y="123" width="59" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JE9-FI-i4w">
-                    <rect key="frame" x="16" y="225" width="382" height="1"/>
+                    <rect key="frame" x="16" y="221.5" width="382" height="1"/>
                     <color key="backgroundColor" systemColor="systemGray4Color"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="HWR-bc-tKU"/>
                     </constraints>
                 </view>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ad2-Dm-vhd">
-                    <rect key="frame" x="24" y="180" width="340" height="40"/>
+                    <rect key="frame" x="24" y="176.5" width="340" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="340" id="MxO-Wh-6bP"/>
                         <constraint firstAttribute="height" constant="40" id="vZy-si-Ihc"/>
@@ -90,7 +86,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MRX-Mw-HSf">
-                    <rect key="frame" x="24" y="274" width="340" height="40"/>
+                    <rect key="frame" x="24" y="270.5" width="340" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="340" id="OP7-3P-OJe"/>
                         <constraint firstAttribute="height" constant="40" id="Zh6-9o-Df1"/>
@@ -99,21 +95,21 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cwd-yy-lsx">
-                    <rect key="frame" x="16" y="319" width="382" height="1"/>
+                    <rect key="frame" x="16" y="315.5" width="382" height="1"/>
                     <color key="backgroundColor" systemColor="systemGray3Color"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="LkH-P9-LaO"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQJ-5E-B54">
-                    <rect key="frame" x="16" y="413" width="382" height="1"/>
+                    <rect key="frame" x="16" y="409.5" width="382" height="1"/>
                     <color key="backgroundColor" systemColor="systemGray4Color"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="RrY-Tc-16C"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RTm-Cm-OZf">
-                    <rect key="frame" x="24" y="180" width="92" height="24"/>
+                    <rect key="frame" x="24" y="176.5" width="92" height="24"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7es-MG-PiC">
                             <rect key="frame" x="0.0" y="0.0" width="92" height="24"/>
@@ -132,7 +128,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hby-8R-h3d">
-                    <rect key="frame" x="24" y="274" width="107" height="24"/>
+                    <rect key="frame" x="24" y="270.5" width="107" height="24"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="새로운 비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQp-MT-6D1">
                             <rect key="frame" x="0.0" y="4.5" width="101.5" height="19.5"/>
@@ -150,7 +146,7 @@
                     </constraints>
                 </view>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lOU-Dh-tSt">
-                    <rect key="frame" x="24" y="368" width="340" height="40"/>
+                    <rect key="frame" x="24" y="364.5" width="340" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="340" id="RMK-f2-aWR"/>
                         <constraint firstAttribute="height" constant="40" id="zEd-bo-oRQ"/>
@@ -159,7 +155,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JOR-Zc-NV4">
-                    <rect key="frame" x="24" y="368" width="92" height="24"/>
+                    <rect key="frame" x="24" y="364.5" width="92" height="24"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3H-e9-M9L">
                             <rect key="frame" x="0.0" y="0.0" width="93" height="24"/>

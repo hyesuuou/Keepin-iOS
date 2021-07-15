@@ -55,26 +55,18 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴대폰 번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5p-cd-2gz">
-                    <rect key="frame" x="24" y="123" width="78" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="78" id="dHm-5P-CPM"/>
-                        <constraint firstAttribute="height" constant="24" id="tfB-ap-qB5"/>
-                    </constraints>
+                    <rect key="frame" x="24" y="123" width="73.5" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="010-0000-0000" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="q2J-xm-Prs">
-                    <rect key="frame" x="24" y="165" width="340" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="340" id="HI3-65-rWH"/>
-                        <constraint firstAttribute="height" constant="24" id="Ouf-km-Chp"/>
-                    </constraints>
+                    <rect key="frame" x="24" y="160.5" width="106" height="18.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6lY-HC-FRd">
-                    <rect key="frame" x="16" y="194" width="382" height="1"/>
+                    <rect key="frame" x="16" y="184" width="382" height="1"/>
                     <color key="backgroundColor" systemColor="systemGray4Color"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="qxZ-Kh-Izc"/>
