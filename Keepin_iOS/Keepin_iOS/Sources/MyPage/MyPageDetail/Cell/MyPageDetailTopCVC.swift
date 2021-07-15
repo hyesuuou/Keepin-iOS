@@ -9,8 +9,12 @@ import UIKit
 
 class MyPageDetailTopCVC: UICollectionViewCell {
 
+    
+    var detail1 : Int = 0
+    var detail2 : Int = 0
+    var detail3 : Int = 0
     public static let identifier = "MyPageDetailTopCVC"
-    let userName : String = "이채연"
+    var userName : String = ""
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var allPresent: UILabel!
     @IBOutlet weak var receivePresent: UILabel!
@@ -30,12 +34,12 @@ class MyPageDetailTopCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        userLabel.text = "\(userName)님과 \n주고받은 선물"
+        /*
         userLabel.font = UIFont.GmarketSansTTF(.medium, size: 20)
         
         let attributedStr = NSMutableAttributedString(string: userLabel.text!)
         attributedStr.addAttribute(.foregroundColor, value: UIColor.keepinGreen, range: (userLabel.text! as NSString).range(of: "\(userName)"))
-        userLabel.attributedText = attributedStr
+        userLabel.attributedText = attributedStr*/
         
         
         allPresent.font = UIFont.NotoSans(.regular, size: 14)

@@ -26,15 +26,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0D-DM-fKU">
-                        <rect key="frame" x="0.0" y="0.0" width="341" height="64"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="341" id="fJ1-K3-tzb"/>
-                        </constraints>
-                        <connections>
-                            <action selector="tofriend:" destination="gTV-IL-0wX" eventType="touchUpInside" id="D7S-Bm-4xE"/>
-                        </connections>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpA-pf-YrH">
                         <rect key="frame" x="311" y="20" width="24" height="24"/>
                         <constraints>
@@ -48,22 +39,15 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="T0D-DM-fKU" secondAttribute="bottom" id="Dyb-NH-Io7"/>
-                <constraint firstAttribute="bottom" secondItem="T0D-DM-fKU" secondAttribute="bottom" id="Eil-zk-3Vp"/>
                 <constraint firstItem="K55-Uv-4Du" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="32" id="MKC-vl-t00"/>
-                <constraint firstItem="T0D-DM-fKU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="MxB-4z-Opk"/>
-                <constraint firstItem="T0D-DM-fKU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="NI3-cw-rug"/>
                 <constraint firstItem="K55-Uv-4Du" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="24" id="TXW-zg-h9n"/>
-                <constraint firstItem="T0D-DM-fKU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Vyo-cj-D4c"/>
                 <constraint firstItem="rpA-pf-YrH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="clz-ZK-5rp"/>
                 <constraint firstAttribute="trailing" secondItem="rpA-pf-YrH" secondAttribute="trailing" constant="10" id="mFy-xO-v2I"/>
-                <constraint firstItem="T0D-DM-fKU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="oWl-Pe-dih"/>
             </constraints>
             <size key="customSize" width="345" height="64"/>
             <connections>
                 <outlet property="friendName" destination="K55-Uv-4Du" id="FI6-HV-dhu"/>
                 <outlet property="moveButton" destination="rpA-pf-YrH" id="mOl-3v-dQh"/>
-                <outlet property="touchButton" destination="T0D-DM-fKU" id="xpb-qO-sPR"/>
             </connections>
             <point key="canvasLocation" x="122.46376811594205" y="92.410714285714278"/>
         </collectionViewCell>

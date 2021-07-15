@@ -17,6 +17,7 @@ class MyPageHomeVC: UIViewController {
     var count1 : Int = 0
     var count2 : Int = 0
     var count3 : Int = 0
+    static var index : Int = 0
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -33,17 +34,26 @@ class MyPageHomeVC: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(toPush(_:)), name: NSNotification.Name(rawValue: "push"), object: nil)
+        
     }
 
     @objc func toPush(_ notification: NSNotification){
+        let nextVC = MyPageDetailVC()
+        //nextVC.friendIdx = MyPageHomeDataManager.friendList[MyPageHomeVC.index].id
+        if let data = notification.object as? String{
+            print(data)
+            nextVC.friendIdx = data
+        }
+        //nextVC.friendIdx = notification.object as? String
+        //print(nextVC.friendIdx)
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(MyPageDetailVC(), animated: true)
         self.hidesBottomBarWhenPushed = false
+        
     }
     
     
     func registerXib(){
-        
         let homeTopNib = UINib(nibName: MyPageHomeTopCVC.identifier, bundle: nil)
         myPageHomeCV.register(homeTopNib, forCellWithReuseIdentifier:MyPageHomeTopCVC.identifier )
         
@@ -187,7 +197,7 @@ extension MyPageHomeVC : UICollectionViewDelegateFlowLayout{
 
 extension MyPageHomeVC{
     func didSuccessGetUser(message: String){
-        print("서버통신 성공!")
+        print("마이페이지 메인 상단뷰 서버통신 성공!")
         myPageHomeCV.delegate = self
         myPageHomeCV.dataSource = self
         myPageHomeCV.reloadData()
@@ -199,7 +209,10 @@ extension MyPageHomeVC{
         for i in friendList{
             MyPageHomeFriendCVC.friendName.append(i.name)
         }
-        print("1")
+        
+        for j in friendList{
+            MyPageHomeFriendCVC.friendId.append(j.id)
+        }
         
         myPageHomeCV.delegate = self
         myPageHomeCV.dataSource = self

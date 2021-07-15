@@ -11,14 +11,36 @@ class MyPageDetailVC: UIViewController ,UITextViewDelegate{
     
     @IBOutlet weak var myPageDetailCV: UICollectionView!
     
+    var friendIdx : String = ""
+    var friendName : String = ""
+    var allNum : Int = 0
+    var giveNum : Int = 0
+    var gotNum : Int = 0
+    var memoInfo : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerXib()
 
+        
+        friendIdx = "60edc8527e1fc361f81b8a23"
         self.navigationController?.isNavigationBarHidden = true
-        myPageDetailCV.delegate = self
-        myPageDetailCV.dataSource = self
+        //myPageDetailCV.delegate = self
+        //myPageDetailCV.dataSource = self
         dismissKeyboardWhenTappedAround()
+        
+        MyPageDetailDataManager().getFriendInfo(friendIdx, viewController: self)
+        /*
+        NotificationCenter.default.addObserver(self, selector: #selector(loadData), name: NSNotification.Name(rawValue: "push"), object: nil)*/
+        //print("\(friendIdx),\(friendIdx)")
+    
+        
+    }
+    
+    @objc func loadData(_ notification: NSNotification){
+        if let data2 = notification.object as? String{
+            print("\(data2),\(data2)")
+        }
     }
     
     
@@ -70,12 +92,33 @@ extension MyPageDetailVC: UICollectionViewDataSource{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageDetailTopCVC.identifier, for: indexPath)as? MyPageDetailTopCVC else{
                 return UICollectionViewCell()
             }
+            
+            cell.detail1 = allNum
+            cell.detail2 = giveNum
+            cell.detail3 = gotNum
+            cell.userName = friendName
+            
+            cell.userLabel.text = "\(friendName)님과 \n주고받은 선물"
+            cell.number1.text = "\(allNum)개"
+            cell.number2.text = "\(giveNum)개"
+            cell.number3.text = "\(gotNum)개"
+            
+            cell.userLabel.font = UIFont.GmarketSansTTF(.medium, size: 20)
+            
+        
+            let attributedStr = NSMutableAttributedString(string: cell.userLabel.text!)
+            attributedStr.addAttribute(.foregroundColor, value: UIColor.keepinGreen, range: (cell.userLabel.text! as NSString).range(of: "\(friendName)"))
+            cell.userLabel.attributedText = attributedStr
+            
             return cell
             
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageDetailPresentCVC.identifier, for: indexPath)as? MyPageDetailPresentCVC else{
                 return UICollectionViewCell()
             }
+            
+            //cell.memoView = memoInfo
+            
             return cell
             
             
@@ -118,5 +161,15 @@ extension MyPageDetailVC: UICollectionViewDelegateFlowLayout
             
             return CGSize(width: width, height: cellHeight)
         }
+    }
+}
+
+
+extension MyPageDetailVC{
+    func didSuccessGetFriendInfo(messsage: String){
+        print("친구 상세보기 서버 통신 성공!!")
+        myPageDetailCV.delegate = self
+        myPageDetailCV.dataSource = self
+        myPageDetailCV.reloadData()
     }
 }

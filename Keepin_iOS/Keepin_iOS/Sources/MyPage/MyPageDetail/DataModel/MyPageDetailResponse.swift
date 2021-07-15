@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+
+struct MyPageDetailResponse: Codable {
+    let status: Int
+    let message: String
+    let data: DetailDataClass
+}
+
+struct DetailDataClass: Codable {
+    let name: String
+    let total, taken, given: Int
+    let memo: String
+}
+
