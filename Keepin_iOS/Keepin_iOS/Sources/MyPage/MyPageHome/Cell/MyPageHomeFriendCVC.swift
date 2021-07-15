@@ -75,14 +75,19 @@ extension MyPageHomeFriendCVC : UICollectionViewDataSource{
 extension MyPageHomeFriendCVC : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     
-        let width = 343
+        let width = UIScreen.main.bounds.width
+        let cellWidth = Int(width) - 32
         let cellHeight = 64
     
-        return CGSize(width: width, height: cellHeight)
+        return CGSize(width: cellWidth, height: cellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 12
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
 
 }

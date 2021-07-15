@@ -109,17 +109,17 @@ extension MyPageHomeVC : UICollectionViewDataSource {
             
             cell.c1 = count1
             cell.num1.text = "\(count1)개"
-            cell.num1.font = UIFont.NotoSans(.bold, size: 15)
+            cell.num1.font = UIFont.NotoSans(.bold, size: 16)
             cell.num1.textColor = UIColor.keepinGreen
             
             cell.c2 = count2
             cell.num2.text = "\(count2)개"
-            cell.num2.font = UIFont.NotoSans(.bold, size: 15)
+            cell.num2.font = UIFont.NotoSans(.bold, size: 16)
             cell.num2.textColor = UIColor.keepinGreen
             
             count3 = cell.c3
             cell.num3.text = "\(count3)개"
-            cell.num3.font = UIFont.NotoSans(.bold, size: 15)
+            cell.num3.font = UIFont.NotoSans(.bold, size: 16)
             cell.num3.textColor = UIColor.keepinGreen
             
             return cell

@@ -21,11 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHn-wB-dU5">
-                                <rect key="frame" x="24" y="32" width="109" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="fNK-G1-vsA"/>
-                                    <constraint firstAttribute="width" constant="109" id="fsA-nv-VH1"/>
-                                </constraints>
+                                <rect key="frame" x="24" y="32" width="41.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -65,7 +61,7 @@
                 <outlet property="mainView" destination="T3Z-R3-rXT" id="pNz-K1-wob"/>
                 <outlet property="plusButton" destination="cul-mI-mi6" id="BOt-vo-SIe"/>
             </connections>
-            <point key="canvasLocation" x="-111" y="3"/>
+            <point key="canvasLocation" x="-112.31884057971016" y="2.34375"/>
         </collectionViewCell>
     </objects>
     <resources>
