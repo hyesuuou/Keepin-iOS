@@ -54,48 +54,36 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="프로필 편집" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQz-P9-AaT">
-                                    <rect key="frame" x="24" y="69" width="102" height="23"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="23" id="Ai2-pU-cz4"/>
-                                        <constraint firstAttribute="width" constant="102" id="T1g-ik-PhC"/>
-                                    </constraints>
+                                    <rect key="frame" x="24" y="69" width="91.5" height="24"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgV-rh-Cio">
-                                    <rect key="frame" x="0.0" y="338.5" width="414" height="0.5"/>
+                                    <rect key="frame" x="0.0" y="331.5" width="414" height="0.5"/>
                                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="0.5" id="gpM-Jj-FdA"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keepin 정보" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nv6-WF-o6M">
-                                    <rect key="frame" x="24" y="367" width="119" height="23"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="23" id="12q-Jw-Xy8"/>
-                                        <constraint firstAttribute="width" constant="119" id="ljB-Lz-TsU"/>
-                                    </constraints>
+                                    <rect key="frame" x="24" y="360" width="99.5" height="24"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QZw-sz-FzE">
-                                    <rect key="frame" x="0.0" y="593.5" width="414" height="0.5"/>
+                                    <rect key="frame" x="0.0" y="587.5" width="414" height="0.5"/>
                                     <color key="backgroundColor" systemColor="systemGray3Color"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="0.5" id="SKB-u2-V0D"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Zy-cw-exW">
-                                    <rect key="frame" x="16" y="108" width="382" height="40"/>
+                                    <rect key="frame" x="16" y="109" width="382" height="40"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1u5-8c-jDK">
-                                            <rect key="frame" x="8" y="8" width="30" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="24" id="EFH-uS-NPj"/>
-                                                <constraint firstAttribute="width" constant="30" id="gMa-xL-w00"/>
-                                            </constraints>
+                                            <rect key="frame" x="8" y="8" width="30" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -118,14 +106,10 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqP-kW-vE6">
-                                    <rect key="frame" x="16" y="152" width="382" height="40"/>
+                                    <rect key="frame" x="16" y="153" width="382" height="40"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRy-Fl-PWc">
-                                            <rect key="frame" x="8" y="8" width="59" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="59" id="IA1-aa-piu"/>
-                                                <constraint firstAttribute="height" constant="24" id="eAz-vt-wwp"/>
-                                            </constraints>
+                                            <rect key="frame" x="8" y="8" width="59" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -148,14 +132,10 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDN-Zy-o9L">
-                                    <rect key="frame" x="16" y="196" width="382" height="40"/>
+                                    <rect key="frame" x="16" y="197" width="382" height="40"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴대폰 번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOH-or-RUe">
-                                            <rect key="frame" x="8" y="8" width="78" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="78" id="8HM-gb-4So"/>
-                                                <constraint firstAttribute="height" constant="24" id="ck3-7t-py9"/>
-                                            </constraints>
+                                            <rect key="frame" x="8" y="8" width="78" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -178,27 +158,19 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2th-In-Noa">
-                                    <rect key="frame" x="24" y="248" width="45" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="24" id="Q93-lL-ky5"/>
-                                        <constraint firstAttribute="width" constant="45" id="pXf-ve-PhE"/>
-                                    </constraints>
+                                    <rect key="frame" x="24" y="249" width="42" height="19.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xF-ey-qoi">
-                                    <rect key="frame" x="24" y="292" width="30" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="24" id="Vhv-6D-XpY"/>
-                                        <constraint firstAttribute="width" constant="30" id="uZK-T2-hEm"/>
-                                    </constraints>
+                                    <rect key="frame" x="24" y="288.5" width="30" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Plright@keepin.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mo0-XH-8Y8">
-                                    <rect key="frame" x="122" y="248" width="153" height="24"/>
+                                    <rect key="frame" x="119" y="249" width="153" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="153" id="2RQ-Tq-YAU"/>
                                         <constraint firstAttribute="height" constant="24" id="7hG-0w-9Nh"/>
@@ -207,7 +179,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1998.06.07" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pry-4j-6Pw">
-                                    <rect key="frame" x="122" y="292" width="80" height="24"/>
+                                    <rect key="frame" x="122" y="293" width="80" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="80" id="UPG-5F-MKh"/>
                                         <constraint firstAttribute="height" constant="24" id="VI3-pg-sr2"/>
@@ -216,14 +188,10 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wkL-RB-efz">
-                                    <rect key="frame" x="16" y="406" width="382" height="40"/>
+                                    <rect key="frame" x="16" y="400" width="382" height="40"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 이용약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8j-75-HZY">
-                                            <rect key="frame" x="8" y="8" width="108" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="24" id="A3y-bQ-CNI"/>
-                                                <constraint firstAttribute="width" constant="108" id="Qeh-n9-zOp"/>
-                                            </constraints>
+                                            <rect key="frame" x="8" y="8" width="108" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -246,14 +214,10 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veA-g0-wyB">
-                                    <rect key="frame" x="16" y="450" width="382" height="40"/>
+                                    <rect key="frame" x="16" y="444" width="382" height="40"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보 처리 방침" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSc-Ys-g99">
-                                            <rect key="frame" x="8" y="8" width="127" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="127" id="p1a-Tt-ym0"/>
-                                                <constraint firstAttribute="height" constant="24" id="tRd-TY-4VD"/>
-                                            </constraints>
+                                            <rect key="frame" x="8" y="8" width="127" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -276,14 +240,10 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xU6-hG-6v6">
-                                    <rect key="frame" x="16" y="494" width="382" height="40"/>
+                                    <rect key="frame" x="16" y="488" width="382" height="40"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="의견 보내기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0V-IP-Mzx">
-                                            <rect key="frame" x="8" y="8" width="78" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="78" id="2Qo-JB-BKO"/>
-                                                <constraint firstAttribute="height" constant="24" id="Gca-sF-Fw1"/>
-                                            </constraints>
+                                            <rect key="frame" x="8" y="8" width="78" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -306,14 +266,10 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZW-ph-cCg">
-                                    <rect key="frame" x="16" y="538" width="382" height="40"/>
+                                    <rect key="frame" x="16" y="532" width="382" height="40"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Keepin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBh-Ef-HZx">
-                                            <rect key="frame" x="8" y="8" width="97" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="24" id="m4i-Bs-HmQ"/>
-                                                <constraint firstAttribute="width" constant="97" id="zQL-zT-6Ot"/>
-                                            </constraints>
+                                            <rect key="frame" x="8" y="8" width="93" height="19.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -336,7 +292,7 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iph-Cm-Y9b">
-                                    <rect key="frame" x="16" y="610" width="68" height="29"/>
+                                    <rect key="frame" x="16" y="604" width="68" height="29"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="68" id="LCR-bN-QQQ"/>
                                         <constraint firstAttribute="height" constant="29" id="anu-IL-oLE"/>
@@ -350,7 +306,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSM-uP-IuC">
-                                    <rect key="frame" x="16" y="643" width="71" height="29"/>
+                                    <rect key="frame" x="16" y="637" width="71" height="29"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="29" id="9gI-QW-LOf"/>
                                         <constraint firstAttribute="width" constant="71" id="VEB-5e-RcW"/>
