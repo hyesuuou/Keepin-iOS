@@ -117,7 +117,7 @@ extension MyPageHomeVC : UICollectionViewDataSource {
             cell.num2.font = UIFont.NotoSans(.bold, size: 16)
             cell.num2.textColor = UIColor.keepinGreen
             
-            count3 = cell.c3
+            cell.c3 = count3
             cell.num3.text = "\(count3)개"
             cell.num3.font = UIFont.NotoSans(.bold, size: 16)
             cell.num3.textColor = UIColor.keepinGreen
