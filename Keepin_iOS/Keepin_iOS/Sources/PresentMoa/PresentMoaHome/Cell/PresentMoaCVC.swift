@@ -24,5 +24,11 @@ class PresentMoaCVC: UICollectionViewCell {
     static func nib() -> UINib{
         return UINib(nibName: "PresentMoaCVC", bundle: nil)
     }
+    
+    override func prepareForReuse() {
+        presentImage.image = nil
+        presentTitle.text = nil
+        presentDate.text = nil
+    }
 
 }
