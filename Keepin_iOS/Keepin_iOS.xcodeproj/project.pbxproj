@@ -55,6 +55,8 @@
 		71210D50269C931C00568982 /* MyPageHomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71210D4F269C931C00568982 /* MyPageHomeDataManager.swift */; };
 		71210D52269C934C00568982 /* MyPageHomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71210D51269C934C00568982 /* MyPageHomeResponse.swift */; };
 		713D383C269D64C500BABA1E /* MyPageFriendResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713D383B269D64C500BABA1E /* MyPageFriendResponse.swift */; };
+		71677CDD26A07DD1004BC692 /* MyPagePresentMoaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71677CDC26A07DD1004BC692 /* MyPagePresentMoaResponse.swift */; };
+		71677CDF26A07DFA004BC692 /* MyPagePresentMoaDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71677CDE26A07DFA004BC692 /* MyPagePresentMoaDataManager.swift */; };
 		717A024F269ACF9E00241171 /* MyPageEditNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717A024D269ACF9E00241171 /* MyPageEditNameVC.swift */; };
 		717A0250269ACF9E00241171 /* MyPageEditNameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717A024E269ACF9E00241171 /* MyPageEditNameVC.xib */; };
 		717A0253269ACFC800241171 /* MyPageEditPwVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717A0251269ACFC800241171 /* MyPageEditPwVC.swift */; };
@@ -196,6 +198,8 @@
 		71210D4F269C931C00568982 /* MyPageHomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHomeDataManager.swift; sourceTree = "<group>"; };
 		71210D51269C934C00568982 /* MyPageHomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHomeResponse.swift; sourceTree = "<group>"; };
 		713D383B269D64C500BABA1E /* MyPageFriendResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageFriendResponse.swift; sourceTree = "<group>"; };
+		71677CDC26A07DD1004BC692 /* MyPagePresentMoaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePresentMoaResponse.swift; sourceTree = "<group>"; };
+		71677CDE26A07DFA004BC692 /* MyPagePresentMoaDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePresentMoaDataManager.swift; sourceTree = "<group>"; };
 		717A024D269ACF9E00241171 /* MyPageEditNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageEditNameVC.swift; sourceTree = "<group>"; };
 		717A024E269ACF9E00241171 /* MyPageEditNameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageEditNameVC.xib; sourceTree = "<group>"; };
 		717A0251269ACFC800241171 /* MyPageEditPwVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageEditPwVC.swift; sourceTree = "<group>"; };
@@ -491,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				71D5D479269E8704004D9CC7 /* MyPageDetailDataManager.swift */,
+				71677CDE26A07DFA004BC692 /* MyPagePresentMoaDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -499,6 +504,7 @@
 			isa = PBXGroup;
 			children = (
 				71D5D477269E86DD004D9CC7 /* MyPageDetailResponse.swift */,
+				71677CDC26A07DD1004BC692 /* MyPagePresentMoaResponse.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -1067,6 +1073,7 @@
 				7719B5B1269C049400CBBB11 /* Token.swift in Sources */,
 				71E265C52699D80900BD6840 /* KeepinPlusFriendVC.swift in Sources */,
 				71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */,
+				71677CDF26A07DFA004BC692 /* MyPagePresentMoaDataManager.swift in Sources */,
 				71C197AD26975103004C0490 /* MyPageProfileVC.swift in Sources */,
 				71AC81872692D77B00758994 /* MyPageDetailTopCVC.swift in Sources */,
 				71D5D47D269EB7C6004D9CC7 /* NavigationBarCVC.swift in Sources */,
@@ -1116,6 +1123,7 @@
 				71E1324126987EFD00DB2D9F /* MyPageHomeTopCVC.swift in Sources */,
 				71E1324926987F5200DB2D9F /* MyPageHomeFriendCVC.swift in Sources */,
 				7719B5D2269C45B800CBBB11 /* SearchRequest.swift in Sources */,
+				71677CDD26A07DD1004BC692 /* MyPagePresentMoaResponse.swift in Sources */,
 				7719B593269AC9BC00CBBB11 /* ReminderTVC.swift in Sources */,
 				152ED3B3269FD6160098BDD0 /* HomeTopSingleTVC.swift in Sources */,
 				15C1223A2693077E00838E55 /* EmailLoginVC.swift in Sources */,
