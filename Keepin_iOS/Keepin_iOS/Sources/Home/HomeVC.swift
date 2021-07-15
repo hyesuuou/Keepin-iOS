@@ -19,7 +19,6 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         registerXib()
         initRefresh()
-        setNavigationBarUI()
         
         homeTableview.backgroundColor = .none
         homeTableview.allowsSelection = false
@@ -27,6 +26,10 @@ class HomeVC: UIViewController {
         HomeDataManager().getRandom(self)
         HomeDataManager().getReminderHome(self)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setNavigationBarUI()
     }
     
     func setNavigationBarUI(){
