@@ -43,7 +43,7 @@ class PresentDetailVC: UIViewController {
         PresentDetailDataManager().details(keepinIdx, viewController: self)
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 375, height: 375)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
         layout.scrollDirection = .horizontal
         presentDetailCV.collectionViewLayout = layout
         presentDetailCV.isPagingEnabled = true
@@ -138,11 +138,6 @@ extension PresentDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        return CGSize(width: 375, height: 375)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
@@ -150,7 +145,6 @@ extension PresentDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
     
 }
 
