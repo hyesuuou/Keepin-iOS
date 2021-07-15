@@ -28,6 +28,7 @@ class ReminderVC: UIViewController {
     @IBOutlet weak var monthCV: UICollectionView!
     @IBOutlet weak var selectedMonth: UIImageView!
     @IBOutlet weak var selectedMonthLabel: UILabel!
+    @IBOutlet weak var tvBackground: UIView!
     @IBOutlet weak var reminderTV: UITableView!
     
     var itemNum = 3
@@ -69,7 +70,7 @@ class ReminderVC: UIViewController {
         yearLabel.text = Date().yearOnly()
         reminderTV.backgroundColor = .keepinGray
         reminderTV.contentInset.bottom = 50
-        
+        tvBackground.backgroundColor = .keepinGray
 //        let date = Date().monthOnly()
 //        sample = date
     }
@@ -187,6 +188,7 @@ extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIScreen.main.bounds.height * (64 / 812)
     }
+    
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0{
