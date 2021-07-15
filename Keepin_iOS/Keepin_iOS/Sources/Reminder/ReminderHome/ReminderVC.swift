@@ -113,20 +113,25 @@ class ReminderVC: UIViewController {
 }
 
 extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let layout = self.monthCV.collectionViewLayout as! UICollectionViewFlowLayout
-
-        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
-
-        var offset = targetContentOffset.pointee
-        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
-        let roundedIndex = round(index)
-        sample = Int(roundedIndex)
-        offset = CGPoint(x: CGFloat(roundedIndex * cellWidthIncludingSpacing) - scrollView.contentInset.left, y: -scrollView.contentInset.top)
-        targetContentOffset.pointee = offset
     
-        monthCV.reloadData()
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if scrollView == monthCV {
+            let layout = self.monthCV.collectionViewLayout as! UICollectionViewFlowLayout
+            
+            let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+            
+            var offset = targetContentOffset.pointee
+            let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
+            let roundedIndex = round(index)
+            sample = Int(roundedIndex)
+            offset = CGPoint(x: CGFloat(roundedIndex * cellWidthIncludingSpacing) - scrollView.contentInset.left, y: -scrollView.contentInset.top)
+            targetContentOffset.pointee = offset
+            
+            monthCV.reloadData()
+        }
+        else if scrollView == reminderTV {
+            //print("나오니..?")
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -154,6 +159,12 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
 }
 
 extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (reminderTV.contentOffset.y < 0){
+            reminderTV.contentOffset = CGPoint(x: 0, y: 0)
+        }
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return itemNum
