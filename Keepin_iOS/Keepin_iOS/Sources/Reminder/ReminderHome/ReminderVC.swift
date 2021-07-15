@@ -25,24 +25,22 @@ class ReminderVC: UIViewController {
         }
     }
     @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var monthCV: UICollectionView!{
-        didSet{
-            monthCV.decelerationRate = .fast
-            monthCV.isPagingEnabled = false
-        }
-    }
+    @IBOutlet weak var monthCV: UICollectionView!
     @IBOutlet weak var selectedMonth: UIImageView!
+    @IBOutlet weak var selectedMonthLabel: UILabel!
     @IBOutlet weak var reminderTV: UITableView!
     
     var itemNum = 3
     var page : Int = 0
     var navigationLeftLabel : String = "편집"
     var months = ["","","1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월","",""]
-    private var indexOfCellBeforeDragging = 0
+    var sample : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.navigationBar.isHidden = false
+        
         setNavigationBar()
         setUI()
         
@@ -52,11 +50,15 @@ class ReminderVC: UIViewController {
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
+        
         monthCV.collectionViewLayout = layout
+        monthCV.decelerationRate = .fast
         monthCV.isPagingEnabled = false
+        monthCV.backgroundColor = .clear
         monthCV.register(ReminderCVC.nib(), forCellWithReuseIdentifier: "ReminderCVC")
         monthCV.delegate = self
         monthCV.dataSource = self
+        
         
         reminderTV.register(ReminderTVC.nib(), forCellReuseIdentifier: "ReminderTVC")
         reminderTV.delegate = self
@@ -67,6 +69,9 @@ class ReminderVC: UIViewController {
         yearLabel.text = Date().yearOnly()
         reminderTV.backgroundColor = .keepinGray
         reminderTV.contentInset.bottom = 50
+        
+//        let date = Date().monthOnly()
+//        sample = date
     }
 
     func setNavigationBar(){
@@ -102,36 +107,26 @@ class ReminderVC: UIViewController {
         ReminderAddNVC.modalPresentationStyle = .fullScreen
         self.present(ReminderAddNVC, animated: true, completion: nil)
     }
+    
+    
 
 }
 
 extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-    
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
 
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let layout = self.monthCV.collectionViewLayout as! UICollectionViewFlowLayout
 
         let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
 
-
         var offset = targetContentOffset.pointee
         let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
-        var roundedIndex = round(index)
-
-
-        print(roundedIndex)
-        print(layout.minimumLineSpacing)
-        print(layout.itemSize.width)
-
-
-        if scrollView.contentOffset.x > targetContentOffset.pointee.x {
-            roundedIndex = floor(index)
-        }else{
-            roundedIndex = ceil(index)
-        }
-
+        let roundedIndex = round(index)
+        sample = Int(roundedIndex)
         offset = CGPoint(x: CGFloat(roundedIndex * cellWidthIncludingSpacing) - scrollView.contentInset.left, y: -scrollView.contentInset.top)
         targetContentOffset.pointee = offset
+    
+        monthCV.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -141,6 +136,14 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = monthCV.dequeueReusableCell(withReuseIdentifier: "ReminderCVC", for: indexPath) as! ReminderCVC
         cell.monthLabel.text = months[indexPath.row]
+        
+        if indexPath.row == sample + 2{
+            cell.setColor(color: UIColor.white, font: true)
+        }
+        else {
+            cell.setColor(color: UIColor.gray, font: false)
+        }
+        
         return cell
     }
 
