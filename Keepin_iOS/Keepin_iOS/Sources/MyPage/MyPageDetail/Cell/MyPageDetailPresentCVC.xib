@@ -31,17 +31,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구 메모" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuG-Oy-4AX">
-                                <rect key="frame" x="18" y="18" width="65" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="65" id="L5m-X0-5Ym"/>
-                                    <constraint firstAttribute="height" constant="18" id="rUV-5N-Ecp"/>
-                                </constraints>
+                                <rect key="frame" x="18" y="18" width="60" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Aqu-XN-KkC">
-                                <rect key="frame" x="5.5" y="60" width="307" height="122"/>
+                                <rect key="frame" x="5.5" y="61.5" width="307" height="120.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="307" id="tqB-s7-hkq"/>

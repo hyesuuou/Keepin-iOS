@@ -30,24 +30,22 @@ class MyPageDetailTopCVC: UICollectionViewCell {
     @IBOutlet weak var view4: UIView!
     @IBOutlet weak var view5: UIView!
     
+    @IBOutlet weak var allPresentPad: NSLayoutConstraint!
+    
+    @IBOutlet weak var givePresentPad: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        /*
-        userLabel.font = UIFont.GmarketSansTTF(.medium, size: 20)
-        
-        let attributedStr = NSMutableAttributedString(string: userLabel.text!)
-        attributedStr.addAttribute(.foregroundColor, value: UIColor.keepinGreen, range: (userLabel.text! as NSString).range(of: "\(userName)"))
-        userLabel.attributedText = attributedStr*/
-        
         
         allPresent.font = UIFont.NotoSans(.regular, size: 14)
         allPresent.text = "총 선물"
+        allPresent.textColor = .keepinGray5
         receivePresent.font = UIFont.NotoSans(.regular, size: 14)
         receivePresent.text = "받은 선물"
+        receivePresent.textColor = .keepinGray5
         givePresent.font=UIFont.NotoSans(.regular, size: 14)
         givePresent.text = "준 선물"
+        givePresent.textColor = .keepinGray5
         
         number1.font = UIFont.NotoSans(.bold, size: 16)
         number1.text = "2개"
@@ -69,6 +67,12 @@ class MyPageDetailTopCVC: UICollectionViewCell {
         view1.layer.cornerRadius = 12
         view5.layer.cornerRadius = 12
         
+    }
+    
+    func setAuto(){
+        allPresentPad.constant = UIScreen.main.bounds.width * (36/375)
+        givePresentPad.constant = UIScreen.main.bounds.width * (
+            31.5/375)
     }
 
 }
