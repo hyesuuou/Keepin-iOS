@@ -23,8 +23,10 @@ class MyPageHomeTopCVC: UICollectionViewCell {
     @IBOutlet weak var stackView2: UIView!
     
     @IBOutlet weak var present1: UILabel!
+    @IBOutlet weak var present1pad: NSLayoutConstraint!
     @IBOutlet weak var present2: UILabel!
     @IBOutlet weak var present3: UILabel!
+    @IBOutlet weak var present3pad: NSLayoutConstraint!
     
     @IBOutlet weak var num1: UILabel!
     @IBOutlet weak var num2: UILabel!
@@ -50,6 +52,13 @@ class MyPageHomeTopCVC: UICollectionViewCell {
         present3.font = UIFont.NotoSans(.regular, size: 14)
         present3.textColor = UIColor.keepinGray5
         
+        setAuto()
+        
+    }
+    
+    func setAuto(){
+        present1pad.constant = UIScreen.main.bounds.width * (36/375)
+        present3pad.constant = UIScreen.main.bounds.width * (31.5/375)
     }
     
     
