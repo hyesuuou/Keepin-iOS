@@ -193,9 +193,12 @@ extension PresentDetailVC {
             indicatorBackground.isHidden = false
         }
         
-        for i in 0...(serverData?.category.count)!-1{
-            cateButtons[i].cateImage(category: (serverData?.category[i])!)
+        if (serverData?.category.count)! > 0{
+            for i in 0...(serverData?.category.count)!-1{
+                cateButtons[i].cateImage(category: (serverData?.category[i])!)
+            }
         }
+        
 
     }
     

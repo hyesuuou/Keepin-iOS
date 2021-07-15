@@ -84,6 +84,11 @@ class PresentMoaVC: UIViewController {
         self.dismissKeyboardWhenTappedAround()
         
         PresentMoaHomeDataManager().got("true", viewController: self)
+        
+        let layout = UICollectionViewFlowLayout()
+        let deviceWidth = (UIScreen.main.bounds.width - 40)-2
+        layout.itemSize = CGSize(width: deviceWidth/2, height: 228)
+        presentCV.collectionViewLayout = layout
     }
     
     func setUI(){
@@ -137,16 +142,6 @@ extension PresentMoaVC : UICollectionViewDelegate, UICollectionViewDataSource, U
         cell.presentDate.text = serverData?.keepins[indexPath.row]?.date
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let padding: CGFloat = 10
-        let collectionViewSize = collectionView.frame.size.width - padding
-                
-        return CGSize(width: collectionViewSize/2, height: 228)
-    }
-    
-    
 }
 
 extension PresentMoaVC {
