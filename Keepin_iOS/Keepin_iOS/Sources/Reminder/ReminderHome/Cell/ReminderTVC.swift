@@ -18,6 +18,7 @@ class ReminderTVC: UITableViewCell {
         reminderTitle.font = UIFont.GmarketSansTTF(.medium, size: 16)
         reminderTitle.textColor = .keepinGray5
         alarmOn.set(width: 44, height: 24)
+        alarmOn.isOn = true
         backgronudImg.image = UIImage(named: "listReminderNotimportant")
     }
 
