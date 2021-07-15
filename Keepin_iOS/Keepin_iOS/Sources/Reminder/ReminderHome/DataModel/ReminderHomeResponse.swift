@@ -23,3 +23,10 @@ struct MonthReminder: Decodable{
     var title : String?
     var date : String?
 }
+
+struct ReminderDetailResponse: Decodable{
+    var status : Int?
+    var message : String?
+    var data : MonthReminder?
+}
+

@@ -15,9 +15,24 @@ class ReminderAddVC: UIViewController {
     @IBOutlet weak var remindLabel: UILabel!
     @IBOutlet weak var remindSwitch: UISwitch!
     
+    @IBAction func switchClicked(_ sender: UISwitch) {
+        if ReminderAddVC.fromEdit{
+            activatedDoneButton()
+        }
+    }
+    @IBOutlet weak var importantButton: UIButton!
+    
     @IBAction func importantButtonClicked(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
+        if ReminderAddVC.fromEdit{
+            activatedDoneButton()
+        }
     }
+    
+    static var reminderID : String = ""
+    static var fromEdit : Bool = false
+    
+    var serverData : MonthReminder?
     
     var list = ["당일 (오전 9:00)",
                 "1일 전 (오전 9:00)",
@@ -29,7 +44,9 @@ class ReminderAddVC: UIViewController {
         super.viewDidLoad()
         
         self.dismissKeyboardWhenTappedAround()
-        
+        if ReminderAddVC.fromEdit{
+            ReminderHomeDataManager().reminders(ReminderAddVC.reminderID, viewController: self)
+        }
         setUI()
         setNavigationBar()
         eventTextField.delegate = self
@@ -59,9 +76,14 @@ class ReminderAddVC: UIViewController {
     }
     
     @objc func toDone(){
-        self.presentAlert(title: "", message: "이벤트가 등록되었습니다", isCancelActionIncluded: true) { action in
-                self.dismiss(animated: true, completion: nil)
-            }
+        if ReminderAddVC.fromEdit == true{
+            //이벤트가 수정되었습니다
+        }
+        else{
+            self.presentAlert(title: "", message: "이벤트가 등록되었습니다", isCancelActionIncluded: true) { action in
+                    self.dismiss(animated: true, completion: nil)
+                }
+        }
     }
     
     func setNavigationBar(){
@@ -80,6 +102,8 @@ class ReminderAddVC: UIViewController {
     }
     
     @objc func toDismiss(){
+        ReminderAddVC.reminderID = ""
+        ReminderAddVC.fromEdit = false
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -103,6 +127,7 @@ class ReminderAddVC: UIViewController {
         remindLabel.addGestureRecognizer(remindTapGesture)
         
         remindSwitch.isOn = true
+        importantButton.isSelected = false
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -117,6 +142,9 @@ class ReminderAddVC: UIViewController {
     //데이트피커 실시간 반영 selector
     @objc func onDatePickerValueChanged(datePicker: UIDatePicker) {
         dateLabel.text = datePicker.date.toString()
+        if ReminderAddVC.fromEdit{
+            activatedDoneButton()
+        }
     }
     
     //오늘날짜를 터치하면
@@ -161,7 +189,36 @@ extension ReminderAddVC : UIPickerViewDelegate, UIPickerViewDataSource{
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if ReminderAddVC.fromEdit{
+            activatedDoneButton()
+        }
         remindLabel.text = String(list[row].prefix(list[row].count - 9))
     }
 }
+
+extension ReminderAddVC {
+    func didSuccessReminderDetail(message: String) {
+        dateLabel.text = (serverData?.date)!
+        eventTextField.text = serverData?.title
+        
+        let alarmStatus = (serverData?.isAlarm)!
+        
+        if alarmStatus{
+            remindSwitch.isOn = true
+        }
+        else{
+            remindSwitch.isOn = false
+        }
+        
+        let importantStatus = (serverData?.isImportant)!
+        if importantStatus{
+            importantButton.isSelected = true
+        }
+    }
+    
+    func failedToRequest(message: String) { 
+        print(message)
+    }
+}
+
 

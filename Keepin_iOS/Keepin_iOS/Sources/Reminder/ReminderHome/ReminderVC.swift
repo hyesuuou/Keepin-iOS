@@ -190,6 +190,12 @@ extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.section)
+        ReminderAddVC.reminderID = (serverData?.reminders[indexPath.section]?._id)!
+        ReminderAddVC.fromEdit = true
+        
+        let ReminderAddNVC = UINavigationController(rootViewController: ReminderAddVC())
+        ReminderAddNVC.modalPresentationStyle = .fullScreen
+        present(ReminderAddNVC, animated: true, completion: nil)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
