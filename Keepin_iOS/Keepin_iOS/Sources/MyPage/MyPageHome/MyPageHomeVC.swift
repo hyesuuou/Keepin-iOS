@@ -34,6 +34,7 @@ class MyPageHomeVC: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(toPush(_:)), name: NSNotification.Name(rawValue: "push"), object: nil)
+        
     }
 
     @objc func toPush(_ notification: NSNotification){
@@ -41,13 +42,14 @@ class MyPageHomeVC: UIViewController {
         //nextVC.friendIdx = MyPageHomeDataManager.friendList[MyPageHomeVC.index].id
         if let data = notification.object as? String{
             print(data)
+            nextVC.friendIdx = data
         }
         //nextVC.friendIdx = notification.object as? String
         //print(nextVC.friendIdx)
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(MyPageDetailVC(), animated: true)
         self.hidesBottomBarWhenPushed = false
-    
+        
     }
     
     
@@ -195,7 +197,7 @@ extension MyPageHomeVC : UICollectionViewDelegateFlowLayout{
 
 extension MyPageHomeVC{
     func didSuccessGetUser(message: String){
-        print("서버통신 성공!")
+        print("마이페이지 메인 상단뷰 서버통신 성공!")
         myPageHomeCV.delegate = self
         myPageHomeCV.dataSource = self
         myPageHomeCV.reloadData()
