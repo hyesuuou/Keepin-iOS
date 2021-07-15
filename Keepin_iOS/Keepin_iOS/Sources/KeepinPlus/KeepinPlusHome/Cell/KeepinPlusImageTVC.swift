@@ -18,6 +18,8 @@ class KeepinPlusImageTVC: UITableViewCell, UIImagePickerControllerDelegate, UINa
     
     @IBOutlet var imagePlusButton: [UIButton]!
     
+    @IBOutlet weak var imageContainerConstraint: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         imageContainerView[0].isHidden = true
@@ -39,6 +41,8 @@ class KeepinPlusImageTVC: UITableViewCell, UIImagePickerControllerDelegate, UINa
     }
     
     func setButtonUI(){
+        imageContainerConstraint.constant = UIScreen.main.bounds.width * (102/375)
+        
         imagePlusButton[0].backgroundColor = .keepinGray1
         imagePlusButton[1].backgroundColor = .keepinGray1
         imagePlusButton[2].backgroundColor = .keepinGray1
