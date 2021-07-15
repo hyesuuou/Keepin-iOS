@@ -27,15 +27,13 @@ class ReminderVC: UIViewController {
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var monthCV: UICollectionView!
     @IBOutlet weak var selectedMonth: UIImageView!
-    @IBOutlet weak var selectedMonthLabel: UILabel!
     @IBOutlet weak var tvBackground: UIView!
     @IBOutlet weak var reminderTV: UITableView!
     
-    var itemNum = 3
-    var page : Int = 0
     var navigationLeftLabel : String = "편집"
     var months = ["","","1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월","",""]
     var sample : Int = 0
+    var sampleData : [String] = ["박윤정 생일","혜수 돌잔치","박윤정 생일2"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +69,7 @@ class ReminderVC: UIViewController {
         reminderTV.backgroundColor = .keepinGray
         reminderTV.contentInset.bottom = 50
         tvBackground.backgroundColor = .keepinGray
+        reminderTV.separatorStyle = .none
 //        let date = Date().monthOnly()
 //        sample = date
     }
@@ -130,9 +129,6 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
             
             monthCV.reloadData()
         }
-        else if scrollView == reminderTV {
-            //print("나오니..?")
-        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -168,7 +164,7 @@ extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return itemNum
+        return sampleData.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -182,11 +178,17 @@ extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = reminderTV.dequeueReusableCell(withIdentifier: "ReminderTVC", for: indexPath) as! ReminderTVC
         cell.backgroundColor = .keepinGray
+        cell.reminderTitle.text = sampleData[indexPath.section]
+
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = .clear
+        cell.selectedBackgroundView = backgroundView
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UIScreen.main.bounds.height * (64 / 812)
+//        return UIScreen.main.bounds.height * (64/812)
+        return 64
     }
     
     
@@ -204,5 +206,19 @@ extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
         headerView.backgroundColor = .keepinGray
         return headerView
     }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                reminderTV.beginUpdates()
+                sampleData.remove(at: indexPath.section)
+                let indexSet = NSMutableIndexSet()
+                indexSet.add(indexPath.section)
+                tableView.deleteSections(indexSet as IndexSet, with: .fade)
+                reminderTV.endUpdates()
+            }
+        }
     
 }
