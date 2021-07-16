@@ -5,8 +5,8 @@
 //  Created by Yi Joon Choi on 2021/07/08.
 //
 
-import UIKit
 import Kingfisher
+import UIKit
 
 class AfterCatVC: UIViewController {
 

@@ -39,7 +39,7 @@ class MyPageHomeDataManager{
                     //viewController.friendServerData = response.data
                     
                     MyPageHomeDataManager.friendList = response.data.friends
-                    viewController.didSuccessGetFriend(friendList: MyPageHomeDataManager.friendList)
+                    viewController.didSuccessGetFriend(friendList: response.data.friends)
                     print(MyPageHomeDataManager.friendList)
                     
                 case .failure(let error):

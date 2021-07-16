@@ -8,13 +8,14 @@
 import UIKit
 
 class SearchVC: UIViewController {
-
+    //MARK: - IBOutlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchBarDivider: UIImageView!
     @IBOutlet weak var categoryView: UIView!
     @IBOutlet var categoryButton: [UIButton]!
     @IBOutlet weak var searchResultCV: UICollectionView!
     
+    //MARK: - IBActions
     @IBAction func categoryButtonClicked(_ sender: UIButton) {
         let index = categoryButton.firstIndex(of: sender)!
         let nextVC = AfterCatVC()
@@ -48,12 +49,13 @@ class SearchVC: UIViewController {
         }
     }
     
+    //MARK: - Custom Variables
     var itemNum : Int = 0
     var presentList : [Keepin?] = []
     var filteredData: [Keepin?] = []
-
     var serverData : Keepins?
     
+    //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
@@ -67,6 +69,7 @@ class SearchVC: UIViewController {
         searchResultCV.dataSource = self
     }
 
+    //MARK: - Custom Methods
     func setNavigationBar(){
         let exitButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
         exitButton.setImage(UIImage(named: "icX"), for: UIControl.State.normal)
@@ -74,19 +77,13 @@ class SearchVC: UIViewController {
         exitButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
 
         let exitbarButton = UIBarButtonItem(customView: exitButton)
-        let negativeSpacer:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.fixedSpace, target: nil, action: nil)
-            negativeSpacer.width = -20
-//        self.navigationItem.leftBarButtonItems = [negativeSpacer,exitbarButton]
         self.navigationItem.leftBarButtonItem = exitbarButton
         
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = false
     }
     
-    @objc func dismissScreen(){
-        self.dismiss(animated: true, completion: nil)
-    }
-
+    
     func setSearchBar(){
         searchBar.barTintColor = .white
         if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
@@ -105,9 +102,16 @@ class SearchVC: UIViewController {
         }
         searchBar.backgroundImage = UIImage()
     }
+    
+    //MARK: - @objc Methods
+    @objc func dismissScreen(){
+        self.dismiss(animated: true, completion: nil)
+    }
+
 
 }
 
+//MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension SearchVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -149,6 +153,7 @@ extension SearchVC : UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
 }
 
+//MARK: - Server Functions
 extension SearchVC : UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField

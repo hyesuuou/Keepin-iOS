@@ -5,11 +5,11 @@
 //  Created by Yi Joon Choi on 2021/06/30.
 //
 
-import UIKit
 import Kingfisher
+import UIKit
 
 class PresentDetailVC: UIViewController {
-
+    //MARK: - IBOutlets
     @IBOutlet weak var presentDetailCV: UICollectionView!
     @IBOutlet weak var presentDetailCVHeight: NSLayoutConstraint!
     @IBOutlet weak var indicatorBackground: UIImageView!
@@ -28,6 +28,7 @@ class PresentDetailVC: UIViewController {
     
     @IBOutlet weak var date: UILabel!
     
+    //MARK: - Custom Variables
     var fromWho : String = ""
     var friendCount : Int = 0
     let viewSizeWidth : CGFloat = UIScreen.main.bounds.width
@@ -35,6 +36,7 @@ class PresentDetailVC: UIViewController {
     var keepinIdx : String = ""
     var serverData : Details?
     
+    //MARK: - LifeCycle Methods
     override func viewDidLoad() { 
         super.viewDidLoad()
         
@@ -50,6 +52,7 @@ class PresentDetailVC: UIViewController {
         presentDetailCV.isPagingEnabled = true
     }
 
+    //MARK: - Custom Methods
     func setUI(){
         presentDetailCVHeight.constant = viewSizeWidth
         divider.backgroundColor = .keepinGray2
@@ -85,6 +88,7 @@ class PresentDetailVC: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
     }
     
+    //MARK: - @objc Methods
     @objc func toBack(){
         self.navigationController?.popViewController(animated: true)
     }
@@ -110,6 +114,7 @@ class PresentDetailVC: UIViewController {
     }
 }
 
+//MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension PresentDetailVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -150,6 +155,7 @@ extension PresentDetailVC : UICollectionViewDelegate, UICollectionViewDataSource
     
 }
 
+//MARK: - Server Functions
 extension PresentDetailVC {
     func didSuccessDetail(message: String) {
         presentDetailCV.register(PresentDetailCVC.nib(), forCellWithReuseIdentifier: "PresentDetailCVC")

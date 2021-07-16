@@ -6,3 +6,29 @@
 //
 
 import Foundation
+
+// MARK: - Empty
+struct MyPagePresentMoaResponse: Codable {
+    let status: Int
+    let message: String
+    let data: PresentDataClass
+}
+
+// MARK: - DataClass
+struct PresentDataClass: Codable {
+    let keepins: [KeepinList]
+}
+
+// MARK: - Keepin
+struct KeepinList: Codable {
+    let id, title: String
+    let photo: String
+    let date: String
+    let taken: Bool
+
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case title, photo, date, taken
+    }
+}
+

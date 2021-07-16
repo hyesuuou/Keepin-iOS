@@ -27,10 +27,6 @@ class FriendListCVC: UICollectionViewCell {
     func setData(title: String){
         friendName.text = title
     }
-    
-    /*
-    @IBAction func tofriend(_ sender: Any) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "push"), object: nil)
-    }*/
+
     
 }

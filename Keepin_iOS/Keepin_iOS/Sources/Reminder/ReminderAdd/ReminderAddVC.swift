@@ -8,19 +8,20 @@
 import UIKit
 
 class ReminderAddVC: UIViewController {
-
+    //MARK: - IBOutlets
     @IBOutlet weak var eventTextField: UITextField!
     @IBOutlet var dividerView: [UIView]!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var remindLabel: UILabel!
     @IBOutlet weak var remindSwitch: UISwitch!
+    @IBOutlet weak var importantButton: UIButton!
     
+    //MARK: - IBActions
     @IBAction func switchClicked(_ sender: UISwitch) {
         if ReminderAddVC.fromEdit{
             activatedDoneButton()
         }
     }
-    @IBOutlet weak var importantButton: UIButton!
     
     @IBAction func importantButtonClicked(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -29,17 +30,17 @@ class ReminderAddVC: UIViewController {
         }
     }
     
+    //MARK: - Custom Variables
     static var reminderID : String = ""
     static var fromEdit : Bool = false
-    
     var serverData : MonthReminder?
-    
     var list = ["당일 (오전 9:00)",
                 "1일 전 (오전 9:00)",
                 "2일 전 (오전 9:00)",
                 "3일 전 (오전 9:00)",
                 "1주일 전 (오전 9:00)"]
     
+    //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,6 +53,7 @@ class ReminderAddVC: UIViewController {
         eventTextField.delegate = self
     }
     
+    //MARK: - Custom Methods
     func nonactivatedDoneButton(){
         let doneButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
         doneButton.setTitle("완료", for: .normal)
@@ -75,21 +77,6 @@ class ReminderAddVC: UIViewController {
         self.navigationItem.rightBarButtonItem = donebarButton
     }
     
-    @objc func toDone(){
-        if ReminderAddVC.fromEdit == true{
-            //이벤트가 수정되었습니다
-            //수정 서버 통신
-            self.presentAlert(title: "", message: "수정이 완료되었습니다", isCancelActionIncluded: true) { action in
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
-        else{
-            self.presentAlert(title: "", message: "이벤트가 등록되었습니다", isCancelActionIncluded: false) { action in
-                    self.dismiss(animated: true, completion: nil)
-                }
-        }
-    }
-    
     func setNavigationBar(){
         let dismissButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
         dismissButton.setImage(UIImage(named: "icX"), for: UIControl.State.normal)
@@ -104,13 +91,6 @@ class ReminderAddVC: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = false
     }
-    
-    @objc func toDismiss(){
-        ReminderAddVC.reminderID = ""
-        ReminderAddVC.fromEdit = false
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     
     func setUI(){
         eventTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
@@ -132,6 +112,50 @@ class ReminderAddVC: UIViewController {
         
         remindSwitch.isOn = true
         importantButton.isSelected = false
+    }
+    
+    //MARK: - @objc Methods
+    @objc func toDone(){
+        if ReminderAddVC.fromEdit == true{
+            //이벤트가 수정되었습니다
+            var days : String? = nil
+            if remindSwitch.isOn{
+                if remindLabel.text == "당일"{
+                    days = "0"
+                }
+                else if remindLabel.text == "1일 전"{
+                    days = "1"
+                }
+                else if remindLabel.text == "2일 전"{
+                    days = "2"
+                }
+                else if remindLabel.text == "3일 전"{
+                    days = "3"
+                }
+                else if remindLabel.text == "일주일 전"{
+                    days = "7"
+                }
+            }
+            
+            let newDate = dateLabel.text!.replacingOccurrences(of: ".", with: "-", options: .literal, range: nil)
+            let request = ReminderDetailRequest(title: eventTextField.text, date: newDate, isAlarm: remindSwitch.isOn, daysAgo: days, isImportant: importantButton.isSelected)
+            ReminderDetailDataManager().reminderEdit(ReminderAddVC.reminderID, modified: request, viewController: self)
+            //수정 서버 통신
+            self.presentAlert(title: "", message: "수정이 완료되었습니다", isCancelActionIncluded: true) { action in
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        else{
+            self.presentAlert(title: "", message: "이벤트가 등록되었습니다", isCancelActionIncluded: false) { action in
+                    self.dismiss(animated: true, completion: nil)
+                }
+        }
+    }
+    
+    @objc func toDismiss(){
+        ReminderAddVC.reminderID = ""
+        ReminderAddVC.fromEdit = false
+        self.dismiss(animated: true, completion: nil)
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -171,6 +195,7 @@ class ReminderAddVC: UIViewController {
 
 }
 
+//MARK: - UITextFieldDelegate
 extension ReminderAddVC : UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
        guard let text = textField.text else { return true }
@@ -200,6 +225,7 @@ extension ReminderAddVC : UIPickerViewDelegate, UIPickerViewDataSource{
     }
 }
 
+//MARK: - Server Functions
 extension ReminderAddVC {
     func didSuccessReminderDetail(message: String) {
         dateLabel.text = (serverData?.date)!
