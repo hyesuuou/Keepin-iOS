@@ -20,9 +20,6 @@ class MyPageDetailMemoCVC: UICollectionViewCell {
     
     public static let identifier = "MyPageDetailMemoCVC"
     
-    //static var presentName : [String] = []
-    //static var presentData : [String] = []
-    
     static var friend :  String = ""
     var test : [String] = []
     var testTwo : [String] = []
@@ -34,23 +31,12 @@ class MyPageDetailMemoCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        indicatorBar.backgroundColor = .keepinGreen
-        
         presentMoaCV.delegate = self
         presentMoaCV.dataSource = self
         
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 165, height: 228)
-        presentMoaCV.collectionViewLayout = layout
-        
-        presentMoaCV.frame.size.height = presentMoaCV.contentSize.height
-        print(presentMoaCV.contentSize.height)
         registerXib()
         setUI()
         
-        stackWidth.constant = UIScreen.main.bounds.width * (88/375)
-
-        indicatorStart.constant = UIScreen.main.bounds.width * (72.5/375)
         MyPagePresentMoaDataManager().gotPresent(MyPageDetailMemoCVC.friend,viewController: MyPageDetailVC())
         
     }
@@ -87,7 +73,18 @@ class MyPageDetailMemoCVC: UICollectionViewCell {
         
         got.isSelected = true
         gave.isSelected = false
+        
+        indicatorBar.backgroundColor = .keepinGreen
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 165, height: 228)
+        presentMoaCV.collectionViewLayout = layout
+        
+        presentMoaCV.frame.size.height = presentMoaCV.contentSize.height
+        
+        stackWidth.constant = UIScreen.main.bounds.width * (88/375)
 
+        indicatorStart.constant = UIScreen.main.bounds.width * (72.5/375)
     }
     
     

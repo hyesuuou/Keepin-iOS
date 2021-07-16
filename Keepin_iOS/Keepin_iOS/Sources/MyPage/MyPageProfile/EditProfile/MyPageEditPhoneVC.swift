@@ -16,11 +16,18 @@ class MyPageEditPhoneVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setStyle()
+        setTarget()
+    }
+    
+    func setStyle(){
         phoneLabel.font = UIFont.NotoSans(.regular, size: 16)
 
         doneButton.tintColor = .keepinGray3
         doneButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
-        
+    }
+    
+    func setTarget(){
         textField.addTarget(self, action: #selector(textFieldDidChange(_sender:)), for: .editingChanged)
     }
 

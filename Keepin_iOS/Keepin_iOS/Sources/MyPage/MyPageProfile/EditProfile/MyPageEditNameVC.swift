@@ -18,6 +18,10 @@ class MyPageEditNameVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setStyle()
+    }
+    
+    func setStyle(){
         nameLabel.font = UIFont.NotoSans(.regular, size: 16)
         nameLabel.textColor = .keepinBlack
         

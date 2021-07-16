@@ -19,12 +19,15 @@ class MyPageHomeHeaderCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+       setStyle()
+    }
+    
+    func setStyle(){
         mainText.text = "친구 모아보기"
         mainText.font = UIFont.GmarketSansTTF(.medium, size: 18)
         mainText.textColor = .keepinBlack
         
         mainView.backgroundColor = .keepinGray
-    
     }
 
 }

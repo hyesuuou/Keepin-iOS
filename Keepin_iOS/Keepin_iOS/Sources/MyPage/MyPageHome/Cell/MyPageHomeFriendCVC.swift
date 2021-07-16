@@ -23,11 +23,19 @@ class MyPageHomeFriendCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        myPageHomeCV.delegate = self
-        myPageHomeCV.dataSource = self
-        myPageHomeCV.backgroundColor = .keepinGray
+        set()
+        setStlye()
         
         registerXib()
+    }
+    
+    func setStlye(){
+        myPageHomeCV.backgroundColor = .keepinGray
+    }
+    
+    func set(){
+        myPageHomeCV.delegate = self
+        myPageHomeCV.dataSource = self
     }
     
     func registerXib(){

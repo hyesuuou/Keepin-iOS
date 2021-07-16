@@ -18,7 +18,15 @@ class MyPageDetailPresentCVC: UICollectionViewCell,UITextViewDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        setStlye()
+        
+        placeholderSetting()
+        textViewDidBeginEditing(textView)
+        textViewDidEndEditing(textView)
+    }
+    
+    func setStlye(){
         memoView.backgroundColor = .keepinGray
         textView.backgroundColor = .keepinGray
         memoView.layer.cornerRadius = 12
@@ -33,12 +41,7 @@ class MyPageDetailPresentCVC: UICollectionViewCell,UITextViewDelegate {
         
         numberLine.text = "3"
         numberLine.font = .NotoSans(.regular, size: 11)
-        
-        placeholderSetting()
-        textViewDidBeginEditing(textView)
-        textViewDidEndEditing(textView)
     }
-    
     
     func placeholderSetting(){
         textView.delegate = self

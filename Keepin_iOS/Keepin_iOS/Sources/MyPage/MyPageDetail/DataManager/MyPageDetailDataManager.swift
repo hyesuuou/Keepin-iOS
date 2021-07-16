@@ -4,9 +4,9 @@
 //
 //  Created by 이은영 on 2021/07/14.
 //
-
-import Foundation
 import Alamofire
+import Foundation
+
 
 class MyPageDetailDataManager{
     func getFriendInfo(_ parameter: String, viewController: MyPageDetailVC){

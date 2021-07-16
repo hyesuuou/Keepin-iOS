@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyPageDetailVC: UIViewController ,UITextViewDelegate{
+class MyPageDetailVC: UIViewController , UITextViewDelegate{
     
     @IBOutlet weak var myPageDetailCV: UICollectionView!
     
