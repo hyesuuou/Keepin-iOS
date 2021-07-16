@@ -132,6 +132,10 @@ class KeepinPlusVC: UIViewController {
     @objc func pickImage(){
           self.present(self.imagePicker, animated: true)
       }
+    
+    @objc func pushFriendSelect(){
+        self.navigationController?.pushViewController(SelectFriendVC(), animated: true)
+    }
 
 
 }
@@ -218,6 +222,8 @@ extension KeepinPlusVC : UITableViewDataSource {
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusSearchTVC.identifier, for: indexPath) as? KeepinPlusSearchTVC else {
                 return UITableViewCell()
             }
+            
+            cell.friendNameButton.addTarget(self, action: #selector(pushFriendSelect), for: .touchUpInside)
             
             return cell
         

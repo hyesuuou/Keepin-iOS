@@ -40,6 +40,7 @@ class SelectFriendVC: UIViewController {
     
     @IBAction func backButtonClicked(_ sender: Any) {
         print("pop")
+        self.navigationController?.popViewController(animated: true)
         
     }
     func setUI(){
