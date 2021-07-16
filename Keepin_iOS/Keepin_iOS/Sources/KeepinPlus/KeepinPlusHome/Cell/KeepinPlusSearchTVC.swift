@@ -11,10 +11,12 @@ class KeepinPlusSearchTVC: UITableViewCell {
     
     public static let identifier = "KeepinPlusSearchTVC"
 
+    @IBOutlet weak var friendNameButton: UIButton!
     @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var underlineView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        setUI()
         // Initialization code
     }
 
