@@ -41,6 +41,9 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIH-Q4-t1P">
                             <rect key="frame" x="346" y="13" width="52" height="24"/>
                             <state key="normal" title="키핀하기"/>
+                            <connections>
+                                <action selector="keepinButtonClicked:" destination="-1" eventType="touchUpInside" id="nmO-Tp-RBH"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
