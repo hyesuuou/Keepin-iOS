@@ -37,6 +37,8 @@
 		156E2947269E7CF7000CBEEA /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E2946269E7CF7000CBEEA /* UIImageView.swift */; };
 		1589EDD426A0C0C4005EFCC2 /* SelectFriendListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589EDD226A0C0C4005EFCC2 /* SelectFriendListTVC.swift */; };
 		1589EDD526A0C0C4005EFCC2 /* SelectFriendListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1589EDD326A0C0C4005EFCC2 /* SelectFriendListTVC.xib */; };
+		1589EDD826A15D25005EFCC2 /* SelectFriendTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589EDD626A15D25005EFCC2 /* SelectFriendTitleTVC.swift */; };
+		1589EDD926A15D25005EFCC2 /* SelectFriendTitleTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1589EDD726A15D25005EFCC2 /* SelectFriendTitleTVC.xib */; };
 		15B71A51269D7CC500ED68E0 /* JoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A50269D7CC500ED68E0 /* JoinRequest.swift */; };
 		15B71A53269D7CCE00ED68E0 /* JoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A52269D7CCE00ED68E0 /* JoinResponse.swift */; };
 		15B71A55269D7CD600ED68E0 /* JoinDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A54269D7CD600ED68E0 /* JoinDataManager.swift */; };
@@ -186,6 +188,8 @@
 		156E2946269E7CF7000CBEEA /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		1589EDD226A0C0C4005EFCC2 /* SelectFriendListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendListTVC.swift; sourceTree = "<group>"; };
 		1589EDD326A0C0C4005EFCC2 /* SelectFriendListTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFriendListTVC.xib; sourceTree = "<group>"; };
+		1589EDD626A15D25005EFCC2 /* SelectFriendTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendTitleTVC.swift; sourceTree = "<group>"; };
+		1589EDD726A15D25005EFCC2 /* SelectFriendTitleTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFriendTitleTVC.xib; sourceTree = "<group>"; };
 		15B71A50269D7CC500ED68E0 /* JoinRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRequest.swift; sourceTree = "<group>"; };
 		15B71A52269D7CCE00ED68E0 /* JoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinResponse.swift; sourceTree = "<group>"; };
 		15B71A54269D7CD600ED68E0 /* JoinDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinDataManager.swift; sourceTree = "<group>"; };
@@ -392,6 +396,8 @@
 			children = (
 				1589EDD226A0C0C4005EFCC2 /* SelectFriendListTVC.swift */,
 				1589EDD326A0C0C4005EFCC2 /* SelectFriendListTVC.xib */,
+				1589EDD626A15D25005EFCC2 /* SelectFriendTitleTVC.swift */,
+				1589EDD726A15D25005EFCC2 /* SelectFriendTitleTVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1036,6 +1042,7 @@
 				77F047EF268AF99900FBFDD7 /* LaunchScreen.storyboard in Resources */,
 				153462D22694468B00060E44 /* JoinFirstVC.xib in Resources */,
 				77F549DF268EE92C0013A76C /* SearchVC.xib in Resources */,
+				1589EDD926A15D25005EFCC2 /* SelectFriendTitleTVC.xib in Resources */,
 				77F549ED268F58970013A76C /* PresentMoaCVC.xib in Resources */,
 				15C1223B2693077E00838E55 /* EmailLoginVC.xib in Resources */,
 				717A0259269ACFF800241171 /* MyPageEditPhoneVC.xib in Resources */,
@@ -1145,6 +1152,7 @@
 				7719B5D8269D71D900CBBB11 /* PresentDetailResponse.swift in Sources */,
 				15C1222C268F063C00838E55 /* HomeTopTVC.swift in Sources */,
 				71210D50269C931C00568982 /* MyPageHomeDataManager.swift in Sources */,
+				1589EDD826A15D25005EFCC2 /* SelectFriendTitleTVC.swift in Sources */,
 				7719B5CE269C459700CBBB11 /* SearchDataManager.swift in Sources */,
 				152439EA269D4AAA009E5E8E /* EmailLoginDataManager.swift in Sources */,
 				152439D3269C49F8009E5E8E /* HomeResponse.swift in Sources */,
