@@ -18,11 +18,14 @@ class FriendListCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        setUI()
+    }
+    
+    func setUI(){
         layer.cornerRadius = 12
         
         friendName.font = UIFont.GmarketSansTTF(.medium, size: 16)
         friendName.textColor = .keepinBlack
-    
     }
     func setData(title: String){
         friendName.text = title

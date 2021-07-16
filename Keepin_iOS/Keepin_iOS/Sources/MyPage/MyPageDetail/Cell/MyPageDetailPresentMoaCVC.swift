@@ -20,8 +20,7 @@ class MyPageDetailPresentMoaCVC: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        presentLabel.textColor = .keepinGray5
-        presentDate.textColor = .keepinGray4
+        setStyle()
     }
     
     static func nib() -> UINib{
@@ -32,6 +31,11 @@ class MyPageDetailPresentMoaCVC: UICollectionViewCell {
         //presentImage
         presentLabel.text = title1
         presentDate.text =  title2
+    }
+    
+    func setStyle(){
+        presentLabel.textColor = .keepinGray5
+        presentDate.textColor = .keepinGray4
     }
     
    
