@@ -10,11 +10,13 @@ import UIKit
 class SelectFriendVC: UIViewController {
 
     @IBOutlet var titleLabel: [UILabel]!
+    @IBOutlet weak var tableview: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-
-        // Do any additional setup after loading the view.
+        setTableview()
+        registerXib()
     }
     
     func setUI(){
@@ -22,7 +24,38 @@ class SelectFriendVC: UIViewController {
         titleLabel[1].font = UIFont.GmarketSansTTF(.light, size: 16)
         titleLabel[1].textColor = .keepinGray4
     }
+    
+    func setTableview(){
+        tableview.delegate = self
+        tableview.dataSource = self
+    }
+    
+    func registerXib(){
+        let friendNib = UINib(nibName: SelectFriendListTVC.identifier, bundle: nil)
+        tableview.register(friendNib, forCellReuseIdentifier: SelectFriendListTVC.identifier)
+    }
+    
+}
 
+extension SelectFriendVC : UITableViewDelegate {
+    
+}
 
-
+extension SelectFriendVC : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableview.dequeueReusableCell(withIdentifier: SelectFriendListTVC.identifier, for: indexPath) as? SelectFriendListTVC else {
+            return UITableViewCell()
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 66
+    }
+    
+    
 }
