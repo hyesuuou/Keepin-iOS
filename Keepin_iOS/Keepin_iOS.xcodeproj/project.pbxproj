@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150FF83126A1CAC600970B18 /* KeepinPlusHomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FF83026A1CAC600970B18 /* KeepinPlusHomeDataManager.swift */; };
+		150FF83326A1CAD800970B18 /* KeepinPlusHomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FF83226A1CAD800970B18 /* KeepinPlusHomeResponse.swift */; };
+		150FF83526A1CAF200970B18 /* KeepinPlusHomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FF83426A1CAF200970B18 /* KeepinPlusHomeRequest.swift */; };
 		15243994269C1012009E5E8E /* KeepinPlusBlankTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15243992269C1012009E5E8E /* KeepinPlusBlankTVC.swift */; };
 		15243995269C1012009E5E8E /* KeepinPlusBlankTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15243993269C1012009E5E8E /* KeepinPlusBlankTVC.xib */; };
 		152439D3269C49F8009E5E8E /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152439D2269C49F8009E5E8E /* HomeResponse.swift */; };
@@ -159,6 +162,9 @@
 
 /* Begin PBXFileReference section */
 		01D2ADA99388E4A9A27B4E30 /* Pods-Keepin_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keepin_iOS.debug.xcconfig"; path = "Target Support Files/Pods-Keepin_iOS/Pods-Keepin_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		150FF83026A1CAC600970B18 /* KeepinPlusHomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusHomeDataManager.swift; sourceTree = "<group>"; };
+		150FF83226A1CAD800970B18 /* KeepinPlusHomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusHomeResponse.swift; sourceTree = "<group>"; };
+		150FF83426A1CAF200970B18 /* KeepinPlusHomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusHomeRequest.swift; sourceTree = "<group>"; };
 		15243992269C1012009E5E8E /* KeepinPlusBlankTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusBlankTVC.swift; sourceTree = "<group>"; };
 		15243993269C1012009E5E8E /* KeepinPlusBlankTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepinPlusBlankTVC.xib; sourceTree = "<group>"; };
 		152439D2269C49F8009E5E8E /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
@@ -324,6 +330,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		150FF82E26A1CA9A00970B18 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				150FF83026A1CAC600970B18 /* KeepinPlusHomeDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		150FF82F26A1CAAD00970B18 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				150FF83226A1CAD800970B18 /* KeepinPlusHomeResponse.swift */,
+				150FF83426A1CAF200970B18 /* KeepinPlusHomeRequest.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		152439D0269C49CE009E5E8E /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -886,6 +909,8 @@
 		77F04842268C4D7600FBFDD7 /* KeepinPlusHome */ = {
 			isa = PBXGroup;
 			children = (
+				150FF82F26A1CAAD00970B18 /* DataModel */,
+				150FF82E26A1CA9A00970B18 /* DataManager */,
 				77F04844268C4DA000FBFDD7 /* KeepinPlusVC.swift */,
 				77F04845268C4DA000FBFDD7 /* KeepinPlusVC.xib */,
 				1529FF7B26979F2A000AD789 /* Cell */,
@@ -1139,6 +1164,7 @@
 				1529FF9E269985CB000AD789 /* KeepinPlusWriteTVC.swift in Sources */,
 				77F549EC268F58970013A76C /* PresentMoaCVC.swift in Sources */,
 				717A0258269ACFF800241171 /* MyPageEditPhoneVC.swift in Sources */,
+				150FF83526A1CAF200970B18 /* KeepinPlusHomeRequest.swift in Sources */,
 				7719B596269ADE2900CBBB11 /* UISwitch.swift in Sources */,
 				7719B5C6269C2E0300CBBB11 /* PresentMoaHomeRequest.swift in Sources */,
 				7719B5DA269D71E400CBBB11 /* PresentDetailRequest.swift in Sources */,
@@ -1154,6 +1180,7 @@
 				773D414E26942E8000A4E366 /* PresentDetailCVC.swift in Sources */,
 				7719B5D8269D71D900CBBB11 /* PresentDetailResponse.swift in Sources */,
 				15C1222C268F063C00838E55 /* HomeTopTVC.swift in Sources */,
+				150FF83326A1CAD800970B18 /* KeepinPlusHomeResponse.swift in Sources */,
 				71210D50269C931C00568982 /* MyPageHomeDataManager.swift in Sources */,
 				1589EDD826A15D25005EFCC2 /* SelectFriendTitleTVC.swift in Sources */,
 				7719B5CE269C459700CBBB11 /* SearchDataManager.swift in Sources */,
@@ -1205,6 +1232,7 @@
 				71677CDD26A07DD1004BC692 /* MyPagePresentMoaResponse.swift in Sources */,
 				7719B593269AC9BC00CBBB11 /* ReminderTVC.swift in Sources */,
 				152ED3B3269FD6160098BDD0 /* HomeTopSingleTVC.swift in Sources */,
+				150FF83126A1CAC600970B18 /* KeepinPlusHomeDataManager.swift in Sources */,
 				15C1223A2693077E00838E55 /* EmailLoginVC.swift in Sources */,
 				77F549DE268EE92C0013A76C /* SearchVC.swift in Sources */,
 				15C122352692DA7300838E55 /* LoginFirstVC.swift in Sources */,
