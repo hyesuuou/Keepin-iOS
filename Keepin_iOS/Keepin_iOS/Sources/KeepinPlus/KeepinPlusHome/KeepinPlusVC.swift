@@ -234,7 +234,7 @@ extension KeepinPlusVC : UITableViewDataSource {
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusTitleTVC.identifier, for: indexPath) as? KeepinPlusTitleTVC else {
                 return UITableViewCell()
             }
-            cell.setData(title: "누구에게 받은 선물인가요?", subtitle: "", image: true)
+            cell.setData(title: "누구에게 받은/준 선물인가요?", subtitle: "", image: true)
             
             
             return cell
@@ -254,7 +254,7 @@ extension KeepinPlusVC : UITableViewDataSource {
             guard let cell = tableview.dequeueReusableCell(withIdentifier: KeepinPlusTitleTVC.identifier, for: indexPath) as? KeepinPlusTitleTVC else {
                 return UITableViewCell()
             }
-            cell.setData(title: "언제 받은 선물인가요?", subtitle: "", image: true)
+            cell.setData(title: "언제 받은/준 선물인가요?", subtitle: "", image: true)
             
             return cell
             

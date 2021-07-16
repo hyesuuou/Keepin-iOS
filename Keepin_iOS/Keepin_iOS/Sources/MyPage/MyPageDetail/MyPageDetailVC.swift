@@ -115,6 +115,10 @@ extension MyPageDetailVC: UICollectionViewDataSource{
                 return UICollectionViewCell()
             }
             
+//            guard let data = serverData?.keepins else {
+//                cell.serverDatas = PresentDataClass(keepins: KeepinList(id: "", title: "", photo: "", date: "", taken: nil))
+//            }
+          
             cell.serverDatas = (serverData!.keepins)
             return cell
             
