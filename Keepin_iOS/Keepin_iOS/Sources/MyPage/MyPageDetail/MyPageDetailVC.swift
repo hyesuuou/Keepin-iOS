@@ -116,15 +116,6 @@ extension MyPageDetailVC: UICollectionViewDataSource{
             }
             
             cell.serverDatas = (serverData!.keepins)
-            print("asdadfsdsdfs")
-            print(serverData?.keepins)
-//            let itemNum : Int = (serverData?.keepins.count)!
-//
-//            for i in 0...itemNum-1 {
-//                cell.test.append((serverData?.keepins[i].title)!)
-//                cell.testTwo.append((serverData?.keepins[i].date)!)
-//
-//            }
             return cell
             
         default:

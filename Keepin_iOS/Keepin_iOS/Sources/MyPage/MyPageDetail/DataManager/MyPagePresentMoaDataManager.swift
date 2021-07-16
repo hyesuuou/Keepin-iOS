@@ -21,9 +21,7 @@ class MyPagePresentMoaDataManager{
                 switch response.result {
                 case .success(let response):
                     viewController.serverData = response.data
-//                    MyPagePresentMoaDataManager.presentList = response.data.keepins
-//                    print(response.data.keepins)
-                   viewController.didSuccessGetPresentInfo(message: response.message)
+                    viewController.didSuccessGetPresentInfo(message: response.message)
                 case .failure(let error):
                     print("getPresent")
                     print(error.localizedDescription)
@@ -40,7 +38,6 @@ class MyPagePresentMoaDataManager{
                 switch response.result {
                 case .success(let response):
                     viewController.serverData = response.data
-                    print(response.data)
                     viewController.didSuccessGetPresentInfo(message: response.message)
                     
                 case .failure(let error):
