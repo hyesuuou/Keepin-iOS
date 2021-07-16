@@ -15,8 +15,9 @@ class KeepinPlusVC: UIViewController {
     var img : UIImage? = nil
     var tag : Int = 99
     var blankHeight : Int = 0
-    
+    var selectfriendTextField : String = ""
     let imagePicker = UIImagePickerController()
+    
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var keepinButton: UIButton!
@@ -27,7 +28,11 @@ class KeepinPlusVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load2"), object: nil)
         print("viewwilappear")
+        tableview.reloadData()
+        
+        
     }
     
     override func viewDidLoad() {
@@ -43,6 +48,15 @@ class KeepinPlusVC: UIViewController {
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
+    }
+    
+    @objc func loadList(_ notification : NSNotification)
+    {
+        
+        for i in notification.object as! [String] {
+            selectfriendTextField += i
+        }
+
     }
     
     @objc
@@ -223,6 +237,8 @@ extension KeepinPlusVC : UITableViewDataSource {
                 return UITableViewCell()
             }
             
+            
+            cell.textfield.text = selectfriendTextField
             cell.friendNameButton.addTarget(self, action: #selector(pushFriendSelect), for: .touchUpInside)
             
             return cell

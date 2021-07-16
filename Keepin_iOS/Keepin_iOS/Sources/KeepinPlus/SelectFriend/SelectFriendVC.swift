@@ -11,7 +11,7 @@ class SelectFriendVC: UIViewController {
 
     var allData : [String] = ["김혜수", "최이준", "이채연", "박윤정", "박윤경", "이은영", "김영민", "손연주", "김보민"] // 전체 데이터 -> 나중에는 친구 목록이나 서버에서 받아와야함.
     var filteredData : [String] = [] // 검색된 결과
-    var selectedData : [String] = [] // 선택된 결과
+    static var selectedData : [String] = [] // 선택된 결과
     var sectionㅣist : [String] = ["선택된 친구", "검색된 친구"]
     var searchBool : Bool = false
     
@@ -28,6 +28,8 @@ class SelectFriendVC: UIViewController {
     @IBOutlet weak var headerTitleLabel: UILabel!
     @IBOutlet weak var searchNoFriend: UILabel!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -39,6 +41,12 @@ class SelectFriendVC: UIViewController {
     }
     
     @IBAction func backButtonClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+        
+    }
+    @IBAction func okButtonClicked(_ sender: Any) {
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load2"), object: SelectFriendVC.selectedData)
         self.navigationController?.popViewController(animated: true)
         
     }
@@ -133,7 +141,7 @@ extension SelectFriendVC : UITableViewDataSource {
         case 0:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: SelectFriendListTVC.identifier, for: indexPath) as? SelectFriendListTVC
             else { return UITableViewCell()}
-            cell.setDataUI(name: selectedData[indexPath.row], clicked: true)
+            cell.setDataUI(name: SelectFriendVC.selectedData[indexPath.row], clicked: true)
             return cell
             
         case 1:
@@ -154,7 +162,7 @@ extension SelectFriendVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return selectedData.count
+            return SelectFriendVC.selectedData.count
         case 1:
             return filteredData.count
         default:
@@ -189,7 +197,7 @@ extension SelectFriendVC : UITableViewDataSource {
 //
 //        }
         
-        if selectedData.count == 0 && filteredData.count == 0 {
+        if SelectFriendVC.selectedData.count == 0 && filteredData.count == 0 {
             
            //okButton.tintColor = .keepinGray3
             if searchBool == false {
@@ -228,7 +236,7 @@ extension SelectFriendVC : UITableViewDataSource {
         
         
         
-        else if selectedData.count != 0  && filteredData.count == 0 {
+        else if SelectFriendVC.selectedData.count != 0  && filteredData.count == 0 {
             searchNoFriend.isHidden = false
             //okButton.tintColor = .keepinGreen
             
@@ -244,7 +252,7 @@ extension SelectFriendVC : UITableViewDataSource {
             
         }
         
-        else if selectedData.count == 0 && filteredData.count != 0 {
+        else if SelectFriendVC.selectedData.count == 0 && filteredData.count != 0 {
             //okButton.tintColor = .keepinGray3
             searchNoFriend.isHidden = true
             
@@ -277,19 +285,19 @@ extension SelectFriendVC : UITableViewDataSource {
         case 0:
             print("먼데..")
             // 여기서 선택하면 해당 내용 filteredData에 추가 후 내용 삭제
-            filteredData.append(selectedData[indexPath.row])   // 여기 바로 추가하면 안되겠다..
-            selectedData.remove(at: indexPath.row)
+            filteredData.append(SelectFriendVC.selectedData[indexPath.row])   // 여기 바로 추가하면 안되겠다..
+            SelectFriendVC.selectedData.remove(at: indexPath.row)
             
         case 1:
             // 여기서 선택하면 해당 내용 삭제 후 section 0 (selectedData에 추가)
-            selectedData.append(filteredData[indexPath.row])
+            SelectFriendVC.selectedData.append(filteredData[indexPath.row])
             filteredData.remove(at: indexPath.row)
             
         default:
             print("선택")
         }
         
-        if selectedData.count != 0 {
+        if SelectFriendVC.selectedData.count != 0 {
             okButton.tintColor = .keepinGreen
         }
         else {
