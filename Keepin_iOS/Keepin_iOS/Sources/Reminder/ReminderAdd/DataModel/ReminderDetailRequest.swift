@@ -6,3 +6,10 @@
 //
 
 import Foundation
+struct ReminderDetailRequest : Encodable{
+    var title : String?
+    var date : String?
+    var isAlarm : Bool?
+    var daysAgo : String?
+    var isImportant : Bool?
+}

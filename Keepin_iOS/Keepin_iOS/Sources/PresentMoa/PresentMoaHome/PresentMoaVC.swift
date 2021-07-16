@@ -5,11 +5,11 @@
 //  Created by Yi Joon Choi on 2021/06/30.
 //
 
-import UIKit
 import Kingfisher
+import UIKit
 
 class PresentMoaVC: UIViewController {
-
+    //MARK: - IBOutlets
     @IBOutlet weak var presentCV: UICollectionView!
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     @IBOutlet weak var presentCVHeight: NSLayoutConstraint!
@@ -20,6 +20,7 @@ class PresentMoaVC: UIViewController {
     @IBOutlet weak var buttonStack: UIStackView!
     @IBOutlet weak var newButton: UIButton!
     
+    //MARK: - IBActions
     @IBAction func newButtonClicked(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         if sender.isSelected{
@@ -74,8 +75,10 @@ class PresentMoaVC: UIViewController {
         }
     }
     
+    //MARK: - Custom Variables
     var serverData : Keepins?
     
+    //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -91,19 +94,13 @@ class PresentMoaVC: UIViewController {
         presentCV.collectionViewLayout = layout
     }
     
+    //MARK: - Custom Methods
     func setUI(){
         gave.presentButton()
         got.presentButton()
         
         got.isSelected = true
         gave.isSelected = false
-    }
-    
-    @objc func toSearch(){
-        let nextVC = SearchVC()
-        let navBarOnModal: UINavigationController = UINavigationController(rootViewController: nextVC)
-        navBarOnModal.modalPresentationStyle = .overFullScreen
-        self.present(navBarOnModal, animated: true, completion: nil)
     }
     
     func setNavigationBar(){
@@ -117,9 +114,20 @@ class PresentMoaVC: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = false
     }
+    
+    //MARK: - @objc Methods
+    @objc func toSearch(){
+        let nextVC = SearchVC()
+        let navBarOnModal: UINavigationController = UINavigationController(rootViewController: nextVC)
+        navBarOnModal.modalPresentationStyle = .overFullScreen
+        self.present(navBarOnModal, animated: true, completion: nil)
+    }
+    
+    
 
 }
- 
+
+//MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension PresentMoaVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -144,6 +152,7 @@ extension PresentMoaVC : UICollectionViewDelegate, UICollectionViewDataSource, U
     }
 }
 
+//MARK: - Server Functions
 extension PresentMoaVC {
     func didSuccessGot(message: String) {
         presentCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
