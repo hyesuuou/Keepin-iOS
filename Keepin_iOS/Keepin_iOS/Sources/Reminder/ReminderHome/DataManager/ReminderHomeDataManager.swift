@@ -24,4 +24,19 @@ class ReminderHomeDataManager {
                 }
             }
     }
+    
+    func reminderDelete(_ parameter: EraseRequest, viewController: ReminderVC) {
+        let url = "\(Constant.BASE_URL)/reminder/delete"
+        AF.request(url, method: .post, parameters: parameter, encoder: JSONParameterEncoder(), headers: Constant.HEADER) 
+            .validate(statusCode: 200..<500)
+            .validate(contentType: ["application/json"])
+            .responseDecodable(of: ReminderHomeResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    print(response.message!)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+    }
 }

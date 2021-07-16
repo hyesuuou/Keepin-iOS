@@ -11,3 +11,7 @@ struct ReminderHomeRequest{
     var year : String
     var month: String
 }
+
+struct EraseRequest : Encodable{
+    var reminderArray : [String]
+}

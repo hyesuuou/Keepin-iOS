@@ -250,16 +250,22 @@ extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
         return true
     }
     
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//            if editingStyle == .delete {
-//                reminderTV.beginUpdates()
-//                sampleData.remove(at: indexPath.section)
-//                let indexSet = NSMutableIndexSet()
-//                indexSet.add(indexPath.section)
-//                tableView.deleteSections(indexSet as IndexSet, with: .fade)
-//                reminderTV.endUpdates()
-//            }
-//        }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                reminderTV.beginUpdates()
+                var test : [String] = []
+                test.append((serverData?.reminders[indexPath.section]?._id)!)
+                serverData?.reminders.remove(at: indexPath.section)
+                
+                let request = EraseRequest(reminderArray: test)
+                ReminderHomeDataManager().reminderDelete(request, viewController: self)
+                //리마인더 삭제 서버통신
+                let indexSet = NSMutableIndexSet()
+                indexSet.add(indexPath.section)
+                tableView.deleteSections(indexSet as IndexSet, with: .fade)
+                reminderTV.endUpdates()
+            }
+        }
     
 }
 
