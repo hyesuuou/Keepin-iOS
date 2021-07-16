@@ -39,7 +39,6 @@ class SelectFriendVC: UIViewController {
     }
     
     @IBAction func backButtonClicked(_ sender: Any) {
-        print("pop")
         self.navigationController?.popViewController(animated: true)
         
     }
@@ -87,12 +86,12 @@ class SelectFriendVC: UIViewController {
                 //이미지 틴트컬러 정하기
                 leftView.tintColor = UIColor.black
             }
-            //오른쪽 x버튼 이미지넣기
-            if let rightView = textfield.rightView as? UIImageView {
-                rightView.image = rightView.image?.withRenderingMode(.alwaysTemplate)
-                //이미지 틴트 정하기
-                rightView.tintColor = UIColor.white
-            }
+//            //오른쪽 x버튼 이미지넣기
+//            if let rightView = textfield.rightView as? UIImageView {
+//                rightView.image = rightView.image?.withRenderingMode(.alwaysTemplate)
+//                //이미지 틴트 정하기
+//                rightView.tintColor = UIColor.white
+//            }
             
         }
     }
@@ -185,10 +184,16 @@ extension SelectFriendVC : UITableViewDataSource {
 //            }
 //        }
         
+//        if selectedData.count != 0 {
+//            okButton.tintColor = .keepinGreen
+//
+//        }
+        
         if selectedData.count == 0 && filteredData.count == 0 {
+            
+           //okButton.tintColor = .keepinGray3
             if searchBool == false {
                 searchNoFriend.isHidden = false
-                
                 
                 
                 switch section {
@@ -206,8 +211,7 @@ extension SelectFriendVC : UITableViewDataSource {
             else {
                 searchNoFriend.isHidden = false
                 
-                
-                
+               
                 switch section {
                 case 0:
                     return 0
@@ -226,6 +230,8 @@ extension SelectFriendVC : UITableViewDataSource {
         
         else if selectedData.count != 0  && filteredData.count == 0 {
             searchNoFriend.isHidden = false
+            //okButton.tintColor = .keepinGreen
+            
             switch section {
             case 0:
                 return 78
@@ -239,7 +245,9 @@ extension SelectFriendVC : UITableViewDataSource {
         }
         
         else if selectedData.count == 0 && filteredData.count != 0 {
+            //okButton.tintColor = .keepinGray3
             searchNoFriend.isHidden = true
+            
             switch section {
             case 0:
                 return 0
@@ -252,7 +260,9 @@ extension SelectFriendVC : UITableViewDataSource {
             
         }
         else {
+            //okButton.tintColor = .keepinGray3
             searchNoFriend.isHidden = true
+            
             return 78
             
             
@@ -277,6 +287,13 @@ extension SelectFriendVC : UITableViewDataSource {
             
         default:
             print("선택")
+        }
+        
+        if selectedData.count != 0 {
+            okButton.tintColor = .keepinGreen
+        }
+        else {
+            okButton.tintColor = .keepinGray3
         }
         tableview.reloadData()
     }
