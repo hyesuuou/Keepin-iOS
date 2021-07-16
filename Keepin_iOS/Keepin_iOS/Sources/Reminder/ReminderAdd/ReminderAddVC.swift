@@ -45,7 +45,7 @@ class ReminderAddVC: UIViewController {
         
         self.dismissKeyboardWhenTappedAround()
         if ReminderAddVC.fromEdit{
-            ReminderHomeDataManager().reminders(ReminderAddVC.reminderID, viewController: self)
+            ReminderDetailDataManager().reminders(ReminderAddVC.reminderID, viewController: self) 
         }
         setUI()
         setNavigationBar()
@@ -78,9 +78,13 @@ class ReminderAddVC: UIViewController {
     @objc func toDone(){
         if ReminderAddVC.fromEdit == true{
             //이벤트가 수정되었습니다
+            //수정 서버 통신
+            self.presentAlert(title: "", message: "수정이 완료되었습니다", isCancelActionIncluded: true) { action in
+                self.dismiss(animated: true, completion: nil)
+            }
         }
         else{
-            self.presentAlert(title: "", message: "이벤트가 등록되었습니다", isCancelActionIncluded: true) { action in
+            self.presentAlert(title: "", message: "이벤트가 등록되었습니다", isCancelActionIncluded: false) { action in
                     self.dismiss(animated: true, completion: nil)
                 }
         }
@@ -200,6 +204,19 @@ extension ReminderAddVC {
     func didSuccessReminderDetail(message: String) {
         dateLabel.text = (serverData?.date)!
         eventTextField.text = serverData?.title
+        
+        let days = serverData?.daysAgo
+        if days != nil{
+            if days == "0"{
+                remindLabel.text = "당일"
+            }
+            else if days == "7"{
+                remindLabel.text = "1주일 전"
+            }
+            else{
+                remindLabel.text = days! + "일 전"
+            }
+        }
         
         let alarmStatus = (serverData?.isAlarm)!
         

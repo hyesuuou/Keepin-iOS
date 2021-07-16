@@ -6,3 +6,8 @@
 //
 
 import Foundation
+struct ReminderDetailResponse: Decodable{
+    var status : Int?
+    var message : String?
+    var data : MonthReminder?
+}
