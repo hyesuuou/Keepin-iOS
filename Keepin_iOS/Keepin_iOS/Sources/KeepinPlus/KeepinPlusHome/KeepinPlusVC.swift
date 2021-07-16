@@ -52,7 +52,9 @@ class KeepinPlusVC: UIViewController {
     }
     @IBAction func keepinButtonClicked(_ sender: Any) {
         
-        KeepinPlusHomeDataManager().postKeepin(KeepinPlusHomeRequest(title: "가장 달콤했던 생일 선물", taken: true, date: "2021-06-07", category: ["생일", "축하"], record: "뽀민이 정말 앙큼하다. 나 몰래 케이크 주문해놓고 얼레벌레 들고 등장했다 >,< 귀여워!! 꽃 너무 예뻐서 드라이플라워로 간직할 거당. 케이크 너무 맛있었다. 보민이 생일날엔 더 맛있는 거 사줘야지!!", friendIdx: ["60ed9e98e51ad110481cd9d7"]), viewController: self)
+//        KeepinPlusHomeDataManager().postKeepin(KeepinPlusHomeRequest(title: "데모데이 전날 받은 선물", taken: true, date: "2021-07-16", category: ["기념일", "축하"], record: "내일이 데모데이라니 도라방스", friendIdx: ["60ed9e98e51ad110481cd9d7"]), viewController: self)
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     @objc func loadList(_ notification : NSNotification)
@@ -139,7 +141,7 @@ class KeepinPlusVC: UIViewController {
         backButton.addTarget(self, action: #selector(toDismiss), for: UIControl.Event.touchUpInside)
         
         keepinButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
-        keepinButton.tintColor = .keepinGray3
+        keepinButton.tintColor = .keepinGreen
 
     }
     
@@ -507,4 +509,25 @@ extension UITextField {
     func onDatePickerValueChanged(datePicker: UIDatePicker){
         self.text = datePicker.date.toString()
     }
+}
+
+extension KeepinPlusVC {
+    
+    func didSuccessPostKeepinHalf(){
+//        MyPageProfileImageUploadService.shared.uploadImage(image: UIImage(named: "maskGroup") { result in
+//            switch result {
+//            case .success(let message):
+//                print("성공")
+//
+//            case .requestErr(let message):
+//                print("실패")
+//            default:
+//                print("실패")
+//            }
+//
+//        }, completion: <#(NetworkResult<Any>) -> Void#>
+//
+        
+    }
+    
 }

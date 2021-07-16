@@ -10,6 +10,7 @@
 		150FF83126A1CAC600970B18 /* KeepinPlusHomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FF83026A1CAC600970B18 /* KeepinPlusHomeDataManager.swift */; };
 		150FF83326A1CAD800970B18 /* KeepinPlusHomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FF83226A1CAD800970B18 /* KeepinPlusHomeResponse.swift */; };
 		150FF83526A1CAF200970B18 /* KeepinPlusHomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FF83426A1CAF200970B18 /* KeepinPlusHomeRequest.swift */; };
+		150FF83726A1EF1000970B18 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FF83626A1EF1000970B18 /* NetworkResult.swift */; };
 		15243994269C1012009E5E8E /* KeepinPlusBlankTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15243992269C1012009E5E8E /* KeepinPlusBlankTVC.swift */; };
 		15243995269C1012009E5E8E /* KeepinPlusBlankTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15243993269C1012009E5E8E /* KeepinPlusBlankTVC.xib */; };
 		152439D3269C49F8009E5E8E /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152439D2269C49F8009E5E8E /* HomeResponse.swift */; };
@@ -166,6 +167,7 @@
 		150FF83026A1CAC600970B18 /* KeepinPlusHomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusHomeDataManager.swift; sourceTree = "<group>"; };
 		150FF83226A1CAD800970B18 /* KeepinPlusHomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusHomeResponse.swift; sourceTree = "<group>"; };
 		150FF83426A1CAF200970B18 /* KeepinPlusHomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusHomeRequest.swift; sourceTree = "<group>"; };
+		150FF83626A1EF1000970B18 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		15243992269C1012009E5E8E /* KeepinPlusBlankTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusBlankTVC.swift; sourceTree = "<group>"; };
 		15243993269C1012009E5E8E /* KeepinPlusBlankTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepinPlusBlankTVC.xib; sourceTree = "<group>"; };
 		152439D2269C49F8009E5E8E /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
@@ -781,6 +783,7 @@
 				7719B5AF269C048200CBBB11 /* Secret */,
 				77F04802268B0C2300FBFDD7 /* Extension */,
 				77F04803268B0C4300FBFDD7 /* Base */,
+				150FF83626A1EF1000970B18 /* NetworkResult.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -1244,6 +1247,7 @@
 				77F0483F268C4D2400FBFDD7 /* MyPageDetailVC.swift in Sources */,
 				71DA81E02694424D0062A3FA /* MyPageDetailPresentMoaCVC.swift in Sources */,
 				77F0481F268C49AE00FBFDD7 /* SplashVC.swift in Sources */,
+				150FF83726A1EF1000970B18 /* NetworkResult.swift in Sources */,
 				77BEA4A626A0A9E7007E2236 /* ReminderHomeRequest.swift in Sources */,
 				717A0253269ACFC800241171 /* MyPageEditPwVC.swift in Sources */,
 				77F04811268C44BA00FBFDD7 /* UIColor.swift in Sources */,
