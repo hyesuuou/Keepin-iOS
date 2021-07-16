@@ -8,8 +8,15 @@
 import UIKit
 
 class ReminderVC: UIViewController {
-
+    //MARK: - IBOutlets
     @IBOutlet var yearArrow: [UIButton]!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var monthCV: UICollectionView!
+    @IBOutlet weak var selectedMonth: UIImageView!
+    @IBOutlet weak var tvBackground: UIView!
+    @IBOutlet weak var reminderTV: UITableView!
+    
+    //MARK: - IBActions
     @IBAction func yearArrowClicked(_ sender: UIButton) {
         let index = yearArrow.firstIndex(of: sender)!
         var year = Int(yearLabel.text!)!
@@ -29,27 +36,15 @@ class ReminderVC: UIViewController {
            break
         }
     }
-    @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var monthCV: UICollectionView!
-    @IBOutlet weak var selectedMonth: UIImageView!
-    @IBOutlet weak var tvBackground: UIView!
-    @IBOutlet weak var reminderTV: UITableView!
     
+    //MARK: - Custom Methods
     var navigationLeftLabel : String = "편집"
     var months = ["","","1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월","",""]
     var sample : Int = 0
     var serverData : MonthReminders?
     var forServer : String = "01"
-    func monthTest(){
-        if sample < 9{
-            forServer = "0" + String(sample+1)
-        }
-        else{
-            forServer = String(sample+1)
-        }
-    }
-    var sampleData : [String] = ["박윤정 생일","혜수 돌잔치","박윤정 생일2"]
     
+    //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -77,6 +72,16 @@ class ReminderVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         let request = ReminderHomeRequest(year: Date().yearOnly(), month: forServer)
         ReminderHomeDataManager().reminders(request, viewController: self)
+    }
+    
+    //MARK: - Custom Methods
+    func monthTest(){
+        if sample < 9{
+            forServer = "0" + String(sample+1)
+        }
+        else{
+            forServer = String(sample+1)
+        }
     }
     
     func setUI(){
@@ -112,21 +117,19 @@ class ReminderVC: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
     }
     
+    //MARK: - @objc Methods
     @objc func toEdit(){
         //편집 체크박스
     }
     
     @objc func toAdd(){
-        //let nextVC = ReminderAddVC()
         let ReminderAddNVC = UINavigationController(rootViewController: ReminderAddVC())
         ReminderAddNVC.modalPresentationStyle = .fullScreen
         self.present(ReminderAddNVC, animated: true, completion: nil)
     }
-    
-    
-
 }
 
+//MARK: - UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
@@ -174,8 +177,8 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
     
 }
 
+//MARK: - UITableViewDelegate, UITableViewDataSource
 extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (reminderTV.contentOffset.y < 0){
             reminderTV.contentOffset = CGPoint(x: 0, y: 0)
@@ -260,6 +263,7 @@ extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
     
 }
 
+//MARK: - Server Functions
 extension ReminderVC {
     func didSuccessReminders(message: String) {
         reminderTV.register(ReminderTVC.nib(), forCellReuseIdentifier: "ReminderTVC")

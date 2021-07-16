@@ -5,7 +5,6 @@
 //  Created by Yi Joon Choi on 2021/07/16.
 //
 
-import Foundation
 import Alamofire
 
 class ReminderDetailDataManager {
