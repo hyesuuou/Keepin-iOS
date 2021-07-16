@@ -120,6 +120,8 @@
 		77BEA4A226A0A9B1007E2236 /* ReminderHomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4A126A0A9B1007E2236 /* ReminderHomeDataManager.swift */; };
 		77BEA4A426A0A9CC007E2236 /* ReminderHomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4A326A0A9CC007E2236 /* ReminderHomeResponse.swift */; };
 		77BEA4A626A0A9E7007E2236 /* ReminderHomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4A526A0A9E7007E2236 /* ReminderHomeRequest.swift */; };
+		77BEA4AA26A15864007E2236 /* ReminderDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4A926A15864007E2236 /* ReminderDetailDataManager.swift */; };
+		77BEA4AC26A15873007E2236 /* ReminderDetailDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4AB26A15873007E2236 /* ReminderDetailDataResponse.swift */; };
 		77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */; };
 		77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E4268AF98F00FBFDD7 /* SceneDelegate.swift */; };
 		77F047EC268AF99900FBFDD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77F047EB268AF99900FBFDD7 /* Assets.xcassets */; };
@@ -268,6 +270,8 @@
 		77BEA4A126A0A9B1007E2236 /* ReminderHomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHomeDataManager.swift; sourceTree = "<group>"; };
 		77BEA4A326A0A9CC007E2236 /* ReminderHomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHomeResponse.swift; sourceTree = "<group>"; };
 		77BEA4A526A0A9E7007E2236 /* ReminderHomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHomeRequest.swift; sourceTree = "<group>"; };
+		77BEA4A926A15864007E2236 /* ReminderDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailDataManager.swift; sourceTree = "<group>"; };
+		77BEA4AB26A15873007E2236 /* ReminderDetailDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailDataResponse.swift; sourceTree = "<group>"; };
 		77F047DF268AF98F00FBFDD7 /* Keepin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keepin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F047E4268AF98F00FBFDD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -566,6 +570,8 @@
 		7719B57F26979CF200CBBB11 /* ReminderAdd */ = {
 			isa = PBXGroup;
 			children = (
+				77BEA4A826A1584B007E2236 /* DataManager */,
+				77BEA4A726A1583D007E2236 /* DataModel */,
 				7719B58026979D0800CBBB11 /* ReminderAddVC.swift */,
 				7719B58126979D0800CBBB11 /* ReminderAddVC.xib */,
 			);
@@ -666,6 +672,22 @@
 				77BEA4A526A0A9E7007E2236 /* ReminderHomeRequest.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		77BEA4A726A1583D007E2236 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				77BEA4AB26A15873007E2236 /* ReminderDetailDataResponse.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		77BEA4A826A1584B007E2236 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				77BEA4A926A15864007E2236 /* ReminderDetailDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		77F047D6268AF98F00FBFDD7 = {
@@ -1097,6 +1119,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77BEA4AA26A15864007E2236 /* ReminderDetailDataManager.swift in Sources */,
 				1529FF9A269985B9000AD789 /* KeppinPlusSelectTVC.swift in Sources */,
 				7719B58226979D0900CBBB11 /* ReminderAddVC.swift in Sources */,
 				71D5D478269E86DD004D9CC7 /* MyPageDetailResponse.swift in Sources */,
@@ -1156,6 +1179,7 @@
 				7719B5C8269C2E1B00CBBB11 /* PresentMoaHomeDataManager.swift in Sources */,
 				1529FF7E26979F57000AD789 /* KeepinPlusTitleTVC.swift in Sources */,
 				1529FF9226998585000AD789 /* KeepinPlusImageTVC.swift in Sources */,
+				77BEA4AC26A15873007E2236 /* ReminderDetailDataResponse.swift in Sources */,
 				77F04806268B0CB000FBFDD7 /* Constants.swift in Sources */,
 				7719B5CA269C2E2700CBBB11 /* PresentMoaHomeResponse.swift in Sources */,
 				153462D12694468B00060E44 /* JoinFirstVC.swift in Sources */,
