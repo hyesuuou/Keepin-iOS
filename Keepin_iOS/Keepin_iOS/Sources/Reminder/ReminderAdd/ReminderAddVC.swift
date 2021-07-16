@@ -78,6 +78,28 @@ class ReminderAddVC: UIViewController {
     @objc func toDone(){
         if ReminderAddVC.fromEdit == true{
             //이벤트가 수정되었습니다
+            var days : String? = nil
+            if remindSwitch.isOn{
+                if remindLabel.text == "당일"{
+                    days = "0"
+                }
+                else if remindLabel.text == "1일 전"{
+                    days = "1"
+                }
+                else if remindLabel.text == "2일 전"{
+                    days = "2"
+                }
+                else if remindLabel.text == "3일 전"{
+                    days = "3"
+                }
+                else if remindLabel.text == "일주일 전"{
+                    days = "7"
+                }
+            }
+            
+            let newDate = dateLabel.text!.replacingOccurrences(of: ".", with: "-", options: .literal, range: nil)
+            let request = ReminderDetailRequest(title: eventTextField.text, date: newDate, isAlarm: remindSwitch.isOn, daysAgo: days, isImportant: importantButton.isSelected)
+            ReminderDetailDataManager().reminderEdit(ReminderAddVC.reminderID, modified: request, viewController: self)
             //수정 서버 통신
             self.presentAlert(title: "", message: "수정이 완료되었습니다", isCancelActionIncluded: true) { action in
                 self.dismiss(animated: true, completion: nil)

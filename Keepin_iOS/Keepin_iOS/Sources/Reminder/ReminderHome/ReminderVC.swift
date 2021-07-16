@@ -39,7 +39,7 @@ class ReminderVC: UIViewController {
     var months = ["","","1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월","",""]
     var sample : Int = 0
     var serverData : MonthReminders?
-    var forServer : String = ""
+    var forServer : String = "01"
     func monthTest(){
         if sample < 9{
             forServer = "0" + String(sample+1)
@@ -58,9 +58,6 @@ class ReminderVC: UIViewController {
         setNavigationBar()
         setUI()
         
-        let request = ReminderHomeRequest(year: Date().yearOnly(), month: "01")
-        ReminderHomeDataManager().reminders(request, viewController: self)
-        
         let layout = UICollectionViewFlowLayout()
         let cellWidth = UIScreen.main.bounds.width / 5
         layout.itemSize = CGSize(width: cellWidth, height: 36)
@@ -75,6 +72,11 @@ class ReminderVC: UIViewController {
         monthCV.register(ReminderCVC.nib(), forCellWithReuseIdentifier: "ReminderCVC")
         monthCV.delegate = self
         monthCV.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let request = ReminderHomeRequest(year: Date().yearOnly(), month: forServer)
+        ReminderHomeDataManager().reminders(request, viewController: self)
     }
     
     func setUI(){
