@@ -48,5 +48,29 @@ class MyPageHomeDataManager{
                 }
             }
     }
+    
+    func getNumberFriend(_ viewController: SelectFriendVC){
+        AF.request("\(Constant.BASE_URL)/friend",method: .get, parameters: nil,
+                   headers: Constant.HEADER)
+            .validate()
+            .responseDecodable(of: MyPageFriendResponse.self){ response in
+                switch response.result {
+                case .success(let response):
+                    //viewController.friendServerData = response.data
+                    
+                    //MyPageHomeDataManager.friendList = response.data.friends
+                    for friend in response.data.friends {
+                        viewController.allData.append(friend.name)
+                        
+                    }
+                    
+                    //print(MyPageHomeDataManager.friendList)
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    print("나오지마라")
+                }
+            }
+    }
 }
 

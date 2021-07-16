@@ -9,7 +9,7 @@ import UIKit
 
 class SelectFriendVC: UIViewController {
 
-    var allData : [String] = ["김혜수", "최이준", "이채연", "박윤정", "박윤경", "이은영", "김영민", "손연주", "김보민"] // 전체 데이터 -> 나중에는 친구 목록이나 서버에서 받아와야함.
+    var allData : [String] = [] // 전체 데이터 -> 나중에는 친구 목록이나 서버에서 받아와야함.
     var filteredData : [String] = [] // 검색된 결과
     static var selectedData : [String] = [] // 선택된 결과
     var sectionㅣist : [String] = ["선택된 친구", "검색된 친구"]
@@ -38,6 +38,7 @@ class SelectFriendVC: UIViewController {
         setSearchBarUI()
         searchBar.delegate = self
         self.dismissKeyboardWhenTappedAround()
+        MyPageHomeDataManager().getNumberFriend(self)
     }
     
     @IBAction func backButtonClicked(_ sender: Any) {
