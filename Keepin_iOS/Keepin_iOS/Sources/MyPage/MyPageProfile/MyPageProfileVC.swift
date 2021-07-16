@@ -35,6 +35,24 @@ class MyPageProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
+        naviagationBar()
+        setGesture()
+    }
+    
+    
+    func setGesture(){
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(toNameEdit(sender:)))
+        nameView.addGestureRecognizer(gesture)
+        
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(toPWEdit(sender:)))
+        passwordView.addGestureRecognizer(gesture2)
+        
+        let gesture3 = UITapGestureRecognizer(target: self, action: #selector(toPhoneEdit(sender:)))
+        phoneView.addGestureRecognizer(gesture3)
+    }
+    
+    func setText(){
         lineView1.backgroundColor = .keepinGray4
         lineView2.backgroundColor = .keepinGray4
         profileEdit.font = UIFont.GmarketSansTTF(.medium, size: 20)
@@ -52,19 +70,8 @@ class MyPageProfileVC: UIViewController {
         label4.font = UIFont.NotoSans(.regular, size: 16)
         
         logout.setTitleColor(.keepinGray4, for: .normal)
-        
         delete.setTitleColor(.keepinGray4, for: .normal)
-        
-        naviagationBar()
-        
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(toNameEdit(sender:)))
-        nameView.addGestureRecognizer(gesture)
-        
-        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(toPWEdit(sender:)))
-        passwordView.addGestureRecognizer(gesture2)
-        
-        let gesture3 = UITapGestureRecognizer(target: self, action: #selector(toPhoneEdit(sender:)))
-        phoneView.addGestureRecognizer(gesture3)
+
     }
 
     @objc func toNameEdit(sender: UITapGestureRecognizer){

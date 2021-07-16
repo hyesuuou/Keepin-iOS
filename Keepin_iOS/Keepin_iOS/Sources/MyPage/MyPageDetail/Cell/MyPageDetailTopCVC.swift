@@ -37,6 +37,10 @@ class MyPageDetailTopCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        setStyle()
+    }
+    
+    func setStyle(){
         allPresent.font = UIFont.NotoSans(.regular, size: 14)
         allPresent.text = "총 선물"
         allPresent.textColor = .keepinGray5
@@ -66,9 +70,7 @@ class MyPageDetailTopCVC: UICollectionViewCell {
         view5.backgroundColor = .keepinGray
         view1.layer.cornerRadius = 12
         view5.layer.cornerRadius = 12
-        
     }
-    
     func setAuto(){
         allPresentPad.constant = UIScreen.main.bounds.width * (36/375)
         givePresentPad.constant = UIScreen.main.bounds.width * (

@@ -29,6 +29,11 @@ class MyPageEditPwVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setStyle()
+        setAddTarget()
+    }
+    
+    func setStyle(){
         line1.backgroundColor = .keepinGray4
         line2.backgroundColor = .keepinGray4
         line3.backgroundColor = .keepinGray4
@@ -39,13 +44,14 @@ class MyPageEditPwVC: UIViewController {
         
         doneButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
         doneButton.tintColor = .keepinGray3
+    }
     
+    func setAddTarget(){
         textField1.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         
         textField2.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         
         textField3.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
-
     }
 
     @IBAction func toBack(_ sender: Any) {

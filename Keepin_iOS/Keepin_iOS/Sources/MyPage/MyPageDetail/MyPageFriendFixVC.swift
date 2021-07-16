@@ -16,13 +16,16 @@ class MyPageFriendFixVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setStyle()
+        setNavigationBar()
+    }
+    
+    func setStyle(){
         friendLabel.text = "친구의 이름을 입력해 주세요."
         friendLabel.textColor = .keepinBlack
         friendLabel.font  = UIFont.GmarketSansTTF(.medium, size: 16)
 
         textView.backgroundColor = .keepinBlack
-        
-        setNavigationBar()
     }
     
     func setNavigationBar(){

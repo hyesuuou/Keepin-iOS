@@ -17,20 +17,10 @@ class KeepinPlusFriendVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mainLabel.textColor = UIColor.keepinBlack
-        mainLabel.font = UIFont.GmarketSansTTF(.medium, size: 16)
-        
-        doneButton.tintColor = .keepinGray3
-        doneButton.titleLabel?.font = .NotoSans(.bold, size: 16)
-        
-        lineView.backgroundColor = .keepinGray3
-        
-        textField.attributedPlaceholder = NSAttributedString(string: "등록할 이름을 입력해 주세요.(최대 5자)", attributes: [NSAttributedString.Key.foregroundColor: UIColor.keepinGray3])
+
         textField.addTarget(self, action: #selector(textFieldChange(_sender:)), for: .editingChanged)
         setWarnLabel(label: warnLabel)
-        
-        self.navigationController?.navigationBar.isHidden = true
+        setStyle()
     }
     
     @objc func textFieldChange(_sender: Any?){
@@ -48,6 +38,21 @@ class KeepinPlusFriendVC: UIViewController {
 
     @IBAction func toBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setStyle(){
+        mainLabel.textColor = UIColor.keepinBlack
+        mainLabel.font = UIFont.GmarketSansTTF(.medium, size: 16)
+        
+        doneButton.tintColor = .keepinGray3
+        doneButton.titleLabel?.font = .NotoSans(.bold, size: 16)
+        
+        lineView.backgroundColor = .keepinGray3
+        
+        textField.attributedPlaceholder = NSAttributedString(string: "등록할 이름을 입력해 주세요.(최대 5자)", attributes: [NSAttributedString.Key.foregroundColor: UIColor.keepinGray3])
+        
+        self.navigationController?.navigationBar.isHidden = true
+    
     }
     
 
