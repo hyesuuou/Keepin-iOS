@@ -114,12 +114,10 @@ extension MyPageDetailVC: UICollectionViewDataSource{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageDetailMemoCVC.identifier, for: indexPath)as? MyPageDetailMemoCVC else{
                 return UICollectionViewCell()
             }
-            
-//            guard let data = serverData?.keepins else {
-//                cell.serverDatas = PresentDataClass(keepins: KeepinList(id: "", title: "", photo: "", date: "", taken: nil))
-//            }
           
             cell.serverDatas = (serverData!.keepins)
+            print("-----")
+            print(serverData!.keepins)
             return cell
             
         default:

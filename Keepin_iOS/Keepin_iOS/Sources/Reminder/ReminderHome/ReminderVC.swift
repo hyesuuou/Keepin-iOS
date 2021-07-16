@@ -70,7 +70,7 @@ class ReminderVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let request = ReminderHomeRequest(year: Date().yearOnly(), month: forServer)
+        let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
         ReminderHomeDataManager().reminders(request, viewController: self)
     }
     

@@ -39,7 +39,7 @@ class MyPageDetailPresentCVC: UICollectionViewCell,UITextViewDelegate {
         lineCount.text = "/5줄"
         lineCount.font = .NotoSans(.regular, size: 11)
         
-        numberLine.text = "3"
+        numberLine.text = "1"
         numberLine.font = .NotoSans(.regular, size: 11)
     }
     
