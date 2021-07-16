@@ -17,13 +17,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="344" height="136"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSearch" translatesAutoresizingMaskIntoConstraints="NO" id="fnq-Sj-QzC">
-                        <rect key="frame" x="21" y="2" width="24" height="24"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="24" id="mNf-gN-yEr"/>
-                            <constraint firstAttribute="width" constant="24" id="n3t-ss-ndl"/>
-                        </constraints>
-                    </imageView>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="친구의 이름을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDi-Wk-pYP">
                         <rect key="frame" x="46" y="0.0" width="277" height="24"/>
                         <constraints>
@@ -32,6 +25,29 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dfw-hP-b04">
+                        <rect key="frame" x="0.0" y="0.0" width="344" height="136"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xR1-n7-iVl">
+                                <rect key="frame" x="0.0" y="0.0" width="344" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="W8S-dn-IuZ"/>
+                                </constraints>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xR1-n7-iVl" secondAttribute="trailing" id="0Qa-1d-IzY"/>
+                            <constraint firstItem="xR1-n7-iVl" firstAttribute="top" secondItem="Dfw-hP-b04" secondAttribute="top" id="fof-z4-0p8"/>
+                            <constraint firstItem="xR1-n7-iVl" firstAttribute="leading" secondItem="Dfw-hP-b04" secondAttribute="leading" id="jf4-KW-eVQ"/>
+                        </constraints>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSearch" translatesAutoresizingMaskIntoConstraints="NO" id="fnq-Sj-QzC">
+                        <rect key="frame" x="21" y="2" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="mNf-gN-yEr"/>
+                            <constraint firstAttribute="width" constant="24" id="n3t-ss-ndl"/>
+                        </constraints>
+                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIf-rv-Bd2">
                         <rect key="frame" x="16" y="29" width="312" height="1"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
@@ -43,16 +59,21 @@
                 <constraints>
                     <constraint firstItem="LIf-rv-Bd2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="0Wm-l1-oUv"/>
                     <constraint firstItem="fnq-Sj-QzC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="5D2-n4-Vk8"/>
+                    <constraint firstItem="Dfw-hP-b04" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5Qr-HU-4Y5"/>
+                    <constraint firstAttribute="trailing" secondItem="Dfw-hP-b04" secondAttribute="trailing" id="CSY-4D-IIT"/>
+                    <constraint firstAttribute="bottom" secondItem="Dfw-hP-b04" secondAttribute="bottom" id="FFe-Es-t3w"/>
                     <constraint firstItem="LIf-rv-Bd2" firstAttribute="top" secondItem="fnq-Sj-QzC" secondAttribute="bottom" constant="3" id="Gm6-eB-rIt"/>
                     <constraint firstItem="fnq-Sj-QzC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="21" id="Olh-cI-eE1"/>
                     <constraint firstAttribute="trailing" secondItem="LIf-rv-Bd2" secondAttribute="trailing" constant="16" id="amV-mP-N8M"/>
                     <constraint firstItem="RDi-Wk-pYP" firstAttribute="leading" secondItem="fnq-Sj-QzC" secondAttribute="trailing" constant="1" id="emD-6N-hNQ"/>
                     <constraint firstAttribute="trailing" secondItem="RDi-Wk-pYP" secondAttribute="trailing" constant="21" id="fQS-5J-ylm"/>
                     <constraint firstItem="RDi-Wk-pYP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="h61-V3-9cy"/>
+                    <constraint firstItem="Dfw-hP-b04" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ntr-fu-N1p"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="friendNameButton" destination="xR1-n7-iVl" id="Bf4-Yb-PFJ"/>
                 <outlet property="textfield" destination="RDi-Wk-pYP" id="PbI-dQ-dIG"/>
                 <outlet property="underlineView" destination="LIf-rv-Bd2" id="87O-ld-win"/>
             </connections>
