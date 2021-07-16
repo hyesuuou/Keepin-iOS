@@ -35,10 +35,21 @@ class ReminderDetailDataManager {
             .responseDecodable(of: ReminderDetailResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-//                    viewController.serverData = response.data!
-//                    print(response.data!)
-//                    viewController.didSuccessReminderDetail(message: response.message!)
                     print(response.message!)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+    }
+    
+    func reminderAdd(_ parameter: ReminderDetailRequest, viewController: ReminderAddVC) {
+        AF.request("\(Constant.BASE_URL)/reminder", method: .post, parameters: parameter, encoder: JSONParameterEncoder(), headers: Constant.HEADER)
+            .validate(statusCode: 200..<500)
+            .validate(contentType: ["application/json"])
+            .responseDecodable(of: ReminderAddResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    print(response.data!)
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
