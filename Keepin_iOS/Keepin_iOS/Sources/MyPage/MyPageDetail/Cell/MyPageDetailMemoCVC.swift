@@ -20,17 +20,25 @@ class MyPageDetailMemoCVC: UICollectionViewCell {
     
     public static let identifier = "MyPageDetailMemoCVC"
     
+    //static var presentName : [String] = []
+    //static var presentData : [String] = []
     
+    static var friend :  String = ""
+    var test : [String] = []
+    var testTwo : [String] = []
     
+    var serverDatas : [KeepinList] = []
+    
+    var testing = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        print(indicatorBar.frame.origin.x)
         indicatorBar.backgroundColor = .keepinGreen
+        
         presentMoaCV.delegate = self
         presentMoaCV.dataSource = self
-    
+        
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 165, height: 228)
         presentMoaCV.collectionViewLayout = layout
@@ -43,7 +51,11 @@ class MyPageDetailMemoCVC: UICollectionViewCell {
         stackWidth.constant = UIScreen.main.bounds.width * (88/375)
 
         indicatorStart.constant = UIScreen.main.bounds.width * (72.5/375)
+        MyPagePresentMoaDataManager().gotPresent(MyPageDetailMemoCVC.friend,viewController: MyPageDetailVC())
+        
     }
+    
+    
     
     @IBAction func newButtonDidTap(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -56,17 +68,16 @@ class MyPageDetailMemoCVC: UICollectionViewCell {
             got.isSelected = false
             
             UIView.animate(withDuration: 0.2){
-                
                 self.indicatorBar.frame.origin.x = UIScreen.main.bounds.width * (330/375)
             }
+            MyPagePresentMoaDataManager().givePresent(MyPageDetailMemoCVC.friend, viewController: MyPageDetailVC())
         }else if sender == got{
             got.isSelected = true
             gave.isSelected = false
             UIView.animate(withDuration: 0.2){
-                
                 self.indicatorBar.frame.origin.x = UIScreen.main.bounds.width * (280/375)
-                
             }
+            MyPagePresentMoaDataManager().gotPresent(MyPageDetailMemoCVC.friend,viewController: MyPageDetailVC())
         }
     }
     
@@ -85,19 +96,25 @@ class MyPageDetailMemoCVC: UICollectionViewCell {
         presentMoaCV.register(moaNib, forCellWithReuseIdentifier: MyPageDetailPresentMoaCVC.identifier)
     }
     
-    
+    func setData(friendIdx: String){
+        MyPageDetailMemoCVC.friend = friendIdx
+        
+    }
 
 }
 
 
-extension MyPageDetailMemoCVC: UICollectionViewDelegate,UICollectionViewDataSource{
+extension MyPageDetailMemoCVC: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return serverDatas.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = presentMoaCV.dequeueReusableCell(withReuseIdentifier: MyPageDetailPresentMoaCVC.identifier, for: indexPath) as! MyPageDetailPresentMoaCVC
+        guard let cell = presentMoaCV.dequeueReusableCell(withReuseIdentifier: MyPageDetailPresentMoaCVC.identifier, for: indexPath) as? MyPageDetailPresentMoaCVC else { return UICollectionViewCell() }
+        cell.presentImage.setImage(with: serverDatas[indexPath.row].photo)
+        cell.presentLabel.text = serverDatas[indexPath.row].title
+        cell.presentDate.text = serverDatas[indexPath.row].date  
         
         return cell
     }
@@ -106,7 +123,7 @@ extension MyPageDetailMemoCVC: UICollectionViewDelegate,UICollectionViewDataSour
 
 }
 
-extension MyPageDetailPresentCVC:UICollectionViewDelegateFlowLayout{
+extension MyPageDetailMemoCVC :UICollectionViewDelegateFlowLayout{
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -130,4 +147,6 @@ extension MyPageDetailPresentCVC:UICollectionViewDelegateFlowLayout{
 
     
 }
+
+
 

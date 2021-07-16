@@ -24,6 +24,7 @@ class MyPageDetailDataManager{
                     viewController.gotNum = response.data.taken
                     viewController.memoInfo = response.data.memo
                     viewController.didSuccessGetFriendInfo(messsage: response.message)
+            
                     
                 case .failure(let error):
                     print(error.localizedDescription)
