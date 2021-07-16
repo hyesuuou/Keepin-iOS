@@ -21,6 +21,8 @@ class SelectFriendVC: UIViewController {
     @IBOutlet var headerview: UIView!
     @IBOutlet weak var okButton: UIButton!
     
+    @IBOutlet weak var newFriendView: UIView!
+    @IBOutlet weak var addFriendButton: UIButton!
     @IBOutlet var headerSecondView: UIView!
     @IBOutlet weak var headerSecondTitleLabel: UILabel!
     @IBOutlet weak var headerTitleLabel: UILabel!
@@ -31,7 +33,9 @@ class SelectFriendVC: UIViewController {
         setUI()
         setTableview()
         registerXib()
+        setSearchBarUI()
         searchBar.delegate = self
+        self.dismissKeyboardWhenTappedAround()
     }
     
     @IBAction func backButtonClicked(_ sender: Any) {
@@ -48,6 +52,9 @@ class SelectFriendVC: UIViewController {
         okButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
         searchNoFriend.font = UIFont.GmarketSansTTF(.medium, size: 16)
         searchNoFriend.textColor = .keepinGray3
+        addFriendButton.titleLabel?.font = UIFont.NotoSans(.regular, size: 14)
+        addFriendButton.tintColor = .keepinGreen
+    
     }
     
     func setTableview(){
@@ -61,6 +68,32 @@ class SelectFriendVC: UIViewController {
         
         let titleNib = UINib(nibName: SelectFriendTitleTVC.identifier, bundle: nil)
         tableview.register(titleNib, forCellReuseIdentifier: SelectFriendTitleTVC.identifier)
+    }
+    
+    func setSearchBarUI(){
+        searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: UIBarMetrics.default)
+        if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
+            //서치바 백그라운드 컬러
+            textfield.backgroundColor = UIColor.white
+            //플레이스홀더 글씨 색 정하기
+            textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
+            //서치바 텍스트입력시 색 정하기
+            textfield.textColor = UIColor.black
+            textfield.font = UIFont.NotoSans(.regular, size: 16)
+            //왼쪽 아이콘 이미지넣기
+            if let leftView = textfield.leftView as? UIImageView {
+                leftView.image = UIImage(named: "icSearch")
+                //이미지 틴트컬러 정하기
+                leftView.tintColor = UIColor.black
+            }
+            //오른쪽 x버튼 이미지넣기
+            if let rightView = textfield.rightView as? UIImageView {
+                rightView.image = rightView.image?.withRenderingMode(.alwaysTemplate)
+                //이미지 틴트 정하기
+                rightView.tintColor = UIColor.white
+            }
+            
+        }
     }
     
 }

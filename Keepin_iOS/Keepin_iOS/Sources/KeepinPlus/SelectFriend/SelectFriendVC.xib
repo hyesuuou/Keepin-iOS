@@ -10,10 +10,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectFriendVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="addFriendButton" destination="MAK-eb-iLx" id="yfT-So-E3C"/>
                 <outlet property="headerSecondTitleLabel" destination="Je0-ff-THW" id="Pp5-Po-aEP"/>
                 <outlet property="headerSecondView" destination="lUe-9Z-gcb" id="daE-g5-xLf"/>
                 <outlet property="headerTitleLabel" destination="g3G-De-Njh" id="tQC-PP-3Si"/>
                 <outlet property="headerview" destination="EeX-bN-OgQ" id="Edo-Vi-JwR"/>
+                <outlet property="newFriendView" destination="x1c-e5-tF5" id="bAw-g7-b0T"/>
                 <outlet property="okButton" destination="q0j-qs-BYV" id="nnS-wH-uWU"/>
                 <outlet property="searchBar" destination="fkn-tK-tWY" id="Dsu-oo-yjL"/>
                 <outlet property="searchNoFriend" destination="07W-uU-leP" id="8AR-nQ-TbW"/>
@@ -54,28 +56,53 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMC-r5-4Pq">
-                    <rect key="frame" x="0.0" y="156" width="414" height="706"/>
+                    <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NWC-5C-u3d">
-                            <rect key="frame" x="0.0" y="44" width="414" height="662"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        </tableView>
                         <searchBar contentMode="redraw" id="fkn-tK-tWY">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <rect key="frame" x="8" y="0.0" width="398" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTg-WJ-Dgn">
+                            <rect key="frame" x="16" y="46" width="382" height="1"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="4Qf-e8-CXT"/>
+                            </constraints>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NWC-5C-u3d">
+                            <rect key="frame" x="0.0" y="47" width="414" height="671"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <view key="tableHeaderView" contentMode="scaleToFill" id="x1c-e5-tF5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAK-eb-iLx">
+                                        <rect key="frame" x="290" y="22" width="99" height="30"/>
+                                        <state key="normal" title="새 친구 등록하기"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MAK-eb-iLx" secondAttribute="trailing" constant="25" id="Uj1-75-RSG"/>
+                                    <constraint firstItem="MAK-eb-iLx" firstAttribute="top" secondItem="x1c-e5-tF5" secondAttribute="top" constant="22" id="s5K-Af-SD8"/>
+                                </constraints>
+                            </view>
+                        </tableView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="NWC-5C-u3d" firstAttribute="top" secondItem="DTg-WJ-Dgn" secondAttribute="bottom" id="Bpk-S3-J0p"/>
+                        <constraint firstItem="DTg-WJ-Dgn" firstAttribute="leading" secondItem="fMC-r5-4Pq" secondAttribute="leading" constant="16" id="CEV-mM-H54"/>
+                        <constraint firstItem="DTg-WJ-Dgn" firstAttribute="top" secondItem="fMC-r5-4Pq" secondAttribute="top" constant="46" id="XH4-Vo-OUW"/>
                         <constraint firstItem="NWC-5C-u3d" firstAttribute="leading" secondItem="fMC-r5-4Pq" secondAttribute="leading" id="bHD-L0-0Zn"/>
                         <constraint firstAttribute="bottom" secondItem="NWC-5C-u3d" secondAttribute="bottom" id="eHW-lD-BBV"/>
-                        <constraint firstItem="NWC-5C-u3d" firstAttribute="top" secondItem="fkn-tK-tWY" secondAttribute="bottom" id="nYS-Wh-ekv"/>
+                        <constraint firstAttribute="trailing" secondItem="DTg-WJ-Dgn" secondAttribute="trailing" constant="16" id="qv5-Fo-PFY"/>
                         <constraint firstAttribute="trailing" secondItem="NWC-5C-u3d" secondAttribute="trailing" id="wWE-Su-1qb"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZG-hT-W3I">
-                    <rect key="frame" x="0.0" y="94" width="414" height="62"/>
+                    <rect key="frame" x="0.0" y="94" width="414" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구를 선택해 주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfh-aQ-1sf">
                             <rect key="frame" x="24" y="20" width="146" height="21"/>
@@ -95,7 +122,7 @@
                         <constraint firstItem="kfh-aQ-1sf" firstAttribute="leading" secondItem="uZG-hT-W3I" secondAttribute="leading" constant="24" id="3l1-hS-Edr"/>
                         <constraint firstItem="kfh-aQ-1sf" firstAttribute="top" secondItem="uZG-hT-W3I" secondAttribute="top" constant="20" id="Gam-PO-kiB"/>
                         <constraint firstItem="mLU-QU-CRP" firstAttribute="centerY" secondItem="kfh-aQ-1sf" secondAttribute="centerY" id="Lze-S7-UHS"/>
-                        <constraint firstAttribute="height" constant="62" id="Saf-Eu-ogf"/>
+                        <constraint firstAttribute="height" constant="50" id="Saf-Eu-ogf"/>
                         <constraint firstItem="mLU-QU-CRP" firstAttribute="leading" secondItem="kfh-aQ-1sf" secondAttribute="trailing" constant="4" id="hiU-7q-Kkz"/>
                     </constraints>
                 </view>
