@@ -24,12 +24,13 @@ class HomeVC: UIViewController {
         homeTableview.allowsSelection = false
         
         HomeDataManager().getRandom(self)
-        HomeDataManager().getReminderHome(self)
+        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setNavigationBarUI()
+        HomeDataManager().getReminderHome(self)
     }
     
     func setNavigationBarUI(){
