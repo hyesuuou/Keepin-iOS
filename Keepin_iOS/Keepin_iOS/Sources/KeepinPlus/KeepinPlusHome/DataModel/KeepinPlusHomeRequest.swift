@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+// MARK: - KeepinPlusHomeRequest
+struct KeepinPlusHomeRequest: Codable {
+    let title: String
+    let taken: Bool
+    let date: String
+    let category: [String]
+    let record: String
+    let friendIdx: [String]
+}
