@@ -121,16 +121,16 @@ class ReminderAddVC: UIViewController {
             if remindLabel.text == "당일"{
                 days = "0"
             }
-            else if remindLabel.text == "1일 전"{
+            else if remindLabel.text == "1일 전 "{
                 days = "1"
             }
-            else if remindLabel.text == "2일 전"{
+            else if remindLabel.text == "2일 전 "{
                 days = "2"
             }
-            else if remindLabel.text == "3일 전"{
+            else if remindLabel.text == "3일 전 "{
                 days = "3"
             }
-            else if remindLabel.text == "일주일 전"{
+            else if remindLabel.text == "1주일 전 "{
                 days = "7"
             }
         }
@@ -151,7 +151,7 @@ class ReminderAddVC: UIViewController {
             //리마인더 등록 서버 통신
             self.presentAlert(title: "", message: "이벤트가 등록되었습니다", isCancelActionIncluded: false) { action in
                     self.dismiss(animated: true, completion: nil)
-                }
+            }
         }
     }
     
@@ -235,15 +235,16 @@ extension ReminderAddVC {
         eventTextField.text = serverData?.title
         
         let days = serverData?.daysAgo
+        
         if days != nil{
             if days == "0"{
                 remindLabel.text = "당일"
             }
             else if days == "7"{
-                remindLabel.text = "1주일 전"
+                remindLabel.text = "1주일 전 "
             }
             else{
-                remindLabel.text = days! + "일 전"
+                remindLabel.text = days! + "일 전 "
             }
         }
         

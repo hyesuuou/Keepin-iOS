@@ -49,7 +49,7 @@ class ReminderDetailDataManager {
             .responseDecodable(of: ReminderAddResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    print(response.data!)
+                    print(response.message!)
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
