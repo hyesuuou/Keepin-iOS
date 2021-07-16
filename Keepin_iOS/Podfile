@@ -8,6 +8,7 @@ target 'Keepin_iOS' do
   # Pods for Keepin_iOS
   pod 'Alamofire', '~> 5.4'
   pod 'Kingfisher', '~> 6.0'
+pod 'SwiftyJSON', '~> 4.0'
 
 
 end
