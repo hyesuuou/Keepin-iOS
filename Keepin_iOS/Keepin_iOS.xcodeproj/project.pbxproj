@@ -123,7 +123,8 @@
 		77BEA4A426A0A9CC007E2236 /* ReminderHomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4A326A0A9CC007E2236 /* ReminderHomeResponse.swift */; };
 		77BEA4A626A0A9E7007E2236 /* ReminderHomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4A526A0A9E7007E2236 /* ReminderHomeRequest.swift */; };
 		77BEA4AA26A15864007E2236 /* ReminderDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4A926A15864007E2236 /* ReminderDetailDataManager.swift */; };
-		77BEA4AC26A15873007E2236 /* ReminderDetailDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4AB26A15873007E2236 /* ReminderDetailDataResponse.swift */; };
+		77BEA4AC26A15873007E2236 /* ReminderDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4AB26A15873007E2236 /* ReminderDetailResponse.swift */; };
+		77BEA4AE26A16304007E2236 /* ReminderDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4AD26A16304007E2236 /* ReminderDetailRequest.swift */; };
 		77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */; };
 		77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E4268AF98F00FBFDD7 /* SceneDelegate.swift */; };
 		77F047EC268AF99900FBFDD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77F047EB268AF99900FBFDD7 /* Assets.xcassets */; };
@@ -275,7 +276,8 @@
 		77BEA4A326A0A9CC007E2236 /* ReminderHomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHomeResponse.swift; sourceTree = "<group>"; };
 		77BEA4A526A0A9E7007E2236 /* ReminderHomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHomeRequest.swift; sourceTree = "<group>"; };
 		77BEA4A926A15864007E2236 /* ReminderDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailDataManager.swift; sourceTree = "<group>"; };
-		77BEA4AB26A15873007E2236 /* ReminderDetailDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailDataResponse.swift; sourceTree = "<group>"; };
+		77BEA4AB26A15873007E2236 /* ReminderDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailResponse.swift; sourceTree = "<group>"; };
+		77BEA4AD26A16304007E2236 /* ReminderDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailRequest.swift; sourceTree = "<group>"; };
 		77F047DF268AF98F00FBFDD7 /* Keepin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keepin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F047E4268AF98F00FBFDD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -683,7 +685,8 @@
 		77BEA4A726A1583D007E2236 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				77BEA4AB26A15873007E2236 /* ReminderDetailDataResponse.swift */,
+				77BEA4AD26A16304007E2236 /* ReminderDetailRequest.swift */,
+				77BEA4AB26A15873007E2236 /* ReminderDetailResponse.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -1171,6 +1174,7 @@
 				152439E8269D4A91009E5E8E /* EmailLoginResponse.swift in Sources */,
 				77F04851268C4E2500FBFDD7 /* BaseTBC.swift in Sources */,
 				77F04846268C4DA000FBFDD7 /* KeepinPlusVC.swift in Sources */,
+				77BEA4AE26A16304007E2236 /* ReminderDetailRequest.swift in Sources */,
 				77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */,
 				7719B5DC269D71F300CBBB11 /* PresentDetailDataManager.swift in Sources */,
 				71E1324D2698A8BF00DB2D9F /* FriendListCVC.swift in Sources */,
@@ -1187,7 +1191,7 @@
 				7719B5C8269C2E1B00CBBB11 /* PresentMoaHomeDataManager.swift in Sources */,
 				1529FF7E26979F57000AD789 /* KeepinPlusTitleTVC.swift in Sources */,
 				1529FF9226998585000AD789 /* KeepinPlusImageTVC.swift in Sources */,
-				77BEA4AC26A15873007E2236 /* ReminderDetailDataResponse.swift in Sources */,
+				77BEA4AC26A15873007E2236 /* ReminderDetailResponse.swift in Sources */,
 				77F04806268B0CB000FBFDD7 /* Constants.swift in Sources */,
 				7719B5CA269C2E2700CBBB11 /* PresentMoaHomeResponse.swift in Sources */,
 				153462D12694468B00060E44 /* JoinFirstVC.swift in Sources */,
