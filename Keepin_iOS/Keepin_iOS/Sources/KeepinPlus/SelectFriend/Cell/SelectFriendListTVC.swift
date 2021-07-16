@@ -13,6 +13,8 @@ class SelectFriendListTVC: UITableViewCell {
     
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var clickedImageView: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,7 +31,18 @@ class SelectFriendListTVC: UITableViewCell {
         bgView.backgroundColor = .keepinGray1
         bgView.layer.cornerRadius = 10
         nameLabel.font = UIFont.NotoSans(.regular, size: 14)
-
+    }
+    
+    func setDataUI(name: String, clicked: Bool){
+        nameLabel.text = name
+        if clicked == true {
+            bgView.backgroundColor = .ice
+            clickedImageView.image = UIImage(named: "icnCheckActive")
+        }
+        else {
+            bgView.backgroundColor = .keepinGray1
+            clickedImageView.image = UIImage(named: "icCheckNot")
+        }
     }
     
 }
