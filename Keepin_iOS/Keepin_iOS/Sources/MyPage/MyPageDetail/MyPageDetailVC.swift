@@ -18,6 +18,8 @@ class MyPageDetailVC: UIViewController ,UITextViewDelegate{
     var gotNum : Int = 0
     var memoInfo : String = ""
     
+    var serverData : PresentDataClass?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         registerXib()
@@ -25,8 +27,9 @@ class MyPageDetailVC: UIViewController ,UITextViewDelegate{
         self.navigationController?.isNavigationBarHidden = true
         dismissKeyboardWhenTappedAround()
         
+        
         MyPageDetailDataManager().getFriendInfo(friendIdx, viewController: self)
-    
+        MyPagePresentMoaDataManager().gotPresent(friendIdx, viewController: self)
     }
     
     func registerXib(){
@@ -111,12 +114,25 @@ extension MyPageDetailVC: UICollectionViewDataSource{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageDetailMemoCVC.identifier, for: indexPath)as? MyPageDetailMemoCVC else{
                 return UICollectionViewCell()
             }
+            
+            cell.serverDatas = (serverData!.keepins)
+            print("asdadfsdsdfs")
+            print(serverData?.keepins)
+//            let itemNum : Int = (serverData?.keepins.count)!
+//
+//            for i in 0...itemNum-1 {
+//                cell.test.append((serverData?.keepins[i].title)!)
+//                cell.testTwo.append((serverData?.keepins[i].date)!)
+//
+//            }
             return cell
             
         default:
             return UICollectionViewCell()
         }
     }
+    
+   
 }
 
 extension MyPageDetailVC: UICollectionViewDelegateFlowLayout
@@ -152,9 +168,21 @@ extension MyPageDetailVC: UICollectionViewDelegateFlowLayout
 
 extension MyPageDetailVC{
     func didSuccessGetFriendInfo(messsage: String){
-        print("친구 상세보기 서버 통신 성공!!")
         myPageDetailCV.delegate = self
         myPageDetailCV.dataSource = self
         myPageDetailCV.reloadData()
+        
+        MyPageDetailMemoCVC.friend = friendIdx
+        
+    }
+    func didSuccessGetPresentInfo(message: String){
+//        myPageDetailCV.delegate = self
+//        myPageDetailCV.dataSource = self
+//
+//        myPageDetailCV.reloadData()
+        print(serverData)
+    }
+    func failedToRequest(message: String){
+        print(message)
     }
 }

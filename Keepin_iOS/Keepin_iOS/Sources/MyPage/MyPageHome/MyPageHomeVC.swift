@@ -215,6 +215,8 @@ extension MyPageHomeVC{
             MyPageHomeFriendCVC.friendId.append(j.id)
         }
         
+        
+        
         myPageHomeCV.delegate = self
         myPageHomeCV.dataSource = self
         myPageHomeCV.reloadData()

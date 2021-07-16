@@ -5,6 +5,7 @@
 //  Created by 이은영 on 2021/07/06.
 //
 
+
 import UIKit
 
 class MyPageDetailPresentMoaCVC: UICollectionViewCell {
@@ -25,6 +26,12 @@ class MyPageDetailPresentMoaCVC: UICollectionViewCell {
     
     static func nib() -> UINib{
         return UINib(nibName: "MyPageDetailPresentMoaCVC", bundle: nil)
+    }
+    
+    func setData(title1: String, title2: String){
+        //presentImage
+        presentLabel.text = title1
+        presentDate.text =  title2
     }
     
    
