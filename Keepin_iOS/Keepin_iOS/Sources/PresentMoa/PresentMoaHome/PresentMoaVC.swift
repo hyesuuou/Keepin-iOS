@@ -86,12 +86,30 @@ class PresentMoaVC: UIViewController {
         setUI()
         self.dismissKeyboardWhenTappedAround()
         
-        PresentMoaHomeDataManager().got("true", viewController: self)
-        
         let layout = UICollectionViewFlowLayout()
         let deviceWidth = (UIScreen.main.bounds.width - 40)-2
         layout.itemSize = CGSize(width: deviceWidth/2, height: 228)
         presentCV.collectionViewLayout = layout
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if newButton.isSelected{
+            if gave.isSelected == true{
+                PresentMoaHomeDataManager().gave("false", viewController: self)
+            }
+            else{
+                PresentMoaHomeDataManager().got("false", viewController: self)
+            }
+        }
+        else{
+            if gave.isSelected == true{
+                PresentMoaHomeDataManager().gave("true", viewController: self)
+            }
+            else{
+                PresentMoaHomeDataManager().got("true", viewController: self)
+            }
+            
+        }
     }
     
     //MARK: - Custom Methods

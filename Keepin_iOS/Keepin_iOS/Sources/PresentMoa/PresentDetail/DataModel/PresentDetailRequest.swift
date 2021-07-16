@@ -6,3 +6,6 @@
 //
 
 import Foundation
+struct DetailEraseRequest : Encodable{
+    var keepinArray : [String]
+}

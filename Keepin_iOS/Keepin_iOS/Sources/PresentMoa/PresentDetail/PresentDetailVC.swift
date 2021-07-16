@@ -43,7 +43,7 @@ class PresentDetailVC: UIViewController {
         setUI()
         setNavigationBar()
         
-        PresentDetailDataManager().details(keepinIdx, viewController: self)
+       PresentDetailDataManager().details(keepinIdx, viewController: self)
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: viewSizeWidth, height: viewSizeWidth)
@@ -97,8 +97,12 @@ class PresentDetailVC: UIViewController {
         let actionDelete = UIAlertAction(title: "삭제하기", style: .default) { action in
             self.presentAlert(title: "", message: "삭제하시겠습니까?", isCancelActionIncluded: true) { action in
                 //삭제되야함
-                print("삭제")
-                self.navigationController?.popViewController(animated: true)
+                var keepinToErase : [String] = []
+                keepinToErase.append((self.serverData?._id)!)
+                let request = DetailEraseRequest(keepinArray: keepinToErase)
+                PresentDetailDataManager().detailDelete(request, viewController: self)
+//                PresentMoaHomeDataManager().got("true", viewController: self)
+//                self.navigationController?.popViewController(animated: true)
             }
         }
         let actionEdit = UIAlertAction(title: "수정하기", style: .default) { action in
@@ -204,7 +208,13 @@ extension PresentDetailVC {
 
     }
     
-    func failedToRequest(message: String) {
+    func didSuccessDelete(message: String) {
+        print(message)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    func failedToRequest(message: String) { 
         print(message)
     }
 }
