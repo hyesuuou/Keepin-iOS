@@ -18,12 +18,10 @@ class LoginFirstVC: UIViewController {
     @IBOutlet weak var joinButton: UIButton!
     @IBOutlet weak var joinLabel: UILabel!
     
+    // Autolayout 관련
     @IBOutlet weak var imageTopConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var imageBottomConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var buttonBottomConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var joinLeftConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
@@ -34,10 +32,7 @@ class LoginFirstVC: UIViewController {
         setLayout()
     }
     
-    
     func setLayout(){
-        
-        
         imageTopConstraint.constant = screenHeight * (158/812)
         
         if screenHeight == 667.0 {
@@ -46,11 +41,7 @@ class LoginFirstVC: UIViewController {
         else {
             imageBottomConstraint.constant = screenHeight * (180/812)
         }
-        //buttonBottomConstraint.constant = screenHeight * (40/812)
-        
-        //joinLeftConstraint.constant = screenWidth * (99/375)
     }
-    
     
     func setButtonUI(){
         loginButtonUI(button: emailLoginButton)
@@ -69,7 +60,6 @@ class LoginFirstVC: UIViewController {
         button.titleLabel?.font = UIFont.NotoSans(.regular, size: 14)
         button.titleLabel?.textAlignment = .center
         
-    
     }
     
     func setLabelUI(){
@@ -80,7 +70,6 @@ class LoginFirstVC: UIViewController {
     func setNavigationBarUI(){
         self.navigationController?.navigationBar.isHidden = true
     }
-    
 
     @IBAction func emailLoginButtonClicked(_ sender: Any) {
         // 이메일 로그인 화면으로 전환
