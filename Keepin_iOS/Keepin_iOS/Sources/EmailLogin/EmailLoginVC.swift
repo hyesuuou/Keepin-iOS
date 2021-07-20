@@ -15,26 +15,32 @@ class EmailLoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
+    }
+    
+    func setUI(){
+        setNavigationBarUI()
         
-        self.navigationController?.navigationBar.isHidden = true
-        
-        
+        // 초기 로그인버튼 UI
         loginButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 14)
         loginButton.backgroundColor = .keepinGray1
         loginButton.tintColor = .keepinGray3
         loginButton.layer.cornerRadius = 26
         
+        // 초기 textfield UI
         setTextFieldUI(tf: idTextField)
         setTextFieldUI(tf: pwTextField)
         
+        // textfield 값 변경에 따른 UI
         idTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         pwTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
-        
-        
+    }
+    
+    func setNavigationBarUI(){
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     func serverConnect(email: String, password: String){
-        
         let emailLoginRequest = EmailLoginRequest(email: email, password: password)
         EmailLoginDataManager().postSignIn(emailLoginRequest, viewController: self)
     }
@@ -56,20 +62,17 @@ class EmailLoginVC: UIViewController {
             loginButton.backgroundColor = .keepinGray1
             loginButton.tintColor = .keepinGray3
         }
-        
     }
 
     @IBAction func loginButtonClicked(_ sender: Any) {
         serverConnect(email: idTextField.text!, password: pwTextField.text!)
     }
     
-
 }
 
-
-
-
+// MARK:- EmailLoginVC Server
 extension EmailLoginVC {
+    
     func didSuccessLogin(message: String, code: Int) {
         if code == 200 {
             self.navigationController?.changeRootViewController(BaseTBC())
@@ -77,7 +80,6 @@ extension EmailLoginVC {
         else if code == 400 {
             self.makeAlertOnlyMessage(message: "이메일/비밀번호를 다시 확인해주세요.", okAction: nil)
         }
-        
     }
     
     func failedToRequest(message: String) {
