@@ -67,13 +67,7 @@ class EmailLoginVC: UIViewController {
 }
 
 
-extension UITextField {
-  func addLeftPadding() {
-    let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 12.9, height: self.frame.height))
-    self.leftView = paddingView
-    self.leftViewMode = ViewMode.always
-  }
-}
+
 
 extension EmailLoginVC {
     func didSuccessLogin(message: String, code: Int) {
