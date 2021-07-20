@@ -19,6 +19,16 @@ class HomeTopTVC: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setUI()
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
+    func setUI(){
+        
+        // welcomeLabel UI
         welcomeLabel.text = "\(username)님\n키핀은 아름다워요"
         welcomeLabel.font = UIFont.GmarketSansTTF(.medium, size: 22)
         let attributedStr = NSMutableAttributedString(string: welcomeLabel.text!)
@@ -28,17 +38,10 @@ class HomeTopTVC: UITableViewCell {
         attributedStr.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedStr.length))
         welcomeLabel.attributedText = attributedStr
     
-        
+        // 랜덤이미지, 랜덤타이틀 UI
         randomImageView.image = UIImage(named: "imgEmptyEyes")
         messageLabel.text = ""
         messageLabel.font = UIFont.GmarketSansTTF(.medium, size: 14)
         messageLabel.textColor = .keepinGray5
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }

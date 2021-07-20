@@ -27,12 +27,10 @@ class HomeEventTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setUI()
-        //setDummy()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 
@@ -56,7 +54,10 @@ class HomeEventTVC: UITableViewCell {
         
     }
     
-    func setData(date: String, contents: String, important: Bool, secondDate: String, secondContents: String, secondImportant: Bool){
+    func setData(date: String, contents: String, important: Bool,
+                 secondDate: String, secondContents: String, secondImportant: Bool){
+        
+        // 첫 번째 리마인더 데이터 설정
         dateLabel.text = date
         contentsLabel.text = contents
         if important  == false {
@@ -66,17 +67,14 @@ class HomeEventTVC: UITableViewCell {
             reminderFirstButton.setImage(UIImage(named: "listReminderHomeImp"), for: .normal)
         }
         
+        // 두 번째 리마인더 데이터 설정
         dateSecondLabel.text = secondDate
         contentsSecontLabel.text = secondContents
-        if secondImportant == true {
-            
+        if secondImportant == false {
+            reminderSecondButton.setImage(UIImage(named: "listReminderHome"), for: .normal)
         }
         else {
-            
+            reminderSecondButton.setImage(UIImage(named: "listReminderHomeImp"), for: .normal)
         }
-    
     }
-    
-    
-   
 }

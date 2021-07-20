@@ -19,13 +19,8 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         registerXib()
         initRefresh()
-        
-        homeTableview.backgroundColor = .none
-        homeTableview.allowsSelection = false
-        
-        HomeDataManager().getRandom(self)
-        
-        
+        setUI()
+        serverConnect()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,10 +28,19 @@ class HomeVC: UIViewController {
         HomeDataManager().getReminderHome(self)
     }
     
+    func serverConnect(){
+        HomeDataManager().getRandom(self)
+    }
+    
+    func setUI(){
+        setNavigationBarUI()
+        homeTableview.backgroundColor = .none
+        homeTableview.allowsSelection = false
+    }
+    
     func setNavigationBarUI(){
         self.navigationController?.navigationBar.isHidden = true
     }
-    
     
     func registerXib(){
         let blankNib = UINib(nibName: KeepinPlusBlankTVC.identifier, bundle: nil)
@@ -53,45 +57,33 @@ class HomeVC: UIViewController {
     }
     
     func initRefresh(){
-            refreshControl.addTarget(self, action: #selector(refreshTable(refresh:)), for: .valueChanged)
-            homeTableview.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshTable(refresh:)), for: .valueChanged)
+        homeTableview.refreshControl = refreshControl
     }
     
     @objc func refreshTable(refresh: UIRefreshControl){
-            print("새로고침 시작")
-        
-                    // 현재로부터 새로고침을 중단함
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){ // 1초
-                HomeDataManager().getRandom(self)
-                self.homeTableview.reloadData()
-                refresh.endRefreshing()
-            }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){ // 1초
+            HomeDataManager().getRandom(self)
+            self.homeTableview.reloadData()
+            refresh.endRefreshing()
         }
+    }
     
     @objc func pushReminderVC(){
-        // 아니면 탭바를 이동해줄 수 있나?
         self.navigationController?.pushViewController(ReminderVC(), animated: true)
     }
     
-    
-
-
 }
 
 extension HomeVC : UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
         if (homeTableview.contentOffset.y > 0){
             homeTableview.contentOffset = CGPoint(x: 0, y: 0)
         }
-        
-        
-        
     }
-    
 }
 
-extension HomeVC  : UITableViewDataSource {
+extension HomeVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
@@ -104,10 +96,8 @@ extension HomeVC  : UITableViewDataSource {
                 return UITableViewCell()
             }
             return cell
+            
         case 1:
-            
-            
-            
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTopTVC.identifier, for: indexPath) as? HomeTopTVC else {
                 return UITableViewCell()
             }
@@ -115,27 +105,26 @@ extension HomeVC  : UITableViewDataSource {
             cell.randomImageView.setImage(with: image)
             return cell
             
-            
-            
-            
         case 2:
-            
             if UIScreen.main.bounds.height == 667.0 {
-                print("se2")
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTopSingleTVC.identifier, for: indexPath) as? HomeTopSingleTVC else {
                     return UITableViewCell()
                 }
-                cell.setData(date: reminderList[0].date, content: reminderList[0].title, important: reminderList[0].isImportant)
+                cell.setData(date: reminderList[0].date,
+                             content: reminderList[0].title,
+                             important: reminderList[0].isImportant)
                 return cell
                 
             } else {
-                
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeEventTVC.identifier, for: indexPath) as? HomeEventTVC else {
                     return UITableViewCell()
                 }
-                
-                cell.setData(date: reminderList[0].date, contents: reminderList[0].title, important: reminderList[0].isImportant,
-                             secondDate: reminderList[1].date, secondContents: reminderList[1].title, secondImportant: reminderList[1].isImportant)
+                cell.setData(date: reminderList[0].date,
+                             contents: reminderList[0].title,
+                             important: reminderList[0].isImportant,
+                             secondDate: reminderList[1].date,
+                             secondContents: reminderList[1].title,
+                             secondImportant: reminderList[1].isImportant)
                 cell.reminderNextButton.addTarget(self, action: #selector(pushReminderVC), for: .touchUpInside)
                 
                 return cell
@@ -143,7 +132,6 @@ extension HomeVC  : UITableViewDataSource {
         default:
             return UITableViewCell()
         }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -153,7 +141,7 @@ extension HomeVC  : UITableViewDataSource {
                 return 50
             }
             else {
-            return UIScreen.main.bounds.height * (50/812)
+                return UIScreen.main.bounds.height * (50/812)
             }
         case 1:
             if UIScreen.main.bounds.height == 667.0 {
@@ -174,16 +162,13 @@ extension HomeVC  : UITableViewDataSource {
         default:
             return 100
         }
-        
     }
-    
-    
 }
 
 extension HomeVC {
     func didSuccessGetRandom(message: String, imgURL: String) {
-        print("서버통신 성공")
-        image = imgURL
+        self.message = message
+        self.image = imgURL
         homeTableview.delegate = self
         homeTableview.dataSource = self
         homeTableview.reloadData()
@@ -192,11 +177,5 @@ extension HomeVC {
     func failedToRequest(message: String) {
         print(message)
     }
-    
-    func didSuccessGetHomeReminder(list: [Reminder]){
-        print(list)
-        
-    }
-    
 }
 

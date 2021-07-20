@@ -17,9 +17,7 @@ class HomeDataManager {
                 case .success(let response):
                     let title = response.data.title
                     let imgURL = response.data.photo
-                    viewController.message = title
-                    //viewController.image = imgURL
-                    viewController.didSuccessGetRandom(message: response.message, imgURL: imgURL)
+                    viewController.didSuccessGetRandom(message: title, imgURL: imgURL)
                     
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -38,14 +36,10 @@ class HomeDataManager {
                 case .success(let response):
                     let reminderList = response.data.reminders
                     viewController.reminderList = reminderList
-                    viewController.didSuccessGetHomeReminder(list: reminderList)
                     
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
-                
             }
-        
     }
-    
 }
