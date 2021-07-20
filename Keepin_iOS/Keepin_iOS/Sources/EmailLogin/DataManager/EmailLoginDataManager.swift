@@ -24,9 +24,8 @@ class EmailLoginDataManager {
                     viewController.didSuccessLogin(message: response.message, code: response.status)
                 case .failure(let error):
                     print(error.errorDescription!)
-                
+                    
                 }
             }
     }
-    
 }
