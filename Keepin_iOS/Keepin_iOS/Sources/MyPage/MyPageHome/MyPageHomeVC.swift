@@ -43,7 +43,7 @@ class MyPageHomeVC: UIViewController {
         if let data = notification.object as? String{
             //print(data)
             print("값설정")
-            nextVC.friendIdx = data
+            //nextVC.friendIdx = data
         }
         //nextVC.friendIdx = notification.object as? String
         //print(nextVC.friendIdx)

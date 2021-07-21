@@ -7,42 +7,170 @@
 
 import UIKit
 
-class MyPageDetailVC: UIViewController , UITextViewDelegate{
+class MyPageDetailVC: UIViewController,UITextViewDelegate{
     
-    @IBOutlet weak var myPageDetailCV: UICollectionView!
+    @IBOutlet weak var myPageCollectionView: UICollectionView!
     
-    var friendIdx : String = ""
-    var friendName : String = ""
-    var allNum : Int = 0
-    var giveNum : Int = 0
-    var gotNum : Int = 0
-    var memoInfo : String = ""
+    @IBOutlet weak var mainLabel: UILabel!
+    var name : String = ""
     
-    var serverData : PresentDataClass?
+    var num1: Int = 0
+    var num2: Int = 0
+    var num3: Int = 0
+    
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var stackView1: UIView!
+    @IBOutlet weak var stackView2: UIView!
+    
+    @IBOutlet weak var allLabel: UILabel!
+    @IBOutlet weak var gotLabel: UILabel!
+    @IBOutlet weak var giveLabel: UILabel!
+    
+    @IBOutlet weak var allNum: UILabel!
+    @IBOutlet weak var gotNum: UILabel!
+    @IBOutlet weak var giveNum: UILabel!
+    
+    @IBOutlet weak var memoView: UIView!
+    @IBOutlet weak var memoLabel: UILabel!
+    @IBOutlet weak var memoTextView: UITextView!
+    
+    @IBOutlet weak var gotButton: UIButton!
+    @IBOutlet weak var giveButton: UIButton!
+    @IBOutlet weak var BntLineView: UIView!
+    @IBOutlet weak var BntLineViewStart: NSLayoutConstraint!
         
+    
+    @IBAction func btnClicked(_ sender: UIButton) {
+        if sender == gotButton
+        {
+            gotButton.isSelected = true
+            giveButton.isSelected = false
+        
+            UIView.animate(withDuration: 0.2){
+                self.BntLineViewStart.constant = self.BntLineView.frame.width/2 + 43
+            }
+            
+        }
+        else{
+            gotButton.isSelected = false
+            giveButton.isSelected = true
+            
+            UIView.animate(withDuration: 0.2){
+                self.BntLineViewStart.constant = self.BntLineView.frame.width - 10
+        }
+        
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerXib()
-
+        
+        setStyle()
+        setButtonUI()
         self.navigationController?.isNavigationBarHidden = true
         dismissKeyboardWhenTappedAround()
         
+        registerCV()
+        registerNib()
+        placeholderSetting()
+        textViewDidBeginEditing(memoTextView)
+        textViewDidEndEditing(memoTextView)
+    }
         
-        MyPageDetailDataManager().getFriendInfo(friendIdx, viewController: self)
-        MyPagePresentMoaDataManager().gotPresent(friendIdx, viewController: self)
+        
+        
+    func setButtonUI(){
+        gotButton.presentButton()
+        giveButton.presentButton()
+            
+        gotButton.isSelected = true
+        giveButton.isSelected = false
     }
     
-    func registerXib(){
-        let topNib = UINib(nibName: MyPageDetailTopCVC.identifier, bundle: nil)
-        myPageDetailCV.register(topNib, forCellWithReuseIdentifier: MyPageDetailTopCVC.identifier)
-        
-        let detailNib = UINib(nibName:MyPageDetailMemoCVC.identifier , bundle: nil)
-        myPageDetailCV.register(detailNib, forCellWithReuseIdentifier: MyPageDetailMemoCVC.identifier)
-        
-        let presentNib = UINib(nibName:MyPageDetailPresentCVC.identifier , bundle: nil)
-        myPageDetailCV.register(presentNib, forCellWithReuseIdentifier:MyPageDetailPresentCVC.identifier )
+    func registerNib(){
+        let presentMoaNib = UINib(nibName:"MyPagePresentMoaCVC", bundle: nil)
+        myPageCollectionView.register(presentMoaNib, forCellWithReuseIdentifier: "MyPagePresentMoaCVC")
     }
     
+    func registerCV(){
+        myPageCollectionView.delegate = self
+        myPageCollectionView.dataSource = self
+        
+    }
+    
+    func placeholderSetting() {
+        memoTextView.delegate = self // textView가 유저가 선언한 outlet
+        memoTextView.text = "친구의 취향을 기록해보세요.\n최대 5줄까지 입력 가능합니다."
+        memoTextView.textColor = .keepinGray5
+    }
+    
+    // TextView Place Holder
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if memoTextView.textColor == .keepinGray5 {
+            memoTextView.text = nil
+            memoTextView.textColor = UIColor.black
+        }
+        
+    }
+    // TextView Place Holder
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if memoTextView.text.isEmpty {
+            memoTextView.text = "친구의 취향을 기록해보세요.\n최대 5줄까지 입력 가능합니다."
+            memoTextView.textColor = .keepinGray5
+    }
+    }
+    
+    func setStyle(){
+        name = "이채은"
+        mainLabel.text = "\(name)님과 \n주고받은 선물"
+        
+        mainLabel.font = UIFont.GmarketSansTTF(.medium, size: 20)
+        mainLabel.textColor = .keepinBlack
+        
+        let attributedStr = NSMutableAttributedString(string: mainLabel.text!)
+        attributedStr.addAttribute(.foregroundColor, value: UIColor.keepinGreen, range: (mainLabel.text! as NSString).range(of: "\(name)"))
+        mainLabel.attributedText = attributedStr
+        
+        mainView.layer.cornerRadius = 12
+        mainView.backgroundColor = .keepinGray
+        
+        stackView1.backgroundColor = .keepinGray4
+        stackView2.backgroundColor = .keepinGray4
+        
+        allLabel.text = "총 선물"
+        allLabel.textColor = .keepinGray5
+        gotLabel.text = "받은 선물"
+        gotLabel.textColor = .keepinGray5
+        giveLabel.text = "준 선물"
+        giveLabel.textColor = .keepinGray5
+        
+        allLabel.font = UIFont.NotoSans(.regular, size: 14)
+        gotLabel.font = UIFont.NotoSans(.regular, size: 14)
+        giveLabel.font = UIFont.NotoSans(.regular, size: 14)
+        
+        allNum.text = "\(num1)개"
+        gotNum.text = "\(num2)개"
+        giveNum.text = "\(num3)개"
+        allNum.textColor = .keepinGreen
+        gotNum.textColor = .keepinGreen
+        giveNum.textColor = .keepinGreen
+        
+        allNum.font = UIFont.NotoSans(.bold, size: 16)
+        gotNum.font = UIFont.NotoSans(.bold, size: 16)
+        giveNum.font = UIFont.NotoSans(.bold, size: 16)
+        
+        memoView.backgroundColor = .keepinGray
+        memoView.layer.cornerRadius = 12
+        
+        memoLabel.text = "친구 메모"
+        memoLabel.textColor = .keepinBlack
+        memoLabel.font = UIFont.GmarketSansTTF(.medium, size: 16)
+        memoTextView.backgroundColor = .keepinGray
+        
+        BntLineView.backgroundColor = .keepinGreen
+        
+        myPageCollectionView.backgroundColor = .keepinGray
+    }
     
     @IBAction func toBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -58,124 +186,49 @@ class MyPageDetailVC: UIViewController , UITextViewDelegate{
         
         self.presentAlert(
             preferredStyle: .actionSheet, with: actionDelete,actionEdit,actionCancel)
-        
+        }
+
     }
 
-}
 
-extension MyPageDetailVC: UICollectionViewDelegate{
+
+extension MyPageDetailVC : UICollectionViewDelegate{
     
 }
 
-extension MyPageDetailVC: UICollectionViewDataSource{
+extension MyPageDetailVC : UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = UIScreen.main.bounds.width
+        
+        let cellWidth = width * (164/375)
+        let cellHeight = cellWidth * (228/168)
+        
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 24
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    
+}
+
+extension MyPageDetailVC : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let presentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPagePresentMoaCVC", for: indexPath) as? MyPagePresentMoaCVC else {return UICollectionViewCell()}
         
-        switch indexPath.row{
-        case 0:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageDetailTopCVC.identifier, for: indexPath)as? MyPageDetailTopCVC else{
-                return UICollectionViewCell()
-            }
-            
-            cell.detail1 = allNum
-            cell.detail2 = giveNum
-            cell.detail3 = gotNum
-            cell.userName = friendName
-            
-            cell.userLabel.text = "\(friendName)님과 \n주고받은 선물"
-            cell.number1.text = "\(allNum)개"
-            cell.number2.text = "\(giveNum)개"
-            cell.number3.text = "\(gotNum)개"
-            
-            cell.userLabel.font = UIFont.GmarketSansTTF(.medium, size: 20)
-            
         
-            let attributedStr = NSMutableAttributedString(string: cell.userLabel.text!)
-            attributedStr.addAttribute(.foregroundColor, value: UIColor.keepinGreen, range: (cell.userLabel.text! as NSString).range(of: "\(friendName)"))
-            cell.userLabel.attributedText = attributedStr
-            
-            return cell
-            
-        case 1:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageDetailPresentCVC.identifier, for: indexPath)as? MyPageDetailPresentCVC else{
-                return UICollectionViewCell()
-            }
-            
-            cell.textView.text = memoInfo
-            
-            return cell
-            
-            
-        case 2:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageDetailMemoCVC.identifier, for: indexPath)as? MyPageDetailMemoCVC else{
-                return UICollectionViewCell()
-            }
-          
-            cell.serverDatas = (serverData!.keepins)
-            print("-----")
-            print(serverData!.keepins)
-            return cell
-            
-        default:
-            return UICollectionViewCell()
-        }
-    }
-    
-   
-}
-
-extension MyPageDetailVC: UICollectionViewDelegateFlowLayout
-{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        presentCell.presentTitle.text = "학교에서 다이어리 받은날"
+        presentCell.presentData.text = " 20201.201.12"
         
-        switch indexPath.row {
-        case 0:
-            let width = UIScreen.main.bounds.width
-            
-            let cellHeight = width * (204/375)
-            return CGSize(width: width, height: cellHeight)
-        case 1:
-            let width = UIScreen.main.bounds.width
-            let cellHeight = width * (200/375)
-            
-            return CGSize(width: width, height: cellHeight)
-        case 2:
-            let width = Int(UIScreen.main.bounds.width)
-            let cellHeight = (228 + 24) * 5
-            
-            return CGSize(width: width, height: cellHeight)
-        
-        default:
-            let width = UIScreen.main.bounds.width
-            let cellHeight = width * (600/375 )
-            
-            return CGSize(width: width, height: cellHeight)
-        }
-    }
-}
-
-
-extension MyPageDetailVC{
-    func didSuccessGetFriendInfo(messsage: String){
-        myPageDetailCV.delegate = self
-        myPageDetailCV.dataSource = self
-        myPageDetailCV.reloadData()
-        
-        MyPageDetailMemoCVC.friend = friendIdx
-        
-    }
-    func didSuccessGetPresentInfo(message: String){
-//        myPageDetailCV.delegate = self
-//        myPageDetailCV.dataSource = self
-//
-//        myPageDetailCV.reloadData()
-        print(serverData)
-    }
-    func failedToRequest(message: String){
-        print(message)
+        return presentCell
     }
 }

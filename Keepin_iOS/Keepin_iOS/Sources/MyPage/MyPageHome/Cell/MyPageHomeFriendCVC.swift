@@ -53,7 +53,7 @@ extension MyPageHomeFriendCVC : UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let friendID = MyPageHomeDataManager.friendList[indexPath.row].id
         let nextVC = MyPageDetailVC()
-        nextVC.friendIdx = friendID
+        //nextVC.friendIdx = friendID
         //NotificationCenter.default.post(name: NSNotification.Name("friendIdData"), object: friendID)
         NotificationCenter.default.post(name: NSNotification.Name("push"), object: friendID)
     }

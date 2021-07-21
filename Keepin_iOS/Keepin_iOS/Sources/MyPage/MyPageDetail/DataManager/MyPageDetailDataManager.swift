@@ -4,6 +4,7 @@
 //
 //  Created by 이은영 on 2021/07/14.
 //
+/*
 import Alamofire
 import Foundation
 
@@ -33,3 +34,4 @@ class MyPageDetailDataManager{
     }
     
 }
+*/
