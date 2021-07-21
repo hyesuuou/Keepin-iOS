@@ -12,27 +12,27 @@ class KeepinPlusImageTVC: UITableViewCell, UIImagePickerControllerDelegate, UINa
     public static let identifier = "KeepinPlusImageTVC"
 
     @IBOutlet var realImageView: [UIImageView]!
-    
-    
     @IBOutlet var imageContainerView: [UIView]!
-    
     @IBOutlet var imagePlusButton: [UIButton]!
     
     @IBOutlet weak var imageContainerConstraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageContainerView[0].isHidden = true
-        imageContainerView[1].isHidden = true
-        imageContainerView[2].isHidden = true
-        // Initialization code
-        setButtonUI()
+        setUI()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setUI(){
+        imageContainerView[0].isHidden = true
+        imageContainerView[1].isHidden = true
+        imageContainerView[2].isHidden = true
+        setButtonUI()
     }
     
     func setImage(image: UIImage, tag: Int){

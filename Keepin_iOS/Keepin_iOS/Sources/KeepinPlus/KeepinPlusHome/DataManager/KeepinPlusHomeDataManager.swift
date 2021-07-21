@@ -23,7 +23,7 @@ class KeepinPlusHomeDataManager {
                 case .success(let response):
                     viewController.addId = response.data.keepinIdx
                     print(response.data.keepinIdx)
-                    viewController.didSuccessPostKeepinHalf()
+                    //viewController.didSuccessPostKeepinHalf()
                     
                 case .failure(let error):
                     print(error.errorDescription)

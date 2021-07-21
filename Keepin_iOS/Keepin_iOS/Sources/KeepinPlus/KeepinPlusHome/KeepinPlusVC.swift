@@ -19,7 +19,6 @@ class KeepinPlusVC: UIViewController {
     let imagePicker = UIImagePickerController()
     var addId : String = ""
     
-    
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var keepinButton: UIButton!
     @IBOutlet weak var tableview: UITableView!
@@ -30,10 +29,8 @@ class KeepinPlusVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load2"), object: nil)
-        print("viewwilappear")
         tableview.reloadData()
-        
-        
+    
     }
     
     override func viewDidLoad() {
@@ -50,56 +47,32 @@ class KeepinPlusVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
+    
+    // 키핀하기 버튼 누르면
     @IBAction func keepinButtonClicked(_ sender: Any) {
-        
-//        KeepinPlusHomeDataManager().postKeepin(KeepinPlusHomeRequest(title: "데모데이 전날 받은 선물", taken: true, date: "2021-07-16", category: ["기념일", "축하"], record: "내일이 데모데이라니 도라방스", friendIdx: ["60ed9e98e51ad110481cd9d7"]), viewController: self)
-        
         self.dismiss(animated: true, completion: nil)
     }
     
     @objc func loadList(_ notification : NSNotification)
     {
-        
         for i in notification.object as! [String] {
             selectfriendTextField += i
         }
-
     }
     
     @objc
-
     func keyboardWillShow(_ sender: Notification) {
-         //self.view.frame.origin.y = -150 // Move view 150 points upward
-        // 16번째 셀 높이 == 키보드 높이 되도록
-        //blankHeight = 300
-        print("나오냐~")
         if let keyboardFrame: NSValue = sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
-            print("keyboardHeight = \(keyboardHeight)")
             
             keyboardBlankViewHeight.constant = keyboardHeight
-            //tableview.reloadData()
-            
         }
-
-        
-        
-        
-        
     }
     
     @objc
     func keyboardWillHide(_ sender: Notification) {
-        print(keyboardBlankView.bounds.height)
-    //self.view.frame.origin.y = 0 // Move view to original position
-        // 16번째 셀 높이 == 0
-        //blankHeight = 0
-        //keyboardBlankViewHeight.constant = 0
-        //tableview.reloadData()
         keyboardBlankViewHeight.constant = 0
-        //위치..?.......
-        
     }
     
     func setTableview(){
@@ -136,8 +109,6 @@ class KeepinPlusVC: UIViewController {
     }
 
     func setNavigationBar(){
-        //self.navigationController?.navigationBar.isHidden = true
-        
         backButton.addTarget(self, action: #selector(toDismiss), for: UIControl.Event.touchUpInside)
         
         keepinButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
@@ -151,8 +122,8 @@ class KeepinPlusVC: UIViewController {
     }
     
     @objc func pickImage(){
-          self.present(self.imagePicker, animated: true)
-      }
+        self.present(self.imagePicker, animated: true)
+    }
     
     @objc func pushFriendSelect(){
         self.navigationController?.pushViewController(SelectFriendVC(), animated: true)
@@ -208,7 +179,6 @@ extension KeepinPlusVC : UITableViewDataSource {
             cell.imagePlusButton[2].addTarget(self, action: #selector(actionSheetAlert(_:)), for: .touchUpInside)
             if let image = img {
                 cell.setImage(image: image, tag: tag)
-                //cell.imagePlusButton[0].setImage(image, for: .normal)
             }
             
             return cell
@@ -341,10 +311,6 @@ extension KeepinPlusVC : UITableViewDataSource {
             
         case 16:
             return 0
-        // 키보드가 떠있는지 안떠있는지 체크한후에 떠있으면 그만큼 리턴해주고
-        // 안떠있으면 0을 리턴한다.
-        
-            
             
         default:
             return 43
@@ -357,10 +323,8 @@ extension KeepinPlusVC {
     // 어떤 선물인가요? - '받은' 버튼 눌렀을 때
     @objc
     func selectGetButtonClicked(_ sender : UIButton){
-        print("바뀐다")
         select = 0
         tableview.reloadData()
-        
     }
     
     // 어떤 선물인가요? - '준' 버튼 눌렀을 때
@@ -388,7 +352,6 @@ extension KeepinPlusVC {
             }
         }
         
-        
         if count < 2 {
             KeepinPlusCategoryTVC.numberList[sender.tag] = abs(KeepinPlusCategoryTVC.numberList[sender.tag]-1)
         }
@@ -399,6 +362,7 @@ extension KeepinPlusVC {
     
 }
 
+// MARK:- UIImagePickerController
 extension KeepinPlusVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @objc
@@ -423,7 +387,6 @@ extension KeepinPlusVC : UIImagePickerControllerDelegate, UINavigationController
         
     }
     func presentCamera(){
-        
         let vc = UIImagePickerController()
         vc.sourceType = .camera
         vc.delegate = self
@@ -433,8 +396,6 @@ extension KeepinPlusVC : UIImagePickerControllerDelegate, UINavigationController
         present(vc, animated: true, completion: nil)
     }
     func presentAlbum(){
-        
-        
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
         vc.delegate = self
@@ -452,82 +413,19 @@ extension KeepinPlusVC : UIImagePickerControllerDelegate, UINavigationController
         print("picker -> \(String(describing: info[UIImagePickerController.InfoKey.imageURL]))")
         
         if cnt % 2 == 0 {
-            
             if let image = info[.editedImage] as? UIImage {
                 img = image
             }
-            
         }
         else{
             
             if let image = info[.originalImage] as? UIImage {
                 img = image
             }
-            
         }
         
         cnt += 1
-        
-        print(cnt)
         tableview.reloadData()
         dismiss(animated: true, completion: nil)
-        
     }
-    
-    
-    
-}
-
-extension UITextField {
-    func setDatePicker(target: Any) {
-        let SCwidth = self.bounds.width
-        let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: SCwidth, height: 216))
-        datePicker.datePickerMode = UIDatePicker.Mode.date
-        datePicker.preferredDatePickerStyle = .wheels
-        datePicker.locale = Locale(identifier: "ko-KR")
-        datePicker.addTarget(self, action: #selector(onDatePickerValueChanged), for: .valueChanged)
-        self.inputView = datePicker
-        
-        let toolBar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: SCwidth, height: 44.0))
-        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cancel = UIBarButtonItem(title: "취소", style: .plain, target: nil, action: #selector(tapCancel))
-        let barButton = UIBarButtonItem(title: "완료", style: .plain, target: target, action: #selector(doneButtonClicked))
-        toolBar.setItems([cancel, flexible, barButton], animated: false)
-        self.inputAccessoryView = toolBar
-        
-    }
-    @objc func tapCancel() {
-        self.resignFirstResponder()
-    }
-    
-    @objc
-    func doneButtonClicked(){
-        self.resignFirstResponder()
-    }
-    
-    @objc
-    func onDatePickerValueChanged(datePicker: UIDatePicker){
-        self.text = datePicker.date.toString()
-    }
-}
-
-extension KeepinPlusVC {
-    
-    func didSuccessPostKeepinHalf(){
-//        MyPageProfileImageUploadService.shared.uploadImage(image: UIImage(named: "maskGroup") { result in
-//            switch result {
-//            case .success(let message):
-//                print("성공")
-//
-//            case .requestErr(let message):
-//                print("실패")
-//            default:
-//                print("실패")
-//            }
-//
-//        }, completion: <#(NetworkResult<Any>) -> Void#>
-//
-        
-    }
-    
 }
