@@ -74,7 +74,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="6lY-HC-FRd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="0OE-ma-VEF"/>
                 <constraint firstItem="p5p-cd-2gz" firstAttribute="top" secondItem="RQw-QQ-1aa" secondAttribute="bottom" constant="29" id="6hx-ja-rff"/>

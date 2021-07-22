@@ -23,13 +23,19 @@ class MyPagePresentMoaCVC: UICollectionViewCell {
     }
     
     func setStyle(){
-        presentTitle.text = "학교에서 다이어리 받음"
+        //presentTitle.text = "학교에서 다이어리 받음"
         presentTitle.font = UIFont.GmarketSansTTF(.medium, size: 14)
-        presentTitle.textColor = UIColor.keepinGray5
-        
-        presentData.text = "2021.06.27"
+        //presentTitle.textColor = UIColor.keepinGray5
+        presentTitle.textColor = UIColor.keepinBlack
+        //presentData.text = "2021.06.27"
         presentData.font = UIFont.NotoSans(.regular, size: 12)
-        presentData.textColor = UIColor.keepinGray4
+        //presentData.textColor = UIColor.keepinGray4
+        presentData.textColor = UIColor.keepinBlack
+        /*
+        if let image = UIImage(named: "image36"){
+            presentImage.image = image
+        }*/
+       
     }
     
     static func nib() -> UINib{

@@ -229,6 +229,11 @@ extension MyPageDetailVC : UICollectionViewDataSource{
         presentCell.presentTitle.text = "학교에서 다이어리 받은날"
         presentCell.presentData.text = " 20201.201.12"
         
+        if let image = UIImage(named: "image36"){
+            presentCell.presentImage.image = image
+        }
+       
+        
         return presentCell
     }
 }

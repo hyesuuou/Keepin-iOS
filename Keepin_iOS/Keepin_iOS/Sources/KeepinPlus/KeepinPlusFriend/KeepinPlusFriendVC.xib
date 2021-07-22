@@ -93,7 +93,7 @@
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="xbN-OT-jrx" firstAttribute="top" secondItem="5sr-RD-Yf1" secondAttribute="bottom" constant="20" id="1hs-MV-kef"/>
                 <constraint firstItem="all-Mz-quO" firstAttribute="top" secondItem="nK8-5K-BNe" secondAttribute="bottom" constant="22" id="24R-8w-WCq"/>
