@@ -13,10 +13,12 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
     
     @IBOutlet weak var mainLabel: UILabel!
     var name : String = ""
-    
     var num1: Int = 0
     var num2: Int = 0
     var num3: Int = 0
+    var friendIdx : String = ""
+    
+    var memoText: String = ""
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var stackView1: UIView!
@@ -39,6 +41,21 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
     @IBOutlet weak var BntLineView: UIView!
     @IBOutlet weak var BntLineViewStart: NSLayoutConstraint!
         
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        MyPageDetailDataManager().getFriendInfo(friendIdx, viewController: self)
+        setButtonUI()
+        self.navigationController?.isNavigationBarHidden = true
+        dismissKeyboardWhenTappedAround()
+        
+        registerCV()
+        registerNib()
+        placeholderSetting()
+        textViewDidBeginEditing(memoTextView)
+        textViewDidEndEditing(memoTextView)
+        
+    }
     
     @IBAction func btnClicked(_ sender: UIButton) {
         if sender == gotButton
@@ -61,23 +78,6 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setStyle()
-        setButtonUI()
-        self.navigationController?.isNavigationBarHidden = true
-        dismissKeyboardWhenTappedAround()
-        
-        registerCV()
-        registerNib()
-        placeholderSetting()
-        textViewDidBeginEditing(memoTextView)
-        textViewDidEndEditing(memoTextView)
-    }
-        
-        
         
     func setButtonUI(){
         gotButton.presentButton()
@@ -121,7 +121,6 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
     }
     
     func setStyle(){
-        name = "이채은"
         mainLabel.text = "\(name)님과 \n주고받은 선물"
         
         mainLabel.font = UIFont.GmarketSansTTF(.medium, size: 20)
@@ -166,6 +165,7 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         memoLabel.textColor = .keepinBlack
         memoLabel.font = UIFont.GmarketSansTTF(.medium, size: 16)
         memoTextView.backgroundColor = .keepinGray
+        memoTextView.text = memoText
         
         BntLineView.backgroundColor = .keepinGreen
         
@@ -235,5 +235,17 @@ extension MyPageDetailVC : UICollectionViewDataSource{
        
         
         return presentCell
+    }
+}
+
+extension MyPageDetailVC
+{
+    func didSuccessGetFriendInfo(message: String){
+        print("마이페이지 친구 상세 상단부분 서버통신 성공~!~!")
+        setStyle()
+    }
+    
+    func didSuccessGetPresentInfo(message: String){
+        
     }
 }

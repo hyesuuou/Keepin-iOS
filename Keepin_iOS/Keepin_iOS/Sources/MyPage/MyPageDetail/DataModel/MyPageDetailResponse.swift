@@ -5,7 +5,7 @@
 //  Created by 이은영 on 2021/07/14.
 //
 
-/*
+
 import Foundation
 
 
@@ -20,4 +20,4 @@ struct DetailDataClass: Codable {
     let total, taken, given: Int
     let memo: String
 }
-*/
+
