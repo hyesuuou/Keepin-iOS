@@ -19,9 +19,11 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
     var friendIdx : String = ""
     
     var memoText: String = ""
-    
     var serverData : PresentDataClass?
-        
+    
+    @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var myPagePresentCVHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var stackView1: UIView!
     @IBOutlet weak var stackView2: UIView!
@@ -229,13 +231,12 @@ extension MyPageDetailVC : UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let presentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPagePresentMoaCVC", for: indexPath) as! MyPagePresentMoaCVC
+        guard let presentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPagePresentMoaCVC", for: indexPath) as? MyPagePresentMoaCVC else {return UICollectionViewCell()}
         
         presentCell.presentImage.setImage(with: (serverData?.keepins[indexPath.row].photo)!)
         presentCell.presentTitle.text = serverData?.keepins[indexPath.row].title
         presentCell.presentData.text = serverData?.keepins[indexPath.row].date
         
-       
         return presentCell
     }
 }
@@ -251,5 +252,20 @@ extension MyPageDetailVC
         print("마이페이지 선물 모아보기 받은,준 부분 서버통신 성공~!~!")
         myPageCollectionView.reloadData()
         registerCV()
+        
+        var itemNum : Int = (serverData?.keepins.count)!
+        
+        if itemNum%2 == 1{
+            itemNum += 1
+        }
+        
+        myPagePresentCVHeight.constant = CGFloat(228 * (itemNum/2))
+        
+        
+        
+        contentViewHeight.constant = myPagePresentCVHeight.constant + 466
+        
+      
+    
     }
 }
