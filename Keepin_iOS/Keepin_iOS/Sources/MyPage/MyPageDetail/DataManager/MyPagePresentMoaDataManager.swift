@@ -8,10 +8,8 @@
 import Alamofire
 import Foundation
 
-/*
+
 class MyPagePresentMoaDataManager{
-    
-    //static var presentList : [KeepinList] = []
     
     func gotPresent(_ parameter: String, viewController: MyPageDetailVC){
         let url = "\(Constant.BASE_URL)/friend/keepin/\(parameter)?taken=true"
@@ -50,4 +48,4 @@ class MyPagePresentMoaDataManager{
     
 }
 
-*/
+

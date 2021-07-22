@@ -20,6 +20,8 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
     
     var memoText: String = ""
     
+    var serverData : PresentDataClass?
+        
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var stackView1: UIView!
     @IBOutlet weak var stackView2: UIView!
@@ -49,7 +51,6 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         self.navigationController?.isNavigationBarHidden = true
         dismissKeyboardWhenTappedAround()
         
-        registerCV()
         registerNib()
         placeholderSetting()
         textViewDidBeginEditing(memoTextView)
@@ -62,6 +63,8 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         {
             gotButton.isSelected = true
             giveButton.isSelected = false
+            
+            MyPagePresentMoaDataManager().gotPresent(friendIdx, viewController: self)
         
             UIView.animate(withDuration: 0.2){
                 self.BntLineViewStart.constant = self.BntLineView.frame.width/2 + 43
@@ -71,6 +74,8 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         else{
             gotButton.isSelected = false
             giveButton.isSelected = true
+            
+            MyPagePresentMoaDataManager().givePresent(friendIdx, viewController: self)
             
             UIView.animate(withDuration: 0.2){
                 self.BntLineViewStart.constant = self.BntLineView.frame.width - 10
@@ -85,6 +90,8 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
             
         gotButton.isSelected = true
         giveButton.isSelected = false
+        
+        MyPagePresentMoaDataManager().gotPresent(friendIdx, viewController: self)
     }
     
     func registerNib(){
@@ -169,7 +176,6 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         
         BntLineView.backgroundColor = .keepinGreen
         
-        myPageCollectionView.backgroundColor = .keepinGray
     }
     
     @IBAction func toBack(_ sender: Any) {
@@ -219,21 +225,17 @@ extension MyPageDetailVC : UICollectionViewDelegateFlowLayout{
 
 extension MyPageDetailVC : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return (serverData?.keepins.count)!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let presentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPagePresentMoaCVC", for: indexPath) as? MyPagePresentMoaCVC else {return UICollectionViewCell()}
+        let presentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPagePresentMoaCVC", for: indexPath) as! MyPagePresentMoaCVC
         
+        presentCell.presentImage.setImage(with: (serverData?.keepins[indexPath.row].photo)!)
+        presentCell.presentTitle.text = serverData?.keepins[indexPath.row].title
+        presentCell.presentData.text = serverData?.keepins[indexPath.row].date
         
-        presentCell.presentTitle.text = "학교에서 다이어리 받은날"
-        presentCell.presentData.text = " 20201.201.12"
-        
-        if let image = UIImage(named: "image36"){
-            presentCell.presentImage.image = image
-        }
        
-        
         return presentCell
     }
 }
@@ -246,6 +248,8 @@ extension MyPageDetailVC
     }
     
     func didSuccessGetPresentInfo(message: String){
-        
+        print("마이페이지 선물 모아보기 받은,준 부분 서버통신 성공~!~!")
+        myPageCollectionView.reloadData()
+        registerCV()
     }
 }
