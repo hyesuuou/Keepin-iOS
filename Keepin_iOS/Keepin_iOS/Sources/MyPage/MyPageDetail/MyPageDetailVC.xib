@@ -19,6 +19,7 @@
                 <outlet property="BntLineViewStart" destination="sio-3d-lcM" id="g5W-xe-A3m"/>
                 <outlet property="allLabel" destination="oYB-lp-X1G" id="ldK-in-lch"/>
                 <outlet property="allNum" destination="PEH-Tl-ihL" id="21w-G8-1Hv"/>
+                <outlet property="contentViewHeight" destination="804-Q8-7gt" id="Rwi-0f-yp3"/>
                 <outlet property="giveButton" destination="43P-Wb-Lnr" id="Or3-z3-oYD"/>
                 <outlet property="giveLabel" destination="dYz-lw-mUF" id="w23-e0-KWd"/>
                 <outlet property="giveNum" destination="XsS-6b-7Le" id="ynx-wT-fsg"/>
@@ -31,6 +32,7 @@
                 <outlet property="memoTextView" destination="sjk-xY-N5y" id="trL-uQ-cyr"/>
                 <outlet property="memoView" destination="YH0-2K-dNO" id="PzH-jd-gvI"/>
                 <outlet property="myPageCollectionView" destination="1Ti-ce-sza" id="7ff-G8-pQR"/>
+                <outlet property="myPagePresentCVHeight" destination="a5D-xh-ifA" id="u7f-s9-TJJ"/>
                 <outlet property="stackView1" destination="5J9-Af-GU3" id="uaq-Qc-oDb"/>
                 <outlet property="stackView2" destination="9fw-Nz-nAO" id="bWK-mY-Wvq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -80,7 +82,7 @@
                     <rect key="frame" x="0.0" y="138" width="414" height="724"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPw-AM-Hod">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygv-LG-0KV">
                                     <rect key="frame" x="24" y="12" width="41.5" height="20.5"/>
@@ -197,7 +199,7 @@
                                         <constraint firstItem="sjk-xY-N5y" firstAttribute="top" secondItem="GOW-IA-osP" secondAttribute="bottom" constant="24" id="y65-mU-Net"/>
                                     </constraints>
                                 </view>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1Ti-ce-sza">
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1Ti-ce-sza">
                                     <rect key="frame" x="32" y="469" width="350" height="920"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
@@ -262,6 +264,7 @@
                                 <constraint firstItem="QrL-66-BIz" firstAttribute="top" secondItem="YH0-2K-dNO" secondAttribute="bottom" constant="59" id="3dV-h8-Tyw"/>
                                 <constraint firstItem="1Ti-ce-sza" firstAttribute="centerX" secondItem="CPw-AM-Hod" secondAttribute="centerX" id="5FR-5l-0Mi"/>
                                 <constraint firstItem="KEI-sn-7t1" firstAttribute="top" secondItem="CPw-AM-Hod" secondAttribute="top" constant="100" id="6v4-Bd-Xga"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1000" id="804-Q8-7gt"/>
                                 <constraint firstItem="1Ti-ce-sza" firstAttribute="top" secondItem="UEB-aZ-mVx" secondAttribute="bottom" constant="17" id="Bk1-Ve-nz1"/>
                                 <constraint firstItem="ygv-LG-0KV" firstAttribute="top" secondItem="CPw-AM-Hod" secondAttribute="top" constant="12" id="FRi-ay-xV5"/>
                                 <constraint firstItem="ygv-LG-0KV" firstAttribute="leading" secondItem="CPw-AM-Hod" secondAttribute="leading" constant="24" id="PFz-E6-dYJ"/>
