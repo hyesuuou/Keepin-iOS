@@ -4,12 +4,13 @@
 //
 //  Created by 이은영 on 2021/07/14.
 //
-/*
+
 import Alamofire
 import Foundation
 
 
 class MyPageDetailDataManager{
+    
     func getFriendInfo(_ parameter: String, viewController: MyPageDetailVC){
         var url = "\(Constant.BASE_URL)/friend/"
         url.append(parameter)
@@ -19,14 +20,13 @@ class MyPageDetailDataManager{
             .responseDecodable(of: MyPageDetailResponse.self){ response in
                 switch response.result {
                 case .success(let response):
-                    viewController.friendName = response.data.name
-                    viewController.allNum = response.data.total
-                    viewController.giveNum = response.data.given
-                    viewController.gotNum = response.data.taken
-                    viewController.memoInfo = response.data.memo
-                    viewController.didSuccessGetFriendInfo(messsage: response.message)
+                    viewController.name = response.data.name
+                    viewController.num1 = response.data.total
+                    viewController.num2 = response.data.given
+                    viewController.num3 = response.data.taken
+                    viewController.memoText = response.data.memo
+                    viewController.didSuccessGetFriendInfo(message: response.message)
             
-                    
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
@@ -34,4 +34,6 @@ class MyPageDetailDataManager{
     }
     
 }
-*/
+
+
+
