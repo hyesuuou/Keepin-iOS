@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct MyPageDetailResponse: Codable {
     let status: Int
     let message: String

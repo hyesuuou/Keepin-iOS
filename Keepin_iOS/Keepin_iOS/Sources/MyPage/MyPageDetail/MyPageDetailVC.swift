@@ -44,6 +44,8 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
     @IBOutlet weak var giveButton: UIButton!
     @IBOutlet weak var BntLineView: UIView!
     @IBOutlet weak var BntLineViewStart: NSLayoutConstraint!
+    
+    //MyPageDetailRequest(memo: memoText)
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +56,7 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         dismissKeyboardWhenTappedAround()
         
         registerNib()
-        placeholderSetting()
+        //placeholderSetting()
         textViewDidBeginEditing(memoTextView)
         textViewDidEndEditing(memoTextView)
         
@@ -109,13 +111,16 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
     
     func placeholderSetting() {
         memoTextView.delegate = self // textView가 유저가 선언한 outlet
+        memoTextView.text = memoText
+        if memoText == ""{
         memoTextView.text = "친구의 취향을 기록해보세요.\n최대 5줄까지 입력 가능합니다."
-        memoTextView.textColor = .keepinGray5
+        memoTextView.textColor = .keepinGray3
+        }
     }
     
     // TextView Place Holder
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if memoTextView.textColor == .keepinGray5 {
+        if memoTextView.textColor == .keepinGray3 {
             memoTextView.text = nil
             memoTextView.textColor = UIColor.black
         }
@@ -123,10 +128,13 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
     }
     // TextView Place Holder
     func textViewDidEndEditing(_ textView: UITextView) {
-        if memoTextView.text.isEmpty {
-            memoTextView.text = "친구의 취향을 기록해보세요.\n최대 5줄까지 입력 가능합니다."
+        //if memoTextView.text.isEmpty {
+            memoTextView.text = memoText
             memoTextView.textColor = .keepinGray5
-    }
+        //}
+        /*
+        MyPageDetailDataManager().editMemo(friendIdx, modified: MyPageDetailRequest(memo: memoTextView.text) , viewController: self)
+        */
     }
     
     func setStyle(){
@@ -174,9 +182,11 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         memoLabel.textColor = .keepinBlack
         memoLabel.font = UIFont.GmarketSansTTF(.medium, size: 16)
         memoTextView.backgroundColor = .keepinGray
-        memoTextView.text = memoText
+        //memoTextView.text = memoText
         
         BntLineView.backgroundColor = .keepinGreen
+        
+        //let request = MyPageDetailRequest(memo: memoText)
         
     }
     
@@ -185,7 +195,9 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
     }
     
     @IBAction func toMore(_ sender: Any) {
-        let actionDelete = UIAlertAction(title: "친구 삭제", style: .default)
+        let actionDelete = UIAlertAction(title: "친구 삭제", style: .default){ action in
+            MyPageDetailDataManager().deleteFriend(self.friendIdx, viewController: self)
+        }
         
         let actionEdit = UIAlertAction(title: "이름 수정", style: .default){
             (_) in self.navigationController?.pushViewController(MyPageFriendFixVC(), animated: true)
@@ -246,6 +258,7 @@ extension MyPageDetailVC
     func didSuccessGetFriendInfo(message: String){
         print("마이페이지 친구 상세 상단부분 서버통신 성공~!~!")
         setStyle()
+        placeholderSetting()
     }
     
     func didSuccessGetPresentInfo(message: String){
@@ -260,12 +273,15 @@ extension MyPageDetailVC
         }
         
         myPagePresentCVHeight.constant = CGFloat(228 * (itemNum/2))
-        
-        
-        
         contentViewHeight.constant = myPagePresentCVHeight.constant + 466
-        
-      
+    }
     
+    func didSuccessEditMemo(message: String){
+        //request = MyPageDetailRequest(memo: memoText)
+        print("친구상세 메모하기 서버통신 성공~!~!")
+    }
+    
+    func didDeleteFriend(message : String){
+        print(message)
     }
 }
