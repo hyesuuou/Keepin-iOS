@@ -94,6 +94,9 @@
 		71E1FBE0269BF530006A42C3 /* CustomCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1FBDF269BF530006A42C3 /* CustomCollectionViewFlowLayout.swift */; };
 		71E265C52699D80900BD6840 /* KeepinPlusFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E265C32699D80900BD6840 /* KeepinPlusFriendVC.swift */; };
 		71E265C62699D80900BD6840 /* KeepinPlusFriendVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E265C42699D80900BD6840 /* KeepinPlusFriendVC.xib */; };
+		71E4382F26ABE4460054069E /* PlusFriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4382E26ABE4460054069E /* PlusFriendRequest.swift */; };
+		71E4383126ABE5230054069E /* PlusFriendDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4383026ABE5230054069E /* PlusFriendDataManager.swift */; };
+		71E4383326ABE8770054069E /* PlusFriendResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4383226ABE8770054069E /* PlusFriendResponse.swift */; };
 		71F1AA0826A8380F0000A405 /* MyPagePresentMoaCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F1AA0626A8380F0000A405 /* MyPagePresentMoaCVC.swift */; };
 		71F1AA0926A8380F0000A405 /* MyPagePresentMoaCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F1AA0726A8380F0000A405 /* MyPagePresentMoaCVC.xib */; };
 		71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F8BF268DFDE30031BC50 /* UIFont.swift */; };
@@ -247,6 +250,9 @@
 		71E1FBDF269BF530006A42C3 /* CustomCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		71E265C32699D80900BD6840 /* KeepinPlusFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusFriendVC.swift; sourceTree = "<group>"; };
 		71E265C42699D80900BD6840 /* KeepinPlusFriendVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepinPlusFriendVC.xib; sourceTree = "<group>"; };
+		71E4382E26ABE4460054069E /* PlusFriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusFriendRequest.swift; sourceTree = "<group>"; };
+		71E4383026ABE5230054069E /* PlusFriendDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusFriendDataManager.swift; sourceTree = "<group>"; };
+		71E4383226ABE8770054069E /* PlusFriendResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusFriendResponse.swift; sourceTree = "<group>"; };
 		71F1AA0626A8380F0000A405 /* MyPagePresentMoaCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPagePresentMoaCVC.swift; path = Keepin_iOS/Sources/MyPage/MyPageDetail/DataModel/MyPagePresentMoaCVC.swift; sourceTree = SOURCE_ROOT; };
 		71F1AA0726A8380F0000A405 /* MyPagePresentMoaCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MyPagePresentMoaCVC.xib; path = Keepin_iOS/Sources/MyPage/MyPageDetail/DataModel/MyPagePresentMoaCVC.xib; sourceTree = SOURCE_ROOT; };
 		71F8F8BF268DFDE30031BC50 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
@@ -489,6 +495,8 @@
 			children = (
 				71210D51269C934C00568982 /* MyPageHomeResponse.swift */,
 				713D383B269D64C500BABA1E /* MyPageFriendResponse.swift */,
+				71E4382E26ABE4460054069E /* PlusFriendRequest.swift */,
+				71E4383226ABE8770054069E /* PlusFriendResponse.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -497,6 +505,7 @@
 			isa = PBXGroup;
 			children = (
 				71210D4F269C931C00568982 /* MyPageHomeDataManager.swift */,
+				71E4383026ABE5230054069E /* PlusFriendDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -1210,14 +1219,17 @@
 				7719B5CA269C2E2700CBBB11 /* PresentMoaHomeResponse.swift in Sources */,
 				153462D12694468B00060E44 /* JoinFirstVC.swift in Sources */,
 				77BEA4A226A0A9B1007E2236 /* ReminderHomeDataManager.swift in Sources */,
+				71E4382F26ABE4460054069E /* PlusFriendRequest.swift in Sources */,
 				71C197BA26977BBC004C0490 /* MyPageFriendFixVC.swift in Sources */,
 				152439E6269D4A89009E5E8E /* EmailLoginRequest.swift in Sources */,
+				71E4383126ABE5230054069E /* PlusFriendDataManager.swift in Sources */,
 				152439D5269C4A05009E5E8E /* HomeDataManager.swift in Sources */,
 				71E1324126987EFD00DB2D9F /* MyPageHomeTopCVC.swift in Sources */,
 				71E1324926987F5200DB2D9F /* MyPageHomeFriendCVC.swift in Sources */,
 				7719B5D2269C45B800CBBB11 /* SearchRequest.swift in Sources */,
 				151175CB26A6BCC800FD4077 /* UITextField.swift in Sources */,
 				71677CDD26A07DD1004BC692 /* MyPagePresentMoaResponse.swift in Sources */,
+				71E4383326ABE8770054069E /* PlusFriendResponse.swift in Sources */,
 				7719B593269AC9BC00CBBB11 /* ReminderTVC.swift in Sources */,
 				152ED3B3269FD6160098BDD0 /* HomeTopSingleTVC.swift in Sources */,
 				150FF83126A1CAC600970B18 /* KeepinPlusHomeDataManager.swift in Sources */,

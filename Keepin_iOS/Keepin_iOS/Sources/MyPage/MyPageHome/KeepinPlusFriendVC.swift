@@ -21,13 +21,13 @@ class KeepinPlusFriendVC: UIViewController {
         textField.addTarget(self, action: #selector(textFieldChange(_sender:)), for: .editingChanged)
         setWarnLabel(label: warnLabel)
         setStyle()
+        
     }
     
     @objc func textFieldChange(_sender: Any?){
         if textField.text != ""{
             doneButton.tintColor = .keepinGreen
         }
-        //if textField.text
     }
     
     func setWarnLabel(label:UILabel){
@@ -36,6 +36,12 @@ class KeepinPlusFriendVC: UIViewController {
         label.textColor = .salmon
     }
 
+    @IBAction func doneButton(_ sender: Any) {
+        guard let newFriend = textField.text else {return}
+        let request = PlusFriendRequest(name: newFriend)
+        PlusFriendDataManager().plusFriend(request, viewController: self)
+    }
+    
     @IBAction func toBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -52,8 +58,11 @@ class KeepinPlusFriendVC: UIViewController {
         textField.attributedPlaceholder = NSAttributedString(string: "등록할 이름을 입력해 주세요.(최대 5자)", attributes: [NSAttributedString.Key.foregroundColor: UIColor.keepinGray3])
         
         self.navigationController?.navigationBar.isHidden = true
-    
     }
-    
+}
 
+extension KeepinPlusFriendVC{
+    func didPlusFriend(message: String){
+        print(message)
+    }
 }

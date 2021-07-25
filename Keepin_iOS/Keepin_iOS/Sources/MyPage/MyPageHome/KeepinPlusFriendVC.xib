@@ -54,6 +54,9 @@
                                 <constraint firstAttribute="width" constant="59" id="xiB-Kh-sdl"/>
                             </constraints>
                             <state key="normal" title="등록하기"/>
+                            <connections>
+                                <action selector="doneButton:" destination="-1" eventType="touchUpInside" id="Bso-xg-ZPC"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
