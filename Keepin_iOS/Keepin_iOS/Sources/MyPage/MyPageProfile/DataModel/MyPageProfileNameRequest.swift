@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct MyPageProfileNameRequest: Codable{
+    let name : String
+}
