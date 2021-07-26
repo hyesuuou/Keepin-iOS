@@ -84,6 +84,7 @@
 		71DFCC9926AEE1F200FDAE51 /* MyPageFixRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DFCC9826AEE1F200FDAE51 /* MyPageFixRequest.swift */; };
 		71DFCC9D26AF096900FDAE51 /* MyPageProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DFCC9C26AF096900FDAE51 /* MyPageProfileDataManager.swift */; };
 		71DFCC9F26AF098D00FDAE51 /* MyPageProfileNameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DFCC9E26AF098D00FDAE51 /* MyPageProfileNameRequest.swift */; };
+		71DFCCA126AF0D6100FDAE51 /* MyPageProfileNameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DFCCA026AF0D6100FDAE51 /* MyPageProfileNameResponse.swift */; };
 		71E00ADE26A1D90900DC742F /* MyPageDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E00ADD26A1D90900DC742F /* MyPageDetailRequest.swift */; };
 		71E13230269876FC00DB2D9F /* MyPageHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1322E269876FC00DB2D9F /* MyPageHomeVC.swift */; };
 		71E13231269876FC00DB2D9F /* MyPageHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E1322F269876FC00DB2D9F /* MyPageHomeVC.xib */; };
@@ -244,6 +245,7 @@
 		71DFCC9826AEE1F200FDAE51 /* MyPageFixRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageFixRequest.swift; sourceTree = "<group>"; };
 		71DFCC9C26AF096900FDAE51 /* MyPageProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileDataManager.swift; sourceTree = "<group>"; };
 		71DFCC9E26AF098D00FDAE51 /* MyPageProfileNameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileNameRequest.swift; sourceTree = "<group>"; };
+		71DFCCA026AF0D6100FDAE51 /* MyPageProfileNameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileNameResponse.swift; sourceTree = "<group>"; };
 		71E00ADD26A1D90900DC742F /* MyPageDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailRequest.swift; sourceTree = "<group>"; };
 		71E1322E269876FC00DB2D9F /* MyPageHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHomeVC.swift; sourceTree = "<group>"; };
 		71E1322F269876FC00DB2D9F /* MyPageHomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageHomeVC.xib; sourceTree = "<group>"; };
@@ -585,6 +587,7 @@
 			isa = PBXGroup;
 			children = (
 				71DFCC9E26AF098D00FDAE51 /* MyPageProfileNameRequest.swift */,
+				71DFCCA026AF0D6100FDAE51 /* MyPageProfileNameResponse.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -1233,6 +1236,7 @@
 				7719B5DC269D71F300CBBB11 /* PresentDetailDataManager.swift in Sources */,
 				71E1324D2698A8BF00DB2D9F /* FriendListCVC.swift in Sources */,
 				1529FF8E269984D2000AD789 /* KeepinPlusSearchTVC.swift in Sources */,
+				71DFCCA126AF0D6100FDAE51 /* MyPageProfileNameResponse.swift in Sources */,
 				153462D52694469900060E44 /* JoinSecondVC.swift in Sources */,
 				71D5D47A269E8704004D9CC7 /* MyPageDetailDataManager.swift in Sources */,
 				15243994269C1012009E5E8E /* KeepinPlusBlankTVC.swift in Sources */,

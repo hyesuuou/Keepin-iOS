@@ -39,12 +39,23 @@ class MyPageEditNameVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    
     @objc func textFieldDidChange(_sender: Any?){
         if nameText.text != ""{
             doneButton.tintColor = .keepinGreen
         }
     }
     
+    @IBAction func doneButton(_ sender: Any) {
+        let request = MyPageProfileNameRequest(name: nameText.text!)
+        MyPageProfileDataManager().fixProfileName(modified: request, viewcontroller: self)
+    }
+    
+    
+}
+
+extension MyPageEditNameVC{
+    func didSuccessFixName(message: String){
+        print(message)
+    }
 
 }
