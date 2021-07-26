@@ -82,6 +82,8 @@
 		71D5D47E269EB7C6004D9CC7 /* NavigationBarCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D5D47C269EB7C6004D9CC7 /* NavigationBarCVC.xib */; };
 		71DDC79626ADB50F00543245 /* MyPageFriendDeleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DDC79526ADB50F00543245 /* MyPageFriendDeleteResponse.swift */; };
 		71DFCC9926AEE1F200FDAE51 /* MyPageFixRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DFCC9826AEE1F200FDAE51 /* MyPageFixRequest.swift */; };
+		71DFCC9D26AF096900FDAE51 /* MyPageProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DFCC9C26AF096900FDAE51 /* MyPageProfileDataManager.swift */; };
+		71DFCC9F26AF098D00FDAE51 /* MyPageProfileNameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DFCC9E26AF098D00FDAE51 /* MyPageProfileNameRequest.swift */; };
 		71E00ADE26A1D90900DC742F /* MyPageDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E00ADD26A1D90900DC742F /* MyPageDetailRequest.swift */; };
 		71E13230269876FC00DB2D9F /* MyPageHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1322E269876FC00DB2D9F /* MyPageHomeVC.swift */; };
 		71E13231269876FC00DB2D9F /* MyPageHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E1322F269876FC00DB2D9F /* MyPageHomeVC.xib */; };
@@ -240,6 +242,8 @@
 		71D5D47C269EB7C6004D9CC7 /* NavigationBarCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarCVC.xib; sourceTree = "<group>"; };
 		71DDC79526ADB50F00543245 /* MyPageFriendDeleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageFriendDeleteResponse.swift; sourceTree = "<group>"; };
 		71DFCC9826AEE1F200FDAE51 /* MyPageFixRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageFixRequest.swift; sourceTree = "<group>"; };
+		71DFCC9C26AF096900FDAE51 /* MyPageProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileDataManager.swift; sourceTree = "<group>"; };
+		71DFCC9E26AF098D00FDAE51 /* MyPageProfileNameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileNameRequest.swift; sourceTree = "<group>"; };
 		71E00ADD26A1D90900DC742F /* MyPageDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailRequest.swift; sourceTree = "<group>"; };
 		71E1322E269876FC00DB2D9F /* MyPageHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHomeVC.swift; sourceTree = "<group>"; };
 		71E1322F269876FC00DB2D9F /* MyPageHomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageHomeVC.xib; sourceTree = "<group>"; };
@@ -539,6 +543,8 @@
 		71C197AA2697509E004C0490 /* MyPageProfile */ = {
 			isa = PBXGroup;
 			children = (
+				71DFCC9A26AF092F00FDAE51 /* DataManager */,
+				71DFCC9B26AF093C00FDAE51 /* DataModel */,
 				71C197AB26975103004C0490 /* MyPageProfileVC.swift */,
 				71C197AC26975103004C0490 /* MyPageProfileVC.xib */,
 				717A024C269ACF2300241171 /* EditProfile */,
@@ -563,6 +569,22 @@
 				71E00ADD26A1D90900DC742F /* MyPageDetailRequest.swift */,
 				71DDC79526ADB50F00543245 /* MyPageFriendDeleteResponse.swift */,
 				71DFCC9826AEE1F200FDAE51 /* MyPageFixRequest.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		71DFCC9A26AF092F00FDAE51 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				71DFCC9C26AF096900FDAE51 /* MyPageProfileDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		71DFCC9B26AF093C00FDAE51 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				71DFCC9E26AF098D00FDAE51 /* MyPageProfileNameRequest.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -1190,6 +1212,7 @@
 				7719B5CE269C459700CBBB11 /* SearchDataManager.swift in Sources */,
 				152439EA269D4AAA009E5E8E /* EmailLoginDataManager.swift in Sources */,
 				152439D3269C49F8009E5E8E /* HomeResponse.swift in Sources */,
+				71DFCC9F26AF098D00FDAE51 /* MyPageProfileNameRequest.swift in Sources */,
 				71E1324526987F3200DB2D9F /* MyPageHomeHeaderCVC.swift in Sources */,
 				713D383C269D64C500BABA1E /* MyPageFriendResponse.swift in Sources */,
 				77F0484C268C4DB400FBFDD7 /* SelectFriendVC.swift in Sources */,
@@ -1199,6 +1222,7 @@
 				77F04825268C49BF00FBFDD7 /* HomeVC.swift in Sources */,
 				15B71A55269D7CD600ED68E0 /* JoinDataManager.swift in Sources */,
 				7719B5872699CCA300CBBB11 /* Date.swift in Sources */,
+				71DFCC9D26AF096900FDAE51 /* MyPageProfileDataManager.swift in Sources */,
 				71210D52269C934C00568982 /* MyPageHomeResponse.swift in Sources */,
 				7719B57C269724A900CBBB11 /* AfterCatVC.swift in Sources */,
 				152439E8269D4A91009E5E8E /* EmailLoginResponse.swift in Sources */,
