@@ -42,7 +42,6 @@ class MyPageHomeFriendCVC: UICollectionViewCell {
         let friendListNib = UINib(nibName: FriendListCVC.identifier, bundle: nil)
         myPageHomeCV.register(friendListNib, forCellWithReuseIdentifier: FriendListCVC.identifier)
     }
-    
     @objc func notification(){
 //    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "push"), object: index)
     }
@@ -54,14 +53,12 @@ extension MyPageHomeFriendCVC : UICollectionViewDelegate{
         let friendID = MyPageHomeDataManager.friendList[indexPath.row].id
         let nextVC = MyPageDetailVC()
         nextVC.friendIdx = friendID
-        //NotificationCenter.default.post(name: NSNotification.Name("friendIdData"), object: friendID)
         NotificationCenter.default.post(name: NSNotification.Name("push"), object: friendID)
     }
 }
 
 extension MyPageHomeFriendCVC : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return friendName.count
         return MyPageHomeFriendCVC.friendName.count
     }
     

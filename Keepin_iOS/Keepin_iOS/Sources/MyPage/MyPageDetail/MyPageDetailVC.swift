@@ -45,7 +45,6 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
     @IBOutlet weak var BntLineView: UIView!
     @IBOutlet weak var BntLineViewStart: NSLayoutConstraint!
     
-    //MyPageDetailRequest(memo: memoText)
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +58,6 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         //placeholderSetting()
         textViewDidBeginEditing(memoTextView)
         textViewDidEndEditing(memoTextView)
-        
     }
     
     @IBAction func btnClicked(_ sender: UIButton) {
@@ -186,8 +184,6 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         
         BntLineView.backgroundColor = .keepinGreen
         
-        //let request = MyPageDetailRequest(memo: memoText)
-        
     }
     
     @IBAction func toBack(_ sender: Any) {
@@ -200,14 +196,18 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         }
         
         let actionEdit = UIAlertAction(title: "이름 수정", style: .default){
-            (_) in self.navigationController?.pushViewController(MyPageFriendFixVC(), animated: true)
-        }
+            action in
+                let nextVC = MyPageFriendFixVC()
+                nextVC.id = self.friendIdx
+                nextVC.friendName = self.name
+                //NotificationCenter.default.post(name: NSNotification.Name(rawValue:"load2"), object: self.name)
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            }
         let actionCancel = UIAlertAction(title: "취소", style: .cancel)
         
         self.presentAlert(
             preferredStyle: .actionSheet, with: actionDelete,actionEdit,actionCancel)
         }
-
     }
 
 
@@ -259,6 +259,7 @@ extension MyPageDetailVC
         print("마이페이지 친구 상세 상단부분 서버통신 성공~!~!")
         setStyle()
         placeholderSetting()
+        //NotificationCenter.default.post(name: NSNotification.Name(rawValue:"load2"), object: name)
     }
     
     func didSuccessGetPresentInfo(message: String){
@@ -277,7 +278,6 @@ extension MyPageDetailVC
     }
     
     func didSuccessEditMemo(message: String){
-        //request = MyPageDetailRequest(memo: memoText)
         print("친구상세 메모하기 서버통신 성공~!~!")
     }
     
