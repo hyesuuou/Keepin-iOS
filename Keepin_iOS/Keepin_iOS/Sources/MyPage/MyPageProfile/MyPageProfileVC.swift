@@ -8,6 +8,8 @@
 import UIKit
 
 class MyPageProfileVC: UIViewController {
+    
+    var serverData: ProfileData?
 
     @IBOutlet weak var profileEdit: UILabel!
     @IBOutlet weak var keepinLabel: UILabel!
@@ -32,12 +34,18 @@ class MyPageProfileVC: UIViewController {
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var phoneView: UIView!
     
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var birthTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setText()
         naviagationBar()
         setGesture()
+        
+        MyPageProfileDataManager().getProfileInfo(viewcontroller: self)
     }
     
     
@@ -119,4 +127,13 @@ class MyPageProfileVC: UIViewController {
         
     }
     
+}
+
+extension MyPageProfileVC{
+    func didSuccessProfileInfo(message: String){
+        emailTextField.text = serverData?.email
+        birthTextField.text = serverData?.birth
+        
+        print(message)
+    }
 }
