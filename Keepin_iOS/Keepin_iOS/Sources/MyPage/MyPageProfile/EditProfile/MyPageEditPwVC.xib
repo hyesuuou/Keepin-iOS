@@ -52,6 +52,9 @@
                                 <constraint firstAttribute="height" constant="24" id="q3Q-p7-CkA"/>
                             </constraints>
                             <state key="normal" title="완료"/>
+                            <connections>
+                                <action selector="doneButton:" destination="-1" eventType="touchUpInside" id="1Q5-ym-UFv"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

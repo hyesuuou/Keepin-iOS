@@ -44,6 +44,23 @@ class MyPageProfileDataManager {
             }
     }
     
+    func fixProfilePassword(modified: MyPageProfilePWRequest, viewcontroller: MyPageEditPwVC){
+        var url = "\(Constant.BASE_URL)/my/password"
+        
+        AF.request(url, method: .put,parameters: modified, encoder: JSONParameterEncoder(), headers: Constant.HEADER)
+            .validate(statusCode: 200..<500)
+            .validate(contentType: ["application/json"])
+            .responseDecodable(of: MyPageProfilePhoneResponse.self){ response in
+                switch response.result{
+                case .success(let response):
+                    viewcontroller.didSuccessPw(message: response.message)
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        
+    }
     
     
 }
