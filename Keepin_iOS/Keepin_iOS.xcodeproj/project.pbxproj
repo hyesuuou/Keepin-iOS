@@ -76,6 +76,8 @@
 		71C197AE26975103004C0490 /* MyPageProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C197AC26975103004C0490 /* MyPageProfileVC.xib */; };
 		71C197BA26977BBC004C0490 /* MyPageFriendFixVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C197B826977BBC004C0490 /* MyPageFriendFixVC.swift */; };
 		71C197BB26977BBC004C0490 /* MyPageFriendFixVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C197B926977BBC004C0490 /* MyPageFriendFixVC.xib */; };
+		71C1B84E26AF9EC500478BEA /* MyPageProfilePhoneRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C1B84D26AF9EC500478BEA /* MyPageProfilePhoneRequest.swift */; };
+		71C1B85026AF9EEA00478BEA /* MyPageProfilePhoneResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C1B84F26AF9EEA00478BEA /* MyPageProfilePhoneResponse.swift */; };
 		71D5D478269E86DD004D9CC7 /* MyPageDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5D477269E86DD004D9CC7 /* MyPageDetailResponse.swift */; };
 		71D5D47A269E8704004D9CC7 /* MyPageDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5D479269E8704004D9CC7 /* MyPageDetailDataManager.swift */; };
 		71D5D47D269EB7C6004D9CC7 /* NavigationBarCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5D47B269EB7C6004D9CC7 /* NavigationBarCVC.swift */; };
@@ -237,6 +239,8 @@
 		71C197AC26975103004C0490 /* MyPageProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageProfileVC.xib; sourceTree = "<group>"; };
 		71C197B826977BBC004C0490 /* MyPageFriendFixVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageFriendFixVC.swift; sourceTree = "<group>"; };
 		71C197B926977BBC004C0490 /* MyPageFriendFixVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageFriendFixVC.xib; sourceTree = "<group>"; };
+		71C1B84D26AF9EC500478BEA /* MyPageProfilePhoneRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfilePhoneRequest.swift; sourceTree = "<group>"; };
+		71C1B84F26AF9EEA00478BEA /* MyPageProfilePhoneResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfilePhoneResponse.swift; sourceTree = "<group>"; };
 		71D5D477269E86DD004D9CC7 /* MyPageDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailResponse.swift; sourceTree = "<group>"; };
 		71D5D479269E8704004D9CC7 /* MyPageDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailDataManager.swift; sourceTree = "<group>"; };
 		71D5D47B269EB7C6004D9CC7 /* NavigationBarCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarCVC.swift; sourceTree = "<group>"; };
@@ -588,6 +592,8 @@
 			children = (
 				71DFCC9E26AF098D00FDAE51 /* MyPageProfileNameRequest.swift */,
 				71DFCCA026AF0D6100FDAE51 /* MyPageProfileNameResponse.swift */,
+				71C1B84D26AF9EC500478BEA /* MyPageProfilePhoneRequest.swift */,
+				71C1B84F26AF9EEA00478BEA /* MyPageProfilePhoneResponse.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -1192,6 +1198,7 @@
 				71E00ADE26A1D90900DC742F /* MyPageDetailRequest.swift in Sources */,
 				1529FF9E269985CB000AD789 /* KeepinPlusWriteTVC.swift in Sources */,
 				77F549EC268F58970013A76C /* PresentMoaCVC.swift in Sources */,
+				71C1B84E26AF9EC500478BEA /* MyPageProfilePhoneRequest.swift in Sources */,
 				717A0258269ACFF800241171 /* MyPageEditPhoneVC.swift in Sources */,
 				150FF83526A1CAF200970B18 /* KeepinPlusHomeRequest.swift in Sources */,
 				7719B596269ADE2900CBBB11 /* UISwitch.swift in Sources */,
@@ -1205,6 +1212,7 @@
 				71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */,
 				71677CDF26A07DFA004BC692 /* MyPagePresentMoaDataManager.swift in Sources */,
 				71C197AD26975103004C0490 /* MyPageProfileVC.swift in Sources */,
+				71C1B85026AF9EEA00478BEA /* MyPageProfilePhoneResponse.swift in Sources */,
 				71D5D47D269EB7C6004D9CC7 /* NavigationBarCVC.swift in Sources */,
 				773D414E26942E8000A4E366 /* PresentDetailCVC.swift in Sources */,
 				7719B5D8269D71D900CBBB11 /* PresentDetailResponse.swift in Sources */,
