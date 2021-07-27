@@ -11,8 +11,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPageProfileVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
                 <outlet property="birth" destination="1xF-ey-qoi" id="ocL-MM-ndE"/>
+                <outlet property="birthTextField" destination="pry-4j-6Pw" id="ICH-YB-enY"/>
                 <outlet property="delete" destination="dSM-uP-IuC" id="qoE-OZ-fhB"/>
                 <outlet property="email" destination="2th-In-Noa" id="2Am-UH-OJC"/>
+                <outlet property="emailTextField" destination="Mo0-XH-8Y8" id="kFW-nx-6Wp"/>
                 <outlet property="keepinLabel" destination="nv6-WF-o6M" id="coZ-cb-AJe"/>
                 <outlet property="label1" destination="J8j-75-HZY" id="9OC-AY-2kY"/>
                 <outlet property="label2" destination="KSc-Ys-g99" id="l8u-1R-mtL"/>
