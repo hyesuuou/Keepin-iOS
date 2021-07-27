@@ -78,6 +78,7 @@
 		71C197BB26977BBC004C0490 /* MyPageFriendFixVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C197B926977BBC004C0490 /* MyPageFriendFixVC.xib */; };
 		71C1B84E26AF9EC500478BEA /* MyPageProfilePhoneRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C1B84D26AF9EC500478BEA /* MyPageProfilePhoneRequest.swift */; };
 		71C1B85026AF9EEA00478BEA /* MyPageProfilePhoneResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C1B84F26AF9EEA00478BEA /* MyPageProfilePhoneResponse.swift */; };
+		71C1B85226AFA33800478BEA /* MyPageProfilePWRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C1B85126AFA33800478BEA /* MyPageProfilePWRequest.swift */; };
 		71D5D478269E86DD004D9CC7 /* MyPageDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5D477269E86DD004D9CC7 /* MyPageDetailResponse.swift */; };
 		71D5D47A269E8704004D9CC7 /* MyPageDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5D479269E8704004D9CC7 /* MyPageDetailDataManager.swift */; };
 		71D5D47D269EB7C6004D9CC7 /* NavigationBarCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5D47B269EB7C6004D9CC7 /* NavigationBarCVC.swift */; };
@@ -241,6 +242,7 @@
 		71C197B926977BBC004C0490 /* MyPageFriendFixVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageFriendFixVC.xib; sourceTree = "<group>"; };
 		71C1B84D26AF9EC500478BEA /* MyPageProfilePhoneRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfilePhoneRequest.swift; sourceTree = "<group>"; };
 		71C1B84F26AF9EEA00478BEA /* MyPageProfilePhoneResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfilePhoneResponse.swift; sourceTree = "<group>"; };
+		71C1B85126AFA33800478BEA /* MyPageProfilePWRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfilePWRequest.swift; sourceTree = "<group>"; };
 		71D5D477269E86DD004D9CC7 /* MyPageDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailResponse.swift; sourceTree = "<group>"; };
 		71D5D479269E8704004D9CC7 /* MyPageDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailDataManager.swift; sourceTree = "<group>"; };
 		71D5D47B269EB7C6004D9CC7 /* NavigationBarCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarCVC.swift; sourceTree = "<group>"; };
@@ -594,6 +596,7 @@
 				71DFCCA026AF0D6100FDAE51 /* MyPageProfileNameResponse.swift */,
 				71C1B84D26AF9EC500478BEA /* MyPageProfilePhoneRequest.swift */,
 				71C1B84F26AF9EEA00478BEA /* MyPageProfilePhoneResponse.swift */,
+				71C1B85126AFA33800478BEA /* MyPageProfilePWRequest.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -1195,6 +1198,7 @@
 				7719B5D0269C45A900CBBB11 /* SearchResponse.swift in Sources */,
 				7719B58F269A1DBD00CBBB11 /* ReminderCVC.swift in Sources */,
 				77F04817268C45BB00FBFDD7 /* UIViewController.swift in Sources */,
+				71C1B85226AFA33800478BEA /* MyPageProfilePWRequest.swift in Sources */,
 				71E00ADE26A1D90900DC742F /* MyPageDetailRequest.swift in Sources */,
 				1529FF9E269985CB000AD789 /* KeepinPlusWriteTVC.swift in Sources */,
 				77F549EC268F58970013A76C /* PresentMoaCVC.swift in Sources */,
