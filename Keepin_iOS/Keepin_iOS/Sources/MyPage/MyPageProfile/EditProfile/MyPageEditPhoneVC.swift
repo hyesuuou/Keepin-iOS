@@ -42,4 +42,18 @@ class MyPageEditPhoneVC: UIViewController {
         }
     }
     
+    
+    @IBAction func doneButton(_ sender: Any) {
+        let request = MyPageProfilePhoneRequest(phone: textField.text!)
+        MyPageProfileDataManager().fixProfilePhone(modified: request, viewcontroller: self)
+    }
+    
+}
+
+
+extension MyPageEditPhoneVC{
+    func didSuccessFixPhone(messasge: String){
+        print(messasge)
+    }
+    
 }

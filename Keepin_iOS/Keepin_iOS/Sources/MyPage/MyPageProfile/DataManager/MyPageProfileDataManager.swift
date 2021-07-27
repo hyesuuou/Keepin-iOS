@@ -25,4 +25,25 @@ class MyPageProfileDataManager {
                 
             }
     }
+    
+    
+    func fixProfilePhone(modified: MyPageProfilePhoneRequest, viewcontroller: MyPageEditPhoneVC){
+        var url = "\(Constant.BASE_URL)/my/phone"
+        
+        AF.request(url, method: .put, parameters: modified, encoder: JSONParameterEncoder(), headers: Constant.HEADER)
+            .validate(statusCode: 200..<500)
+            .validate(contentType: ["application/json"])
+            .responseDecodable(of:MyPageProfilePhoneResponse.self){ response in
+                switch response.result{
+                case .success(let response):
+                    viewcontroller.didSuccessFixPhone(messasge: response.message)
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+    }
+    
+    
+    
 }

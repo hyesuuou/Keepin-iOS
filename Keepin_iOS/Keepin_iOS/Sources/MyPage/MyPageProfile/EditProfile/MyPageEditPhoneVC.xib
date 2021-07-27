@@ -43,6 +43,9 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <state key="normal" title="완료"/>
+                            <connections>
+                                <action selector="doneButton:" destination="-1" eventType="touchUpInside" id="8r2-ek-BJM"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -61,7 +64,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="010-0000-0000" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="q2J-xm-Prs">
-                    <rect key="frame" x="24" y="160.5" width="106" height="18.5"/>
+                    <rect key="frame" x="24" y="160.5" width="360" height="18.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="360" id="r2I-ya-7YD"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
