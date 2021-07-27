@@ -89,4 +89,17 @@ class MyPageEditPwVC: UIViewController {
         }
     }
     
+    @IBAction func doneButton(_ sender: Any) {
+        let request = MyPageProfilePWRequest(currentPassword: textField1.text!, newPassword: textField2.text!)
+        MyPageProfileDataManager().fixProfilePassword(modified: request, viewcontroller: self)
+    }
+    
+    
+}
+
+
+extension MyPageEditPwVC{
+    func didSuccessPw(message: String){
+        print(message)
+    }
 }
