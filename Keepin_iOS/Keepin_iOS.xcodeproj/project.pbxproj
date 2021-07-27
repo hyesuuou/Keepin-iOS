@@ -624,6 +624,8 @@
 		71E265C22699D7AE00BD6840 /* KeepinPlusFriend */ = {
 			isa = PBXGroup;
 			children = (
+				71E265C32699D80900BD6840 /* KeepinPlusFriendVC.swift */,
+				71E265C42699D80900BD6840 /* KeepinPlusFriendVC.xib */,
 			);
 			path = KeepinPlusFriend;
 			sourceTree = "<group>";
@@ -928,8 +930,6 @@
 				71E1FBDF269BF530006A42C3 /* CustomCollectionViewFlowLayout.swift */,
 				71E1322E269876FC00DB2D9F /* MyPageHomeVC.swift */,
 				71E1322F269876FC00DB2D9F /* MyPageHomeVC.xib */,
-				71E265C32699D80900BD6840 /* KeepinPlusFriendVC.swift */,
-				71E265C42699D80900BD6840 /* KeepinPlusFriendVC.xib */,
 				71E132322698770C00DB2D9F /* Cell */,
 			);
 			path = MyPageHome;
