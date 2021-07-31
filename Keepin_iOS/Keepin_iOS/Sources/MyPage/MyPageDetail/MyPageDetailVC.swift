@@ -191,10 +191,10 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
     }
     
     @IBAction func toMore(_ sender: Any) {
-        let actionDelete = UIAlertAction(title: "친구 삭제", style: .default){ action in
-            MyPageDetailDataManager().deleteFriend(self.friendIdx, viewController: self)
-        }
         
+        let actionDelete = UIAlertAction(title: "친구 삭제", style: .default){ action in
+            self.makeRequestAlert(title: "", message: "친구와의 모든 기록이 삭제됩니다. 정말로 삭제하시겠습니까?", okAction: {_ in MyPageDetailDataManager().deleteFriend(self.friendIdx, viewController: self)})}
+            
         let actionEdit = UIAlertAction(title: "이름 수정", style: .default){
             action in
                 let nextVC = MyPageFriendFixVC()
