@@ -64,6 +64,7 @@ class MyPageFriendFixVC: UIViewController {
     @IBAction func doneButton(_ sender: Any) {
         let request = MyPageFixRequest(name: textField.text!)
         MyPageDetailDataManager().fixFriendName(id, modified: request, viewController: self)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
