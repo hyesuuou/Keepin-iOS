@@ -48,6 +48,7 @@ class MyPageEditNameVC: UIViewController {
     @IBAction func doneButton(_ sender: Any) {
         let request = MyPageProfileNameRequest(name: nameText.text!)
         MyPageProfileDataManager().fixProfileName(modified: request, viewcontroller: self)
+        self.navigationController?.popViewController(animated: true)
     }
     
     
