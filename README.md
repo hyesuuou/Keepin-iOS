@@ -413,4 +413,45 @@ import URLNavigator
   ||친구이름 수정|이은영|🎁|
   ||설정 및 프로필편집|이은영|🎁|
   
-  
+  <br>
+	
+## View
+	
+### 로그인
+![image](https://user-images.githubusercontent.com/68391767/129845843-31856b7b-d02c-4d3c-abee-975e2203c75e.png)
+
+### 회원가입
+![image](https://user-images.githubusercontent.com/68391767/129845907-dbd27608-0e10-4afa-bd1a-690590876060.png)
+
+### 홈
+![image](https://user-images.githubusercontent.com/68391767/129845950-0cd89c8b-7a00-47fc-a94c-7350ac01584c.png)
+
+### 선물 모아보기
+![image](https://user-images.githubusercontent.com/68391767/129846674-31a60221-7247-4660-908f-3cd815e0dd08.png)
+
+	
+### 검색
+![image](https://user-images.githubusercontent.com/68391767/129846037-af6ef092-b293-403c-9963-b425b9ca6544.png)
+
+### 키핀하기
+![image](https://user-images.githubusercontent.com/68391767/129846076-72ff22e7-4897-4316-b549-05c5ad245449.png)
+
+### 친구검색
+![image](https://user-images.githubusercontent.com/68391767/129846943-f7cee6d6-b48a-4587-af7e-d4a6dee38825.png)
+
+	
+### 리마인더
+![image](https://user-images.githubusercontent.com/68391767/129846109-e8ac2303-3c22-484b-b0db-13895f626205.png)
+
+### 마이페이지
+![image](https://user-images.githubusercontent.com/68391767/129846242-959a1b33-de26-4acd-9696-0d9c0d8a2834.png)
+
+	
+### 새 친구 등록
+![image](https://user-images.githubusercontent.com/68391767/129846327-7525af49-8385-465c-a6b2-13ad71fc2292.png)
+
+	
+### 설정
+![image](https://user-images.githubusercontent.com/68391767/129846375-fc7f1711-dbf5-49ed-bb91-3ec8dfaab811.png)
+
+	
