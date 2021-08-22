@@ -38,8 +38,11 @@ class KeepinPlusFriendVC: UIViewController {
 
     @IBAction func doneButton(_ sender: Any) {
         guard let newFriend = textField.text else {return}
+        self.makeRequestAlert(title: "\(newFriend)님이 등록되었습니다.", message: "", okAction: {_ in
         let request = PlusFriendRequest(name: newFriend)
         PlusFriendDataManager().plusFriend(request, viewController: self)
+        self.navigationController?.popViewController(animated: true)
+        })
     }
     
     @IBAction func toBack(_ sender: Any) {
