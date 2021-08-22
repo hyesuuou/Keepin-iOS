@@ -200,7 +200,6 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
                 let nextVC = MyPageFriendFixVC()
                 nextVC.id = self.friendIdx
                 nextVC.friendName = self.name
-                //NotificationCenter.default.post(name: NSNotification.Name(rawValue:"load2"), object: self.name)
                 self.navigationController?.pushViewController(nextVC, animated: true)
             }
         let actionCancel = UIAlertAction(title: "취소", style: .cancel)
