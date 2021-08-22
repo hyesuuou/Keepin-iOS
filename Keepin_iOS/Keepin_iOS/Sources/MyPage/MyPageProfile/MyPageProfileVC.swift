@@ -33,10 +33,8 @@ class MyPageProfileVC: UIViewController {
     @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var phoneView: UIView!
-    
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var birthTextField: UITextField!
-    
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var birthLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +77,12 @@ class MyPageProfileVC: UIViewController {
         
         logout.setTitleColor(.keepinGray4, for: .normal)
         delete.setTitleColor(.keepinGray4, for: .normal)
-
+        
+        emailLabel.font = UIFont.NotoSans(.regular, size: 16)
+        emailLabel.textColor = .keepinGray4
+        
+        birthLabel.font = UIFont.NotoSans(.regular, size: 16)
+        birthLabel.textColor = .keepinGray4
     }
 
     @objc func toNameEdit(sender: UITapGestureRecognizer){
@@ -131,8 +134,8 @@ class MyPageProfileVC: UIViewController {
 
 extension MyPageProfileVC{
     func didSuccessProfileInfo(message: String){
-        emailTextField.text = serverData?.email
-        birthTextField.text = serverData?.birth
+        emailLabel.text = serverData?.email
+        birthLabel.text = serverData?.birth
         
         print(message)
     }
