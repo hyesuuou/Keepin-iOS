@@ -2,22 +2,22 @@
 //  MyPagePresentMoaCVC.swift
 //  Keepin_iOS
 //
-//  Created by 이은영 on 2021/07/21.
+//  Created by 이은영 on 2021/08/23.
 //
 
 import UIKit
 
 class MyPagePresentMoaCVC: UICollectionViewCell {
     
-    //static let identifier = "MyPagePresentMoaCVC"
-    
+
     @IBOutlet weak var presentImage: UIImageView!
     @IBOutlet weak var presentTitle: UILabel!
     @IBOutlet weak var presentData: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    
+        // Initialization code
+        
         setStyle()
         prepareForReuse()
     }
@@ -38,5 +38,5 @@ class MyPagePresentMoaCVC: UICollectionViewCell {
         presentTitle.text = nil
         presentData.text = nil
     }
-
+    
 }
