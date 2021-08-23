@@ -26,6 +26,9 @@ class MyPageEditPwVC: UIViewController {
     
     @IBOutlet weak var doneButton: UIButton!
     
+    
+    @IBOutlet weak var warn2: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +47,9 @@ class MyPageEditPwVC: UIViewController {
         
         doneButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
         doneButton.tintColor = .keepinGray3
+        
+        warn2.textColor = .salmon
+        warn2.font = UIFont.NotoSans(.regular, size: 12)
     }
     
     func setAddTarget(){
@@ -87,6 +93,12 @@ class MyPageEditPwVC: UIViewController {
         if textField1.text != "" && textField2.text != "" && textField3.text != ""{
             doneButton.tintColor = .keepinGreen
         }
+        
+        if textField2.text!.validatePassword2() == true || textField2.text==""{
+            warn2.isHidden=true
+        }else{
+            warn2.isHidden=false
+        }
     }
     
     @IBAction func doneButton(_ sender: Any) {
@@ -98,6 +110,18 @@ class MyPageEditPwVC: UIViewController {
     
 }
 
+extension String{
+    //Email-validation
+    func validatePassword2() -> Bool{
+        let passwordRegEx = "^(?=.*[0-9])(?=.*[a-z]).{8,16}$"
+        
+        let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
+        return predicate.evaluate(with: self)
+    }
+    
+    
+    
+}
 
 extension MyPageEditPwVC{
     func didSuccessPw(message: String){
