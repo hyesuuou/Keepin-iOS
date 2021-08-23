@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyPageEditNameVC: UIViewController {
+class MyPageEditNameVC: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lineView: UIView!
@@ -19,6 +19,7 @@ class MyPageEditNameVC: UIViewController {
         super.viewDidLoad()
 
         setStyle()
+        nameText.delegate = self
     }
     
     func setStyle(){
@@ -50,6 +51,16 @@ class MyPageEditNameVC: UIViewController {
         MyPageProfileDataManager().fixProfileName(modified: request, viewcontroller: self)
         self.navigationController?.popViewController(animated: true)
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+     
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+     
+        return updatedText.count <= 5
+    }
+    
     
     
 }
