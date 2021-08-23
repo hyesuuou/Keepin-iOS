@@ -149,7 +149,6 @@ class ReminderVC: UIViewController {
 extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if scrollView == monthCV {
             let layout = self.monthCV.collectionViewLayout as! UICollectionViewFlowLayout
             
             let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
@@ -161,12 +160,13 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
             offset = CGPoint(x: CGFloat(roundedIndex * cellWidthIncludingSpacing) - scrollView.contentInset.left, y: -scrollView.contentInset.top)
             targetContentOffset.pointee = offset
             
+            print(roundedIndex)
+        
             monthCV.reloadData()
             
             monthTest()
             let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
             ReminderHomeDataManager().reminders(request, viewController: self)
-        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -202,7 +202,9 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        reminderCV.setContentOffset(CGPoint(x: reminderCV.frame.width*CGFloat(indexPath.row-2), y: 0.0), animated: true)
+        monthCV.setContentOffset(CGPoint(x: UIScreen.main.bounds.width / 5*CGFloat(indexPath.row-2), y: 0.0), animated: true)
+        print(indexPath.row)
     }
     
 }
