@@ -7,7 +7,7 @@
 
 import UIKit
 
-class KeepinPlusFriendVC: UIViewController {
+class KeepinPlusFriendVC: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var lineView: UIView!
@@ -21,7 +21,7 @@ class KeepinPlusFriendVC: UIViewController {
         textField.addTarget(self, action: #selector(textFieldChange(_sender:)), for: .editingChanged)
         setWarnLabel(label: warnLabel)
         setStyle()
-        
+        textField.delegate=self
     }
     
     @objc func textFieldChange(_sender: Any?){
@@ -61,6 +61,15 @@ class KeepinPlusFriendVC: UIViewController {
         textField.attributedPlaceholder = NSAttributedString(string: "등록할 이름을 입력해 주세요.(최대 5자)", attributes: [NSAttributedString.Key.foregroundColor: UIColor.keepinGray3])
         
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+     
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+     
+        return updatedText.count <= 5
     }
 }
 
