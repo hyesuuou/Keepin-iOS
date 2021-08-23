@@ -28,6 +28,7 @@ class MyPageEditPwVC: UIViewController {
     
     
     @IBOutlet weak var warn2: UILabel!
+    @IBOutlet weak var warn3: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,10 @@ class MyPageEditPwVC: UIViewController {
         
         warn2.textColor = .salmon
         warn2.font = UIFont.NotoSans(.regular, size: 12)
+        
+        warn3.textColor = .salmon
+        warn3.font=UIFont.NotoSans(.regular, size: 12)
+        warn3.isHidden = true
     }
     
     func setAddTarget(){
@@ -99,6 +104,17 @@ class MyPageEditPwVC: UIViewController {
         }else{
             warn2.isHidden=false
         }
+        
+        
+        if (textField2.text != "" && textField3.text != ""){
+            if textField2.text == textField3.text{
+            warn3.isHidden = true
+            }
+            else{
+            warn3.isHidden = false
+            }
+        }
+        
     }
     
     @IBAction func doneButton(_ sender: Any) {
