@@ -12,3 +12,9 @@ struct JoinRequest: Codable {
     let email, password, name, birth: String
     let phoneToken, phone: String
 }
+
+// MARK: - JoinEmailRequest
+struct JoinEmailRequest: Codable {
+    let email: String
+}
+
