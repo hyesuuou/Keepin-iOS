@@ -24,6 +24,7 @@
                 <outlet property="textField2" destination="MRX-Mw-HSf" id="di4-VX-Ph9"/>
                 <outlet property="textField3" destination="lOU-Dh-tSt" id="A5P-qp-nXK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="fJB-gX-fCz"/>
+                <outlet property="warn2" destination="PjI-SF-Oi0" id="AUR-Xp-kBf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -176,6 +177,16 @@
                         <constraint firstAttribute="width" constant="92" id="ywe-AV-DSC"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영문+숫자 8자 이상 입력해 주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjI-SF-Oi0">
+                    <rect key="frame" x="227" y="322.5" width="171" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="171" id="HSK-eq-uvQ"/>
+                        <constraint firstAttribute="height" constant="18" id="tJZ-JA-qSF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -203,9 +214,11 @@
                 <constraint firstItem="lOU-Dh-tSt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="jgY-sw-WGc"/>
                 <constraint firstItem="JE9-FI-i4w" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mFW-We-bry"/>
                 <constraint firstItem="Cwd-yy-lsx" firstAttribute="top" secondItem="MRX-Mw-HSf" secondAttribute="bottom" constant="5" id="r05-0I-0EX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PjI-SF-Oi0" secondAttribute="trailing" constant="16" id="ryP-Oy-NsU"/>
                 <constraint firstItem="Hby-8R-h3d" firstAttribute="top" secondItem="JE9-FI-i4w" secondAttribute="bottom" constant="48" id="s7O-nf-JLP"/>
                 <constraint firstItem="JOR-Zc-NV4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="stT-Xl-eq9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Cwd-yy-lsx" secondAttribute="trailing" constant="16" id="wq8-gj-f4q"/>
+                <constraint firstItem="PjI-SF-Oi0" firstAttribute="top" secondItem="Cwd-yy-lsx" secondAttribute="bottom" constant="6" id="yxg-yZ-6vf"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="121.875"/>
         </view>
