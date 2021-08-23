@@ -31,6 +31,7 @@ class JoinFirstVC: UIViewController {
         pwOKTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     
+    // MARK: - UI
     func setUI(){
         titleLabel[0].font = UIFont.GmarketSansTTF(.medium, size: 20)
         titleLabel[1].font = UIFont.GmarketSansTTF(.medium, size: 16)
@@ -61,11 +62,17 @@ class JoinFirstVC: UIViewController {
     }
     
     func setNavigationBar(){
-        
         self.navigationController?.navigationBar.isHidden = true
-        
     }
     
+    // MARK: - Server Connect
+    func serverConnect(email: String){
+        let joinEmailCheckRequest = JoinEmailRequest(email: email)
+        JoinDataManager().postEmailCheck(joinEmailCheckRequest, viewController: self)
+    }
+    
+    
+    // MARK: - objc func
     @objc func textFieldDidChange(_ sender: Any?) {
 
         if idTextField.text != "" {
@@ -125,6 +132,7 @@ class JoinFirstVC: UIViewController {
         
     }
     
+    // MARK: - IBAction
     @IBAction func backButtonClicked(_ sender: Any) {
         // 이전화면 버튼 눌렀을 때
         print("이전화면으로 돌아가는 버튼")
@@ -133,6 +141,7 @@ class JoinFirstVC: UIViewController {
     
     @IBAction func nextButtonClicked(_ sender: Any) {
         // 다음 버튼 눌렀을 때
+        serverConnect(email: idTextField.text!)
     }
 }
 
@@ -153,3 +162,21 @@ extension String {
             return predicate.evaluate(with: self)
         }
 }
+
+// MARK:- JoinFirstVC Server Extension
+extension JoinFirstVC {
+    
+    func didSuccessJoinEmailCheck(message: String, code: Int) {
+        if code == 200 {
+            self.navigationController?.pushViewController(JoinSecondVC(), animated: true)
+        }
+        else if code == 400 {
+            self.makeAlertOnlyMessage(message: message, okAction: nil)
+        }
+    }
+    
+    func failedToRequest(message: String) {
+        print(message)
+    }
+}
+

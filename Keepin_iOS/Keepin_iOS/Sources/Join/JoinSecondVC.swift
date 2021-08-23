@@ -37,6 +37,10 @@ class JoinSecondVC: UIViewController, UITextFieldDelegate {
         nameTextField.delegate = self
     }
     
+    func serverConnect(email: String){
+        
+    }
+    
     func setUI(){
         titleLabel[0].font = UIFont.GmarketSansTTF(.medium, size: 20)
         titleLabel[1].font = UIFont.GmarketSansTTF(.medium, size: 16)

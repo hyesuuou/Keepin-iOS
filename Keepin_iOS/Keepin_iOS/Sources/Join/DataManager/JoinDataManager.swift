@@ -30,4 +30,24 @@ class JoinDataManager {
             }
     }
     
+    func postEmailCheck(_ parameters: JoinEmailRequest, viewController: JoinFirstVC){
+        AF.request("\(Constant.BASE_URL)/user/email/check",
+                   method: .post,
+                   parameters: parameters,
+                   encoder: JSONParameterEncoder(),
+                   headers: Constant.USER_HEADER)
+            .validate(statusCode: 200..<500)
+            .responseDecodable(of: JoinResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    print(response.message)
+                    viewController.didSuccessJoinEmailCheck(message: response.message,
+                                                            code: response.status)
+                case .failure(let error):
+                    print(error.errorDescription)
+                }
+                
+            }
+    }
+    
 }
