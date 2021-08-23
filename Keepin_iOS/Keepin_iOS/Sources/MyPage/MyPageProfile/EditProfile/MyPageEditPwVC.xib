@@ -25,6 +25,7 @@
                 <outlet property="textField3" destination="lOU-Dh-tSt" id="A5P-qp-nXK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="fJB-gX-fCz"/>
                 <outlet property="warn2" destination="PjI-SF-Oi0" id="AUR-Xp-kBf"/>
+                <outlet property="warn3" destination="p6a-0g-tSz" id="aoq-jU-pFM"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -187,6 +188,16 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호가 일치하지 않습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6a-0g-tSz">
+                    <rect key="frame" x="245" y="416.5" width="153" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="153" id="WQk-G8-XHF"/>
+                        <constraint firstAttribute="height" constant="18" id="uAB-lS-6z0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -197,6 +208,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8qQ-Sa-VX9" secondAttribute="trailing" id="KSJ-ML-mkj"/>
                 <constraint firstItem="8qQ-Sa-VX9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MF4-Po-wQ7"/>
                 <constraint firstItem="6ru-6M-IdA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="NTU-8h-oVZ"/>
+                <constraint firstItem="p6a-0g-tSz" firstAttribute="top" secondItem="KQJ-5E-B54" secondAttribute="bottom" constant="6" id="OTW-ON-8zN"/>
                 <constraint firstItem="6ru-6M-IdA" firstAttribute="top" secondItem="8qQ-Sa-VX9" secondAttribute="bottom" constant="29" id="Pin-TI-N4X"/>
                 <constraint firstItem="JE9-FI-i4w" firstAttribute="top" secondItem="Ad2-Dm-vhd" secondAttribute="bottom" constant="5" id="QJg-Gi-O4q"/>
                 <constraint firstItem="MRX-Mw-HSf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="QVC-R4-wYa"/>
@@ -213,6 +225,7 @@
                 <constraint firstItem="JOR-Zc-NV4" firstAttribute="top" secondItem="Cwd-yy-lsx" secondAttribute="bottom" constant="48" id="eSj-Bx-dEK"/>
                 <constraint firstItem="lOU-Dh-tSt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="jgY-sw-WGc"/>
                 <constraint firstItem="JE9-FI-i4w" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mFW-We-bry"/>
+                <constraint firstAttribute="trailing" secondItem="p6a-0g-tSz" secondAttribute="trailing" constant="16" id="mls-tf-7dO"/>
                 <constraint firstItem="Cwd-yy-lsx" firstAttribute="top" secondItem="MRX-Mw-HSf" secondAttribute="bottom" constant="5" id="r05-0I-0EX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PjI-SF-Oi0" secondAttribute="trailing" constant="16" id="ryP-Oy-NsU"/>
                 <constraint firstItem="Hby-8R-h3d" firstAttribute="top" secondItem="JE9-FI-i4w" secondAttribute="bottom" constant="48" id="s7O-nf-JLP"/>
