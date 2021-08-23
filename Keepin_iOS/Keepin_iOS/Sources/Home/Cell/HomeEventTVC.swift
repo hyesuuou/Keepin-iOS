@@ -21,7 +21,6 @@ class HomeEventTVC: UITableViewCell {
     
     @IBOutlet weak var reminderFirstButton: UIButton!
     @IBOutlet weak var reminderSecondButton: UIButton!
-    @IBOutlet weak var reminderNextButton: UIButton!
     
     @IBOutlet weak var separateView: UIView!
     override func awakeFromNib() {

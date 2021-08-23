@@ -23,14 +23,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jv2-3k-dMI">
-                        <rect key="frame" x="330" y="13" width="32" height="32"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="32" id="SrK-ca-sni"/>
-                            <constraint firstAttribute="height" constant="32" id="neb-KV-Q1j"/>
-                        </constraints>
-                        <state key="normal" image="icNext"/>
-                    </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LfA-1G-pkf">
                         <rect key="frame" x="24" y="61" width="327" height="147"/>
                         <subviews>
@@ -139,11 +131,9 @@
                     <constraint firstAttribute="bottom" secondItem="LfA-1G-pkf" secondAttribute="bottom" constant="24" id="4ZR-pc-MZO"/>
                     <constraint firstAttribute="trailing" secondItem="hbT-Yo-tTu" secondAttribute="trailing" constant="24" id="SLY-5O-pSB"/>
                     <constraint firstItem="LfA-1G-pkf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="Smv-ng-j2S"/>
-                    <constraint firstAttribute="trailing" secondItem="jv2-3k-dMI" secondAttribute="trailing" constant="13" id="VAq-Mq-Bdl"/>
                     <constraint firstAttribute="trailing" secondItem="LfA-1G-pkf" secondAttribute="trailing" constant="24" id="b5b-Qt-X3Y"/>
                     <constraint firstItem="hbT-Yo-tTu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="mKr-Yw-Y1A"/>
                     <constraint firstItem="LfA-1G-pkf" firstAttribute="top" secondItem="hbT-Yo-tTu" secondAttribute="bottom" constant="20" id="t9f-eB-ySn"/>
-                    <constraint firstItem="jv2-3k-dMI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="tCm-gC-Pb0"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -153,7 +143,6 @@
                 <outlet property="dateLabel" destination="1AV-im-sDA" id="c00-zI-PWW"/>
                 <outlet property="dateSecondLabel" destination="yxJ-V7-g4U" id="v98-WU-qKY"/>
                 <outlet property="reminderFirstButton" destination="v0Y-Xx-i9e" id="Yfp-S3-LRf"/>
-                <outlet property="reminderNextButton" destination="jv2-3k-dMI" id="v3a-mJ-p8n"/>
                 <outlet property="reminderSecondButton" destination="Yi1-De-SPl" id="qhc-rh-5wh"/>
                 <outlet property="separateView" destination="JDO-tn-ts3" id="fjf-VF-I1E"/>
                 <outlet property="titleLabel" destination="hbT-Yo-tTu" id="lLl-pR-Akh"/>
@@ -162,7 +151,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icNext" width="32" height="32"/>
         <image name="listReminderHome" width="327" height="54"/>
         <image name="listReminderHomeImp" width="327" height="54"/>
         <systemColor name="systemGrayColor">

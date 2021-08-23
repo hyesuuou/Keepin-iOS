@@ -68,11 +68,7 @@ class HomeVC: UIViewController {
             refresh.endRefreshing()
         }
     }
-    
-    @objc func pushReminderVC(){
-        self.navigationController?.pushViewController(ReminderVC(), animated: true)
-    }
-    
+   
 }
 
 extension HomeVC : UITableViewDelegate {
@@ -125,7 +121,6 @@ extension HomeVC : UITableViewDataSource {
                              secondDate: reminderList[1].date,
                              secondContents: reminderList[1].title,
                              secondImportant: reminderList[1].isImportant)
-                cell.reminderNextButton.addTarget(self, action: #selector(pushReminderVC), for: .touchUpInside)
                 
                 return cell
             }
