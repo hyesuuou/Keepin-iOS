@@ -19,7 +19,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReminderVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
                 <outlet property="monthCV" destination="GAL-C7-W89" id="8bZ-lQ-CHP"/>
-                <outlet property="reminderTV" destination="trA-LJ-vHK" id="lh4-jb-oSF"/>
+                <outlet property="reminderCV" destination="JBx-NG-9Cf" id="XP1-EL-Dyh"/>
                 <outlet property="selectedMonth" destination="gff-3c-jac" id="XTi-Rc-0OD"/>
                 <outlet property="tvBackground" destination="SmU-eT-Z3o" id="xnw-Er-wOU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -64,7 +64,25 @@
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SmU-eT-Z3o">
                     <rect key="frame" x="0.0" y="247" width="375" height="482"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="JBx-NG-9Cf">
+                            <rect key="frame" x="16" y="0.0" width="343" height="482"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="juJ-zu-baD">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="JBx-NG-9Cf" secondAttribute="bottom" id="UBN-kH-naV"/>
+                        <constraint firstItem="JBx-NG-9Cf" firstAttribute="top" secondItem="SmU-eT-Z3o" secondAttribute="top" id="ZPH-oc-aBo"/>
+                        <constraint firstItem="JBx-NG-9Cf" firstAttribute="leading" secondItem="SmU-eT-Z3o" secondAttribute="leading" constant="16" id="dBX-oK-7Lg"/>
+                        <constraint firstItem="JBx-NG-9Cf" firstAttribute="centerX" secondItem="SmU-eT-Z3o" secondAttribute="centerX" id="t51-Ze-Y7d"/>
+                    </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="GAL-C7-W89">
                     <rect key="frame" x="0.0" y="187" width="375" height="36"/>
@@ -79,18 +97,12 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="trA-LJ-vHK">
-                    <rect key="frame" x="16" y="247" width="343" height="482"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="trA-LJ-vHK" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="2d5-11-nF4"/>
                 <constraint firstItem="OBA-OC-BFd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="5ze-Kh-daT"/>
                 <constraint firstItem="C3l-2b-Awm" firstAttribute="top" secondItem="OBA-OC-BFd" secondAttribute="bottom" constant="31" id="7hf-iV-XUV"/>
-                <constraint firstItem="trA-LJ-vHK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="AIf-bS-4ZP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="SmU-eT-Z3o" secondAttribute="bottom" id="F3X-yO-zO6"/>
                 <constraint firstItem="OBA-OC-BFd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="HCQ-vu-Sq9"/>
                 <constraint firstItem="gff-3c-jac" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HiX-WT-Xay"/>
@@ -98,20 +110,18 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SmU-eT-Z3o" secondAttribute="trailing" id="PtC-8F-9hP"/>
                 <constraint firstItem="SmU-eT-Z3o" firstAttribute="top" secondItem="gff-3c-jac" secondAttribute="bottom" constant="24" id="R4q-5n-8xP"/>
                 <constraint firstItem="cc4-tW-N97" firstAttribute="leading" secondItem="C3l-2b-Awm" secondAttribute="trailing" constant="12" id="SDQ-v4-dxj"/>
-                <constraint firstItem="trA-LJ-vHK" firstAttribute="top" secondItem="gff-3c-jac" secondAttribute="bottom" constant="24" id="XQ7-iG-Tzr"/>
                 <constraint firstItem="GAL-C7-W89" firstAttribute="top" secondItem="cc4-tW-N97" secondAttribute="bottom" constant="26" id="XRe-Fs-mpT"/>
                 <constraint firstItem="C3l-2b-Awm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="adW-pX-ez6"/>
                 <constraint firstItem="gff-3c-jac" firstAttribute="top" secondItem="GAL-C7-W89" secondAttribute="top" id="eRr-kh-opN"/>
                 <constraint firstItem="SmU-eT-Z3o" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gGc-pm-Zkk"/>
                 <constraint firstItem="GAL-C7-W89" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jK4-Qq-SVt"/>
                 <constraint firstItem="GAL-C7-W89" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="q8a-Qu-g35"/>
-                <constraint firstItem="trA-LJ-vHK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qfZ-dt-jPk"/>
                 <constraint firstItem="6ef-pQ-KI7" firstAttribute="leading" secondItem="cc4-tW-N97" secondAttribute="trailing" constant="12" id="qpa-ms-VUl"/>
                 <constraint firstItem="cc4-tW-N97" firstAttribute="top" secondItem="OBA-OC-BFd" secondAttribute="bottom" constant="32" id="sIl-B9-jyH"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
-            <point key="canvasLocation" x="105.79710144927537" y="94.419642857142847"/>
+            <point key="canvasLocation" x="104.8" y="93.842364532019715"/>
         </view>
     </objects>
     <resources>

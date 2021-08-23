@@ -14,7 +14,7 @@ class ReminderVC: UIViewController {
     @IBOutlet weak var monthCV: UICollectionView!
     @IBOutlet weak var selectedMonth: UIImageView!
     @IBOutlet weak var tvBackground: UIView!
-    @IBOutlet weak var reminderTV: UITableView!
+    @IBOutlet weak var reminderCV: UICollectionView!
     
     //MARK: - IBActions
     @IBAction func yearArrowClicked(_ sender: UIButton) {
@@ -43,6 +43,7 @@ class ReminderVC: UIViewController {
     var sample : Int = 0
     var serverData : MonthReminders?
     var forServer : String = "01"
+    let viewSizeWidth : CGFloat = UIScreen.main.bounds.width
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
@@ -59,7 +60,6 @@ class ReminderVC: UIViewController {
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-        
         monthCV.collectionViewLayout = layout
         monthCV.decelerationRate = .fast
         monthCV.isPagingEnabled = false
@@ -67,6 +67,17 @@ class ReminderVC: UIViewController {
         monthCV.register(ReminderCVC.nib(), forCellWithReuseIdentifier: "ReminderCVC")
         monthCV.delegate = self
         monthCV.dataSource = self
+        
+        let swaplayout = UICollectionViewFlowLayout()
+        swaplayout.itemSize = CGSize(width: viewSizeWidth-32, height: reminderCV.frame.height)
+        swaplayout.scrollDirection = .horizontal
+        swaplayout.minimumLineSpacing = 0
+        swaplayout.minimumInteritemSpacing = 0
+        reminderCV.collectionViewLayout = swaplayout
+        reminderCV.isPagingEnabled = true
+        reminderCV.register(ReminderSwapCVC.nib(), forCellWithReuseIdentifier: "ReminderSwapCVC")
+        reminderCV.delegate = self
+        reminderCV.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,10 +97,15 @@ class ReminderVC: UIViewController {
     
     func setUI(){
         yearLabel.text = Date().yearOnly()
-        reminderTV.backgroundColor = .keepinGray
-        reminderTV.contentInset.bottom = 50
+//        reminderTV.backgroundColor = .keepinGray
+//        reminderTV.contentInset.bottom = 50
+//        reminderTV.separatorStyle = .none
+        
+        reminderCV.backgroundColor = .keepinGray
+//        reminderTV.contentInset.bottom = 50
+//        reminderTV.separatorStyle = .none
+        
         tvBackground.backgroundColor = .keepinGray
-        reminderTV.separatorStyle = .none
 //        let date = Date().monthOnly()
 //        sample = date
     }
@@ -154,21 +170,35 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 16
+        if collectionView == monthCV{
+            return 16
+        }
+        else{
+            return 12
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = monthCV.dequeueReusableCell(withReuseIdentifier: "ReminderCVC", for: indexPath) as! ReminderCVC
-        cell.monthLabel.text = months[indexPath.row]
-        
-        if indexPath.row == sample + 2{
-            cell.setColor(color: UIColor.white, font: true)
+        if collectionView == monthCV {
+            let cell = monthCV.dequeueReusableCell(withReuseIdentifier: "ReminderCVC", for: indexPath) as! ReminderCVC
+            cell.monthLabel.text = months[indexPath.row]
+            
+            if indexPath.row == sample + 2{
+                cell.setColor(color: UIColor.white, font: true)
+            }
+            else {
+                cell.setColor(color: UIColor.gray, font: false)
+            }
+            
+            return cell
         }
-        else {
-            cell.setColor(color: UIColor.gray, font: false)
+        else{
+            let cell = reminderCV.dequeueReusableCell(withReuseIdentifier: "ReminderSwapCVC", for: indexPath) as! ReminderSwapCVC
+            let colors = [UIColor.orange, UIColor.green]
+            cell.backgroundColor = colors[indexPath.row%2]
+            return cell
         }
         
-        return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -178,6 +208,7 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
+/*
 extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (reminderTV.contentOffset.y < 0){
@@ -269,14 +300,21 @@ extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
     
 }
 
+*/
+
 //MARK: - Server Functions
 extension ReminderVC {
     func didSuccessReminders(message: String) {
-        reminderTV.register(ReminderTVC.nib(), forCellReuseIdentifier: "ReminderTVC")
-        reminderTV.delegate = self
-        reminderTV.dataSource = self
+//        reminderTV.register(ReminderTVC.nib(), forCellReuseIdentifier: "ReminderTVC")
+//        reminderTV.delegate = self
+//        reminderTV.dataSource = self
         
-        reminderTV.reloadData()
+        reminderCV.register(ReminderSwapCVC.nib(), forCellWithReuseIdentifier: "ReminderSwapCVC")
+        reminderCV.delegate = self
+        reminderCV.dataSource = self
+        
+        reminderCV.reloadData()
+//        reminderTV.reloadData()
     }
     
     func failedToRequest(message: String) {
