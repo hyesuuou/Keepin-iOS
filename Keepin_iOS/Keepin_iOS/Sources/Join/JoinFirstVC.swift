@@ -168,7 +168,10 @@ extension JoinFirstVC {
     
     func didSuccessJoinEmailCheck(message: String, code: Int) {
         if code == 200 {
-            self.navigationController?.pushViewController(JoinSecondVC(), animated: true)
+            let nextVC = JoinSecondVC()
+            nextVC.email = idTextField.text!
+            nextVC.pw = pwTextField.text!
+            self.navigationController?.pushViewController(nextVC, animated: true)
         }
         else if code == 400 {
             self.makeAlertOnlyMessage(message: message, okAction: nil)
