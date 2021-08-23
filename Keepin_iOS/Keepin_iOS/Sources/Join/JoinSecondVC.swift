@@ -11,6 +11,9 @@ class JoinSecondVC: UIViewController, UITextFieldDelegate {
     
     var agreeButtonState : Bool = false
     var textFieldState : Bool = false
+    
+    var email: String?
+    var pw: String?
 
     @IBOutlet var titleLabel: [UILabel]!
     @IBOutlet weak var backButton: UIButton!
@@ -37,10 +40,13 @@ class JoinSecondVC: UIViewController, UITextFieldDelegate {
         nameTextField.delegate = self
     }
     
-    func serverConnect(email: String){
-        
+    // MARK:- Server Connect
+    func serverConnect(email: String, pw: String, name: String, birth: String, phone: String){
+        let joinRequest = JoinRequest(email: email, password: pw, name: name, birth: birth, phoneToken: "1", phone: phone)
+        JoinDataManager().postSignup(joinRequest, viewController: self)
     }
     
+    // MARK:- UI
     func setUI(){
         titleLabel[0].font = UIFont.GmarketSansTTF(.medium, size: 20)
         titleLabel[1].font = UIFont.GmarketSansTTF(.medium, size: 16)
@@ -68,7 +74,7 @@ class JoinSecondVC: UIViewController, UITextFieldDelegate {
     }
     
     
-    
+    // MARK:- objc function
     @objc func textFieldDidChange(_ sender: Any?) {
         
         if nameTextField.text != "" {
@@ -106,6 +112,7 @@ class JoinSecondVC: UIViewController, UITextFieldDelegate {
         
     }
     
+    // MARK:- textField Delegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
@@ -117,6 +124,7 @@ class JoinSecondVC: UIViewController, UITextFieldDelegate {
 
 
 
+    // MARK:- IBAction
     @IBAction func agreeButtonClicked(_ sender: Any) {
         agreeButtonState = !agreeButtonState
         if agreeButtonState == true {
@@ -133,4 +141,31 @@ class JoinSecondVC: UIViewController, UITextFieldDelegate {
         
     }
     
+    
+    @IBAction func nextButtonClicked(_ sender: Any) {
+        
+        serverConnect(email: email!,
+                      pw: pw!,
+                      name: nameTextField.text!,
+                      birth: birthTextField.text!,
+                      phone: phoneTextField.text!)
+    }
+    
+}
+
+// MARK:- JoinSecondVC Server Extension
+extension JoinSecondVC {
+    
+    func didSuccessJoin(message: String, code: Int) {
+        if code == 200 {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        else if code == 400 {
+            self.makeAlertOnlyMessage(message: message, okAction: nil)
+        }
+    }
+    
+    func failedToRequest(message: String) {
+        print(message)
+    }
 }

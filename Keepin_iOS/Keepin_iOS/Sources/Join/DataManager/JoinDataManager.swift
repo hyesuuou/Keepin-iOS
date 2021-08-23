@@ -22,7 +22,8 @@ class JoinDataManager {
                 
                 switch response.result {
                 case .success(let response):
-                    print("회원가입 성공", response.message)
+                    viewController.didSuccessJoin(message: response.message,
+                                                  code: response.status)
                 case .failure(let error):
                     print(error.errorDescription)
                 }
