@@ -12,7 +12,7 @@ class BaseTBC: UITabBarController, UITabBarControllerDelegate {
     
     let homeVC  = HomeVC()
     let presentMoaVC = PresentMoaVC()
-    let keepinPlusVC  = KeepinPlusVC()
+    let keepinPlusVC  = KeepinPlusMainVC()
     let reminderVC  = ReminderVC()
     let myPageVC = MyPageHomeVC()
     
