@@ -44,6 +44,8 @@ class MyPageEditNameVC: UIViewController,UITextFieldDelegate {
         if nameText.text != ""{
             doneButton.tintColor = .keepinGreen
         }
+        
+        lineView.backgroundColor = .keepinBlack
     }
     
     @IBAction func doneButton(_ sender: Any) {
