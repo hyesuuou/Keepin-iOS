@@ -77,6 +77,9 @@ class MyPageEditPwVC: UIViewController {
                 
                 self.animateView.transform = trans
             }
+            
+            line1.backgroundColor = .keepinBlack
+            
         }
         
         if textField2.text != ""{
@@ -85,6 +88,7 @@ class MyPageEditPwVC: UIViewController {
                 self.label2.textColor = .keepinBlack
                 self.animateView2.transform = trans
             }
+            line2.backgroundColor = .keepinBlack
         }
         
         if textField3.text != ""{
@@ -93,6 +97,7 @@ class MyPageEditPwVC: UIViewController {
                 self.label3.textColor = .keepinBlack
                 self.animateView3.transform = trans
             }
+            line3.backgroundColor = .keepinBlack
         }
         
         if textField1.text != "" && textField2.text != "" && textField3.text != ""{
