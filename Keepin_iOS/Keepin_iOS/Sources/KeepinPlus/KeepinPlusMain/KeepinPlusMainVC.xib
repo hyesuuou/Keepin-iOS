@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KeepinPlusMainVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
                 <outlet property="addButton" destination="EZe-w7-0gT" id="0FG-Ag-dCI"/>
+                <outlet property="categoryView" destination="qg3-W2-pvj" id="DcN-tX-krU"/>
                 <outlet property="dateTextfield" destination="Tur-MM-b9u" id="w5m-Qd-L1s"/>
                 <outlet property="friendNameButton" destination="f0h-95-9VR" id="wQ9-s0-PJv"/>
                 <outlet property="kindButtonWidth" destination="cSr-JY-JIv" id="FBL-ez-1Qf"/>

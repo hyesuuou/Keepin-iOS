@@ -13,6 +13,7 @@ class KeepinPlusMainVC: UIViewController {
     
     // 선택된 경우 -> 1, 선택x -> 0
     public static var numberList : [Int] = [0, 0, 0, 0, 0, 0, 0, 0]
+    var count : Int = 0
 
     @IBOutlet weak var addButton: UIButton!
     
@@ -27,6 +28,7 @@ class KeepinPlusMainVC: UIViewController {
     @IBOutlet weak var kindButtonWidth: NSLayoutConstraint!
     @IBOutlet weak var friendNameButton: UIButton!
     @IBOutlet weak var dateTextfield: UITextField!
+    @IBOutlet weak var categoryView: UIView!
     
     // MARK:- View Life Cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -64,6 +66,11 @@ class KeepinPlusMainVC: UIViewController {
         /// 누구에게 받은/준 선물인가요 UI
         friendNameButton.tintColor = .keepinGray3
         friendNameButton.titleLabel?.font = UIFont.NotoSans(.regular, size: 16)
+        
+        /// 선물 카테고리 선택
+        for i in 0 ... 7 {
+            categoryButton[i].addTarget(self, action: #selector(selectCategoryClicked(_:)), for: .touchUpInside)
+        }
         
     }
     
@@ -133,6 +140,29 @@ class KeepinPlusMainVC: UIViewController {
     
     // MARK:- objc func
     // 선물 카테고리 버튼 눌렀을 때
+    @objc
+    func selectCategoryClicked(_ sender : UIButton){
+        print(sender.tag)
+       
+        count = 0
+        for i in 0 ... KeepinPlusMainVC.numberList.count - 1 {
+            if KeepinPlusMainVC.numberList[i] == 1 {
+                count = count + 1
+            }
+        }
+        
+        if count == 2 {
+            if KeepinPlusMainVC.numberList[sender.tag] == 1 {
+                KeepinPlusMainVC.numberList[sender.tag] = 0
+            }
+        }
+        
+        if count < 2 {
+            KeepinPlusMainVC.numberList[sender.tag] = abs(KeepinPlusMainVC.numberList[sender.tag]-1)
+        }
+        setCategoryUI(select: KeepinPlusMainVC.numberList)
+      
+    }
     
     // MARK:- IBAction
     // MARK: X 버튼 클릭 (뒤로가기)
@@ -155,5 +185,7 @@ class KeepinPlusMainVC: UIViewController {
     @IBAction func selectGiveButtonClicked(_ sender: Any) {
         setButtonUI(select: 1)
     }
+    
+    
     
 }
