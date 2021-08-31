@@ -16,6 +16,7 @@
                 <outlet property="friendNameButton" destination="f0h-95-9VR" id="wQ9-s0-PJv"/>
                 <outlet property="kindButtonWidth" destination="cSr-JY-JIv" id="FBL-ez-1Qf"/>
                 <outlet property="memoTextView" destination="IwP-sS-X3A" id="B6r-ut-UTv"/>
+                <outlet property="memoTextViewHeight" destination="hsk-Tc-g8s" id="q3c-Qi-ixO"/>
                 <outlet property="nameTextField" destination="ivu-Nk-bsh" id="ci0-oB-Lxv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="titleLabel" destination="kF0-xf-OUf" collectionClass="NSMutableArray" id="EbJ-XH-JhV"/>
