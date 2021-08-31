@@ -31,6 +31,7 @@ class KeepinPlusMainVC: UIViewController {
     @IBOutlet weak var dateTextfield: UITextField!
     @IBOutlet weak var categoryView: UIView!
     @IBOutlet weak var memoTextView: UITextView!
+    @IBOutlet weak var memoTextViewHeight: NSLayoutConstraint!
     
     // MARK:- View Life Cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -145,6 +146,7 @@ class KeepinPlusMainVC: UIViewController {
         
         memoTextView.textContainerInset = UIEdgeInsets(top: 16, left: 18, bottom: 16, right: 18)
         setPlaceHolder()
+        memoTextView.isScrollEnabled = false
     }
     
     // MARK:- Server Connect
@@ -205,6 +207,7 @@ class KeepinPlusMainVC: UIViewController {
 // MARK:- 더 잛 키핀해볼까요? 부분 extension
 extension KeepinPlusMainVC: UITextViewDelegate {
     
+    /// placeholder 설정
     func setPlaceHolder(){
         memoTextView.delegate = self
         memoTextView.text = "선물을 주고받은 상황, 느낌 등을 기록해 보세요!"
@@ -222,6 +225,31 @@ extension KeepinPlusMainVC: UITextViewDelegate {
         if textView.text.isEmpty {
             textView.text = "선물을 주고받은 상황, 느낌 등을 기록해 보세요!"
             textView.textColor = UIColor.keepinGray3
+        }
+    }
+    
+    // MARK: 글자수 제한
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        guard let str = textView.text else { return true }
+        let newLength = str.count + text.count - range.length
+        return newLength <= 200
+    }
+    
+    // MARK: textview 높이 자동조절
+    func textViewDidChange(_ textView: UITextView) {
+        
+        let size = CGSize(width: view.frame.width, height: .infinity)
+        let estimatedSize = textView.sizeThatFits(size)
+        
+        textView.constraints.forEach { (constraint) in
+            if estimatedSize.height <= 180 {
+            
+            }
+            else {
+            if constraint.firstAttribute == .height {
+                constraint.constant = estimatedSize.height
+            }
+            }
         }
     }
     
