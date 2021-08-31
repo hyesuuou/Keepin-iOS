@@ -12,6 +12,7 @@ class MyPageEditPhoneVC: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var lineView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,8 @@ class MyPageEditPhoneVC: UIViewController {
 
         doneButton.tintColor = .keepinGray3
         doneButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
+        
+        lineView.backgroundColor = .keepinGray4
     }
     
     func setTarget(){
@@ -40,6 +43,7 @@ class MyPageEditPhoneVC: UIViewController {
         if textField.text != ""{
             doneButton.tintColor = .keepinGreen
         }
+        lineView.backgroundColor = .keepinBlack
     }
     
     
