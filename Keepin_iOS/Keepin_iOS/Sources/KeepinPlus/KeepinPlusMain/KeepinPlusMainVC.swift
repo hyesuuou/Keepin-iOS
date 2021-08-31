@@ -15,6 +15,7 @@ class KeepinPlusMainVC: UIViewController {
     public static var numberList : [Int] = [0, 0, 0, 0, 0, 0, 0, 0]
     var count : Int = 0
 
+    // MARK: - IBOutlet
     @IBOutlet weak var addButton: UIButton!
     
     @IBOutlet var titleLabel: [UILabel]!
@@ -29,6 +30,7 @@ class KeepinPlusMainVC: UIViewController {
     @IBOutlet weak var friendNameButton: UIButton!
     @IBOutlet weak var dateTextfield: UITextField!
     @IBOutlet weak var categoryView: UIView!
+    @IBOutlet weak var memoTextView: UITextView!
     
     // MARK:- View Life Cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -72,6 +74,8 @@ class KeepinPlusMainVC: UIViewController {
             categoryButton[i].addTarget(self, action: #selector(selectCategoryClicked(_:)), for: .touchUpInside)
         }
         
+        setMemoUI()
+        
     }
     
     // MARK: 네비게이션바 UI
@@ -111,6 +115,7 @@ class KeepinPlusMainVC: UIViewController {
         
     }
     
+    //MARK: 카페고리 UI
     func setCategoryUI(select : [Int]){
         
         for i in 0 ... 7 {
@@ -127,10 +132,19 @@ class KeepinPlusMainVC: UIViewController {
             }
             categoryButton[i].layer.cornerRadius = 15
             categoryButton[i].titleLabel?.font = UIFont.NotoSans(.regular, size: 14)
-            
-            
+
         }
         
+    }
+    
+    // MARK: 더 잘 키핀해볼까요? UI
+    func setMemoUI(){
+        memoTextView.layer.cornerRadius = 12
+        memoTextView.layer.borderWidth = 1
+        memoTextView.layer.borderColor = UIColor.keepinGray3.cgColor
+        
+        memoTextView.textContainerInset = UIEdgeInsets(top: 16, left: 18, bottom: 16, right: 18)
+        setPlaceHolder()
     }
     
     // MARK:- Server Connect
@@ -185,7 +199,30 @@ class KeepinPlusMainVC: UIViewController {
     @IBAction func selectGiveButtonClicked(_ sender: Any) {
         setButtonUI(select: 1)
     }
+
+}
+
+// MARK:- 더 잛 키핀해볼까요? 부분 extension
+extension KeepinPlusMainVC: UITextViewDelegate {
     
+    func setPlaceHolder(){
+        memoTextView.delegate = self
+        memoTextView.text = "선물을 주고받은 상황, 느낌 등을 기록해 보세요!"
+        memoTextView.textColor = .keepinGray3
+    }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.keepinGray3 {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "선물을 주고받은 상황, 느낌 등을 기록해 보세요!"
+            textView.textColor = UIColor.keepinGray3
+        }
+    }
     
 }
