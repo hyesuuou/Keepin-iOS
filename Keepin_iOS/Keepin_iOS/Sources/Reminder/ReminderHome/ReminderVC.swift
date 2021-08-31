@@ -69,7 +69,7 @@ class ReminderVC: UIViewController {
         monthCV.dataSource = self
         
         let swaplayout = UICollectionViewFlowLayout()
-        swaplayout.itemSize = CGSize(width: viewSizeWidth-32, height: reminderCV.frame.height)
+        swaplayout.itemSize = CGSize(width: reminderCV.frame.width, height: reminderCV.frame.height)
         swaplayout.scrollDirection = .horizontal
         swaplayout.minimumLineSpacing = 0
         swaplayout.minimumInteritemSpacing = 0
@@ -184,10 +184,11 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
             cell.monthLabel.text = months[indexPath.row]
             
             if indexPath.row == sample + 2{
-                cell.setColor(color: UIColor.white, font: true)
+                cell.isSelected = true
+                reminderCV.setContentOffset(CGPoint(x: reminderCV.frame.width*CGFloat(indexPath.row-2), y: 0.0), animated: true)
             }
             else {
-                cell.setColor(color: UIColor.gray, font: false)
+                cell.isSelected = false
             }
             
             return cell
@@ -204,6 +205,8 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         reminderCV.setContentOffset(CGPoint(x: reminderCV.frame.width*CGFloat(indexPath.row-2), y: 0.0), animated: true)
         monthCV.setContentOffset(CGPoint(x: UIScreen.main.bounds.width / 5*CGFloat(indexPath.row-2), y: 0.0), animated: true)
+        
+        print("select")
         print(indexPath.row)
     }
     
