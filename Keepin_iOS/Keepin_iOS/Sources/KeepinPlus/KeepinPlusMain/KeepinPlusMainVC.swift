@@ -82,7 +82,8 @@ class KeepinPlusMainVC: UIViewController {
         setMemoUI()
         setKeyboardViewUI()
         
-        
+        /// datePicker 추가
+        dateTextfield.setDatePicker(target: (Any).self)
     }
     
     // MARK: 네비게이션바 UI
