@@ -14,7 +14,7 @@ class KeepinPlusMainVC: UIViewController {
     // 선택된 경우 -> 1, 선택x -> 0
     public static var numberList : [Int] = [0, 0, 0, 0, 0, 0, 0, 0]
     var count : Int = 0
-
+    
     // MARK: - IBOutlet
     @IBOutlet weak var addButton: UIButton!
     
@@ -33,16 +33,20 @@ class KeepinPlusMainVC: UIViewController {
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var memoTextViewHeight: NSLayoutConstraint!
     
+    /// 키보드 영역 관련 뷰
+    @IBOutlet weak var keyboardView: UIView!
+    @IBOutlet weak var keyboardViewHeight: NSLayoutConstraint!
+    
     // MARK:- View Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         setNavigationBarUI()
+        setUI()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
     }
-
+    
     // MARK:- UI
     func setUI(){
         
@@ -76,6 +80,8 @@ class KeepinPlusMainVC: UIViewController {
         }
         
         setMemoUI()
+        setKeyboardViewUI()
+        
         
     }
     
@@ -107,7 +113,7 @@ class KeepinPlusMainVC: UIViewController {
         
         kindButton[select].titleLabel?.font = UIFont.NotoSans(.regular, size: 14)
         kindButton[notSelect].titleLabel?.font = UIFont.NotoSans(.regular, size: 14)
-       
+        
         
         kindButton[select].layer.cornerRadius = 21.5
         kindButton[notSelect].layer.cornerRadius = 21.5
@@ -133,7 +139,7 @@ class KeepinPlusMainVC: UIViewController {
             }
             categoryButton[i].layer.cornerRadius = 15
             categoryButton[i].titleLabel?.font = UIFont.NotoSans(.regular, size: 14)
-
+            
         }
         
     }
@@ -149,6 +155,16 @@ class KeepinPlusMainVC: UIViewController {
         memoTextView.isScrollEnabled = false
     }
     
+    // MARK: 키보드 관련 뷰 UI
+    func setKeyboardViewUI(){
+        self.dismissKeyboardWhenTappedAround()
+        keyboardView.backgroundColor = .clear
+        keyboardViewHeight.constant = 0
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     // MARK:- Server Connect
     func serverConnect(){
         
@@ -159,7 +175,7 @@ class KeepinPlusMainVC: UIViewController {
     @objc
     func selectCategoryClicked(_ sender : UIButton){
         print(sender.tag)
-       
+        
         count = 0
         for i in 0 ... KeepinPlusMainVC.numberList.count - 1 {
             if KeepinPlusMainVC.numberList[i] == 1 {
@@ -177,7 +193,25 @@ class KeepinPlusMainVC: UIViewController {
             KeepinPlusMainVC.numberList[sender.tag] = abs(KeepinPlusMainVC.numberList[sender.tag]-1)
         }
         setCategoryUI(select: KeepinPlusMainVC.numberList)
-      
+        
+    }
+    
+    // MARK: 키보드 이슈 관련
+    /// 키보드가 보이면
+    @objc
+    func keyboardWillShow(_ sender: Notification) {
+        if let keyboardFrame: NSValue = sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            
+            keyboardViewHeight.constant = keyboardHeight
+        }
+    }
+    
+    /// 키보드가 보이지 않으면
+    @objc
+    func keyboardWillHide(_ sender: Notification) {
+        keyboardViewHeight.constant = 0
     }
     
     // MARK:- IBAction
@@ -201,7 +235,7 @@ class KeepinPlusMainVC: UIViewController {
     @IBAction func selectGiveButtonClicked(_ sender: Any) {
         setButtonUI(select: 1)
     }
-
+    
 }
 
 // MARK:- 더 잛 키핀해볼까요? 부분 extension
@@ -243,12 +277,12 @@ extension KeepinPlusMainVC: UITextViewDelegate {
         
         textView.constraints.forEach { (constraint) in
             if estimatedSize.height <= 180 {
-            
+                
             }
             else {
-            if constraint.firstAttribute == .height {
-                constraint.constant = estimatedSize.height
-            }
+                if constraint.firstAttribute == .height {
+                    constraint.constant = estimatedSize.height
+                }
             }
         }
     }
