@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import YPImagePicker
 
 class KeepinPlusMainVC: UIViewController {
     
@@ -33,6 +34,12 @@ class KeepinPlusMainVC: UIViewController {
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var memoTextViewHeight: NSLayoutConstraint!
     
+    /// 사진 추가 관련
+    @IBOutlet weak var imageStackviewHeight: NSLayoutConstraint!
+    @IBOutlet var selectedImageView: [UIImageView]!
+    @IBOutlet weak var imageAddButton: UIButton!
+    
+    
     /// 키보드 영역 관련 뷰
     @IBOutlet weak var keyboardView: UIView!
     @IBOutlet weak var keyboardViewHeight: NSLayoutConstraint!
@@ -45,6 +52,7 @@ class KeepinPlusMainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageAddButton.addTarget(self, action: #selector(showPicker), for: .touchUpInside)
     }
     
     // MARK:- UI
@@ -81,6 +89,7 @@ class KeepinPlusMainVC: UIViewController {
         
         setMemoUI()
         setKeyboardViewUI()
+        setImageUI()
         
         /// datePicker 추가
         dateTextfield.setDatePicker(target: (Any).self)
@@ -95,7 +104,14 @@ class KeepinPlusMainVC: UIViewController {
         
     }
     
-    //MARK: 받은선물, 준선물 ButtonUI
+    // MARK: 사진 등록부분 UI
+    func setImageUI(){
+        imageStackviewHeight.constant = (UIScreen.main.bounds.width - 48 - 20) / 3
+        
+        
+    }
+    
+    // MARK: 받은선물, 준선물 ButtonUI
     func setButtonUI(select : Int){
         
         // select가 0일 때 -> notSelect = 1-0 = 1
@@ -215,6 +231,50 @@ class KeepinPlusMainVC: UIViewController {
         keyboardViewHeight.constant = 0
     }
     
+    // MARK: YPImagePicker
+    @objc
+    func showPicker() {
+        var config = YPImagePickerConfiguration()
+        
+        config.showsPhotoFilters = false
+        config.shouldSaveNewPicturesToAlbum = true
+        config.startOnScreen = .library
+        config.wordings.libraryTitle = "갤러리"
+        config.maxCameraZoomFactor = 2.0
+        config.library.maxNumberOfItems = 3
+        config.gallery.hidesRemoveButton = false
+        config.hidesBottomBar = false
+        config.hidesStatusBar = false
+        config.overlayView = UIView()
+        
+        let picker = YPImagePicker(configuration: config)
+        
+        picker.didFinishPicking { [unowned picker] items, cancelled in
+            
+            if cancelled {
+                picker.dismiss(animated: true, completion: nil)
+                return
+            }
+            
+            var i : Int = 0
+            
+            for item in items {
+                switch item {
+                case .photo(let photo):
+                    self.selectedImageView[i].image = photo.image
+                    
+                case .video(let video):
+                    print(video)
+                }
+                
+                i = i+1
+            }
+            self.imageAddButton.isHidden = true
+            picker.dismiss(animated: true)
+        }
+        present(picker, animated: true, completion: nil)
+    }
+    
     // MARK:- IBAction
     // MARK: X 버튼 클릭 (뒤로가기)
     @IBAction func backButtonClicked(_ sender: Any) {
@@ -236,6 +296,8 @@ class KeepinPlusMainVC: UIViewController {
     @IBAction func selectGiveButtonClicked(_ sender: Any) {
         setButtonUI(select: 1)
     }
+    
+    
     
 }
 
