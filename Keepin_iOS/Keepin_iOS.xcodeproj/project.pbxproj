@@ -44,6 +44,8 @@
 		1589EDD526A0C0C4005EFCC2 /* SelectFriendListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1589EDD326A0C0C4005EFCC2 /* SelectFriendListTVC.xib */; };
 		1589EDD826A15D25005EFCC2 /* SelectFriendTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589EDD626A15D25005EFCC2 /* SelectFriendTitleTVC.swift */; };
 		1589EDD926A15D25005EFCC2 /* SelectFriendTitleTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1589EDD726A15D25005EFCC2 /* SelectFriendTitleTVC.xib */; };
+		15A3B4B626E0D8FA00A57ADD /* SelectFriendMessageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A3B4B426E0D8FA00A57ADD /* SelectFriendMessageTVC.swift */; };
+		15A3B4B726E0D8FA00A57ADD /* SelectFriendMessageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15A3B4B526E0D8FA00A57ADD /* SelectFriendMessageTVC.xib */; };
 		15B71A51269D7CC500ED68E0 /* JoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A50269D7CC500ED68E0 /* JoinRequest.swift */; };
 		15B71A53269D7CCE00ED68E0 /* JoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A52269D7CCE00ED68E0 /* JoinResponse.swift */; };
 		15B71A55269D7CD600ED68E0 /* JoinDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A54269D7CD600ED68E0 /* JoinDataManager.swift */; };
@@ -210,6 +212,8 @@
 		1589EDD326A0C0C4005EFCC2 /* SelectFriendListTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFriendListTVC.xib; sourceTree = "<group>"; };
 		1589EDD626A15D25005EFCC2 /* SelectFriendTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendTitleTVC.swift; sourceTree = "<group>"; };
 		1589EDD726A15D25005EFCC2 /* SelectFriendTitleTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFriendTitleTVC.xib; sourceTree = "<group>"; };
+		15A3B4B426E0D8FA00A57ADD /* SelectFriendMessageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendMessageTVC.swift; sourceTree = "<group>"; };
+		15A3B4B526E0D8FA00A57ADD /* SelectFriendMessageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFriendMessageTVC.xib; sourceTree = "<group>"; };
 		15B71A50269D7CC500ED68E0 /* JoinRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRequest.swift; sourceTree = "<group>"; };
 		15B71A52269D7CCE00ED68E0 /* JoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinResponse.swift; sourceTree = "<group>"; };
 		15B71A54269D7CD600ED68E0 /* JoinDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinDataManager.swift; sourceTree = "<group>"; };
@@ -445,6 +449,8 @@
 				1589EDD326A0C0C4005EFCC2 /* SelectFriendListTVC.xib */,
 				1589EDD626A15D25005EFCC2 /* SelectFriendTitleTVC.swift */,
 				1589EDD726A15D25005EFCC2 /* SelectFriendTitleTVC.xib */,
+				15A3B4B426E0D8FA00A57ADD /* SelectFriendMessageTVC.swift */,
+				15A3B4B526E0D8FA00A57ADD /* SelectFriendMessageTVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1174,6 +1180,7 @@
 				71D5D47E269EB7C6004D9CC7 /* NavigationBarCVC.xib in Resources */,
 				71E265C62699D80900BD6840 /* KeepinPlusFriendVC.xib in Resources */,
 				77F047EC268AF99900FBFDD7 /* Assets.xcassets in Resources */,
+				15A3B4B726E0D8FA00A57ADD /* SelectFriendMessageTVC.xib in Resources */,
 				77F04840268C4D2400FBFDD7 /* MyPageDetailVC.xib in Resources */,
 				15C12222268E2FBF00838E55 /* GmarketSansTTFMedium.ttf in Resources */,
 				71E1324226987EFD00DB2D9F /* MyPageHomeTopCVC.xib in Resources */,
@@ -1242,6 +1249,7 @@
 				77F04817268C45BB00FBFDD7 /* UIViewController.swift in Sources */,
 				71C1B85226AFA33800478BEA /* MyPageProfilePWRequest.swift in Sources */,
 				71E00ADE26A1D90900DC742F /* MyPageDetailRequest.swift in Sources */,
+				15A3B4B626E0D8FA00A57ADD /* SelectFriendMessageTVC.swift in Sources */,
 				71E50A8226B0398500F75586 /* MyPageProfileInfoResponse.swift in Sources */,
 				1529FF9E269985CB000AD789 /* KeepinPlusWriteTVC.swift in Sources */,
 				77F549EC268F58970013A76C /* PresentMoaCVC.swift in Sources */,

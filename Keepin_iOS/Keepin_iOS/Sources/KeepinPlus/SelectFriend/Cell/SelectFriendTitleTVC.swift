@@ -29,6 +29,10 @@ class SelectFriendTitleTVC: UITableViewCell {
         titleLabel.text = ""
     }
     
+    func setData(title: String){
+        titleLabel.text = title
+    }
+    
     func setUI(){
         titleLabel.font = UIFont.GmarketSansTTF(.medium, size: 16)
     }

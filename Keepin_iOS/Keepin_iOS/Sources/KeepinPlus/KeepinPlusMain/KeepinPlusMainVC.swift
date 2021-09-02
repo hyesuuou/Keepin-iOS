@@ -297,6 +297,11 @@ class KeepinPlusMainVC: UIViewController {
         setButtonUI(select: 1)
     }
     
+    // MARK: 누구에게 받은/준 선물인가요? 클릭
+    @IBAction func friendButtonClicked(_ sender: Any) {
+        ///화면전환
+        self.navigationController?.pushViewController(SelectFriendVC(), animated: true)
+    }
     
     
 }
