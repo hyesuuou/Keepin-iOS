@@ -46,6 +46,7 @@
 		1589EDD926A15D25005EFCC2 /* SelectFriendTitleTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1589EDD726A15D25005EFCC2 /* SelectFriendTitleTVC.xib */; };
 		15A3B4B626E0D8FA00A57ADD /* SelectFriendMessageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A3B4B426E0D8FA00A57ADD /* SelectFriendMessageTVC.swift */; };
 		15A3B4B726E0D8FA00A57ADD /* SelectFriendMessageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15A3B4B526E0D8FA00A57ADD /* SelectFriendMessageTVC.xib */; };
+		15A3B4F326E3C2AA00A57ADD /* refresh.json in Resources */ = {isa = PBXBuildFile; fileRef = 15A3B4F226E3C2AA00A57ADD /* refresh.json */; };
 		15B71A51269D7CC500ED68E0 /* JoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A50269D7CC500ED68E0 /* JoinRequest.swift */; };
 		15B71A53269D7CCE00ED68E0 /* JoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A52269D7CCE00ED68E0 /* JoinResponse.swift */; };
 		15B71A55269D7CD600ED68E0 /* JoinDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A54269D7CD600ED68E0 /* JoinDataManager.swift */; };
@@ -214,6 +215,7 @@
 		1589EDD726A15D25005EFCC2 /* SelectFriendTitleTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFriendTitleTVC.xib; sourceTree = "<group>"; };
 		15A3B4B426E0D8FA00A57ADD /* SelectFriendMessageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendMessageTVC.swift; sourceTree = "<group>"; };
 		15A3B4B526E0D8FA00A57ADD /* SelectFriendMessageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFriendMessageTVC.xib; sourceTree = "<group>"; };
+		15A3B4F226E3C2AA00A57ADD /* refresh.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = refresh.json; sourceTree = "<group>"; };
 		15B71A50269D7CC500ED68E0 /* JoinRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRequest.swift; sourceTree = "<group>"; };
 		15B71A52269D7CCE00ED68E0 /* JoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinResponse.swift; sourceTree = "<group>"; };
 		15B71A54269D7CD600ED68E0 /* JoinDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinDataManager.swift; sourceTree = "<group>"; };
@@ -453,6 +455,14 @@
 				15A3B4B526E0D8FA00A57ADD /* SelectFriendMessageTVC.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		15A3B4F126E3C28900A57ADD /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				15A3B4F226E3C2AA00A57ADD /* refresh.json */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		15B71A4E269D7CA700ED68E0 /* DataModel */ = {
@@ -857,6 +867,7 @@
 		77F04800268B0BCF00FBFDD7 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				15A3B4F126E3C28900A57ADD /* Lottie */,
 				77F04805268B0CB000FBFDD7 /* Constants.swift */,
 				15C121FA268E281800838E55 /* Font */,
 				7719B5AF269C048200CBBB11 /* Secret */,
@@ -1152,6 +1163,7 @@
 				773D414F26942E8000A4E366 /* PresentDetailCVC.xib in Resources */,
 				71E1324626987F3200DB2D9F /* MyPageHomeHeaderCVC.xib in Resources */,
 				71C197AE26975103004C0490 /* MyPageProfileVC.xib in Resources */,
+				15A3B4F326E3C2AA00A57ADD /* refresh.json in Resources */,
 				1589EDD526A0C0C4005EFCC2 /* SelectFriendListTVC.xib in Resources */,
 				1529FF7F26979F57000AD789 /* KeepinPlusTitleTVC.xib in Resources */,
 				71E1324E2698A8BF00DB2D9F /* FriendListCVC.xib in Resources */,
