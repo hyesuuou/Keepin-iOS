@@ -47,6 +47,7 @@
 		15A3B4B626E0D8FA00A57ADD /* SelectFriendMessageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A3B4B426E0D8FA00A57ADD /* SelectFriendMessageTVC.swift */; };
 		15A3B4B726E0D8FA00A57ADD /* SelectFriendMessageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15A3B4B526E0D8FA00A57ADD /* SelectFriendMessageTVC.xib */; };
 		15A3B4F326E3C2AA00A57ADD /* refresh.json in Resources */ = {isa = PBXBuildFile; fileRef = 15A3B4F226E3C2AA00A57ADD /* refresh.json */; };
+		15A3B4F526E3EE4100A57ADD /* KeepinPlusMainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A3B4F426E3EE4100A57ADD /* KeepinPlusMainDataManager.swift */; };
 		15B71A51269D7CC500ED68E0 /* JoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A50269D7CC500ED68E0 /* JoinRequest.swift */; };
 		15B71A53269D7CCE00ED68E0 /* JoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A52269D7CCE00ED68E0 /* JoinResponse.swift */; };
 		15B71A55269D7CD600ED68E0 /* JoinDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A54269D7CD600ED68E0 /* JoinDataManager.swift */; };
@@ -216,6 +217,7 @@
 		15A3B4B426E0D8FA00A57ADD /* SelectFriendMessageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendMessageTVC.swift; sourceTree = "<group>"; };
 		15A3B4B526E0D8FA00A57ADD /* SelectFriendMessageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFriendMessageTVC.xib; sourceTree = "<group>"; };
 		15A3B4F226E3C2AA00A57ADD /* refresh.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = refresh.json; sourceTree = "<group>"; };
+		15A3B4F426E3EE4100A57ADD /* KeepinPlusMainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusMainDataManager.swift; sourceTree = "<group>"; };
 		15B71A50269D7CC500ED68E0 /* JoinRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRequest.swift; sourceTree = "<group>"; };
 		15B71A52269D7CCE00ED68E0 /* JoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinResponse.swift; sourceTree = "<group>"; };
 		15B71A54269D7CD600ED68E0 /* JoinDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinDataManager.swift; sourceTree = "<group>"; };
@@ -557,6 +559,7 @@
 		15EDAA7726D38DEA00DD9246 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				15A3B4F426E3EE4100A57ADD /* KeepinPlusMainDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -1309,6 +1312,7 @@
 				77BEA4AE26A16304007E2236 /* ReminderDetailRequest.swift in Sources */,
 				77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */,
 				7719B5DC269D71F300CBBB11 /* PresentDetailDataManager.swift in Sources */,
+				15A3B4F526E3EE4100A57ADD /* KeepinPlusMainDataManager.swift in Sources */,
 				71E1324D2698A8BF00DB2D9F /* FriendListCVC.swift in Sources */,
 				1529FF8E269984D2000AD789 /* KeepinPlusSearchTVC.swift in Sources */,
 				71DFCCA126AF0D6100FDAE51 /* MyPageProfileNameResponse.swift in Sources */,

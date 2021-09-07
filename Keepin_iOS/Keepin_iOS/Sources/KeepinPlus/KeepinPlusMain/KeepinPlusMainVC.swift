@@ -283,7 +283,8 @@ class KeepinPlusMainVC: UIViewController {
     
     // MARK: 키핀하기 버튼 클릭
     @IBAction func addButtonClicked(_ sender: Any) {
-        serverConnect()
+        //serverConnect()
+        postServer()
         self.dismiss(animated: true)
     }
     
@@ -354,5 +355,38 @@ extension KeepinPlusMainVC: UITextViewDelegate {
             }
         }
     }
+    
+}
+
+extension KeepinPlusMainVC {
+    
+    func postServer(){
+        print("post Server 실행")
+        
+        KeepinAddService.shared.postKeepin(title: nameTextField.text!,
+                                           taken: true,
+                                           date: dateTextfield.text!.replacingOccurrences(of: ".", with: "-"),
+                                           category: ["칭찬", "기타"],
+                                           record: memoTextView.text!,
+                                           friendIdx: ["60ed9e98e51ad110481cd9d7"],
+                                           imageData: selectedImageView[0].image!) { result in
+            
+            switch result {
+            case .success(let msg):
+                print("success", msg)
+            case .requestErr(let msg):
+                print("requestERR", msg)
+            case .pathErr:
+                print("pathERR")
+            case .serverErr:
+                print("serverERR")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
+    }
+    
+    
     
 }
