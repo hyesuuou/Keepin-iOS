@@ -53,6 +53,7 @@ class KeepinPlusMainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageAddButton.addTarget(self, action: #selector(showPicker), for: .touchUpInside)
+        
     }
     
     // MARK:- UI
@@ -81,6 +82,7 @@ class KeepinPlusMainVC: UIViewController {
         /// 누구에게 받은/준 선물인가요 UI
         friendNameButton.tintColor = .keepinGray3
         friendNameButton.titleLabel?.font = UIFont.NotoSans(.regular, size: 16)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "selectFriend"), object: nil)
         
         /// 선물 카테고리 선택
         for i in 0 ... 7 {
@@ -188,6 +190,25 @@ class KeepinPlusMainVC: UIViewController {
     }
     
     // MARK:- objc func
+    // MARK: 친구선택 관련
+    @objc
+    func loadList(_ notification : NSNotification)
+    {
+        print("loadList 실행", notification.object as! [Friend])
+        var s = ""
+        let addList = notification.object as! [Friend]
+        for i in notification.object as! [Friend] {
+            if i.name == addList[addList.count-1].name{
+                s += "\(i.name)"
+            }
+            else {
+                s += "\(i.name), "
+            }
+        }
+        friendNameButton.setTitle(s, for: .normal)
+        friendNameButton.setTitleColor(.black, for: .normal)
+    }
+    
     // 선물 카테고리 버튼 눌렀을 때
     @objc
     func selectCategoryClicked(_ sender : UIButton){
