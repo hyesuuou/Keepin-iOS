@@ -15,6 +15,7 @@ class KeepinPlusMainVC: UIViewController {
     // 선택된 경우 -> 1, 선택x -> 0
     public static var numberList : [Int] = [0, 0, 0, 0, 0, 0, 0, 0]
     var count : Int = 0
+    var selectedFriend: [Friend]?
     
     // MARK: - IBOutlet
     @IBOutlet weak var addButton: UIButton!
@@ -197,6 +198,7 @@ class KeepinPlusMainVC: UIViewController {
         print("loadList 실행", notification.object as! [Friend])
         var s = ""
         let addList = notification.object as! [Friend]
+        selectedFriend = addList
         for i in notification.object as! [Friend] {
             if i.name == addList[addList.count-1].name{
                 s += "\(i.name)"
@@ -207,6 +209,7 @@ class KeepinPlusMainVC: UIViewController {
         }
         friendNameButton.setTitle(s, for: .normal)
         friendNameButton.setTitleColor(.black, for: .normal)
+        
     }
     
     // 선물 카테고리 버튼 눌렀을 때
@@ -381,15 +384,24 @@ extension KeepinPlusMainVC: UITextViewDelegate {
 
 extension KeepinPlusMainVC {
     
+    // MARK: - Server
     func postServer(){
         print("post Server 실행")
         
+        var friendIdxList: [String] = []
+        for friend in selectedFriend! {
+            friendIdxList.append(friend.id)
+        }
+        
+        print(friendIdxList)
+        
+        // MARK: Server Connect Code
         KeepinAddService.shared.postKeepin(title: nameTextField.text!,
                                            taken: true,
                                            date: dateTextfield.text!.replacingOccurrences(of: ".", with: "-"),
                                            category: ["칭찬", "기타"],
                                            record: memoTextView.text!,
-                                           friendIdx: ["60ed9e98e51ad110481cd9d7"],
+                                           friendIdx: friendIdxList,
                                            imageData: selectedImageView[0].image!) { result in
             
             switch result {
