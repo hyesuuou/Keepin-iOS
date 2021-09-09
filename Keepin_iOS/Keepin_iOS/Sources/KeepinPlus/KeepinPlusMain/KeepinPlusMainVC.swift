@@ -17,6 +17,9 @@ class KeepinPlusMainVC: UIViewController {
     var count : Int = 0
     var selectedFriend: [Friend]?
     
+    /// 받은 선물, 준 선물 - true: 받은 / false: 준
+    var take: Bool = true
+    
     // MARK: - IBOutlet
     @IBOutlet weak var addButton: UIButton!
     
@@ -315,11 +318,13 @@ class KeepinPlusMainVC: UIViewController {
     // MARK: 받은 선물 클릭
     @IBAction func selectGetButtonClicked(_ sender: Any) {
         setButtonUI(select: 0)
+        take = true
     }
     
     // MARK: 준 선물 클릭
     @IBAction func selectGiveButtonClicked(_ sender: Any) {
         setButtonUI(select: 1)
+        take = false
     }
     
     // MARK: 누구에게 받은/준 선물인가요? 클릭
@@ -388,18 +393,43 @@ extension KeepinPlusMainVC {
     func postServer(){
         print("post Server 실행")
         
+        /// friendIdxList 만들기
         var friendIdxList: [String] = []
         for friend in selectedFriend! {
             friendIdxList.append(friend.id)
         }
         
+        /// category List 만들기
+        var categoryList: [String] = []
+        var categoryIndex = 0
+        
+        for category in KeepinPlusMainVC.numberList {
+            if category == 1 {
+                switch categoryIndex {
+                case 0: categoryList.append("생일")
+                case 1: categoryList.append("기념일")
+                case 2: categoryList.append("축하")
+                case 3: categoryList.append("칭찬")
+                case 4: categoryList.append("응원")
+                case 5: categoryList.append("감사")
+                case 6: categoryList.append("깜짝")
+                case 7: categoryList.append("기타")
+                default:
+                    return
+                }
+            }
+            categoryIndex += 1
+        }
+        
+        
         print(friendIdxList)
+        print("category: ", categoryList)
         
         // MARK: Server Connect Code
         KeepinAddService.shared.postKeepin(title: nameTextField.text!,
-                                           taken: true,
+                                           taken: take,
                                            date: dateTextfield.text!.replacingOccurrences(of: ".", with: "-"),
-                                           category: ["칭찬", "기타"],
+                                           category: categoryList,
                                            record: memoTextView.text!,
                                            friendIdx: friendIdxList,
                                            imageData: selectedImageView[0].image!) { result in
