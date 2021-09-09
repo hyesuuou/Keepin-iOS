@@ -421,6 +421,14 @@ extension KeepinPlusMainVC {
             categoryIndex += 1
         }
         
+        /// image List
+        var imgList: [UIImage] = []
+        for imgView in selectedImageView {
+            if imgView.image != nil {
+                imgList.append(imgView.image!)
+            }
+        }
+        
         
         print(friendIdxList)
         print("category: ", categoryList)
@@ -432,7 +440,7 @@ extension KeepinPlusMainVC {
                                            category: categoryList,
                                            record: memoTextView.text!,
                                            friendIdx: friendIdxList,
-                                           imageData: selectedImageView[0].image!) { result in
+                                           imageData: imgList) { result in
             
             switch result {
             case .success(let msg):
