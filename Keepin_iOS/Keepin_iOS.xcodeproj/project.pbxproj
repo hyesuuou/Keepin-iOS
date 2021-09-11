@@ -48,6 +48,7 @@
 		15A3B4B726E0D8FA00A57ADD /* SelectFriendMessageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15A3B4B526E0D8FA00A57ADD /* SelectFriendMessageTVC.xib */; };
 		15A3B4F326E3C2AA00A57ADD /* refresh.json in Resources */ = {isa = PBXBuildFile; fileRef = 15A3B4F226E3C2AA00A57ADD /* refresh.json */; };
 		15A3B4F526E3EE4100A57ADD /* KeepinPlusMainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A3B4F426E3EE4100A57ADD /* KeepinPlusMainDataManager.swift */; };
+		15A3B4F726EC87DC00A57ADD /* keepin.json in Resources */ = {isa = PBXBuildFile; fileRef = 15A3B4F626EC87DC00A57ADD /* keepin.json */; };
 		15B71A51269D7CC500ED68E0 /* JoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A50269D7CC500ED68E0 /* JoinRequest.swift */; };
 		15B71A53269D7CCE00ED68E0 /* JoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A52269D7CCE00ED68E0 /* JoinResponse.swift */; };
 		15B71A55269D7CD600ED68E0 /* JoinDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A54269D7CD600ED68E0 /* JoinDataManager.swift */; };
@@ -218,6 +219,7 @@
 		15A3B4B526E0D8FA00A57ADD /* SelectFriendMessageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFriendMessageTVC.xib; sourceTree = "<group>"; };
 		15A3B4F226E3C2AA00A57ADD /* refresh.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = refresh.json; sourceTree = "<group>"; };
 		15A3B4F426E3EE4100A57ADD /* KeepinPlusMainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusMainDataManager.swift; sourceTree = "<group>"; };
+		15A3B4F626EC87DC00A57ADD /* keepin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = keepin.json; sourceTree = "<group>"; };
 		15B71A50269D7CC500ED68E0 /* JoinRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRequest.swift; sourceTree = "<group>"; };
 		15B71A52269D7CCE00ED68E0 /* JoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinResponse.swift; sourceTree = "<group>"; };
 		15B71A54269D7CD600ED68E0 /* JoinDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinDataManager.swift; sourceTree = "<group>"; };
@@ -462,6 +464,7 @@
 		15A3B4F126E3C28900A57ADD /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				15A3B4F626EC87DC00A57ADD /* keepin.json */,
 				15A3B4F226E3C2AA00A57ADD /* refresh.json */,
 			);
 			path = Lottie;
@@ -1183,6 +1186,7 @@
 				15C12224268E2FBF00838E55 /* GmarketSansTTFLight.ttf in Resources */,
 				15C1222D268F063C00838E55 /* HomeTopTVC.xib in Resources */,
 				77F04826268C49BF00FBFDD7 /* HomeVC.xib in Resources */,
+				15A3B4F726EC87DC00A57ADD /* keepin.json in Resources */,
 				77F0484D268C4DB400FBFDD7 /* SelectFriendVC.xib in Resources */,
 				1529FF8F269984D2000AD789 /* KeepinPlusSearchTVC.xib in Resources */,
 				15C122362692DA7300838E55 /* LoginFirstVC.xib in Resources */,

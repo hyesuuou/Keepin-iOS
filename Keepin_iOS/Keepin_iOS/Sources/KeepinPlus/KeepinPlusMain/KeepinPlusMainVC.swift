@@ -5,6 +5,7 @@
 //  Created by 김혜수 on 2021/08/23.
 //
 
+import Lottie
 import UIKit
 import YPImagePicker
 
@@ -19,6 +20,23 @@ class KeepinPlusMainVC: UIViewController {
     
     /// 받은 선물, 준 선물 - true: 받은 / false: 준
     var take: Bool = true
+    
+    @IBOutlet weak var lottieContainerView: UIView!
+    
+    // MARK: - Lottie
+    lazy var lottieView : AnimationView = {
+        let animationView = AnimationView(name: "keepin")
+        animationView.frame = CGRect(x: 0, y: 0,
+                                     width: UIScreen.main.bounds.width,
+                                     height: 500)
+        animationView.frame.origin.x = 0
+        animationView.frame.origin.y = 156
+        animationView.contentMode = .scaleAspectFill
+        animationView.stop()
+        animationView.isHidden = true
+        return animationView
+    }()
+
     
     // MARK: - IBOutlet
     @IBOutlet weak var addButton: UIButton!
@@ -37,6 +55,8 @@ class KeepinPlusMainVC: UIViewController {
     @IBOutlet weak var categoryView: UIView!
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var memoTextViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var keepinLabel: UILabel!
+    @IBOutlet weak var keepinLabelTopConstraint: NSLayoutConstraint!
     
     /// 사진 추가 관련
     @IBOutlet weak var imageStackviewHeight: NSLayoutConstraint!
@@ -57,6 +77,8 @@ class KeepinPlusMainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageAddButton.addTarget(self, action: #selector(showPicker), for: .touchUpInside)
+        //self.view.addSubview(self.lottieView)
+        self.lottieContainerView.addSubview(self.lottieView)
         
     }
     
@@ -99,6 +121,10 @@ class KeepinPlusMainVC: UIViewController {
         
         /// datePicker 추가
         dateTextfield.setDatePicker(target: (Any).self)
+        
+        /// 키핀하기 로티뷰
+        keepinLabel.font = UIFont.GmarketSansTTF(.medium, size: 20)
+        keepinLabelTopConstraint.constant = UIScreen.main.bounds.height * (129/812)
     }
     
     // MARK: 네비게이션바 UI
@@ -312,7 +338,15 @@ class KeepinPlusMainVC: UIViewController {
     @IBAction func addButtonClicked(_ sender: Any) {
         //serverConnect()
         postServer()
-        self.dismiss(animated: true)
+        self.lottieContainerView.isHidden = false
+        self.lottieView.isHidden = false
+        self.lottieView.play()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
+            self.lottieView.isHidden = true
+            self.lottieView.stop()
+            self.dismiss(animated: true)
+        }
     }
     
     // MARK: 받은 선물 클릭
