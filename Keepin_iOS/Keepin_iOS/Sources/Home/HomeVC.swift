@@ -87,7 +87,7 @@ class HomeVC: UIViewController {
     @objc func refreshTable(refresh: UIRefreshControl){
         lottieView.isHidden = false
         lottieView.play()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4.19){ // 1초
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){ // 1초
             HomeDataManager().getRandom(self)
             self.lottieView.isHidden = true
             self.homeTableview.reloadData()
@@ -145,7 +145,9 @@ extension HomeVC : UITableViewDataSource {
                              important: reminderList[0].isImportant,
                              secondDate: reminderList[1].date,
                              secondContents: reminderList[1].title,
-                             secondImportant: reminderList[1].isImportant)
+                             secondImportant: reminderList[1].isImportant,
+                             safeAreaHeight: self.view.safeAreaLayoutGuide.layoutFrame.height
+                             )
                 
                 return cell
             }
