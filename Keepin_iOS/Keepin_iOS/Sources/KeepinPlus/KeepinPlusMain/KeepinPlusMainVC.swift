@@ -50,7 +50,8 @@ class KeepinPlusMainVC: UIViewController {
     /// kindButton[0] : 받은 선물, kindButton[1]: 준 선물
     @IBOutlet var kindButton: [UIButton]!
     @IBOutlet weak var kindButtonWidth: NSLayoutConstraint!
-    @IBOutlet weak var friendNameButton: UIButton!
+    @IBOutlet weak var friendNameButton: UIButton! 
+
     @IBOutlet weak var dateTextfield: UITextField!
     @IBOutlet weak var categoryView: UIView!
     @IBOutlet weak var memoTextView: UITextView!
@@ -80,6 +81,13 @@ class KeepinPlusMainVC: UIViewController {
         //self.view.addSubview(self.lottieView)
         self.lottieContainerView.addSubview(self.lottieView)
         
+        /// 필수값 변경 감지
+        nameTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged) // 제목
+        // friendNameButton.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .allEvents)// 친구
+        //friendNameButton.titleLabel.addGestureRecognizer(#selector(self.textFieldDidChange(_:)))
+        //friendNameButton.titleLabel?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.textFieldDidChange(_:))))
+        // 이미지
+        dateTextfield.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingDidEnd) // 날짜
     }
     
     // MARK:- UI
@@ -131,9 +139,20 @@ class KeepinPlusMainVC: UIViewController {
     func setNavigationBarUI(){
         self.navigationController?.navigationBar.isHidden = true
         
-        addButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
-        addButton.tintColor = .keepinGray3
-        
+        /// 키핀하기 추가 버튼 초기 UI
+        /// 다 채워져 있으면 (ex. 수정)
+        if nameTextField.text != "",
+           friendNameButton.titleLabel?.text != "친구의 이름을 입력해주세요.",
+           dateTextfield.text != "",
+           selectedImageView[0].image != nil {
+            addButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
+            addButton.tintColor = .keepinGreen
+        }
+        else {
+            /// 채워져있지 않으면
+            addButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
+            addButton.tintColor = .keepinGray3
+        }
     }
     
     // MARK: 사진 등록부분 UI
@@ -220,6 +239,19 @@ class KeepinPlusMainVC: UIViewController {
     }
     
     // MARK:- objc func
+    // MARK: textField값 변경 감지
+    @objc func textFieldDidChange(_ sender: Any?) {
+        if nameTextField.text != "",
+           friendNameButton.titleLabel?.text != "친구의 이름을 입력해주세요.",
+           dateTextfield.text != "",
+           selectedImageView[0].image != nil {
+            addButton.setTitleColor(.keepinGreen, for: .normal)
+        }
+        else {
+            addButton.setTitleColor(.keepinGray3, for: .normal)
+        }
+    }
+    
     // MARK: 친구선택 관련
     @objc
     func loadList(_ notification : NSNotification)
@@ -238,6 +270,16 @@ class KeepinPlusMainVC: UIViewController {
         }
         friendNameButton.setTitle(s, for: .normal)
         friendNameButton.setTitleColor(.black, for: .normal)
+        
+        if s != "",
+           nameTextField.text != "",
+           dateTextfield.text != "",
+           selectedImageView[0].image != nil {
+            addButton.setTitleColor(.keepinGreen, for: .normal)
+        }
+        else {
+            addButton.setTitleColor(.keepinGray3, for: .normal)
+        }
         
     }
     
@@ -336,17 +378,29 @@ class KeepinPlusMainVC: UIViewController {
     
     // MARK: 키핀하기 버튼 클릭
     @IBAction func addButtonClicked(_ sender: Any) {
-        //serverConnect()
-        postServer()
-        self.lottieContainerView.isHidden = false
-        self.lottieView.isHidden = false
-        self.lottieView.play()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
-            self.lottieView.isHidden = true
-            self.lottieView.stop()
-            self.dismiss(animated: true)
+        /// 필수요소가 다 채워져 있으면
+        if nameTextField.text != "",
+           friendNameButton.titleLabel?.text != "친구의 이름을 입력해주세요.",
+           dateTextfield.text != "",
+           selectedImageView[0].image != nil
+           {
+            postServer()
+            self.lottieContainerView.isHidden = false
+            self.lottieView.isHidden = false
+            self.lottieView.play()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
+                self.lottieView.isHidden = true
+                self.lottieView.stop()
+                self.dismiss(animated: true)
+            }
         }
+        else {
+            /// 다 채워져 있지 않으면
+            print("키핀하기 필수값 입력 필요")
+        }
+      
     }
     
     // MARK: 받은 선물 클릭
@@ -491,7 +545,4 @@ extension KeepinPlusMainVC {
         }
         
     }
-    
-    
-    
 }
