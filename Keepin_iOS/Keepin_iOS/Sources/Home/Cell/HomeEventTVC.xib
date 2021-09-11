@@ -29,8 +29,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIf-Tc-S7x">
                                 <rect key="frame" x="0.0" y="0.0" width="327" height="54"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0Y-Xx-i9e">
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0Y-Xx-i9e">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="54"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="listReminderHome"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AV-im-sDA">
@@ -73,8 +74,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pf-vl-Foj">
                                 <rect key="frame" x="0.0" y="93" width="327" height="54"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yi1-De-SPl">
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yi1-De-SPl">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="54"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="listReminderHomeImp"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxJ-V7-g4U">
@@ -109,7 +111,6 @@
                                     <constraint firstItem="j4i-ci-ftl" firstAttribute="leading" secondItem="JDO-tn-ts3" secondAttribute="trailing" constant="15.5" id="mkU-BM-OxR"/>
                                     <constraint firstItem="Yi1-De-SPl" firstAttribute="top" secondItem="0pf-vl-Foj" secondAttribute="top" id="nZ8-9I-R2K"/>
                                     <constraint firstItem="yxJ-V7-g4U" firstAttribute="top" secondItem="0pf-vl-Foj" secondAttribute="top" constant="18" id="pSk-Kf-i5D"/>
-                                    <constraint firstAttribute="height" constant="54" id="q8n-eN-SHB"/>
                                     <constraint firstItem="j4i-ci-ftl" firstAttribute="top" secondItem="0pf-vl-Foj" secondAttribute="top" constant="19" id="rSG-NX-aZi"/>
                                     <constraint firstAttribute="height" constant="54" id="rgg-Md-pis"/>
                                     <constraint firstAttribute="bottom" secondItem="yxJ-V7-g4U" secondAttribute="bottom" constant="18" id="z9Z-Rd-c0G"/>
@@ -146,6 +147,8 @@
                 <outlet property="reminderSecondButton" destination="Yi1-De-SPl" id="qhc-rh-5wh"/>
                 <outlet property="separateView" destination="JDO-tn-ts3" id="fjf-VF-I1E"/>
                 <outlet property="titleLabel" destination="hbT-Yo-tTu" id="lLl-pR-Akh"/>
+                <outletCollection property="reminderButtonHeight" destination="rgg-Md-pis" collectionClass="NSMutableArray" id="MrE-kp-l8W"/>
+                <outletCollection property="reminderButtonHeight" destination="yFi-LL-urZ" collectionClass="NSMutableArray" id="fxs-up-nEB"/>
             </connections>
             <point key="canvasLocation" x="177.536231884058" y="150.66964285714286"/>
         </tableViewCell>

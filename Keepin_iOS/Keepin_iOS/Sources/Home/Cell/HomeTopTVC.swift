@@ -17,6 +17,8 @@ class HomeTopTVC: UITableViewCell {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var randomImageView: UIImageView!
     
+    @IBOutlet weak var randomImageHeight: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUI()

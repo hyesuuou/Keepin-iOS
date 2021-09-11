@@ -38,6 +38,8 @@ class HomeVC: UIViewController {
         initRefresh()
         setUI()
         serverConnect()
+        let frame = self.view.safeAreaLayoutGuide.layoutFrame
+        print("safeArea Height", frame.height)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,9 +93,7 @@ class HomeVC: UIViewController {
             self.homeTableview.reloadData()
             refresh.endRefreshing()
         }
-        
     }
-    
 }
 
 extension HomeVC : UITableViewDelegate {
@@ -124,6 +124,7 @@ extension HomeVC : UITableViewDataSource {
             }
             cell.messageLabel.text = message
             cell.randomImageView.setImage(with: image)
+            cell.randomImageHeight.constant = self.view.safeAreaLayoutGuide.layoutFrame.height * (280/688)
             return cell
             
         case 2:
@@ -145,7 +146,9 @@ extension HomeVC : UITableViewDataSource {
                              important: reminderList[0].isImportant,
                              secondDate: reminderList[1].date,
                              secondContents: reminderList[1].title,
-                             secondImportant: reminderList[1].isImportant)
+                             secondImportant: reminderList[1].isImportant,
+                             safeAreaHeight: self.view.safeAreaLayoutGuide.layoutFrame.height
+                             )
                 
                 return cell
             }
@@ -161,14 +164,15 @@ extension HomeVC : UITableViewDataSource {
                 return 50
             }
             else {
-                return UIScreen.main.bounds.height * (50/812)
+                return self.view.safeAreaLayoutGuide.layoutFrame.height * (50/688)
             }
+            
         case 1:
             if UIScreen.main.bounds.height == 667.0 {
                 return 417
             }
             else {
-                return UIScreen.main.bounds.height * (436/812)
+                return self.view.safeAreaLayoutGuide.layoutFrame.height * (436/688)
             }
             
         case 2:
@@ -176,7 +180,7 @@ extension HomeVC : UITableViewDataSource {
                 return 133
             }
             else {
-                return UIScreen.main.bounds.height * (202/812)
+                return self.view.safeAreaLayoutGuide.layoutFrame.height * (202/688)
             }
             
         default:
