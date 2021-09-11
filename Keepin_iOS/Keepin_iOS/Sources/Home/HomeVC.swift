@@ -124,6 +124,7 @@ extension HomeVC : UITableViewDataSource {
             }
             cell.messageLabel.text = message
             cell.randomImageView.setImage(with: image)
+            cell.randomImageHeight.constant = self.view.safeAreaLayoutGuide.layoutFrame.height * (280/688)
             return cell
             
         case 2:
