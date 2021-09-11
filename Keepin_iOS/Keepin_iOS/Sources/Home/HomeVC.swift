@@ -38,6 +38,8 @@ class HomeVC: UIViewController {
         initRefresh()
         setUI()
         serverConnect()
+        let frame = self.view.safeAreaLayoutGuide.layoutFrame
+        print("safeArea Height", frame.height)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,15 +87,13 @@ class HomeVC: UIViewController {
     @objc func refreshTable(refresh: UIRefreshControl){
         lottieView.isHidden = false
         lottieView.play()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){ // 1초
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.19){ // 1초
             HomeDataManager().getRandom(self)
             self.lottieView.isHidden = true
             self.homeTableview.reloadData()
             refresh.endRefreshing()
         }
-        
     }
-    
 }
 
 extension HomeVC : UITableViewDelegate {
@@ -161,14 +161,15 @@ extension HomeVC : UITableViewDataSource {
                 return 50
             }
             else {
-                return UIScreen.main.bounds.height * (50/812)
+                return self.view.safeAreaLayoutGuide.layoutFrame.height * (50/688)
             }
+            
         case 1:
             if UIScreen.main.bounds.height == 667.0 {
                 return 417
             }
             else {
-                return UIScreen.main.bounds.height * (436/812)
+                return self.view.safeAreaLayoutGuide.layoutFrame.height * (436/688)
             }
             
         case 2:
@@ -176,7 +177,7 @@ extension HomeVC : UITableViewDataSource {
                 return 133
             }
             else {
-                return UIScreen.main.bounds.height * (202/812)
+                return self.view.safeAreaLayoutGuide.layoutFrame.height * (202/688)
             }
             
         default:
