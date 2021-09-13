@@ -20,7 +20,6 @@ class ReminderVC: UIViewController {
     @IBAction func yearArrowClicked(_ sender: UIButton) {
         let index = yearArrow.firstIndex(of: sender)!
         var year = Int(yearLabel.text!)!
-        monthTest()
         switch index {
         case 0:
             year -= 1
@@ -159,12 +158,8 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
             sample = Int(roundedIndex)
             offset = CGPoint(x: CGFloat(roundedIndex * cellWidthIncludingSpacing) - scrollView.contentInset.left, y: -scrollView.contentInset.top)
             targetContentOffset.pointee = offset
-            
-            print(roundedIndex)
         
             monthCV.reloadData()
-            
-            monthTest()
             let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
             ReminderHomeDataManager().reminders(request, viewController: self)
     }
@@ -182,6 +177,7 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
         if collectionView == monthCV {
             let cell = monthCV.dequeueReusableCell(withReuseIdentifier: "ReminderCVC", for: indexPath) as! ReminderCVC
             cell.monthLabel.text = months[indexPath.row]
+            cell.delegate = self
             
             if indexPath.row == sample + 2{
                 cell.isSelected = true
@@ -203,13 +199,34 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        reminderCV.setContentOffset(CGPoint(x: reminderCV.frame.width*CGFloat(indexPath.row-2), y: 0.0), animated: true)
-        monthCV.setContentOffset(CGPoint(x: UIScreen.main.bounds.width / 5*CGFloat(indexPath.row-2), y: 0.0), animated: true)
-        
-        print("select")
-        print(indexPath.row)
+        if collectionView == monthCV {
+            reminderCV.setContentOffset(CGPoint(x: reminderCV.frame.width*CGFloat(indexPath.row-2), y: 0.0), animated: true)
+            monthCV.setContentOffset(CGPoint(x: UIScreen.main.bounds.width / 5*CGFloat(indexPath.row-2), y: 0.0), animated: true)
+        }
     }
     
+}
+
+extension ReminderVC : monthData{
+    func monthServer(month: String) {
+        
+        if month.count == 2{
+            forServer = "0" + month
+        }
+        else if month.count == 3{
+            forServer = month
+        }
+        else{
+            
+        }
+        
+        let endIdx:String.Index = forServer.index(month.startIndex, offsetBy: 1)
+        forServer = String(forServer[...endIdx])
+        
+        print(forServer)
+//        let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
+//        ReminderHomeDataManager().reminders(request, viewController: self)
+    }
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
@@ -313,7 +330,6 @@ extension ReminderVC {
 //        reminderTV.register(ReminderTVC.nib(), forCellReuseIdentifier: "ReminderTVC")
 //        reminderTV.delegate = self
 //        reminderTV.dataSource = self
-        
         reminderCV.register(ReminderSwapCVC.nib(), forCellWithReuseIdentifier: "ReminderSwapCVC")
         reminderCV.delegate = self
         reminderCV.dataSource = self
