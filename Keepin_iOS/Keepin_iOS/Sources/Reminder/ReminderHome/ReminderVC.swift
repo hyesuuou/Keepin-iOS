@@ -52,31 +52,8 @@ class ReminderVC: UIViewController {
         
         setNavigationBar()
         setUI()
-        
-        let layout = UICollectionViewFlowLayout()
-        let cellWidth = UIScreen.main.bounds.width / 5
-        layout.itemSize = CGSize(width: cellWidth, height: 36)
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        monthCV.collectionViewLayout = layout
-        monthCV.decelerationRate = .fast
-        monthCV.isPagingEnabled = false
-        monthCV.backgroundColor = .clear
-        monthCV.register(ReminderCVC.nib(), forCellWithReuseIdentifier: "ReminderCVC")
-        monthCV.delegate = self
-        monthCV.dataSource = self
-        
-        let swaplayout = UICollectionViewFlowLayout()
-        swaplayout.itemSize = CGSize(width: reminderCV.frame.width, height: reminderCV.frame.height)
-        swaplayout.scrollDirection = .horizontal
-        swaplayout.minimumLineSpacing = 0
-        swaplayout.minimumInteritemSpacing = 0
-        reminderCV.collectionViewLayout = swaplayout
-        reminderCV.isPagingEnabled = true
-        reminderCV.register(ReminderSwapCVC.nib(), forCellWithReuseIdentifier: "ReminderSwapCVC")
-        reminderCV.delegate = self
-        reminderCV.dataSource = self
+        setMonthCV()
+        setReminderCV()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,15 +62,6 @@ class ReminderVC: UIViewController {
     }
     
     //MARK: - Custom Methods
-    func monthTest(){
-        if sample < 9{
-            forServer = "0" + String(sample+1)
-        }
-        else{
-            forServer = String(sample+1)
-        }
-    }
-    
     func setUI(){
         yearLabel.text = Date().yearOnly()
 //        reminderTV.backgroundColor = .keepinGray
@@ -109,6 +77,35 @@ class ReminderVC: UIViewController {
 //        sample = date
     }
 
+    func setMonthCV(){
+        let layout = UICollectionViewFlowLayout()
+        let cellWidth = UIScreen.main.bounds.width / 5
+        layout.itemSize = CGSize(width: cellWidth, height: 36)
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        monthCV.collectionViewLayout = layout
+        monthCV.decelerationRate = .fast
+        monthCV.isPagingEnabled = false
+        monthCV.backgroundColor = .clear
+        monthCV.register(ReminderCVC.nib(), forCellWithReuseIdentifier: "ReminderCVC")
+        monthCV.delegate = self
+        monthCV.dataSource = self
+    }
+    
+    func setReminderCV(){
+        let swaplayout = UICollectionViewFlowLayout()
+        swaplayout.itemSize = CGSize(width: reminderCV.frame.width, height: reminderCV.frame.height)
+        swaplayout.scrollDirection = .horizontal
+        swaplayout.minimumLineSpacing = 0
+        swaplayout.minimumInteritemSpacing = 0
+        reminderCV.collectionViewLayout = swaplayout
+        reminderCV.isPagingEnabled = true
+        reminderCV.register(ReminderSwapCVC.nib(), forCellWithReuseIdentifier: "ReminderSwapCVC")
+        reminderCV.delegate = self
+        reminderCV.dataSource = self
+    }
+    
     func setNavigationBar(){
         let editButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
         editButton.setTitle(navigationLeftLabel, for: .normal)
