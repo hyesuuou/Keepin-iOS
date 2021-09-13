@@ -129,6 +129,15 @@ class ReminderVC: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
     }
     
+    func monthTest(){
+            if sample < 9{
+                forServer = "0" + String(sample+1)
+            }
+            else{
+                forServer = String(sample+1)
+            }
+        }
+    
     //MARK: - @objc Methods
     @objc func toEdit(){
         //편집 체크박스
@@ -145,6 +154,8 @@ class ReminderVC: UIViewController {
 extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if scrollView == monthCV{
+            print("touch monthCV")
             let layout = self.monthCV.collectionViewLayout as! UICollectionViewFlowLayout
             
             let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
@@ -159,6 +170,24 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
             monthCV.reloadData()
             let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
             ReminderHomeDataManager().reminders(request, viewController: self)
+        }
+        else{
+            print("touch reminderCV")
+            let layout = self.reminderCV.collectionViewLayout as! UICollectionViewFlowLayout
+            let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+            
+            var offset = targetContentOffset.pointee
+            let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
+            let roundedIndex = round(index)
+            sample = Int(roundedIndex)
+            offset = CGPoint(x: CGFloat(roundedIndex * cellWidthIncludingSpacing) - scrollView.contentInset.left, y: -scrollView.contentInset.top)
+            targetContentOffset.pointee = offset
+            
+            monthCV.setContentOffset(CGPoint(x: UIScreen.main.bounds.width / 5*CGFloat(sample), y: 0.0), animated: true)
+            monthTest()
+            print("sample:", sample)
+            print("forServer:", forServer)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -188,8 +217,8 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
         }
         else{
             let cell = reminderCV.dequeueReusableCell(withReuseIdentifier: "ReminderSwapCVC", for: indexPath) as! ReminderSwapCVC
-            let colors = [UIColor.orange, UIColor.green]
-            cell.backgroundColor = colors[indexPath.row%2]
+            let colors = [UIColor.orange, UIColor.green, UIColor.blue, UIColor.yellow]
+            cell.backgroundColor = colors[indexPath.row%4]
             return cell
         }
         
@@ -220,7 +249,8 @@ extension ReminderVC : monthData{
         let endIdx:String.Index = forServer.index(month.startIndex, offsetBy: 1)
         forServer = String(forServer[...endIdx])
         
-        print(forServer)
+        print("sample:", sample)
+        print("forServer:", forServer)
 //        let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
 //        ReminderHomeDataManager().reminders(request, viewController: self)
     }
