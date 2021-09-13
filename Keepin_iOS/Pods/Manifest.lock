@@ -1,24 +1,40 @@
 PODS:
   - Alamofire (5.4.3)
   - Kingfisher (6.3.0)
+  - lottie-ios (3.2.3)
+  - PryntTrimmerView (4.0.2)
+  - SteviaLayout (4.7.3)
   - SwiftyJSON (4.3.0)
+  - YPImagePicker (4.5.0):
+    - PryntTrimmerView (~> 4.0.2)
+    - SteviaLayout (~> 4.7.3)
 
 DEPENDENCIES:
   - Alamofire (~> 5.4)
   - Kingfisher (~> 6.0)
+  - lottie-ios
   - SwiftyJSON (~> 4.0)
+  - YPImagePicker
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
+    - lottie-ios
+    - PryntTrimmerView
+    - SteviaLayout
     - SwiftyJSON
+    - YPImagePicker
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
+  PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
+  SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  YPImagePicker: 6f410f475bd22fa8cd430495b54d4b2f15865c2d
 
-PODFILE CHECKSUM: 521b2b796a685a385969fc026b9cdbf5e32cc06d
+PODFILE CHECKSUM: 09ceb3de9ab4a71acb08194ad88f1dc18c30d013
 
 COCOAPODS: 1.10.1

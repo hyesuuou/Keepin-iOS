@@ -9,6 +9,7 @@ target 'Keepin_iOS' do
   pod 'Alamofire', '~> 5.4'
   pod 'Kingfisher', '~> 6.0'
 pod 'SwiftyJSON', '~> 4.0'
-
+pod 'YPImagePicker'
+pod 'lottie-ios'
 
 end

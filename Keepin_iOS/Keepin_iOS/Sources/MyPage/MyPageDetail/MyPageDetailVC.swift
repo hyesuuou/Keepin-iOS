@@ -21,6 +21,9 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
     var memoText: String = ""
     var serverData : PresentDataClass?
     
+    @IBOutlet weak var lineCount: UILabel!
+    var line: Int = 0
+    
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     @IBOutlet weak var myPagePresentCVHeight: NSLayoutConstraint!
     
@@ -184,6 +187,8 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         
         BntLineView.backgroundColor = .keepinGreen
         
+        lineCount.text = "\(line)/5줄"
+        lineCount.textColor = .keepinGray3
     }
     
     @IBAction func toBack(_ sender: Any) {

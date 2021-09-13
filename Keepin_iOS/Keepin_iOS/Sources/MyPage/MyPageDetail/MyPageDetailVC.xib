@@ -26,6 +26,7 @@
                 <outlet property="gotButton" destination="9RX-tC-tko" id="ILu-Wm-Hyk"/>
                 <outlet property="gotLabel" destination="edv-np-ohn" id="RYr-LO-VGf"/>
                 <outlet property="gotNum" destination="p8T-06-PPQ" id="jEW-DA-OsV"/>
+                <outlet property="lineCount" destination="WdP-LU-lt6" id="OEA-WB-knF"/>
                 <outlet property="mainLabel" destination="ygv-LG-0KV" id="Fpn-Bx-JBf"/>
                 <outlet property="mainView" destination="KEI-sn-7t1" id="bYd-IX-wWa"/>
                 <outlet property="memoLabel" destination="GOW-IA-osP" id="9dK-5s-FKt"/>
@@ -187,15 +188,37 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdP-LU-lt6">
+                                            <rect key="frame" x="299" y="159" width="30" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="JdQ-mu-9Dc"/>
+                                                <constraint firstAttribute="width" constant="30" id="oej-GC-DP3"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="606-12-ciN">
+                                            <rect key="frame" x="307" y="12" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="ZU4-Rp-bZa"/>
+                                                <constraint firstAttribute="width" constant="24" id="w5W-vM-uip"/>
+                                            </constraints>
+                                            <state key="normal" title="Button" image="icnCheckBox"/>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemGray4Color"/>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="606-12-ciN" secondAttribute="trailing" constant="12" id="GbU-yf-dQ6"/>
+                                        <constraint firstItem="606-12-ciN" firstAttribute="top" secondItem="YH0-2K-dNO" secondAttribute="top" constant="12" id="KDE-TY-dGe"/>
                                         <constraint firstItem="GOW-IA-osP" firstAttribute="top" secondItem="YH0-2K-dNO" secondAttribute="top" constant="18" id="NL7-66-Zmv"/>
                                         <constraint firstItem="sjk-xY-N5y" firstAttribute="leading" secondItem="YH0-2K-dNO" secondAttribute="leading" constant="18" id="R60-5i-B0M"/>
+                                        <constraint firstAttribute="bottom" secondItem="WdP-LU-lt6" secondAttribute="bottom" constant="10" id="Yx1-HA-G2O"/>
                                         <constraint firstAttribute="width" constant="343" id="fox-BB-oX3"/>
                                         <constraint firstAttribute="height" constant="187" id="hgH-uu-qpJ"/>
                                         <constraint firstAttribute="trailing" secondItem="sjk-xY-N5y" secondAttribute="trailing" constant="18" id="hsw-B3-K1Z"/>
                                         <constraint firstItem="GOW-IA-osP" firstAttribute="leading" secondItem="YH0-2K-dNO" secondAttribute="leading" constant="18" id="hvO-lB-Ria"/>
+                                        <constraint firstAttribute="trailing" secondItem="WdP-LU-lt6" secondAttribute="trailing" constant="14" id="u1f-bN-hpX"/>
                                         <constraint firstItem="sjk-xY-N5y" firstAttribute="top" secondItem="GOW-IA-osP" secondAttribute="bottom" constant="24" id="y65-mU-Net"/>
                                     </constraints>
                                 </view>
@@ -308,6 +331,7 @@
     <resources>
         <image name="icBack" width="32" height="32"/>
         <image name="icMore" width="40" height="40"/>
+        <image name="icnCheckBox" width="24" height="24.5"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

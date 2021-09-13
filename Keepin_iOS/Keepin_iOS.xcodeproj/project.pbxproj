@@ -44,6 +44,11 @@
 		1589EDD526A0C0C4005EFCC2 /* SelectFriendListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1589EDD326A0C0C4005EFCC2 /* SelectFriendListTVC.xib */; };
 		1589EDD826A15D25005EFCC2 /* SelectFriendTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589EDD626A15D25005EFCC2 /* SelectFriendTitleTVC.swift */; };
 		1589EDD926A15D25005EFCC2 /* SelectFriendTitleTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1589EDD726A15D25005EFCC2 /* SelectFriendTitleTVC.xib */; };
+		15A3B4B626E0D8FA00A57ADD /* SelectFriendMessageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A3B4B426E0D8FA00A57ADD /* SelectFriendMessageTVC.swift */; };
+		15A3B4B726E0D8FA00A57ADD /* SelectFriendMessageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15A3B4B526E0D8FA00A57ADD /* SelectFriendMessageTVC.xib */; };
+		15A3B4F326E3C2AA00A57ADD /* refresh.json in Resources */ = {isa = PBXBuildFile; fileRef = 15A3B4F226E3C2AA00A57ADD /* refresh.json */; };
+		15A3B4F526E3EE4100A57ADD /* KeepinPlusMainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A3B4F426E3EE4100A57ADD /* KeepinPlusMainDataManager.swift */; };
+		15A3B4F726EC87DC00A57ADD /* keepin.json in Resources */ = {isa = PBXBuildFile; fileRef = 15A3B4F626EC87DC00A57ADD /* keepin.json */; };
 		15B71A51269D7CC500ED68E0 /* JoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A50269D7CC500ED68E0 /* JoinRequest.swift */; };
 		15B71A53269D7CCE00ED68E0 /* JoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A52269D7CCE00ED68E0 /* JoinResponse.swift */; };
 		15B71A55269D7CD600ED68E0 /* JoinDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B71A54269D7CD600ED68E0 /* JoinDataManager.swift */; };
@@ -212,6 +217,11 @@
 		1589EDD326A0C0C4005EFCC2 /* SelectFriendListTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFriendListTVC.xib; sourceTree = "<group>"; };
 		1589EDD626A15D25005EFCC2 /* SelectFriendTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendTitleTVC.swift; sourceTree = "<group>"; };
 		1589EDD726A15D25005EFCC2 /* SelectFriendTitleTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFriendTitleTVC.xib; sourceTree = "<group>"; };
+		15A3B4B426E0D8FA00A57ADD /* SelectFriendMessageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendMessageTVC.swift; sourceTree = "<group>"; };
+		15A3B4B526E0D8FA00A57ADD /* SelectFriendMessageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFriendMessageTVC.xib; sourceTree = "<group>"; };
+		15A3B4F226E3C2AA00A57ADD /* refresh.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = refresh.json; sourceTree = "<group>"; };
+		15A3B4F426E3EE4100A57ADD /* KeepinPlusMainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepinPlusMainDataManager.swift; sourceTree = "<group>"; };
+		15A3B4F626EC87DC00A57ADD /* keepin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = keepin.json; sourceTree = "<group>"; };
 		15B71A50269D7CC500ED68E0 /* JoinRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRequest.swift; sourceTree = "<group>"; };
 		15B71A52269D7CCE00ED68E0 /* JoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinResponse.swift; sourceTree = "<group>"; };
 		15B71A54269D7CD600ED68E0 /* JoinDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinDataManager.swift; sourceTree = "<group>"; };
@@ -449,8 +459,19 @@
 				1589EDD326A0C0C4005EFCC2 /* SelectFriendListTVC.xib */,
 				1589EDD626A15D25005EFCC2 /* SelectFriendTitleTVC.swift */,
 				1589EDD726A15D25005EFCC2 /* SelectFriendTitleTVC.xib */,
+				15A3B4B426E0D8FA00A57ADD /* SelectFriendMessageTVC.swift */,
+				15A3B4B526E0D8FA00A57ADD /* SelectFriendMessageTVC.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		15A3B4F126E3C28900A57ADD /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				15A3B4F626EC87DC00A57ADD /* keepin.json */,
+				15A3B4F226E3C2AA00A57ADD /* refresh.json */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		15B71A4E269D7CA700ED68E0 /* DataModel */ = {
@@ -545,6 +566,7 @@
 		15EDAA7726D38DEA00DD9246 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				15A3B4F426E3EE4100A57ADD /* KeepinPlusMainDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -857,6 +879,7 @@
 		77F04800268B0BCF00FBFDD7 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				15A3B4F126E3C28900A57ADD /* Lottie */,
 				77F04805268B0CB000FBFDD7 /* Constants.swift */,
 				15C121FA268E281800838E55 /* Font */,
 				7719B5AF269C048200CBBB11 /* Secret */,
@@ -1152,6 +1175,7 @@
 				773D414F26942E8000A4E366 /* PresentDetailCVC.xib in Resources */,
 				71E1324626987F3200DB2D9F /* MyPageHomeHeaderCVC.xib in Resources */,
 				71C197AE26975103004C0490 /* MyPageProfileVC.xib in Resources */,
+				15A3B4F326E3C2AA00A57ADD /* refresh.json in Resources */,
 				1589EDD526A0C0C4005EFCC2 /* SelectFriendListTVC.xib in Resources */,
 				1529FF7F26979F57000AD789 /* KeepinPlusTitleTVC.xib in Resources */,
 				71E1324E2698A8BF00DB2D9F /* FriendListCVC.xib in Resources */,
@@ -1168,6 +1192,7 @@
 				15C12224268E2FBF00838E55 /* GmarketSansTTFLight.ttf in Resources */,
 				15C1222D268F063C00838E55 /* HomeTopTVC.xib in Resources */,
 				77F04826268C49BF00FBFDD7 /* HomeVC.xib in Resources */,
+				15A3B4F726EC87DC00A57ADD /* keepin.json in Resources */,
 				77F0484D268C4DB400FBFDD7 /* SelectFriendVC.xib in Resources */,
 				77BD96C126D38E9C00E217E8 /* ReminderSwapCVC.xib in Resources */,
 				1529FF8F269984D2000AD789 /* KeepinPlusSearchTVC.xib in Resources */,
@@ -1181,6 +1206,7 @@
 				71D5D47E269EB7C6004D9CC7 /* NavigationBarCVC.xib in Resources */,
 				71E265C62699D80900BD6840 /* KeepinPlusFriendVC.xib in Resources */,
 				77F047EC268AF99900FBFDD7 /* Assets.xcassets in Resources */,
+				15A3B4B726E0D8FA00A57ADD /* SelectFriendMessageTVC.xib in Resources */,
 				77F04840268C4D2400FBFDD7 /* MyPageDetailVC.xib in Resources */,
 				15C12222268E2FBF00838E55 /* GmarketSansTTFMedium.ttf in Resources */,
 				71E1324226987EFD00DB2D9F /* MyPageHomeTopCVC.xib in Resources */,
@@ -1249,6 +1275,7 @@
 				77F04817268C45BB00FBFDD7 /* UIViewController.swift in Sources */,
 				71C1B85226AFA33800478BEA /* MyPageProfilePWRequest.swift in Sources */,
 				71E00ADE26A1D90900DC742F /* MyPageDetailRequest.swift in Sources */,
+				15A3B4B626E0D8FA00A57ADD /* SelectFriendMessageTVC.swift in Sources */,
 				71E50A8226B0398500F75586 /* MyPageProfileInfoResponse.swift in Sources */,
 				1529FF9E269985CB000AD789 /* KeepinPlusWriteTVC.swift in Sources */,
 				77F549EC268F58970013A76C /* PresentMoaCVC.swift in Sources */,
@@ -1297,6 +1324,7 @@
 				77BEA4AE26A16304007E2236 /* ReminderDetailRequest.swift in Sources */,
 				77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */,
 				7719B5DC269D71F300CBBB11 /* PresentDetailDataManager.swift in Sources */,
+				15A3B4F526E3EE4100A57ADD /* KeepinPlusMainDataManager.swift in Sources */,
 				71E1324D2698A8BF00DB2D9F /* FriendListCVC.swift in Sources */,
 				1529FF8E269984D2000AD789 /* KeepinPlusSearchTVC.swift in Sources */,
 				71DFCCA126AF0D6100FDAE51 /* MyPageProfileNameResponse.swift in Sources */,

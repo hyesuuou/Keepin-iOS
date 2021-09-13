@@ -11,14 +11,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectFriendVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
                 <outlet property="addFriendButton" destination="MAK-eb-iLx" id="yfT-So-E3C"/>
-                <outlet property="headerSecondTitleLabel" destination="Je0-ff-THW" id="Pp5-Po-aEP"/>
-                <outlet property="headerSecondView" destination="lUe-9Z-gcb" id="daE-g5-xLf"/>
-                <outlet property="headerTitleLabel" destination="g3G-De-Njh" id="tQC-PP-3Si"/>
-                <outlet property="headerview" destination="EeX-bN-OgQ" id="Edo-Vi-JwR"/>
                 <outlet property="newFriendView" destination="x1c-e5-tF5" id="bAw-g7-b0T"/>
                 <outlet property="okButton" destination="q0j-qs-BYV" id="nnS-wH-uWU"/>
                 <outlet property="searchBar" destination="fkn-tK-tWY" id="Dsu-oo-yjL"/>
-                <outlet property="searchNoFriend" destination="07W-uU-leP" id="8AR-nQ-TbW"/>
                 <outlet property="tableview" destination="NWC-5C-u3d" id="cUR-AD-stK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="titleLabel" destination="kfh-aQ-1sf" collectionClass="NSMutableArray" id="0qb-8c-Yz5"/>
@@ -73,7 +68,7 @@
                                 <constraint firstAttribute="height" constant="1" id="4Qf-e8-CXT"/>
                             </constraints>
                         </view>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NWC-5C-u3d">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="NWC-5C-u3d">
                             <rect key="frame" x="0.0" y="47" width="414" height="671"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <view key="tableHeaderView" contentMode="scaleToFill" id="x1c-e5-tF5">
@@ -145,52 +140,6 @@
                 <constraint firstItem="uZG-hT-W3I" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="quY-EF-AVr"/>
             </constraints>
             <point key="canvasLocation" x="79.710144927536234" y="99.776785714285708"/>
-        </view>
-        <view contentMode="scaleToFill" id="EeX-bN-OgQ">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색된 친구" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3G-De-Njh">
-                    <rect key="frame" x="24" y="86" width="78" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색된 친구가 없습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07W-uU-leP">
-                    <rect key="frame" x="126.5" y="140" width="161" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-            </subviews>
-            <viewLayoutGuide key="safeArea" id="02r-Sf-zuZ"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <constraints>
-                <constraint firstItem="g3G-De-Njh" firstAttribute="top" secondItem="02r-Sf-zuZ" secondAttribute="top" constant="42" id="Dp2-c0-ZWt"/>
-                <constraint firstItem="07W-uU-leP" firstAttribute="centerX" secondItem="02r-Sf-zuZ" secondAttribute="centerX" id="RA5-Us-Ht6"/>
-                <constraint firstItem="g3G-De-Njh" firstAttribute="leading" secondItem="02r-Sf-zuZ" secondAttribute="leading" constant="24" id="rxq-UZ-ZSD"/>
-                <constraint firstItem="07W-uU-leP" firstAttribute="top" secondItem="g3G-De-Njh" secondAttribute="bottom" constant="33" id="xcS-5t-Zt2"/>
-            </constraints>
-            <point key="canvasLocation" x="1033" y="218"/>
-        </view>
-        <view contentMode="scaleToFill" id="lUe-9Z-gcb">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선택된 친구" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Je0-ff-THW">
-                    <rect key="frame" x="24" y="86" width="78" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-            </subviews>
-            <viewLayoutGuide key="safeArea" id="n6Y-NB-cFN"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <constraints>
-                <constraint firstItem="Je0-ff-THW" firstAttribute="top" secondItem="n6Y-NB-cFN" secondAttribute="top" constant="42" id="sWh-HP-wKB"/>
-                <constraint firstItem="Je0-ff-THW" firstAttribute="leading" secondItem="n6Y-NB-cFN" secondAttribute="leading" constant="24" id="zKa-Ow-13g"/>
-            </constraints>
-            <point key="canvasLocation" x="248" y="905"/>
         </view>
     </objects>
     <resources>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class HomeVC: UIViewController {
     
@@ -14,13 +15,31 @@ class HomeVC: UIViewController {
     var image : String = ""
     var reminderList : [Reminder] = []
     
+    // MARK: - 새로고침 Lottie View
+    lazy var lottieView : AnimationView = {
+        let animationView = AnimationView(name: "refresh")
+        animationView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        animationView.center = CGPoint(x: UIScreen.main.bounds.width/2, y: 40)
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        animationView.stop()
+        animationView.isHidden = true
+        return animationView
+        
+    }()
+    
+    // MARK: - IBOutlet
     @IBOutlet weak var homeTableview: UITableView!
+    
+    // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         registerXib()
         initRefresh()
         setUI()
         serverConnect()
+        let frame = self.view.safeAreaLayoutGuide.layoutFrame
+        print("safeArea Height", frame.height)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,10 +47,12 @@ class HomeVC: UIViewController {
         HomeDataManager().getReminderHome(self)
     }
     
+    // MARK: - Server Connect
     func serverConnect(){
         HomeDataManager().getRandom(self)
     }
     
+    // MARK: - UI
     func setUI(){
         setNavigationBarUI()
         homeTableview.backgroundColor = .none
@@ -58,17 +79,21 @@ class HomeVC: UIViewController {
     
     func initRefresh(){
         refreshControl.addTarget(self, action: #selector(refreshTable(refresh:)), for: .valueChanged)
+        refreshControl.addSubview(lottieView)
+        refreshControl.tintColor = .clear   // 기존 모양이 보이지 않도록 처리
         homeTableview.refreshControl = refreshControl
     }
     
     @objc func refreshTable(refresh: UIRefreshControl){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){ // 1초
+        lottieView.isHidden = false
+        lottieView.play()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){ // 1초
             HomeDataManager().getRandom(self)
+            self.lottieView.isHidden = true
             self.homeTableview.reloadData()
             refresh.endRefreshing()
         }
     }
-   
 }
 
 extension HomeVC : UITableViewDelegate {
@@ -99,6 +124,7 @@ extension HomeVC : UITableViewDataSource {
             }
             cell.messageLabel.text = message
             cell.randomImageView.setImage(with: image)
+            cell.randomImageHeight.constant = self.view.safeAreaLayoutGuide.layoutFrame.height * (280/688)
             return cell
             
         case 2:
@@ -120,7 +146,9 @@ extension HomeVC : UITableViewDataSource {
                              important: reminderList[0].isImportant,
                              secondDate: reminderList[1].date,
                              secondContents: reminderList[1].title,
-                             secondImportant: reminderList[1].isImportant)
+                             secondImportant: reminderList[1].isImportant,
+                             safeAreaHeight: self.view.safeAreaLayoutGuide.layoutFrame.height
+                             )
                 
                 return cell
             }
@@ -136,14 +164,15 @@ extension HomeVC : UITableViewDataSource {
                 return 50
             }
             else {
-                return UIScreen.main.bounds.height * (50/812)
+                return self.view.safeAreaLayoutGuide.layoutFrame.height * (50/688)
             }
+            
         case 1:
             if UIScreen.main.bounds.height == 667.0 {
                 return 417
             }
             else {
-                return UIScreen.main.bounds.height * (436/812)
+                return self.view.safeAreaLayoutGuide.layoutFrame.height * (436/688)
             }
             
         case 2:
@@ -151,7 +180,7 @@ extension HomeVC : UITableViewDataSource {
                 return 133
             }
             else {
-                return UIScreen.main.bounds.height * (202/812)
+                return self.view.safeAreaLayoutGuide.layoutFrame.height * (202/688)
             }
             
         default:
