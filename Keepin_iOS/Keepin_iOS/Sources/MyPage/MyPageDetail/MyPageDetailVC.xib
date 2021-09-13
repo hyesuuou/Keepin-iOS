@@ -34,6 +34,7 @@
                 <outlet property="memoView" destination="YH0-2K-dNO" id="PzH-jd-gvI"/>
                 <outlet property="myPageCollectionView" destination="1Ti-ce-sza" id="7ff-G8-pQR"/>
                 <outlet property="myPagePresentCVHeight" destination="a5D-xh-ifA" id="u7f-s9-TJJ"/>
+                <outlet property="pencilButton" destination="606-12-ciN" id="Q9Q-BR-DUq"/>
                 <outlet property="stackView1" destination="5J9-Af-GU3" id="uaq-Qc-oDb"/>
                 <outlet property="stackView2" destination="9fw-Nz-nAO" id="bWK-mY-Wvq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -205,6 +206,10 @@
                                                 <constraint firstAttribute="width" constant="24" id="w5W-vM-uip"/>
                                             </constraints>
                                             <state key="normal" title="Button" image="icnEdit"/>
+                                            <state key="selected" image="icnCheckBox"/>
+                                            <connections>
+                                                <action selector="didTap:" destination="-1" eventType="touchUpInside" id="qDr-lS-qtM"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemGray4Color"/>
@@ -331,6 +336,7 @@
     <resources>
         <image name="icBack" width="32" height="32"/>
         <image name="icMore" width="40" height="40"/>
+        <image name="icnCheckBox" width="24" height="24.5"/>
         <image name="icnEdit" width="24" height="24"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
