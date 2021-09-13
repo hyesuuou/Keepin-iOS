@@ -48,6 +48,8 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
     @IBOutlet weak var BntLineView: UIView!
     @IBOutlet weak var BntLineViewStart: NSLayoutConstraint!
     
+    @IBOutlet weak var pencilButton: UIButton!
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,9 +60,22 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         dismissKeyboardWhenTappedAround()
         
         registerNib()
-        
+        memoTextView.isEditable = false
     }
     
+    
+    @IBAction func didTap(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected{
+            memoTextView.isEditable = true
+        }else{
+            memoTextView.isEditable = false
+        }
+        //memoTextView.isEditable = true
+    }
+    
+    
+ 
     @IBAction func btnClicked(_ sender: UIButton) {
         if sender == gotButton
         {
