@@ -204,7 +204,7 @@
                                                 <constraint firstAttribute="height" constant="24" id="ZU4-Rp-bZa"/>
                                                 <constraint firstAttribute="width" constant="24" id="w5W-vM-uip"/>
                                             </constraints>
-                                            <state key="normal" title="Button" image="icnCheckBox"/>
+                                            <state key="normal" title="Button" image="icnEdit"/>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemGray4Color"/>
@@ -331,7 +331,7 @@
     <resources>
         <image name="icBack" width="32" height="32"/>
         <image name="icMore" width="40" height="40"/>
-        <image name="icnCheckBox" width="24" height="24.5"/>
+        <image name="icnEdit" width="24" height="24"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

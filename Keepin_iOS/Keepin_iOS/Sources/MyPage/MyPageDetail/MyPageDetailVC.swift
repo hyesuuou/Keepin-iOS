@@ -58,9 +58,7 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         dismissKeyboardWhenTappedAround()
         
         registerNib()
-        //placeholderSetting()
-        textViewDidBeginEditing(memoTextView)
-        textViewDidEndEditing(memoTextView)
+        
     }
     
     @IBAction func btnClicked(_ sender: UIButton) {
@@ -110,34 +108,11 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         
     }
     
-    func placeholderSetting() {
-        memoTextView.delegate = self // textView가 유저가 선언한 outlet
-        memoTextView.text = memoText
-        if memoText == ""{
-        memoTextView.text = "친구의 취향을 기록해보세요.\n최대 5줄까지 입력 가능합니다."
-        memoTextView.textColor = .keepinGray3
-        }
-    }
     
-    // TextView Place Holder
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if memoTextView.textColor == .keepinGray3 {
-            memoTextView.text = nil
-            memoTextView.textColor = UIColor.black
-        }
+        print(memoTextView.numberOfLines())
         
     }
-    // TextView Place Holder
-    func textViewDidEndEditing(_ textView: UITextView) {
-        //if memoTextView.text.isEmpty {
-            memoTextView.text = memoText
-            memoTextView.textColor = .keepinGray5
-        //}
-        /*
-        MyPageDetailDataManager().editMemo(friendIdx, modified: MyPageDetailRequest(memo: memoTextView.text) , viewController: self)
-        */
-    }
-    
     func setStyle(){
         mainLabel.text = "\(name)님과 \n주고받은 선물"
         
@@ -262,7 +237,7 @@ extension MyPageDetailVC
     func didSuccessGetFriendInfo(message: String){
         print("마이페이지 친구 상세 상단부분 서버통신 성공~!~!")
         setStyle()
-        placeholderSetting()
+        //placeholderSetting()
         //NotificationCenter.default.post(name: NSNotification.Name(rawValue:"load2"), object: name)
     }
     
@@ -288,4 +263,14 @@ extension MyPageDetailVC
     func didDeleteFriend(message : String){
         print(message)
     }
+}
+
+extension UITextView{
+    func numberOfLines() -> Int {
+        if let fontUnwrapped = self.font{
+            return Int(self.contentSize.height / fontUnwrapped.lineHeight)
+        }
+            return 0
+    }
+
 }
