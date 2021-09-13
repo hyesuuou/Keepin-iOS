@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol monthData{
+    func monthServer(month: String)
+}
+
 class ReminderCVC: UICollectionViewCell {
 
     @IBOutlet weak var monthLabel: UILabel!
+    
+    var delegate : monthData?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +28,7 @@ class ReminderCVC: UICollectionViewCell {
         didSet{
             monthLabel.font = isSelected ? UIFont.NotoSans(.bold, size: 16) : UIFont.NotoSans(.regular, size: 16)
             monthLabel.textColor = isSelected ? .white : .gray
+            isSelected ? delegate?.monthServer(month: monthLabel.text!) : nil
         }
     }
     
