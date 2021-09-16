@@ -234,10 +234,20 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == monthCV {
-            reminderCV.setContentOffset(CGPoint(x: reminderCV.frame.width*CGFloat(indexPath.row-2), y: 0.0), animated: true)
-            monthCV.setContentOffset(CGPoint(x: UIScreen.main.bounds.width / 5*CGFloat(indexPath.row-2), y: 0.0), animated: true)
-            sample = indexPath.row - 2
-            monthCV.reloadData()
+            if indexPath.row < 2{
+                reminderCV.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
+                monthCV.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
+            }
+            else if indexPath.row > 13{
+                reminderCV.setContentOffset(CGPoint(x: reminderCV.frame.width*CGFloat(11), y: 0.0), animated: true)
+                monthCV.setContentOffset(CGPoint(x: UIScreen.main.bounds.width / 5*CGFloat(11), y: 0.0), animated: true)
+            }
+            else{
+                reminderCV.setContentOffset(CGPoint(x: reminderCV.frame.width*CGFloat(indexPath.row-2), y: 0.0), animated: true)
+                monthCV.setContentOffset(CGPoint(x: UIScreen.main.bounds.width / 5*CGFloat(indexPath.row-2), y: 0.0), animated: true)
+                sample = indexPath.row - 2
+                monthCV.reloadData()
+            }
         }
     }
     
@@ -373,7 +383,12 @@ extension ReminderVC {
         reminderCV.dataSource = self
         
         reminderCV.reloadData()
-//        print(serverData?.reminders)
+        if serverData?.reminders.count != 0 {
+            print(serverData?.reminders[0]?.date)
+        }
+        else{
+            print("no data")
+        }
 //        reminderTV.reloadData()
     }
     
