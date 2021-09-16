@@ -95,7 +95,7 @@ class ReminderVC: UIViewController {
     
     func setReminderCV(){
         let swaplayout = UICollectionViewFlowLayout()
-        swaplayout.itemSize = CGSize(width: reminderCV.frame.width, height: reminderCV.frame.height)
+        swaplayout.itemSize = CGSize(width: UIScreen.main.bounds.width-32, height: reminderCV.frame.height)
         swaplayout.scrollDirection = .horizontal
         swaplayout.minimumLineSpacing = 0
         swaplayout.minimumInteritemSpacing = 0
@@ -185,6 +185,7 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
             
             monthCV.setContentOffset(CGPoint(x: UIScreen.main.bounds.width / 5*CGFloat(sample), y: 0.0), animated: true)
             monthTest()
+            monthCV.reloadData()
             print("sample:", sample)
             print("forServer:", forServer)
         }
