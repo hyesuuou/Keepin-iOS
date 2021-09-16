@@ -167,8 +167,8 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
             targetContentOffset.pointee = offset
         
             monthCV.reloadData()
-            let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
-            ReminderHomeDataManager().reminders(request, viewController: self)
+//            let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
+//            ReminderHomeDataManager().reminders(request, viewController: self)
         }
         else{
             let layout = self.reminderCV.collectionViewLayout as! UICollectionViewFlowLayout
@@ -236,7 +236,8 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
         if collectionView == monthCV {
             reminderCV.setContentOffset(CGPoint(x: reminderCV.frame.width*CGFloat(indexPath.row-2), y: 0.0), animated: true)
             monthCV.setContentOffset(CGPoint(x: UIScreen.main.bounds.width / 5*CGFloat(indexPath.row-2), y: 0.0), animated: true)
-            //monthCV.reloadData()
+            sample = indexPath.row - 2
+            monthCV.reloadData()
         }
     }
     
@@ -260,8 +261,9 @@ extension ReminderVC : monthData{
         
         print("sample:", sample)
         print("forServer:", forServer)
-//        let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
-//        ReminderHomeDataManager().reminders(request, viewController: self)
+        
+        let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
+        ReminderHomeDataManager().reminders(request, viewController: self)
     }
 }
 
@@ -371,6 +373,7 @@ extension ReminderVC {
         reminderCV.dataSource = self
         
         reminderCV.reloadData()
+//        print(serverData?.reminders)
 //        reminderTV.reloadData()
     }
     
