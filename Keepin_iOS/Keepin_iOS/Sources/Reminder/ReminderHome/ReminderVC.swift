@@ -95,7 +95,7 @@ class ReminderVC: UIViewController {
     
     func setReminderCV(){
         let swaplayout = UICollectionViewFlowLayout()
-        swaplayout.itemSize = CGSize(width: UIScreen.main.bounds.width-32, height: reminderCV.frame.height)
+        swaplayout.itemSize = CGSize(width: reminderCV.frame.size.width, height:reminderCV.frame.size.height)
         swaplayout.scrollDirection = .horizontal
         swaplayout.minimumLineSpacing = 0
         swaplayout.minimumInteritemSpacing = 0
@@ -198,6 +198,19 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
         else{
             return 12
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var cellsize : CGSize
+        
+        if collectionView == reminderCV{
+            cellsize = CGSize(width: reminderCV.frame.size.width, height:reminderCV.frame.size.height)
+        }
+        else{
+            cellsize = CGSize(width: viewSizeWidth/5, height: 36)
+        }
+        
+        return cellsize
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
