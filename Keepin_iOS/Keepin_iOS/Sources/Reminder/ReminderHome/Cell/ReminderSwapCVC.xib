@@ -41,7 +41,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="meH-0s-vFz">
-                                                        <rect key="frame" x="0.0" y="44" width="381" height="252"/>
+                                                        <rect key="frame" x="0.0" y="44" width="381" height="280"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </tableView>
                                                 </subviews>
@@ -52,20 +52,20 @@
                                                     <constraint firstItem="meH-0s-vFz" firstAttribute="top" secondItem="NpW-FS-t4j" secondAttribute="bottom" id="hRB-OH-ayp"/>
                                                     <constraint firstItem="meH-0s-vFz" firstAttribute="leading" secondItem="Uvt-rH-SQM" secondAttribute="leading" id="nYg-Oe-RSw"/>
                                                     <constraint firstItem="NpW-FS-t4j" firstAttribute="leading" secondItem="Uvt-rH-SQM" secondAttribute="leading" constant="8" id="olz-hg-LmO"/>
-                                                    <constraint firstAttribute="bottom" secondItem="meH-0s-vFz" secondAttribute="bottom" constant="32" id="rFF-aI-fz3"/>
+                                                    <constraint firstAttribute="bottom" secondItem="meH-0s-vFz" secondAttribute="bottom" constant="4" id="rFF-aI-fz3"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7J-TT-XgT">
                                                 <rect key="frame" x="0.0" y="328" width="381" height="328"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지난 이벤트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epk-M9-1zO">
-                                                        <rect key="frame" x="8" y="0.0" width="81.666666666666671" height="16"/>
+                                                        <rect key="frame" x="8" y="28" width="81.666666666666671" height="16"/>
                                                         <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wrB-nU-xKU">
-                                                        <rect key="frame" x="0.0" y="16" width="381" height="280"/>
+                                                        <rect key="frame" x="0.0" y="44" width="381" height="252"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </tableView>
                                                 </subviews>
@@ -75,7 +75,7 @@
                                                     <constraint firstItem="wrB-nU-xKU" firstAttribute="top" secondItem="epk-M9-1zO" secondAttribute="bottom" id="7oL-Xo-53b"/>
                                                     <constraint firstAttribute="bottom" secondItem="wrB-nU-xKU" secondAttribute="bottom" constant="32" id="Omq-Iz-iVq"/>
                                                     <constraint firstItem="epk-M9-1zO" firstAttribute="leading" secondItem="e7J-TT-XgT" secondAttribute="leading" constant="8" id="Sm7-gp-ZY4"/>
-                                                    <constraint firstItem="epk-M9-1zO" firstAttribute="top" secondItem="e7J-TT-XgT" secondAttribute="top" id="cRS-EY-8FY"/>
+                                                    <constraint firstItem="epk-M9-1zO" firstAttribute="top" secondItem="e7J-TT-XgT" secondAttribute="top" constant="28" id="cRS-EY-8FY"/>
                                                     <constraint firstItem="wrB-nU-xKU" firstAttribute="leading" secondItem="e7J-TT-XgT" secondAttribute="leading" id="r2Y-am-9nK"/>
                                                 </constraints>
                                             </view>
