@@ -155,7 +155,6 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if scrollView == monthCV{
-            print("touch monthCV")
             let layout = self.monthCV.collectionViewLayout as! UICollectionViewFlowLayout
             
             let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
@@ -172,7 +171,6 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
             ReminderHomeDataManager().reminders(request, viewController: self)
         }
         else{
-            print("touch reminderCV")
             let layout = self.reminderCV.collectionViewLayout as! UICollectionViewFlowLayout
             let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
             
@@ -186,8 +184,6 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
             monthCV.setContentOffset(CGPoint(x: UIScreen.main.bounds.width / 5*CGFloat(sample), y: 0.0), animated: true)
             monthTest()
             monthCV.reloadData()
-            print("sample:", sample)
-            print("forServer:", forServer)
         }
     }
     
@@ -231,8 +227,6 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
         }
         else{
             let cell = reminderCV.dequeueReusableCell(withReuseIdentifier: "ReminderSwapCVC", for: indexPath) as! ReminderSwapCVC
-            let colors = [UIColor.orange, UIColor.green, UIColor.blue, UIColor.yellow]
-            cell.backgroundColor = colors[indexPath.row%4]
             return cell
         }
         
@@ -242,6 +236,7 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
         if collectionView == monthCV {
             reminderCV.setContentOffset(CGPoint(x: reminderCV.frame.width*CGFloat(indexPath.row-2), y: 0.0), animated: true)
             monthCV.setContentOffset(CGPoint(x: UIScreen.main.bounds.width / 5*CGFloat(indexPath.row-2), y: 0.0), animated: true)
+            //monthCV.reloadData()
         }
     }
     
