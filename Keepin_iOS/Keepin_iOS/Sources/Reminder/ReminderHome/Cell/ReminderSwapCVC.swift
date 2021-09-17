@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol tableviewTouch{
+    func touchedTV()
+    func notTV()
+}
+
 class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var upcomingTV: UITableView!
@@ -19,6 +24,8 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     var serverData : MonthReminders?
     var upcomingData : [MonthReminder] = []
     var pastData : [MonthReminder] = []
+    
+    var delegate : tableviewTouch?
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (upcomingTV.contentOffset.y < 0){
@@ -106,6 +113,65 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
         return true
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        delegate?.touchedTV()
+        
+        if tableView == upcomingTV{
+            print(indexPath.section)
+            ReminderAddVC.reminderID = upcomingData[indexPath.section]._id!
+            ReminderAddVC.fromEdit = true
+        }
+        else{
+            print(indexPath.section)
+            ReminderAddVC.reminderID = pastData[indexPath.section]._id!
+            ReminderAddVC.fromEdit = true
+        }
+       
+//        let ReminderAddNVC = UINavigationController(rootViewController: ReminderAddVC())
+//        ReminderAddNVC.modalPresentationStyle = .fullScreen
+//        present(ReminderAddNVC, animated: true, completion: nil)
+    }
+
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if tableView == upcomingTV{
+                if editingStyle == .delete {
+                    upcomingTV.beginUpdates()
+                var test : [String] = []
+                test.append(upcomingData[indexPath.section]._id!)
+                serverData?.reminders.remove(at: indexPath.section)
+                upcomingData.remove(at: indexPath.section)
+
+                let request = EraseRequest(reminderArray: test)
+                ReminderHomeDataManager().reminderDelete(request)
+                //리마인더 삭제 서버통신
+                let indexSet = NSMutableIndexSet()
+                indexSet.add(indexPath.section)
+                tableView.deleteSections(indexSet as IndexSet, with: .fade)
+                upcomingTV.endUpdates()
+            }
+        }
+            else{
+                if editingStyle == .delete {
+                pastTV.beginUpdates()
+                var test : [String] = []
+                test.append(pastData[indexPath.section]._id!)
+                serverData?.reminders.remove(at: indexPath.section)
+                pastData.remove(at: indexPath.section)
+
+                let request = EraseRequest(reminderArray: test)
+                ReminderHomeDataManager().reminderDelete(request)
+                //리마인더 삭제 서버통신
+                let indexSet = NSMutableIndexSet()
+                indexSet.add(indexPath.section)
+                tableView.deleteSections(indexSet as IndexSet, with: .fade)
+                pastTV.endUpdates()
+            }
+        }
+            
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUI()
@@ -116,6 +182,7 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
         scrollView.backgroundColor = .keepinGray
         upcomingView.backgroundColor = .keepinGray
         pastView.backgroundColor = .keepinGray
+        viewHeight.constant = 0
     }
     
     private func setTV(){
@@ -130,7 +197,7 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
         pastTV.isScrollEnabled = false
     
         upcomingTV.backgroundColor = .keepinGray
-        upcomingTV.contentInset.bottom = 50
+        upcomingTV.contentInset.bottom = 0
         upcomingTV.separatorStyle = .none
         
         pastTV.backgroundColor = .keepinGray
@@ -145,6 +212,7 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     override func prepareForReuse() {
         upcomingView.isHidden = false
         pastView.isHidden = false
+        viewHeight.constant = 0
         upcomingData = []
         pastData = []
     }
@@ -153,8 +221,10 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
 extension ReminderSwapCVC {
     func didSuccessReminders(data: MonthReminders) {
         serverData = data
-        viewHeight.constant = CGFloat((serverData?.reminders.count)! * 50)
         
+        if scrollView.frame.height < CGFloat((serverData?.reminders.count)! * 80){
+            viewHeight.constant = CGFloat((serverData?.reminders.count)! * 75)
+        }
         serverData?.reminders.forEach{
             if $0?.isPassed == true{
                 pastData.append($0!)
@@ -168,4 +238,3 @@ extension ReminderSwapCVC {
         pastTV.reloadData()
     }
 }
-

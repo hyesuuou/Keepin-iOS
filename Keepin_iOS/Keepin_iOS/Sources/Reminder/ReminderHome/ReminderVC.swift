@@ -220,7 +220,9 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
         }
         else{
             let cell = reminderCV.dequeueReusableCell(withReuseIdentifier: "ReminderSwapCVC", for: indexPath) as! ReminderSwapCVC
-
+            
+            cell.delegate = self
+            
             if serverData != nil{
                 cell.didSuccessReminders(data: serverData!)
             }
@@ -288,6 +290,16 @@ extension ReminderVC : monthData{
         
         let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
         ReminderHomeDataManager().reminders(request, viewController: self)
+    }
+}
+
+extension ReminderVC: tableviewTouch{
+    func notTV() {
+        reminderCV.isScrollEnabled = true
+    }
+    
+    func touchedTV() {
+        reminderCV.isScrollEnabled = false
     }
 }
 

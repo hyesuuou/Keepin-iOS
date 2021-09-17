@@ -25,7 +25,7 @@ class ReminderHomeDataManager {
             }
     }
     
-    func reminderDelete(_ parameter: EraseRequest, viewController: ReminderVC) {
+    func reminderDelete(_ parameter: EraseRequest) {
         let url = "\(Constant.BASE_URL)/reminder/delete"
         AF.request(url, method: .post, parameters: parameter, encoder: JSONParameterEncoder(), headers: Constant.HEADER) 
             .validate(statusCode: 200..<500)
