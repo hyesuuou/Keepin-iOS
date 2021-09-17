@@ -82,12 +82,6 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="e7J-TT-XgT" firstAttribute="top" secondItem="Uvt-rH-SQM" secondAttribute="bottom" id="5wu-Ti-cXz"/>
-                                            <constraint firstAttribute="trailing" secondItem="Uvt-rH-SQM" secondAttribute="trailing" id="Qjq-cZ-3xN"/>
-                                            <constraint firstAttribute="bottom" secondItem="e7J-TT-XgT" secondAttribute="bottom" id="SCd-hU-W6W"/>
-                                            <constraint firstItem="Uvt-rH-SQM" firstAttribute="leading" secondItem="G5X-0M-4CY" secondAttribute="leading" id="WEd-6m-vda"/>
-                                            <constraint firstItem="e7J-TT-XgT" firstAttribute="leading" secondItem="G5X-0M-4CY" secondAttribute="leading" id="Wsl-ey-B6q"/>
-                                            <constraint firstItem="Uvt-rH-SQM" firstAttribute="top" secondItem="G5X-0M-4CY" secondAttribute="top" id="YQN-RB-Im1"/>
-                                            <constraint firstAttribute="trailing" secondItem="e7J-TT-XgT" secondAttribute="trailing" id="kdO-9P-3gU"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>

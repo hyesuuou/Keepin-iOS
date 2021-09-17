@@ -228,10 +228,10 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
             
             //다가오는 이벤트, 지난이벤트 분기처리
             if indexPath.row+1 > date {
-                //cell.pastView.isHidden = true
+                cell.pastView.isHidden = true
             }
             else if indexPath.row+1 < date{
-                //cell.upcomingView.isHidden = true
+                cell.upcomingView.isHidden = true
             }
             else{
                 

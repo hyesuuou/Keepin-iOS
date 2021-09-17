@@ -88,14 +88,10 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     
     private func setUI(){
         scrollView.backgroundColor = .keepinGray
-        
-//        upcomingView.backgroundColor = .keepinGray
-//        pastView.backgroundColor = .keepinGray
-        
-        upcomingView.backgroundColor = .blue
-        
+        upcomingView.backgroundColor = .keepinGray
+        pastView.backgroundColor = .keepinGray
 //        dynamic height
-        viewHeight.constant = CGFloat(samples.count * 70)
+        viewHeight.constant = CGFloat(samples.count * 80)
     }
     
     private func setTV(){
@@ -122,9 +118,9 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
         return UINib(nibName: "ReminderSwapCVC", bundle: nil)
     }
     
-//    override func prepareForReuse() {
-//        upcomingView.isHidden = false
-//        pastView.isHidden = false
-//    }
+    override func prepareForReuse() {
+        upcomingView.isHidden = false
+        pastView.isHidden = false
+    }
 }
 
