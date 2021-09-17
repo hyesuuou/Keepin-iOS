@@ -24,11 +24,13 @@ class ReminderVC: UIViewController {
         case 0:
             year -= 1
             yearLabel.text = String(year)
+            reminderCV.reloadData()
             let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
             ReminderHomeDataManager().reminders(request, viewController: self)
         case 1:
             year += 1
             yearLabel.text = String(year)
+            reminderCV.reloadData()
             let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
             ReminderHomeDataManager().reminders(request, viewController: self)
         default:
@@ -44,6 +46,7 @@ class ReminderVC: UIViewController {
     var forServer : String = "01"
     let viewSizeWidth : CGFloat = UIScreen.main.bounds.width
     let date = Date().monthOnly()
+    let dateY = Date().yearOnlyInt()
 
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
@@ -222,15 +225,23 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
                 cell.didSuccessReminders(data: serverData!)
             }
             
-            //다가오는 이벤트, 지난이벤트 분기처리
-            if indexPath.row+1 > date {
+            //다가오는 이벤트, 지난이벤트 년도까지 분기처리
+            if dateY < Int(yearLabel.text!)!{
                 cell.pastView.isHidden = true
             }
-            else if indexPath.row+1 < date{
+            else if dateY > Int(yearLabel.text!)!{
                 cell.upcomingView.isHidden = true
             }
             else{
-                
+                if indexPath.row+1 > date{
+                    cell.pastView.isHidden = true
+                }
+                else if indexPath.row+1 < date{
+                    cell.upcomingView.isHidden = true
+                }
+                else{
+                    
+                }
             }
             
             return cell
