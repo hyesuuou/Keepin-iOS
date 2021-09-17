@@ -36,6 +36,8 @@ class MyPageProfileVC: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var birthLabel: UILabel!
     
+    @IBOutlet var KeepinInfo: [UIView]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,6 +58,10 @@ class MyPageProfileVC: UIViewController {
         
         let gesture3 = UITapGestureRecognizer(target: self, action: #selector(toPhoneEdit(sender:)))
         phoneView.addGestureRecognizer(gesture3)
+        
+        let gesture4 = UITapGestureRecognizer(target: self, action: #selector(toTeamKeepin(sender:)))
+        KeepinInfo[3].addGestureRecognizer(gesture4)
+        
     }
     
     func setText(){
@@ -95,6 +101,10 @@ class MyPageProfileVC: UIViewController {
     
     @objc func toPhoneEdit(sender: UITapGestureRecognizer){
         self.navigationController?.pushViewController(MyPageEditPhoneVC(), animated: true)
+    }
+    
+    @objc func toTeamKeepin(sender: UITapGestureRecognizer){
+        self.navigationController?.pushViewController(TeamKeepinVC(), animated: true)
     }
     
     func naviagationBar(){

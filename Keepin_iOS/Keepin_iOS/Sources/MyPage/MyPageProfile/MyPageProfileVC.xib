@@ -31,6 +31,10 @@
                 <outlet property="phoneView" destination="aDN-Zy-o9L" id="6r3-Hw-Hrk"/>
                 <outlet property="profileEdit" destination="sQz-P9-AaT" id="Mxk-jP-5oJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="KeepinInfo" destination="wkL-RB-efz" collectionClass="NSMutableArray" id="4lZ-kZ-XJa"/>
+                <outletCollection property="KeepinInfo" destination="veA-g0-wyB" collectionClass="NSMutableArray" id="7aZ-zc-fku"/>
+                <outletCollection property="KeepinInfo" destination="xU6-hG-6v6" collectionClass="NSMutableArray" id="y42-xH-8rI"/>
+                <outletCollection property="KeepinInfo" destination="uZW-ph-cCg" collectionClass="NSMutableArray" id="vwd-a1-jWf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

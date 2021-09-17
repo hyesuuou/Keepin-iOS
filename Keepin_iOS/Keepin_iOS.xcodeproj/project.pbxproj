@@ -81,6 +81,8 @@
 		717A0254269ACFC800241171 /* MyPageEditPwVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717A0252269ACFC800241171 /* MyPageEditPwVC.xib */; };
 		717A0258269ACFF800241171 /* MyPageEditPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717A0256269ACFF800241171 /* MyPageEditPhoneVC.swift */; };
 		717A0259269ACFF800241171 /* MyPageEditPhoneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717A0257269ACFF800241171 /* MyPageEditPhoneVC.xib */; };
+		717EDFEB26F48D57008B9422 /* TeamKeepinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717EDFE926F48D57008B9422 /* TeamKeepinVC.swift */; };
+		717EDFEC26F48D57008B9422 /* TeamKeepinVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717EDFEA26F48D57008B9422 /* TeamKeepinVC.xib */; };
 		71C197AD26975103004C0490 /* MyPageProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C197AB26975103004C0490 /* MyPageProfileVC.swift */; };
 		71C197AE26975103004C0490 /* MyPageProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C197AC26975103004C0490 /* MyPageProfileVC.xib */; };
 		71C197BA26977BBC004C0490 /* MyPageFriendFixVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C197B826977BBC004C0490 /* MyPageFriendFixVC.swift */; };
@@ -253,6 +255,8 @@
 		717A0252269ACFC800241171 /* MyPageEditPwVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageEditPwVC.xib; sourceTree = "<group>"; };
 		717A0256269ACFF800241171 /* MyPageEditPhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageEditPhoneVC.swift; sourceTree = "<group>"; };
 		717A0257269ACFF800241171 /* MyPageEditPhoneVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageEditPhoneVC.xib; sourceTree = "<group>"; };
+		717EDFE926F48D57008B9422 /* TeamKeepinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamKeepinVC.swift; sourceTree = "<group>"; };
+		717EDFEA26F48D57008B9422 /* TeamKeepinVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamKeepinVC.xib; sourceTree = "<group>"; };
 		71C197AB26975103004C0490 /* MyPageProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileVC.swift; sourceTree = "<group>"; };
 		71C197AC26975103004C0490 /* MyPageProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageProfileVC.xib; sourceTree = "<group>"; };
 		71C197B826977BBC004C0490 /* MyPageFriendFixVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageFriendFixVC.swift; sourceTree = "<group>"; };
@@ -605,6 +609,8 @@
 				717A0252269ACFC800241171 /* MyPageEditPwVC.xib */,
 				717A0256269ACFF800241171 /* MyPageEditPhoneVC.swift */,
 				717A0257269ACFF800241171 /* MyPageEditPhoneVC.xib */,
+				717EDFE926F48D57008B9422 /* TeamKeepinVC.swift */,
+				717EDFEA26F48D57008B9422 /* TeamKeepinVC.xib */,
 			);
 			path = EditProfile;
 			sourceTree = "<group>";
@@ -1163,6 +1169,7 @@
 				77F549D5268ECF6C0013A76C /* ReminderVC.xib in Resources */,
 				15C12229268ED4D900838E55 /* HomeEventTVC.xib in Resources */,
 				77F04832268C4C3A00FBFDD7 /* PresentDetailVC.xib in Resources */,
+				717EDFEC26F48D57008B9422 /* TeamKeepinVC.xib in Resources */,
 				7719B594269AC9BC00CBBB11 /* ReminderTVC.xib in Resources */,
 				711C142C26D374AD00143B1F /* MyPagePresentMoaCVC.xib in Resources */,
 				1529FF9B269985B9000AD789 /* KeppinPlusSelectTVC.xib in Resources */,
@@ -1266,6 +1273,7 @@
 				7719B5D0269C45A900CBBB11 /* SearchResponse.swift in Sources */,
 				7719B58F269A1DBD00CBBB11 /* ReminderCVC.swift in Sources */,
 				77F04817268C45BB00FBFDD7 /* UIViewController.swift in Sources */,
+				717EDFEB26F48D57008B9422 /* TeamKeepinVC.swift in Sources */,
 				71C1B85226AFA33800478BEA /* MyPageProfilePWRequest.swift in Sources */,
 				71E00ADE26A1D90900DC742F /* MyPageDetailRequest.swift in Sources */,
 				15A3B4B626E0D8FA00A57ADD /* SelectFriendMessageTVC.swift in Sources */,

@@ -71,7 +71,6 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         }else{
             memoTextView.isEditable = false
         }
-        //memoTextView.isEditable = true
     }
     
     
@@ -111,6 +110,8 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         
         MyPagePresentMoaDataManager().gotPresent(friendIdx, viewController: self)
     }
+    
+
     
     func registerNib(){
         let presentMoaNib = UINib(nibName:"MyPagePresentMoaCVC", bundle: nil)
