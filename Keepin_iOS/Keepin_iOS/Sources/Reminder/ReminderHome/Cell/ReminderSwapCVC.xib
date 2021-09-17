@@ -123,8 +123,10 @@
             <connections>
                 <outlet property="pastTV" destination="wrB-nU-xKU" id="4H6-FK-TvI"/>
                 <outlet property="pastView" destination="e7J-TT-XgT" id="rm5-JB-cId"/>
+                <outlet property="scrollView" destination="9rn-D9-zXH" id="D7M-uv-Gcb"/>
                 <outlet property="upcomingTV" destination="meH-0s-vFz" id="fXz-Zb-jjM"/>
                 <outlet property="upcomingView" destination="Uvt-rH-SQM" id="Ejq-WC-hHM"/>
+                <outlet property="viewHeight" destination="nMe-ak-uGf" id="Nm2-kU-zFi"/>
             </connections>
             <point key="canvasLocation" x="295.19999999999999" y="305.9113300492611"/>
         </collectionViewCell>

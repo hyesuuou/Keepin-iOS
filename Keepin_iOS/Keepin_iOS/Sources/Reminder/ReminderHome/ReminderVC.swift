@@ -43,7 +43,8 @@ class ReminderVC: UIViewController {
     var serverData : MonthReminders?
     var forServer : String = "01"
     let viewSizeWidth : CGFloat = UIScreen.main.bounds.width
-    
+    let date = Date().monthOnly()
+
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,8 +74,6 @@ class ReminderVC: UIViewController {
 //        reminderTV.separatorStyle = .none
         
         tvBackground.backgroundColor = .keepinGray
-//        let date = Date().monthOnly()
-//        sample = date
     }
 
     func setMonthCV(){
@@ -167,8 +166,6 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
             targetContentOffset.pointee = offset
         
             monthCV.reloadData()
-//            let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
-//            ReminderHomeDataManager().reminders(request, viewController: self)
         }
         else{
             let layout = self.reminderCV.collectionViewLayout as! UICollectionViewFlowLayout
@@ -227,6 +224,19 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
         }
         else{
             let cell = reminderCV.dequeueReusableCell(withReuseIdentifier: "ReminderSwapCVC", for: indexPath) as! ReminderSwapCVC
+            cell.serverData = serverData
+            
+            //다가오는 이벤트, 지난이벤트 분기처리
+            if indexPath.row+1 > date {
+                //cell.pastView.isHidden = true
+            }
+            else if indexPath.row+1 < date{
+                //cell.upcomingView.isHidden = true
+            }
+            else{
+                
+            }
+            
             return cell
         }
         
@@ -269,11 +279,11 @@ extension ReminderVC : monthData{
         let endIdx:String.Index = forServer.index(month.startIndex, offsetBy: 1)
         forServer = String(forServer[...endIdx])
         
-        print("sample:", sample)
-        print("forServer:", forServer)
-        
-        let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
-        ReminderHomeDataManager().reminders(request, viewController: self)
+//        print("sample:", sample)
+//        print("forServer:", forServer)
+//
+//        let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
+//        ReminderHomeDataManager().reminders(request, viewController: self)
     }
 }
 
@@ -383,12 +393,6 @@ extension ReminderVC {
         reminderCV.dataSource = self
         
         reminderCV.reloadData()
-        if serverData?.reminders.count != 0 {
-            print(serverData?.reminders[0]?.date)
-        }
-        else{
-            print("no data")
-        }
 //        reminderTV.reloadData()
     }
     

@@ -13,15 +13,28 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var upcomingView: UIView!
     @IBOutlet weak var pastTV: UITableView!
     @IBOutlet weak var pastView: UIView!
+    @IBOutlet weak var viewHeight: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var serverData : MonthReminders?
+    
+    var samples = ["생일1","생일2","생일3","생일4"]
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (upcomingTV.contentOffset.y < 0){
+            upcomingTV.contentOffset = CGPoint(x: 0, y: 0)
+        }
+        else if (pastTV.contentOffset.y < 0){
+            pastTV.contentOffset = CGPoint(x: 0, y: 0)
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return samples.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -44,9 +57,11 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
         
         if tableView == upcomingTV{
             cell = upcomingTV.dequeueReusableCell(withIdentifier: "ReminderTVC", for: indexPath) as! ReminderTVC
+            cell.reminderTitle.text = samples[indexPath.section]
         }
         else{
             cell = pastTV.dequeueReusableCell(withIdentifier: "ReminderTVC", for: indexPath) as! ReminderTVC
+            cell.reminderTitle.text = samples[indexPath.section]
         }
         
         cell.backgroundColor = .keepinGray
@@ -58,32 +73,12 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UIScreen.main.bounds.height * (64/812)
-        //return 64
+        return 64
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-            if editingStyle == .delete {
-                upcomingTV.beginUpdates()
-                var test : [String] = []
-                //test.append((serverData?.reminders[indexPath.section]?._id)!)
-                //serverData?.reminders.remove(at: indexPath.section)
-                
-                let request = EraseRequest(reminderArray: test)
-                //ReminderHomeDataManager().reminderDelete(request, viewController: self)
-                //리마인더 삭제 서버통신
-                let indexSet = NSMutableIndexSet()
-                indexSet.add(indexPath.section)
-                tableView.deleteSections(indexSet as IndexSet, with: .fade)
-                upcomingTV.endUpdates()
-            }
-        }
-    
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -92,8 +87,15 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     }
     
     private func setUI(){
-        upcomingView.backgroundColor = .keepinGray
-        pastView.backgroundColor = .keepinGray
+        scrollView.backgroundColor = .keepinGray
+        
+//        upcomingView.backgroundColor = .keepinGray
+//        pastView.backgroundColor = .keepinGray
+        
+        upcomingView.backgroundColor = .blue
+        
+//        dynamic height
+        viewHeight.constant = CGFloat(samples.count * 70)
     }
     
     private func setTV(){
@@ -119,5 +121,10 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     static func nib() -> UINib{
         return UINib(nibName: "ReminderSwapCVC", bundle: nil)
     }
+    
+//    override func prepareForReuse() {
+//        upcomingView.isHidden = false
+//        pastView.isHidden = false
+//    }
 }
 
