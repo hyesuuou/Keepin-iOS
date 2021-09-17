@@ -130,7 +130,7 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
         pastTV.isScrollEnabled = false
     
         upcomingTV.backgroundColor = .keepinGray
-//        upcomingTV.contentInset.bottom = 50
+        upcomingTV.contentInset.bottom = 50
         upcomingTV.separatorStyle = .none
         
         pastTV.backgroundColor = .keepinGray
@@ -153,7 +153,7 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
 extension ReminderSwapCVC {
     func didSuccessReminders(data: MonthReminders) {
         serverData = data
-        viewHeight.constant = CGFloat((serverData?.reminders.count)! * 80)
+        viewHeight.constant = CGFloat((serverData?.reminders.count)! * 50)
         
         serverData?.reminders.forEach{
             if $0?.isPassed == true{

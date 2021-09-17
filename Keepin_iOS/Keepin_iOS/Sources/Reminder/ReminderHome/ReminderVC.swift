@@ -378,14 +378,10 @@ extension ReminderVC : UITableViewDelegate, UITableViewDataSource{
 //MARK: - Server Functions
 extension ReminderVC {
     func didSuccessReminders(message: String) {
-//        reminderTV.register(ReminderTVC.nib(), forCellReuseIdentifier: "ReminderTVC")
-//        reminderTV.delegate = self
-//        reminderTV.dataSource = self
         reminderCV.register(ReminderSwapCVC.nib(), forCellWithReuseIdentifier: "ReminderSwapCVC")
         reminderCV.delegate = self
         reminderCV.dataSource = self
         reminderCV.reloadData()
-//        reminderTV.reloadData()
     }
     
     func failedToRequest(message: String) {
