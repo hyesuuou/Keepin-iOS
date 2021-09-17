@@ -65,14 +65,7 @@ class ReminderVC: UIViewController {
     //MARK: - Custom Methods
     func setUI(){
         yearLabel.text = Date().yearOnly()
-//        reminderTV.backgroundColor = .keepinGray
-//        reminderTV.contentInset.bottom = 50
-//        reminderTV.separatorStyle = .none
-        
         reminderCV.backgroundColor = .keepinGray
-//        reminderTV.contentInset.bottom = 50
-//        reminderTV.separatorStyle = .none
-        
         tvBackground.backgroundColor = .keepinGray
     }
 
@@ -224,7 +217,10 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
         }
         else{
             let cell = reminderCV.dequeueReusableCell(withReuseIdentifier: "ReminderSwapCVC", for: indexPath) as! ReminderSwapCVC
-            cell.serverData = serverData
+
+            if serverData != nil{
+                cell.didSuccessReminders(data: serverData!)
+            }
             
             //다가오는 이벤트, 지난이벤트 분기처리
             if indexPath.row+1 > date {
@@ -279,11 +275,8 @@ extension ReminderVC : monthData{
         let endIdx:String.Index = forServer.index(month.startIndex, offsetBy: 1)
         forServer = String(forServer[...endIdx])
         
-//        print("sample:", sample)
-//        print("forServer:", forServer)
-//
-//        let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
-//        ReminderHomeDataManager().reminders(request, viewController: self)
+        let request = ReminderHomeRequest(year: yearLabel.text!, month: forServer)
+        ReminderHomeDataManager().reminders(request, viewController: self)
     }
 }
 
@@ -391,7 +384,6 @@ extension ReminderVC {
         reminderCV.register(ReminderSwapCVC.nib(), forCellWithReuseIdentifier: "ReminderSwapCVC")
         reminderCV.delegate = self
         reminderCV.dataSource = self
-        
         reminderCV.reloadData()
 //        reminderTV.reloadData()
     }

@@ -17,8 +17,8 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var scrollView: UIScrollView!
     
     var serverData : MonthReminders?
-    
-    var samples = ["생일1","생일2","생일3","생일4"]
+    var upcomingData : [MonthReminder] = []
+    var pastData : [MonthReminder] = []
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (upcomingTV.contentOffset.y < 0){
@@ -34,7 +34,17 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return samples.count
+        if serverData != nil{
+            if tableView == upcomingTV{
+                return upcomingData.count
+            }
+            else{
+                return pastData.count
+            }
+        }
+        else{
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -54,21 +64,37 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell : ReminderTVC
+
+        func setCell(cell: ReminderTVC, data: [MonthReminder]){
+            cell.backgroundColor = .keepinGray
+            cell.dateLabel.text = data[indexPath.section].date
+            cell.reminderTitle.text = data[indexPath.section].title
+            let alarmStatus = data[indexPath.section].isAlarm!
+            if alarmStatus{
+                cell.alarmOn.isOn = true
+            }
+            else{
+                cell.alarmOn.isOn = false
+            }
+            let importantStatus = data[indexPath.section].isImportant!
+            if importantStatus{
+                cell.backgronudImg.image = UIImage(named: "listReminderImportant")
+            }
+            let backgroundView = UIView()
+            backgroundView.backgroundColor = .clear
+            cell.selectedBackgroundView = backgroundView
+            
+        }
         
         if tableView == upcomingTV{
             cell = upcomingTV.dequeueReusableCell(withIdentifier: "ReminderTVC", for: indexPath) as! ReminderTVC
-            cell.reminderTitle.text = samples[indexPath.section]
+            setCell(cell: cell, data: upcomingData)
         }
         else{
             cell = pastTV.dequeueReusableCell(withIdentifier: "ReminderTVC", for: indexPath) as! ReminderTVC
-            cell.reminderTitle.text = samples[indexPath.section]
+            setCell(cell: cell, data: pastData)
         }
         
-        cell.backgroundColor = .keepinGray
-        
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = .clear
-        cell.selectedBackgroundView = backgroundView
         return cell
     }
     
@@ -90,8 +116,6 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
         scrollView.backgroundColor = .keepinGray
         upcomingView.backgroundColor = .keepinGray
         pastView.backgroundColor = .keepinGray
-//        dynamic height
-        viewHeight.constant = CGFloat(samples.count * 80)
     }
     
     private func setTV(){
@@ -121,6 +145,27 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     override func prepareForReuse() {
         upcomingView.isHidden = false
         pastView.isHidden = false
+        upcomingData = []
+        pastData = []
+    }
+}
+
+extension ReminderSwapCVC {
+    func didSuccessReminders(data: MonthReminders) {
+        serverData = data
+        viewHeight.constant = CGFloat((serverData?.reminders.count)! * 80)
+        
+        serverData?.reminders.forEach{
+            if $0?.isPassed == true{
+                pastData.append($0!)
+            }
+            else{
+                upcomingData.append($0!)
+            }
+        }
+        
+        upcomingTV.reloadData()
+        pastTV.reloadData()
     }
 }
 
