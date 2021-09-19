@@ -72,11 +72,12 @@ class KeepinPlusMainVC: UIViewController {
     // MARK:- View Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         setNavigationBarUI()
-        setUI()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
+        setUI()
         imageAddButton.addTarget(self, action: #selector(showPicker), for: .touchUpInside)
         //self.view.addSubview(self.lottieView)
         self.lottieContainerView.addSubview(self.lottieView)
@@ -99,9 +100,29 @@ class KeepinPlusMainVC: UIViewController {
         }
         
         /// underline UI
-        for index in 0...2 {
-            underlineView[index].backgroundColor = .keepinGray3
+        //        for index in 0...2 {
+        //            underlineView[index].backgroundColor = .keepinGray3
+        //        }
+        if nameTextField.text != "" {
+            underlineView[0].backgroundColor = .keepinBlack
+        } else {
+            underlineView[0].backgroundColor = .keepinGray3
         }
+        
+        if dateTextfield.text != "" {
+            underlineView[2].backgroundColor = .keepinBlack
+        } else {
+            underlineView[2].backgroundColor = .keepinGray3
+        }
+        
+        if friendNameButton.titleLabel?.text != "친구의 이름을 입력해주세요." {
+            print("친구의 이름이 입력되었을때")
+            underlineView[1].backgroundColor = .keepinBlack
+        } else {
+            underlineView[1].backgroundColor = .keepinGray3
+        }
+        
+        
         
         /// textfield UI
         nameTextField.font = UIFont.NotoSans(.regular, size: 16)
@@ -250,6 +271,19 @@ class KeepinPlusMainVC: UIViewController {
         else {
             addButton.setTitleColor(.keepinGray3, for: .normal)
         }
+        
+        /// 입력값 -> 밑줄 색 변경
+        if nameTextField.text != "" {
+            underlineView[0].backgroundColor = .keepinBlack
+        } else {
+            underlineView[0].backgroundColor = .keepinGray3
+        }
+        
+        if dateTextfield.text != "" {
+            underlineView[2].backgroundColor = .keepinBlack
+        } else {
+            underlineView[2].backgroundColor = .keepinGray3
+        }
     }
     
     // MARK: 친구선택 관련
@@ -270,6 +304,13 @@ class KeepinPlusMainVC: UIViewController {
         }
         friendNameButton.setTitle(s, for: .normal)
         friendNameButton.setTitleColor(.black, for: .normal)
+        
+        if addList.count != 0 {
+            underlineView[1].backgroundColor = .keepinBlack
+        } else {
+            underlineView[1].backgroundColor = .keepinGray3
+        }
+        
         
         if s != "",
            nameTextField.text != "",
