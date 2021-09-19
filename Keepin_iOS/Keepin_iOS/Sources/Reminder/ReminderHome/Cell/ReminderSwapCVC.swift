@@ -11,6 +11,7 @@ protocol tableviewTouchCVC{
     func touched()
     func no()
     func alarm(data: MonthReminder)
+    func presentEdit(data: MonthReminder)
 }
 
 class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource, tableviewTouch, UIGestureRecognizerDelegate{
@@ -140,14 +141,14 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == upcomingTV{
-            print(indexPath.section)
             ReminderAddVC.reminderID = upcomingData[indexPath.section]._id!
             ReminderAddVC.fromEdit = true
+            delegateTVC?.presentEdit(data: upcomingData[indexPath.section])
         }
         else{
-            print(indexPath.section)
             ReminderAddVC.reminderID = pastData[indexPath.section]._id!
             ReminderAddVC.fromEdit = true
+            delegateTVC?.presentEdit(data: pastData[indexPath.section])
         }
     }
 
