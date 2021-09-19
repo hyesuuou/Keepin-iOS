@@ -140,6 +140,8 @@
 		7719B5DC269D71F300CBBB11 /* PresentDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B5DB269D71F300CBBB11 /* PresentDetailDataManager.swift */; };
 		773D414E26942E8000A4E366 /* PresentDetailCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773D414C26942E8000A4E366 /* PresentDetailCVC.swift */; };
 		773D414F26942E8000A4E366 /* PresentDetailCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 773D414D26942E8000A4E366 /* PresentDetailCVC.xib */; };
+		77BD96C026D38E9C00E217E8 /* ReminderSwapCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD96BE26D38E9C00E217E8 /* ReminderSwapCVC.swift */; };
+		77BD96C126D38E9C00E217E8 /* ReminderSwapCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77BD96BF26D38E9C00E217E8 /* ReminderSwapCVC.xib */; };
 		77BEA4A226A0A9B1007E2236 /* ReminderHomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4A126A0A9B1007E2236 /* ReminderHomeDataManager.swift */; };
 		77BEA4A426A0A9CC007E2236 /* ReminderHomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4A326A0A9CC007E2236 /* ReminderHomeResponse.swift */; };
 		77BEA4A626A0A9E7007E2236 /* ReminderHomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4A526A0A9E7007E2236 /* ReminderHomeRequest.swift */; };
@@ -314,6 +316,8 @@
 		7719B5DB269D71F300CBBB11 /* PresentDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDetailDataManager.swift; sourceTree = "<group>"; };
 		773D414C26942E8000A4E366 /* PresentDetailCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PresentDetailCVC.swift; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.swift; sourceTree = SOURCE_ROOT; };
 		773D414D26942E8000A4E366 /* PresentDetailCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PresentDetailCVC.xib; path = Keepin_iOS/Sources/PresentMoa/PresentMoaHome/Cell/PresentDetailCVC.xib; sourceTree = SOURCE_ROOT; };
+		77BD96BE26D38E9C00E217E8 /* ReminderSwapCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderSwapCVC.swift; sourceTree = "<group>"; };
+		77BD96BF26D38E9C00E217E8 /* ReminderSwapCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderSwapCVC.xib; sourceTree = "<group>"; };
 		77BEA4A126A0A9B1007E2236 /* ReminderHomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHomeDataManager.swift; sourceTree = "<group>"; };
 		77BEA4A326A0A9CC007E2236 /* ReminderHomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHomeResponse.swift; sourceTree = "<group>"; };
 		77BEA4A526A0A9E7007E2236 /* ReminderHomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHomeRequest.swift; sourceTree = "<group>"; };
@@ -722,6 +726,8 @@
 				7719B58E269A1DBD00CBBB11 /* ReminderCVC.xib */,
 				7719B591269AC9BB00CBBB11 /* ReminderTVC.swift */,
 				7719B592269AC9BB00CBBB11 /* ReminderTVC.xib */,
+				77BD96BE26D38E9C00E217E8 /* ReminderSwapCVC.swift */,
+				77BD96BF26D38E9C00E217E8 /* ReminderSwapCVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1195,6 +1201,7 @@
 				77F04826268C49BF00FBFDD7 /* HomeVC.xib in Resources */,
 				15A3B4F726EC87DC00A57ADD /* keepin.json in Resources */,
 				77F0484D268C4DB400FBFDD7 /* SelectFriendVC.xib in Resources */,
+				77BD96C126D38E9C00E217E8 /* ReminderSwapCVC.xib in Resources */,
 				1529FF8F269984D2000AD789 /* KeepinPlusSearchTVC.xib in Resources */,
 				15C122362692DA7300838E55 /* LoginFirstVC.xib in Resources */,
 				71C197BB26977BBC004C0490 /* MyPageFriendFixVC.xib in Resources */,
@@ -1296,6 +1303,7 @@
 				711C142B26D374AD00143B1F /* MyPagePresentMoaCVC.swift in Sources */,
 				71C1B85026AF9EEA00478BEA /* MyPageProfilePhoneResponse.swift in Sources */,
 				71D5D47D269EB7C6004D9CC7 /* NavigationBarCVC.swift in Sources */,
+				77BD96C026D38E9C00E217E8 /* ReminderSwapCVC.swift in Sources */,
 				773D414E26942E8000A4E366 /* PresentDetailCVC.swift in Sources */,
 				7719B5D8269D71D900CBBB11 /* PresentDetailResponse.swift in Sources */,
 				15C1222C268F063C00838E55 /* HomeTopTVC.swift in Sources */,

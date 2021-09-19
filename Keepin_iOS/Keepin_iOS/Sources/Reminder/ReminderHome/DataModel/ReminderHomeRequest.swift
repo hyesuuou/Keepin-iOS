@@ -15,3 +15,7 @@ struct ReminderHomeRequest{
 struct EraseRequest : Encodable{
     var reminderArray : [String]
 }
+
+struct ReminderAlarmRequest: Encodable{
+    var isAlarm : Bool
+}

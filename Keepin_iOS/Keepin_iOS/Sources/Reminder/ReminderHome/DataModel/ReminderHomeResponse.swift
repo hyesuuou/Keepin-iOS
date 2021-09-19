@@ -19,6 +19,7 @@ struct MonthReminders: Decodable{
 struct MonthReminder: Decodable{
     var isAlarm : Bool?
     var isImportant : Bool?
+    var isPassed : Bool?
     var _id : String?
     var title : String?
     var date : String?

@@ -21,6 +21,12 @@ extension Date {
         formatter.dateFormat = format
         return formatter.string(from: self)
     }
+    func yearOnlyInt(format: String = "yyyy") -> Int {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.dateFormat = format
+        return Int(formatter.string(from: self))!
+    }
     func monthOnly(format: String = "MM") -> Int {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
