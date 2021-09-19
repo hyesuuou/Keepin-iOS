@@ -393,7 +393,9 @@ class KeepinPlusMainVC: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
                 self.lottieView.isHidden = true
                 self.lottieView.stop()
-                self.dismiss(animated: true)
+                self.dismiss(animated: true) {
+                    self.lottieContainerView.isHidden = true
+                }
             }
         }
         else {
@@ -533,6 +535,7 @@ extension KeepinPlusMainVC {
             switch result {
             case .success(let msg):
                 print("success", msg)
+                
             case .requestErr(let msg):
                 print("requestERR", msg)
             case .pathErr:

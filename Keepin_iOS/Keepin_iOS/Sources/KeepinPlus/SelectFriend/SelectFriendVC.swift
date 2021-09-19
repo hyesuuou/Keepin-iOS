@@ -102,6 +102,10 @@ class SelectFriendVC: UIViewController {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "selectFriend"), object: selectedFriend) // 여기 고쳐야함
         self.navigationController?.popViewController(animated: true)
     }
+    @IBAction func newFriendButtonClicked(_ sender: Any) {
+        let newFriendVC = KeepinPlusFriendVC()
+        self.navigationController?.pushViewController(newFriendVC, animated: true)
+    }
 }
 
 // MARK:- SearchBar Config
