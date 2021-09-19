@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class MyPageProfileVC: UIViewController {
     
@@ -62,6 +63,9 @@ class MyPageProfileVC: UIViewController {
         let gesture4 = UITapGestureRecognizer(target: self, action: #selector(toTeamKeepin(sender:)))
         KeepinInfo[3].addGestureRecognizer(gesture4)
         
+        let gestrue5 = UITapGestureRecognizer(target: self, action: #selector(toService(sender:)))
+        KeepinInfo[0].addGestureRecognizer(gestrue5)
+        
     }
     
     func setText(){
@@ -105,6 +109,15 @@ class MyPageProfileVC: UIViewController {
     
     @objc func toTeamKeepin(sender: UITapGestureRecognizer){
         self.navigationController?.pushViewController(TeamKeepinVC(), animated: true)
+    }
+    
+    @objc func toService(sender: UITapGestureRecognizer){
+        let serviceUrl = NSURL(string: "https://fluff-munchkin-8cc.notion.site/4c1b2962dcaf45a1a4863a18c08261e8")
+        let serviceSafriView: SFSafariViewController = SFSafariViewController(url: serviceUrl as! URL)
+        
+        self.present(serviceSafriView, animated: true, completion: nil)
+        
+        
     }
     
     func naviagationBar(){
