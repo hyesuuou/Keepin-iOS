@@ -66,6 +66,9 @@ class MyPageProfileVC: UIViewController {
         let gestrue5 = UITapGestureRecognizer(target: self, action: #selector(toService(sender:)))
         KeepinInfo[0].addGestureRecognizer(gestrue5)
         
+        let gesture6 = UITapGestureRecognizer(target: self, action: #selector(toPrivacy(sender:)))
+        KeepinInfo[1].addGestureRecognizer(gesture6)
+        
     }
     
     func setText(){
@@ -116,8 +119,12 @@ class MyPageProfileVC: UIViewController {
         let serviceSafriView: SFSafariViewController = SFSafariViewController(url: serviceUrl as! URL)
         
         self.present(serviceSafriView, animated: true, completion: nil)
-        
-        
+    }
+    
+    @objc func toPrivacy(sender: UITapGestureRecognizer){
+        let privacyURL = NSURL(string: "https://fluff-munchkin-8cc.notion.site/99ea54ae24564b289da492cc4b5d7c61")
+        let privacySafriView: SFSafariViewController = SFSafariViewController(url: privacyURL as! URL)
+        self.present(privacySafriView, animated: true, completion: nil)
     }
     
     func naviagationBar(){
