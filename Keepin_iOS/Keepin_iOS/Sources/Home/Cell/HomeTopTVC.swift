@@ -16,6 +16,9 @@ class HomeTopTVC: UITableViewCell {
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var randomImageView: UIImageView!
+    @IBOutlet weak var emptyLabel: UILabel!
+    @IBOutlet weak var emptyBgView: UIView!
+    @IBOutlet weak var emptyImageView: UIImageView!
     
     @IBOutlet weak var randomImageHeight: NSLayoutConstraint!
     
@@ -41,9 +44,13 @@ class HomeTopTVC: UITableViewCell {
         welcomeLabel.attributedText = attributedStr
     
         // 랜덤이미지, 랜덤타이틀 UI
-        randomImageView.image = UIImage(named: "imgEmptyEyes")
+        //randomImageView.image = UIImage(named: "imgEmptyEyes")
         messageLabel.text = ""
         messageLabel.font = UIFont.GmarketSansTTF(.medium, size: 14)
         messageLabel.textColor = .keepinGray5
+        
+        emptyLabel.font = UIFont.GmarketSansTTF(.medium, size: 14)
+        emptyLabel.textColor = .keepinGray3
+        emptyBgView.backgroundColor = .keepinGray1
     }
 }
