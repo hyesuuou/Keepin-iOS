@@ -69,14 +69,19 @@ class KeepinPlusMainVC: UIViewController {
     @IBOutlet weak var keyboardView: UIView!
     @IBOutlet weak var keyboardViewHeight: NSLayoutConstraint!
     
+    
+    
     // MARK:- View Life Cycle
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         setNavigationBarUI()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        KeepinPlusMainVC.numberList = [0, 0, 0, 0, 0, 0, 0, 0]
+        print("viewDidLoad 실행")
         setUI()
         imageAddButton.addTarget(self, action: #selector(showPicker), for: .touchUpInside)
         //self.view.addSubview(self.lottieView)

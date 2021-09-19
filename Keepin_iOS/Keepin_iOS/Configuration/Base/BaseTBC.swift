@@ -51,7 +51,7 @@ class BaseTBC: UITabBarController, UITabBarControllerDelegate {
             }
         
         if indexOfTab == 2 {
-            let keepinPlusNVC = UINavigationController(rootViewController: keepinPlusVC)
+            let keepinPlusNVC = UINavigationController(rootViewController: KeepinPlusMainVC())
             keepinPlusNVC.modalPresentationStyle = .overFullScreen
             present(keepinPlusNVC, animated: true, completion: nil)
                 return false
