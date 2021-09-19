@@ -16,6 +16,7 @@ class HomeTopSingleTVC: UITableViewCell {
     @IBOutlet weak var reminderButton: UIButton!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentsLabel: UILabel!
+    @IBOutlet weak var label: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,18 +32,8 @@ class HomeTopSingleTVC: UITableViewCell {
     func setUI(){
         titleLabel.font = UIFont.GmarketSansTTF(.medium, size: 16)
         backView.backgroundColor = .keepinGray
-        dateLabel.font = UIFont.NotoSans(.regular, size: 12)
-        contentsLabel.font = UIFont.GmarketSansTTF(.medium, size: 14)
-    }
-    func setData(date: String, content: String, important: Bool){
-        dateLabel.text = date
-        contentsLabel.text = content
-        if important  == false {
-            reminderButton.setImage(UIImage(named: "listReminderHome"), for: .normal)
-        }
-        else {
-            reminderButton.setImage(UIImage(named: "listReminderHomeImp"), for: .normal)
-        }
+        label.font = UIFont.GmarketSansTTF(.medium, size: 14)
+        label.textColor = .keepinGray3
     }
 
 }

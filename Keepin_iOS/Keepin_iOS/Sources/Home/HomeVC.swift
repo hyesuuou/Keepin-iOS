@@ -128,16 +128,29 @@ extension HomeVC : UITableViewDataSource {
             return cell
             
         case 2:
-            if UIScreen.main.bounds.height == 667.0 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTopSingleTVC.identifier, for: indexPath) as? HomeTopSingleTVC else {
+            
+            if reminderList.count == 0 {
+                /// emptyview 필요
+                guard let emptyCell = tableView.dequeueReusableCell(withIdentifier: HomeTopSingleTVC.identifier, for: indexPath) as? HomeTopSingleTVC else {
+                    return UITableViewCell()
+                }
+                return emptyCell
+            }
+            else if reminderList.count == 1 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeEventTVC.identifier, for: indexPath) as? HomeEventTVC else {
                     return UITableViewCell()
                 }
                 cell.setData(date: reminderList[0].date,
-                             content: reminderList[0].title,
-                             important: reminderList[0].isImportant)
+                             contents: reminderList[0].title,
+                             important: reminderList[0].isImportant,
+                             secondDate: "",
+                             secondContents: "",
+                             secondImportant: false,
+                             safeAreaHeight: self.view.safeAreaLayoutGuide.layoutFrame.height
+                )
                 return cell
-                
-            } else {
+            }
+            else {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeEventTVC.identifier, for: indexPath) as? HomeEventTVC else {
                     return UITableViewCell()
                 }
@@ -148,10 +161,10 @@ extension HomeVC : UITableViewDataSource {
                              secondContents: reminderList[1].title,
                              secondImportant: reminderList[1].isImportant,
                              safeAreaHeight: self.view.safeAreaLayoutGuide.layoutFrame.height
-                             )
-                
+                )
                 return cell
             }
+            
         default:
             return UITableViewCell()
         }
@@ -160,28 +173,20 @@ extension HomeVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            if UIScreen.main.bounds.height == 667.0 {
-                return 50
-            }
-            else {
-                return self.view.safeAreaLayoutGuide.layoutFrame.height * (50/688)
-            }
+            
+            return self.view.safeAreaLayoutGuide.layoutFrame.height * (50/688)
+            
             
         case 1:
-            if UIScreen.main.bounds.height == 667.0 {
-                return 417
-            }
-            else {
-                return self.view.safeAreaLayoutGuide.layoutFrame.height * (436/688)
-            }
+            
+            
+            return self.view.safeAreaLayoutGuide.layoutFrame.height * (436/688)
+            
             
         case 2:
-            if UIScreen.main.bounds.height == 667.0 {
-                return 133
-            }
-            else {
-                return self.view.safeAreaLayoutGuide.layoutFrame.height * (202/688)
-            }
+            
+            return self.view.safeAreaLayoutGuide.layoutFrame.height * (202/688)
+            
             
         default:
             return 100
