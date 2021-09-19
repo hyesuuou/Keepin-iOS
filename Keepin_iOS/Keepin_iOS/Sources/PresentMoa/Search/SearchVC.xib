@@ -16,9 +16,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
                 <outlet property="categoryView" destination="S2V-gK-kpO" id="XqA-9n-m9i"/>
+                <outlet property="noSearch" destination="kpU-ye-JWU" id="2gh-xv-RVP"/>
+                <outlet property="noSearchView" destination="wPs-ek-taZ" id="2dl-u7-bIZ"/>
                 <outlet property="searchBar" destination="lOD-ST-IVJ" id="KFl-gp-ntc"/>
                 <outlet property="searchBarDivider" destination="iZY-TP-oGI" id="bhi-PA-qDX"/>
                 <outlet property="searchResultCV" destination="5H4-Ta-3e0" id="LAf-iN-wlh"/>
+                <outlet property="stackview" destination="aV7-4U-Q6s" id="CWK-yA-bBZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="categoryButton" destination="vOp-8q-Mcw" collectionClass="NSMutableArray" id="1E4-Xo-QFD"/>
                 <outletCollection property="categoryButton" destination="wfJ-1I-kli" collectionClass="NSMutableArray" id="Mmq-BE-EhH"/>
@@ -36,11 +39,32 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <searchBar contentMode="redraw" placeholder="검색어를 입력해주세요." translatesAutoresizingMaskIntoConstraints="NO" id="lOD-ST-IVJ">
-                    <rect key="frame" x="8" y="98" width="359" height="8"/>
+                    <rect key="frame" x="8" y="98" width="359" height="9"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPs-ek-taZ">
+                    <rect key="frame" x="0.0" y="107" width="375" height="622"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgEmptyEyes" translatesAutoresizingMaskIntoConstraints="NO" id="mhU-Ei-Hfk">
+                            <rect key="frame" x="47" y="243.66666666666669" width="281" height="135"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색 결과가 없어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpU-ye-JWU">
+                            <rect key="frame" x="128" y="410.66666666666663" width="119.33333333333331" height="14.333333333333314"/>
+                            <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="kpU-ye-JWU" firstAttribute="centerX" secondItem="wPs-ek-taZ" secondAttribute="centerX" id="8wM-y3-Mw8"/>
+                        <constraint firstItem="mhU-Ei-Hfk" firstAttribute="centerX" secondItem="wPs-ek-taZ" secondAttribute="centerX" id="NOx-x3-TW8"/>
+                        <constraint firstItem="kpU-ye-JWU" firstAttribute="top" secondItem="mhU-Ei-Hfk" secondAttribute="bottom" constant="32" id="Qng-ED-C0t"/>
+                        <constraint firstItem="mhU-Ei-Hfk" firstAttribute="centerY" secondItem="wPs-ek-taZ" secondAttribute="centerY" id="yDD-1y-Xq2"/>
+                    </constraints>
+                </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lineSearchDefault" translatesAutoresizingMaskIntoConstraints="NO" id="iZY-TP-oGI">
-                    <rect key="frame" x="16" y="96" width="343" height="1"/>
+                    <rect key="frame" x="16" y="97" width="343" height="0.0"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aV7-4U-Q6s">
                     <rect key="frame" x="16" y="97" width="343" height="632"/>
@@ -165,14 +189,18 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aV7-4U-Q6s" secondAttribute="trailing" constant="16" id="1A2-j9-ME1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="aV7-4U-Q6s" secondAttribute="bottom" id="ACT-RR-6Uc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wPs-ek-taZ" secondAttribute="trailing" id="O8f-zv-myD"/>
                 <constraint firstItem="lOD-ST-IVJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="Ubd-C8-RWH"/>
                 <constraint firstItem="iZY-TP-oGI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aSt-ux-aLB"/>
                 <constraint firstItem="lOD-ST-IVJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="alh-Q5-hZO"/>
                 <constraint firstItem="lOD-ST-IVJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bGW-Me-RLG"/>
                 <constraint firstItem="aV7-4U-Q6s" firstAttribute="top" secondItem="iZY-TP-oGI" secondAttribute="bottom" id="fhC-2P-uh2"/>
+                <constraint firstItem="wPs-ek-taZ" firstAttribute="top" secondItem="lOD-ST-IVJ" secondAttribute="bottom" id="gUE-OM-y91"/>
                 <constraint firstItem="iZY-TP-oGI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="oD2-zG-A98"/>
                 <constraint firstItem="iZY-TP-oGI" firstAttribute="top" secondItem="lOD-ST-IVJ" secondAttribute="bottom" constant="-10" id="sO5-Uz-5oZ"/>
                 <constraint firstItem="aV7-4U-Q6s" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="sVF-Fq-Cwd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wPs-ek-taZ" secondAttribute="bottom" id="tDZ-lk-XQs"/>
+                <constraint firstItem="wPs-ek-taZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zpg-fx-OXU"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -188,6 +216,7 @@
         <image name="icCateEtc" width="77" height="37"/>
         <image name="icCateSurprise" width="77" height="37"/>
         <image name="icCateThanks" width="77" height="37"/>
+        <image name="imgEmptyEyes" width="281" height="135"/>
         <image name="lineSearchDefault" width="344" height="1"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

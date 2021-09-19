@@ -14,6 +14,9 @@ class SearchVC: UIViewController {
     @IBOutlet weak var categoryView: UIView!
     @IBOutlet var categoryButton: [UIButton]!
     @IBOutlet weak var searchResultCV: UICollectionView!
+    @IBOutlet weak var noSearchView: UIView!
+    @IBOutlet weak var noSearch: UILabel!
+    @IBOutlet weak var stackview: UIStackView!
     
     //MARK: - IBActions
     @IBAction func categoryButtonClicked(_ sender: UIButton) {
@@ -54,6 +57,7 @@ class SearchVC: UIViewController {
     var presentList : [Keepin?] = []
     var filteredData: [Keepin?] = []
     var serverData : Keepins?
+    var load : Bool = true
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
@@ -67,6 +71,10 @@ class SearchVC: UIViewController {
         searchResultCV.register(PresentMoaCVC.nib(), forCellWithReuseIdentifier: "PresentMoaCVC")
         searchResultCV.delegate = self
         searchResultCV.dataSource = self
+        
+        stackview.isHidden = false
+        noSearch.textColor = .keepinGray3
+        load = false
     }
 
     //MARK: - Custom Methods
@@ -124,7 +132,14 @@ extension SearchVC : UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return filteredData.count
+        if filteredData.isEmpty && load{
+            stackview.isHidden = true
+            return 0
+        }
+        else{
+            stackview.isHidden = false
+            return filteredData.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -162,11 +177,14 @@ extension SearchVC : UISearchBarDelegate{
         
         filteredData = []
         if searchBar.text == ""{
+            load = false
             glassIcon.tintColor = .keepinGray3
+            stackview.isHidden = false
             categoryView.isHidden = false
             searchBarDivider.image = UIImage(named: "lineSearchDefault")
         }
         else{
+            load = true
             for present in presentList
             {
                 if ((present?.title?.contains(searchText)) == true)
