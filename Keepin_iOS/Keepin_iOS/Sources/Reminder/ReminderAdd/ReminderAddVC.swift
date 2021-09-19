@@ -102,7 +102,7 @@ class ReminderAddVC: UIViewController {
         remindLabel.isUserInteractionEnabled = true
         
         dateLabel.text = Date().toString()
-        remindLabel.text = "당일"
+        remindLabel.text = "당일 "
         
         let dateTapGesture = UITapGestureRecognizer(target:self,action:#selector(dateTap))
         dateLabel.addGestureRecognizer(dateTapGesture)
@@ -117,22 +117,20 @@ class ReminderAddVC: UIViewController {
     //MARK: - @objc Methods
     @objc func toDone(){
         var days : String? = nil
-        if remindSwitch.isOn{
-            if remindLabel.text == "당일"{
-                days = "0"
-            }
-            else if remindLabel.text == "1일 전 "{
-                days = "1"
-            }
-            else if remindLabel.text == "2일 전 "{
-                days = "2"
-            }
-            else if remindLabel.text == "3일 전 "{
-                days = "3"
-            }
-            else if remindLabel.text == "1주일 전 "{
-                days = "7"
-            }
+        if remindLabel.text == "당일 "{
+            days = "0"
+        }
+        else if remindLabel.text == "1일 전 "{
+            days = "1"
+        }
+        else if remindLabel.text == "2일 전 "{
+            days = "2"
+        }
+        else if remindLabel.text == "3일 전 "{
+            days = "3"
+        }
+        else if remindLabel.text == "1주일 전 "{
+            days = "7"
         }
         
         let newDate = dateLabel.text!.replacingOccurrences(of: ".", with: "-", options: .literal, range: nil)
@@ -142,16 +140,10 @@ class ReminderAddVC: UIViewController {
             //이벤트가 수정되었습니다
             ReminderDetailDataManager().reminderEdit(ReminderAddVC.reminderID, modified: request, viewController: self)
             //수정 서버 통신
-            self.presentAlert(title: "", message: "수정이 완료되었습니다", isCancelActionIncluded: true) { action in
-                self.dismiss(animated: true, completion: nil)
-            }
         }
         else{
             ReminderDetailDataManager().reminderAdd(request, viewController: self)
             //리마인더 등록 서버 통신
-            self.presentAlert(title: "", message: "이벤트가 등록되었습니다", isCancelActionIncluded: false) { action in
-                    self.dismiss(animated: true, completion: nil)
-            }
         }
     }
     
@@ -238,7 +230,7 @@ extension ReminderAddVC {
         
         if days != nil{
             if days == "0"{
-                remindLabel.text = "당일"
+                remindLabel.text = "당일 "
             }
             else if days == "7"{
                 remindLabel.text = "1주일 전 "
