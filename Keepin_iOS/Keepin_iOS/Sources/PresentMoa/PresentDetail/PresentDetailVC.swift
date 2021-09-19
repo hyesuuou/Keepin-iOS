@@ -173,7 +173,12 @@ extension PresentDetailVC {
         presentDetailCV.reloadData()
         
         friendCount = (serverData?.friends.count)!
-        fromWho = (serverData?.friends[0]?.name)! + "님 외 " + String(friendCount) + "명"
+        if friendCount == 1{
+            fromWho = (serverData?.friends[0]?.name)! + "님"
+        }
+        else{
+            fromWho = (serverData?.friends[0]?.name)! + "님 외 " + String(friendCount-1) + "명"
+        }
         
         if ((serverData?.taken) == true){
             presentFrom.text = "\(fromWho)에게 받은 선물"
