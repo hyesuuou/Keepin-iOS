@@ -38,13 +38,14 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var upcomingTV: UITableView!
     @IBOutlet weak var upcomingView: UIView!
     @IBOutlet weak var noUpcomingView: UIView!
-    @IBOutlet weak var noUpcoming: UILabel!
     @IBOutlet weak var pastTV: UITableView!
     @IBOutlet weak var pastView: UIView!
-    @IBOutlet weak var noPast: UILabel!
     @IBOutlet weak var noPastView: UIView!
     @IBOutlet weak var viewHeight: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet var emptyLabels: [UILabel]!
     
     var serverData : MonthReminders?
     var upcomingData : [MonthReminder] = []
@@ -209,9 +210,12 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
         pastView.backgroundColor = .keepinGray
         viewHeight.constant = 0
         noUpcomingView.backgroundColor = .keepinGray
-        noUpcoming.textColor = .keepinGray3
         noPastView.backgroundColor = .keepinGray
-        noPast.textColor = .keepinGray3
+        emptyView.backgroundColor = .keepinGray
+        emptyLabels.forEach{
+            $0.textColor = .keepinGray3
+        }
+        
 //        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
 //        tapGesture.delegate = self
 //        pastView.addGestureRecognizer(tapGesture)
@@ -243,13 +247,16 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     }
 
     private func noCheck(){
-        if upcomingData.count == 0{
+        if upcomingData.isEmpty{
             upcomingTV.isHidden = true
-            noUpcoming.text = "다가오는 이벤트가 없습니다."
+            emptyLabels[1].text = "다가오는 이벤트가 없습니다."
         }
-        if pastData.count == 0{
+        if pastData.isEmpty{
             pastTV.isHidden = true
-            noPast.text = "지난 이벤트가 없습니다."
+            emptyLabels[2].text = "지난 이벤트가 없습니다."
+        }
+        if pastData.isEmpty && upcomingData.isEmpty{
+            stackView.isHidden = true
         }
     }
     
@@ -260,8 +267,11 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     override func prepareForReuse() {
         upcomingView.isHidden = false
         pastView.isHidden = false
+        
         upcomingTV.isHidden = false
         pastTV.isHidden = false
+        
+        stackView.isHidden = false
         viewHeight.constant = 0
         upcomingData = []
         pastData = []

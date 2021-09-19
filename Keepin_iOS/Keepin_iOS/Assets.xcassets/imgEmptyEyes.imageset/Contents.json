@@ -1,14 +1,14 @@
 {
   "images" : [
     {
-      "filename" : "imgEmptyEyes.png",
       "idiom" : "universal",
+      "filename" : "imgEmptyEyes.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "filename" : "imgEmptyEyes@2x.png",
       "scale" : "2x",
-      "filename" : "imgEmptyEyes@2x.png"
+      "idiom" : "universal"
     },
     {
       "scale" : "3x",
