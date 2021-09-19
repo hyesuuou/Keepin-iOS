@@ -69,7 +69,9 @@ struct KeepinAddService {
                 print(err)
                 return
             }
-            print("success")        //응답 성공
+            print("success")
+            NotificationCenter.default.post(name: NSNotification.Name("keepinMoaReload")
+                            ,object: nil) //응답 성공
         })
     }
 }

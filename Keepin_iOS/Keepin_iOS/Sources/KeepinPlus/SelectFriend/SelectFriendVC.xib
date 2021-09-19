@@ -78,6 +78,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAK-eb-iLx">
                                         <rect key="frame" x="290" y="22" width="99" height="30"/>
                                         <state key="normal" title="새 친구 등록하기"/>
+                                        <connections>
+                                            <action selector="newFriendButtonClicked:" destination="-1" eventType="touchUpInside" id="LeZ-ec-G5K"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

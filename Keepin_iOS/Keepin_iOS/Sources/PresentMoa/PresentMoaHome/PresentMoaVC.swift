@@ -90,6 +90,11 @@ class PresentMoaVC: UIViewController {
         let deviceWidth = (UIScreen.main.bounds.width - 40)-2
         layout.itemSize = CGSize(width: deviceWidth/2, height: 228)
         presentCV.collectionViewLayout = layout
+        
+        NotificationCenter.default.addObserver(self,
+                            selector: #selector(pageReload),
+                                        name: Notification.Name("keepinMoaReload"),
+                                            object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -141,6 +146,10 @@ class PresentMoaVC: UIViewController {
         self.present(navBarOnModal, animated: true, completion: nil)
     }
     
+    @objc func pageReload(notification: NSNotification){
+        print("pageReload")
+        self.presentCV.reloadData()
+    }
     
 
 }
