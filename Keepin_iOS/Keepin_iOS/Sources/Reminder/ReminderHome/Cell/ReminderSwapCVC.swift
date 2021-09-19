@@ -37,10 +37,15 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var upcomingTV: UITableView!
     @IBOutlet weak var upcomingView: UIView!
+    @IBOutlet weak var noUpcomingView: UIView!
     @IBOutlet weak var pastTV: UITableView!
     @IBOutlet weak var pastView: UIView!
+    @IBOutlet weak var noPastView: UIView!
     @IBOutlet weak var viewHeight: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet var emptyLabels: [UILabel]!
     
     var serverData : MonthReminders?
     var upcomingData : [MonthReminder] = []
@@ -169,6 +174,7 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
                 indexSet.add(indexPath.section)
                 tableView.deleteSections(indexSet as IndexSet, with: .fade)
                 upcomingTV.endUpdates()
+                noCheck()
             }
         }
             else{
@@ -186,6 +192,7 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
                 indexSet.add(indexPath.section)
                 tableView.deleteSections(indexSet as IndexSet, with: .fade)
                 pastTV.endUpdates()
+                noCheck()
             }
         }
             
@@ -202,6 +209,12 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
         upcomingView.backgroundColor = .keepinGray
         pastView.backgroundColor = .keepinGray
         viewHeight.constant = 0
+        noUpcomingView.backgroundColor = .keepinGray
+        noPastView.backgroundColor = .keepinGray
+        emptyView.backgroundColor = .keepinGray
+        emptyLabels.forEach{
+            $0.textColor = .keepinGray3
+        }
         
 //        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
 //        tapGesture.delegate = self
@@ -230,10 +243,23 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
         upcomingTV.separatorStyle = .none
         
         pastTV.backgroundColor = .keepinGray
-//        upcomingTV.contentInset.bottom = 50
         pastTV.separatorStyle = .none
     }
 
+    private func noCheck(){
+        if upcomingData.isEmpty{
+            upcomingTV.isHidden = true
+            emptyLabels[1].text = "다가오는 이벤트가 없습니다."
+        }
+        if pastData.isEmpty{
+            pastTV.isHidden = true
+            emptyLabels[2].text = "지난 이벤트가 없습니다."
+        }
+        if pastData.isEmpty && upcomingData.isEmpty{
+            stackView.isHidden = true
+        }
+    }
+    
     static func nib() -> UINib{
         return UINib(nibName: "ReminderSwapCVC", bundle: nil)
     }
@@ -241,6 +267,11 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     override func prepareForReuse() {
         upcomingView.isHidden = false
         pastView.isHidden = false
+        
+        upcomingTV.isHidden = false
+        pastTV.isHidden = false
+        
+        stackView.isHidden = false
         viewHeight.constant = 0
         upcomingData = []
         pastData = []
@@ -263,6 +294,7 @@ extension ReminderSwapCVC {
             }
         }
         
+        noCheck()
         upcomingTV.reloadData()
         pastTV.reloadData()
     }
