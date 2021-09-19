@@ -306,6 +306,11 @@ extension ReminderVC: tableviewTouchCVC{
         let request = ReminderAlarmRequest(isAlarm: data.isAlarm!)
         ReminderHomeDataManager().reminderAlarm(request, reminderID: data._id!)
     }
+    func presentEdit(data: MonthReminder) {
+        let ReminderAddNVC = UINavigationController(rootViewController: ReminderAddVC()) 
+        ReminderAddNVC.modalPresentationStyle = .fullScreen
+        self.present(ReminderAddNVC, animated: true, completion: nil)
+    }
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource

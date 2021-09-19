@@ -18,7 +18,6 @@ class ReminderDetailDataManager {
                 switch response.result {
                 case .success(let response):
                     viewController.serverData = response.data!
-                    print(response.data!) 
                     viewController.didSuccessReminderDetail(message: response.message!)
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -36,8 +35,14 @@ class ReminderDetailDataManager {
                 switch response.result {
                 case .success(let response):
                     print(response.message!)
+                    viewController.presentAlert(title: "", message: "수정이 완료되었습니다", isCancelActionIncluded: true) { action in
+                        viewController.dismiss(animated: true, completion: nil)
+                    }
                 case .failure(let error):
                     print(error.localizedDescription)
+                    viewController.presentAlert(title: "", message: "수정에 실패했습니다", isCancelActionIncluded: true) { action in
+                        viewController.dismiss(animated: true, completion: nil)
+                    }
                 }
             }
     }
@@ -50,8 +55,14 @@ class ReminderDetailDataManager {
                 switch response.result {
                 case .success(let response):
                     print(response.message!)
+                    viewController.presentAlert(title: "", message: "이벤트가 등록되었습니다", isCancelActionIncluded: false) { action in
+                        viewController.dismiss(animated: true, completion: nil)
+                    }
                 case .failure(let error):
                     print(error.localizedDescription)
+                    viewController.presentAlert(title: "", message: "이벤트 등록에 실패했습니다", isCancelActionIncluded: false) { action in
+                        viewController.dismiss(animated: true, completion: nil)
+                    }
                 }
             }
     }
