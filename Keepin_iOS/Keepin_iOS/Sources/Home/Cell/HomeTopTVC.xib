@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -31,35 +32,67 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgEmptyEyes" translatesAutoresizingMaskIntoConstraints="NO" id="5nN-FD-dwO">
-                        <rect key="frame" x="0.0" y="89" width="402" height="280"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="280" id="HO9-oS-3Vi"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSm-Xs-RnI">
-                        <rect key="frame" x="16" y="385" width="370" height="21"/>
+                        <rect key="frame" x="16" y="383" width="370" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppW-E5-0RD">
+                        <rect key="frame" x="0.0" y="89" width="402" height="280"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgEmptyEyes" translatesAutoresizingMaskIntoConstraints="NO" id="AYi-0w-0z2">
+                                <rect key="frame" x="40" y="53" width="322" height="135"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" id="bjR-81-4sM"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="키핀한 선물을 랜덤으로 보여드려요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kT9-R2-4zt">
+                                <rect key="frame" x="10" y="220" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5nN-FD-dwO">
+                                <rect key="frame" x="0.0" y="0.0" width="402" height="280"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="AYi-0w-0z2" firstAttribute="leading" secondItem="ppW-E5-0RD" secondAttribute="leading" constant="40" id="0h7-mc-R1a"/>
+                            <constraint firstAttribute="height" constant="280" id="6Sf-8B-1k7"/>
+                            <constraint firstItem="5nN-FD-dwO" firstAttribute="leading" secondItem="ppW-E5-0RD" secondAttribute="leading" id="Oe7-uF-8mO"/>
+                            <constraint firstAttribute="trailing" secondItem="kT9-R2-4zt" secondAttribute="trailing" constant="10" id="UhB-Fr-e1H"/>
+                            <constraint firstAttribute="trailing" secondItem="AYi-0w-0z2" secondAttribute="trailing" constant="40" id="W5U-KK-7jd"/>
+                            <constraint firstItem="kT9-R2-4zt" firstAttribute="leading" secondItem="ppW-E5-0RD" secondAttribute="leading" constant="10" id="bKS-0D-mbN"/>
+                            <constraint firstAttribute="bottom" secondItem="5nN-FD-dwO" secondAttribute="bottom" id="gJC-KZ-Vzi"/>
+                            <constraint firstAttribute="trailing" secondItem="5nN-FD-dwO" secondAttribute="trailing" id="ixs-Sb-N7d"/>
+                            <constraint firstItem="AYi-0w-0z2" firstAttribute="top" secondItem="ppW-E5-0RD" secondAttribute="top" constant="53" id="lpo-ZU-hpl"/>
+                            <constraint firstItem="5nN-FD-dwO" firstAttribute="top" secondItem="ppW-E5-0RD" secondAttribute="top" id="oas-P9-PTP"/>
+                            <constraint firstItem="kT9-R2-4zt" firstAttribute="top" secondItem="AYi-0w-0z2" secondAttribute="bottom" constant="32" id="v6O-hi-PY0"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="5nN-FD-dwO" secondAttribute="trailing" id="00X-NE-bfI"/>
                     <constraint firstAttribute="trailing" secondItem="CSm-Xs-RnI" secondAttribute="trailing" constant="16" id="0Ts-Zu-E2o"/>
                     <constraint firstItem="CSm-Xs-RnI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="2F0-AW-Fb7"/>
-                    <constraint firstItem="5nN-FD-dwO" firstAttribute="top" secondItem="rvi-w0-7bR" secondAttribute="bottom" constant="29" id="L7h-sl-hzZ"/>
-                    <constraint firstItem="5nN-FD-dwO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="NSd-wM-taS"/>
+                    <constraint firstAttribute="trailing" secondItem="ppW-E5-0RD" secondAttribute="trailing" id="NO2-LQ-2V0"/>
+                    <constraint firstItem="ppW-E5-0RD" firstAttribute="top" secondItem="rvi-w0-7bR" secondAttribute="bottom" constant="29" id="VZ2-di-DYz"/>
                     <constraint firstItem="rvi-w0-7bR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Zu5-1R-ZC5"/>
                     <constraint firstItem="rvi-w0-7bR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="26" id="bbl-X8-Stj"/>
-                    <constraint firstItem="CSm-Xs-RnI" firstAttribute="top" secondItem="5nN-FD-dwO" secondAttribute="bottom" constant="16" id="buJ-9D-Rsd"/>
+                    <constraint firstItem="CSm-Xs-RnI" firstAttribute="top" secondItem="ppW-E5-0RD" secondAttribute="bottom" constant="14" id="df8-65-r0V"/>
+                    <constraint firstItem="ppW-E5-0RD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="g0m-pE-TWQ"/>
                     <constraint firstAttribute="trailing" secondItem="rvi-w0-7bR" secondAttribute="trailing" constant="26" id="h0B-mu-ybz"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="emptyBgView" destination="ppW-E5-0RD" id="XIa-t1-LYf"/>
+                <outlet property="emptyImageView" destination="AYi-0w-0z2" id="XZo-Kf-iKk"/>
+                <outlet property="emptyLabel" destination="kT9-R2-4zt" id="Zhh-K6-O8L"/>
                 <outlet property="messageLabel" destination="CSm-Xs-RnI" id="exo-S8-jTC"/>
-                <outlet property="randomImageHeight" destination="HO9-oS-3Vi" id="fX4-v8-w64"/>
+                <outlet property="randomImageHeight" destination="6Sf-8B-1k7" id="Luc-2s-V23"/>
                 <outlet property="randomImageView" destination="5nN-FD-dwO" id="Hrp-hh-y6f"/>
                 <outlet property="welcomeLabel" destination="rvi-w0-7bR" id="erz-mK-595"/>
             </connections>
@@ -68,5 +101,8 @@
     </objects>
     <resources>
         <image name="imgEmptyEyes" width="281" height="135"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

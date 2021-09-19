@@ -14,7 +14,7 @@ import Foundation
 struct HomeResponse: Codable {
     let status: Int
     let message: String
-    let data: DataClass
+    let data: DataClass?
 }
 
 // MARK: - DataClass

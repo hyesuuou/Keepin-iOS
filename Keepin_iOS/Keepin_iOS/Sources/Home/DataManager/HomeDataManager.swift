@@ -11,13 +11,18 @@ import Foundation
 class HomeDataManager {
     func getRandom(_ viewController: HomeVC){
         AF.request("\(Constant.BASE_URL)/random", method: .get, parameters: nil, headers: Constant.HEADER)
-            .validate()
+            .validate(statusCode: 200..<500)
             .responseDecodable(of: HomeResponse.self){ response in
                 switch response.result {
                 case .success(let response):
-                    let title = response.data.title
-                    let imgURL = response.data.photo
-                    viewController.didSuccessGetRandom(message: title, imgURL: imgURL)
+                    if response.status == 200 {
+                        let title = response.data!.title
+                        let imgURL = response.data!.photo
+                        viewController.didSuccessGetRandom(message: title, imgURL: imgURL)
+                    }
+                    else {
+                        viewController.didSuccessGetRandom(message: "", imgURL: "")
+                    }
                     
                 case .failure(let error):
                     print(error.localizedDescription)

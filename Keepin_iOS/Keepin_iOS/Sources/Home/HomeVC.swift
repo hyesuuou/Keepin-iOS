@@ -122,8 +122,20 @@ extension HomeVC : UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTopTVC.identifier, for: indexPath) as? HomeTopTVC else {
                 return UITableViewCell()
             }
-            cell.messageLabel.text = message
-            cell.randomImageView.setImage(with: image)
+            if image == "" {
+                cell.messageLabel.text = message
+                cell.randomImageView.isHidden = true
+                cell.emptyImageView.isHidden = false
+                cell.emptyLabel.isHidden = false
+            }
+            else {
+                cell.randomImageView.isHidden = false
+                cell.emptyLabel.isHidden = true
+                cell.emptyImageView.isHidden = true
+                cell.messageLabel.text = message
+                cell.randomImageView.setImage(with: image)
+            }
+            
             cell.randomImageHeight.constant = self.view.safeAreaLayoutGuide.layoutFrame.height * (280/688)
             return cell
             
