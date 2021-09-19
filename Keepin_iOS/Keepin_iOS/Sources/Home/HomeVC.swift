@@ -15,6 +15,7 @@ class HomeVC: UIViewController {
     var image : String = ""
     var reminderList : [Reminder] = []
     
+    
     // MARK: - 새로고침 Lottie View
     lazy var lottieView : AnimationView = {
         let animationView = AnimationView(name: "refresh")
@@ -90,7 +91,6 @@ class HomeVC: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){ // 1초
             HomeDataManager().getRandom(self)
             self.lottieView.isHidden = true
-            self.homeTableview.reloadData()
             refresh.endRefreshing()
         }
     }
@@ -127,6 +127,7 @@ extension HomeVC : UITableViewDataSource {
                 cell.randomImageView.isHidden = true
                 cell.emptyImageView.isHidden = false
                 cell.emptyLabel.isHidden = false
+                cell.setData()
             }
             else {
                 cell.randomImageView.isHidden = false
@@ -134,6 +135,7 @@ extension HomeVC : UITableViewDataSource {
                 cell.emptyImageView.isHidden = true
                 cell.messageLabel.text = message
                 cell.randomImageView.setImage(with: image)
+                cell.setData()
             }
             
             cell.randomImageHeight.constant = self.view.safeAreaLayoutGuide.layoutFrame.height * (280/688)
@@ -207,9 +209,7 @@ extension HomeVC : UITableViewDataSource {
 }
 
 extension HomeVC {
-    func didSuccessGetRandom(message: String, imgURL: String) {
-        self.message = message
-        self.image = imgURL
+    func didSuccessGetRandom() {
         homeTableview.delegate = self
         homeTableview.dataSource = self
         homeTableview.reloadData()

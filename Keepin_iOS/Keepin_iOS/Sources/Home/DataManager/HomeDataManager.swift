@@ -16,12 +16,18 @@ class HomeDataManager {
                 switch response.result {
                 case .success(let response):
                     if response.status == 200 {
-                        let title = response.data!.title
-                        let imgURL = response.data!.photo
-                        viewController.didSuccessGetRandom(message: title, imgURL: imgURL)
+                        viewController.message = response.data!.title
+                        viewController.image = response.data!.photo
+//                        let title = response.data!.title
+//                        let imgURL = response.data!.photo
+                        //viewController.didSuccessGetRandom(message: title, imgURL: imgURL)
+                        viewController.didSuccessGetRandom()
                     }
                     else {
-                        viewController.didSuccessGetRandom(message: "", imgURL: "")
+                        viewController.message = ""
+                        viewController.image = ""
+                        viewController.didSuccessGetRandom()
+                       // viewController.didSuccessGetRandom(message: "", imgURL: "")
                     }
                     
                 case .failure(let error):
