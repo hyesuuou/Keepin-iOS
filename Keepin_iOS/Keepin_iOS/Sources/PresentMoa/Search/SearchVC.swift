@@ -211,10 +211,12 @@ extension SearchVC {
         frame.size.height = self.searchResultCV.contentSize.height
         self.searchResultCV.frame = frame
 
-        let itemNum : Int = (self.serverData?.keepins.count)!
-        
-        for i in 0...itemNum-1{
-            presentList.append(serverData?.keepins[i])
+        //let itemNum : Int = (self.serverData?.keepins.count)!
+        guard let itemNum = self.serverData?.keepins.count else{ return }
+        if itemNum > 0{
+            for i in 0...itemNum-1{
+                presentList.append(serverData?.keepins[i])
+            }
         }
     }
     

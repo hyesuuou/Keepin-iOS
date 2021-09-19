@@ -19,12 +19,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PresentMoaVC" customModule="Keepin_iOS" customModuleProvider="target">
             <connections>
                 <outlet property="buttonStack" destination="ReN-9V-Tpx" id="gYI-RZ-wLX"/>
-                <outlet property="contentViewHeight" destination="xnG-m3-5s9" id="efR-dr-IKn"/>
+                <outlet property="contentViewHeight" destination="NJ9-3t-w1x" id="sbc-1d-EN5"/>
+                <outlet property="emptyView" destination="kRC-pg-mrF" id="Es8-RU-Ttg"/>
                 <outlet property="gave" destination="las-3g-Wes" id="H8j-mL-Rda"/>
                 <outlet property="got" destination="3em-jd-cQ0" id="uMf-qO-X5M"/>
                 <outlet property="indicatorBar" destination="dcK-Hy-MDd" id="2qZ-v2-OJx"/>
                 <outlet property="indicatorStart" destination="DHG-Vg-N66" id="zvQ-Q0-9V6"/>
                 <outlet property="newButton" destination="4dP-KJ-Lyh" id="UsB-uy-CnL"/>
+                <outlet property="noPresent" destination="68a-o9-kKQ" id="UiU-kp-u8W"/>
                 <outlet property="presentCV" destination="8cd-3U-Oaa" id="P3b-Ia-crv"/>
                 <outlet property="presentCVHeight" destination="VwT-WV-Duw" id="PU9-0A-hSw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -55,6 +57,27 @@
                                         <action selector="newButtonClicked:" destination="-1" eventType="touchUpInside" id="QM9-gY-EIA"/>
                                     </connections>
                                 </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRC-pg-mrF">
+                                    <rect key="frame" x="0.0" y="100" width="375" height="900"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="Hkm-gA-fw7">
+                                            <rect key="frame" x="47" y="382.66666666666663" width="281" height="135"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 키핀한 선물이 없어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68a-o9-kKQ">
+                                            <rect key="frame" x="105.66666666666667" y="549.66666666666663" width="163.66666666666663" height="14.333333333333371"/>
+                                            <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Hkm-gA-fw7" firstAttribute="centerY" secondItem="kRC-pg-mrF" secondAttribute="centerY" id="1uh-dW-Pxa"/>
+                                        <constraint firstItem="68a-o9-kKQ" firstAttribute="centerX" secondItem="kRC-pg-mrF" secondAttribute="centerX" id="Ura-wa-faL"/>
+                                        <constraint firstItem="Hkm-gA-fw7" firstAttribute="centerX" secondItem="kRC-pg-mrF" secondAttribute="centerX" id="VWI-D0-eSv"/>
+                                        <constraint firstItem="68a-o9-kKQ" firstAttribute="top" secondItem="Hkm-gA-fw7" secondAttribute="bottom" constant="32" id="jia-KF-idA"/>
+                                    </constraints>
+                                </view>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8cd-3U-Oaa">
                                     <rect key="frame" x="16" y="100" width="343" height="920"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -102,20 +125,24 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstAttribute="bottom" secondItem="kRC-pg-mrF" secondAttribute="bottom" id="0d1-Tm-QEC"/>
                                 <constraint firstItem="bs4-E5-XY0" firstAttribute="top" secondItem="8nR-u6-WQQ" secondAttribute="top" id="17w-8v-qio"/>
                                 <constraint firstItem="dcK-Hy-MDd" firstAttribute="leading" secondItem="8nR-u6-WQQ" secondAttribute="leading" constant="29" id="DHG-Vg-N66"/>
                                 <constraint firstAttribute="trailing" secondItem="4dP-KJ-Lyh" secondAttribute="trailing" constant="24" id="FTH-bq-EC2"/>
                                 <constraint firstItem="bs4-E5-XY0" firstAttribute="leading" secondItem="8nR-u6-WQQ" secondAttribute="leading" constant="24" id="GhP-jg-Vzn"/>
                                 <constraint firstItem="ReN-9V-Tpx" firstAttribute="top" secondItem="bs4-E5-XY0" secondAttribute="bottom" constant="26" id="IsI-Rd-f90"/>
+                                <constraint firstAttribute="height" constant="1000" id="NJ9-3t-w1x"/>
                                 <constraint firstAttribute="trailing" secondItem="8cd-3U-Oaa" secondAttribute="trailing" constant="16" id="Nsi-Az-wOC"/>
                                 <constraint firstItem="8cd-3U-Oaa" firstAttribute="top" secondItem="4dP-KJ-Lyh" secondAttribute="bottom" constant="23" id="XGZ-8v-qA8"/>
                                 <constraint firstItem="8cd-3U-Oaa" firstAttribute="leading" secondItem="8nR-u6-WQQ" secondAttribute="leading" constant="16" id="YjU-kF-PRr"/>
+                                <constraint firstAttribute="trailing" secondItem="kRC-pg-mrF" secondAttribute="trailing" id="ZTI-4c-JDX"/>
+                                <constraint firstItem="kRC-pg-mrF" firstAttribute="leading" secondItem="8nR-u6-WQQ" secondAttribute="leading" id="cx4-6r-FsL"/>
                                 <constraint firstItem="4dP-KJ-Lyh" firstAttribute="top" secondItem="bs4-E5-XY0" secondAttribute="bottom" constant="30" id="ogW-qu-EK7"/>
+                                <constraint firstItem="kRC-pg-mrF" firstAttribute="top" secondItem="4dP-KJ-Lyh" secondAttribute="bottom" constant="23" id="p0i-zN-Nog"/>
                                 <constraint firstItem="dcK-Hy-MDd" firstAttribute="top" secondItem="ReN-9V-Tpx" secondAttribute="bottom" id="q6l-3r-f9H"/>
                                 <constraint firstItem="ReN-9V-Tpx" firstAttribute="leading" secondItem="8nR-u6-WQQ" secondAttribute="leading" constant="23" id="qDo-3q-1rK"/>
-                                <constraint firstAttribute="height" constant="1000" id="xnG-m3-5s9"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -144,6 +171,7 @@
     <resources>
         <image name="icNew" width="59" height="27"/>
         <image name="icOld" width="72" height="27"/>
+        <image name="imgEmpty" width="281" height="135"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
