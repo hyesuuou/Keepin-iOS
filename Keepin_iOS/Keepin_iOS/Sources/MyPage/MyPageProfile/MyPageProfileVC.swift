@@ -7,8 +7,9 @@
 
 import UIKit
 import SafariServices
+import MessageUI
 
-class MyPageProfileVC: UIViewController {
+class MyPageProfileVC: UIViewController, MFMailComposeViewControllerDelegate {
     
     var serverData: ProfileData?
 
@@ -69,6 +70,9 @@ class MyPageProfileVC: UIViewController {
         let gesture6 = UITapGestureRecognizer(target: self, action: #selector(toPrivacy(sender:)))
         KeepinInfo[1].addGestureRecognizer(gesture6)
         
+        let gesture7 = UITapGestureRecognizer(target: self, action: #selector(toMail(sender:)))
+        KeepinInfo[2].addGestureRecognizer(gesture7)
+        
     }
     
     func setText(){
@@ -125,6 +129,39 @@ class MyPageProfileVC: UIViewController {
         let privacyURL = NSURL(string: "https://fluff-munchkin-8cc.notion.site/99ea54ae24564b289da492cc4b5d7c61")
         let privacySafriView: SFSafariViewController = SFSafariViewController(url: privacyURL as! URL)
         self.present(privacySafriView, animated: true, completion: nil)
+    }
+    
+    @objc func toMail(sender: UITapGestureRecognizer) {
+       
+        if MFMailComposeViewController.canSendMail(){
+            let emailVC = MFMailComposeViewController()
+            emailVC.mailComposeDelegate = self
+            
+            emailVC.setToRecipients(["keepinofficial@gmail.com"])
+            emailVC.setSubject("메세지 제목")
+            emailVC.setMessageBody("메세지 컨텐츠", isHTML: false)
+            
+            self.present(emailVC, animated: true, completion: nil)
+            
+        }else{
+            self.showSendMailErrorAlert()
+        }
+        
+    }
+    
+    func showSendMailErrorAlert(){
+        let sendMailErrorAlert = UIAlertController(title: "메일 전송 실패", message: "아이폰 이메일 설정을 확인하고 다시 시도해주세요", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "확인", style: .default){
+            (action) in
+            print("확인")
+        }
+        
+        sendMailErrorAlert.addAction(confirmAction)
+        self.present(sendMailErrorAlert, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
     
     func naviagationBar(){
