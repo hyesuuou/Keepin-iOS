@@ -19,6 +19,8 @@ class PresentMoaVC: UIViewController {
     @IBOutlet weak var indicatorStart: NSLayoutConstraint!
     @IBOutlet weak var buttonStack: UIStackView!
     @IBOutlet weak var newButton: UIButton!
+    @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var noPresent: UILabel!
     
     //MARK: - IBActions
     @IBAction func newButtonClicked(_ sender: UIButton) {
@@ -124,6 +126,8 @@ class PresentMoaVC: UIViewController {
         
         got.isSelected = true
         gave.isSelected = false
+        
+        noPresent.textColor = .keepinGray3
     }
     
     func setNavigationBar(){
@@ -192,11 +196,19 @@ extension PresentMoaVC {
 
         var itemNum : Int = (self.serverData?.keepins.count)!
         //scrollView dynamic Height
-        if itemNum%2 == 1{
-            itemNum += 1
+        if itemNum == 0{
+            presentCV.isHidden = true
         }
-        presentCVHeight.constant = CGFloat(240 * itemNum / 2)
-        contentViewHeight.constant = presentCVHeight.constant + 100
+        else if itemNum%2 == 1{
+            itemNum += 1
+            presentCVHeight.constant = CGFloat(240 * itemNum / 2)
+            contentViewHeight.constant = presentCVHeight.constant + 100
+        }
+        else{
+            print(itemNum)
+            presentCVHeight.constant = CGFloat(240 * itemNum / 2)
+            contentViewHeight.constant = presentCVHeight.constant + 100
+        }
         presentCV.reloadData()
     }
     
@@ -210,12 +222,20 @@ extension PresentMoaVC {
         self.presentCV.frame = frame
 
         var itemNum : Int = (self.serverData?.keepins.count)!
-        if itemNum%2 == 1{
-            itemNum += 1
+        if itemNum == 0{
+            presentCV.isHidden = true
         }
-        //scrollView dynamic Height
-        presentCVHeight.constant = CGFloat(240 * itemNum / 2)
-        contentViewHeight.constant = presentCVHeight.constant + 100
+        else if itemNum%2 == 1{
+            itemNum += 1
+            presentCVHeight.constant = CGFloat(240 * itemNum / 2)
+            print(presentCVHeight.constant)
+            contentViewHeight.constant = presentCVHeight.constant + 100
+        }
+        else{
+            print(itemNum)
+            presentCVHeight.constant = CGFloat(240 * itemNum / 2)
+            contentViewHeight.constant = presentCVHeight.constant + 100
+        }
         presentCV.reloadData()
     }
     
