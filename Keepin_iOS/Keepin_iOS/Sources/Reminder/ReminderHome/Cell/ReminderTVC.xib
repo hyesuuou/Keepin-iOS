@@ -29,6 +29,9 @@
                     </imageView>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="swQ-yg-72g">
                         <rect key="frame" x="282" y="16.5" width="51" height="31"/>
+                        <connections>
+                            <action selector="alarmChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="j8l-JP-2bC"/>
+                        </connections>
                     </switch>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06.10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ut5-Dv-zXr">
                         <rect key="frame" x="32" y="21.5" width="35" height="21"/>
@@ -73,6 +76,6 @@
     </objects>
     <resources>
         <image name="line42" width="0.5" height="50"/>
-        <image name="listReminderNotimportant" width="343" height="64"/>
+        <image name="listReminderNotimportant" width="29.5" height="30.5"/>
     </resources>
 </document>

@@ -7,7 +7,8 @@
 
 import UIKit
 
-class ReminderVC: UIViewController {
+class ReminderVC: UIViewController{
+    
     //MARK: - IBOutlets
     @IBOutlet var yearArrow: [UIButton]!
     @IBOutlet weak var yearLabel: UILabel!
@@ -221,7 +222,7 @@ extension ReminderVC : UIScrollViewDelegate, UICollectionViewDelegate, UICollect
         else{
             let cell = reminderCV.dequeueReusableCell(withReuseIdentifier: "ReminderSwapCVC", for: indexPath) as! ReminderSwapCVC
             
-            cell.delegate = self
+            cell.delegateTVC = self
             
             if serverData != nil{
                 cell.didSuccessReminders(data: serverData!)
@@ -293,13 +294,17 @@ extension ReminderVC : monthData{
     }
 }
 
-extension ReminderVC: tableviewTouch{
-    func notTV() {
+extension ReminderVC: tableviewTouchCVC{ 
+    func no() {
         reminderCV.isScrollEnabled = true
     }
     
-    func touchedTV() {
+    func touched() {
         reminderCV.isScrollEnabled = false
+    }
+    func alarm(data: MonthReminder) {
+        let request = ReminderAlarmRequest(isAlarm: data.isAlarm!)
+        ReminderHomeDataManager().reminderAlarm(request, reminderID: data._id!)
     }
 }
 

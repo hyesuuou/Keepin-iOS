@@ -7,12 +7,32 @@
 
 import UIKit
 
-protocol tableviewTouch{
-    func touchedTV()
-    func notTV()
+protocol tableviewTouchCVC{
+    func touched()
+    func no()
+    func alarm(data: MonthReminder)
 }
 
-class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource{
+class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource, tableviewTouch, UIGestureRecognizerDelegate{
+    
+    func touchedTVC() {
+        delegateTVC?.touched()
+    }
+    
+    func notTVC() {
+        delegateTVC?.no()
+    }
+    
+    func touchedAlarm(tv: String, index: Int, value: Bool) {
+        if tv == "upcoming"{
+            upcomingData[index].isAlarm = value
+            delegateTVC?.alarm(data: upcomingData[index])
+        }
+        else{
+            pastData[index].isAlarm = value
+            delegateTVC?.alarm(data: pastData[index])
+        }
+    }
     
     @IBOutlet weak var upcomingTV: UITableView!
     @IBOutlet weak var upcomingView: UIView!
@@ -26,6 +46,7 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     var pastData : [MonthReminder] = []
     
     var delegate : tableviewTouch?
+    var delegateTVC : tableviewTouchCVC?
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (upcomingTV.contentOffset.y < 0){
@@ -73,6 +94,8 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
         var cell : ReminderTVC
 
         func setCell(cell: ReminderTVC, data: [MonthReminder]){
+            cell.index = indexPath.section
+            cell.delegate = self
             cell.backgroundColor = .keepinGray
             cell.dateLabel.text = data[indexPath.section].date
             cell.reminderTitle.text = data[indexPath.section].title
@@ -96,10 +119,12 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
         if tableView == upcomingTV{
             cell = upcomingTV.dequeueReusableCell(withIdentifier: "ReminderTVC", for: indexPath) as! ReminderTVC
             setCell(cell: cell, data: upcomingData)
+            cell.TVname = "upcoming"
         }
         else{
             cell = pastTV.dequeueReusableCell(withIdentifier: "ReminderTVC", for: indexPath) as! ReminderTVC
             setCell(cell: cell, data: pastData)
+            cell.TVname = "past"
         }
         
         return cell
@@ -114,9 +139,6 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        delegate?.touchedTV()
-        
         if tableView == upcomingTV{
             print(indexPath.section)
             ReminderAddVC.reminderID = upcomingData[indexPath.section]._id!
@@ -127,10 +149,6 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
             ReminderAddVC.reminderID = pastData[indexPath.section]._id!
             ReminderAddVC.fromEdit = true
         }
-       
-//        let ReminderAddNVC = UINavigationController(rootViewController: ReminderAddVC())
-//        ReminderAddNVC.modalPresentationStyle = .fullScreen
-//        present(ReminderAddNVC, animated: true, completion: nil)
     }
 
     
@@ -183,7 +201,17 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
         upcomingView.backgroundColor = .keepinGray
         pastView.backgroundColor = .keepinGray
         viewHeight.constant = 0
+        
+//        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
+//        tapGesture.delegate = self
+//        pastView.addGestureRecognizer(tapGesture)
     }
+    
+//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+//        print("thouched past view")
+//        delegateTVC?.no()
+//        return true
+//    }
     
     private func setTV(){
         upcomingTV.register(ReminderTVC.nib(), forCellReuseIdentifier: "ReminderTVC")
