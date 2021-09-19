@@ -196,16 +196,22 @@ extension PresentMoaVC {
 
         var itemNum : Int = (self.serverData?.keepins.count)!
         //scrollView dynamic Height
+        print(itemNum)
         if itemNum == 0{
+            emptyView.isHidden = false
             presentCV.isHidden = true
+            contentViewHeight.constant = UIScreen.main.bounds.height - 200
         }
         else if itemNum%2 == 1{
             itemNum += 1
+            presentCV.isHidden = false
+            emptyView.isHidden = true
             presentCVHeight.constant = CGFloat(240 * itemNum / 2)
             contentViewHeight.constant = presentCVHeight.constant + 100
         }
         else{
-            print(itemNum)
+            presentCV.isHidden = false
+            emptyView.isHidden = true
             presentCVHeight.constant = CGFloat(240 * itemNum / 2)
             contentViewHeight.constant = presentCVHeight.constant + 100
         }
@@ -222,17 +228,22 @@ extension PresentMoaVC {
         self.presentCV.frame = frame
 
         var itemNum : Int = (self.serverData?.keepins.count)!
+        print(itemNum)
         if itemNum == 0{
+            emptyView.isHidden = false
             presentCV.isHidden = true
+            contentViewHeight.constant = UIScreen.main.bounds.height - 200
         }
         else if itemNum%2 == 1{
             itemNum += 1
+            presentCV.isHidden = false
+            emptyView.isHidden = true
             presentCVHeight.constant = CGFloat(240 * itemNum / 2)
-            print(presentCVHeight.constant)
             contentViewHeight.constant = presentCVHeight.constant + 100
         }
         else{
-            print(itemNum)
+            presentCV.isHidden = false
+            emptyView.isHidden = true
             presentCVHeight.constant = CGFloat(240 * itemNum / 2)
             contentViewHeight.constant = presentCVHeight.constant + 100
         }
