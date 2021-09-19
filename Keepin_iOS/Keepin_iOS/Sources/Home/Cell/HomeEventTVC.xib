@@ -24,7 +24,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LfA-1G-pkf">
-                        <rect key="frame" x="24" y="61" width="327" height="147"/>
+                        <rect key="frame" x="24" y="61" width="327" height="120"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIf-Tc-S7x">
                                 <rect key="frame" x="0.0" y="0.0" width="327" height="54"/>
@@ -48,21 +48,21 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8I-0U-htR">
-                                        <rect key="frame" x="102" y="19" width="41.5" height="16"/>
+                                        <rect key="frame" x="102" y="1" width="41.5" height="52"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="w8I-0U-htR" firstAttribute="top" secondItem="dIf-Tc-S7x" secondAttribute="top" constant="19" id="80z-FV-YFT"/>
+                                    <constraint firstItem="w8I-0U-htR" firstAttribute="top" secondItem="dIf-Tc-S7x" secondAttribute="top" constant="1" id="80z-FV-YFT"/>
                                     <constraint firstItem="1AV-im-sDA" firstAttribute="leading" secondItem="dIf-Tc-S7x" secondAttribute="leading" constant="28" id="DSR-dd-6B2"/>
                                     <constraint firstItem="v0Y-Xx-i9e" firstAttribute="leading" secondItem="dIf-Tc-S7x" secondAttribute="leading" id="EAT-ES-l0X"/>
                                     <constraint firstItem="Y8w-R2-oBO" firstAttribute="leading" secondItem="1AV-im-sDA" secondAttribute="trailing" constant="16" id="FHt-5u-chZ"/>
                                     <constraint firstItem="1AV-im-sDA" firstAttribute="top" secondItem="dIf-Tc-S7x" secondAttribute="top" constant="18" id="MSg-6p-FwZ"/>
                                     <constraint firstAttribute="bottom" secondItem="Y8w-R2-oBO" secondAttribute="bottom" constant="7" id="P3w-61-JYd"/>
                                     <constraint firstItem="Y8w-R2-oBO" firstAttribute="top" secondItem="dIf-Tc-S7x" secondAttribute="top" constant="7" id="VNG-2I-Lpl"/>
-                                    <constraint firstAttribute="bottom" secondItem="w8I-0U-htR" secondAttribute="bottom" constant="19" id="XVx-MT-Unn"/>
+                                    <constraint firstAttribute="bottom" secondItem="w8I-0U-htR" secondAttribute="bottom" constant="1" id="XVx-MT-Unn"/>
                                     <constraint firstAttribute="bottom" secondItem="1AV-im-sDA" secondAttribute="bottom" constant="18" id="aCc-gp-sp7"/>
                                     <constraint firstAttribute="bottom" secondItem="v0Y-Xx-i9e" secondAttribute="bottom" id="ic4-jo-wwc"/>
                                     <constraint firstAttribute="trailing" secondItem="v0Y-Xx-i9e" secondAttribute="trailing" id="kOw-9e-x4x"/>
@@ -72,7 +72,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pf-vl-Foj">
-                                <rect key="frame" x="0.0" y="93" width="327" height="54"/>
+                                <rect key="frame" x="0.0" y="66" width="327" height="54"/>
                                 <subviews>
                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yi1-De-SPl">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="54"/>
@@ -93,7 +93,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4i-ci-ftl">
-                                        <rect key="frame" x="102" y="19" width="41.5" height="16"/>
+                                        <rect key="frame" x="102" y="1" width="41.5" height="52"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -102,7 +102,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Yi1-De-SPl" secondAttribute="trailing" id="3ke-Wu-nQ2"/>
                                     <constraint firstAttribute="bottom" secondItem="JDO-tn-ts3" secondAttribute="bottom" constant="7" id="Ieq-L8-1PO"/>
-                                    <constraint firstAttribute="bottom" secondItem="j4i-ci-ftl" secondAttribute="bottom" constant="19" id="XOP-DM-B1e"/>
+                                    <constraint firstAttribute="bottom" secondItem="j4i-ci-ftl" secondAttribute="bottom" constant="1" id="XOP-DM-B1e"/>
                                     <constraint firstItem="JDO-tn-ts3" firstAttribute="top" secondItem="0pf-vl-Foj" secondAttribute="top" constant="7" id="cHh-T4-xFd"/>
                                     <constraint firstItem="yxJ-V7-g4U" firstAttribute="leading" secondItem="0pf-vl-Foj" secondAttribute="leading" constant="28" id="dky-oI-3vI"/>
                                     <constraint firstItem="Yi1-De-SPl" firstAttribute="leading" secondItem="0pf-vl-Foj" secondAttribute="leading" id="iQG-y7-Sp1"/>
@@ -111,7 +111,7 @@
                                     <constraint firstItem="j4i-ci-ftl" firstAttribute="leading" secondItem="JDO-tn-ts3" secondAttribute="trailing" constant="15.5" id="mkU-BM-OxR"/>
                                     <constraint firstItem="Yi1-De-SPl" firstAttribute="top" secondItem="0pf-vl-Foj" secondAttribute="top" id="nZ8-9I-R2K"/>
                                     <constraint firstItem="yxJ-V7-g4U" firstAttribute="top" secondItem="0pf-vl-Foj" secondAttribute="top" constant="18" id="pSk-Kf-i5D"/>
-                                    <constraint firstItem="j4i-ci-ftl" firstAttribute="top" secondItem="0pf-vl-Foj" secondAttribute="top" constant="19" id="rSG-NX-aZi"/>
+                                    <constraint firstItem="j4i-ci-ftl" firstAttribute="top" secondItem="0pf-vl-Foj" secondAttribute="top" constant="1" id="rSG-NX-aZi"/>
                                     <constraint firstAttribute="height" constant="54" id="rgg-Md-pis"/>
                                     <constraint firstAttribute="bottom" secondItem="yxJ-V7-g4U" secondAttribute="bottom" constant="18" id="z9Z-Rd-c0G"/>
                                 </constraints>
@@ -123,13 +123,13 @@
                             <constraint firstAttribute="bottom" secondItem="0pf-vl-Foj" secondAttribute="bottom" id="Kpv-js-MQp"/>
                             <constraint firstAttribute="trailing" secondItem="dIf-Tc-S7x" secondAttribute="trailing" id="UBh-PA-2IM"/>
                             <constraint firstItem="dIf-Tc-S7x" firstAttribute="leading" secondItem="LfA-1G-pkf" secondAttribute="leading" id="a5L-JW-HBL"/>
+                            <constraint firstAttribute="height" constant="120" id="edG-ew-L19"/>
                             <constraint firstItem="0pf-vl-Foj" firstAttribute="leading" secondItem="LfA-1G-pkf" secondAttribute="leading" id="epE-CW-6pb"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="hbT-Yo-tTu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="0W0-6w-pdi"/>
-                    <constraint firstAttribute="bottom" secondItem="LfA-1G-pkf" secondAttribute="bottom" constant="24" id="4ZR-pc-MZO"/>
                     <constraint firstAttribute="trailing" secondItem="hbT-Yo-tTu" secondAttribute="trailing" constant="24" id="SLY-5O-pSB"/>
                     <constraint firstItem="LfA-1G-pkf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="Smv-ng-j2S"/>
                     <constraint firstAttribute="trailing" secondItem="LfA-1G-pkf" secondAttribute="trailing" constant="24" id="b5b-Qt-X3Y"/>
@@ -143,6 +143,8 @@
                 <outlet property="contentsSecontLabel" destination="j4i-ci-ftl" id="qgb-NE-03G"/>
                 <outlet property="dateLabel" destination="1AV-im-sDA" id="c00-zI-PWW"/>
                 <outlet property="dateSecondLabel" destination="yxJ-V7-g4U" id="v98-WU-qKY"/>
+                <outlet property="reminderContainerHeight" destination="edG-ew-L19" id="8qJ-DH-cWG"/>
+                <outlet property="reminderContainerTop" destination="t9f-eB-ySn" id="oOX-gJ-pQy"/>
                 <outlet property="reminderFirstButton" destination="v0Y-Xx-i9e" id="Yfp-S3-LRf"/>
                 <outlet property="reminderSecondButton" destination="Yi1-De-SPl" id="qhc-rh-5wh"/>
                 <outlet property="separateView" destination="JDO-tn-ts3" id="fjf-VF-I1E"/>

@@ -24,6 +24,9 @@ class HomeEventTVC: UITableViewCell {
     
     @IBOutlet var reminderButtonHeight: [NSLayoutConstraint]!
     
+    @IBOutlet weak var reminderContainerTop: NSLayoutConstraint!
+    @IBOutlet weak var reminderContainerHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var separateView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,6 +57,7 @@ class HomeEventTVC: UITableViewCell {
         contentsSecontLabel.font = UIFont.GmarketSansTTF(.medium, size: 14)
         
         
+        
     }
     
     func setData(date: String, contents: String, important: Bool,
@@ -62,6 +66,8 @@ class HomeEventTVC: UITableViewCell {
         
         reminderButtonHeight[0].constant = safeAreaHeight * (54/688)
         reminderButtonHeight[1].constant = safeAreaHeight * (54/688)
+        reminderContainerHeight.constant = safeAreaHeight * (120/688)
+        reminderContainerTop.constant = safeAreaHeight * (20/688)
         
         // 첫 번째 리마인더 데이터 설정
         dateLabel.text = date
