@@ -23,5 +23,8 @@ class SelectFriendMessageTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
+    func setData(message: String){
+        label.text = message
+    }
     
 }

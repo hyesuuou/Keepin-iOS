@@ -59,10 +59,7 @@ class MyPageHomeDataManager{
                     //viewController.friendServerData = response.data
                     viewController.allFriend = response.data.friends
                     //MyPageHomeDataManager.friendList = response.data.friends
-                    for friend in response.data.friends {
-                        viewController.allData.append(friend.name)
-                        
-                    }
+                    viewController.successConnect()
                     
                     //print(MyPageHomeDataManager.friendList)
                     
