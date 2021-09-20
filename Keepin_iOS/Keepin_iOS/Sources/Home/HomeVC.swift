@@ -35,17 +35,20 @@ class HomeVC: UIViewController {
     // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("HomeVC View Did Load")
         registerXib()
         initRefresh()
         setUI()
-        serverConnect()
+        
         let frame = self.view.safeAreaLayoutGuide.layoutFrame
         print("safeArea Height", frame.height)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print("homeVC View Did Appear")
         setNavigationBarUI()
         HomeDataManager().getReminderHome(self)
+        serverConnect()
     }
     
     // MARK: - Server Connect
