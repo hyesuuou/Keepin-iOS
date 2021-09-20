@@ -12,13 +12,9 @@ class SelectFriendVC: UIViewController {
     /// 친구의 아이디를 받아오기 위한..
     var allFriend: [Friend] = [] // 전체 친구
     var filteredFriend: [Friend] = [] // 검색된 친구
+    
+    var notSelectedFriend: [Friend] = [] // 선택되지 않은 친구
     var selectedFriend: [Friend] = [] // 선택된 친구
-    
-    /// 기존 코드
-    var allData : [String] = [] // 전체 데이터 (전체 친구목록 중 이름)
-    var filteredData : [String] = [] // 검색된 결과
-    var selectedData : [String] = [] // 선택된 결과
-    
     
     var searchBool : Bool = false
     
@@ -32,14 +28,16 @@ class SelectFriendVC: UIViewController {
     @IBOutlet weak var addFriendButton: UIButton!
     
     // MARK: - View LifeCycle
+    override func viewWillAppear(_ animated: Bool) {
+        MyPageHomeDataManager().getNumberFriend(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        setTableview()
-        
         searchBar.delegate = self
         self.dismissKeyboardWhenTappedAround()
-        MyPageHomeDataManager().getNumberFriend(self)
+        
     }
     
     // MARK: - UI
@@ -48,10 +46,10 @@ class SelectFriendVC: UIViewController {
         titleLabel[0].font = UIFont.GmarketSansTTF(.medium, size: 16)
         titleLabel[1].font = UIFont.GmarketSansTTF(.light, size: 16)
         titleLabel[1].textColor = .keepinGray4
-
+        
         okButton.tintColor = .keepinGray3
         okButton.titleLabel?.font = UIFont.NotoSans(.bold, size: 16)
-
+        
         addFriendButton.titleLabel?.font = UIFont.NotoSans(.regular, size: 14)
         addFriendButton.tintColor = .keepinGreen
     }
@@ -114,24 +112,19 @@ extension SelectFriendVC : UISearchBarDelegate {
         
         filteredFriend = []
         
+        /// 검색창에 글자가 없을 때
         if searchText == "" {
-            //filteredData = allData
+            filteredFriend = notSelectedFriend
             searchBool = false
         }
+        /// 검색창에 글자가 있을 때 (검색했을 때)
         else {
             searchBool = true
-            for friend in allFriend {
+            for friend in notSelectedFriend {
                 if friend.name.lowercased().contains(searchText.lowercased()) {
                     filteredFriend.append(friend)
                 }
             }
-            /*
-            for name in allData {
-                if name.lowercased().contains(searchText.lowercased()) {
-                    filteredData.append(name)
-                }
-            }
- */
         }
         self.tableview.reloadData()
     }
@@ -151,11 +144,18 @@ extension SelectFriendVC : UITableViewDataSource {
         
         /// 선택된 친구
         case 0:
-            guard let cell = tableview.dequeueReusableCell(withIdentifier: SelectFriendListTVC.identifier, for: indexPath) as? SelectFriendListTVC
-            else { return UITableViewCell()}
-            cell.setDataUI(name: selectedFriend[indexPath.row].name, clicked: true)
-            return cell
-            
+            if selectedFriend.count == 0 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: SelectFriendMessageTVC.identifier, for: indexPath) as? SelectFriendMessageTVC else {
+                    return UITableViewCell()
+                }
+                cell.setData(message: "선택된 친구가 없습니다.")
+                return cell
+            } else {
+                guard let cell = tableview.dequeueReusableCell(withIdentifier: SelectFriendListTVC.identifier, for: indexPath) as? SelectFriendListTVC
+                else { return UITableViewCell()}
+                cell.setDataUI(name: selectedFriend[indexPath.row].name, clicked: true)
+                return cell
+            }
         /// 검색된 친구
         case 1:
             /// 검색결과 없는 경우 -> '선택된 친구 없습니다' 메시지 띄우기
@@ -163,6 +163,7 @@ extension SelectFriendVC : UITableViewDataSource {
                 guard let cell = tableview.dequeueReusableCell(withIdentifier: SelectFriendMessageTVC.identifier, for: indexPath) as? SelectFriendMessageTVC else {
                     return UITableViewCell()
                 }
+                cell.setData(message: "검색된 친구가 없습니다.")
                 return cell
             }
             /// 검색결과 있는 경우 -> 검색된 목록 보여주기
@@ -172,7 +173,11 @@ extension SelectFriendVC : UITableViewDataSource {
                 cell.setDataUI(name: filteredFriend[indexPath.row].name, clicked: false)
                 return cell
             }
-            
+        case 2:
+            guard let cell = tableview.dequeueReusableCell(withIdentifier: SelectFriendListTVC.identifier, for: indexPath) as? SelectFriendListTVC
+            else { return UITableViewCell()}
+            cell.setDataUI(name: allFriend[indexPath.row].name, clicked: false)
+            return cell
         default:
             return UITableViewCell()
         }
@@ -191,9 +196,14 @@ extension SelectFriendVC : UITableViewDataSource {
         switch section {
         /// 선택된 친구
         case 0:
+            if selectedFriend.count == 0 {
+                return 1
+            } else {
             return selectedFriend.count
+            }
         /// 검색된 친구
         case 1:
+           
             /// 검색했는데 (searchBool == true) 아무도없으면 (filteredData.count == 0) 메시지 띄워주는 셀 보여주기
             if filteredFriend.count == 0 && searchBool == true{
                 return 1
@@ -201,6 +211,7 @@ extension SelectFriendVC : UITableViewDataSource {
             else {
                 return filteredFriend.count
             }
+        
         default:
             return 0
         }
@@ -216,109 +227,52 @@ extension SelectFriendVC : UITableViewDataSource {
             return header
             
         case 1:
-            guard let header = tableView.dequeueReusableCell(withIdentifier: SelectFriendTitleTVC.identifier) as? SelectFriendTitleTVC else {
-                return UIView()
-            }
-            header.setData(title: "검색된 친구")
-            return header
             
+            if searchBool == false {
+                guard let header = tableView.dequeueReusableCell(withIdentifier: SelectFriendTitleTVC.identifier) as? SelectFriendTitleTVC else {
+                    return UIView()
+                }
+                header.setData(title: "친구 리스트")
+                return header
+            } else {
+                guard let header = tableView.dequeueReusableCell(withIdentifier: SelectFriendTitleTVC.identifier) as? SelectFriendTitleTVC else {
+                    return UIView()
+                }
+                header.setData(title: "검색된 친구")
+                return header
+            }
+ 
         default:
             return UIView()
         }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if selectedFriend.count == 0 && filteredFriend.count == 0 {
-            
-            //okButton.tintColor = .keepinGray3
-            if searchBool == false {
-                
-                switch section {
-                case 0:
-                    return 0
-                case 1:
-                    return 0
-                    
-                default:
-                    return 78
-                }
-                
-            }
-            
-            else {
-                switch section {
-                case 0:
-                    return 0
-                case 1:
-                    return 78
-                    
-                default:
-                    return 78
-                }
-            }
-            
-            
-        }
-        
-        
-        
-        else if selectedFriend.count != 0  && filteredFriend.count == 0 {
-           // searchNoFriend.isHidden = false
-            //okButton.tintColor = .keepinGreen
-            
-            switch section {
-            case 0:
-                return 78
-            case 1:
-                return 78
-            default:
-                return 78
-            }
-            
-            
-        }
-        
-        else if selectedFriend.count == 0 && filteredFriend.count != 0 {
-            //okButton.tintColor = .keepinGray3
-          //  searchNoFriend.isHidden = true
-            
-            switch section {
-            case 0:
-                return 0
-            case 1:
-                return 78
-            default:
-                return 78
-            }
-            
-            
-        }
-        else {
-            //okButton.tintColor = .keepinGray3
-          //  searchNoFriend.isHidden = true
-            
-            return 78
-            
-            
-        }
-        
+        return 78
     }
     
     
-    // section 마다 내용들.
+    /// 해당 Row를 선택했을 때
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         switch indexPath.section {
         case 0:
             /// 여기서 선택하면 searchBar에 있는 text가 포함되어있는지 확인 후 포함되어 있으면
             if selectedFriend[indexPath.row].name.contains(searchBar.text ?? "") {
-                filteredFriend.append(selectedFriend[indexPath.row])
+                filteredFriend.insert(selectedFriend[indexPath.row], at: 0)
+                //filteredFriend.append(selectedFriend[indexPath.row])
             }
+            notSelectedFriend.insert(selectedFriend[indexPath.row], at: 0)
+           // notSelectedFriend.append(selectedFriend[indexPath.row])
             selectedFriend.remove(at: indexPath.row)
             
         case 1:
             /// 여기서 선택하면 해당 내용 삭제 후 section 0 (selectedData에 추가)
             selectedFriend.append(filteredFriend[indexPath.row])
+            /// 해당 값의 인덱스 찾기
+            notSelectedFriend.remove(at: notSelectedFriend.firstIndex { friend in
+                friend.name == filteredFriend[indexPath.row].name
+            }!)
             filteredFriend.remove(at: indexPath.row)
             
         default:
@@ -334,10 +288,16 @@ extension SelectFriendVC : UITableViewDataSource {
         tableview.reloadData()
         
         print("selectedList: ", selectedFriend)
+        print("not selectedList: ", notSelectedFriend)
     }
     
-    
-   
-    
-    
+}
+
+extension SelectFriendVC {
+    func successConnect(){
+        setTableview()
+        filteredFriend = allFriend
+        notSelectedFriend = allFriend
+        tableview.reloadData()
+    }
 }
