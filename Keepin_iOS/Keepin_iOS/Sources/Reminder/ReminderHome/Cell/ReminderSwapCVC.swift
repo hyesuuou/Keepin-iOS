@@ -8,8 +8,7 @@
 import UIKit
 
 protocol tableviewTouchCVC{
-    func touched()
-    func no()
+    func touched(touch: Bool)
     func alarm(data: MonthReminder)
     func presentEdit(data: MonthReminder)
 }
@@ -17,11 +16,8 @@ protocol tableviewTouchCVC{
 class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource, tableviewTouch, UIGestureRecognizerDelegate{
     
     func touchedTVC() {
-        delegateTVC?.touched()
-    }
-    
-    func notTVC() {
-        delegateTVC?.no()
+        touched = !touched
+        delegateTVC?.touched(touch: touched)
     }
     
     func touchedAlarm(tv: String, index: Int, value: Bool) {
@@ -53,6 +49,8 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     
     var delegate : tableviewTouch?
     var delegateTVC : tableviewTouchCVC?
+    
+    var touched : Bool = false
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (upcomingTV.contentOffset.y < 0){
@@ -218,12 +216,19 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
         
 //        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
 //        tapGesture.delegate = self
-//        pastView.addGestureRecognizer(tapGesture)
+//        stackView.addGestureRecognizer(tapGesture)
     }
     
 //    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-//        print("thouched past view")
-//        delegateTVC?.no()
+//        print("touched past view")
+//        touched = !touched
+//        print(touched)
+//        if touched{
+//            delegateTVC?.touched(touch: touched)
+//        }
+//        else{
+//            delegateTVC?.touched(touch: touched)
+//        }
 //        return true
 //    }
     
