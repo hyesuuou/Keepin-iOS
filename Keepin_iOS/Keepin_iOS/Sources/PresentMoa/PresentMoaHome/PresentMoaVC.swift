@@ -100,6 +100,8 @@ class PresentMoaVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print("Present Moa ViewWillAppear")
+        
         if newButton.isSelected{
             if gave.isSelected == true{
                 PresentMoaHomeDataManager().gave("false", viewController: self)
@@ -152,7 +154,7 @@ class PresentMoaVC: UIViewController {
     
     @objc func pageReload(notification: NSNotification){
         print("pageReload")
-        self.presentCV.reloadData()
+        self.viewWillAppear(true)
     }
     
 
