@@ -257,10 +257,14 @@ extension SelectFriendVC : UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
+            if searchBool == true {
             /// 여기서 선택하면 searchBar에 있는 text가 포함되어있는지 확인 후 포함되어 있으면
-            if selectedFriend[indexPath.row].name.contains(searchBar.text ?? "") {
+                if selectedFriend[indexPath.row].name.contains(searchBar.text ?? "") {
+                    filteredFriend.insert(selectedFriend[indexPath.row], at: 0)
+                    //filteredFriend.append(selectedFriend[indexPath.row])
+                }
+            } else {
                 filteredFriend.insert(selectedFriend[indexPath.row], at: 0)
-                //filteredFriend.append(selectedFriend[indexPath.row])
             }
             notSelectedFriend.insert(selectedFriend[indexPath.row], at: 0)
            // notSelectedFriend.append(selectedFriend[indexPath.row])
