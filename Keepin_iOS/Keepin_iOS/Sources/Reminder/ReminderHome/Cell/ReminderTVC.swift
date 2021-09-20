@@ -8,7 +8,6 @@
 import UIKit
 protocol tableviewTouch{
     func touchedTVC()
-    func notTVC()
     func touchedAlarm(tv: String, index: Int, value: Bool)
 }
 

@@ -294,13 +294,15 @@ extension ReminderVC : monthData{
     }
 }
 
-extension ReminderVC: tableviewTouchCVC{ 
-    func no() {
-        reminderCV.isScrollEnabled = true
-    }
-    
-    func touched() {
-        reminderCV.isScrollEnabled = false
+extension ReminderVC: tableviewTouchCVC{
+    func touched(touch: Bool) {
+        if touch{
+            reminderCV.isScrollEnabled = false
+        }
+        else{
+            reminderCV.isScrollEnabled = true
+        }
+        
     }
     func alarm(data: MonthReminder) {
         let request = ReminderAlarmRequest(isAlarm: data.isAlarm!)
