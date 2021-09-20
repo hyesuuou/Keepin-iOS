@@ -81,4 +81,25 @@ class MyPageProfileDataManager {
     }
     
     
+    func deleteId(viewcontroller: MyPageProfileVC){
+        var url = "\(Constant.BASE_URL)/setting/withdrawal"
+        
+        AF.request(url, method: .delete, parameters: nil, headers: Constant.HEADER)
+            .validate(statusCode: 200..<500)
+            .validate(contentType: ["application/json"])
+            .responseDecodable(of:MyPageDeleteIdResponse.self){ response in
+                switch response.result{
+                case .success(let response):
+                    viewcontroller.didSuccessDeleteId(message: response.message)
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                
+                }
+                
+            }
+        
+    }
+    
 }
+
