@@ -16,8 +16,7 @@ protocol tableviewTouchCVC{
 class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource, tableviewTouch, UIGestureRecognizerDelegate{
     
     func touchedTVC() {
-        touched = !touched
-        delegateTVC?.touched(touch: touched)
+        delegateTVC?.touched(touch: true)
     }
     
     func touchedAlarm(tv: String, index: Int, value: Bool) {
@@ -42,6 +41,8 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet var emptyLabels: [UILabel]!
+    @IBOutlet var areaViews: [UIView]!
+    
     
     var serverData : MonthReminders?
     var upcomingData : [MonthReminder] = []
@@ -49,8 +50,6 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     
     var delegate : tableviewTouch?
     var delegateTVC : tableviewTouchCVC?
-    
-    var touched : Bool = false
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (upcomingTV.contentOffset.y < 0){
@@ -213,24 +212,24 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
         emptyLabels.forEach{
             $0.textColor = .keepinGray3
         }
+        areaViews.forEach{
+            $0.backgroundColor = .keepinGray
+        }
         
-//        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
-//        tapGesture.delegate = self
-//        stackView.addGestureRecognizer(tapGesture)
+        let tapGesture0: UITapGestureRecognizer = UITapGestureRecognizer()
+        tapGesture0.delegate = self
+        
+        let tapGesture1: UITapGestureRecognizer = UITapGestureRecognizer()
+        tapGesture1.delegate = self
+        
+        areaViews[0].addGestureRecognizer(tapGesture0)
+        areaViews[1].addGestureRecognizer(tapGesture1)
     }
     
-//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-//        print("touched past view")
-//        touched = !touched
-//        print(touched)
-//        if touched{
-//            delegateTVC?.touched(touch: touched)
-//        }
-//        else{
-//            delegateTVC?.touched(touch: touched)
-//        }
-//        return true
-//    }
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        delegateTVC?.touched(touch: false)
+        return true
+    }
     
     private func setTV(){
         upcomingTV.register(ReminderTVC.nib(), forCellReuseIdentifier: "ReminderTVC")
