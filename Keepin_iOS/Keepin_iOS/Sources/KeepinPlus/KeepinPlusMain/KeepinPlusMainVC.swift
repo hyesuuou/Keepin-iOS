@@ -565,6 +565,11 @@ extension KeepinPlusMainVC {
             }
         }
         
+        /// record
+        var record: String = memoTextView.text!
+        if record == "선물을 주고받은 상황, 느낌 등을 기록해 보세요!" {
+            record = ""
+        }
         
         print(friendIdxList)
         print("category: ", categoryList)
@@ -574,7 +579,7 @@ extension KeepinPlusMainVC {
                                            taken: take,
                                            date: dateTextfield.text!.replacingOccurrences(of: ".", with: "-"),
                                            category: categoryList,
-                                           record: memoTextView.text!,
+                                           record: record,
                                            friendIdx: friendIdxList,
                                            imageData: imgList) { result in
             
