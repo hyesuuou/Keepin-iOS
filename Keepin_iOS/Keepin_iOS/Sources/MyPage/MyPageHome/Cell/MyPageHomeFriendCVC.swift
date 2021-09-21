@@ -25,9 +25,9 @@ class MyPageHomeFriendCVC: UICollectionViewCell {
         
         set()
         setStlye()
-        
         registerXib()
     }
+    
     
     func setStlye(){
         myPageHomeCV.backgroundColor = .keepinGray

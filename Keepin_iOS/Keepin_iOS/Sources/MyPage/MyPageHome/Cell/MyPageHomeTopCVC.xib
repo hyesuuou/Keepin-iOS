@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3a9-g2-ula">
-                        <rect key="frame" x="24" y="0.0" width="83" height="20.5"/>
+                        <rect key="frame" x="24" y="0.0" width="153" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -118,7 +118,7 @@
                 <constraint firstAttribute="trailing" secondItem="Hmb-zW-YCe" secondAttribute="trailing" constant="16" id="FJU-Q2-6uQ"/>
                 <constraint firstItem="zNa-PL-Tet" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ICc-JD-4FX"/>
                 <constraint firstItem="3a9-g2-ula" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="24" id="Isg-sw-Ui3"/>
-                <constraint firstItem="Hmb-zW-YCe" firstAttribute="leading" secondItem="3a9-g2-ula" secondAttribute="trailing" constant="228" id="bUU-M2-MjX"/>
+                <constraint firstItem="Hmb-zW-YCe" firstAttribute="leading" secondItem="3a9-g2-ula" secondAttribute="trailing" constant="158" id="bUU-M2-MjX"/>
                 <constraint firstItem="zNa-PL-Tet" firstAttribute="top" secondItem="3a9-g2-ula" secondAttribute="bottom" constant="32" id="cLZ-ZG-5gy"/>
                 <constraint firstItem="Hmb-zW-YCe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eny-Dz-GLD"/>
                 <constraint firstAttribute="trailing" secondItem="zNa-PL-Tet" secondAttribute="trailing" constant="16" id="ias-DR-Yyy"/>

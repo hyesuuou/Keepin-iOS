@@ -130,6 +130,7 @@ extension MyPageHomeVC : UICollectionViewDataSource {
         case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageHomeFriendCVC.identifier, for: indexPath)as? MyPageHomeFriendCVC else {return UICollectionViewCell()}
             
+            
             return cell
             
         default:
