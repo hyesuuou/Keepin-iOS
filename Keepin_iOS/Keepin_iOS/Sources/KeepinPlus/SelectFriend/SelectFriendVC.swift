@@ -29,6 +29,9 @@ class SelectFriendVC: UIViewController {
     
     // MARK: - View LifeCycle
     override func viewWillAppear(_ animated: Bool) {
+        print("친구선택뷰 viewWillAppear")
+        selectedFriend = []
+        searchBar.text = ""
         MyPageHomeDataManager().getNumberFriend(self)
     }
     
@@ -97,8 +100,12 @@ class SelectFriendVC: UIViewController {
     }
     
     @IBAction func okButtonClicked(_ sender: Any) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "selectFriend"), object: selectedFriend) // 여기 고쳐야함
-        self.navigationController?.popViewController(animated: true)
+        if selectedFriend.count == 0 {
+            print("친구선택안됨")
+        } else {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "selectFriend"), object: selectedFriend)
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     @IBAction func newFriendButtonClicked(_ sender: Any) {
         let newFriendVC = KeepinPlusFriendVC()
@@ -228,7 +235,7 @@ extension SelectFriendVC : UITableViewDataSource {
             
         case 1:
             
-            if searchBool == false {
+            if searchBool == false || searchBar.text == "" {
                 guard let header = tableView.dequeueReusableCell(withIdentifier: SelectFriendTitleTVC.identifier) as? SelectFriendTitleTVC else {
                     return UIView()
                 }
