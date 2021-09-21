@@ -29,6 +29,9 @@ class SelectFriendVC: UIViewController {
     
     // MARK: - View LifeCycle
     override func viewWillAppear(_ animated: Bool) {
+        print("친구선택뷰 viewWillAppear")
+        selectedFriend = []
+        searchBar.text = ""
         MyPageHomeDataManager().getNumberFriend(self)
     }
     
@@ -228,7 +231,7 @@ extension SelectFriendVC : UITableViewDataSource {
             
         case 1:
             
-            if searchBool == false {
+            if searchBool == false || searchBar.text == "" {
                 guard let header = tableView.dequeueReusableCell(withIdentifier: SelectFriendTitleTVC.identifier) as? SelectFriendTitleTVC else {
                     return UIView()
                 }
