@@ -100,8 +100,12 @@ class SelectFriendVC: UIViewController {
     }
     
     @IBAction func okButtonClicked(_ sender: Any) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "selectFriend"), object: selectedFriend) // 여기 고쳐야함
-        self.navigationController?.popViewController(animated: true)
+        if selectedFriend.count == 0 {
+            print("친구선택안됨")
+        } else {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "selectFriend"), object: selectedFriend)
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     @IBAction func newFriendButtonClicked(_ sender: Any) {
         let newFriendVC = KeepinPlusFriendVC()
