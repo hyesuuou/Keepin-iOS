@@ -74,9 +74,12 @@ class EmailLoginVC: UIViewController {
 // MARK:- EmailLoginVC Server
 extension EmailLoginVC {
     
-    func didSuccessLogin(message: String, code: Int) {
+    func didSuccessLogin(message: String, code: Int, token: String) {
         if code == 200 {
             print("로그인 성공")
+            UserDefaults.standard.setValue(token, forKey: "jwt")
+            Constant.HEADER = ["Content-Type": "application/json",
+                              "jwt" : UserDefaults.standard.value(forKey: "jwt") as! String]
             self.navigationController?.changeRootViewController(BaseTBC())
         }
         else if code == 400 {

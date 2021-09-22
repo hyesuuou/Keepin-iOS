@@ -19,13 +19,17 @@ class MyPageHomeFriendCVC: UICollectionViewCell {
     static var friendName : [String] = []
     static var friendId : [String] = []
     var index : Int = 0
-
+    var friendList: [Friend] = []
     override func awakeFromNib() {
         super.awakeFromNib()
         
         set()
         setStlye()
         registerXib()
+    }
+    
+    func setData(friendList: [Friend]){
+        self.friendList = friendList
     }
     
     
@@ -59,7 +63,9 @@ extension MyPageHomeFriendCVC : UICollectionViewDelegate{
 
 extension MyPageHomeFriendCVC : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return MyPageHomeFriendCVC.friendName.count
+        print("친구리스트 갯수", self.friendList.count)
+        print("친구리스트", self.friendList)
+        return self.friendList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
@@ -70,7 +76,7 @@ extension MyPageHomeFriendCVC : UICollectionViewDataSource{
         cell.moveButton.addTarget(self, action: #selector(notification), for: .touchUpInside)
         cell.friendName?.font = UIFont.GmarketSansTTF(.medium, size: 16)
         cell.layer.cornerRadius = 12
-        cell.setData(title: MyPageHomeDataManager.friendList[indexPath.row].name)
+        cell.setData(title: self.friendList[indexPath.row].name)
         
         return cell
     }
