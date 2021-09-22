@@ -176,7 +176,11 @@ class MyPageProfileVC: UIViewController, MFMailComposeViewControllerDelegate {
         let alert = UIAlertController(title: "다시 키핀하려면 로그인 해야 합니다.\n 로그아웃하시겠습니까?", message: nil, preferredStyle: UIAlertController.Style.alert)
         
         let cancelAction = UIAlertAction(title: "취소", style: .default, handler: nil)
-        let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: { _ in
+            /// 자동로그인 -> 로그아웃
+            UserDefaults.standard.removeObject(forKey: "jwt")
+            self.navigationController?.changeRootViewController(UINavigationController(rootViewController: LoginFirstVC()))
+        })
         
         alert.addAction(cancelAction)
         alert.addAction(okAction)

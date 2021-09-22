@@ -20,8 +20,11 @@ class EmailLoginDataManager {
             .responseDecodable(of: EmailLoginResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    Token.name = response.data?.name ?? "기본값"
-                    Token.jwt = response.data?.jwt ?? ""
+                    UserDefaults.standard.setValue(response.data?.name ?? "기본값", forKey: "name")
+                    UserDefaults.standard.setValue(response.data?.jwt ?? "", forKey: "jwt")
+                    print(UserDefaults.standard.value(forKey: "jwt")!)
+//                    Token.name = response.data?.name ?? "기본값"
+//                    Token.jwt = response.data?.jwt ?? ""
                     viewController.didSuccessLogin(message: response.message, code: response.status)
                 
                 case .failure(let error):

@@ -11,7 +11,7 @@ class HomeTopTVC: UITableViewCell {
     
     public static let identifier = "HomeTopTVC"
     
-    let username: String = "\(Token.name)"
+    let username: String = "\(UserDefaults.standard.value(forKey: "name") as! String)"
     let welcomeMessage: [String] = ["직접 준 선물도 키핀해 보세요.",
                                     "화면을 아래로 당겨볼까요?",
                                     "감동받은 메시지도 키핀하세요.",

@@ -16,6 +16,7 @@ class EmailLoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        self.dismissKeyboardWhenTappedAround()
     }
     
     func setUI(){
@@ -75,10 +76,14 @@ extension EmailLoginVC {
     
     func didSuccessLogin(message: String, code: Int) {
         if code == 200 {
+            print("로그인 성공")
             self.navigationController?.changeRootViewController(BaseTBC())
         }
         else if code == 400 {
             self.makeAlertOnlyMessage(message: "이메일/비밀번호를 다시 확인해주세요.", okAction: nil)
+        }
+        else if code == 401 {
+            print("리프레시 토큰 요청 필요")
         }
     }
     
