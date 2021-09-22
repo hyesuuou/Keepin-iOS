@@ -10,11 +10,7 @@ import UIKit
 
 class BaseTBC: UITabBarController, UITabBarControllerDelegate {
     
-    let homeVC  = HomeVC()
-    let presentMoaVC = PresentMoaVC()
-    let keepinPlusVC  = KeepinPlusMainVC()
-    let reminderVC  = ReminderVC()
-    let myPageVC = MyPageHomeVC()
+    
     
     let homeTabBarItem  = UITabBarItem(title: "", image: UIImage(named: "home"), tag: 0)
     let presentMoaTabBarItem = UITabBarItem(title: "", image: UIImage(named: "icArchive"), tag: 1)
@@ -24,7 +20,15 @@ class BaseTBC: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("BASC TBC View Did Load")
+        print("token", UserDefaults.standard.value(forKey: "jwt") as! String)
+       
+        let homeVC  = HomeVC()
+        let presentMoaVC = PresentMoaVC()
+        let keepinPlusVC  = KeepinPlusMainVC()
+        let reminderVC  = ReminderVC()
+        let myPageVC = MyPageHomeVC()
+        
         let homeNVC = UINavigationController(rootViewController: homeVC)
         let presentMoaNVC = UINavigationController(rootViewController: presentMoaVC)
         let keepinPlusNVC = UINavigationController(rootViewController: keepinPlusVC)

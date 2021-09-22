@@ -12,6 +12,7 @@ class MyPageHomeVC: UIViewController {
     @IBOutlet weak var myPageHomeCV: UICollectionView!
     
     let stickyIndexPath = IndexPath(row: 2, section: 0)
+    var friend: [Friend] = []
     var countList : Int = 0
     var member : String = ""
     var count1 : Int = 0
@@ -129,8 +130,7 @@ extension MyPageHomeVC : UICollectionViewDataSource {
             
         case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageHomeFriendCVC.identifier, for: indexPath)as? MyPageHomeFriendCVC else {return UICollectionViewCell()}
-            
-            
+            cell.setData(friendList: friend)
             return cell
             
         default:
@@ -172,7 +172,7 @@ extension MyPageHomeVC : UICollectionViewDelegateFlowLayout{
             
         case 3:
             let width = Int(UIScreen.main.bounds.width)
-            let height = (64 + 12) * MyPageHomeFriendCVC.friendName.count
+            let height = (64 + 12) * friend.count
             return CGSize(width: width, height: height)
         
         default:
@@ -210,6 +210,8 @@ extension MyPageHomeVC{
         for j in friendList{
             MyPageHomeFriendCVC.friendId.append(j.id)
         }
+        
+        friend = friendList
         
         myPageHomeCV.delegate = self
         myPageHomeCV.dataSource = self
