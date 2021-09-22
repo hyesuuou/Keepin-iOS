@@ -24,6 +24,7 @@ class HomeDataManager {
                         viewController.didSuccessGetRandom()
                     }
                     else {
+                        print(response.status)
                         viewController.message = ""
                         viewController.image = ""
                         viewController.didSuccessGetRandom()
@@ -31,6 +32,7 @@ class HomeDataManager {
                     }
                     
                 case .failure(let error):
+                    print(error)
                     print(error.localizedDescription)
                 }
             }
@@ -41,7 +43,7 @@ class HomeDataManager {
                    method: .get,
                    parameters: nil,
                    headers: Constant.HEADER)
-            .validate()
+            .validate(statusCode: 200..<500)
             .responseDecodable(of: HomeReminderResponse.self){ response in
                 switch response.result {
                 case .success(let response):

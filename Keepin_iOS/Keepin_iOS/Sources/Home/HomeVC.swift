@@ -35,7 +35,6 @@ class HomeVC: UIViewController {
     // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("HomeVC View Did Load")
         registerXib()
         initRefresh()
         setUI()
