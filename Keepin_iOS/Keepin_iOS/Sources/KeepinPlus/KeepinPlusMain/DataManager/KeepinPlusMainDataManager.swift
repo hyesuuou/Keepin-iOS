@@ -34,7 +34,7 @@ struct KeepinAddService {
         let header : HTTPHeaders = [
             "Content-Type" : "multipart/form-data",
             "Content-Type" : "application/json",
-            "jwt" : "\(Token.jwt)" ]
+            "jwt" : UserDefaults.standard.value(forKey: "jwt") as! String ]
         
         
         //multipart 업로드
