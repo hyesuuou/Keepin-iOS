@@ -33,14 +33,14 @@ class MyPageDetailDataManager{
             }
     }
     
-    func editMemo(_ parameter: String, modified:MyPageDetailRequest,viewController: MyPageDetailVC){
+    func editMemo(_ parameter: String, modified: MyPageDetailRequest,viewController: MyPageDetailVC){
         var url = "\(Constant.BASE_URL)/friend/memo/"
         url.append(parameter)
         
-        AF.request(url, method:.put, parameters:modified, encoder: JSONParameterEncoder(), headers: Constant.HEADER)
+        AF.request(url, method:.put, parameters: modified, encoder: JSONParameterEncoder(), headers: Constant.HEADER)
             .validate(statusCode: 200..<500)
             .validate(contentType: ["application/json"])
-            .responseDecodable(of: MyPageDetailResponse.self){ response in
+            .responseDecodable(of: MyPageMemoResponse.self){ response in
                 switch response.result{
                 case .success(let response):
                     viewController.didSuccessEditMemo(message: response.message)
@@ -51,7 +51,7 @@ class MyPageDetailDataManager{
             }
     }
     
-    func deleteFriend(_ parameter: String,viewController: MyPageDetailVC){
+    func deleteFriend(_ parameter: String, viewController: MyPageDetailVC){
         var url = "\(Constant.BASE_URL)/friend/"
         url.append(parameter)
         

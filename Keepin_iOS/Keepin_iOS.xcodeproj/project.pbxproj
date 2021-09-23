@@ -117,6 +117,7 @@
 		71E4382F26ABE4460054069E /* PlusFriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4382E26ABE4460054069E /* PlusFriendRequest.swift */; };
 		71E4383126ABE5230054069E /* PlusFriendDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4383026ABE5230054069E /* PlusFriendDataManager.swift */; };
 		71E4383326ABE8770054069E /* PlusFriendResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4383226ABE8770054069E /* PlusFriendResponse.swift */; };
+		71E46E7D26FC79EA009E570C /* MyPageMemoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E46E7C26FC79EA009E570C /* MyPageMemoResponse.swift */; };
 		71E50A8226B0398500F75586 /* MyPageProfileInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E50A8126B0398500F75586 /* MyPageProfileInfoResponse.swift */; };
 		71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F8BF268DFDE30031BC50 /* UIFont.swift */; };
 		7719B57C269724A900CBBB11 /* AfterCatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B57A269724A800CBBB11 /* AfterCatVC.swift */; };
@@ -294,6 +295,7 @@
 		71E4382E26ABE4460054069E /* PlusFriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusFriendRequest.swift; sourceTree = "<group>"; };
 		71E4383026ABE5230054069E /* PlusFriendDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusFriendDataManager.swift; sourceTree = "<group>"; };
 		71E4383226ABE8770054069E /* PlusFriendResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusFriendResponse.swift; sourceTree = "<group>"; };
+		71E46E7C26FC79EA009E570C /* MyPageMemoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMemoResponse.swift; sourceTree = "<group>"; };
 		71E50A8126B0398500F75586 /* MyPageProfileInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileInfoResponse.swift; sourceTree = "<group>"; };
 		71F8F8BF268DFDE30031BC50 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		7719B57A269724A800CBBB11 /* AfterCatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterCatVC.swift; sourceTree = "<group>"; };
@@ -650,6 +652,7 @@
 				71E00ADD26A1D90900DC742F /* MyPageDetailRequest.swift */,
 				71DDC79526ADB50F00543245 /* MyPageFriendDeleteResponse.swift */,
 				71DFCC9826AEE1F200FDAE51 /* MyPageFixRequest.swift */,
+				71E46E7C26FC79EA009E570C /* MyPageMemoResponse.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -1385,6 +1388,7 @@
 				77F04811268C44BA00FBFDD7 /* UIColor.swift in Sources */,
 				156E2947269E7CF7000CBEEA /* UIImageView.swift in Sources */,
 				15C12228268ED4D900838E55 /* HomeEventTVC.swift in Sources */,
+				71E46E7D26FC79EA009E570C /* MyPageMemoResponse.swift in Sources */,
 				77F0482A268C49D100FBFDD7 /* PresentMoaVC.swift in Sources */,
 				717A024F269ACF9E00241171 /* MyPageEditNameVC.swift in Sources */,
 				77F04814268C454600FBFDD7 /* UIButton.swift in Sources */,
