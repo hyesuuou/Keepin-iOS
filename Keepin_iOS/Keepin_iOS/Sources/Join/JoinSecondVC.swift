@@ -38,6 +38,7 @@ class JoinSecondVC: UIViewController, UITextFieldDelegate {
         phoneTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         
         nameTextField.delegate = self
+        self.dismissKeyboardWhenTappedAround()
     }
     
     // MARK:- Server Connect

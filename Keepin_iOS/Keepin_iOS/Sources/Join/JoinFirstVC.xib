@@ -62,7 +62,7 @@
                         <constraint firstAttribute="height" constant="24" id="SYJ-bc-7pC"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 (영문+숫자 8자 이상)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6cv-rZ-Pbw">
                     <rect key="frame" x="26" y="309" width="362" height="24"/>
@@ -70,7 +70,7 @@
                         <constraint firstAttribute="height" constant="24" id="gFY-xr-I4R"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tai-7T-rmh">
                     <rect key="frame" x="16" y="455" width="382" height="1"/>
@@ -94,7 +94,7 @@
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="kMv-ML-xPj"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDN-y8-D6g">
                     <rect key="frame" x="16" y="338" width="382" height="1"/>
