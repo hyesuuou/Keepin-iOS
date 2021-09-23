@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -93,7 +94,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEI-sn-7t1">
-                                    <rect key="frame" x="35.5" y="100" width="343" height="72"/>
+                                    <rect key="frame" x="16" y="100" width="382" height="72"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5J9-Af-GU3">
                                             <rect key="frame" x="109" y="12" width="0.5" height="50"/>
@@ -155,7 +156,6 @@
                                         <constraint firstItem="oYB-lp-X1G" firstAttribute="leading" secondItem="KEI-sn-7t1" secondAttribute="leading" constant="36" id="5Zx-6x-vfw"/>
                                         <constraint firstItem="PEH-Tl-ihL" firstAttribute="top" secondItem="oYB-lp-X1G" secondAttribute="bottom" constant="2" id="6NI-tN-1ku"/>
                                         <constraint firstItem="oYB-lp-X1G" firstAttribute="top" secondItem="KEI-sn-7t1" secondAttribute="top" constant="12" id="8em-7r-gAq"/>
-                                        <constraint firstAttribute="width" constant="343" id="Bes-7g-UDD"/>
                                         <constraint firstItem="XsS-6b-7Le" firstAttribute="centerX" secondItem="dYz-lw-mUF" secondAttribute="centerX" id="NQu-vl-V0g"/>
                                         <constraint firstItem="5J9-Af-GU3" firstAttribute="top" secondItem="KEI-sn-7t1" secondAttribute="top" constant="12" id="Tho-B6-Sbx"/>
                                         <constraint firstItem="p8T-06-PPQ" firstAttribute="centerX" secondItem="edv-np-ohn" secondAttribute="centerX" id="VV5-0L-VgW"/>
@@ -295,9 +295,11 @@
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1000" id="804-Q8-7gt"/>
                                 <constraint firstItem="1Ti-ce-sza" firstAttribute="top" secondItem="UEB-aZ-mVx" secondAttribute="bottom" constant="17" id="Bk1-Ve-nz1"/>
                                 <constraint firstItem="ygv-LG-0KV" firstAttribute="top" secondItem="CPw-AM-Hod" secondAttribute="top" constant="12" id="FRi-ay-xV5"/>
+                                <constraint firstItem="KEI-sn-7t1" firstAttribute="leading" secondItem="CPw-AM-Hod" secondAttribute="leading" constant="16" id="K5s-Hx-92o"/>
                                 <constraint firstItem="ygv-LG-0KV" firstAttribute="leading" secondItem="CPw-AM-Hod" secondAttribute="leading" constant="24" id="PFz-E6-dYJ"/>
                                 <constraint firstItem="YH0-2K-dNO" firstAttribute="top" secondItem="KEI-sn-7t1" secondAttribute="bottom" constant="32" id="RMb-lH-7YJ"/>
                                 <constraint firstItem="UEB-aZ-mVx" firstAttribute="top" secondItem="YH0-2K-dNO" secondAttribute="bottom" constant="32" id="Wht-1W-kTz"/>
+                                <constraint firstAttribute="trailing" secondItem="KEI-sn-7t1" secondAttribute="trailing" constant="16" id="YNX-9U-jdB"/>
                                 <constraint firstItem="1Ti-ce-sza" firstAttribute="centerX" secondItem="CPw-AM-Hod" secondAttribute="centerX" id="n45-IV-7wF"/>
                                 <constraint firstItem="KEI-sn-7t1" firstAttribute="centerX" secondItem="CPw-AM-Hod" secondAttribute="centerX" id="sQy-mr-cy0"/>
                                 <constraint firstAttribute="trailing" secondItem="QrL-66-BIz" secondAttribute="trailing" constant="62" id="sio-3d-lcM"/>

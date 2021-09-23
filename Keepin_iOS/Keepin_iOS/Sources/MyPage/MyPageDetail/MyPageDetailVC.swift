@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyPageDetailVC: UIViewController,UITextViewDelegate{
+class MyPageDetailVC: UIViewController{
     
     @IBOutlet weak var myPageCollectionView: UICollectionView!
     
@@ -61,6 +61,7 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         
         registerNib()
         memoTextView.isEditable = false
+       
     }
     
     
@@ -70,6 +71,8 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
             memoTextView.isEditable = true
         }else{
             memoTextView.isEditable = false
+            let request = MyPageDetailRequest(memo: memoTextView.text!)
+            MyPageDetailDataManager().editMemo(friendIdx, modified: request, viewController: self)
         }
     }
     
@@ -111,8 +114,6 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         MyPagePresentMoaDataManager().gotPresent(friendIdx, viewController: self)
     }
     
-
-    
     func registerNib(){
         let presentMoaNib = UINib(nibName:"MyPagePresentMoaCVC", bundle: nil)
         myPageCollectionView.register(presentMoaNib, forCellWithReuseIdentifier: "MyPagePresentMoaCVC")
@@ -121,15 +122,20 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
     func registerCV(){
         myPageCollectionView.delegate = self
         myPageCollectionView.dataSource = self
-        
     }
     
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        print(memoTextView.numberOfLines())
-        
+        //print(memoTextView.numberOfLines())
     }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        //memoTextView.text.count
+    }
+    
     func setStyle(){
+        memoTextView.text = memoText
+        
         mainLabel.text = "\(name)님과 \n주고받은 선물"
         
         mainLabel.font = UIFont.GmarketSansTTF(.medium, size: 20)
@@ -174,7 +180,6 @@ class MyPageDetailVC: UIViewController,UITextViewDelegate{
         memoLabel.textColor = .keepinBlack
         memoLabel.font = UIFont.GmarketSansTTF(.medium, size: 16)
         memoTextView.backgroundColor = .keepinGray
-        //memoTextView.text = memoText
         
         BntLineView.backgroundColor = .keepinGreen
         
@@ -282,11 +287,20 @@ extension MyPageDetailVC
 }
 
 extension UITextView{
-    func numberOfLines() -> Int {
-        if let fontUnwrapped = self.font{
-            return Int(self.contentSize.height / fontUnwrapped.lineHeight)
-        }
-            return 0
-    }
+    var numberOfLine: Int {
+         // Get number of lines
+         let numberOfGlyphs = self.layoutManager.numberOfGlyphs
+         var index = 0, numberOfLines = 0
+         var lineRange = NSRange(location: NSNotFound, length: 0)
 
+         while index < numberOfGlyphs {
+             self.layoutManager.lineFragmentRect(forGlyphAt: index, effectiveRange: &lineRange)
+           index = NSMaxRange(lineRange)
+           numberOfLines += 1
+         }
+
+         return numberOfLines
+     }
 }
+
+

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3a9-g2-ula">
-                        <rect key="frame" x="24" y="0.0" width="153" height="20.5"/>
+                        <rect key="frame" x="24" y="0.0" width="261" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -117,9 +118,9 @@
                 <constraint firstItem="3a9-g2-ula" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="24" id="EY9-5f-8ck"/>
                 <constraint firstAttribute="trailing" secondItem="Hmb-zW-YCe" secondAttribute="trailing" constant="16" id="FJU-Q2-6uQ"/>
                 <constraint firstItem="zNa-PL-Tet" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ICc-JD-4FX"/>
+                <constraint firstItem="zNa-PL-Tet" firstAttribute="top" secondItem="3a9-g2-ula" secondAttribute="bottom" constant="32" id="IlH-T3-hOD"/>
                 <constraint firstItem="3a9-g2-ula" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="24" id="Isg-sw-Ui3"/>
-                <constraint firstItem="Hmb-zW-YCe" firstAttribute="leading" secondItem="3a9-g2-ula" secondAttribute="trailing" constant="158" id="bUU-M2-MjX"/>
-                <constraint firstItem="zNa-PL-Tet" firstAttribute="top" secondItem="3a9-g2-ula" secondAttribute="bottom" constant="32" id="cLZ-ZG-5gy"/>
+                <constraint firstItem="Hmb-zW-YCe" firstAttribute="leading" secondItem="3a9-g2-ula" secondAttribute="trailing" constant="50" id="bEF-dc-Wbi"/>
                 <constraint firstItem="Hmb-zW-YCe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eny-Dz-GLD"/>
                 <constraint firstAttribute="trailing" secondItem="zNa-PL-Tet" secondAttribute="trailing" constant="16" id="ias-DR-Yyy"/>
                 <constraint firstItem="zNa-PL-Tet" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="w9W-WT-GZ3"/>

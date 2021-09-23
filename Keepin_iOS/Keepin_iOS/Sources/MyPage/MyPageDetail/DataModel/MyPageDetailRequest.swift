@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MyPageDetailRequest: Encodable {
+struct MyPageDetailRequest: Codable {
     let memo: String
 }
 
