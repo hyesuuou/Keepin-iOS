@@ -29,6 +29,7 @@ class JoinFirstVC: UIViewController {
         idTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         pwTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         pwOKTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        self.dismissKeyboardWhenTappedAround()
     }
     
     // MARK: - UI

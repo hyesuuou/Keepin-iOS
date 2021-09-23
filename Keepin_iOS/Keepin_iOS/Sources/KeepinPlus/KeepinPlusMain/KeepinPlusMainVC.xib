@@ -142,7 +142,7 @@
                                                 <constraint firstAttribute="height" constant="24" id="EzZ-zb-UaL"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                         </textField>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZE-mO-10J">
                                             <rect key="frame" x="16" y="93.5" width="382" height="1"/>
@@ -208,7 +208,7 @@
                                                 <constraint firstAttribute="height" constant="24" id="YW4-ow-E7D"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                         </textField>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qg3-W2-pvj">
                                             <rect key="frame" x="22" y="729" width="370" height="76"/>
@@ -398,7 +398,7 @@
                                             </constraints>
                                             <color key="textColor" systemColor="labelColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                         </textView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDR-fD-N9k">
                                             <rect key="frame" x="0.0" y="1151.5" width="414" height="0.0"/>
