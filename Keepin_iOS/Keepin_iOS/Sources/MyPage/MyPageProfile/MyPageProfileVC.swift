@@ -46,7 +46,7 @@ class MyPageProfileVC: UIViewController, MFMailComposeViewControllerDelegate {
         setText()
         naviagationBar()
         setGesture()
-        
+        self.dismissKeyboardWhenTappedAround()
         MyPageProfileDataManager().getProfileInfo(viewcontroller: self)
     }
     

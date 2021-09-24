@@ -21,6 +21,7 @@ class TeamKeepinVC: UIViewController {
         super.viewDidLoad()
 
         setUI()
+        self.dismissKeyboardWhenTappedAround()
     }
     
     @IBAction func pop(_ sender: Any) {

@@ -22,19 +22,9 @@ class MyPageFriendFixVC: UIViewController {
         super.viewDidLoad()
         
         setStyle()
-        
-        /*
-        NotificationCenter.default.addObserver(self, selector: #selector(load), name: NSNotification.Name("load2"), object: nil)
-        print(friendName,"성공성공")*/
-        
+        self.dismissKeyboardWhenTappedAround()
     }
-    /*
-    @objc func load(_ notification : NSNotification)
-    {
-        let data = notification.object as? String ?? ""
-        self.friendName = data
-        print("이 함수가 잘 실행되나요?")
-    }*/
+ 
 
     func setStyle(){
         friendLabel.text = "친구의 이름을 입력해 주세요."

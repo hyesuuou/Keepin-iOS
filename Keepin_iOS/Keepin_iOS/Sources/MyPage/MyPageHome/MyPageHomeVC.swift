@@ -35,7 +35,7 @@ class MyPageHomeVC: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(toPush(_:)), name: NSNotification.Name(rawValue: "push"), object: nil)
-        
+        self.dismissKeyboardWhenTappedAround()
     }
 
     @objc func toPush(_ notification: NSNotification){
