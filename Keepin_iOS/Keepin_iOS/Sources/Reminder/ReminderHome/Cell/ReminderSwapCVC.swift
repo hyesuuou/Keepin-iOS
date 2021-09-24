@@ -11,9 +11,14 @@ protocol tableviewTouchCVC{
     func touched(touch: Bool)
     func alarm(data: MonthReminder)
     func presentEdit(data: MonthReminder)
+    func toKeepin()
 }
 
 class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource, tableviewTouch, UIGestureRecognizerDelegate{
+    func toKeepin(index: Int) {
+        delegateTVC?.toKeepin()
+    }
+    
     
     func touchedTVC() {
         delegateTVC?.touched(touch: true)
