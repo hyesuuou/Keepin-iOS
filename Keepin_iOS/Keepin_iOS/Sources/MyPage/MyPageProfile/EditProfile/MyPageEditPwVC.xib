@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -198,6 +199,18 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCw-Xi-GXE">
+                    <rect key="frame" x="149" y="810" width="116" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="116" id="QAB-6i-rjx"/>
+                        <constraint firstAttribute="height" constant="32" id="UCa-0n-d0d"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="findPw"/>
+                    <connections>
+                        <action selector="tofindPW:" destination="-1" eventType="touchUpInside" id="fq4-CY-Y6h"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -205,6 +218,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JE9-FI-i4w" secondAttribute="trailing" constant="16" id="3Hh-0i-M2g"/>
                 <constraint firstItem="lOU-Dh-tSt" firstAttribute="top" secondItem="Cwd-yy-lsx" secondAttribute="bottom" constant="48" id="BXZ-9R-fjn"/>
                 <constraint firstItem="RTm-Cm-OZf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="E76-6C-vOM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qCw-Xi-GXE" secondAttribute="bottom" constant="20" id="Efp-ks-WWg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8qQ-Sa-VX9" secondAttribute="trailing" id="KSJ-ML-mkj"/>
                 <constraint firstItem="8qQ-Sa-VX9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MF4-Po-wQ7"/>
                 <constraint firstItem="6ru-6M-IdA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="NTU-8h-oVZ"/>
@@ -226,6 +240,7 @@
                 <constraint firstItem="lOU-Dh-tSt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="jgY-sw-WGc"/>
                 <constraint firstItem="JE9-FI-i4w" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mFW-We-bry"/>
                 <constraint firstAttribute="trailing" secondItem="p6a-0g-tSz" secondAttribute="trailing" constant="16" id="mls-tf-7dO"/>
+                <constraint firstItem="qCw-Xi-GXE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nTZ-Tt-dzv"/>
                 <constraint firstItem="Cwd-yy-lsx" firstAttribute="top" secondItem="MRX-Mw-HSf" secondAttribute="bottom" constant="5" id="r05-0I-0EX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PjI-SF-Oi0" secondAttribute="trailing" constant="16" id="ryP-Oy-NsU"/>
                 <constraint firstItem="Hby-8R-h3d" firstAttribute="top" secondItem="JE9-FI-i4w" secondAttribute="bottom" constant="48" id="s7O-nf-JLP"/>
@@ -237,6 +252,7 @@
         </view>
     </objects>
     <resources>
+        <image name="findPw" width="116" height="32"/>
         <image name="icBack" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
