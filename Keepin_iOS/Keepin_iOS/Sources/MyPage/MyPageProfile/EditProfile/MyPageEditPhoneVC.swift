@@ -19,6 +19,7 @@ class MyPageEditPhoneVC: UIViewController {
         
         setStyle()
         setTarget()
+        self.dismissKeyboardWhenTappedAround()
     }
     
     func setStyle(){

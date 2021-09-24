@@ -33,6 +33,7 @@ class MyPageEditPwVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.dismissKeyboardWhenTappedAround()
         setStyle()
         setAddTarget()
     }

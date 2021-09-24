@@ -20,6 +20,7 @@ class MyPageEditNameVC: UIViewController,UITextFieldDelegate {
 
         setStyle()
         nameText.delegate = self
+        self.dismissKeyboardWhenTappedAround()
     }
     
     func setStyle(){

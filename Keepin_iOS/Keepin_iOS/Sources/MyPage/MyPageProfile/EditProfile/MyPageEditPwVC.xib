@@ -89,7 +89,7 @@
                         <constraint firstAttribute="height" constant="40" id="vZy-si-Ihc"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MRX-Mw-HSf">
                     <rect key="frame" x="24" y="270.5" width="340" height="40"/>
@@ -98,7 +98,7 @@
                         <constraint firstAttribute="height" constant="40" id="Zh6-9o-Df1"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cwd-yy-lsx">
                     <rect key="frame" x="16" y="315.5" width="382" height="1"/>
@@ -158,7 +158,7 @@
                         <constraint firstAttribute="height" constant="40" id="zEd-bo-oRQ"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JOR-Zc-NV4">
                     <rect key="frame" x="24" y="364.5" width="92" height="24"/>
