@@ -315,6 +315,7 @@ extension ReminderVC: tableviewTouchCVC{
     }
     func toKeepin(){
         let vc = KeepinPlusVC()
+        vc.modalPresentationStyle = .fullScreen
         self.navigationController?.present(vc, animated: true, completion: nil)
     }
 }

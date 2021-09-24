@@ -8,7 +8,7 @@
 import UIKit
 protocol tableviewTouch{
     func touchedTVC()
-    func touchedAlarm(tv: String, index: Int, value: Bool)
+    func touchedAlarm(index: Int, value: Bool)
     func toKeepin(index: Int)
 }
 
@@ -19,12 +19,11 @@ class ReminderTVC: UITableViewCell {
     @IBOutlet weak var reminderTitle: UILabel!
     
     @IBAction func alarmChanged(_ sender: UISwitch) {
-        delegate?.touchedAlarm(tv: TVname, index: index, value: sender.isOn)
+        delegate?.touchedAlarm(index: index, value: sender.isOn)
     }
     
     var delegate : tableviewTouch?
     var index : Int = 0
-    var TVname : String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -44,7 +44,7 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSo-h1-ygj">
                         <rect key="frame" x="301" y="16" width="32" height="32"/>
-                        <state key="normal" image="icBack"/>
+                        <state key="normal" image="icBackReminder"/>
                         <connections>
                             <action selector="toKeepin:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WQk-qm-l82"/>
                         </connections>
@@ -76,7 +76,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icBack" width="32" height="32"/>
+        <image name="icBackReminder" width="32" height="32"/>
         <image name="line42" width="0.5" height="50"/>
         <image name="listReminderNotimportant" width="29.5" height="30.5"/>
     </resources>
