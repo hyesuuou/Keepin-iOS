@@ -37,6 +37,11 @@ class MyPageEditPwVC: UIViewController {
         setAddTarget()
     }
     
+    @IBAction func tofindPW(_ sender: Any) {
+        self.navigationController?.pushViewController(PwFindVC(), animated: true)
+    }
+    
+    
     func setStyle(){
         line1.backgroundColor = .keepinGray4
         line2.backgroundColor = .keepinGray4

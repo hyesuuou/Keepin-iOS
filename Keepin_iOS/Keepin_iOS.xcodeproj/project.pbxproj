@@ -118,6 +118,8 @@
 		71E4383126ABE5230054069E /* PlusFriendDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4383026ABE5230054069E /* PlusFriendDataManager.swift */; };
 		71E4383326ABE8770054069E /* PlusFriendResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4383226ABE8770054069E /* PlusFriendResponse.swift */; };
 		71E46E7D26FC79EA009E570C /* MyPageMemoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E46E7C26FC79EA009E570C /* MyPageMemoResponse.swift */; };
+		71E46E8126FCDA68009E570C /* PwFindVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E46E7F26FCDA68009E570C /* PwFindVC.swift */; };
+		71E46E8226FCDA68009E570C /* PwFindVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E46E8026FCDA68009E570C /* PwFindVC.xib */; };
 		71E50A8226B0398500F75586 /* MyPageProfileInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E50A8126B0398500F75586 /* MyPageProfileInfoResponse.swift */; };
 		71F8F8C0268DFDE30031BC50 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F8BF268DFDE30031BC50 /* UIFont.swift */; };
 		7719B57C269724A900CBBB11 /* AfterCatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719B57A269724A800CBBB11 /* AfterCatVC.swift */; };
@@ -296,6 +298,8 @@
 		71E4383026ABE5230054069E /* PlusFriendDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusFriendDataManager.swift; sourceTree = "<group>"; };
 		71E4383226ABE8770054069E /* PlusFriendResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusFriendResponse.swift; sourceTree = "<group>"; };
 		71E46E7C26FC79EA009E570C /* MyPageMemoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMemoResponse.swift; sourceTree = "<group>"; };
+		71E46E7F26FCDA68009E570C /* PwFindVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwFindVC.swift; sourceTree = "<group>"; };
+		71E46E8026FCDA68009E570C /* PwFindVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PwFindVC.xib; sourceTree = "<group>"; };
 		71E50A8126B0398500F75586 /* MyPageProfileInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileInfoResponse.swift; sourceTree = "<group>"; };
 		71F8F8BF268DFDE30031BC50 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		7719B57A269724A800CBBB11 /* AfterCatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterCatVC.swift; sourceTree = "<group>"; };
@@ -705,6 +709,15 @@
 			path = KeepinPlusFriend;
 			sourceTree = "<group>";
 		};
+		71E46E7E26FCDA29009E570C /* PasswordFind */ = {
+			isa = PBXGroup;
+			children = (
+				71E46E7F26FCDA68009E570C /* PwFindVC.swift */,
+				71E46E8026FCDA68009E570C /* PwFindVC.xib */,
+			);
+			name = PasswordFind;
+			sourceTree = "<group>";
+		};
 		7719B5792697082D00CBBB11 /* AfterCate */ = {
 			isa = PBXGroup;
 			children = (
@@ -877,6 +890,7 @@
 			children = (
 				15C122322692DA2D00838E55 /* Login */,
 				15C122372693075400838E55 /* EmailLogin */,
+				71E46E7E26FCDA29009E570C /* PasswordFind */,
 				153462CE2694466500060E44 /* Join */,
 				77F0480A268C441E00FBFDD7 /* Splash */,
 				77F04819268C483C00FBFDD7 /* Home */,
@@ -1210,6 +1224,7 @@
 				77BD96C126D38E9C00E217E8 /* ReminderSwapCVC.xib in Resources */,
 				1529FF8F269984D2000AD789 /* KeepinPlusSearchTVC.xib in Resources */,
 				15C122362692DA7300838E55 /* LoginFirstVC.xib in Resources */,
+				71E46E8226FCDA68009E570C /* PwFindVC.xib in Resources */,
 				71C197BB26977BBC004C0490 /* MyPageFriendFixVC.xib in Resources */,
 				71E13231269876FC00DB2D9F /* MyPageHomeVC.xib in Resources */,
 				15C12220268E2FBF00838E55 /* NotoSansCJKkr-Medium.otf in Resources */,
@@ -1315,6 +1330,7 @@
 				15C1222C268F063C00838E55 /* HomeTopTVC.swift in Sources */,
 				150FF83326A1CAD800970B18 /* KeepinPlusHomeResponse.swift in Sources */,
 				71210D50269C931C00568982 /* MyPageHomeDataManager.swift in Sources */,
+				71E46E8126FCDA68009E570C /* PwFindVC.swift in Sources */,
 				1589EDD826A15D25005EFCC2 /* SelectFriendTitleTVC.swift in Sources */,
 				7719B5CE269C459700CBBB11 /* SearchDataManager.swift in Sources */,
 				152439EA269D4AAA009E5E8E /* EmailLoginDataManager.swift in Sources */,
