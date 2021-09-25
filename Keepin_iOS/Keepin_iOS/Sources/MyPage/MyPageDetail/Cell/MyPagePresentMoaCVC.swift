@@ -23,6 +23,7 @@ class MyPagePresentMoaCVC: UICollectionViewCell {
     }
     
     func setStyle(){
+        presentImage.backgroundColor = .keepinGray
         presentTitle.font = UIFont.GmarketSansTTF(.medium, size: 14)
         presentTitle.textColor = UIColor.keepinGray5
         presentData.font = UIFont.NotoSans(.regular, size: 12)

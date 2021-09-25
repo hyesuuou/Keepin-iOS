@@ -11,11 +11,11 @@ import Foundation
 struct MyPagePresentMoaResponse: Codable {
     let status: Int
     let message: String
-    let data: PresentDataClass
+    let data: Keepins2?
 }
 
 // MARK: - DataClass
-struct PresentDataClass: Codable {
+struct Keepins2: Codable {
     let keepins: [KeepinList]
 }
 
