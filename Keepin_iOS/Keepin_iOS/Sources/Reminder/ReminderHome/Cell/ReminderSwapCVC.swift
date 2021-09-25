@@ -11,23 +11,22 @@ protocol tableviewTouchCVC{
     func touched(touch: Bool)
     func alarm(data: MonthReminder)
     func presentEdit(data: MonthReminder)
+    func toKeepin()
 }
 
 class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource, tableviewTouch, UIGestureRecognizerDelegate{
+    func toKeepin(index: Int) {
+        delegateTVC?.toKeepin()
+    }
+    
     
     func touchedTVC() {
         delegateTVC?.touched(touch: true)
     }
     
-    func touchedAlarm(tv: String, index: Int, value: Bool) {
-        if tv == "upcoming"{
-            upcomingData[index].isAlarm = value
-            delegateTVC?.alarm(data: upcomingData[index])
-        }
-        else{
-            pastData[index].isAlarm = value
-            delegateTVC?.alarm(data: pastData[index])
-        }
+    func touchedAlarm(index: Int, value: Bool) {
+        upcomingData[index].isAlarm = value
+        delegateTVC?.alarm(data: upcomingData[index])
     }
     
     @IBOutlet weak var upcomingTV: UITableView!
@@ -94,43 +93,49 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell : ReminderTVC
-
-        func setCell(cell: ReminderTVC, data: [MonthReminder]){
+        if tableView == upcomingTV{
+            var cell : ReminderTVC
+            cell = upcomingTV.dequeueReusableCell(withIdentifier: "ReminderTVC", for: indexPath) as! ReminderTVC
             cell.index = indexPath.section
             cell.delegate = self
             cell.backgroundColor = .keepinGray
-            cell.dateLabel.text = data[indexPath.section].date
-            cell.reminderTitle.text = data[indexPath.section].title
-            let alarmStatus = data[indexPath.section].isAlarm!
+            cell.dateLabel.text = upcomingData[indexPath.section].date
+            cell.reminderTitle.text = upcomingData[indexPath.section].title
+            
+            let alarmStatus = upcomingData[indexPath.section].isAlarm!
             if alarmStatus{
                 cell.alarmOn.isOn = true
             }
             else{
                 cell.alarmOn.isOn = false
             }
-            let importantStatus = data[indexPath.section].isImportant!
+            let importantStatus = upcomingData[indexPath.section].isImportant!
             if importantStatus{
                 cell.backgronudImg.image = UIImage(named: "listReminderImportant")
             }
             let backgroundView = UIView()
             backgroundView.backgroundColor = .clear
             cell.selectedBackgroundView = backgroundView
-            
-        }
-        
-        if tableView == upcomingTV{
-            cell = upcomingTV.dequeueReusableCell(withIdentifier: "ReminderTVC", for: indexPath) as! ReminderTVC
-            setCell(cell: cell, data: upcomingData)
-            cell.TVname = "upcoming"
+            return cell
         }
         else{
-            cell = pastTV.dequeueReusableCell(withIdentifier: "ReminderTVC", for: indexPath) as! ReminderTVC
-            setCell(cell: cell, data: pastData)
-            cell.TVname = "past"
+            var cell : ReminderPastTVC
+            cell = pastTV.dequeueReusableCell(withIdentifier: "ReminderPastTVC", for: indexPath) as! ReminderPastTVC
+            cell.index = indexPath.section
+            cell.delegate = self
+            cell.backgroundColor = .keepinGray
+            cell.dateLabel.text = pastData[indexPath.section].date
+            cell.reminderTitle.text = pastData[indexPath.section].title
+            
+            let importantStatus = pastData[indexPath.section].isImportant!
+            if importantStatus{
+                cell.backgroundImg.image = UIImage(named: "listReminderImportant")
+            }
+            let backgroundView = UIView()
+            backgroundView.backgroundColor = .clear
+            cell.selectedBackgroundView = backgroundView
+            return cell
         }
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -233,7 +238,7 @@ class ReminderSwapCVC: UICollectionViewCell, UITableViewDelegate, UITableViewDat
     
     private func setTV(){
         upcomingTV.register(ReminderTVC.nib(), forCellReuseIdentifier: "ReminderTVC")
-        pastTV.register(ReminderTVC.nib(), forCellReuseIdentifier: "ReminderTVC")
+        pastTV.register(ReminderPastTVC.nib(), forCellReuseIdentifier: "ReminderPastTVC")
         upcomingTV.delegate = self
         upcomingTV.dataSource = self
         pastTV.delegate = self

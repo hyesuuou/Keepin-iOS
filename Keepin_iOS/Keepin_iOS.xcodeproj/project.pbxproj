@@ -152,6 +152,8 @@
 		77BEA4AA26A15864007E2236 /* ReminderDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4A926A15864007E2236 /* ReminderDetailDataManager.swift */; };
 		77BEA4AC26A15873007E2236 /* ReminderDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4AB26A15873007E2236 /* ReminderDetailResponse.swift */; };
 		77BEA4AE26A16304007E2236 /* ReminderDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEA4AD26A16304007E2236 /* ReminderDetailRequest.swift */; };
+		77D3223A26FDBCED0020E74A /* ReminderPastTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3223826FDBCEC0020E74A /* ReminderPastTVC.swift */; };
+		77D3223B26FDBCED0020E74A /* ReminderPastTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D3223926FDBCED0020E74A /* ReminderPastTVC.xib */; };
 		77F047E3268AF98F00FBFDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */; };
 		77F047E5268AF98F00FBFDD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F047E4268AF98F00FBFDD7 /* SceneDelegate.swift */; };
 		77F047EC268AF99900FBFDD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77F047EB268AF99900FBFDD7 /* Assets.xcassets */; };
@@ -332,6 +334,8 @@
 		77BEA4A926A15864007E2236 /* ReminderDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailDataManager.swift; sourceTree = "<group>"; };
 		77BEA4AB26A15873007E2236 /* ReminderDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailResponse.swift; sourceTree = "<group>"; };
 		77BEA4AD26A16304007E2236 /* ReminderDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailRequest.swift; sourceTree = "<group>"; };
+		77D3223826FDBCEC0020E74A /* ReminderPastTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderPastTVC.swift; sourceTree = "<group>"; };
+		77D3223926FDBCED0020E74A /* ReminderPastTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderPastTVC.xib; sourceTree = "<group>"; };
 		77F047DF268AF98F00FBFDD7 /* Keepin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keepin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F047E2268AF98F00FBFDD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F047E4268AF98F00FBFDD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -747,6 +751,8 @@
 				7719B592269AC9BB00CBBB11 /* ReminderTVC.xib */,
 				77BD96BE26D38E9C00E217E8 /* ReminderSwapCVC.swift */,
 				77BD96BF26D38E9C00E217E8 /* ReminderSwapCVC.xib */,
+				77D3223826FDBCEC0020E74A /* ReminderPastTVC.swift */,
+				77D3223926FDBCED0020E74A /* ReminderPastTVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1212,6 +1218,7 @@
 				1589EDD926A15D25005EFCC2 /* SelectFriendTitleTVC.xib in Resources */,
 				77F549ED268F58970013A76C /* PresentMoaCVC.xib in Resources */,
 				15C1223B2693077E00838E55 /* EmailLoginVC.xib in Resources */,
+				77D3223B26FDBCED0020E74A /* ReminderPastTVC.xib in Resources */,
 				717A0259269ACFF800241171 /* MyPageEditPhoneVC.xib in Resources */,
 				15C1221F268E2FBF00838E55 /* NotoSansCJKkr-Bold.otf in Resources */,
 				153462D62694469900060E44 /* JoinSecondVC.xib in Resources */,
@@ -1397,6 +1404,7 @@
 				71E13230269876FC00DB2D9F /* MyPageHomeVC.swift in Sources */,
 				77F0483F268C4D2400FBFDD7 /* MyPageDetailVC.swift in Sources */,
 				77F0481F268C49AE00FBFDD7 /* SplashVC.swift in Sources */,
+				77D3223A26FDBCED0020E74A /* ReminderPastTVC.swift in Sources */,
 				150FF83726A1EF1000970B18 /* NetworkResult.swift in Sources */,
 				77BEA4A626A0A9E7007E2236 /* ReminderHomeRequest.swift in Sources */,
 				717A0253269ACFC800241171 /* MyPageEditPwVC.swift in Sources */,

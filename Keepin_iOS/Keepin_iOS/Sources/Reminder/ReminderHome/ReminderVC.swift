@@ -313,6 +313,11 @@ extension ReminderVC: tableviewTouchCVC{
         ReminderAddNVC.modalPresentationStyle = .fullScreen
         self.present(ReminderAddNVC, animated: true, completion: nil)
     }
+    func toKeepin(){
+        let vc = KeepinPlusMainVC()
+        vc.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(vc, animated: true, completion: nil)
+    }
 }
 
 //MARK: - Server Functions

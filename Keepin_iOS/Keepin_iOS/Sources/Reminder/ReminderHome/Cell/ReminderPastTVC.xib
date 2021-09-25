@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GmarketSansTTFBold.ttf">
+            <string>GmarketSansTTFBold</string>
+        </array>
+        <array key="NotoSansCJKkr-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderPastTVC" rowHeight="52" id="KGk-i7-Jjw" customClass="ReminderPastTVC" customModule="Keepin_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="343" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="listReminderNotimportant" translatesAutoresizingMaskIntoConstraints="NO" id="RV8-ih-lTk">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="64"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06.10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMR-k3-OoS">
+                        <rect key="frame" x="32" y="21.5" width="35" height="21"/>
+                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line42" translatesAutoresizingMaskIntoConstraints="NO" id="EyA-BM-304">
+                        <rect key="frame" x="87" y="7" width="0.5" height="50"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="박윤정 생일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbw-gY-s2h">
+                        <rect key="frame" x="107" y="24" width="82" height="16"/>
+                        <fontDescription key="fontDescription" name="GmarketSansTTFBold" family="Gmarket Sans TTF" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSo-h1-ygj">
+                        <rect key="frame" x="301" y="16" width="32" height="32"/>
+                        <state key="normal" image="icBackReminder"/>
+                        <connections>
+                            <action selector="toKeepin:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WQk-qm-l82"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dMR-k3-OoS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="FEp-DF-MgN"/>
+                    <constraint firstItem="EyA-BM-304" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="FoG-s5-Mad"/>
+                    <constraint firstItem="vbw-gY-s2h" firstAttribute="leading" secondItem="EyA-BM-304" secondAttribute="trailing" constant="19.5" id="HBM-Fo-MyX"/>
+                    <constraint firstItem="RV8-ih-lTk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="KFW-qp-czb"/>
+                    <constraint firstItem="RV8-ih-lTk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="LTd-98-pTL"/>
+                    <constraint firstItem="vbw-gY-s2h" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="QUd-5C-HSB"/>
+                    <constraint firstAttribute="bottom" secondItem="RV8-ih-lTk" secondAttribute="bottom" id="UoD-2g-4Y9"/>
+                    <constraint firstItem="EyA-BM-304" firstAttribute="leading" secondItem="dMR-k3-OoS" secondAttribute="trailing" constant="20" id="Vjd-rz-upR"/>
+                    <constraint firstAttribute="trailing" secondItem="RV8-ih-lTk" secondAttribute="trailing" id="dPx-rc-GpZ"/>
+                    <constraint firstItem="mSo-h1-ygj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="e9O-bC-5MY"/>
+                    <constraint firstItem="dMR-k3-OoS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="gzx-Im-tuO"/>
+                    <constraint firstAttribute="trailing" secondItem="mSo-h1-ygj" secondAttribute="trailing" constant="10" id="hVg-SB-8Vz"/>
+                    <constraint firstItem="EyA-BM-304" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jsv-0y-KOX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backgroundImg" destination="RV8-ih-lTk" id="7hC-wO-3fn"/>
+                <outlet property="dateLabel" destination="dMR-k3-OoS" id="Kl5-sq-1qd"/>
+                <outlet property="reminderTitle" destination="vbw-gY-s2h" id="91w-L0-mIE"/>
+            </connections>
+            <point key="canvasLocation" x="40.579710144927539" y="75"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icBackReminder" width="32" height="32"/>
+        <image name="line42" width="0.5" height="50"/>
+        <image name="listReminderNotimportant" width="29.5" height="30.5"/>
+    </resources>
+</document>

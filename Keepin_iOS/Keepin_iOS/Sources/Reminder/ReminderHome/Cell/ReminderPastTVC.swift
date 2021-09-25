@@ -1,25 +1,19 @@
 //
-//  ReminderTVC.swift
+//  ReminderPastTVC.swift
 //  Keepin_iOS
 //
-//  Created by Yi Joon Choi on 2021/07/11.
+//  Created by Yi Joon Choi on 2021/09/24.
 //
 
 import UIKit
-protocol tableviewTouch{
-    func touchedTVC()
-    func touchedAlarm(index: Int, value: Bool)
-    func toKeepin(index: Int)
-}
 
-class ReminderTVC: UITableViewCell {
-    @IBOutlet weak var backgronudImg: UIImageView!
+class ReminderPastTVC: UITableViewCell {
+
+    @IBOutlet weak var backgroundImg: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var alarmOn: UISwitch!
     @IBOutlet weak var reminderTitle: UILabel!
-    
-    @IBAction func alarmChanged(_ sender: UISwitch) {
-        delegate?.touchedAlarm(index: index, value: sender.isOn)
+    @IBAction func toKeepin(_ sender: UIButton) {
+        delegate?.toKeepin(index: index)
     }
     
     var delegate : tableviewTouch?
@@ -29,21 +23,20 @@ class ReminderTVC: UITableViewCell {
         super.awakeFromNib()
         reminderTitle.font = UIFont.GmarketSansTTF(.medium, size: 16)
         reminderTitle.textColor = .keepinGray5
-        alarmOn.set(width: 44, height: 24)
-        alarmOn.isOn = true
-        backgronudImg.image = UIImage(named: "listReminderNotimportant")
+        backgroundImg.image = UIImage(named: "listReminderNotimportant")
         
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
         tapGesture.delegate = self
-        backgronudImg.addGestureRecognizer(tapGesture)
+        backgroundImg.addGestureRecognizer(tapGesture)
+        // Initialization code
     }
-    
+
     override func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         print("touched TVC")
         delegate?.touchedTVC()
         return true
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -51,11 +44,10 @@ class ReminderTVC: UITableViewCell {
     }
     
     static func nib() -> UINib{
-        return UINib(nibName: "ReminderTVC", bundle: nil)
+        return UINib(nibName: "ReminderPastTVC", bundle: nil)
     }
     
     override func prepareForReuse() {
-        backgronudImg.image = UIImage(named: "listReminderNotimportant")
+        backgroundImg.image = UIImage(named: "listReminderNotimportant")
     }
-    
 }
