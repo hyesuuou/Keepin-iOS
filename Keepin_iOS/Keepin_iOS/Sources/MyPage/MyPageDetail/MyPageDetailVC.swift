@@ -11,6 +11,9 @@ class MyPageDetailVC: UIViewController{
     
     @IBOutlet weak var myPageCollectionView: UICollectionView!
     
+    @IBOutlet weak var emptyImage: UIImageView!
+    @IBOutlet weak var emptyLabel: UILabel!
+    
     @IBOutlet weak var mainLabel: UILabel!
     var name : String = ""
     var num1: Int = 0
@@ -185,6 +188,9 @@ class MyPageDetailVC: UIViewController{
         
         lineCount.text = "\(line)/5줄"
         lineCount.textColor = .keepinGray3
+        
+        emptyLabel.textColor = .keepinGray3
+        emptyLabel.font = UIFont.GmarketSansTTF(.medium, size: 14)
     }
     
     @IBAction func toBack(_ sender: Any) {
@@ -274,6 +280,16 @@ extension MyPageDetailVC
         registerCV()
         
         var itemNum : Int = (serverData?.keepins.count)!
+        
+        if itemNum == 0 {
+            emptyImage.isHidden = false
+            emptyLabel.isHidden = false
+            myPageCollectionView.isHidden = true
+        }else{
+            emptyImage.isHidden = true
+            emptyLabel.isHidden = true
+            myPageCollectionView.isHidden = false
+        }
         
         if itemNum%2 == 1{
             itemNum += 1
