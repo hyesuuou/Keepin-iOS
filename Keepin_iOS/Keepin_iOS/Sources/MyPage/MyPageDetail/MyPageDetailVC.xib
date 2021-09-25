@@ -21,6 +21,8 @@
                 <outlet property="allLabel" destination="4ia-Dm-DyT" id="CHk-sd-fIU"/>
                 <outlet property="allNum" destination="Tl0-RD-Py8" id="uxY-x3-AyW"/>
                 <outlet property="contentViewHeight" destination="804-Q8-7gt" id="Rwi-0f-yp3"/>
+                <outlet property="emptyImage" destination="tJ4-nK-tL3" id="p8v-NQ-Psi"/>
+                <outlet property="emptyLabel" destination="MgQ-gB-PiA" id="TjG-Ml-Frp"/>
                 <outlet property="giveButton" destination="43P-Wb-Lnr" id="Or3-z3-oYD"/>
                 <outlet property="giveLabel" destination="7uU-TT-v1w" id="YHe-WF-50s"/>
                 <outlet property="giveNum" destination="fkH-TL-KZm" id="jEQ-lK-jIu"/>
@@ -320,25 +322,39 @@
                                         <constraint firstAttribute="width" constant="30" id="yw6-uf-Qqn"/>
                                     </constraints>
                                 </view>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgEmptySpeechSmall" translatesAutoresizingMaskIntoConstraints="NO" id="tJ4-nK-tL3">
+                                    <rect key="frame" x="164" y="532" width="85" height="41"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 주고받은 선물이 없어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgQ-gB-PiA">
+                                    <rect key="frame" x="126.5" y="597" width="161" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="YH0-2K-dNO" firstAttribute="leading" secondItem="CPw-AM-Hod" secondAttribute="leading" constant="16" id="1IN-3A-gVD"/>
                                 <constraint firstItem="QrL-66-BIz" firstAttribute="top" secondItem="YH0-2K-dNO" secondAttribute="bottom" constant="59" id="3dV-h8-Tyw"/>
+                                <constraint firstItem="MgQ-gB-PiA" firstAttribute="top" secondItem="tJ4-nK-tL3" secondAttribute="bottom" constant="24" id="58c-iO-LVe"/>
                                 <constraint firstItem="KEI-sn-7t1" firstAttribute="top" secondItem="CPw-AM-Hod" secondAttribute="top" constant="100" id="6v4-Bd-Xga"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1000" id="804-Q8-7gt"/>
                                 <constraint firstAttribute="trailing" secondItem="YH0-2K-dNO" secondAttribute="trailing" constant="16" id="8Kq-1H-Q3P"/>
                                 <constraint firstItem="1Ti-ce-sza" firstAttribute="top" secondItem="UEB-aZ-mVx" secondAttribute="bottom" constant="17" id="Bk1-Ve-nz1"/>
                                 <constraint firstItem="ygv-LG-0KV" firstAttribute="top" secondItem="CPw-AM-Hod" secondAttribute="top" constant="12" id="FRi-ay-xV5"/>
                                 <constraint firstItem="KEI-sn-7t1" firstAttribute="leading" secondItem="CPw-AM-Hod" secondAttribute="leading" constant="16" id="K5s-Hx-92o"/>
+                                <constraint firstItem="MgQ-gB-PiA" firstAttribute="centerX" secondItem="CPw-AM-Hod" secondAttribute="centerX" id="OqE-DO-dNI"/>
                                 <constraint firstItem="ygv-LG-0KV" firstAttribute="leading" secondItem="CPw-AM-Hod" secondAttribute="leading" constant="24" id="PFz-E6-dYJ"/>
                                 <constraint firstItem="YH0-2K-dNO" firstAttribute="top" secondItem="KEI-sn-7t1" secondAttribute="bottom" constant="32" id="RMb-lH-7YJ"/>
                                 <constraint firstItem="UEB-aZ-mVx" firstAttribute="top" secondItem="YH0-2K-dNO" secondAttribute="bottom" constant="32" id="Wht-1W-kTz"/>
                                 <constraint firstAttribute="trailing" secondItem="KEI-sn-7t1" secondAttribute="trailing" constant="16" id="YNX-9U-jdB"/>
+                                <constraint firstItem="tJ4-nK-tL3" firstAttribute="leading" secondItem="CPw-AM-Hod" secondAttribute="leading" constant="164" id="bMH-1r-0ab"/>
                                 <constraint firstAttribute="trailing" secondItem="1Ti-ce-sza" secondAttribute="trailing" constant="16" id="i66-Ue-fWr"/>
                                 <constraint firstItem="1Ti-ce-sza" firstAttribute="leading" secondItem="CPw-AM-Hod" secondAttribute="leading" constant="16" id="iWF-hx-w8L"/>
+                                <constraint firstItem="tJ4-nK-tL3" firstAttribute="top" secondItem="UEB-aZ-mVx" secondAttribute="bottom" constant="80" id="ih5-SM-Ivg"/>
                                 <constraint firstItem="KEI-sn-7t1" firstAttribute="centerX" secondItem="CPw-AM-Hod" secondAttribute="centerX" id="sQy-mr-cy0"/>
                                 <constraint firstAttribute="trailing" secondItem="QrL-66-BIz" secondAttribute="trailing" constant="62" id="sio-3d-lcM"/>
+                                <constraint firstAttribute="trailing" secondItem="tJ4-nK-tL3" secondAttribute="trailing" constant="165" id="v40-QF-VCy"/>
                                 <constraint firstAttribute="trailing" secondItem="UEB-aZ-mVx" secondAttribute="trailing" constant="15" id="wzZ-SP-4dv"/>
                                 <constraint firstItem="YH0-2K-dNO" firstAttribute="centerX" secondItem="CPw-AM-Hod" secondAttribute="centerX" id="zcZ-pA-fFg"/>
                             </constraints>
@@ -376,6 +392,7 @@
         <image name="icMore" width="40" height="40"/>
         <image name="icnCheckBox" width="24" height="24.5"/>
         <image name="icnEdit" width="24" height="24"/>
+        <image name="imgEmptySpeechSmall" width="46" height="41"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
