@@ -19,7 +19,7 @@ class MyPageDetailVC: UIViewController{
     var friendIdx : String = ""
     
     var memoText: String = ""
-    var serverData : PresentDataClass?
+    var serverData : Keepins2?
     
     @IBOutlet weak var lineCount: UILabel!
     var line: Int = 0
@@ -57,7 +57,7 @@ class MyPageDetailVC: UIViewController{
         MyPageDetailDataManager().getFriendInfo(friendIdx, viewController: self)
         setButtonUI()
         self.navigationController?.isNavigationBarHidden = true
-        dismissKeyboardWhenTappedAround()
+        self.dismissKeyboardWhenTappedAround()
         
         registerNib()
         memoTextView.isEditable = false
@@ -213,6 +213,12 @@ class MyPageDetailVC: UIViewController{
 
 
 extension MyPageDetailVC : UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let nextVC = PresentDetailVC()
+        nextVC.keepinIdx = (serverData?.keepins[indexPath.row].id)!
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
     
 }
 
