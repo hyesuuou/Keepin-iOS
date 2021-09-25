@@ -31,7 +31,7 @@ class KeepinPlusFriendVC: UIViewController,UITextFieldDelegate {
     }
     
     func setWarnLabel(label:UILabel){
-        label.isHidden = true
+        //label.isHidden = true
         label.font = UIFont.NotoSans(.regular, size: 14)
         label.textColor = .salmon
     }
@@ -71,14 +71,15 @@ class KeepinPlusFriendVC: UIViewController,UITextFieldDelegate {
 }
 
 extension KeepinPlusFriendVC{
-    func didPlusFriend(message: String){
-        print(message)
-        guard let newFriend = textField.text else {return}
-        self.makeRequestAlert(title: "\(newFriend)님이 등록되었습니다.", message: "", okAction: {_ in
-            
+    func didPlusFriend(message: String, code: Int){
+        if code == 400 {
+            warnLabel.text = "중복된 친구가 있습니다."
+        }
+        else{
+            guard let newFriend = textField.text else {return}
+            self.makeRequestAlert(title: "\(newFriend)님이 등록되었습니다.", message: "", okAction: {_ in
             self.navigationController?.popViewController(animated: true)
-            //guard let vc = self.navigationController?.popViewController(animated: true) as? SelectFriendVC else { return }
-            
         })
+        }
       }
 }

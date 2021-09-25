@@ -6,6 +6,7 @@
 //
 import Alamofire
 import Foundation
+import AVFoundation
 
 class PlusFriendDataManager{
     
@@ -16,7 +17,7 @@ class PlusFriendDataManager{
             .responseDecodable(of: PlusFriendResponse.self){ response in
                 switch response.result{
                 case .success(let response):
-                    viewController.didPlusFriend(message: response.message)
+                    viewController.didPlusFriend(message: response.message, code: response.status)
         
                 case .failure(let error):
                     print(error.localizedDescription)
